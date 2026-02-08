@@ -3,8 +3,11 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>AIvance Pro - Votre coach fitness personnel propuls&eacute; par l'IA</title>
-    <meta name="description" content="AIvance Pro est votre coach fitness personnel propuls&eacute; par l'intelligence artificielle. Programmes personnalis&eacute;s, suivi de progression et communaut&eacute; sportive.">
+    <link rel="icon" type="image/png" sizes="64x64" href="assets/favicon-64.png">
+    <link rel="icon" type="image/png" sizes="48x48" href="assets/favicon-48.png">
+    <link rel="apple-touch-icon" sizes="128x128" href="assets/apple-touch-icon.png">
+    <title>AIVancePro - Votre coach fitness personnel propuls&eacute; par l'IA</title>
+    <meta name="description" content="AIVancePro est votre coach fitness personnel propuls&eacute; par l'intelligence artificielle. Programmes personnalis&eacute;s, suivi de progression et communaut&eacute; sportive.">
     <meta name="keywords" content="coach fitness IA, application musculation, programme entra&icirc;nement personnalis&eacute;, suivi progression sportive, coach personnel virtuel, musculation d&eacute;butant, exercices fitness, home gym, entra&icirc;nement maison, intelligence artificielle sport">
     <link rel="canonical" href="https://aivancepro.fr/">
     <link rel="alternate" hreflang="fr" href="https://aivancepro.fr/">
@@ -13,20 +16,20 @@
     <!-- Open Graph (Facebook, LinkedIn, WhatsApp) -->
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://aivancepro.fr/">
-    <meta property="og:title" content="AIvance Pro - Votre coach fitness personnel propuls&eacute; par l'IA">
+    <meta property="og:title" content="AIVancePro - Votre coach fitness personnel propuls&eacute; par l'IA">
     <meta property="og:description" content="Programmes d'entra&icirc;nement personnalis&eacute;s par intelligence artificielle. Suivi de progression, +130 exercices et communaut&eacute; sportive.">
-    <meta property="og:site_name" content="AIvance Pro">
+    <meta property="og:site_name" content="AIVancePro">
     <meta property="og:locale" content="fr_FR">
     <!-- Twitter Card -->
     <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:title" content="AIvance Pro - Coach fitness IA">
+    <meta name="twitter:title" content="AIVancePro - Coach fitness IA">
     <meta name="twitter:description" content="Votre coach fitness personnel propuls&eacute; par l'intelligence artificielle.">
     <!-- Schema.org JSON-LD -->
     <script type="application/ld+json">
     {
         "@context": "https://schema.org",
         "@type": "MobileApplication",
-        "name": "AIvance Pro",
+        "name": "AIVancePro",
         "description": "Coach fitness personnel propuls&eacute; par l'intelligence artificielle avec programmes personnalis&eacute;s et suivi de progression.",
         "operatingSystem": "iOS, Android",
         "applicationCategory": "HealthApplication",
@@ -90,6 +93,15 @@
             font-weight: 800;
             color: var(--white);
             text-decoration: none;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .logo img {
+            width: 32px;
+            height: 32px;
+            border-radius: 8px;
         }
 
         .logo span {
@@ -269,14 +281,30 @@
         .feature-icon {
             width: 48px;
             height: 48px;
-            background: rgba(37, 99, 235, 0.12);
             border-radius: 12px;
             display: flex;
             align-items: center;
             justify-content: center;
-            font-size: 1.5rem;
             margin-bottom: 1.2rem;
         }
+
+        .feature-icon svg {
+            width: 24px;
+            height: 24px;
+        }
+
+        .feature-icon.brain { background: rgba(167, 139, 250, 0.15); }
+        .feature-icon.brain svg { stroke: #A78BFA; }
+        .feature-icon.dumbbell { background: rgba(96, 165, 250, 0.15); }
+        .feature-icon.dumbbell svg { stroke: #60A5FA; }
+        .feature-icon.trending { background: rgba(74, 222, 128, 0.15); }
+        .feature-icon.trending svg { stroke: #4ADE80; }
+        .feature-icon.book { background: rgba(251, 146, 60, 0.15); }
+        .feature-icon.book svg { stroke: #FB923C; }
+        .feature-icon.users { background: rgba(34, 211, 238, 0.15); }
+        .feature-icon.users svg { stroke: #22D3EE; }
+        .feature-icon.trophy { background: rgba(251, 191, 36, 0.15); }
+        .feature-icon.trophy svg { stroke: #FBBF24; }
 
         .feature-card h3 {
             font-size: 1.2rem;
@@ -370,7 +398,7 @@
 
     <!-- Navigation -->
     <nav>
-        <a href="/" class="logo">AIvance <span>Pro</span></a>
+        <a href="/" class="logo"><img src="assets/logo.png" alt="AIVancePro">AIVance<span>Pro</span></a>
         <ul class="nav-links">
             <li><a href="#features">Fonctionnalit&eacute;s</a></li>
             <li><a href="blog/">Blog</a></li>
@@ -384,9 +412,10 @@
     <!-- Hero Section -->
     <section class="hero">
         <div class="hero-content">
+            <img src="assets/logo-512.png" alt="AIVancePro" style="width:100px;height:100px;border-radius:22px;margin:0 auto 1.5rem;display:block;">
             <div class="badge">Your AI-powered fitness coach</div>
             <h1>Transformez votre <span>entra&icirc;nement</span> avec l'IA</h1>
-            <p>AIvance Pro est votre coach fitness personnel propuls&eacute; par l'intelligence artificielle. Programmes sur mesure, suivi de progression et communaut&eacute; sportive.</p>
+            <p>AIVancePro est votre coach fitness personnel propuls&eacute; par l'intelligence artificielle. Programmes sur mesure, suivi de progression et communaut&eacute; sportive.</p>
             <div class="download-buttons">
                 <a href="https://apps.apple.com/fr/app/aivancepro/id6756116760" class="download-btn appstore">
                     <svg viewBox="0 0 24 24" fill="currentColor"><path d="M18.71 19.5c-.83 1.24-1.71 2.45-3.05 2.47-1.34.03-1.77-.79-3.29-.79-1.53 0-2 .77-3.27.82-1.31.05-2.3-1.32-3.14-2.53C4.25 17 2.94 12.45 4.7 9.39c.87-1.52 2.43-2.48 4.12-2.51 1.28-.02 2.5.87 3.29.87.78 0 2.26-1.07 3.8-.91.65.03 2.47.26 3.64 1.98-.09.06-2.17 1.28-2.15 3.81.03 3.02 2.65 4.03 2.68 4.04-.03.07-.42 1.44-1.38 2.83M13 3.5c.73-.83 1.94-1.46 2.94-1.5.13 1.17-.34 2.35-1.04 3.19-.69.85-1.83 1.51-2.95 1.42-.15-1.15.41-2.35 1.05-3.11z"/></svg>
@@ -414,32 +443,32 @@
         </div>
         <div class="features-grid">
             <div class="feature-card">
-                <div class="feature-icon">&#129302;</div>
+                <div class="feature-icon brain"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 5a3 3 0 1 0-5.997.125 4 4 0 0 0-2.526 5.77 4 4 0 0 0 .556 6.588A4 4 0 1 0 12 18Z"/><path d="M12 5a3 3 0 1 1 5.997.125 4 4 0 0 1 2.526 5.77 4 4 0 0 1-.556 6.588A4 4 0 1 1 12 18Z"/><path d="M15 13a4.5 4.5 0 0 1-3-4 4.5 4.5 0 0 1-3 4"/><path d="M17.599 6.5a3 3 0 0 0 .399-1.375"/><path d="M6.003 5.125A3 3 0 0 0 6.401 6.5"/><path d="M3.477 10.896a4 4 0 0 1 .585-.396"/><path d="M19.938 10.5a4 4 0 0 1 .585.396"/><path d="M6 18a4 4 0 0 1-1.967-.516"/><path d="M19.967 17.484A4 4 0 0 1 18 18"/></svg></div>
                 <h3>Coach IA personnel</h3>
                 <p>Un coach virtuel qui s'adapte &agrave; votre niveau, vos objectifs et votre &eacute;quipement disponible.</p>
             </div>
             <div class="feature-card">
-                <div class="feature-icon">&#128170;</div>
+                <div class="feature-icon dumbbell"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14.4 14.4 9.6 9.6"/><path d="M18.657 21.485a2 2 0 1 1-2.829-2.828l-1.767-1.768a2 2 0 1 1-2.829-2.829l6.364-6.364a2 2 0 1 1 2.829 2.829l1.767 1.767a2 2 0 1 1 2.828 2.829z"/><path d="m21.5 21.5-1.4-1.4"/><path d="M3.9 3.9 2.5 2.5"/><path d="M6.404 12.768a2 2 0 1 1-2.829-2.829l1.768-1.767a2 2 0 1 1-2.828-2.829l2.828-2.828a2 2 0 1 1 2.829 2.828l1.767-1.768a2 2 0 1 1 2.829 2.829z"/></svg></div>
                 <h3>Programmes sur mesure</h3>
                 <p>Des programmes d'entra&icirc;nement g&eacute;n&eacute;r&eacute;s automatiquement et adapt&eacute;s &agrave; votre progression.</p>
             </div>
             <div class="feature-card">
-                <div class="feature-icon">&#128200;</div>
+                <div class="feature-icon trending"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="22 7 13.5 15.5 8.5 10.5 2 17"/><polyline points="16 7 22 7 22 13"/></svg></div>
                 <h3>Suivi de progression</h3>
                 <p>Visualisez vos performances, suivez vos records et mesurez vos progr&egrave;s au fil du temps.</p>
             </div>
             <div class="feature-card">
-                <div class="feature-icon">&#127947;</div>
+                <div class="feature-icon book"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 7v14"/><path d="M3 18a1 1 0 0 1-1-1V4a1 1 0 0 1 1-1h5a4 4 0 0 1 4 4 4 4 0 0 1 4-4h5a1 1 0 0 1 1 1v13a1 1 0 0 1-1 1h-6a3 3 0 0 0-3 3 3 3 0 0 0-3-3z"/></svg></div>
                 <h3>+130 exercices</h3>
                 <p>Une base de donn&eacute;es compl&egrave;te d'exercices avec instructions et d&eacute;monstrations.</p>
             </div>
             <div class="feature-card">
-                <div class="feature-icon">&#129309;</div>
+                <div class="feature-icon users"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M22 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg></div>
                 <h3>Communaut&eacute; sportive</h3>
                 <p>Rejoignez une communaut&eacute; de passionn&eacute;s, partagez vos r&eacute;sultats et motivez-vous ensemble.</p>
             </div>
             <div class="feature-card">
-                <div class="feature-icon">&#127942;</div>
+                <div class="feature-icon trophy"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 9H4.5a2.5 2.5 0 0 1 0-5H6"/><path d="M18 9h1.5a2.5 2.5 0 0 0 0-5H18"/><path d="M4 22h16"/><path d="M10 14.66V17c0 .55-.47.98-.97 1.21C7.85 18.75 7 20.24 7 22"/><path d="M14 14.66V17c0 .55.47.98.97 1.21C16.15 18.75 17 20.24 17 22"/><path d="M18 2H6v7a6 6 0 0 0 12 0V2Z"/></svg></div>
                 <h3>D&eacute;fis et r&eacute;compenses</h3>
                 <p>Relevez des d&eacute;fis, gagnez des points et d&eacute;bloquez des r&eacute;compenses pour rester motiv&eacute;.</p>
             </div>
@@ -450,7 +479,7 @@
     <footer>
         <div class="footer-content">
             <div class="footer-brand">
-                <a href="/" class="logo">AIvance <span>Pro</span></a>
+                <a href="/" class="logo"><img src="assets/logo.png" alt="AIVancePro">AIVance<span>Pro</span></a>
                 <p>&copy; 2025 AS Corporation. Tous droits r&eacute;serv&eacute;s.</p>
             </div>
             <div class="footer-links">
