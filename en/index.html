@@ -417,6 +417,61 @@
             background-size: 300% 300%;
             animation: gradient-wave 4s ease infinite;
         }
+
+        .feature-card[data-preview] { cursor: pointer; }
+        .feature-card[data-preview]::after {
+            content: 'See preview';
+            display: block;
+            margin-top: 1rem;
+            font-size: 0.8rem;
+            color: #60A5FA;
+            opacity: 0;
+            transition: opacity 0.3s;
+        }
+        .feature-card[data-preview]:hover::after { opacity: 1; }
+
+        .preview-overlay {
+            display: none;
+            position: fixed;
+            inset: 0;
+            background: rgba(0,0,0,0.85);
+            backdrop-filter: blur(8px);
+            z-index: 200;
+            align-items: center;
+            justify-content: center;
+            padding: 2rem;
+        }
+        .preview-overlay.active { display: flex; }
+        .preview-content {
+            max-width: 420px;
+            max-height: 90vh;
+            border-radius: 20px;
+            overflow: hidden;
+            animation: preview-in 0.3s ease;
+        }
+        .preview-content img { width: 100%; height: auto; display: block; }
+        .preview-close {
+            position: fixed;
+            top: 1.5rem;
+            right: 1.5rem;
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            background: rgba(255,255,255,0.1);
+            border: none;
+            color: white;
+            font-size: 1.5rem;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            z-index: 201;
+        }
+        .preview-close:hover { background: rgba(255,255,255,0.2); }
+        @keyframes preview-in {
+            from { transform: scale(0.9); opacity: 0; }
+            to { transform: scale(1); opacity: 1; }
+        }
     </style>
 </head>
 <body>
@@ -468,27 +523,27 @@
             <p>Features designed to optimize every aspect of your training.</p>
         </div>
         <div class="features-grid">
-            <div class="feature-card">
+            <div class="feature-card" data-preview="../assets/previews/coach-ia.png">
                 <div class="feature-icon brain"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 5a3 3 0 1 0-5.997.125 4 4 0 0 0-2.526 5.77 4 4 0 0 0 .556 6.588A4 4 0 1 0 12 18Z"/><path d="M12 5a3 3 0 1 1 5.997.125 4 4 0 0 1 2.526 5.77 4 4 0 0 1-.556 6.588A4 4 0 1 1 12 18Z"/><path d="M15 13a4.5 4.5 0 0 1-3-4 4.5 4.5 0 0 1-3 4"/><path d="M17.599 6.5a3 3 0 0 0 .399-1.375"/><path d="M6.003 5.125A3 3 0 0 0 6.401 6.5"/><path d="M3.477 10.896a4 4 0 0 1 .585-.396"/><path d="M19.938 10.5a4 4 0 0 1 .585.396"/><path d="M6 18a4 4 0 0 1-1.967-.516"/><path d="M19.967 17.484A4 4 0 0 1 18 18"/></svg></div>
                 <h3>Personal AI Coach</h3>
                 <p>A virtual coach that adapts to your level, your goals and your available equipment.</p>
             </div>
-            <div class="feature-card">
+            <div class="feature-card" data-preview="../assets/previews/programmes.png">
                 <div class="feature-icon dumbbell"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14.4 14.4 9.6 9.6"/><path d="M18.657 21.485a2 2 0 1 1-2.829-2.828l-1.767 1.768a2 2 0 1 1-2.829-2.829l6.364-6.364a2 2 0 1 1 2.829 2.829l-1.768 1.767a2 2 0 1 1 2.828 2.829z"/><path d="m21.5 21.5-1.4-1.4"/><path d="M3.9 3.9 2.5 2.5"/><path d="M6.404 12.768a2 2 0 1 1-2.829-2.829l1.768-1.767a2 2 0 1 1-2.828-2.829l2.828-2.828a2 2 0 1 1 2.829 2.828l1.767-1.768a2 2 0 1 1 2.829 2.829z"/></svg></div>
                 <h3>Tailored Programs</h3>
                 <p>Automatically generated training programs adapted to your progression.</p>
             </div>
-            <div class="feature-card">
+            <div class="feature-card" data-preview="../assets/previews/progression.png">
                 <div class="feature-icon trending"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="22 7 13.5 15.5 8.5 10.5 2 17"/><polyline points="16 7 22 7 22 13"/></svg></div>
                 <h3>Progress Tracking</h3>
                 <p>Visualize your performance, track your personal records and measure your progress over time.</p>
             </div>
-            <div class="feature-card">
+            <div class="feature-card" data-preview="../assets/previews/indicateurs.png">
                 <div class="feature-icon book"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 7v14"/><path d="M3 18a1 1 0 0 1-1-1V4a1 1 0 0 1 1-1h5a4 4 0 0 1 4 4 4 4 0 0 1 4-4h5a1 1 0 0 1 1 1v13a1 1 0 0 1-1 1h-6a3 3 0 0 0-3 3 3 3 0 0 0-3-3z"/></svg></div>
                 <h3>130+ Exercises</h3>
                 <p>A comprehensive exercise database with instructions and demonstrations.</p>
             </div>
-            <div class="feature-card">
+            <div class="feature-card" data-preview="../assets/previews/communaute.png">
                 <div class="feature-icon users"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M22 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg></div>
                 <h3>Fitness Community</h3>
                 <p>Join a community of enthusiasts, share your results and motivate each other.</p>
@@ -535,6 +590,40 @@
             AS Corporation - SIRET 994 903 342 - aivancepro.fr
         </div>
     </footer>
+
+    <!-- Preview Modal -->
+    <div class="preview-overlay" id="previewOverlay">
+        <button class="preview-close" id="previewClose">&times;</button>
+        <div class="preview-content">
+            <img id="previewImage" src="" alt="Feature preview">
+        </div>
+    </div>
+
+    <script>
+    (function() {
+        var overlay = document.getElementById('previewOverlay');
+        var img = document.getElementById('previewImage');
+        var cards = document.querySelectorAll('.feature-card[data-preview]');
+        cards.forEach(function(card) {
+            card.addEventListener('click', function() {
+                img.src = card.getAttribute('data-preview');
+                overlay.classList.add('active');
+                document.body.style.overflow = 'hidden';
+            });
+        });
+        function close() {
+            overlay.classList.remove('active');
+            document.body.style.overflow = '';
+        }
+        document.getElementById('previewClose').addEventListener('click', close);
+        overlay.addEventListener('click', function(e) {
+            if (e.target === overlay) close();
+        });
+        document.addEventListener('keydown', function(e) {
+            if (e.key === 'Escape') close();
+        });
+    })();
+    </script>
 
 </body>
 </html>
