@@ -28,7 +28,7 @@
         nav { position: fixed; top: 0; width: 100%; padding: 1rem 2rem; background: rgba(0,0,0,0.9); backdrop-filter: blur(10px); z-index: 100; display: flex; justify-content: space-between; align-items: center; border-bottom: 1px solid rgba(255,255,255,0.05); }
         .logo { font-size: 1.5rem; font-weight: 800; color: var(--white); text-decoration: none; display: flex; align-items: center; gap: 0.5rem; }
         .logo img { width: 32px; height: 32px; border-radius: 8px; }
-        .logo span { background: linear-gradient(135deg, var(--blue), var(--purple)); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; }
+        .logo span { background: linear-gradient(135deg, var(--blue), var(--purple), var(--blue), var(--purple)); background-size: 300% 300%; -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; animation: gradient-wave 4s ease infinite; }
         .nav-links { display: flex; gap: 2rem; list-style: none; }
         .nav-links a { color: var(--gray); text-decoration: none; font-size: 0.9rem; font-weight: 500; }
         .nav-links a:hover { color: var(--white); }
@@ -37,19 +37,19 @@
         .tag { display: inline-block; padding: 0.25rem 0.75rem; background: rgba(37,99,235,0.1); border-radius: 50px; font-size: 0.75rem; color: #60A5FA; font-weight: 500; margin-bottom: 1rem; }
         h1 { font-size: 2.5rem; font-weight: 700; margin-bottom: 0.5rem; line-height: 1.2; }
         .meta { color: var(--gray); margin-bottom: 3rem; font-size: 0.9rem; }
-        h2 { font-size: 1.5rem; font-weight: 600; margin-top: 2.5rem; margin-bottom: 1rem; background: linear-gradient(135deg, var(--blue), var(--purple)); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; }
+        h2 { font-size: 1.5rem; font-weight: 600; margin-top: 2.5rem; margin-bottom: 1rem; background: linear-gradient(135deg, var(--blue), var(--purple), var(--blue), var(--purple)); background-size: 300% 300%; -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; animation: gradient-wave 4s ease infinite; }
         p { color: #C0C0D0; font-size: 0.95rem; margin-bottom: 1.2rem; }
         ul { padding-left: 1.5rem; margin-bottom: 1.2rem; }
         li { color: #C0C0D0; font-size: 0.95rem; margin-bottom: 0.5rem; }
         strong { color: var(--white); }
-        .tip-number { display: inline-block; width: 32px; height: 32px; background: linear-gradient(135deg, var(--blue), var(--purple)); border-radius: 50%; text-align: center; line-height: 32px; font-weight: 700; font-size: 0.9rem; margin-right: 0.5rem; color: white; }
+        .tip-number { display: inline-block; width: 32px; height: 32px; background: linear-gradient(135deg, var(--blue), var(--purple), var(--blue), var(--purple)); background-size: 300% 300%; animation: gradient-wave 4s ease infinite; border-radius: 50%; text-align: center; line-height: 32px; font-weight: 700; font-size: 0.9rem; margin-right: 0.5rem; color: white; }
         .cta { background: var(--dark-light); border: 1px solid rgba(255,255,255,0.05); border-radius: 16px; padding: 2.5rem; text-align: center; margin-top: 3rem; }
         .cta h3 { font-size: 1.3rem; margin-bottom: 0.75rem; }
         .cta p { color: var(--gray); margin-bottom: 1.5rem; }
         .cta-buttons { display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap; }
         .cta-btn { display: inline-block; padding: 0.75rem 1.5rem; border-radius: 10px; text-decoration: none; font-weight: 600; font-size: 0.9rem; transition: transform 0.3s; }
         .cta-btn:hover { transform: translateY(-2px); }
-        .cta-btn.primary { background: linear-gradient(135deg, var(--blue), var(--purple)); color: var(--white); }
+        .cta-btn.primary { background: linear-gradient(135deg, var(--blue), var(--purple), var(--blue), var(--purple)); background-size: 300% 300%; animation: gradient-wave 4s ease infinite; color: var(--white); }
         .cta-btn.secondary { background: var(--dark); border: 1px solid rgba(255,255,255,0.1); color: var(--white); }
         .back { display: inline-block; margin-top: 2rem; color: var(--gray); text-decoration: none; font-size: 0.9rem; }
         .back:hover { color: var(--white); }
@@ -59,6 +59,25 @@
     
         .lang-switch { color: var(--gray-light); text-decoration: none; font-size: 0.85rem; font-weight: 600; border: 1px solid rgba(255,255,255,0.15); padding: 0.3rem 0.7rem; border-radius: 6px; transition: all 0.3s; }
         .lang-switch:hover { color: var(--white); border-color: rgba(255,255,255,0.4); }
+
+        @keyframes gradient-wave {
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
+        }
+        .gradient-text {
+            background: linear-gradient(135deg, var(--blue), var(--purple), var(--blue), var(--purple));
+            background-size: 300% 300%;
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            animation: gradient-wave 4s ease infinite;
+        }
+        .gradient-bg {
+            background: linear-gradient(135deg, var(--blue), var(--purple), var(--blue), var(--purple));
+            background-size: 300% 300%;
+            animation: gradient-wave 4s ease infinite;
+        }
     </style>
 </head>
 <body>

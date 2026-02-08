@@ -105,10 +105,12 @@
         }
 
         .logo span {
-            background: linear-gradient(135deg, var(--blue), var(--purple));
+            background: linear-gradient(135deg, var(--blue), var(--purple), var(--blue), var(--purple));
+            background-size: 300% 300%;
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
             background-clip: text;
+            animation: gradient-wave 4s ease infinite;
         }
 
         .nav-links {
@@ -165,10 +167,12 @@
         }
 
         .hero h1 span {
-            background: linear-gradient(135deg, var(--blue), var(--purple));
+            background: linear-gradient(135deg, var(--blue), var(--purple), var(--blue), var(--purple));
+            background-size: 300% 300%;
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
             background-clip: text;
+            animation: gradient-wave 4s ease infinite;
         }
 
         .hero p {
@@ -205,7 +209,9 @@
         }
 
         .download-btn.appstore {
-            background: linear-gradient(135deg, var(--blue), var(--purple));
+            background: linear-gradient(135deg, var(--blue), var(--purple), var(--blue), var(--purple));
+            background-size: 300% 300%;
+            animation: gradient-wave 4s ease infinite;
             color: var(--white);
         }
 
@@ -392,6 +398,25 @@
     
         .lang-switch { color: var(--gray-light); text-decoration: none; font-size: 0.85rem; font-weight: 600; border: 1px solid rgba(255,255,255,0.15); padding: 0.3rem 0.7rem; border-radius: 6px; transition: all 0.3s; }
         .lang-switch:hover { color: var(--white); border-color: rgba(255,255,255,0.4); }
+
+        @keyframes gradient-wave {
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
+        }
+        .gradient-text {
+            background: linear-gradient(135deg, var(--blue), var(--purple), var(--blue), var(--purple));
+            background-size: 300% 300%;
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            animation: gradient-wave 4s ease infinite;
+        }
+        .gradient-bg {
+            background: linear-gradient(135deg, var(--blue), var(--purple), var(--blue), var(--purple));
+            background-size: 300% 300%;
+            animation: gradient-wave 4s ease infinite;
+        }
     </style>
 </head>
 <body>
