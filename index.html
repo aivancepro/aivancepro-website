@@ -802,17 +802,15 @@
             tick();
         }
 
-        // Stats: count users & sessions
+        // Stats: count users & sessions via RPC (bypasses RLS safely)
         async function loadStats() {
             try {
-                const [usersRes, sessionsRes] = await Promise.all([
-                    sb.from('public_profile').select('*', { count: 'exact', head: true }),
-                    sb.from('session').select('*', { count: 'exact', head: true })
-                ]);
-                const usersEl = document.getElementById('stat-users');
-                const sessionsEl = document.getElementById('stat-sessions');
-                if (usersRes.count != null) animateCounter(usersEl, usersRes.count);
-                if (sessionsRes.count != null) animateCounter(sessionsEl, sessionsRes.count);
+                var { data, error } = await sb.rpc('public_stats_count');
+                if (error) throw error;
+                var usersEl = document.getElementById('stat-users');
+                var sessionsEl = document.getElementById('stat-sessions');
+                if (data && data.users != null) animateCounter(usersEl, data.users);
+                if (data && data.sessions != null) animateCounter(sessionsEl, data.sessions);
             } catch (e) {
                 console.error('Stats error:', e);
             }
