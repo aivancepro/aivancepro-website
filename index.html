@@ -387,13 +387,162 @@
             font-size: 0.85rem;
         }
 
+        /* Stats Section */
+        .stats {
+            padding: 4rem 2rem;
+            max-width: 1100px;
+            margin: 0 auto;
+        }
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 2rem;
+        }
+        .stat-card {
+            text-align: center;
+            padding: 2rem 1.5rem;
+            background: var(--dark-light);
+            border: 1px solid rgba(255,255,255,0.05);
+            border-radius: 16px;
+        }
+        .stat-icon {
+            width: 48px;
+            height: 48px;
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 1rem;
+        }
+        .stat-icon svg { width: 24px; height: 24px; }
+        .stat-icon.users-icon { background: rgba(96, 165, 250, 0.15); }
+        .stat-icon.users-icon svg { stroke: #60A5FA; }
+        .stat-icon.sessions-icon { background: rgba(74, 222, 128, 0.15); }
+        .stat-icon.sessions-icon svg { stroke: #4ADE80; }
+        .stat-icon.exercises-icon { background: rgba(251, 146, 60, 0.15); }
+        .stat-icon.exercises-icon svg { stroke: #FB923C; }
+        .stat-number {
+            font-size: 2.5rem;
+            font-weight: 800;
+            background: linear-gradient(135deg, var(--blue), var(--purple));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+        .stat-label {
+            color: var(--gray);
+            font-size: 0.95rem;
+            margin-top: 0.3rem;
+        }
+
+        /* Leaderboard Section */
+        .leaderboard {
+            padding: 6rem 2rem;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        .leaderboard-list {
+            display: flex;
+            flex-direction: column;
+            gap: 0.75rem;
+        }
+        .leaderboard-row {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            padding: 1rem 1.25rem;
+            background: var(--dark-light);
+            border: 1px solid rgba(255,255,255,0.05);
+            border-radius: 12px;
+            transition: border-color 0.3s, transform 0.2s;
+        }
+        .leaderboard-row:hover {
+            border-color: rgba(37, 99, 235, 0.3);
+            transform: translateX(4px);
+        }
+        .leaderboard-row.top-1 { border-color: rgba(251, 191, 36, 0.4); background: linear-gradient(135deg, rgba(251, 191, 36, 0.08), var(--dark-light)); }
+        .leaderboard-row.top-2 { border-color: rgba(161, 161, 170, 0.3); background: linear-gradient(135deg, rgba(161, 161, 170, 0.06), var(--dark-light)); }
+        .leaderboard-row.top-3 { border-color: rgba(217, 119, 6, 0.3); background: linear-gradient(135deg, rgba(217, 119, 6, 0.06), var(--dark-light)); }
+        .rank-badge {
+            width: 32px;
+            height: 32px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 700;
+            font-size: 0.85rem;
+            flex-shrink: 0;
+            color: var(--gray);
+            background: rgba(255,255,255,0.05);
+        }
+        .rank-badge.gold { background: rgba(251, 191, 36, 0.2); color: #FBBF24; }
+        .rank-badge.silver { background: rgba(161, 161, 170, 0.2); color: #A1A1AA; }
+        .rank-badge.bronze { background: rgba(217, 119, 6, 0.2); color: #D97706; }
+        .lb-avatar {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            background: linear-gradient(135deg, var(--blue), var(--purple));
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 600;
+            font-size: 0.85rem;
+            flex-shrink: 0;
+            overflow: hidden;
+            border: 2px solid rgba(255,255,255,0.1);
+        }
+        .lb-avatar img { width: 100%; height: 100%; object-fit: cover; }
+        .lb-info { flex: 1; min-width: 0; }
+        .lb-name { font-weight: 600; font-size: 0.95rem; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+        .lb-meta { font-size: 0.8rem; color: var(--gray); margin-top: 0.15rem; }
+        .lb-points {
+            font-weight: 700;
+            font-size: 0.9rem;
+            padding: 0.35rem 0.85rem;
+            border-radius: 50px;
+            background: linear-gradient(135deg, #FBBF24, #F97316);
+            color: white;
+            white-space: nowrap;
+            flex-shrink: 0;
+        }
+        .lb-streak { font-size: 0.8rem; color: #FB923C; margin-left: 0.5rem; white-space: nowrap; flex-shrink: 0; }
+        .leaderboard-loading {
+            text-align: center;
+            padding: 3rem;
+            color: var(--gray);
+        }
+        .leaderboard-loading .spinner {
+            width: 32px;
+            height: 32px;
+            border: 3px solid rgba(255,255,255,0.1);
+            border-top-color: var(--blue);
+            border-radius: 50%;
+            animation: spin 0.8s linear infinite;
+            margin: 0 auto 1rem;
+        }
+        @keyframes spin { to { transform: rotate(360deg); } }
+        .leaderboard-refresh {
+            text-align: center;
+            margin-top: 1rem;
+            font-size: 0.75rem;
+            color: var(--gray);
+        }
+
         /* Responsive */
         @media (max-width: 768px) {
             .hero h1 { font-size: 2.2rem; }
             .features-grid { grid-template-columns: 1fr; }
+            .stats-grid { grid-template-columns: 1fr; gap: 1rem; }
+            .stat-number { font-size: 2rem; }
             .nav-links { display: none; }
             .footer-content { flex-direction: column; }
             .footer-links { flex-direction: column; gap: 1.5rem; }
+            .leaderboard-row { gap: 0.75rem; padding: 0.85rem 1rem; }
+            .lb-avatar { width: 34px; height: 34px; font-size: 0.75rem; }
+            .lb-name { font-size: 0.85rem; }
+            .lb-streak { display: none; }
         }
     
         .lang-switch { color: var(--gray-light); text-decoration: none; font-size: 0.85rem; font-weight: 600; border: 1px solid rgba(255,255,255,0.15); padding: 0.3rem 0.7rem; border-radius: 6px; transition: all 0.3s; }
@@ -497,7 +646,7 @@
     <section class="hero">
         <div class="hero-content">
             <img src="assets/logo-512.png" alt="AIVancePro" style="width:100px;height:100px;border-radius:22px;margin:0 auto 1.5rem;display:block;">
-            <div class="badge">Your AI-powered fitness coach</div>
+            <div class="badge">Votre coach fitness propuls&eacute; par l'IA</div>
             <h1>Transformez votre <span>entra&icirc;nement</span> avec l'IA</h1>
             <p>AIVancePro est votre coach fitness personnel propuls&eacute; par l'intelligence artificielle. Programmes sur mesure, suivi de progression et communaut&eacute; sportive.</p>
             <div class="download-buttons">
@@ -515,6 +664,27 @@
                         <strong>Google Play</strong>
                     </div>
                 </span>
+            </div>
+        </div>
+    </section>
+
+    <!-- Stats Section -->
+    <section class="stats" id="stats">
+        <div class="stats-grid">
+            <div class="stat-card">
+                <div class="stat-icon users-icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M22 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg></div>
+                <div class="stat-number" id="stat-users">0</div>
+                <div class="stat-label">Utilisateurs actifs</div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-icon sessions-icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="22 7 13.5 15.5 8.5 10.5 2 17"/><polyline points="16 7 22 7 22 13"/></svg></div>
+                <div class="stat-number" id="stat-sessions">0</div>
+                <div class="stat-label">S&eacute;ances compl&eacute;t&eacute;es</div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-icon exercises-icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 7v14"/><path d="M3 18a1 1 0 0 1-1-1V4a1 1 0 0 1 1-1h5a4 4 0 0 1 4 4 4 4 0 0 1 4-4h5a1 1 0 0 1 1 1v13a1 1 0 0 1-1 1h-6a3 3 0 0 0-3 3 3 3 0 0 0-3-3z"/></svg></div>
+                <div class="stat-number">130+</div>
+                <div class="stat-label">Exercices disponibles</div>
             </div>
         </div>
     </section>
@@ -559,12 +729,27 @@
         </div>
     </section>
 
+    <!-- Leaderboard Section -->
+    <section class="leaderboard" id="leaderboard">
+        <div class="section-title">
+            <h2>Classement en direct</h2>
+            <p>Les meilleurs athl&egrave;tes de la communaut&eacute; AIVancePro, mis &agrave; jour en temps r&eacute;el.</p>
+        </div>
+        <div id="leaderboard-content">
+            <div class="leaderboard-loading">
+                <div class="spinner"></div>
+                <p>Chargement du classement...</p>
+            </div>
+        </div>
+        <div class="leaderboard-refresh" id="leaderboard-refresh"></div>
+    </section>
+
     <!-- Footer -->
     <footer>
         <div class="footer-content">
             <div class="footer-brand">
                 <a href="/" class="logo"><img src="assets/logo.png" alt="AIVancePro"><span class="logo-text">AIVance<span>Pro</span></span></a>
-                <p>&copy; 2025 AS Corporation. Tous droits r&eacute;serv&eacute;s.</p>
+                <p>&copy; 2026 AS Corporation. Tous droits r&eacute;serv&eacute;s.</p>
             </div>
             <div class="footer-links">
                 <div class="footer-col">
@@ -595,5 +780,151 @@
     </footer>
 
 
+    <!-- Supabase SDK -->
+    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+    <script>
+    (function() {
+        const sb = supabase.createClient(
+            'https://vzmtvhcvyqzkmestdbko.supabase.co',
+            'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InZ6bXR2aGN2eXF6a21lc3RkYmtvIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NzA4OTA0MTEsImV4cCI6MjA4NjQ2NjQxMX0.rvBz2uIsr3YtLIw84Kor3eVFpH4FiXVZgbufiJH3uio'
+        );
+
+        // Animated counter
+        function animateCounter(el, target) {
+            let current = 0;
+            const duration = 1500;
+            const step = Math.max(1, Math.floor(target / (duration / 16)));
+            function tick() {
+                current = Math.min(current + step, target);
+                el.textContent = current.toLocaleString('fr-FR');
+                if (current < target) requestAnimationFrame(tick);
+            }
+            tick();
+        }
+
+        // Stats: count users & sessions
+        async function loadStats() {
+            try {
+                const [usersRes, sessionsRes] = await Promise.all([
+                    sb.from('public_profile').select('*', { count: 'exact', head: true }),
+                    sb.from('session').select('*', { count: 'exact', head: true })
+                ]);
+                const usersEl = document.getElementById('stat-users');
+                const sessionsEl = document.getElementById('stat-sessions');
+                if (usersRes.count != null) animateCounter(usersEl, usersRes.count);
+                if (sessionsRes.count != null) animateCounter(sessionsEl, sessionsRes.count);
+            } catch (e) {
+                console.error('Stats error:', e);
+            }
+        }
+
+        // Stats: trigger on scroll into view
+        let statsLoaded = false;
+        const statsObserver = new IntersectionObserver(function(entries) {
+            if (entries[0].isIntersecting && !statsLoaded) {
+                statsLoaded = true;
+                loadStats();
+                statsObserver.disconnect();
+            }
+        }, { threshold: 0.3 });
+        const statsSection = document.getElementById('stats');
+        if (statsSection) statsObserver.observe(statsSection);
+
+        // Leaderboard
+        function getInitials(name) {
+            if (!name) return 'U';
+            var parts = name.trim().split(' ');
+            if (parts.length > 1) return (parts[0][0] + parts[parts.length - 1][0]).toUpperCase();
+            return name.substring(0, 2).toUpperCase();
+        }
+
+        function rankClass(i) {
+            if (i === 0) return 'top-1';
+            if (i === 1) return 'top-2';
+            if (i === 2) return 'top-3';
+            return '';
+        }
+
+        function badgeClass(i) {
+            if (i === 0) return 'gold';
+            if (i === 1) return 'silver';
+            if (i === 2) return 'bronze';
+            return '';
+        }
+
+        function rankIcon(i) {
+            if (i === 0) return '\uD83C\uDFC6';
+            if (i === 1) return '\uD83E\uDD48';
+            if (i === 2) return '\uD83E\uDD49';
+            return '#' + (i + 1);
+        }
+
+        async function loadLeaderboard() {
+            var container = document.getElementById('leaderboard-content');
+            try {
+                var { data: points, error: pErr } = await sb.from('user_points')
+                    .select('user_email, total_points, level, streak_days')
+                    .order('total_points', { ascending: false })
+                    .limit(20);
+                if (pErr) throw pErr;
+                if (!points || points.length === 0) {
+                    container.innerHTML = '<p style="text-align:center;color:#71717A;padding:2rem;">Aucune donn\u00e9e disponible pour le moment.</p>';
+                    return;
+                }
+
+                var emails = points.map(function(p) { return p.user_email; });
+                var { data: profiles, error: prErr } = await sb.from('public_profile')
+                    .select('user_email, username, full_name, profile_picture_url, is_profile_public')
+                    .in('user_email', emails);
+                if (prErr) throw prErr;
+
+                var profileMap = {};
+                (profiles || []).forEach(function(p) { profileMap[p.user_email] = p; });
+
+                var rows = points
+                    .filter(function(p) {
+                        var prof = profileMap[p.user_email];
+                        return prof && prof.is_profile_public !== false;
+                    })
+                    .slice(0, 10);
+
+                if (rows.length === 0) {
+                    container.innerHTML = '<p style="text-align:center;color:#71717A;padding:2rem;">Aucune donn\u00e9e disponible pour le moment.</p>';
+                    return;
+                }
+
+                var html = '<div class="leaderboard-list">';
+                rows.forEach(function(p, i) {
+                    var prof = profileMap[p.user_email] || {};
+                    var name = prof.username || prof.full_name || 'Utilisateur';
+                    var avatarHtml = prof.profile_picture_url
+                        ? '<img src="' + prof.profile_picture_url + '" alt="" loading="lazy">'
+                        : getInitials(name);
+                    var streak = p.streak_days > 0 ? '<span class="lb-streak">\uD83D\uDD25 ' + p.streak_days + 'j</span>' : '';
+                    html += '<div class="leaderboard-row ' + rankClass(i) + '">'
+                        + '<div class="rank-badge ' + badgeClass(i) + '">' + rankIcon(i) + '</div>'
+                        + '<div class="lb-avatar">' + avatarHtml + '</div>'
+                        + '<div class="lb-info"><div class="lb-name">' + name + '</div>'
+                        + '<div class="lb-meta">Niv. ' + (p.level || 1) + '</div></div>'
+                        + streak
+                        + '<div class="lb-points">' + (p.total_points || 0).toLocaleString('fr-FR') + ' pts</div>'
+                        + '</div>';
+                });
+                html += '</div>';
+                container.innerHTML = html;
+
+                var refreshEl = document.getElementById('leaderboard-refresh');
+                var now = new Date();
+                refreshEl.textContent = 'Mis \u00e0 jour \u00e0 ' + now.getHours().toString().padStart(2, '0') + ':' + now.getMinutes().toString().padStart(2, '0');
+            } catch (e) {
+                console.error('Leaderboard error:', e);
+                container.innerHTML = '<p style="text-align:center;color:#71717A;padding:2rem;">Impossible de charger le classement.</p>';
+            }
+        }
+
+        loadLeaderboard();
+        setInterval(loadLeaderboard, 60000);
+    })();
+    </script>
 </body>
 </html>
