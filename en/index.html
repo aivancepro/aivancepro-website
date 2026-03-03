@@ -548,6 +548,165 @@
         .lang-switch { color: var(--gray-light); text-decoration: none; font-size: 0.85rem; font-weight: 600; border: 1px solid rgba(255,255,255,0.15); padding: 0.3rem 0.7rem; border-radius: 6px; transition: all 0.3s; }
         .lang-switch:hover { color: var(--white); border-color: rgba(255,255,255,0.4); }
 
+        /* Screenshots Gallery */
+        .screenshots {
+            padding: 4rem 2rem 2rem;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        .screenshots-track {
+            display: flex;
+            gap: 1.5rem;
+            overflow-x: auto;
+            scroll-snap-type: x mandatory;
+            -webkit-overflow-scrolling: touch;
+            padding: 1rem 0 2rem;
+            scrollbar-width: none;
+        }
+        .screenshots-track::-webkit-scrollbar { display: none; }
+        .screenshot-item {
+            flex: 0 0 auto;
+            width: 260px;
+            scroll-snap-align: center;
+            border-radius: 20px;
+            overflow: hidden;
+            border: 1px solid rgba(255,255,255,0.08);
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+        .screenshot-item:hover {
+            transform: translateY(-6px);
+            box-shadow: 0 20px 40px rgba(37, 99, 235, 0.15);
+        }
+        .screenshot-item img {
+            width: 100%;
+            height: auto;
+            display: block;
+        }
+
+        /* How it works */
+        .how-it-works {
+            padding: 6rem 2rem;
+            max-width: 900px;
+            margin: 0 auto;
+        }
+        .steps-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 2rem;
+            position: relative;
+        }
+        .steps-grid::before {
+            content: '';
+            position: absolute;
+            top: 40px;
+            left: 15%;
+            right: 15%;
+            height: 2px;
+            background: linear-gradient(90deg, var(--blue), var(--purple));
+            opacity: 0.3;
+        }
+        .step-card {
+            text-align: center;
+            position: relative;
+        }
+        .step-number {
+            width: 56px;
+            height: 56px;
+            border-radius: 50%;
+            background: linear-gradient(135deg, var(--blue), var(--purple));
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 800;
+            font-size: 1.3rem;
+            margin: 0 auto 1.2rem;
+            position: relative;
+            z-index: 1;
+        }
+        .step-icon {
+            width: 48px;
+            height: 48px;
+            margin: 0 auto 0.8rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        .step-icon svg { width: 28px; height: 28px; stroke: var(--gray-light); }
+        .step-card h3 {
+            font-size: 1.1rem;
+            font-weight: 600;
+            margin-bottom: 0.5rem;
+        }
+        .step-card p {
+            color: var(--gray);
+            font-size: 0.9rem;
+            line-height: 1.5;
+        }
+
+        /* Testimonials */
+        .testimonials {
+            padding: 6rem 2rem;
+            max-width: 1100px;
+            margin: 0 auto;
+        }
+        .testimonials-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 2rem;
+        }
+        .testimonial-card {
+            background: var(--dark-light);
+            border: 1px solid rgba(255,255,255,0.05);
+            border-radius: 16px;
+            padding: 2rem;
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
+        }
+        .testimonial-stars {
+            color: #FBBF24;
+            font-size: 1rem;
+            letter-spacing: 2px;
+        }
+        .testimonial-text {
+            color: var(--gray-light);
+            font-size: 0.95rem;
+            line-height: 1.6;
+            font-style: italic;
+            flex: 1;
+        }
+        .testimonial-author {
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+        }
+        .testimonial-avatar {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            background: linear-gradient(135deg, var(--blue), var(--purple));
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 600;
+            font-size: 0.85rem;
+        }
+        .testimonial-name {
+            font-weight: 600;
+            font-size: 0.9rem;
+        }
+        .testimonial-role {
+            color: var(--gray);
+            font-size: 0.8rem;
+        }
+
+        @media (max-width: 768px) {
+            .steps-grid { grid-template-columns: 1fr; gap: 2.5rem; }
+            .steps-grid::before { display: none; }
+            .testimonials-grid { grid-template-columns: 1fr; }
+            .screenshot-item { width: 220px; }
+        }
+
         @keyframes gradient-wave {
             0% { background-position: 0% 50%; }
             50% { background-position: 100% 50%; }
@@ -665,6 +824,51 @@
         </div>
     </section>
 
+    <!-- Screenshots Gallery -->
+    <section class="screenshots" id="screenshots">
+        <div class="section-title">
+            <h2>Discover the app</h2>
+            <p>A sneak peek at what awaits you in AIVancePro.</p>
+        </div>
+        <div class="screenshots-track">
+            <div class="screenshot-item"><img src="../assets/screenshots/en/slice-7.png" alt="AIVancePro Dashboard" loading="lazy"></div>
+            <div class="screenshot-item"><img src="../assets/screenshots/en/slice-2.png" alt="AI Coach - Workout generation" loading="lazy"></div>
+            <div class="screenshot-item"><img src="../assets/screenshots/en/slice-3.png" alt="AI Coach - Generated program" loading="lazy"></div>
+            <div class="screenshot-item"><img src="../assets/screenshots/en/slice-4.png" alt="AI Periodization plan" loading="lazy"></div>
+            <div class="screenshot-item"><img src="../assets/screenshots/en/slice-6.png" alt="Live workout tracking" loading="lazy"></div>
+            <div class="screenshot-item"><img src="../assets/screenshots/en/slice-8.png" alt="Progress tracking" loading="lazy"></div>
+            <div class="screenshot-item"><img src="../assets/screenshots/en/slice-9.png" alt="Fitness community" loading="lazy"></div>
+        </div>
+    </section>
+
+    <!-- How it works -->
+    <section class="how-it-works" id="how-it-works">
+        <div class="section-title">
+            <h2>How it works</h2>
+            <p>Get started in 3 simple steps.</p>
+        </div>
+        <div class="steps-grid">
+            <div class="step-card">
+                <div class="step-number">1</div>
+                <div class="step-icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><line x1="19" y1="8" x2="19" y2="14"/><line x1="22" y1="11" x2="16" y2="11"/></svg></div>
+                <h3>Create your profile</h3>
+                <p>Tell us your level, goals and available equipment.</p>
+            </div>
+            <div class="step-card">
+                <div class="step-number">2</div>
+                <div class="step-icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 5a3 3 0 1 0-5.997.125 4 4 0 0 0-2.526 5.77 4 4 0 0 0 .556 6.588A4 4 0 1 0 12 18Z"/><path d="M12 5a3 3 0 1 1 5.997.125 4 4 0 0 1 2.526 5.77 4 4 0 0 1-.556 6.588A4 4 0 1 1 12 18Z"/></svg></div>
+                <h3>AI generates your workouts</h3>
+                <p>A tailored program adapted to your profile, generated in seconds.</p>
+            </div>
+            <div class="step-card">
+                <div class="step-number">3</div>
+                <div class="step-icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="22 7 13.5 15.5 8.5 10.5 2 17"/><polyline points="16 7 22 7 22 13"/></svg></div>
+                <h3>Progress day after day</h3>
+                <p>Track your performance, beat your records and reach your goals.</p>
+            </div>
+        </div>
+    </section>
+
     <!-- Stats Section -->
     <section class="stats" id="stats">
         <div class="stats-grid">
@@ -710,7 +914,7 @@
             </div>
             <div class="feature-card">
                 <div class="feature-icon book"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 7v14"/><path d="M3 18a1 1 0 0 1-1-1V4a1 1 0 0 1 1-1h5a4 4 0 0 1 4 4 4 4 0 0 1 4-4h5a1 1 0 0 1 1 1v13a1 1 0 0 1-1 1h-6a3 3 0 0 0-3 3 3 3 0 0 0-3-3z"/></svg></div>
-                <h3>130+ Exercises</h3>
+                <h3>240+ Exercises</h3>
                 <p>A comprehensive exercise database with instructions and demonstrations.</p>
             </div>
             <div class="feature-card">
@@ -722,6 +926,49 @@
                 <div class="feature-icon trophy"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 9H4.5a2.5 2.5 0 0 1 0-5H6"/><path d="M18 9h1.5a2.5 2.5 0 0 0 0-5H18"/><path d="M4 22h16"/><path d="M10 14.66V17c0 .55-.47.98-.97 1.21C7.85 18.75 7 20.24 7 22"/><path d="M14 14.66V17c0 .55.47.98.97 1.21C16.15 18.75 17 20.24 17 22"/><path d="M18 2H6v7a6 6 0 0 0 12 0V2Z"/></svg></div>
                 <h3>Challenges &amp; Rewards</h3>
                 <p>Take on challenges, earn points and unlock rewards to stay motivated.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials Section -->
+    <section class="testimonials" id="testimonials">
+        <div class="section-title">
+            <h2>What our users say</h2>
+            <p>Join a community of athletes who progress every day.</p>
+        </div>
+        <div class="testimonials-grid">
+            <div class="testimonial-card">
+                <div class="testimonial-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+                <p class="testimonial-text">&ldquo; Testimonial coming soon &mdash; Your review could appear here! &rdquo;</p>
+                <div class="testimonial-author">
+                    <div class="testimonial-avatar">?</div>
+                    <div>
+                        <div class="testimonial-name">Your name</div>
+                        <div class="testimonial-role">AIVancePro User</div>
+                    </div>
+                </div>
+            </div>
+            <div class="testimonial-card">
+                <div class="testimonial-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+                <p class="testimonial-text">&ldquo; Testimonial coming soon &mdash; Your review could appear here! &rdquo;</p>
+                <div class="testimonial-author">
+                    <div class="testimonial-avatar">?</div>
+                    <div>
+                        <div class="testimonial-name">Your name</div>
+                        <div class="testimonial-role">AIVancePro User</div>
+                    </div>
+                </div>
+            </div>
+            <div class="testimonial-card">
+                <div class="testimonial-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+                <p class="testimonial-text">&ldquo; Testimonial coming soon &mdash; Your review could appear here! &rdquo;</p>
+                <div class="testimonial-author">
+                    <div class="testimonial-avatar">?</div>
+                    <div>
+                        <div class="testimonial-name">Your name</div>
+                        <div class="testimonial-role">AIVancePro User</div>
+                    </div>
+                </div>
             </div>
         </div>
     </section>
