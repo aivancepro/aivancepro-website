@@ -74,6 +74,35 @@
         <xhtml:link rel="alternate" hreflang="en" href="https://aivancepro.fr/en/support.html"/>
     </url>
 
+    <url>
+        <loc>https://aivancepro.fr/blog/periodisation-programme-entrainement.html</loc>
+        <lastmod>2026-03-03</lastmod>
+        <priority>0.8</priority>
+        <xhtml:link rel="alternate" hreflang="fr" href="https://aivancepro.fr/blog/periodisation-programme-entrainement.html"/>
+        <xhtml:link rel="alternate" hreflang="en" href="https://aivancepro.fr/en/blog/periodization-training-program.html"/>
+    </url>
+    <url>
+        <loc>https://aivancepro.fr/blog/erreurs-musculation.html</loc>
+        <lastmod>2026-03-03</lastmod>
+        <priority>0.8</priority>
+        <xhtml:link rel="alternate" hreflang="fr" href="https://aivancepro.fr/blog/erreurs-musculation.html"/>
+        <xhtml:link rel="alternate" hreflang="en" href="https://aivancepro.fr/en/blog/common-workout-mistakes.html"/>
+    </url>
+    <url>
+        <loc>https://aivancepro.fr/blog/nutrition-musculation-bases.html</loc>
+        <lastmod>2026-03-03</lastmod>
+        <priority>0.8</priority>
+        <xhtml:link rel="alternate" hreflang="fr" href="https://aivancepro.fr/blog/nutrition-musculation-bases.html"/>
+        <xhtml:link rel="alternate" hreflang="en" href="https://aivancepro.fr/en/blog/nutrition-workout-basics.html"/>
+    </url>
+    <url>
+        <loc>https://aivancepro.fr/blog/choisir-exercices-objectifs.html</loc>
+        <lastmod>2026-03-03</lastmod>
+        <priority>0.8</priority>
+        <xhtml:link rel="alternate" hreflang="fr" href="https://aivancepro.fr/blog/choisir-exercices-objectifs.html"/>
+        <xhtml:link rel="alternate" hreflang="en" href="https://aivancepro.fr/en/blog/choosing-exercises-goals.html"/>
+    </url>
+
     <!-- English pages -->
     <url>
         <loc>https://aivancepro.fr/en/</loc>
@@ -145,5 +174,33 @@
         <priority>0.5</priority>
         <xhtml:link rel="alternate" hreflang="fr" href="https://aivancepro.fr/support.html"/>
         <xhtml:link rel="alternate" hreflang="en" href="https://aivancepro.fr/en/support.html"/>
+    </url>
+    <url>
+        <loc>https://aivancepro.fr/en/blog/periodization-training-program.html</loc>
+        <lastmod>2026-03-03</lastmod>
+        <priority>0.8</priority>
+        <xhtml:link rel="alternate" hreflang="fr" href="https://aivancepro.fr/blog/periodisation-programme-entrainement.html"/>
+        <xhtml:link rel="alternate" hreflang="en" href="https://aivancepro.fr/en/blog/periodization-training-program.html"/>
+    </url>
+    <url>
+        <loc>https://aivancepro.fr/en/blog/common-workout-mistakes.html</loc>
+        <lastmod>2026-03-03</lastmod>
+        <priority>0.8</priority>
+        <xhtml:link rel="alternate" hreflang="fr" href="https://aivancepro.fr/blog/erreurs-musculation.html"/>
+        <xhtml:link rel="alternate" hreflang="en" href="https://aivancepro.fr/en/blog/common-workout-mistakes.html"/>
+    </url>
+    <url>
+        <loc>https://aivancepro.fr/en/blog/nutrition-workout-basics.html</loc>
+        <lastmod>2026-03-03</lastmod>
+        <priority>0.8</priority>
+        <xhtml:link rel="alternate" hreflang="fr" href="https://aivancepro.fr/blog/nutrition-musculation-bases.html"/>
+        <xhtml:link rel="alternate" hreflang="en" href="https://aivancepro.fr/en/blog/nutrition-workout-basics.html"/>
+    </url>
+    <url>
+        <loc>https://aivancepro.fr/en/blog/choosing-exercises-goals.html</loc>
+        <lastmod>2026-03-03</lastmod>
+        <priority>0.8</priority>
+        <xhtml:link rel="alternate" hreflang="fr" href="https://aivancepro.fr/blog/choisir-exercices-objectifs.html"/>
+        <xhtml:link rel="alternate" hreflang="en" href="https://aivancepro.fr/en/blog/choosing-exercises-goals.html"/>
     </url>
 </urlset>
