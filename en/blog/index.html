@@ -6,165 +6,173 @@
     <link rel="icon" type="image/png" sizes="64x64" href="../../assets/favicon-64.png">
     <link rel="icon" type="image/png" sizes="48x48" href="../../assets/favicon-48.png">
     <link rel="apple-touch-icon" sizes="128x128" href="../../assets/apple-touch-icon.png">
-    <title>Fitness &amp; Weight Training Blog - AIVancePro</title>
-    <meta name="description" content="Fitness, weight training and workout tips. Discover our articles to optimize your athletic performance with the help of AI.">
+    <title>Fitness &amp; Workout Blog - AIVancePro</title>
+    <meta name="description" content="Fitness tips, workout advice and training guides. Optimize your performance with the help of AI coaching.">
     <link rel="canonical" href="https://aivancepro.fr/en/blog/">
     <link rel="alternate" hreflang="fr" href="https://aivancepro.fr/blog/">
     <link rel="alternate" hreflang="en" href="https://aivancepro.fr/en/blog/">
-    <link rel="alternate" hreflang="x-default" href="https://aivancepro.fr/blog/">
+    <link rel="alternate" hreflang="de" href="https://aivancepro.fr/de/blog/">
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://aivancepro.fr/en/blog/">
-    <meta property="og:title" content="Fitness &amp; Weight Training Blog - AIVancePro">
-    <meta property="og:description" content="Fitness, weight training and workout tips to optimize your athletic performance.">
+    <meta property="og:title" content="Fitness &amp; Workout Blog - AIVancePro">
     <meta property="og:site_name" content="AIVancePro">
     <meta property="og:locale" content="en_US">
-    <meta name="twitter:card" content="summary">
-    <meta name="twitter:title" content="Fitness Blog - AIVancePro">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
     <style>
         * { margin: 0; padding: 0; box-sizing: border-box; }
-        :root { --blue: #2563EB; --purple: #9333EA; --dark: #000000; --dark-light: #111111; --gray: #71717A; --white: #FFFFFF; }
-        body { font-family: 'Inter', sans-serif; background: var(--dark); color: var(--white); line-height: 1.6; }
-        nav { position: fixed; top: 0; width: 100%; padding: 1rem 2rem; background: rgba(0,0,0,0.9); backdrop-filter: blur(10px); z-index: 100; display: flex; justify-content: space-between; align-items: center; border-bottom: 1px solid rgba(255,255,255,0.05); }
-        .logo { font-size: 1.5rem; font-weight: 800; color: var(--white); text-decoration: none; display: flex; align-items: center; gap: 0.5rem; }
-        .logo img { width: 32px; height: 32px; border-radius: 8px; }
-        .logo span { background: linear-gradient(135deg, var(--blue), var(--purple), var(--blue), var(--purple)); background-size: 300% 300%; -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; animation: gradient-wave 4s ease infinite; }
-        .nav-links { display: flex; gap: 2rem; list-style: none; }
-        .nav-links a { color: var(--gray); text-decoration: none; font-size: 0.9rem; font-weight: 500; transition: color 0.3s; }
-        .nav-links a:hover { color: var(--white); }
-        .nav-links a.active { color: #60A5FA; }
-
-        .blog-header { padding: 8rem 2rem 3rem; text-align: center; background: radial-gradient(ellipse at center top, rgba(37,99,235,0.12) 0%, rgba(147,51,234,0.06) 40%, transparent 70%); }
-        .blog-header h1 { font-size: 2.8rem; font-weight: 800; margin-bottom: 1rem; }
-        .blog-header p { color: var(--gray); font-size: 1.1rem; max-width: 550px; margin: 0 auto; }
-
-        .articles { max-width: 900px; margin: 0 auto; padding: 3rem 2rem 6rem; display: grid; gap: 2rem; }
-
-        .article-card { background: var(--dark-light); border: 1px solid rgba(255,255,255,0.05); border-radius: 16px; padding: 2rem; transition: border-color 0.3s, transform 0.3s; text-decoration: none; color: var(--white); display: block; }
-        .article-card:hover { border-color: rgba(37,99,235,0.3); transform: translateY(-4px); }
-        .article-card .tag { display: inline-block; padding: 0.25rem 0.75rem; background: rgba(37,99,235,0.1); border-radius: 50px; font-size: 0.75rem; color: #60A5FA; font-weight: 500; margin-bottom: 1rem; }
-        .article-card h2 { font-size: 1.4rem; font-weight: 700; margin-bottom: 0.75rem; }
-        .article-card p { color: var(--gray); font-size: 0.95rem; line-height: 1.6; }
-        .article-card .meta { margin-top: 1rem; font-size: 0.8rem; color: var(--gray); }
-
-        footer { border-top: 1px solid rgba(255,255,255,0.05); padding: 2rem; text-align: center; color: var(--gray); font-size: 0.85rem; max-width: 900px; margin: 0 auto; }
-        footer a { color: #60A5FA; text-decoration: none; }
-
-        @media (max-width: 768px) {
-            .blog-header h1 { font-size: 2rem; }
-            .nav-links { display: none; }
-        }
-    
-        .lang-switch { color: var(--gray-light); text-decoration: none; font-size: 0.85rem; font-weight: 600; border: 1px solid rgba(255,255,255,0.15); padding: 0.3rem 0.7rem; border-radius: 6px; transition: all 0.3s; }
-        .lang-switch:hover { color: var(--white); border-color: rgba(255,255,255,0.4); }
-
-        @keyframes gradient-wave {
-            0% { background-position: 0% 50%; }
-            50% { background-position: 100% 50%; }
-            100% { background-position: 0% 50%; }
-        }
-        .gradient-text {
-            background: linear-gradient(135deg, var(--blue), var(--purple), var(--blue), var(--purple));
-            background-size: 300% 300%;
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            background-clip: text;
-            animation: gradient-wave 4s ease infinite;
-        }
-        .gradient-bg {
-            background: linear-gradient(135deg, var(--blue), var(--purple), var(--blue), var(--purple));
-            background-size: 300% 300%;
-            animation: gradient-wave 4s ease infinite;
-        }
+        :root { --blue: #2563EB; --purple: #9333EA; --dark: #0F172A; --gray-900: #111827; --gray-700: #374151; --gray-500: #6B7280; --gray-400: #9CA3AF; --gray-200: #E5E7EB; --gray-100: #F3F4F6; --gray-50: #F9FAFB; --white: #FFFFFF; }
+        body { font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif; background: var(--white); color: var(--gray-900); line-height: 1.6; -webkit-font-smoothing: antialiased; }
+        nav { position: fixed; top: 0; width: 100%; padding: 0.875rem 2rem; background: rgba(255,255,255,0.92); backdrop-filter: blur(20px); -webkit-backdrop-filter: blur(20px); z-index: 100; display: flex; justify-content: center; border-bottom: 1px solid var(--gray-200); }
+        .nav-inner { max-width: 1200px; width: 100%; display: flex; justify-content: space-between; align-items: center; }
+        .logo { font-size: 1.4rem; font-weight: 800; color: var(--gray-900); text-decoration: none; display: flex; align-items: center; gap: 0.5rem; }
+        .logo img { width: 34px; height: 34px; border-radius: 8px; }
+        .logo-text { background: linear-gradient(135deg, var(--blue), var(--purple)); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; }
+        .nav-center { display: flex; gap: 2rem; align-items: center; list-style: none; }
+        .nav-center a { color: var(--gray-500); text-decoration: none; font-size: 0.9rem; font-weight: 500; transition: color 0.2s; }
+        .nav-center a:hover { color: var(--gray-900); }
+        .dropdown { position: relative; }
+        .dropdown-toggle { color: var(--blue); font-size: 0.9rem; font-weight: 500; cursor: pointer; display: flex; align-items: center; gap: 0.3rem; background: none; border: none; font-family: inherit; }
+        .dropdown-toggle svg { width: 12px; height: 12px; transition: transform 0.2s; }
+        .dropdown:hover .dropdown-toggle svg { transform: rotate(180deg); }
+        .dropdown-menu { position: absolute; top: calc(100% + 0.75rem); left: 50%; transform: translateX(-50%); background: var(--white); border: 1px solid var(--gray-200); border-radius: 12px; padding: 0.5rem; min-width: 220px; box-shadow: 0 10px 40px rgba(0,0,0,0.08); opacity: 0; visibility: hidden; transition: all 0.2s; transform: translateX(-50%) translateY(4px); }
+        .dropdown:hover .dropdown-menu { opacity: 1; visibility: visible; transform: translateX(-50%) translateY(0); }
+        .dropdown-menu a { display: block; padding: 0.6rem 1rem; color: var(--gray-700); text-decoration: none; font-size: 0.875rem; font-weight: 500; border-radius: 8px; }
+        .dropdown-menu a:hover { background: var(--gray-50); color: var(--blue); }
+        .nav-right { display: flex; align-items: center; gap: 1rem; }
+        .lang-switch { color: var(--gray-500); text-decoration: none; font-size: 0.8rem; font-weight: 600; border: 1px solid var(--gray-200); padding: 0.3rem 0.6rem; border-radius: 6px; }
+        .nav-cta { background: linear-gradient(135deg, var(--blue), var(--purple)); color: var(--white); text-decoration: none; font-size: 0.875rem; font-weight: 600; padding: 0.5rem 1.2rem; border-radius: 8px; }
+        .mobile-menu-btn { display: none; background: none; border: none; cursor: pointer; padding: 0.5rem; }
+        .mobile-menu-btn span { display: block; width: 22px; height: 2px; background: var(--gray-700); margin: 5px 0; border-radius: 2px; }
+        .blog-header { padding: 9rem 2rem 3rem; text-align: center; background: linear-gradient(180deg, var(--gray-50), var(--white)); }
+        .section-label { display: inline-block; font-size: 0.8rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.08em; color: var(--blue); margin-bottom: 0.75rem; }
+        .blog-header h1 { font-size: 2.8rem; font-weight: 800; letter-spacing: -0.02em; margin-bottom: 1rem; }
+        .blog-header p { color: var(--gray-500); font-size: 1.1rem; max-width: 550px; margin: 0 auto; }
+        .category-filter { max-width: 900px; margin: 2rem auto 0; display: flex; justify-content: center; gap: 0.5rem; flex-wrap: wrap; padding: 0 2rem; }
+        .filter-btn { padding: 0.4rem 1rem; border-radius: 50px; border: 1px solid var(--gray-200); background: var(--white); color: var(--gray-500); font-size: 0.8rem; font-weight: 600; font-family: inherit; cursor: pointer; transition: all 0.2s; }
+        .filter-btn:hover, .filter-btn.active { background: var(--blue); color: var(--white); border-color: var(--blue); }
+        .articles { max-width: 900px; margin: 0 auto; padding: 3rem 2rem 6rem; display: grid; grid-template-columns: repeat(2, 1fr); gap: 1.5rem; }
+        .article-card { background: var(--white); border: 1px solid var(--gray-200); border-radius: 16px; overflow: hidden; transition: border-color 0.2s, transform 0.2s, box-shadow 0.2s; text-decoration: none; color: var(--gray-900); display: flex; flex-direction: column; }
+        .article-card:hover { border-color: rgba(37,99,235,0.3); transform: translateY(-4px); box-shadow: 0 8px 30px rgba(0,0,0,0.06); }
+        .article-card .card-image { width: 100%; height: 180px; background: linear-gradient(135deg, var(--gray-100), var(--gray-200)); display: flex; align-items: center; justify-content: center; color: var(--gray-400); font-size: 0.8rem; }
+        .article-card .card-content { padding: 1.5rem; flex: 1; display: flex; flex-direction: column; }
+        .article-card .tag { display: inline-block; padding: 0.2rem 0.6rem; background: rgba(37,99,235,0.06); border-radius: 50px; font-size: 0.7rem; color: var(--blue); font-weight: 600; margin-bottom: 0.75rem; width: fit-content; }
+        .article-card h2 { font-size: 1.1rem; font-weight: 700; margin-bottom: 0.5rem; line-height: 1.35; }
+        .article-card p { color: var(--gray-500); font-size: 0.85rem; line-height: 1.6; flex: 1; }
+        .article-card .meta { margin-top: 1rem; font-size: 0.75rem; color: var(--gray-400); font-weight: 500; }
+        .article-card.featured { grid-column: 1 / -1; flex-direction: row; }
+        .article-card.featured .card-image { width: 45%; height: auto; min-height: 250px; }
+        .article-card.featured .card-content { padding: 2rem; }
+        .article-card.featured h2 { font-size: 1.4rem; }
+        footer { background: var(--gray-900); color: rgba(255,255,255,0.5); padding: 4rem 2rem 2rem; }
+        .footer-inner { max-width: 1100px; margin: 0 auto; }
+        .footer-grid { display: grid; grid-template-columns: 2fr 1fr 1fr 1fr; gap: 3rem; margin-bottom: 3rem; }
+        .footer-brand .logo { color: var(--white); margin-bottom: 1rem; }
+        .footer-brand p { font-size: 0.85rem; line-height: 1.6; color: rgba(255,255,255,0.4); max-width: 280px; }
+        .footer-col h4 { color: var(--white); font-size: 0.85rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.05em; margin-bottom: 1rem; }
+        .footer-col ul { list-style: none; display: flex; flex-direction: column; gap: 0.6rem; }
+        .footer-col a { color: rgba(255,255,255,0.4); text-decoration: none; font-size: 0.85rem; }
+        .footer-col a:hover { color: var(--white); }
+        .footer-bottom { border-top: 1px solid rgba(255,255,255,0.08); padding-top: 2rem; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 1rem; }
+        .footer-bottom p { font-size: 0.8rem; }
+        .mobile-menu { display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: var(--white); z-index: 200; padding: 5rem 2rem 2rem; flex-direction: column; }
+        .mobile-menu.open { display: flex; }
+        .mobile-menu-close { position: absolute; top: 1rem; right: 1.5rem; background: none; border: none; font-size: 1.5rem; cursor: pointer; color: var(--gray-700); padding: 0.5rem; }
+        .mobile-menu a { display: block; padding: 1rem 0; font-size: 1.1rem; font-weight: 600; color: var(--gray-900); text-decoration: none; border-bottom: 1px solid var(--gray-100); }
+        @media (max-width: 768px) { .nav-center, .nav-right .nav-cta { display: none; } .mobile-menu-btn { display: block; } .blog-header h1 { font-size: 2rem; } .blog-header { padding: 7rem 1.5rem 2rem; } .articles { grid-template-columns: 1fr; } .article-card.featured { flex-direction: column; } .article-card.featured .card-image { width: 100%; min-height: 180px; } .footer-grid { grid-template-columns: 1fr 1fr; gap: 2rem; } }
+        @media (max-width: 480px) { .footer-grid { grid-template-columns: 1fr; } }
     </style>
 </head>
 <body>
-    <nav>
-        <a href="/en/" class="logo"><img src="../../assets/logo.png" alt="AIVancePro"><span class="logo-text">AIVance<span>Pro</span></span></a>
-        <ul class="nav-links">
-            <li><a href="/en/">Home</a></li>
-            <li><a href="/en/blog/" class="active">Blog</a></li>
-            <li><a href="/en/privacy.html">Privacy</a></li>
-            <li><a href="/en/terms.html">Terms</a></li>
-            <li><a href="/en/support.html">Support</a></li>
+    <nav><div class="nav-inner">
+        <a href="/en/" class="logo"><img src="../../assets/logo.png" alt="AIVancePro"><span class="logo-text">AIVancePro</span></a>
+        <ul class="nav-center">
+            <li><a href="/en/#features">Features</a></li>
+            <li class="dropdown"><button class="dropdown-toggle">Articles <svg viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M5.23 7.21a.75.75 0 011.06.02L10 11.168l3.71-3.938a.75.75 0 111.08 1.04l-4.25 4.5a.75.75 0 01-1.08 0l-4.25-4.5a.75.75 0 01.02-1.06z" clip-rule="evenodd"/></svg></button>
+                <div class="dropdown-menu"><a href="/en/blog/" style="color:var(--blue);">Blog</a><a href="/en/guides/">Guides</a><a href="/en/exercises/">Exercise Library</a><a href="/en/personal-training/">Personal Training</a><a href="/en/workout-splits/">Workout Splits</a><a href="/en/compound-vs-isolation/">Compound vs Isolation</a></div>
+            </li>
+            <li><a href="/en/#pricing">Pricing</a></li><li><a href="/en/#faq">FAQ</a></li>
         </ul>
-        <a href="/blog/" class="lang-switch">FR</a>
-    </nav>
+        <div class="nav-right"><a href="/blog/" class="lang-switch">FR</a><a href="https://apps.apple.com/app/aivancepro/id6756116760" class="nav-cta" target="_blank" rel="noopener">Download</a><button class="mobile-menu-btn" onclick="document.getElementById('mobileMenu').classList.add('open')" aria-label="Menu"><span></span><span></span><span></span></button></div>
+    </div></nav>
+
+    <div id="mobileMenu" class="mobile-menu">
+        <button class="mobile-menu-close" onclick="document.getElementById('mobileMenu').classList.remove('open')">&times;</button>
+        <a href="/en/">Home</a><a href="/en/blog/">Blog</a><a href="/en/guides/">Guides</a><a href="/en/exercises/">Exercises</a><a href="/en/workout-splits/">Workout Splits</a><a href="/en/#pricing">Pricing</a><a href="/blog/">Fran&ccedil;ais</a>
+    </div>
 
     <header class="blog-header">
-        <h1>Fitness &amp; Weight Training Blog</h1>
-        <p>Tips, tricks and guides to optimize your training and reach your goals.</p>
+        <div class="section-label">Blog</div>
+        <h1>Fitness &amp; Workout</h1>
+        <p>Tips, guides and advice to optimize your training and reach your goals.</p>
+        <div class="category-filter">
+            <button class="filter-btn active" onclick="filterArticles('all', this)">All</button>
+            <button class="filter-btn" onclick="filterArticles('ai', this)">AI</button>
+            <button class="filter-btn" onclick="filterArticles('workout', this)">Workout</button>
+            <button class="filter-btn" onclick="filterArticles('nutrition', this)">Nutrition</button>
+            <button class="filter-btn" onclick="filterArticles('tips', this)">Tips</button>
+            <button class="filter-btn" onclick="filterArticles('programming', this)">Programming</button>
+        </div>
     </header>
 
     <section class="articles">
-        <a href="ai-fitness-coaching.html" class="article-card">
-            <span class="tag">Artificial Intelligence</span>
-            <h2>How AI is revolutionizing fitness coaching</h2>
-            <p>Discover how artificial intelligence is transforming sports training with ultra-personalized programs adapted to every profile.</p>
-            <div class="meta">February 7, 2026 &middot; 5 min read</div>
+        <a href="ai-fitness-coaching.html" class="article-card featured" data-category="ai">
+            <div class="card-image">Photo AI Coaching</div>
+            <div class="card-content"><span class="tag">Artificial Intelligence</span><h2>How AI is revolutionizing fitness coaching</h2><p>Discover how artificial intelligence is transforming sports training by offering ultra-personalized programs adapted to each profile.</p><div class="meta">February 7, 2026 &middot; 5 min read</div></div>
         </a>
-
-        <a href="beginner-workout-program.html" class="article-card">
-            <span class="tag">Weight Training</span>
-            <h2>Beginner workout program: where to start</h2>
-            <p>New to weight training? Here&rsquo;s the complete guide to building your first effective workout program.</p>
-            <div class="meta">February 7, 2026 &middot; 7 min read</div>
+        <a href="beginner-workout-program.html" class="article-card" data-category="workout">
+            <div class="card-image">Photo Beginner</div>
+            <div class="card-content"><span class="tag">Workout</span><h2>Beginner workout program: where to start</h2><p>New to weightlifting? Here's the complete guide to building your first effective training program.</p><div class="meta">February 7, 2026 &middot; 7 min</div></div>
         </a>
-
-        <a href="tracking-fitness-progress.html" class="article-card">
-            <span class="tag">Progress</span>
-            <h2>The importance of tracking your fitness progress</h2>
-            <p>Why tracking your progress is the key to lasting results. Methods and tools to measure your performance.</p>
-            <div class="meta">February 7, 2026 &middot; 5 min read</div>
+        <a href="tracking-fitness-progress.html" class="article-card" data-category="tips">
+            <div class="card-image">Photo Progress</div>
+            <div class="card-content"><span class="tag">Progress</span><h2>The importance of tracking fitness progress</h2><p>Why tracking your progress is the key to lasting results.</p><div class="meta">February 7, 2026 &middot; 5 min</div></div>
         </a>
-
-        <a href="workout-motivation-tips.html" class="article-card">
-            <span class="tag">Motivation</span>
-            <h2>5 tips to stay motivated in your training</h2>
-            <p>Motivation is the fuel for athletic success. Here are 5 concrete strategies to never give up.</p>
-            <div class="meta">February 7, 2026 &middot; 4 min read</div>
+        <a href="workout-motivation-tips.html" class="article-card" data-category="tips">
+            <div class="card-image">Photo Motivation</div>
+            <div class="card-content"><span class="tag">Motivation</span><h2>5 tips to stay motivated in your training</h2><p>Motivation is the fuel of athletic success. 5 concrete strategies.</p><div class="meta">February 7, 2026 &middot; 4 min</div></div>
         </a>
-
-        <a href="home-gym-guide.html" class="article-card">
-            <span class="tag">Home Gym</span>
-            <h2>Working out at home: the complete home gym guide</h2>
-            <p>No gym needed to make progress. Discover how to create your training space and adapted programs.</p>
-            <div class="meta">February 7, 2026 &middot; 6 min read</div>
+        <a href="home-gym-guide.html" class="article-card" data-category="tips">
+            <div class="card-image">Photo Home Gym</div>
+            <div class="card-content"><span class="tag">Home Gym</span><h2>Working out at home: complete guide</h2><p>No gym needed to make progress. Create your training space.</p><div class="meta">February 7, 2026 &middot; 6 min</div></div>
         </a>
-
-        <a href="periodization-training-program.html" class="article-card">
-            <span class="tag">Programming</span>
-            <h2>Periodization: how to structure your training program</h2>
-            <p>Cycles, mesocycles, deload: everything you need to know about periodization for lasting progress and avoiding plateaus.</p>
-            <div class="meta">March 3, 2026 &middot; 6 min read</div>
+        <a href="periodization-training-program.html" class="article-card" data-category="programming">
+            <div class="card-image">Photo Periodization</div>
+            <div class="card-content"><span class="tag">Programming</span><h2>Periodization: structuring your program</h2><p>Cycles, mesocycles, deload: understand everything to progress sustainably.</p><div class="meta">March 3, 2026 &middot; 6 min</div></div>
         </a>
-
-        <a href="common-workout-mistakes.html" class="article-card">
-            <span class="tag">Tips</span>
-            <h2>5 common workout mistakes (and how to avoid them)</h2>
-            <p>The most common pitfalls that hold back your progress, and practical solutions to fix them.</p>
-            <div class="meta">March 3, 2026 &middot; 5 min read</div>
+        <a href="common-workout-mistakes.html" class="article-card" data-category="workout">
+            <div class="card-image">Photo Mistakes</div>
+            <div class="card-content"><span class="tag">Tips</span><h2>5 common workout mistakes</h2><p>Common pitfalls that slow your progress and how to fix them.</p><div class="meta">March 3, 2026 &middot; 5 min</div></div>
         </a>
-
-        <a href="nutrition-workout-basics.html" class="article-card">
-            <span class="tag">Nutrition</span>
-            <h2>Nutrition and weight training: the basics for progress</h2>
-            <p>Protein, carbs, fats and meal timing: the fundamentals of nutrition to support your progress.</p>
-            <div class="meta">March 3, 2026 &middot; 7 min read</div>
+        <a href="nutrition-workout-basics.html" class="article-card" data-category="nutrition">
+            <div class="card-image">Photo Nutrition</div>
+            <div class="card-content"><span class="tag">Nutrition</span><h2>Nutrition and workout: the basics</h2><p>Protein, carbs, fats and meal timing to support your progress.</p><div class="meta">March 3, 2026 &middot; 7 min</div></div>
         </a>
-
-        <a href="choosing-exercises-goals.html" class="article-card">
-            <span class="tag">Exercises</span>
-            <h2>How to choose exercises based on your goals</h2>
-            <p>Strength, hypertrophy, endurance or weight loss: a guide to selecting the right exercises from over 240 available.</p>
-            <div class="meta">March 3, 2026 &middot; 6 min read</div>
+        <a href="choosing-exercises-goals.html" class="article-card" data-category="workout">
+            <div class="card-image">Photo Exercises</div>
+            <div class="card-content"><span class="tag">Exercises</span><h2>How to choose exercises based on your goals</h2><p>Strength, hypertrophy, endurance: guide to selecting the right exercises.</p><div class="meta">March 3, 2026 &middot; 6 min</div></div>
         </a>
     </section>
 
-    <footer>
-        <p>&copy; 2026 AS Corporation &middot; <a href="/en/">AIVancePro</a> &middot; <a href="/en/privacy.html">Privacy</a> &middot; <a href="/en/terms.html">Terms</a> &middot; <a href="https://www.instagram.com/aivancepro/" target="_blank" rel="noopener">Instagram</a> &middot; <a href="https://www.tiktok.com/@aivancepro" target="_blank" rel="noopener">TikTok</a> &middot; <a href="https://x.com/AIVancePro" target="_blank" rel="noopener">X</a> &middot; <a href="https://www.youtube.com/channel/UC8MGuOS22H-jXfe8Haqw8LA" target="_blank" rel="noopener">YouTube</a> &middot; <a href="https://www.reddit.com/user/AIVancePro" target="_blank" rel="noopener">Reddit</a> &middot; <a href="https://www.linkedin.com/company/aivancepro" target="_blank" rel="noopener">LinkedIn</a> &middot; <a href="https://www.linkedin.com/company/aivancepro" target="_blank" rel="noopener">LinkedIn</a> &middot; <a href="https://www.youtube.com/channel/UC8MGuOS22H-jXfe8Haqw8LA" target="_blank" rel="noopener">YouTube</a> &middot; <a href="https://www.reddit.com/user/AIVancePro" target="_blank" rel="noopener">Reddit</a> &middot; <a href="https://www.linkedin.com/company/aivancepro" target="_blank" rel="noopener">LinkedIn</a> &middot; <a href="https://www.linkedin.com/company/aivancepro" target="_blank" rel="noopener">LinkedIn</a></p>
-    </footer>
+    <footer><div class="footer-inner">
+        <div class="footer-grid">
+            <div class="footer-brand"><a href="/en/" class="logo"><img src="../../assets/logo.png" alt="AIVancePro"><span class="logo-text">AIVancePro</span></a><p>Your personal fitness coach powered by artificial intelligence.</p></div>
+            <div class="footer-col"><h4>Product</h4><ul><li><a href="/en/#features">Features</a></li><li><a href="/en/#pricing">Pricing</a></li><li><a href="/en/#faq">FAQ</a></li><li><a href="/en/support.html">Support</a></li></ul></div>
+            <div class="footer-col"><h4>Articles</h4><ul><li><a href="/en/blog/">Blog</a></li><li><a href="/en/guides/">Guides</a></li><li><a href="/en/exercises/">Exercises</a></li><li><a href="/en/workout-splits/">Workout Splits</a></li></ul></div>
+            <div class="footer-col"><h4>Legal</h4><ul><li><a href="/en/privacy.html">Privacy</a></li><li><a href="/en/terms.html">Terms</a></li></ul></div>
+        </div>
+        <div class="footer-bottom"><p>&copy; 2026 AS Corporation. All rights reserved.</p></div>
+    </div></footer>
+
+    <script>
+        function filterArticles(category, btn) {
+            document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
+            btn.classList.add('active');
+            document.querySelectorAll('.article-card').forEach(card => {
+                card.style.display = (category === 'all' || card.dataset.category === category) ? '' : 'none';
+            });
+        }
+    </script>
 </body>
 </html>

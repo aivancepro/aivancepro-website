@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/png" sizes="64x64" href="../assets/favicon-64.png">
+    <link rel="icon" type="image/png" sizes="48x48" href="../assets/favicon-48.png">
+    <link rel="apple-touch-icon" sizes="128x128" href="../assets/apple-touch-icon.png">
+    <title>Exercices Compound vs Isolation : le guide complet - AIVancePro</title>
+    <meta name="description" content="Quelle diff&eacute;rence entre exercices compound (polyarticulaires) et isolation (monoarticulaires) ? Guide complet pour optimiser votre programme.">
+    <link rel="canonical" href="https://aivancepro.fr/compound-vs-isolation/">
+    <link rel="alternate" hreflang="fr" href="https://aivancepro.fr/compound-vs-isolation/">
+    <link rel="alternate" hreflang="en" href="https://aivancepro.fr/en/compound-vs-isolation/">
+    <link rel="alternate" hreflang="de" href="https://aivancepro.fr/de/compound-vs-isolation/">
+    <meta property="og:type" content="article">
+    <meta property="og:url" content="https://aivancepro.fr/compound-vs-isolation/">
+    <meta property="og:title" content="Compound vs Isolation : quel type d'exercice choisir ?">
+    <meta property="og:site_name" content="AIVancePro">
+    <meta property="og:locale" content="fr_FR">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        :root { --blue: #2563EB; --purple: #9333EA; --dark: #0F172A; --gray-900: #111827; --gray-700: #374151; --gray-500: #6B7280; --gray-400: #9CA3AF; --gray-200: #E5E7EB; --gray-100: #F3F4F6; --gray-50: #F9FAFB; --white: #FFFFFF; }
+        body { font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif; background: var(--white); color: var(--gray-900); line-height: 1.6; -webkit-font-smoothing: antialiased; }
+
+        nav { position: fixed; top: 0; width: 100%; padding: 0.875rem 2rem; background: rgba(255,255,255,0.92); backdrop-filter: blur(20px); -webkit-backdrop-filter: blur(20px); z-index: 100; display: flex; justify-content: center; border-bottom: 1px solid var(--gray-200); }
+        .nav-inner { max-width: 1200px; width: 100%; display: flex; justify-content: space-between; align-items: center; }
+        .logo { font-size: 1.4rem; font-weight: 800; color: var(--gray-900); text-decoration: none; display: flex; align-items: center; gap: 0.5rem; }
+        .logo img { width: 34px; height: 34px; border-radius: 8px; }
+        .logo-text { background: linear-gradient(135deg, var(--blue), var(--purple)); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; }
+        .nav-center { display: flex; gap: 2rem; align-items: center; list-style: none; }
+        .nav-center a { color: var(--gray-500); text-decoration: none; font-size: 0.9rem; font-weight: 500; }
+        .dropdown { position: relative; }
+        .dropdown-toggle { color: var(--blue); font-size: 0.9rem; font-weight: 500; cursor: pointer; display: flex; align-items: center; gap: 0.3rem; background: none; border: none; font-family: inherit; }
+        .dropdown-toggle svg { width: 12px; height: 12px; transition: transform 0.2s; }
+        .dropdown:hover .dropdown-toggle svg { transform: rotate(180deg); }
+        .dropdown-menu { position: absolute; top: calc(100% + 0.75rem); left: 50%; transform: translateX(-50%); background: var(--white); border: 1px solid var(--gray-200); border-radius: 12px; padding: 0.5rem; min-width: 220px; box-shadow: 0 10px 40px rgba(0,0,0,0.08); opacity: 0; visibility: hidden; transition: all 0.2s; transform: translateX(-50%) translateY(4px); }
+        .dropdown:hover .dropdown-menu { opacity: 1; visibility: visible; transform: translateX(-50%) translateY(0); }
+        .dropdown-menu a { display: block; padding: 0.6rem 1rem; color: var(--gray-700); text-decoration: none; font-size: 0.875rem; font-weight: 500; border-radius: 8px; }
+        .dropdown-menu a:hover { background: var(--gray-50); color: var(--blue); }
+        .nav-right { display: flex; align-items: center; gap: 1rem; }
+        .lang-switch { color: var(--gray-500); text-decoration: none; font-size: 0.8rem; font-weight: 600; border: 1px solid var(--gray-200); padding: 0.3rem 0.6rem; border-radius: 6px; }
+        .nav-cta { background: linear-gradient(135deg, var(--blue), var(--purple)); color: var(--white); text-decoration: none; font-size: 0.875rem; font-weight: 600; padding: 0.5rem 1.2rem; border-radius: 8px; }
+        .mobile-menu-btn { display: none; background: none; border: none; cursor: pointer; padding: 0.5rem; }
+        .mobile-menu-btn span { display: block; width: 22px; height: 2px; background: var(--gray-700); margin: 5px 0; border-radius: 2px; }
+
+        .article-header { padding: 9rem 2rem 3rem; text-align: center; background: linear-gradient(180deg, var(--gray-50), var(--white)); }
+        .section-label { display: inline-block; font-size: 0.8rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.08em; color: var(--blue); margin-bottom: 0.75rem; }
+        .article-header h1 { font-size: 2.8rem; font-weight: 800; letter-spacing: -0.02em; margin-bottom: 1rem; max-width: 750px; margin-left: auto; margin-right: auto; }
+        .article-header p { color: var(--gray-500); font-size: 1.1rem; max-width: 600px; margin: 0 auto; }
+
+        .article-content { max-width: 750px; margin: 0 auto; padding: 3rem 2rem 4rem; }
+        .article-content h2 { font-size: 1.6rem; font-weight: 800; margin: 3rem 0 1rem; }
+        .article-content h3 { font-size: 1.2rem; font-weight: 700; margin: 2rem 0 0.75rem; }
+        .article-content p { color: var(--gray-700); font-size: 1rem; line-height: 1.8; margin-bottom: 1.25rem; }
+        .article-content ul { margin: 1rem 0 1.5rem 1.5rem; }
+        .article-content li { color: var(--gray-700); font-size: 1rem; line-height: 1.8; margin-bottom: 0.5rem; }
+        .article-content .img-placeholder { width: 100%; height: 350px; background: linear-gradient(135deg, var(--gray-100), var(--gray-200)); border-radius: 16px; display: flex; align-items: center; justify-content: center; color: var(--gray-400); font-size: 0.85rem; margin: 2rem 0; }
+
+        .exercise-examples { display: grid; grid-template-columns: repeat(2, 1fr); gap: 1rem; margin: 1.5rem 0; }
+        .exercise-example { background: var(--gray-50); border: 1px solid var(--gray-200); border-radius: 12px; padding: 1.25rem; }
+        .exercise-example h4 { font-size: 0.95rem; font-weight: 700; margin-bottom: 0.25rem; }
+        .exercise-example p { font-size: 0.85rem; color: var(--gray-500); margin-bottom: 0; }
+
+        .comparison-table { width: 100%; border-collapse: collapse; margin: 2rem 0; border-radius: 12px; overflow: hidden; border: 1px solid var(--gray-200); }
+        .comparison-table th { background: var(--gray-50); padding: 1rem; text-align: left; font-size: 0.85rem; font-weight: 700; color: var(--gray-900); border-bottom: 1px solid var(--gray-200); }
+        .comparison-table td { padding: 0.875rem 1rem; font-size: 0.9rem; color: var(--gray-700); border-bottom: 1px solid var(--gray-100); }
+
+        .cta-section { padding: 5rem 2rem; text-align: center; background: linear-gradient(135deg, var(--dark), #1a1145); color: var(--white); }
+        .cta-section h2 { font-size: 2.2rem; font-weight: 800; margin-bottom: 1rem; }
+        .cta-section p { color: rgba(255,255,255,0.6); font-size: 1rem; max-width: 480px; margin: 0 auto 2rem; }
+        .btn-primary { display: inline-flex; background: linear-gradient(135deg, var(--blue), var(--purple)); color: var(--white); text-decoration: none; font-size: 1rem; font-weight: 600; padding: 0.875rem 2rem; border-radius: 12px; box-shadow: 0 4px 15px rgba(37,99,235,0.3); transition: opacity 0.2s, transform 0.2s; }
+        .btn-primary:hover { opacity: 0.92; transform: translateY(-2px); }
+
+        footer { background: var(--gray-900); color: rgba(255,255,255,0.5); padding: 4rem 2rem 2rem; }
+        .footer-inner { max-width: 1100px; margin: 0 auto; }
+        .footer-grid { display: grid; grid-template-columns: 2fr 1fr 1fr 1fr; gap: 3rem; margin-bottom: 3rem; }
+        .footer-brand .logo { color: var(--white); margin-bottom: 1rem; }
+        .footer-brand p { font-size: 0.85rem; line-height: 1.6; color: rgba(255,255,255,0.4); max-width: 280px; }
+        .footer-col h4 { color: var(--white); font-size: 0.85rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.05em; margin-bottom: 1rem; }
+        .footer-col ul { list-style: none; display: flex; flex-direction: column; gap: 0.6rem; }
+        .footer-col a { color: rgba(255,255,255,0.4); text-decoration: none; font-size: 0.85rem; }
+        .footer-col a:hover { color: var(--white); }
+        .footer-bottom { border-top: 1px solid rgba(255,255,255,0.08); padding-top: 2rem; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 1rem; }
+        .footer-bottom p { font-size: 0.8rem; }
+
+        .mobile-menu { display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: var(--white); z-index: 200; padding: 5rem 2rem 2rem; flex-direction: column; }
+        .mobile-menu.open { display: flex; }
+        .mobile-menu-close { position: absolute; top: 1rem; right: 1.5rem; background: none; border: none; font-size: 1.5rem; cursor: pointer; color: var(--gray-700); padding: 0.5rem; }
+        .mobile-menu a { display: block; padding: 1rem 0; font-size: 1.1rem; font-weight: 600; color: var(--gray-900); text-decoration: none; border-bottom: 1px solid var(--gray-100); }
+
+        @media (max-width: 768px) {
+            .nav-center, .nav-right .nav-cta { display: none; }
+            .mobile-menu-btn { display: block; }
+            .article-header { padding: 7rem 1.5rem 2rem; }
+            .article-header h1 { font-size: 2rem; }
+            .exercise-examples { grid-template-columns: 1fr; }
+            .footer-grid { grid-template-columns: 1fr 1fr; gap: 2rem; }
+        }
+        @media (max-width: 480px) { .footer-grid { grid-template-columns: 1fr; } }
+    </style>
+</head>
+<body>
+    <nav><div class="nav-inner">
+        <a href="/" class="logo"><img src="../assets/logo.png" alt="AIVancePro"><span class="logo-text">AIVancePro</span></a>
+        <ul class="nav-center">
+            <li><a href="/#features">Fonctionnalit&eacute;s</a></li>
+            <li class="dropdown"><button class="dropdown-toggle">Articles <svg viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M5.23 7.21a.75.75 0 011.06.02L10 11.168l3.71-3.938a.75.75 0 111.08 1.04l-4.25 4.5a.75.75 0 01-1.08 0l-4.25-4.5a.75.75 0 01.02-1.06z" clip-rule="evenodd"/></svg></button>
+                <div class="dropdown-menu"><a href="/blog/">Blog</a><a href="/guides/">Guides</a><a href="/exercices/">Biblioth&egrave;que d'exercices</a><a href="/personal-training/">Personal Training</a><a href="/workout-splits/">Workout Splits</a><a href="/compound-vs-isolation/" style="color:var(--blue);">Compound vs Isolation</a></div>
+            </li>
+            <li><a href="/#pricing">Tarifs</a></li><li><a href="/#faq">FAQ</a></li>
+        </ul>
+        <div class="nav-right"><a href="/en/compound-vs-isolation/" class="lang-switch">EN</a><a href="https://apps.apple.com/fr/app/aivancepro/id6756116760" class="nav-cta" target="_blank" rel="noopener">T&eacute;l&eacute;charger</a><button class="mobile-menu-btn" onclick="document.getElementById('mobileMenu').classList.add('open')" aria-label="Menu"><span></span><span></span><span></span></button></div>
+    </div></nav>
+
+    <div id="mobileMenu" class="mobile-menu">
+        <button class="mobile-menu-close" onclick="document.getElementById('mobileMenu').classList.remove('open')">&times;</button>
+        <a href="/">Accueil</a><a href="/blog/">Blog</a><a href="/guides/">Guides</a><a href="/exercices/">Exercices</a><a href="/workout-splits/">Workout Splits</a><a href="/#pricing">Tarifs</a><a href="/en/compound-vs-isolation/">English</a>
+    </div>
+
+    <header class="article-header">
+        <div class="section-label">Exercices</div>
+        <h1>Compound vs Isolation : quel type d'exercice choisir ?</h1>
+        <p>Polyarticulaires ou monoarticulaires ? Comprenez la diff&eacute;rence et apprenez &agrave; les combiner pour un programme optimal.</p>
+    </header>
+
+    <article class="article-content">
+        <h2>Exercices compound (polyarticulaires)</h2>
+        <p>Les exercices compound sollicitent <strong>plusieurs articulations et groupes musculaires</strong> simultan&eacute;ment. Ils permettent de soulever des charges plus lourdes et de recruter un maximum de fibres musculaires en un seul mouvement.</p>
+        <p>Ce sont les fondations de tout bon programme de musculation. Ils d&eacute;veloppent la force fonctionnelle et br&ucirc;lent plus de calories par r&eacute;p&eacute;tition.</p>
+
+        <h3>Exemples d'exercices compound</h3>
+        <div class="exercise-examples">
+            <div class="exercise-example"><h4>Squat</h4><p>Quadriceps, fessiers, ischio-jambiers, core</p></div>
+            <div class="exercise-example"><h4>D&eacute;velopp&eacute; couch&eacute;</h4><p>Pectoraux, triceps, &eacute;paules ant&eacute;rieures</p></div>
+            <div class="exercise-example"><h4>Soulev&eacute; de terre</h4><p>Dos, fessiers, ischio-jambiers, trap&egrave;zes</p></div>
+            <div class="exercise-example"><h4>Tractions</h4><p>Grand dorsal, biceps, rhombo&iuml;des</p></div>
+            <div class="exercise-example"><h4>D&eacute;velopp&eacute; militaire</h4><p>Delto&iuml;des, triceps, trap&egrave;zes</p></div>
+            <div class="exercise-example"><h4>Rowing barre</h4><p>Dos, biceps, trap&egrave;zes, rhombo&iuml;des</p></div>
+        </div>
+
+        <div class="img-placeholder">Photo Exercices compound</div>
+
+        <h2>Exercices d'isolation (monoarticulaires)</h2>
+        <p>Les exercices d'isolation ciblent <strong>un seul muscle ou groupe musculaire</strong> en ne mobilisant qu'une seule articulation. Ils sont parfaits pour corriger des d&eacute;s&eacute;quilibres, cibler un muscle en retard ou finir un entra&icirc;nement avec du volume sp&eacute;cifique.</p>
+
+        <h3>Exemples d'exercices d'isolation</h3>
+        <div class="exercise-examples">
+            <div class="exercise-example"><h4>Curl biceps</h4><p>Biceps uniquement</p></div>
+            <div class="exercise-example"><h4>Extensions triceps</h4><p>Triceps uniquement</p></div>
+            <div class="exercise-example"><h4>&Eacute;l&eacute;vations lat&eacute;rales</h4><p>Delto&iuml;de lat&eacute;ral</p></div>
+            <div class="exercise-example"><h4>Leg curl</h4><p>Ischio-jambiers</p></div>
+            <div class="exercise-example"><h4>Leg extension</h4><p>Quadriceps</p></div>
+            <div class="exercise-example"><h4>&Eacute;cart&eacute;s halt&egrave;res</h4><p>Pectoraux (stretch)</p></div>
+        </div>
+
+        <h2>Tableau comparatif</h2>
+        <table class="comparison-table">
+            <thead>
+                <tr><th></th><th>Compound</th><th>Isolation</th></tr>
+            </thead>
+            <tbody>
+                <tr><td><strong>Muscles travaill&eacute;s</strong></td><td>Plusieurs groupes</td><td>Un seul muscle</td></tr>
+                <tr><td><strong>Charge possible</strong></td><td>&Eacute;lev&eacute;e</td><td>Mod&eacute;r&eacute;e</td></tr>
+                <tr><td><strong>D&eacute;pense calorique</strong></td><td>Haute</td><td>Faible</td></tr>
+                <tr><td><strong>Gain de force</strong></td><td>Excellent</td><td>Limit&eacute;</td></tr>
+                <tr><td><strong>Ciblage pr&eacute;cis</strong></td><td>Mod&eacute;r&eacute;</td><td>Excellent</td></tr>
+                <tr><td><strong>Risque blessure</strong></td><td>Plus &eacute;lev&eacute; (technique)</td><td>Plus faible</td></tr>
+                <tr><td><strong>Id&eacute;al pour</strong></td><td>Force, masse, performance</td><td>Finition, &eacute;quilibre, volume</td></tr>
+            </tbody>
+        </table>
+
+        <div class="img-placeholder">Photo Comparaison compound vs isolation</div>
+
+        <h2>Quand utiliser chaque type ?</h2>
+        <p><strong>Commencez par les compound.</strong> Placez toujours vos exercices polyarticulaires en d&eacute;but de s&eacute;ance quand vous &ecirc;tes frais et que vous pouvez soulever lourd en toute s&eacute;curit&eacute;.</p>
+        <p><strong>Finissez par l'isolation.</strong> Utilisez les exercices d'isolation en fin de s&eacute;ance pour cibler les muscles qui n'ont pas &eacute;t&eacute; suffisamment stimul&eacute;s, ou pour ajouter du volume sur un point faible.</p>
+
+        <h2>La r&egrave;gle du 80/20</h2>
+        <p>Un bon programme suit g&eacute;n&eacute;ralement la r&egrave;gle du 80/20 : <strong>80% d'exercices compound, 20% d'isolation</strong>. Cette r&eacute;partition assure une base de force solide tout en permettant un travail cibl&eacute;.</p>
+
+        <h2>AIVancePro &eacute;quilibre pour vous</h2>
+        <p>Le coach IA d'AIVancePro conna&icirc;t cette r&egrave;gle et l'applique automatiquement. Quand il g&eacute;n&egrave;re une s&eacute;ance, il place les compound en premier et compl&egrave;te avec de l'isolation selon vos besoins et votre historique.</p>
+
+        <div class="img-placeholder">Photo AIVancePro &eacute;quilibre exercices</div>
+    </article>
+
+    <section class="cta-section">
+        <h2>Le bon &eacute;quilibre, automatiquement</h2>
+        <p>AIVancePro g&eacute;n&egrave;re des s&eacute;ances avec le mix parfait de compound et d'isolation pour vos objectifs.</p>
+        <a href="https://apps.apple.com/fr/app/aivancepro/id6756116760" class="btn-primary" target="_blank" rel="noopener">T&eacute;l&eacute;charger gratuitement</a>
+    </section>
+
+    <footer><div class="footer-inner">
+        <div class="footer-grid">
+            <div class="footer-brand"><a href="/" class="logo"><img src="../assets/logo.png" alt="AIVancePro"><span class="logo-text">AIVancePro</span></a><p>Votre coach fitness personnel propuls&eacute; par l'intelligence artificielle.</p></div>
+            <div class="footer-col"><h4>Produit</h4><ul><li><a href="/#features">Fonctionnalit&eacute;s</a></li><li><a href="/#pricing">Tarifs</a></li><li><a href="/#faq">FAQ</a></li><li><a href="/support.html">Support</a></li></ul></div>
+            <div class="footer-col"><h4>Articles</h4><ul><li><a href="/blog/">Blog</a></li><li><a href="/guides/">Guides</a></li><li><a href="/exercices/">Exercices</a></li><li><a href="/workout-splits/">Workout Splits</a></li></ul></div>
+            <div class="footer-col"><h4>L&eacute;gal</h4><ul><li><a href="/privacy.html">Confidentialit&eacute;</a></li><li><a href="/terms.html">CGU</a></li></ul></div>
+        </div>
+        <div class="footer-bottom"><p>&copy; 2026 AS Corporation. Tous droits r&eacute;serv&eacute;s.</p></div>
+    </div></footer>
+</body>
+</html>

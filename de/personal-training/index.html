@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/png" sizes="64x64" href="../../assets/favicon-64.png">
+    <link rel="icon" type="image/png" sizes="48x48" href="../../assets/favicon-48.png">
+    <link rel="apple-touch-icon" sizes="128x128" href="../../assets/apple-touch-icon.png">
+    <title>Personal Training: Persönlicher Coach vs KI-Coach - AIVancePro</title>
+    <meta name="description" content="Entdecken Sie die Vorteile von Personal Training und wie KI das persönliche Coaching revolutioniert. Vergleich: Traditioneller Coach vs KI-Coach.">
+    <link rel="canonical" href="https://aivancepro.fr/de/personal-training/">
+    <link rel="alternate" hreflang="fr" href="https://aivancepro.fr/personal-training/">
+    <link rel="alternate" hreflang="en" href="https://aivancepro.fr/en/personal-training/">
+    <link rel="alternate" hreflang="de" href="https://aivancepro.fr/de/personal-training/">
+    <meta property="og:type" content="article">
+    <meta property="og:url" content="https://aivancepro.fr/de/personal-training/">
+    <meta property="og:title" content="Personal Training: Persönlicher Coach vs KI-Coach">
+    <meta property="og:site_name" content="AIVancePro">
+    <meta property="og:locale" content="de_DE">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        :root { --blue: #2563EB; --purple: #9333EA; --dark: #0F172A; --gray-900: #111827; --gray-700: #374151; --gray-500: #6B7280; --gray-400: #9CA3AF; --gray-200: #E5E7EB; --gray-100: #F3F4F6; --gray-50: #F9FAFB; --white: #FFFFFF; }
+        body { font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif; background: var(--white); color: var(--gray-900); line-height: 1.6; -webkit-font-smoothing: antialiased; }
+        nav { position: fixed; top: 0; width: 100%; padding: 0.875rem 2rem; background: rgba(255,255,255,0.92); backdrop-filter: blur(20px); -webkit-backdrop-filter: blur(20px); z-index: 100; display: flex; justify-content: center; border-bottom: 1px solid var(--gray-200); }
+        .nav-inner { max-width: 1200px; width: 100%; display: flex; justify-content: space-between; align-items: center; }
+        .logo { font-size: 1.4rem; font-weight: 800; color: var(--gray-900); text-decoration: none; display: flex; align-items: center; gap: 0.5rem; }
+        .logo img { width: 34px; height: 34px; border-radius: 8px; }
+        .logo-text { background: linear-gradient(135deg, var(--blue), var(--purple)); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; }
+        .nav-center { display: flex; gap: 2rem; align-items: center; list-style: none; }
+        .nav-center a { color: var(--gray-500); text-decoration: none; font-size: 0.9rem; font-weight: 500; transition: color 0.2s; }
+        .nav-center a:hover { color: var(--gray-900); }
+        .dropdown { position: relative; }
+        .dropdown-toggle { color: var(--blue); font-size: 0.9rem; font-weight: 500; cursor: pointer; display: flex; align-items: center; gap: 0.3rem; background: none; border: none; font-family: inherit; }
+        .dropdown-toggle svg { width: 12px; height: 12px; transition: transform 0.2s; }
+        .dropdown:hover .dropdown-toggle svg { transform: rotate(180deg); }
+        .dropdown-menu { position: absolute; top: calc(100% + 0.75rem); left: 50%; transform: translateX(-50%); background: var(--white); border: 1px solid var(--gray-200); border-radius: 12px; padding: 0.5rem; min-width: 220px; box-shadow: 0 10px 40px rgba(0,0,0,0.08); opacity: 0; visibility: hidden; transition: opacity 0.2s, visibility 0.2s, transform 0.2s; transform: translateX(-50%) translateY(4px); }
+        .dropdown:hover .dropdown-menu { opacity: 1; visibility: visible; transform: translateX(-50%) translateY(0); }
+        .dropdown-menu a { display: block; padding: 0.6rem 1rem; color: var(--gray-700); text-decoration: none; font-size: 0.875rem; font-weight: 500; border-radius: 8px; transition: background 0.15s, color 0.15s; }
+        .dropdown-menu a:hover { background: var(--gray-50); color: var(--blue); }
+        .nav-right { display: flex; align-items: center; gap: 1rem; }
+        .lang-switch { color: var(--gray-500); text-decoration: none; font-size: 0.8rem; font-weight: 600; border: 1px solid var(--gray-200); padding: 0.3rem 0.6rem; border-radius: 6px; }
+        .nav-cta { background: linear-gradient(135deg, var(--blue), var(--purple)); color: var(--white); text-decoration: none; font-size: 0.875rem; font-weight: 600; padding: 0.5rem 1.2rem; border-radius: 8px; }
+        .mobile-menu-btn { display: none; background: none; border: none; cursor: pointer; padding: 0.5rem; }
+        .mobile-menu-btn span { display: block; width: 22px; height: 2px; background: var(--gray-700); margin: 5px 0; border-radius: 2px; }
+        .article-header { padding: 9rem 2rem 3rem; text-align: center; background: linear-gradient(180deg, var(--gray-50), var(--white)); }
+        .section-label { display: inline-block; font-size: 0.8rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.08em; color: var(--blue); margin-bottom: 0.75rem; }
+        .article-header h1 { font-size: 2.8rem; font-weight: 800; letter-spacing: -0.02em; margin-bottom: 1rem; max-width: 700px; margin-left: auto; margin-right: auto; }
+        .article-header p { color: var(--gray-500); font-size: 1.1rem; max-width: 600px; margin: 0 auto; }
+        .article-content { max-width: 750px; margin: 0 auto; padding: 3rem 2rem 4rem; }
+        .article-content h2 { font-size: 1.6rem; font-weight: 800; margin: 3rem 0 1rem; letter-spacing: -0.01em; }
+        .article-content h3 { font-size: 1.2rem; font-weight: 700; margin: 2rem 0 0.75rem; }
+        .article-content p { color: var(--gray-700); font-size: 1rem; line-height: 1.8; margin-bottom: 1.25rem; }
+        .article-content ul { margin: 1rem 0 1.5rem 1.5rem; }
+        .article-content li { color: var(--gray-700); font-size: 1rem; line-height: 1.8; margin-bottom: 0.5rem; }
+        .article-content .img-placeholder { width: 100%; height: 350px; background: linear-gradient(135deg, var(--gray-100), var(--gray-200)); border-radius: 16px; display: flex; align-items: center; justify-content: center; color: var(--gray-400); font-size: 0.85rem; margin: 2rem 0; }
+        .comparison-table { width: 100%; border-collapse: collapse; margin: 2rem 0; border-radius: 12px; overflow: hidden; border: 1px solid var(--gray-200); }
+        .comparison-table th { background: var(--gray-50); padding: 1rem; text-align: left; font-size: 0.85rem; font-weight: 700; color: var(--gray-900); border-bottom: 1px solid var(--gray-200); }
+        .comparison-table td { padding: 0.875rem 1rem; font-size: 0.9rem; color: var(--gray-700); border-bottom: 1px solid var(--gray-100); }
+        .comparison-table tr:last-child td { border-bottom: none; }
+        .cta-section { padding: 5rem 2rem; text-align: center; background: linear-gradient(135deg, var(--dark), #1a1145); color: var(--white); }
+        .cta-section h2 { font-size: 2.2rem; font-weight: 800; margin-bottom: 1rem; }
+        .cta-section p { color: rgba(255,255,255,0.6); font-size: 1rem; max-width: 480px; margin: 0 auto 2rem; }
+        .btn-primary { display: inline-flex; align-items: center; gap: 0.5rem; background: linear-gradient(135deg, var(--blue), var(--purple)); color: var(--white); text-decoration: none; font-size: 1rem; font-weight: 600; padding: 0.875rem 2rem; border-radius: 12px; box-shadow: 0 4px 15px rgba(37,99,235,0.3); transition: opacity 0.2s, transform 0.2s; }
+        .btn-primary:hover { opacity: 0.92; transform: translateY(-2px); }
+        footer { background: var(--gray-900); color: rgba(255,255,255,0.5); padding: 4rem 2rem 2rem; }
+        .footer-inner { max-width: 1100px; margin: 0 auto; }
+        .footer-grid { display: grid; grid-template-columns: 2fr 1fr 1fr 1fr; gap: 3rem; margin-bottom: 3rem; }
+        .footer-brand .logo { color: var(--white); margin-bottom: 1rem; }
+        .footer-brand p { font-size: 0.85rem; line-height: 1.6; color: rgba(255,255,255,0.4); max-width: 280px; }
+        .footer-col h4 { color: var(--white); font-size: 0.85rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.05em; margin-bottom: 1rem; }
+        .footer-col ul { list-style: none; display: flex; flex-direction: column; gap: 0.6rem; }
+        .footer-col a { color: rgba(255,255,255,0.4); text-decoration: none; font-size: 0.85rem; transition: color 0.2s; }
+        .footer-col a:hover { color: var(--white); }
+        .footer-bottom { border-top: 1px solid rgba(255,255,255,0.08); padding-top: 2rem; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 1rem; }
+        .footer-bottom p { font-size: 0.8rem; }
+        .mobile-menu { display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: var(--white); z-index: 200; padding: 5rem 2rem 2rem; flex-direction: column; }
+        .mobile-menu.open { display: flex; }
+        .mobile-menu-close { position: absolute; top: 1rem; right: 1.5rem; background: none; border: none; font-size: 1.5rem; cursor: pointer; color: var(--gray-700); padding: 0.5rem; }
+        .mobile-menu a { display: block; padding: 1rem 0; font-size: 1.1rem; font-weight: 600; color: var(--gray-900); text-decoration: none; border-bottom: 1px solid var(--gray-100); }
+        @media (max-width: 768px) {
+            .nav-center, .nav-right .nav-cta { display: none; }
+            .mobile-menu-btn { display: block; }
+            .article-header { padding: 7rem 1.5rem 2rem; }
+            .article-header h1 { font-size: 2rem; }
+            .footer-grid { grid-template-columns: 1fr 1fr; gap: 2rem; }
+            .comparison-table { font-size: 0.8rem; }
+        }
+        @media (max-width: 480px) { .footer-grid { grid-template-columns: 1fr; } }
+    </style>
+</head>
+<body>
+    <nav><div class="nav-inner">
+        <a href="/de/" class="logo"><img src="../../assets/logo.png" alt="AIVancePro"><span class="logo-text">AIVancePro</span></a>
+        <ul class="nav-center">
+            <li><a href="/de/#funktionen">Funktionen</a></li>
+            <li class="dropdown"><button class="dropdown-toggle">Artikel <svg viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M5.23 7.21a.75.75 0 011.06.02L10 11.168l3.71-3.938a.75.75 0 111.08 1.04l-4.25 4.5a.75.75 0 01-1.08 0l-4.25-4.5a.75.75 0 01.02-1.06z" clip-rule="evenodd"/></svg></button>
+                <div class="dropdown-menu"><a href="/de/blog/">Blog</a><a href="/de/ratgeber/">Ratgeber</a><a href="/de/uebungen/">Übungsbibliothek</a><a href="/de/personal-training/" style="color:var(--blue);">Personal Training</a><a href="/de/workout-splits/">Workout Splits</a><a href="/de/compound-vs-isolation/">Compound vs Isolation</a></div>
+            </li>
+            <li><a href="/de/#preise">Preise</a></li>
+            <li><a href="/de/#faq">FAQ</a></li>
+        </ul>
+        <div class="nav-right"><a href="/personal-training/" class="lang-switch">FR</a><a href="https://apps.apple.com/app/aivancepro/id6756116760" class="nav-cta" target="_blank" rel="noopener">Herunterladen</a><button class="mobile-menu-btn" onclick="document.getElementById('mobileMenu').classList.add('open')" aria-label="Menü"><span></span><span></span><span></span></button></div>
+    </div></nav>
+
+    <div id="mobileMenu" class="mobile-menu">
+        <button class="mobile-menu-close" onclick="document.getElementById('mobileMenu').classList.remove('open')">&times;</button>
+        <a href="/de/">Startseite</a><a href="/de/blog/">Blog</a><a href="/de/ratgeber/">Ratgeber</a><a href="/de/uebungen/">Übungen</a><a href="/de/workout-splits/">Workout Splits</a><a href="/de/#preise">Preise</a><a href="/personal-training/">Fran&ccedil;ais</a>
+    </div>
+
+    <header class="article-header">
+        <div class="section-label">Personal Training</div>
+        <h1>Personal Training: Ihr vollständiger Leitfaden zum persönlichen Coaching</h1>
+        <p>Erfahren Sie, wie Personal Training Ihr Workout verändern kann und wie KI das Coaching für alle zugänglich macht.</p>
+    </header>
+
+    <article class="article-content">
+        <h2>Was ist Personal Training?</h2>
+        <p>Personal Training ist die individuelle Betreuung durch einen Fitnessexperten. Ein persönlicher Coach erstellt Programme, die auf Ihre Ziele zugeschnitten sind, korrigiert Ihre Technik und motiviert Sie bei jeder Einheit.</p>
+        <p>Traditionell war Personal Training denjenigen vorbehalten, die sich Preise von 50 bis 100 Euro pro Sitzung leisten konnten. Doch dank der Technologie entwickelt sich Personal Training heute rasant weiter.</p>
+
+        <div class="img-placeholder">Personal Training im Fitnessstudio Foto</div>
+
+        <h2>Vorteile eines persönlichen Coaches</h2>
+        <ul>
+            <li><strong>Individuelle Programme</strong> &mdash; angepasst an Ihr Niveau, Ihre Ziele und Ihre Rahmenbedingungen</li>
+            <li><strong>Technikkorrektur</strong> &mdash; Verletzungsprävention und Optimierung der Bewegungsausführung</li>
+            <li><strong>Ständige Motivation</strong> &mdash; Verantwortlichkeit und Unterstützung in schwierigen Momenten</li>
+            <li><strong>Beschleunigte Fortschritte</strong> &mdash; Anpassungen in Echtzeit basierend auf Ihrer Leistung</li>
+            <li><strong>Zeitersparnis</strong> &mdash; kein Grübeln mehr, was Sie im Fitnessstudio machen sollen</li>
+        </ul>
+
+        <h2>Traditioneller Coach vs KI-Coach</h2>
+        <p>Persönliches Coaching entwickelt sich weiter. Künstliche Intelligenz bietet heute eine glaubwürdige und zugängliche Alternative zum traditionellen Coaching.</p>
+
+        <table class="comparison-table">
+            <thead>
+                <tr><th></th><th>Traditioneller Coach</th><th>KI-Coach (AIVancePro)</th></tr>
+            </thead>
+            <tbody>
+                <tr><td><strong>Kosten</strong></td><td>50-100&euro;/Sitzung</td><td>9,99&euro;/Monat unbegrenzt</td></tr>
+                <tr><td><strong>Verfügbarkeit</strong></td><td>Feste Zeiten</td><td>24/7</td></tr>
+                <tr><td><strong>Personalisierung</strong></td><td>Gut</td><td>Ausgezeichnet (datengesteuert)</td></tr>
+                <tr><td><strong>Fortschrittsverfolgung</strong></td><td>Manuell</td><td>Automatisch + Diagramme</td></tr>
+                <tr><td><strong>Technikkorrektur</strong></td><td>Vor Ort</td><td>Detaillierte Anleitungen + Videos</td></tr>
+                <tr><td><strong>Echtzeit-Anpassung</strong></td><td>Ja</td><td>Ja (Verlaufsanalyse)</td></tr>
+                <tr><td><strong>Motivation</strong></td><td>Physische Präsenz</td><td>Community + Gamification</td></tr>
+            </tbody>
+        </table>
+
+        <div class="img-placeholder">Coaching-Vergleich Foto</div>
+
+        <h2>Wie KI das Coaching revolutioniert</h2>
+        <p>Künstliche Intelligenz analysiert Tausende von Datenpunkten &mdash; Ihre Trainingshistorie, persönliche Rekorde, Regelmäßigkeit, Volumen &mdash; um Programme zu erstellen, die wirklich auf Ihr individuelles Profil zugeschnitten sind.</p>
+        <p>Im Gegensatz zu einem menschlichen Coach, der durch Gedächtnis und Zeit begrenzt ist, kennt der KI-Coach Ihren gesamten Werdegang und kann jede Einheit sofort anpassen.</p>
+
+        <h3>Was der KI-Coach von AIVancePro kann:</h3>
+        <ul>
+            <li>Ein komplettes Workout in Sekunden erstellen</li>
+            <li>Volumen und Intensität basierend auf Ihrer Erschöpfung anpassen</li>
+            <li>Alternative Übungen je nach vorhandenem Equipment vorschlagen</li>
+            <li>Ihre Fortschritte analysieren und Plateaus erkennen</li>
+            <li>Alle Ihre Fragen in natürlicher Sprache beantworten</li>
+        </ul>
+
+        <h2>Für wen eignet sich Personal Training?</h2>
+        <p><strong>Für alle.</strong> Ob Sie Anfänger sind und Ihr Training strukturieren möchten, Fortgeschrittener und ein Plateau durchbrechen wollen, oder erfahrener Sportler und jedes Detail optimieren möchten &mdash; individuelle Betreuung macht den Unterschied.</p>
+        <p>Mit AIVancePro ist Personal Training kein Luxus mehr. Es ist ein zugängliches Werkzeug für alle, direkt in Ihrer Tasche.</p>
+
+        <div class="img-placeholder">AIVancePro App Coaching Foto</div>
+    </article>
+
+    <section class="cta-section">
+        <h2>Ihr persönlicher Coach, in Ihrer Tasche</h2>
+        <p>Laden Sie AIVancePro herunter und erhalten Sie personalisiertes KI-Coaching, rund um die Uhr.</p>
+        <a href="https://apps.apple.com/app/aivancepro/id6756116760" class="btn-primary" target="_blank" rel="noopener">Kostenlos herunterladen</a>
+    </section>
+
+    <footer><div class="footer-inner">
+        <div class="footer-grid">
+            <div class="footer-brand"><a href="/de/" class="logo"><img src="../../assets/logo.png" alt="AIVancePro"><span class="logo-text">AIVancePro</span></a><p>Ihr persönlicher Fitness-Coach mit künstlicher Intelligenz.</p></div>
+            <div class="footer-col"><h4>Produkt</h4><ul><li><a href="/de/#funktionen">Funktionen</a></li><li><a href="/de/#preise">Preise</a></li><li><a href="/de/#faq">FAQ</a></li><li><a href="/de/support.html">Support</a></li></ul></div>
+            <div class="footer-col"><h4>Artikel</h4><ul><li><a href="/de/blog/">Blog</a></li><li><a href="/de/ratgeber/">Ratgeber</a></li><li><a href="/de/uebungen/">Übungen</a></li><li><a href="/de/workout-splits/">Workout Splits</a></li></ul></div>
+            <div class="footer-col"><h4>Rechtliches</h4><ul><li><a href="/de/datenschutz.html">Datenschutz</a></li><li><a href="/de/agb.html">AGB</a></li></ul></div>
+        </div>
+        <div class="footer-bottom"><p>&copy; 2026 AS Corporation. Alle Rechte vorbehalten.</p></div>
+    </div></footer>
+</body>
+</html>

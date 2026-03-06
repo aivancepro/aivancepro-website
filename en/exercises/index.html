@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/png" sizes="64x64" href="../../assets/favicon-64.png">
+    <link rel="icon" type="image/png" sizes="48x48" href="../../assets/favicon-48.png">
+    <link rel="apple-touch-icon" sizes="128x128" href="../../assets/apple-touch-icon.png">
+    <title>Exercise Library - 240+ Strength Training Exercises - AIVancePro</title>
+    <meta name="description" content="Discover our library of over 240 strength training and fitness exercises. Filter by muscle group and find the perfect exercise.">
+    <link rel="canonical" href="https://aivancepro.fr/en/exercises/">
+    <link rel="alternate" hreflang="fr" href="https://aivancepro.fr/exercices/">
+    <link rel="alternate" hreflang="en" href="https://aivancepro.fr/en/exercises/">
+    <link rel="alternate" hreflang="de" href="https://aivancepro.fr/de/uebungen/">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://aivancepro.fr/en/exercises/">
+    <meta property="og:title" content="240+ Strength Training Exercises - AIVancePro">
+    <meta property="og:description" content="Complete exercise library with detailed instructions for every movement.">
+    <meta property="og:site_name" content="AIVancePro">
+    <meta property="og:locale" content="en_US">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        :root { --blue: #2563EB; --blue-light: #3B82F6; --purple: #9333EA; --dark: #0F172A; --gray-900: #111827; --gray-700: #374151; --gray-500: #6B7280; --gray-400: #9CA3AF; --gray-200: #E5E7EB; --gray-100: #F3F4F6; --gray-50: #F9FAFB; --white: #FFFFFF; }
+        body { font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif; background: var(--white); color: var(--gray-900); line-height: 1.6; -webkit-font-smoothing: antialiased; }
+
+        nav { position: fixed; top: 0; width: 100%; padding: 0.875rem 2rem; background: rgba(255,255,255,0.92); backdrop-filter: blur(20px); -webkit-backdrop-filter: blur(20px); z-index: 100; display: flex; justify-content: center; border-bottom: 1px solid var(--gray-200); }
+        .nav-inner { max-width: 1200px; width: 100%; display: flex; justify-content: space-between; align-items: center; }
+        .logo { font-size: 1.4rem; font-weight: 800; color: var(--gray-900); text-decoration: none; display: flex; align-items: center; gap: 0.5rem; }
+        .logo img { width: 34px; height: 34px; border-radius: 8px; }
+        .logo-text { background: linear-gradient(135deg, var(--blue), var(--purple)); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; }
+        .nav-center { display: flex; gap: 2rem; align-items: center; list-style: none; }
+        .nav-center a { color: var(--gray-500); text-decoration: none; font-size: 0.9rem; font-weight: 500; transition: color 0.2s; }
+        .nav-center a:hover { color: var(--gray-900); }
+        .dropdown { position: relative; }
+        .dropdown-toggle { color: var(--blue); font-size: 0.9rem; font-weight: 500; cursor: pointer; display: flex; align-items: center; gap: 0.3rem; background: none; border: none; font-family: inherit; }
+        .dropdown-toggle svg { width: 12px; height: 12px; transition: transform 0.2s; }
+        .dropdown:hover .dropdown-toggle svg { transform: rotate(180deg); }
+        .dropdown-menu { position: absolute; top: calc(100% + 0.75rem); left: 50%; transform: translateX(-50%); background: var(--white); border: 1px solid var(--gray-200); border-radius: 12px; padding: 0.5rem; min-width: 220px; box-shadow: 0 10px 40px rgba(0,0,0,0.08); opacity: 0; visibility: hidden; transition: opacity 0.2s, visibility 0.2s, transform 0.2s; transform: translateX(-50%) translateY(4px); }
+        .dropdown:hover .dropdown-menu { opacity: 1; visibility: visible; transform: translateX(-50%) translateY(0); }
+        .dropdown-menu a { display: block; padding: 0.6rem 1rem; color: var(--gray-700); text-decoration: none; font-size: 0.875rem; font-weight: 500; border-radius: 8px; transition: background 0.15s, color 0.15s; }
+        .dropdown-menu a:hover { background: var(--gray-50); color: var(--blue); }
+        .nav-right { display: flex; align-items: center; gap: 1rem; }
+        .lang-switch { color: var(--gray-500); text-decoration: none; font-size: 0.8rem; font-weight: 600; border: 1px solid var(--gray-200); padding: 0.3rem 0.6rem; border-radius: 6px; transition: all 0.2s; }
+        .lang-switch:hover { color: var(--gray-900); border-color: var(--gray-400); }
+        .nav-cta { background: linear-gradient(135deg, var(--blue), var(--purple)); color: var(--white); text-decoration: none; font-size: 0.875rem; font-weight: 600; padding: 0.5rem 1.2rem; border-radius: 8px; transition: opacity 0.2s; }
+        .nav-cta:hover { opacity: 0.9; }
+        .mobile-menu-btn { display: none; background: none; border: none; cursor: pointer; padding: 0.5rem; }
+        .mobile-menu-btn span { display: block; width: 22px; height: 2px; background: var(--gray-700); margin: 5px 0; border-radius: 2px; }
+
+        .page-header { padding: 9rem 2rem 2rem; text-align: center; background: linear-gradient(180deg, var(--gray-50), var(--white)); }
+        .section-label { display: inline-block; font-size: 0.8rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.08em; color: var(--blue); margin-bottom: 0.75rem; }
+        .page-header h1 { font-size: 2.8rem; font-weight: 800; letter-spacing: -0.02em; margin-bottom: 1rem; }
+        .page-header p { color: var(--gray-500); font-size: 1.1rem; max-width: 550px; margin: 0 auto; }
+
+        .filter-bar { max-width: 1100px; margin: 2rem auto 0; display: flex; justify-content: center; gap: 0.5rem; flex-wrap: wrap; padding: 0 2rem; }
+        .filter-btn { padding: 0.5rem 1.1rem; border-radius: 50px; border: 1px solid var(--gray-200); background: var(--white); color: var(--gray-500); font-size: 0.85rem; font-weight: 600; font-family: inherit; cursor: pointer; transition: all 0.2s; }
+        .filter-btn:hover, .filter-btn.active { background: var(--blue); color: var(--white); border-color: var(--blue); }
+
+        .exercises-grid { max-width: 1100px; margin: 0 auto; padding: 2.5rem 2rem 4rem; display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.25rem; }
+
+        .exercise-card { background: var(--white); border: 1px solid var(--gray-200); border-radius: 14px; padding: 1.25rem; transition: border-color 0.2s, transform 0.2s, box-shadow 0.2s; }
+        .exercise-card:hover { border-color: rgba(37,99,235,0.25); transform: translateY(-3px); box-shadow: 0 6px 20px rgba(0,0,0,0.05); }
+        .exercise-card .card-image { width: 100%; height: 140px; background: linear-gradient(135deg, var(--gray-100), var(--gray-200)); border-radius: 10px; display: flex; align-items: center; justify-content: center; color: var(--gray-400); font-size: 0.75rem; font-weight: 500; margin-bottom: 1rem; }
+        .exercise-card h3 { font-size: 1rem; font-weight: 700; margin-bottom: 0.4rem; }
+        .exercise-card .tags { display: flex; gap: 0.4rem; margin-bottom: 0.5rem; flex-wrap: wrap; }
+        .exercise-card .tag { padding: 0.15rem 0.5rem; border-radius: 50px; font-size: 0.65rem; font-weight: 600; }
+        .tag-muscle { background: rgba(37,99,235,0.08); color: var(--blue); }
+        .tag-compound { background: rgba(147,51,234,0.08); color: var(--purple); }
+        .tag-isolation { background: rgba(245,158,11,0.08); color: #D97706; }
+        .exercise-card p { color: var(--gray-500); font-size: 0.8rem; line-height: 1.5; }
+
+        .exercises-count { text-align: center; padding: 1rem 2rem 0; color: var(--gray-400); font-size: 0.85rem; }
+
+        .cta-section { padding: 5rem 2rem; text-align: center; background: linear-gradient(135deg, var(--dark), #1a1145); color: var(--white); }
+        .cta-section h2 { font-size: 2.2rem; font-weight: 800; margin-bottom: 1rem; }
+        .cta-section p { color: rgba(255,255,255,0.6); font-size: 1rem; max-width: 480px; margin: 0 auto 2rem; }
+        .btn-primary { display: inline-flex; align-items: center; gap: 0.5rem; background: linear-gradient(135deg, var(--blue), var(--purple)); color: var(--white); text-decoration: none; font-size: 1rem; font-weight: 600; padding: 0.875rem 2rem; border-radius: 12px; transition: opacity 0.2s, transform 0.2s; box-shadow: 0 4px 15px rgba(37,99,235,0.3); }
+        .btn-primary:hover { opacity: 0.92; transform: translateY(-2px); }
+
+        footer { background: var(--gray-900); color: rgba(255,255,255,0.5); padding: 4rem 2rem 2rem; }
+        .footer-inner { max-width: 1100px; margin: 0 auto; }
+        .footer-grid { display: grid; grid-template-columns: 2fr 1fr 1fr 1fr; gap: 3rem; margin-bottom: 3rem; }
+        .footer-brand .logo { color: var(--white); margin-bottom: 1rem; }
+        .footer-brand p { font-size: 0.85rem; line-height: 1.6; color: rgba(255,255,255,0.4); max-width: 280px; }
+        .footer-col h4 { color: var(--white); font-size: 0.85rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.05em; margin-bottom: 1rem; }
+        .footer-col ul { list-style: none; display: flex; flex-direction: column; gap: 0.6rem; }
+        .footer-col a { color: rgba(255,255,255,0.4); text-decoration: none; font-size: 0.85rem; transition: color 0.2s; }
+        .footer-col a:hover { color: var(--white); }
+        .footer-bottom { border-top: 1px solid rgba(255,255,255,0.08); padding-top: 2rem; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 1rem; }
+        .footer-bottom p { font-size: 0.8rem; }
+        .footer-social { display: flex; gap: 1rem; }
+        .footer-social a { color: rgba(255,255,255,0.3); transition: color 0.2s; }
+        .footer-social a:hover { color: var(--white); }
+        .footer-social svg { width: 20px; height: 20px; }
+
+        .mobile-menu { display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: var(--white); z-index: 200; padding: 5rem 2rem 2rem; flex-direction: column; }
+        .mobile-menu.open { display: flex; }
+        .mobile-menu-close { position: absolute; top: 1rem; right: 1.5rem; background: none; border: none; font-size: 1.5rem; cursor: pointer; color: var(--gray-700); padding: 0.5rem; }
+        .mobile-menu a { display: block; padding: 1rem 0; font-size: 1.1rem; font-weight: 600; color: var(--gray-900); text-decoration: none; border-bottom: 1px solid var(--gray-100); }
+
+        @media (max-width: 1024px) { .exercises-grid { grid-template-columns: repeat(2, 1fr); } }
+        @media (max-width: 768px) {
+            .nav-center, .nav-right .nav-cta { display: none; }
+            .mobile-menu-btn { display: block; }
+            .page-header { padding: 7rem 1.5rem 2rem; }
+            .page-header h1 { font-size: 2rem; }
+            .exercises-grid { grid-template-columns: 1fr; }
+            .footer-grid { grid-template-columns: 1fr 1fr; gap: 2rem; }
+        }
+        @media (max-width: 480px) { .footer-grid { grid-template-columns: 1fr; } }
+    </style>
+</head>
+<body>
+    <nav>
+        <div class="nav-inner">
+            <a href="/en/" class="logo"><img src="../../assets/logo.png" alt="AIVancePro"><span class="logo-text">AIVancePro</span></a>
+            <ul class="nav-center">
+                <li><a href="/en/#features">Features</a></li>
+                <li class="dropdown">
+                    <button class="dropdown-toggle">Articles <svg viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M5.23 7.21a.75.75 0 011.06.02L10 11.168l3.71-3.938a.75.75 0 111.08 1.04l-4.25 4.5a.75.75 0 01-1.08 0l-4.25-4.5a.75.75 0 01.02-1.06z" clip-rule="evenodd"/></svg></button>
+                    <div class="dropdown-menu">
+                        <a href="/en/blog/">Blog</a>
+                        <a href="/en/guides/">Guides</a>
+                        <a href="/en/exercises/" style="color:var(--blue);">Exercise Library</a>
+                        <a href="/en/personal-training/">Personal Training</a>
+                        <a href="/en/workout-splits/">Workout Splits</a>
+                        <a href="/en/compound-vs-isolation/">Compound vs Isolation</a>
+                    </div>
+                </li>
+                <li><a href="/en/#pricing">Pricing</a></li>
+                <li><a href="/en/#faq">FAQ</a></li>
+            </ul>
+            <div class="nav-right">
+                <a href="/exercices/" class="lang-switch">FR</a>
+                <a href="https://apps.apple.com/app/aivancepro/id6756116760" class="nav-cta" target="_blank" rel="noopener">Download</a>
+                <button class="mobile-menu-btn" onclick="document.getElementById('mobileMenu').classList.add('open')" aria-label="Menu"><span></span><span></span><span></span></button>
+            </div>
+        </div>
+    </nav>
+
+    <div id="mobileMenu" class="mobile-menu">
+        <button class="mobile-menu-close" onclick="document.getElementById('mobileMenu').classList.remove('open')">&times;</button>
+        <a href="/en/">Home</a><a href="/en/blog/">Blog</a><a href="/en/guides/">Guides</a><a href="/en/exercises/">Exercises</a><a href="/en/workout-splits/">Workout Splits</a><a href="/en/#pricing">Pricing</a><a href="/exercices/">Fran&ccedil;ais</a>
+    </div>
+
+    <header class="page-header">
+        <div class="section-label">Exercises</div>
+        <h1>Exercise Library</h1>
+        <p>Over 240 exercises with detailed instructions. Filter by muscle group to find the perfect exercise for you.</p>
+    </header>
+
+    <div class="filter-bar">
+        <button class="filter-btn active" onclick="filterExercises('all', this)">All</button>
+        <button class="filter-btn" onclick="filterExercises('chest', this)">Chest</button>
+        <button class="filter-btn" onclick="filterExercises('back', this)">Back</button>
+        <button class="filter-btn" onclick="filterExercises('shoulders', this)">Shoulders</button>
+        <button class="filter-btn" onclick="filterExercises('arms', this)">Arms</button>
+        <button class="filter-btn" onclick="filterExercises('legs', this)">Legs</button>
+        <button class="filter-btn" onclick="filterExercises('abs', this)">Abs</button>
+        <button class="filter-btn" onclick="filterExercises('cardio', this)">Cardio</button>
+    </div>
+
+    <div class="exercises-count"><span id="count">24</span> exercises shown</div>
+
+    <section class="exercises-grid">
+        <div class="exercise-card" data-muscle="chest"><div class="card-image img-placeholder">Bench Press Photo</div><h3>Bench Press</h3><div class="tags"><span class="tag tag-muscle">Chest</span><span class="tag tag-compound">Compound</span></div><p>The king of chest exercises. Also works triceps and anterior shoulders.</p></div>
+        <div class="exercise-card" data-muscle="chest"><div class="card-image img-placeholder">Incline Press Photo</div><h3>Incline Bench Press</h3><div class="tags"><span class="tag tag-muscle">Chest</span><span class="tag tag-compound">Compound</span></div><p>Targets the upper chest. Ideal for developing the upper pectoral area.</p></div>
+        <div class="exercise-card" data-muscle="chest"><div class="card-image img-placeholder">Dumbbell Flyes Photo</div><h3>Dumbbell Flyes</h3><div class="tags"><span class="tag tag-muscle">Chest</span><span class="tag tag-isolation">Isolation</span></div><p>Isolates the chest with an opening motion. Excellent for stretch and contraction.</p></div>
+        <div class="exercise-card" data-muscle="chest"><div class="card-image img-placeholder">Dips Photo</div><h3>Dips</h3><div class="tags"><span class="tag tag-muscle">Chest</span><span class="tag tag-compound">Compound</span></div><p>Bodyweight movement targeting chest and triceps. Adjust lean angle to vary emphasis.</p></div>
+
+        <div class="exercise-card" data-muscle="back"><div class="card-image img-placeholder">Pull-ups Photo</div><h3>Pull-ups</h3><div class="tags"><span class="tag tag-muscle">Back</span><span class="tag tag-compound">Compound</span></div><p>Foundational back exercise. Builds lat width and bicep strength.</p></div>
+        <div class="exercise-card" data-muscle="back"><div class="card-image img-placeholder">Barbell Row Photo</div><h3>Barbell Row</h3><div class="tags"><span class="tag tag-muscle">Back</span><span class="tag tag-compound">Compound</span></div><p>Builds back thickness. Targets rhomboids, traps and lats.</p></div>
+        <div class="exercise-card" data-muscle="back"><div class="card-image img-placeholder">Deadlift Photo</div><h3>Deadlift</h3><div class="tags"><span class="tag tag-muscle">Back</span><span class="tag tag-compound">Compound</span></div><p>The most complete movement. Recruits back, legs, glutes and core.</p></div>
+        <div class="exercise-card" data-muscle="back"><div class="card-image img-placeholder">Lat Pulldown Photo</div><h3>Lat Pulldown</h3><div class="tags"><span class="tag tag-muscle">Back</span><span class="tag tag-compound">Compound</span></div><p>Cable alternative to pull-ups. Allows precise load adjustment.</p></div>
+
+        <div class="exercise-card" data-muscle="shoulders"><div class="card-image img-placeholder">Overhead Press Photo</div><h3>Overhead Press</h3><div class="tags"><span class="tag tag-muscle">Shoulders</span><span class="tag tag-compound">Compound</span></div><p>Primary shoulder movement. Works deltoids and triceps.</p></div>
+        <div class="exercise-card" data-muscle="shoulders"><div class="card-image img-placeholder">Lateral Raises Photo</div><h3>Lateral Raises</h3><div class="tags"><span class="tag tag-muscle">Shoulders</span><span class="tag tag-isolation">Isolation</span></div><p>Isolates the lateral deltoid for wider shoulders. Control the movement.</p></div>
+        <div class="exercise-card" data-muscle="shoulders"><div class="card-image img-placeholder">Face Pull Photo</div><h3>Face Pull</h3><div class="tags"><span class="tag tag-muscle">Shoulders</span><span class="tag tag-isolation">Isolation</span></div><p>Targets rear deltoid and external rotators. Essential for shoulder health.</p></div>
+
+        <div class="exercise-card" data-muscle="arms"><div class="card-image img-placeholder">Bicep Curl Photo</div><h3>Bicep Curl</h3><div class="tags"><span class="tag tag-muscle">Arms</span><span class="tag tag-isolation">Isolation</span></div><p>The classic bicep exercise. Variations: barbell, dumbbell, hammer.</p></div>
+        <div class="exercise-card" data-muscle="arms"><div class="card-image img-placeholder">Tricep Extensions Photo</div><h3>Tricep Extensions</h3><div class="tags"><span class="tag tag-muscle">Arms</span><span class="tag tag-isolation">Isolation</span></div><p>Isolates the triceps with cable or dumbbells. Ideal complement to pressing movements.</p></div>
+        <div class="exercise-card" data-muscle="arms"><div class="card-image img-placeholder">Hammer Curl Photo</div><h3>Hammer Curl</h3><div class="tags"><span class="tag tag-muscle">Arms</span><span class="tag tag-isolation">Isolation</span></div><p>Targets the brachioradialis and brachialis. Neutral grip for thicker arms.</p></div>
+
+        <div class="exercise-card" data-muscle="legs"><div class="card-image img-placeholder">Squat Photo</div><h3>Squat</h3><div class="tags"><span class="tag tag-muscle">Legs</span><span class="tag tag-compound">Compound</span></div><p>The king of leg exercises. Works quads, glutes and hamstrings.</p></div>
+        <div class="exercise-card" data-muscle="legs"><div class="card-image img-placeholder">Lunges Photo</div><h3>Lunges</h3><div class="tags"><span class="tag tag-muscle">Legs</span><span class="tag tag-compound">Compound</span></div><p>Excellent unilateral exercise for balance, quads and glutes.</p></div>
+        <div class="exercise-card" data-muscle="legs"><div class="card-image img-placeholder">Leg Press Photo</div><h3>Leg Press</h3><div class="tags"><span class="tag tag-muscle">Legs</span><span class="tag tag-compound">Compound</span></div><p>Machine alternative to squats. Allows heavy loading with safety.</p></div>
+        <div class="exercise-card" data-muscle="legs"><div class="card-image img-placeholder">Leg Curl Photo</div><h3>Leg Curl</h3><div class="tags"><span class="tag tag-muscle">Legs</span><span class="tag tag-isolation">Isolation</span></div><p>Isolates the hamstrings. Essential for leg muscle balance.</p></div>
+        <div class="exercise-card" data-muscle="legs"><div class="card-image img-placeholder">Hip Thrust Photo</div><h3>Hip Thrust</h3><div class="tags"><span class="tag tag-muscle">Legs</span><span class="tag tag-compound">Compound</span></div><p>The best glute exercise. Hip extension with progressive overload.</p></div>
+
+        <div class="exercise-card" data-muscle="abs"><div class="card-image img-placeholder">Crunch Photo</div><h3>Crunch</h3><div class="tags"><span class="tag tag-muscle">Abs</span><span class="tag tag-isolation">Isolation</span></div><p>Basic ab exercise. Focus on the contraction of the rectus abdominis.</p></div>
+        <div class="exercise-card" data-muscle="abs"><div class="card-image img-placeholder">Plank Photo</div><h3>Plank</h3><div class="tags"><span class="tag tag-muscle">Abs</span><span class="tag tag-isolation">Isolation</span></div><p>Isometric core strengthening. Improves overall stability and posture.</p></div>
+        <div class="exercise-card" data-muscle="abs"><div class="card-image img-placeholder">Hanging Leg Raise Photo</div><h3>Hanging Leg Raise</h3><div class="tags"><span class="tag tag-muscle">Abs</span><span class="tag tag-isolation">Isolation</span></div><p>Targets the lower abs. Hang from a bar for maximum range of motion.</p></div>
+
+        <div class="exercise-card" data-muscle="cardio"><div class="card-image img-placeholder">Rowing Machine Photo</div><h3>Rowing Machine</h3><div class="tags"><span class="tag tag-muscle">Cardio</span><span class="tag tag-compound">Compound</span></div><p>Full-body cardio engaging the entire body. Excellent effort-to-joint-impact ratio.</p></div>
+        <div class="exercise-card" data-muscle="cardio"><div class="card-image img-placeholder">Jump Rope Photo</div><h3>Jump Rope</h3><div class="tags"><span class="tag tag-muscle">Cardio</span><span class="tag tag-compound">Compound</span></div><p>High-intensity cardio and coordination. Perfect for warm-up or HIIT.</p></div>
+    </section>
+
+    <section class="cta-section">
+        <h2>240+ exercises in your pocket</h2>
+        <p>Download AIVancePro to access all exercises with videos, instructions and direct integration into your workouts.</p>
+        <a href="https://apps.apple.com/app/aivancepro/id6756116760" class="btn-primary" target="_blank" rel="noopener">Download for free</a>
+    </section>
+
+    <footer>
+        <div class="footer-inner">
+            <div class="footer-grid">
+                <div class="footer-brand"><a href="/en/" class="logo"><img src="../../assets/logo.png" alt="AIVancePro"><span class="logo-text">AIVancePro</span></a><p>Your personal fitness coach powered by artificial intelligence.</p></div>
+                <div class="footer-col"><h4>Product</h4><ul><li><a href="/en/#features">Features</a></li><li><a href="/en/#pricing">Pricing</a></li><li><a href="/en/#faq">FAQ</a></li><li><a href="/en/support.html">Support</a></li></ul></div>
+                <div class="footer-col"><h4>Articles</h4><ul><li><a href="/en/blog/">Blog</a></li><li><a href="/en/guides/">Guides</a></li><li><a href="/en/exercises/">Exercises</a></li><li><a href="/en/workout-splits/">Workout Splits</a></li></ul></div>
+                <div class="footer-col"><h4>Legal</h4><ul><li><a href="/en/privacy.html">Privacy</a></li><li><a href="/en/terms.html">Terms</a></li></ul></div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2026 AS Corporation. All rights reserved.</p>
+                <div class="footer-social">
+                    <a href="https://www.instagram.com/aivancepro/" target="_blank" rel="noopener" aria-label="Instagram"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z"/></svg></a>
+                    <a href="https://www.tiktok.com/@aivancepro" target="_blank" rel="noopener" aria-label="TikTok"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M19.59 6.69a4.83 4.83 0 01-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 01-2.88 2.5 2.89 2.89 0 01-2.89-2.89 2.89 2.89 0 012.89-2.89c.28 0 .54.04.79.1v-3.5a6.37 6.37 0 00-.79-.05A6.34 6.34 0 003.15 15.2a6.34 6.34 0 0010.86 4.46V13.2a8.16 8.16 0 005.58 2.17V12a4.83 4.83 0 01-3.77-1.54V6.69h3.77z"/></svg></a>
+                    <a href="https://x.com/AIVancePro" target="_blank" rel="noopener" aria-label="X"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg></a>
+                    <a href="https://www.youtube.com/channel/UC8MGuOS22H-jXfe8Haqw8LA" target="_blank" rel="noopener" aria-label="YouTube"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M23.498 6.186a3.016 3.016 0 00-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 00.502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 002.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 002.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/></svg></a>
+                    <a href="https://www.linkedin.com/company/aivancepro" target="_blank" rel="noopener" aria-label="LinkedIn"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 01-2.063-2.065 2.064 2.064 0 112.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg></a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        function filterExercises(muscle, btn) {
+            document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
+            btn.classList.add('active');
+            let count = 0;
+            document.querySelectorAll('.exercise-card').forEach(card => {
+                if (muscle === 'all' || card.dataset.muscle === muscle) {
+                    card.style.display = '';
+                    count++;
+                } else {
+                    card.style.display = 'none';
+                }
+            });
+            document.getElementById('count').textContent = count;
+        }
+    </script>
+</body>
+</html>

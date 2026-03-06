@@ -1,0 +1,1616 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/png" sizes="64x64" href="../assets/favicon-64.png">
+    <link rel="icon" type="image/png" sizes="48x48" href="../assets/favicon-48.png">
+    <link rel="apple-touch-icon" sizes="128x128" href="../assets/apple-touch-icon.png">
+    <title>AIVancePro - Ihr pers&ouml;nlicher KI-Fitness-Coach</title>
+    <meta name="description" content="AIVancePro ist Ihr pers&ouml;nlicher Fitness-Coach, angetrieben von k&uuml;nstlicher Intelligenz. Personalisierte Programme, Fortschrittsverfolgung und Sport-Community.">
+    <meta name="keywords" content="KI Fitness Coach, Krafttraining App, personalisiertes Trainingsprogramm, Fortschrittsverfolgung Sport, virtueller Personal Trainer, Krafttraining Anf&auml;nger, Fitness &Uuml;bungen, Home Gym, Training zuhause, k&uuml;nstliche Intelligenz Sport">
+    <link rel="canonical" href="https://aivancepro.fr/de/">
+    <link rel="alternate" hreflang="fr" href="https://aivancepro.fr/">
+    <link rel="alternate" hreflang="en" href="https://aivancepro.fr/en/">
+    <link rel="alternate" hreflang="de" href="https://aivancepro.fr/de/">
+    <link rel="alternate" hreflang="x-default" href="https://aivancepro.fr/">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://aivancepro.fr/de/">
+    <meta property="og:title" content="AIVancePro - Ihr pers&ouml;nlicher KI-Fitness-Coach">
+    <meta property="og:description" content="Personalisierte Trainingspl&auml;ne durch k&uuml;nstliche Intelligenz. Fortschrittsverfolgung, +240 &Uuml;bungen und Sport-Community.">
+    <meta property="og:site_name" content="AIVancePro">
+    <meta property="og:image" content="https://aivancepro.fr/assets/og-image.png">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+    <meta property="og:locale" content="de_DE">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="AIVancePro - KI-Trainingscoach">
+    <meta name="twitter:description" content="Ihr pers&ouml;nlicher Trainingscoach, angetrieben von k&uuml;nstlicher Intelligenz.">
+    <meta name="twitter:image" content="https://aivancepro.fr/assets/og-image.png">
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "MobileApplication",
+        "name": "AIVancePro",
+        "description": "Pers&ouml;nlicher Fitness-Coach, angetrieben von k&uuml;nstlicher Intelligenz mit personalisierten Programmen und Fortschrittsverfolgung.",
+        "operatingSystem": "iOS, Android",
+        "applicationCategory": "HealthApplication",
+        "offers": {
+            "@type": "Offer",
+            "price": "0",
+            "priceCurrency": "EUR"
+        },
+        "author": {
+            "@type": "Organization",
+            "name": "AS Corporation",
+            "url": "https://aivancepro.fr"
+        },
+        "installUrl": [
+            "https://apps.apple.com/de/app/aivancepro/id6756116760",
+            "https://play.google.com/store/apps/details?id=com.aivancepro.app"
+        ]
+    }
+    </script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+
+        :root {
+            --blue: #2563EB;
+            --blue-light: #3B82F6;
+            --purple: #9333EA;
+            --purple-light: #A855F7;
+            --dark: #0F172A;
+            --dark-light: #1E293B;
+            --gray-900: #111827;
+            --gray-700: #374151;
+            --gray-500: #6B7280;
+            --gray-400: #9CA3AF;
+            --gray-200: #E5E7EB;
+            --gray-100: #F3F4F6;
+            --gray-50: #F9FAFB;
+            --white: #FFFFFF;
+        }
+
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+            background-color: var(--white);
+            color: var(--gray-900);
+            line-height: 1.6;
+            -webkit-font-smoothing: antialiased;
+        }
+
+        /* ===== NAVIGATION ===== */
+        nav {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            padding: 0.875rem 2rem;
+            background: rgba(255, 255, 255, 0.92);
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+            z-index: 100;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            border-bottom: 1px solid var(--gray-200);
+        }
+
+        .nav-inner {
+            max-width: 1200px;
+            width: 100%;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-size: 1.4rem;
+            font-weight: 800;
+            color: var(--gray-900);
+            text-decoration: none;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .logo img {
+            width: 34px;
+            height: 34px;
+            border-radius: 8px;
+        }
+
+        .logo-text {
+            background: linear-gradient(135deg, var(--blue), var(--purple));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .nav-center {
+            display: flex;
+            gap: 2rem;
+            align-items: center;
+            list-style: none;
+        }
+
+        .nav-center a {
+            color: var(--gray-500);
+            text-decoration: none;
+            font-size: 0.9rem;
+            font-weight: 500;
+            transition: color 0.2s;
+        }
+
+        .nav-center a:hover {
+            color: var(--gray-900);
+        }
+
+        /* Dropdown Articles */
+        .dropdown {
+            position: relative;
+        }
+
+        .dropdown-toggle {
+            color: var(--gray-500);
+            text-decoration: none;
+            font-size: 0.9rem;
+            font-weight: 500;
+            transition: color 0.2s;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            gap: 0.3rem;
+            background: none;
+            border: none;
+            font-family: inherit;
+        }
+
+        .dropdown-toggle:hover {
+            color: var(--gray-900);
+        }
+
+        .dropdown-toggle svg {
+            width: 12px;
+            height: 12px;
+            transition: transform 0.2s;
+        }
+
+        .dropdown:hover .dropdown-toggle svg {
+            transform: rotate(180deg);
+        }
+
+        .dropdown-menu {
+            position: absolute;
+            top: calc(100% + 0.75rem);
+            left: 50%;
+            transform: translateX(-50%);
+            background: var(--white);
+            border: 1px solid var(--gray-200);
+            border-radius: 12px;
+            padding: 0.5rem;
+            min-width: 220px;
+            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.08);
+            opacity: 0;
+            visibility: hidden;
+            transition: opacity 0.2s, visibility 0.2s, transform 0.2s;
+            transform: translateX(-50%) translateY(4px);
+        }
+
+        .dropdown:hover .dropdown-menu {
+            opacity: 1;
+            visibility: visible;
+            transform: translateX(-50%) translateY(0);
+        }
+
+        .dropdown-menu a {
+            display: block;
+            padding: 0.6rem 1rem;
+            color: var(--gray-700);
+            text-decoration: none;
+            font-size: 0.875rem;
+            font-weight: 500;
+            border-radius: 8px;
+            transition: background 0.15s, color 0.15s;
+        }
+
+        .dropdown-menu a:hover {
+            background: var(--gray-50);
+            color: var(--blue);
+        }
+
+        .nav-right {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+        }
+
+        .lang-switch {
+            color: var(--gray-500);
+            text-decoration: none;
+            font-size: 0.8rem;
+            font-weight: 600;
+            border: 1px solid var(--gray-200);
+            padding: 0.3rem 0.6rem;
+            border-radius: 6px;
+            transition: all 0.2s;
+        }
+
+        .lang-switch:hover {
+            color: var(--gray-900);
+            border-color: var(--gray-400);
+        }
+
+        .nav-login {
+            color: var(--gray-700);
+            text-decoration: none;
+            font-size: 0.875rem;
+            font-weight: 600;
+            transition: color 0.2s;
+        }
+
+        .nav-login:hover {
+            color: var(--blue);
+        }
+
+        .nav-cta {
+            background: linear-gradient(135deg, var(--blue), var(--purple));
+            color: var(--white);
+            text-decoration: none;
+            font-size: 0.875rem;
+            font-weight: 600;
+            padding: 0.5rem 1.2rem;
+            border-radius: 8px;
+            transition: opacity 0.2s, transform 0.2s;
+        }
+
+        .nav-cta:hover {
+            opacity: 0.9;
+            transform: translateY(-1px);
+        }
+
+        /* Mobile nav */
+        .mobile-menu-btn {
+            display: none;
+            background: none;
+            border: none;
+            cursor: pointer;
+            padding: 0.5rem;
+        }
+
+        .mobile-menu-btn span {
+            display: block;
+            width: 22px;
+            height: 2px;
+            background: var(--gray-700);
+            margin: 5px 0;
+            transition: all 0.3s;
+            border-radius: 2px;
+        }
+
+        /* ===== HERO ===== */
+        .hero {
+            padding: 10rem 2rem 6rem;
+            text-align: center;
+            background: linear-gradient(180deg, var(--gray-50) 0%, var(--white) 100%);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -20%;
+            width: 140%;
+            height: 100%;
+            background: radial-gradient(ellipse at 30% 50%, rgba(37, 99, 235, 0.06) 0%, transparent 60%),
+                        radial-gradient(ellipse at 70% 50%, rgba(147, 51, 234, 0.05) 0%, transparent 60%);
+            pointer-events: none;
+        }
+
+        .hero-content {
+            max-width: 800px;
+            margin: 0 auto;
+            position: relative;
+            z-index: 1;
+        }
+
+        .hero-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            padding: 0.4rem 1rem;
+            background: linear-gradient(135deg, rgba(37, 99, 235, 0.08), rgba(147, 51, 234, 0.08));
+            border: 1px solid rgba(37, 99, 235, 0.15);
+            border-radius: 50px;
+            font-size: 0.8rem;
+            font-weight: 600;
+            color: var(--blue);
+            margin-bottom: 1.5rem;
+        }
+
+        .hero h1 {
+            font-size: 4rem;
+            font-weight: 900;
+            line-height: 1.08;
+            letter-spacing: -0.03em;
+            color: var(--gray-900);
+            margin-bottom: 1.5rem;
+        }
+
+        .hero h1 .gradient {
+            background: linear-gradient(135deg, var(--blue), var(--purple));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .hero p {
+            font-size: 1.2rem;
+            color: var(--gray-500);
+            max-width: 560px;
+            margin: 0 auto 2.5rem;
+            line-height: 1.7;
+        }
+
+        .hero-buttons {
+            display: flex;
+            gap: 1rem;
+            justify-content: center;
+            flex-wrap: wrap;
+            margin-bottom: 3rem;
+        }
+
+        .btn-primary {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            background: linear-gradient(135deg, var(--blue), var(--purple));
+            color: var(--white);
+            text-decoration: none;
+            font-size: 1rem;
+            font-weight: 600;
+            padding: 0.875rem 2rem;
+            border-radius: 12px;
+            transition: opacity 0.2s, transform 0.2s;
+            box-shadow: 0 4px 15px rgba(37, 99, 235, 0.3);
+        }
+
+        .btn-primary:hover {
+            opacity: 0.92;
+            transform: translateY(-2px);
+            box-shadow: 0 8px 25px rgba(37, 99, 235, 0.35);
+        }
+
+        .btn-secondary {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            background: var(--white);
+            color: var(--gray-700);
+            text-decoration: none;
+            font-size: 1rem;
+            font-weight: 600;
+            padding: 0.875rem 2rem;
+            border-radius: 12px;
+            border: 1px solid var(--gray-200);
+            transition: all 0.2s;
+        }
+
+        .btn-secondary:hover {
+            border-color: var(--gray-400);
+            transform: translateY(-2px);
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.06);
+        }
+
+        .store-icon {
+            width: 20px;
+            height: 20px;
+        }
+
+        .hero-phones {
+            position: relative;
+            max-width: 700px;
+            margin: 0 auto;
+            height: 500px;
+        }
+
+        .hero-phones .phone {
+            position: absolute;
+            width: 240px;
+            border-radius: 28px;
+            box-shadow: 0 25px 60px rgba(0, 0, 0, 0.12);
+        }
+
+        .hero-phones .phone-center {
+            left: 50%;
+            transform: translateX(-50%);
+            top: 0;
+            z-index: 3;
+            width: 260px;
+        }
+
+        .hero-phones .phone-left {
+            left: 10%;
+            top: 40px;
+            z-index: 2;
+            transform: rotate(-6deg);
+        }
+
+        .hero-phones .phone-right {
+            right: 10%;
+            top: 40px;
+            z-index: 2;
+            transform: rotate(6deg);
+        }
+
+        /* Placeholder for images */
+        .img-placeholder {
+            background: linear-gradient(135deg, var(--gray-100), var(--gray-200));
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--gray-400);
+            font-size: 0.8rem;
+            font-weight: 500;
+        }
+
+        /* ===== SOCIAL PROOF ===== */
+        .social-proof {
+            padding: 3rem 2rem;
+            border-top: 1px solid var(--gray-100);
+            border-bottom: 1px solid var(--gray-100);
+        }
+
+        .social-proof-inner {
+            max-width: 900px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: center;
+            gap: 4rem;
+            flex-wrap: wrap;
+        }
+
+        .proof-item {
+            text-align: center;
+        }
+
+        .proof-item .number {
+            font-size: 2rem;
+            font-weight: 800;
+            color: var(--gray-900);
+            letter-spacing: -0.02em;
+        }
+
+        .proof-item .number .gradient {
+            background: linear-gradient(135deg, var(--blue), var(--purple));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .proof-item .label {
+            font-size: 0.85rem;
+            color: var(--gray-500);
+            margin-top: 0.25rem;
+        }
+
+        /* ===== FEATURES ===== */
+        .features {
+            padding: 7rem 2rem;
+        }
+
+        .section-inner {
+            max-width: 1100px;
+            margin: 0 auto;
+        }
+
+        .section-label {
+            display: inline-block;
+            font-size: 0.8rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.08em;
+            color: var(--blue);
+            margin-bottom: 0.75rem;
+        }
+
+        .section-title {
+            font-size: 2.8rem;
+            font-weight: 800;
+            letter-spacing: -0.02em;
+            color: var(--gray-900);
+            margin-bottom: 1rem;
+            line-height: 1.15;
+        }
+
+        .section-subtitle {
+            font-size: 1.1rem;
+            color: var(--gray-500);
+            max-width: 550px;
+            line-height: 1.7;
+        }
+
+        .section-header {
+            text-align: center;
+            margin-bottom: 4rem;
+        }
+
+        .section-header .section-subtitle {
+            margin: 0 auto;
+        }
+
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 2rem;
+        }
+
+        .feature-card {
+            padding: 2rem;
+            border-radius: 16px;
+            border: 1px solid var(--gray-200);
+            background: var(--white);
+            transition: border-color 0.2s, box-shadow 0.2s, transform 0.2s;
+        }
+
+        .feature-card:hover {
+            border-color: rgba(37, 99, 235, 0.2);
+            box-shadow: 0 8px 30px rgba(37, 99, 235, 0.06);
+            transform: translateY(-4px);
+        }
+
+        .feature-icon {
+            width: 48px;
+            height: 48px;
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 1.25rem;
+            font-size: 1.5rem;
+        }
+
+        .feature-icon.blue { background: rgba(37, 99, 235, 0.08); }
+        .feature-icon.purple { background: rgba(147, 51, 234, 0.08); }
+        .feature-icon.green { background: rgba(16, 185, 129, 0.08); }
+        .feature-icon.orange { background: rgba(245, 158, 11, 0.08); }
+        .feature-icon.red { background: rgba(239, 68, 68, 0.08); }
+        .feature-icon.teal { background: rgba(20, 184, 166, 0.08); }
+
+        .feature-card h3 {
+            font-size: 1.15rem;
+            font-weight: 700;
+            color: var(--gray-900);
+            margin-bottom: 0.5rem;
+        }
+
+        .feature-card p {
+            font-size: 0.9rem;
+            color: var(--gray-500);
+            line-height: 1.6;
+        }
+
+        /* ===== SHOWCASE SECTION (alternating) ===== */
+        .showcase {
+            padding: 5rem 2rem;
+        }
+
+        .showcase:nth-child(even) {
+            background: var(--gray-50);
+        }
+
+        .showcase-inner {
+            max-width: 1100px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 4rem;
+            align-items: center;
+        }
+
+        .showcase-inner.reverse {
+            direction: rtl;
+        }
+
+        .showcase-inner.reverse > * {
+            direction: ltr;
+        }
+
+        .showcase-text h2 {
+            font-size: 2.2rem;
+            font-weight: 800;
+            letter-spacing: -0.02em;
+            color: var(--gray-900);
+            margin-bottom: 1rem;
+            line-height: 1.2;
+        }
+
+        .showcase-text p {
+            font-size: 1rem;
+            color: var(--gray-500);
+            line-height: 1.7;
+            margin-bottom: 1.5rem;
+        }
+
+        .showcase-list {
+            list-style: none;
+            display: flex;
+            flex-direction: column;
+            gap: 0.75rem;
+        }
+
+        .showcase-list li {
+            display: flex;
+            align-items: flex-start;
+            gap: 0.75rem;
+            font-size: 0.95rem;
+            color: var(--gray-700);
+        }
+
+        .showcase-list li svg {
+            width: 20px;
+            height: 20px;
+            flex-shrink: 0;
+            margin-top: 2px;
+            color: var(--blue);
+        }
+
+        .showcase-image {
+            display: flex;
+            justify-content: center;
+        }
+
+        .showcase-image .phone-mockup {
+            width: 280px;
+            border-radius: 32px;
+            box-shadow: 0 20px 50px rgba(0, 0, 0, 0.1);
+        }
+
+        .showcase-image .img-placeholder {
+            width: 280px;
+            height: 560px;
+            border-radius: 32px;
+        }
+
+        /* ===== PRICING ===== */
+        .pricing {
+            padding: 7rem 2rem;
+            background: var(--gray-50);
+        }
+
+        .pricing-grid {
+            max-width: 800px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 2rem;
+        }
+
+        .pricing-card {
+            background: var(--white);
+            border: 1px solid var(--gray-200);
+            border-radius: 20px;
+            padding: 2.5rem;
+            position: relative;
+            transition: transform 0.2s, box-shadow 0.2s;
+        }
+
+        .pricing-card:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 12px 40px rgba(0, 0, 0, 0.06);
+        }
+
+        .pricing-card.featured {
+            border-color: var(--blue);
+            box-shadow: 0 8px 30px rgba(37, 99, 235, 0.1);
+        }
+
+        .pricing-card.featured::before {
+            content: 'Beliebt';
+            position: absolute;
+            top: -12px;
+            left: 50%;
+            transform: translateX(-50%);
+            background: linear-gradient(135deg, var(--blue), var(--purple));
+            color: var(--white);
+            font-size: 0.75rem;
+            font-weight: 700;
+            padding: 0.3rem 1rem;
+            border-radius: 50px;
+        }
+
+        .pricing-card .plan-name {
+            font-size: 1.1rem;
+            font-weight: 700;
+            color: var(--gray-900);
+            margin-bottom: 0.5rem;
+        }
+
+        .pricing-card .price {
+            font-size: 3rem;
+            font-weight: 800;
+            color: var(--gray-900);
+            letter-spacing: -0.03em;
+        }
+
+        .pricing-card .price span {
+            font-size: 1rem;
+            font-weight: 500;
+            color: var(--gray-500);
+        }
+
+        .pricing-card .price-desc {
+            font-size: 0.85rem;
+            color: var(--gray-500);
+            margin-bottom: 2rem;
+        }
+
+        .pricing-features {
+            list-style: none;
+            display: flex;
+            flex-direction: column;
+            gap: 0.75rem;
+            margin-bottom: 2rem;
+        }
+
+        .pricing-features li {
+            display: flex;
+            align-items: center;
+            gap: 0.6rem;
+            font-size: 0.9rem;
+            color: var(--gray-700);
+        }
+
+        .pricing-features li svg {
+            width: 18px;
+            height: 18px;
+            color: var(--blue);
+            flex-shrink: 0;
+        }
+
+        .pricing-features li.disabled {
+            color: var(--gray-400);
+        }
+
+        .pricing-features li.disabled svg {
+            color: var(--gray-300);
+        }
+
+        .btn-pricing {
+            display: block;
+            width: 100%;
+            text-align: center;
+            padding: 0.875rem;
+            border-radius: 12px;
+            font-size: 0.95rem;
+            font-weight: 600;
+            text-decoration: none;
+            transition: all 0.2s;
+        }
+
+        .btn-pricing.primary {
+            background: linear-gradient(135deg, var(--blue), var(--purple));
+            color: var(--white);
+            box-shadow: 0 4px 15px rgba(37, 99, 235, 0.25);
+        }
+
+        .btn-pricing.primary:hover {
+            opacity: 0.92;
+            transform: translateY(-2px);
+        }
+
+        .btn-pricing.outline {
+            background: var(--white);
+            color: var(--gray-700);
+            border: 1px solid var(--gray-200);
+        }
+
+        .btn-pricing.outline:hover {
+            border-color: var(--blue);
+            color: var(--blue);
+        }
+
+        /* ===== FAQ ===== */
+        .faq {
+            padding: 7rem 2rem;
+        }
+
+        .faq-list {
+            max-width: 700px;
+            margin: 0 auto;
+            display: flex;
+            flex-direction: column;
+            gap: 0;
+        }
+
+        .faq-item {
+            border-bottom: 1px solid var(--gray-200);
+        }
+
+        .faq-question {
+            width: 100%;
+            background: none;
+            border: none;
+            text-align: left;
+            padding: 1.5rem 0;
+            font-size: 1.05rem;
+            font-weight: 600;
+            color: var(--gray-900);
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-family: inherit;
+            transition: color 0.2s;
+        }
+
+        .faq-question:hover {
+            color: var(--blue);
+        }
+
+        .faq-question svg {
+            width: 20px;
+            height: 20px;
+            color: var(--gray-400);
+            transition: transform 0.3s;
+            flex-shrink: 0;
+        }
+
+        .faq-item.open .faq-question svg {
+            transform: rotate(180deg);
+        }
+
+        .faq-answer {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.3s ease;
+        }
+
+        .faq-answer-inner {
+            padding: 0 0 1.5rem;
+            font-size: 0.95rem;
+            color: var(--gray-500);
+            line-height: 1.7;
+        }
+
+        .faq-item.open .faq-answer {
+            max-height: 300px;
+        }
+
+        /* ===== FINAL CTA ===== */
+        .final-cta {
+            padding: 7rem 2rem;
+            text-align: center;
+            background: linear-gradient(135deg, var(--dark) 0%, #1a1145 100%);
+            color: var(--white);
+        }
+
+        .final-cta h2 {
+            font-size: 2.8rem;
+            font-weight: 800;
+            letter-spacing: -0.02em;
+            margin-bottom: 1rem;
+        }
+
+        .final-cta p {
+            font-size: 1.1rem;
+            color: rgba(255, 255, 255, 0.6);
+            max-width: 500px;
+            margin: 0 auto 2.5rem;
+        }
+
+        .final-cta .btn-primary {
+            box-shadow: 0 4px 20px rgba(37, 99, 235, 0.4);
+        }
+
+        /* ===== FOOTER ===== */
+        footer {
+            background: var(--gray-900);
+            color: rgba(255, 255, 255, 0.5);
+            padding: 4rem 2rem 2rem;
+        }
+
+        .footer-inner {
+            max-width: 1100px;
+            margin: 0 auto;
+        }
+
+        .footer-grid {
+            display: grid;
+            grid-template-columns: 2fr 1fr 1fr 1fr;
+            gap: 3rem;
+            margin-bottom: 3rem;
+        }
+
+        .footer-brand .logo {
+            color: var(--white);
+            margin-bottom: 1rem;
+        }
+
+        .footer-brand p {
+            font-size: 0.85rem;
+            line-height: 1.6;
+            color: rgba(255, 255, 255, 0.4);
+            max-width: 280px;
+        }
+
+        .footer-col h4 {
+            color: var(--white);
+            font-size: 0.85rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            margin-bottom: 1rem;
+        }
+
+        .footer-col ul {
+            list-style: none;
+            display: flex;
+            flex-direction: column;
+            gap: 0.6rem;
+        }
+
+        .footer-col a {
+            color: rgba(255, 255, 255, 0.4);
+            text-decoration: none;
+            font-size: 0.85rem;
+            transition: color 0.2s;
+        }
+
+        .footer-col a:hover {
+            color: var(--white);
+        }
+
+        .footer-bottom {
+            border-top: 1px solid rgba(255, 255, 255, 0.08);
+            padding-top: 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 1rem;
+        }
+
+        .footer-bottom p {
+            font-size: 0.8rem;
+        }
+
+        .footer-social {
+            display: flex;
+            gap: 1rem;
+        }
+
+        .footer-social a {
+            color: rgba(255, 255, 255, 0.3);
+            transition: color 0.2s;
+        }
+
+        .footer-social a:hover {
+            color: var(--white);
+        }
+
+        .footer-social svg {
+            width: 20px;
+            height: 20px;
+        }
+
+        /* ===== MOBILE MENU ===== */
+        .mobile-menu {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: var(--white);
+            z-index: 200;
+            padding: 5rem 2rem 2rem;
+            flex-direction: column;
+        }
+
+        .mobile-menu.open {
+            display: flex;
+        }
+
+        .mobile-menu-close {
+            position: absolute;
+            top: 1rem;
+            right: 1.5rem;
+            background: none;
+            border: none;
+            font-size: 1.5rem;
+            cursor: pointer;
+            color: var(--gray-700);
+            padding: 0.5rem;
+        }
+
+        .mobile-menu a {
+            display: block;
+            padding: 1rem 0;
+            font-size: 1.1rem;
+            font-weight: 600;
+            color: var(--gray-900);
+            text-decoration: none;
+            border-bottom: 1px solid var(--gray-100);
+        }
+
+        .mobile-menu .mobile-sub {
+            padding-left: 1.5rem;
+        }
+
+        .mobile-menu .mobile-sub a {
+            font-size: 1rem;
+            font-weight: 500;
+            color: var(--gray-500);
+        }
+
+        /* ===== RESPONSIVE ===== */
+        @media (max-width: 1024px) {
+            .features-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+
+        @media (max-width: 768px) {
+            .nav-center, .nav-right .nav-login, .nav-right .nav-cta {
+                display: none;
+            }
+
+            .mobile-menu-btn {
+                display: block;
+            }
+
+            .hero {
+                padding: 8rem 1.5rem 4rem;
+            }
+
+            .hero h1 {
+                font-size: 2.5rem;
+            }
+
+            .hero p {
+                font-size: 1.05rem;
+            }
+
+            .hero-phones {
+                height: 350px;
+            }
+
+            .hero-phones .phone {
+                width: 180px;
+            }
+
+            .hero-phones .phone-center {
+                width: 200px;
+            }
+
+            .section-title {
+                font-size: 2rem;
+            }
+
+            .features-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .showcase-inner, .showcase-inner.reverse {
+                grid-template-columns: 1fr;
+                gap: 2rem;
+                direction: ltr;
+            }
+
+            .pricing-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .footer-grid {
+                grid-template-columns: 1fr 1fr;
+                gap: 2rem;
+            }
+
+            .social-proof-inner {
+                gap: 2rem;
+            }
+
+            .final-cta h2 {
+                font-size: 2rem;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .hero h1 {
+                font-size: 2rem;
+            }
+
+            .hero-buttons {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .footer-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Navigation -->
+    <nav>
+        <div class="nav-inner">
+            <a href="/de/" class="logo">
+                <img src="../assets/logo.png" alt="AIVancePro">
+                <span class="logo-text">AIVancePro</span>
+            </a>
+
+            <ul class="nav-center">
+                <li><a href="#funktionen">Funktionen</a></li>
+                <li class="dropdown">
+                    <button class="dropdown-toggle">
+                        Artikel
+                        <svg viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M5.23 7.21a.75.75 0 011.06.02L10 11.168l3.71-3.938a.75.75 0 111.08 1.04l-4.25 4.5a.75.75 0 01-1.08 0l-4.25-4.5a.75.75 0 01.02-1.06z" clip-rule="evenodd"/></svg>
+                    </button>
+                    <div class="dropdown-menu">
+                        <a href="/de/blog/">Blog</a>
+                        <a href="/de/ratgeber/">Ratgeber</a>
+                        <a href="/de/uebungen/">&Uuml;bungsbibliothek</a>
+                        <a href="/de/personal-training/">Personal Training</a>
+                        <a href="/de/workout-splits/">Workout Splits</a>
+                        <a href="/de/compound-vs-isolation/">Compound vs Isolation</a>
+                    </div>
+                </li>
+                <li><a href="#preise">Preise</a></li>
+                <li><a href="#faq">FAQ</a></li>
+            </ul>
+
+            <div class="nav-right">
+                <a href="/" class="lang-switch">FR</a>
+                <a href="/de/login.html" class="nav-login">Anmelden</a>
+                <a href="https://apps.apple.com/de/app/aivancepro/id6756116760" class="nav-cta" target="_blank" rel="noopener">Herunterladen</a>
+                <button class="mobile-menu-btn" onclick="document.getElementById('mobileMenu').classList.add('open')" aria-label="Men&uuml;">
+                    <span></span><span></span><span></span>
+                </button>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Mobile Menu -->
+    <div id="mobileMenu" class="mobile-menu">
+        <button class="mobile-menu-close" onclick="document.getElementById('mobileMenu').classList.remove('open')" aria-label="Schlie&szlig;en">&times;</button>
+        <a href="#funktionen" onclick="document.getElementById('mobileMenu').classList.remove('open')">Funktionen</a>
+        <a href="/de/blog/">Blog</a>
+        <div class="mobile-sub">
+            <a href="/de/ratgeber/">Ratgeber</a>
+            <a href="/de/uebungen/">&Uuml;bungsbibliothek</a>
+            <a href="/de/personal-training/">Personal Training</a>
+            <a href="/de/workout-splits/">Workout Splits</a>
+            <a href="/de/compound-vs-isolation/">Compound vs Isolation</a>
+        </div>
+        <a href="#preise" onclick="document.getElementById('mobileMenu').classList.remove('open')">Preise</a>
+        <a href="#faq" onclick="document.getElementById('mobileMenu').classList.remove('open')">FAQ</a>
+        <a href="/de/login.html">Anmelden</a>
+        <a href="/">Fran&ccedil;ais</a>
+    </div>
+
+    <!-- Hero -->
+    <section class="hero">
+        <div class="hero-content">
+            <div class="hero-badge">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z"/></svg>
+                KI-Coach f&uuml;r Krafttraining
+            </div>
+            <h1>Trainiere<br><span class="gradient">intelligenter</span></h1>
+            <p>AIVancePro verbindet k&uuml;nstliche Intelligenz mit Sportwissenschaft, um vollst&auml;ndig personalisierte Trainingspl&auml;ne zu erstellen. Machen Sie schneller Fortschritte, ohne sich zu verletzen.</p>
+            <div class="hero-buttons">
+                <a href="https://apps.apple.com/de/app/aivancepro/id6756116760" class="btn-primary" target="_blank" rel="noopener">
+                    <svg class="store-icon" viewBox="0 0 24 24" fill="currentColor"><path d="M18.71 19.5c-.83 1.24-1.71 2.45-3.05 2.47-1.34.03-1.77-.79-3.29-.79-1.53 0-2 .77-3.27.82-1.31.05-2.3-1.32-3.14-2.53C4.25 17 2.94 12.45 4.7 9.39c.87-1.52 2.43-2.48 4.12-2.51 1.28-.02 2.5.87 3.29.87.78 0 2.26-1.07 3.8-.91.65.03 2.47.26 3.64 1.98-.09.06-2.17 1.28-2.15 3.81.03 3.02 2.65 4.03 2.68 4.04-.03.07-.42 1.44-1.38 2.83M13 3.5c.73-.83 1.94-1.46 2.94-1.5.13 1.17-.34 2.35-1.04 3.19-.69.85-1.83 1.51-2.95 1.42-.15-1.15.41-2.35 1.05-3.11z"/></svg>
+                    App Store
+                </a>
+                <a href="https://play.google.com/store/apps/details?id=com.aivancepro.app" class="btn-secondary" target="_blank" rel="noopener">
+                    <svg class="store-icon" viewBox="0 0 24 24" fill="currentColor"><path d="M3.18 23.67c-.38-.39-.58-.94-.58-1.6V1.93c0-.66.2-1.21.58-1.6l.08-.08L14.74 11.7v.22L3.26 23.38l-.08-.08z"/><path d="M18.56 15.58l-3.82-3.84v-.22l3.82-3.84.08.05 4.53 2.57c1.29.73 1.29 1.93 0 2.67l-4.53 2.57-.08.04z" opacity=".8"/><path d="M18.65 15.53L14.74 11.6 3.18 23.2c.43.45 1.13.51 1.93.06l13.54-7.73" opacity=".6"/><path d="M18.65 7.68L5.11.95c-.8-.45-1.5-.39-1.93.06L14.74 12.6l3.91-3.92z" opacity=".6"/></svg>
+                    Google Play
+                </a>
+            </div>
+
+            <div class="hero-phones">
+                <img src="../assets/screenshots/fr/slice-2.png" alt="KI-Coach AIVancePro" class="phone phone-left">
+                <img src="../assets/screenshots/fr/slice-4.png" alt="Dashboard AIVancePro" class="phone phone-center">
+                <img src="../assets/screenshots/fr/slice-6.png" alt="Fortschrittsverfolgung AIVancePro" class="phone phone-right">
+            </div>
+        </div>
+    </section>
+
+    <!-- Social Proof -->
+    <section class="social-proof">
+        <div class="social-proof-inner">
+            <div class="proof-item">
+                <div class="number"><span class="gradient">240+</span></div>
+                <div class="label">Verf&uuml;gbare &Uuml;bungen</div>
+            </div>
+            <div class="proof-item">
+                <div class="number"><span class="gradient">100%</span></div>
+                <div class="label">KI-personalisiert</div>
+            </div>
+            <div class="proof-item">
+                <div class="number"><span class="gradient">iOS</span></div>
+                <div class="label">& Android</div>
+            </div>
+            <div class="proof-item">
+                <div class="number"><span class="gradient">24/7</span></div>
+                <div class="label">Coach verf&uuml;gbar</div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Features -->
+    <section class="features" id="funktionen">
+        <div class="section-inner">
+            <div class="section-header">
+                <div class="section-label">Funktionen</div>
+                <h2 class="section-title">Alles was Sie brauchen, um Fortschritte zu machen</h2>
+                <p class="section-subtitle">Ein Personal Trainer, ein Fitnessstudio und ein Trainingstagebuch, alles in Ihrer Tasche.</p>
+            </div>
+
+            <div class="features-grid">
+                <div class="feature-card">
+                    <div class="feature-icon blue">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#2563EB" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>
+                    </div>
+                    <h3>KI-Konversationscoach</h3>
+                    <p>Sprechen Sie mit Ihrem KI-Coach, um Trainingseinheiten zu generieren, Tipps zu erhalten und Ihre Programme in Echtzeit anzupassen.</p>
+                </div>
+
+                <div class="feature-card">
+                    <div class="feature-icon purple">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#9333EA" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z"/></svg>
+                    </div>
+                    <h3>+240 &Uuml;bungen</h3>
+                    <p>Umfassende &Uuml;bungsdatenbank mit Videos und detaillierten Anleitungen f&uuml;r eine perfekte Ausf&uuml;hrung.</p>
+                </div>
+
+                <div class="feature-card">
+                    <div class="feature-icon green">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#10B981" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/></svg>
+                    </div>
+                    <h3>Fortschrittsverfolgung</h3>
+                    <p>Verfolgen Sie Ihre Leistungen, pers&ouml;nlichen Rekorde und Trainingsvolumen mit detaillierten und &uuml;bersichtlichen Grafiken.</p>
+                </div>
+
+                <div class="feature-card">
+                    <div class="feature-icon orange">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#F59E0B" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 20h9"/><path d="M16.5 3.5a2.12 2.12 0 0 1 3 3L7 19l-4 1 1-4L16.5 3.5z"/></svg>
+                    </div>
+                    <h3>Personalisierte Programme</h3>
+                    <p>Die KI passt jede Trainingseinheit an Ihr Niveau, Ihre Ziele und Ihre verf&uuml;gbare Ausstattung an.</p>
+                </div>
+
+                <div class="feature-card">
+                    <div class="feature-icon red">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#EF4444" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+                    </div>
+                    <h3>Aktive Community</h3>
+                    <p>Treten Sie Gruppen bei, teilen Sie Ihre Leistungen und bleiben Sie motiviert dank einer Community von Sportlern.</p>
+                </div>
+
+                <div class="feature-card">
+                    <div class="feature-icon teal">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#14B8A6" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+                    </div>
+                    <h3>Timer & Live-Tracking</h3>
+                    <p>Integrierter Timer, automatische Pausenzeiten und Echtzeit-Tracking w&auml;hrend Ihrer Trainingseinheiten.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Showcase 1: KI-Coach -->
+    <section class="showcase">
+        <div class="showcase-inner">
+            <div class="showcase-text">
+                <div class="section-label">KI-Coach</div>
+                <h2>Ihr Personal Trainer, rund um die Uhr verf&uuml;gbar</h2>
+                <p>Bitten Sie ihn, eine Trainingseinheit zu erstellen, eine &Uuml;bung zu erkl&auml;ren oder Ihr Programm anzupassen. Er kennt Ihren Verlauf und passt sich an Sie an.</p>
+                <ul class="showcase-list">
+                    <li>
+                        <svg viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/></svg>
+                        Trainingseinheiten in nat&uuml;rlicher Sprache generieren
+                    </li>
+                    <li>
+                        <svg viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/></svg>
+                        Analyse Ihrer bisherigen Leistungen
+                    </li>
+                    <li>
+                        <svg viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/></svg>
+                        Personalisierte Tipps in Echtzeit
+                    </li>
+                </ul>
+            </div>
+            <div class="showcase-image">
+                <div class="img-placeholder" style="width:280px;height:560px;border-radius:32px;">Foto KI-Coach</div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Showcase 2: Fortschritt -->
+    <section class="showcase">
+        <div class="showcase-inner reverse">
+            <div class="showcase-text">
+                <div class="section-label">Fortschritt</div>
+                <h2>Visualisieren Sie jeden Fortschritt</h2>
+                <p>Volumen-Grafiken, pers&ouml;nliche Rekorde, Muskelgruppen-Verteilung, Aktivit&auml;tskalender... Alles wird automatisch erfasst.</p>
+                <ul class="showcase-list">
+                    <li>
+                        <svg viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/></svg>
+                        Detaillierte Fortschrittsgrafiken
+                    </li>
+                    <li>
+                        <svg viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/></svg>
+                        Automatische pers&ouml;nliche Rekorde
+                    </li>
+                    <li>
+                        <svg viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/></svg>
+                        KI-Analyse Ihrer Entwicklung
+                    </li>
+                </ul>
+            </div>
+            <div class="showcase-image">
+                <div class="img-placeholder" style="width:280px;height:560px;border-radius:32px;">Foto Fortschritt</div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Showcase 3: Community -->
+    <section class="showcase">
+        <div class="showcase-inner">
+            <div class="showcase-text">
+                <div class="section-label">Community</div>
+                <h2>Trainieren Sie gemeinsam</h2>
+                <p>Erstellen Sie Gruppen, fordern Sie Ihre Freunde heraus, teilen Sie Ihre Leistungen und motivieren Sie sich gegenseitig.</p>
+                <ul class="showcase-list">
+                    <li>
+                        <svg viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/></svg>
+                        Gruppen und Challenges unter Freunden
+                    </li>
+                    <li>
+                        <svg viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/></svg>
+                        Ranglisten und Bestenlisten
+                    </li>
+                    <li>
+                        <svg viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/></svg>
+                        Integrierter Messenger
+                    </li>
+                </ul>
+            </div>
+            <div class="showcase-image">
+                <div class="img-placeholder" style="width:280px;height:560px;border-radius:32px;">Foto Community</div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Pricing -->
+    <section class="pricing" id="preise">
+        <div class="section-inner">
+            <div class="section-header">
+                <div class="section-label">Preise</div>
+                <h2 class="section-title">W&auml;hlen Sie Ihren Plan</h2>
+                <p class="section-subtitle">Starten Sie kostenlos, wechseln Sie zu Premium, um das volle Potenzial Ihres Trainings freizuschalten.</p>
+            </div>
+
+            <div class="pricing-grid">
+                <!-- Free -->
+                <div class="pricing-card">
+                    <div class="plan-name">Kostenlos</div>
+                    <div class="price">0&euro; <span>/ Monat</span></div>
+                    <div class="price-desc">Zum Entdecken der App</div>
+                    <ul class="pricing-features">
+                        <li>
+                            <svg viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/></svg>
+                            Trainingserfassung
+                        </li>
+                        <li>
+                            <svg viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/></svg>
+                            +240 &Uuml;bungen
+                        </li>
+                        <li>
+                            <svg viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/></svg>
+                            Grundlegende Statistiken
+                        </li>
+                        <li class="disabled">
+                            <svg viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M4.293 4.293a1 1 0 011.414 0L10 8.586l4.293-4.293a1 1 0 111.414 1.414L11.414 10l4.293 4.293a1 1 0 01-1.414 1.414L10 11.414l-4.293 4.293a1 1 0 01-1.414-1.414L8.586 10 4.293 5.707a1 1 0 010-1.414z" clip-rule="evenodd"/></svg>
+                            Unbegrenzter KI-Coach
+                        </li>
+                        <li class="disabled">
+                            <svg viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M4.293 4.293a1 1 0 011.414 0L10 8.586l4.293-4.293a1 1 0 111.414 1.414L11.414 10l4.293 4.293a1 1 0 01-1.414 1.414L10 11.414l-4.293 4.293a1 1 0 01-1.414-1.414L8.586 10 4.293 5.707a1 1 0 010-1.414z" clip-rule="evenodd"/></svg>
+                            Erweiterte Analysen
+                        </li>
+                    </ul>
+                    <a href="https://apps.apple.com/de/app/aivancepro/id6756116760" class="btn-pricing outline" target="_blank" rel="noopener">Kostenlos starten</a>
+                </div>
+
+                <!-- Premium -->
+                <div class="pricing-card featured">
+                    <div class="plan-name">Premium</div>
+                    <div class="price">9,99&euro; <span>/ Monat</span></div>
+                    <div class="price-desc">Voller Zugang zu allen Funktionen</div>
+                    <ul class="pricing-features">
+                        <li>
+                            <svg viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/></svg>
+                            Alles aus dem kostenlosen Plan
+                        </li>
+                        <li>
+                            <svg viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/></svg>
+                            Unbegrenzter KI-Coach
+                        </li>
+                        <li>
+                            <svg viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/></svg>
+                            Erweiterte Analysen &amp; Grafiken
+                        </li>
+                        <li>
+                            <svg viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/></svg>
+                            Automatische Periodisierung
+                        </li>
+                        <li>
+                            <svg viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/></svg>
+                            Community &amp; Challenges
+                        </li>
+                    </ul>
+                    <a href="/de/login.html" class="btn-pricing primary">Jetzt abonnieren</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ -->
+    <section class="faq" id="faq">
+        <div class="section-inner">
+            <div class="section-header">
+                <div class="section-label">FAQ</div>
+                <h2 class="section-title">H&auml;ufig gestellte Fragen</h2>
+            </div>
+
+            <div class="faq-list">
+                <div class="faq-item">
+                    <button class="faq-question" onclick="this.parentElement.classList.toggle('open')">
+                        Ist AIVancePro kostenlos?
+                        <svg viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M5.23 7.21a.75.75 0 011.06.02L10 11.168l3.71-3.938a.75.75 0 111.08 1.04l-4.25 4.5a.75.75 0 01-1.08 0l-4.25-4.5a.75.75 0 01.02-1.06z" clip-rule="evenodd"/></svg>
+                    </button>
+                    <div class="faq-answer">
+                        <div class="faq-answer-inner">Ja, AIVancePro bietet einen kostenlosen Plan, der die Trainingserfassung, den Zugang zu &uuml;ber 240 &Uuml;bungen und grundlegende Statistiken umfasst. Der Premium-Plan f&uuml;r 9,99&euro;/Monat schaltet den unbegrenzten KI-Coach, erweiterte Analysen und alle Community-Funktionen frei.</div>
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <button class="faq-question" onclick="this.parentElement.classList.toggle('open')">
+                        Wie funktioniert der KI-Coach?
+                        <svg viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M5.23 7.21a.75.75 0 011.06.02L10 11.168l3.71-3.938a.75.75 0 111.08 1.04l-4.25 4.5a.75.75 0 01-1.08 0l-4.25-4.5a.75.75 0 01.02-1.06z" clip-rule="evenodd"/></svg>
+                    </button>
+                    <div class="faq-answer">
+                        <div class="faq-answer-inner">Der KI-Coach nutzt k&uuml;nstliche Intelligenz, um Ihr Profil, Ihre Trainingshistorie und Ihre Ziele zu analysieren. Sie k&ouml;nnen nat&uuml;rlich mit ihm sprechen: &laquo; Erstelle mir ein Brust-/Schultertraining &raquo;, &laquo; Wie verbessere ich mein Bankdr&uuml;cken? &raquo;. Er erstellt ma&szlig;geschneiderte Programme und passt sich Ihrem Fortschritt an.</div>
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <button class="faq-question" onclick="this.parentElement.classList.toggle('open')">
+                        Ist die App auf Android verf&uuml;gbar?
+                        <svg viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M5.23 7.21a.75.75 0 011.06.02L10 11.168l3.71-3.938a.75.75 0 111.08 1.04l-4.25 4.5a.75.75 0 01-1.08 0l-4.25-4.5a.75.75 0 01.02-1.06z" clip-rule="evenodd"/></svg>
+                    </button>
+                    <div class="faq-answer">
+                        <div class="faq-answer-inner">AIVancePro ist auf iOS (App Store) verf&uuml;gbar und wird bald auch auf Android (Google Play) erh&auml;ltlich sein. Melden Sie sich an, um &uuml;ber den Android-Start benachrichtigt zu werden.</div>
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <button class="faq-question" onclick="this.parentElement.classList.toggle('open')">
+                        Kann ich mein Abonnement jederzeit k&uuml;ndigen?
+                        <svg viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M5.23 7.21a.75.75 0 011.06.02L10 11.168l3.71-3.938a.75.75 0 111.08 1.04l-4.25 4.5a.75.75 0 01-1.08 0l-4.25-4.5a.75.75 0 01.02-1.06z" clip-rule="evenodd"/></svg>
+                    </button>
+                    <div class="faq-answer">
+                        <div class="faq-answer-inner">Selbstverst&auml;ndlich. Sie k&ouml;nnen Ihr Premium-Abonnement jederzeit &uuml;ber die App-Einstellungen oder Ihr App Store/Google Play-Konto k&uuml;ndigen. Es gibt keine Vertragsbindung.</div>
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <button class="faq-question" onclick="this.parentElement.classList.toggle('open')">
+                        Ist AIVancePro f&uuml;r Anf&auml;nger geeignet?
+                        <svg viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M5.23 7.21a.75.75 0 011.06.02L10 11.168l3.71-3.938a.75.75 0 111.08 1.04l-4.25 4.5a.75.75 0 01-1.08 0l-4.25-4.5a.75.75 0 01.02-1.06z" clip-rule="evenodd"/></svg>
+                    </button>
+                    <div class="faq-answer">
+                        <div class="faq-answer-inner">Ja, die App ist f&uuml;r alle Fitnessniveaus konzipiert. Der KI-Coach passt &Uuml;bungen, Gewichte und Volumen automatisch an Ihre Erfahrung an. Ein Einf&uuml;hrungsleitfaden hilft Anf&auml;ngern beim Einstieg.</div>
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <button class="faq-question" onclick="this.parentElement.classList.toggle('open')">
+                        Sind meine Daten sicher?
+                        <svg viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M5.23 7.21a.75.75 0 011.06.02L10 11.168l3.71-3.938a.75.75 0 111.08 1.04l-4.25 4.5a.75.75 0 01-1.08 0l-4.25-4.5a.75.75 0 01.02-1.06z" clip-rule="evenodd"/></svg>
+                    </button>
+                    <div class="faq-answer">
+                        <div class="faq-answer-inner">Ihre Daten werden sicher und verschl&uuml;sselt gehostet. Wir verkaufen niemals Ihre pers&ouml;nlichen Daten. Lesen Sie unsere <a href="/de/datenschutz.html" style="color:var(--blue);">Datenschutzerkl&auml;rung</a> f&uuml;r weitere Informationen.</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Final CTA -->
+    <section class="final-cta">
+        <h2>Bereit, Ihr Training zu transformieren?</h2>
+        <p>Laden Sie AIVancePro kostenlos herunter und beginnen Sie noch heute intelligent zu trainieren.</p>
+        <a href="https://apps.apple.com/de/app/aivancepro/id6756116760" class="btn-primary" target="_blank" rel="noopener">
+            Kostenlos herunterladen
+        </a>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer-inner">
+            <div class="footer-grid">
+                <div class="footer-brand">
+                    <a href="/de/" class="logo">
+                        <img src="../assets/logo.png" alt="AIVancePro">
+                        <span class="logo-text">AIVancePro</span>
+                    </a>
+                    <p>Ihr pers&ouml;nlicher Fitness-Coach, angetrieben von k&uuml;nstlicher Intelligenz. Trainieren Sie intelligenter.</p>
+                </div>
+
+                <div class="footer-col">
+                    <h4>Produkt</h4>
+                    <ul>
+                        <li><a href="#funktionen">Funktionen</a></li>
+                        <li><a href="#preise">Preise</a></li>
+                        <li><a href="#faq">FAQ</a></li>
+                        <li><a href="/de/support.html">Support</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-col">
+                    <h4>Artikel</h4>
+                    <ul>
+                        <li><a href="/de/blog/">Blog</a></li>
+                        <li><a href="/de/ratgeber/">Ratgeber</a></li>
+                        <li><a href="/de/uebungen/">&Uuml;bungen</a></li>
+                        <li><a href="/de/workout-splits/">Workout Splits</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-col">
+                    <h4>Rechtliches</h4>
+                    <ul>
+                        <li><a href="/de/datenschutz.html">Datenschutz</a></li>
+                        <li><a href="/de/agb.html">AGB</a></li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="footer-bottom">
+                <p>&copy; 2026 AS Corporation. Alle Rechte vorbehalten.</p>
+                <div class="footer-social">
+                    <a href="https://www.instagram.com/aivancepro/" target="_blank" rel="noopener" aria-label="Instagram">
+                        <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z"/></svg>
+                    </a>
+                    <a href="https://www.tiktok.com/@aivancepro" target="_blank" rel="noopener" aria-label="TikTok">
+                        <svg viewBox="0 0 24 24" fill="currentColor"><path d="M19.59 6.69a4.83 4.83 0 01-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 01-2.88 2.5 2.89 2.89 0 01-2.89-2.89 2.89 2.89 0 012.89-2.89c.28 0 .54.04.79.1v-3.5a6.37 6.37 0 00-.79-.05A6.34 6.34 0 003.15 15.2a6.34 6.34 0 0010.86 4.46V13.2a8.16 8.16 0 005.58 2.17V12a4.83 4.83 0 01-3.77-1.54V6.69h3.77z"/></svg>
+                    </a>
+                    <a href="https://x.com/AIVancePro" target="_blank" rel="noopener" aria-label="X">
+                        <svg viewBox="0 0 24 24" fill="currentColor"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
+                    </a>
+                    <a href="https://www.youtube.com/channel/UC8MGuOS22H-jXfe8Haqw8LA" target="_blank" rel="noopener" aria-label="YouTube">
+                        <svg viewBox="0 0 24 24" fill="currentColor"><path d="M23.498 6.186a3.016 3.016 0 00-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 00.502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 002.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 002.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/></svg>
+                    </a>
+                    <a href="https://www.linkedin.com/company/aivancepro" target="_blank" rel="noopener" aria-label="LinkedIn">
+                        <svg viewBox="0 0 24 24" fill="currentColor"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 01-2.063-2.065 2.064 2.064 0 112.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
+                    </a>
+                    <a href="https://www.reddit.com/user/AIVancePro" target="_blank" rel="noopener" aria-label="Reddit">
+                        <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 0A12 12 0 000 12a12 12 0 0012 12 12 12 0 0012-12A12 12 0 0012 0zm5.01 4.744c.688 0 1.25.561 1.25 1.249a1.25 1.25 0 01-2.498.056l-2.597-.547-.8 3.747c1.824.07 3.48.632 4.674 1.488.308-.309.73-.491 1.207-.491.968 0 1.754.786 1.754 1.754 0 .716-.435 1.333-1.01 1.614a3.111 3.111 0 01.042.52c0 2.694-3.13 4.87-7.004 4.87-3.874 0-7.004-2.176-7.004-4.87 0-.183.015-.366.043-.534A1.748 1.748 0 014.028 12c0-.968.786-1.754 1.754-1.754.463 0 .898.196 1.207.49 1.207-.883 2.878-1.43 4.744-1.487l.885-4.182a.342.342 0 01.14-.197.35.35 0 01.238-.042l2.906.617a1.214 1.214 0 011.108-.701zM9.25 12C8.561 12 8 12.562 8 13.25c0 .687.561 1.248 1.25 1.248.687 0 1.248-.561 1.248-1.249 0-.688-.561-1.249-1.249-1.249zm5.5 0c-.687 0-1.248.561-1.248 1.25 0 .687.561 1.248 1.249 1.248.688 0 1.249-.561 1.249-1.249 0-.687-.562-1.249-1.25-1.249zm-5.466 3.99a.327.327 0 00-.231.094.33.33 0 000 .463c.842.842 2.484.913 2.961.913.477 0 2.105-.056 2.961-.913a.361.361 0 000-.462.342.342 0 00-.462 0c-.545.533-1.684.73-2.512.73-.828 0-1.953-.21-2.498-.73a.327.327 0 00-.219-.095z"/></svg>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+</body>
+</html>
