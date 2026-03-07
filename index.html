@@ -880,6 +880,39 @@
             margin-bottom: 0;
         }
 
+        .faq-category.faq-hidden {
+            display: none;
+        }
+
+        .faq-show-all {
+            display: flex;
+            justify-content: center;
+            margin-top: 2.5rem;
+        }
+
+        .faq-show-all button {
+            background: var(--white);
+            border: 1px solid var(--gray-200);
+            color: var(--gray-700);
+            font-family: inherit;
+            font-size: 0.95rem;
+            font-weight: 600;
+            padding: 0.875rem 2rem;
+            border-radius: 12px;
+            cursor: pointer;
+            transition: all 0.2s;
+        }
+
+        .faq-show-all button:hover {
+            border-color: var(--blue);
+            color: var(--blue);
+            box-shadow: 0 4px 12px rgba(37, 99, 235, 0.08);
+        }
+
+        .faq-show-all.hidden {
+            display: none;
+        }
+
         .faq-category-title {
             font-size: 1.6rem;
             font-weight: 800;
@@ -2005,7 +2038,7 @@
             </div>
 
             <!-- Cat&eacute;gorie 2: Fonctionnalit&eacute;s & exp&eacute;rience -->
-            <div class="faq-category">
+            <div class="faq-category faq-hidden">
                 <h2 class="faq-category-title">Fonctionnalit&eacute;s &amp; exp&eacute;rience utilisateur</h2>
                 <div class="faq-list">
                     <div class="faq-item">
@@ -2089,7 +2122,7 @@
             </div>
 
             <!-- Cat&eacute;gorie 3: Fondamentaux musculation -->
-            <div class="faq-category">
+            <div class="faq-category faq-hidden">
                 <h2 class="faq-category-title">Fondamentaux : comprendre la musculation</h2>
                 <div class="faq-list">
                     <div class="faq-item">
@@ -2173,7 +2206,7 @@
             </div>
 
             <!-- Cat&eacute;gorie 4: Selon vos objectifs -->
-            <div class="faq-category">
+            <div class="faq-category faq-hidden">
                 <h2 class="faq-category-title">Fondamentaux selon vos objectifs</h2>
 
                 <h3 class="faq-subcategory-title">S&eacute;cher &amp; se d&eacute;finir</h3>
@@ -2306,7 +2339,7 @@
             </div>
 
             <!-- Cat&eacute;gorie 5: Abonnement -->
-            <div class="faq-category">
+            <div class="faq-category faq-hidden">
                 <h2 class="faq-category-title">Abonnement &amp; compte</h2>
                 <div class="faq-list">
                     <div class="faq-item">
@@ -2352,6 +2385,10 @@
                         <div class="faq-answer"><div class="faq-answer-inner">Oui, supprimez votre compte &agrave; tout moment depuis les param&egrave;tres de l'application. Toutes vos donn&eacute;es personnelles seront d&eacute;finitivement supprim&eacute;es.</div></div>
                     </div>
                 </div>
+            </div>
+
+            <div class="faq-show-all" id="faqShowAll">
+                <button onclick="document.querySelectorAll('.faq-hidden').forEach(el=>el.classList.remove('faq-hidden'));this.parentElement.classList.add('hidden');">Voir toute la FAQ</button>
             </div>
 
         </div>
