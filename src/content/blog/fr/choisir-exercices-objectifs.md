@@ -4,6 +4,7 @@ description: "Guide complet pour sélectionner les bons exercices de musculation
 date: "2026-03-03"
 readTime: "6 min de lecture"
 tag: "Exercices"
+category: "musculation"
 lang: "fr"
 slug: "choisir-exercices-objectifs"
 canonical: "https://aivancepro.fr/blog/choisir-exercices-objectifs/"

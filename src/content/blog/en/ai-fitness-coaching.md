@@ -4,6 +4,7 @@ description: "Discover how artificial intelligence is transforming fitness coach
 date: "2026-02-07"
 readTime: "5 min read"
 tag: "Artificial Intelligence"
+category: "ai"
 lang: "en"
 slug: "ai-fitness-coaching"
 canonical: "https://aivancepro.fr/en/blog/ai-fitness-coaching/"

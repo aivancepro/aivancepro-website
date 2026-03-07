@@ -4,6 +4,7 @@ description: "Découvrez comment l'intelligence artificielle transforme le coach
 date: "2026-02-07"
 readTime: "5 min de lecture"
 tag: "Intelligence Artificielle"
+category: "ia"
 lang: "fr"
 slug: "coach-ia-fitness"
 canonical: "https://aivancepro.fr/blog/coach-ia-fitness/"

@@ -4,6 +4,7 @@ description: "Everything you need to know about training periodization: cycles, 
 date: "2026-03-03"
 readTime: "6 min read"
 tag: "Programming"
+category: "programming"
 lang: "en"
 slug: "periodization-training-program"
 canonical: "https://aivancepro.fr/en/blog/periodization-training-program/"

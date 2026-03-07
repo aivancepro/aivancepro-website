@@ -4,6 +4,7 @@ description: "Découvrez les 5 erreurs les plus fréquentes en musculation qui f
 date: "2026-03-03"
 readTime: "5 min de lecture"
 tag: "Conseils"
+category: "musculation"
 lang: "fr"
 slug: "erreurs-musculation"
 canonical: "https://aivancepro.fr/blog/erreurs-musculation/"

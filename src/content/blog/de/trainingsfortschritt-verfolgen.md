@@ -4,6 +4,7 @@ description: "Warum die Verfolgung Ihres Fortschritts der Schlüssel zu dauerhaf
 date: "2026-02-07"
 readTime: "5 Min. Lesezeit"
 tag: "Fortschritt"
+category: "tipps"
 lang: "de"
 slug: "trainingsfortschritt-verfolgen"
 canonical: "https://aivancepro.fr/de/blog/trainingsfortschritt-verfolgen/"

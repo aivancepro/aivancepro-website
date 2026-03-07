@@ -4,6 +4,7 @@ description: "Les fondamentaux de la nutrition en musculation : protéines, calo
 date: "2026-03-03"
 readTime: "7 min de lecture"
 tag: "Nutrition"
+category: "nutrition"
 lang: "fr"
 slug: "nutrition-musculation-bases"
 canonical: "https://aivancepro.fr/blog/nutrition-musculation-bases/"

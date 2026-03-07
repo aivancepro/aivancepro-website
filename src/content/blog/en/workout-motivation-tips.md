@@ -4,6 +4,7 @@ description: "Discover 5 proven tips to stay motivated in your training: clear g
 date: "2026-02-07"
 readTime: "4 min read"
 tag: "Motivation"
+category: "tips"
 lang: "en"
 slug: "workout-motivation-tips"
 canonical: "https://aivancepro.fr/en/blog/workout-motivation-tips/"

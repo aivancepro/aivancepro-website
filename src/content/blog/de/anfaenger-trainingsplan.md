@@ -4,6 +4,7 @@ description: "Neu im Krafttraining? Der komplette Leitfaden für Ihren ersten ef
 date: "2026-02-07"
 readTime: "7 Min. Lesezeit"
 tag: "Training"
+category: "training"
 lang: "de"
 slug: "anfaenger-trainingsplan"
 canonical: "https://aivancepro.fr/de/blog/anfaenger-trainingsplan/"

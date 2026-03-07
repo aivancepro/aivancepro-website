@@ -4,6 +4,7 @@ description: "Why tracking your fitness progress is essential to improve in weig
 date: "2026-02-07"
 readTime: "5 min read"
 tag: "Progress"
+category: "tips"
 lang: "en"
 slug: "tracking-fitness-progress"
 canonical: "https://aivancepro.fr/en/blog/tracking-fitness-progress/"

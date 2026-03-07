@@ -4,6 +4,7 @@ description: "Guide complet pour s'entraîner à la maison. Équipement essentie
 date: "2026-02-07"
 readTime: "6 min de lecture"
 tag: "Home Gym"
+category: "conseils"
 lang: "fr"
 slug: "home-gym-entrainement-maison"
 canonical: "https://aivancepro.fr/blog/home-gym-entrainement-maison/"

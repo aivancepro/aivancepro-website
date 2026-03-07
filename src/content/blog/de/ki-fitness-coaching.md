@@ -4,6 +4,7 @@ description: "Entdecken Sie, wie künstliche Intelligenz das Fitness-Coaching mi
 date: "2026-02-07"
 readTime: "5 Min. Lesezeit"
 tag: "Künstliche Intelligenz"
+category: "ki"
 lang: "de"
 slug: "ki-fitness-coaching"
 canonical: "https://aivancepro.fr/de/blog/ki-fitness-coaching/"

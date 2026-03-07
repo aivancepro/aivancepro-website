@@ -4,6 +4,7 @@ description: "Tout comprendre sur la périodisation en musculation : cycles, mé
 date: "2026-03-03"
 readTime: "6 min de lecture"
 tag: "Programmation"
+category: "programmation"
 lang: "fr"
 slug: "periodisation-programme-entrainement"
 canonical: "https://aivancepro.fr/blog/periodisation-programme-entrainement/"

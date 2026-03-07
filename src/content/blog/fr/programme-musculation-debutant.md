@@ -4,6 +4,7 @@ description: "Guide complet pour débuter en musculation. Exercices de base, pro
 date: "2026-02-07"
 readTime: "7 min de lecture"
 tag: "Musculation"
+category: "musculation"
 lang: "fr"
 slug: "programme-musculation-debutant"
 canonical: "https://aivancepro.fr/blog/programme-musculation-debutant/"

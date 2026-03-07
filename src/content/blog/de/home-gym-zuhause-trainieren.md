@@ -4,6 +4,7 @@ description: "Kompletter Leitfaden f√ºr das Training zu Hause: essenzielle Ausr√
 date: "2026-02-07"
 readTime: "6 Min. Lesezeit"
 tag: "Home Gym"
+category: "tipps"
 lang: "de"
 slug: "home-gym-zuhause-trainieren"
 canonical: "https://aivancepro.fr/de/blog/home-gym-zuhause-trainieren/"

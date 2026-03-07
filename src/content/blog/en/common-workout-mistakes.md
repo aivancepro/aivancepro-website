@@ -4,6 +4,7 @@ description: "Discover the 5 most common weight training mistakes that hold back
 date: "2026-03-03"
 readTime: "5 min read"
 tag: "Tips"
+category: "workout"
 lang: "en"
 slug: "common-workout-mistakes"
 canonical: "https://aivancepro.fr/en/blog/common-workout-mistakes/"

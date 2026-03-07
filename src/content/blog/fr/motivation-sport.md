@@ -4,6 +4,7 @@ description: "Découvrez 5 stratégies concrètes pour maintenir votre motivatio
 date: "2026-02-07"
 readTime: "4 min de lecture"
 tag: "Motivation"
+category: "conseils"
 lang: "fr"
 slug: "motivation-sport"
 canonical: "https://aivancepro.fr/blog/motivation-sport/"

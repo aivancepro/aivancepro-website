@@ -4,6 +4,7 @@ description: "Pourquoi suivre sa progression sportive est essentiel pour progres
 date: "2026-02-07"
 readTime: "5 min de lecture"
 tag: "Progression"
+category: "conseils"
 lang: "fr"
 slug: "suivi-progression-sportive"
 canonical: "https://aivancepro.fr/blog/suivi-progression-sportive/"

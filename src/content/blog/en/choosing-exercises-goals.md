@@ -4,6 +4,7 @@ description: "Complete guide to selecting the right weight training exercises ba
 date: "2026-03-03"
 readTime: "6 min read"
 tag: "Exercises"
+category: "workout"
 lang: "en"
 slug: "choosing-exercises-goals"
 canonical: "https://aivancepro.fr/en/blog/choosing-exercises-goals/"

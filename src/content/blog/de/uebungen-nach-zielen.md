@@ -4,6 +4,7 @@ description: "Kraft, Hypertrophie, Ausdauer: Leitfaden zur Auswahl der richtigen
 date: "2026-03-03"
 readTime: "6 Min. Lesezeit"
 tag: "Übungen"
+category: "training"
 lang: "de"
 slug: "uebungen-nach-zielen"
 canonical: "https://aivancepro.fr/de/blog/uebungen-nach-zielen/"

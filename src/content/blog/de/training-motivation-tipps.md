@@ -4,6 +4,7 @@ description: "Entdecken Sie 5 bewährte Tipps, um beim Training motiviert zu ble
 date: "2026-02-07"
 readTime: "4 Min. Lesezeit"
 tag: "Motivation"
+category: "tipps"
 lang: "de"
 slug: "training-motivation-tipps"
 canonical: "https://aivancepro.fr/de/blog/training-motivation-tipps/"

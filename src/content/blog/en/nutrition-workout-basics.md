@@ -4,6 +4,7 @@ description: "The fundamentals of nutrition for weight training: protein, calori
 date: "2026-03-03"
 readTime: "7 min read"
 tag: "Nutrition"
+category: "nutrition"
 lang: "en"
 slug: "nutrition-workout-basics"
 canonical: "https://aivancepro.fr/en/blog/nutrition-workout-basics/"

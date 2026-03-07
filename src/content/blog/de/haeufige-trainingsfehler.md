@@ -4,6 +4,7 @@ description: "Häufige Fallen, die Ihren Fortschritt bremsen, und wie Sie sie be
 date: "2026-03-03"
 readTime: "5 Min. Lesezeit"
 tag: "Tipps"
+category: "training"
 lang: "de"
 slug: "haeufige-trainingsfehler"
 canonical: "https://aivancepro.fr/de/blog/haeufige-trainingsfehler/"

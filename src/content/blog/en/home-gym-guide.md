@@ -4,6 +4,7 @@ description: "Complete guide to training at home: essential equipment, best body
 date: "2026-02-07"
 readTime: "6 min read"
 tag: "Home Gym"
+category: "tips"
 lang: "en"
 slug: "home-gym-guide"
 canonical: "https://aivancepro.fr/en/blog/home-gym-guide/"

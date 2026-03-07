@@ -4,6 +4,7 @@ description: "Complete guide to starting weight training. Basic exercises, 3-day
 date: "2026-02-07"
 readTime: "7 min read"
 tag: "Training"
+category: "workout"
 lang: "en"
 slug: "beginner-workout-program"
 canonical: "https://aivancepro.fr/en/blog/beginner-workout-program/"

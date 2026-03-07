@@ -4,6 +4,7 @@ description: "Zyklen, Mesozyklen, Deload: Alles verstehen, um nachhaltig Fortsch
 date: "2026-03-03"
 readTime: "6 Min. Lesezeit"
 tag: "Planung"
+category: "planung"
 lang: "de"
 slug: "periodisierung-trainingsplan"
 canonical: "https://aivancepro.fr/de/blog/periodisierung-trainingsplan/"

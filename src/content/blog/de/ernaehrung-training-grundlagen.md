@@ -4,6 +4,7 @@ description: "Protein, Kohlenhydrate, Fette und Mahlzeiten-Timing für optimale 
 date: "2026-03-03"
 readTime: "7 Min. Lesezeit"
 tag: "Ernährung"
+category: "ernaehrung"
 lang: "de"
 slug: "ernaehrung-training-grundlagen"
 canonical: "https://aivancepro.fr/de/blog/ernaehrung-training-grundlagen/"
