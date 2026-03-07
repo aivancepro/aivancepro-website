@@ -44,7 +44,10 @@ const localeMap = { fr: 'fr_FR', en: 'en_GB', de: 'de_DE' };
     <meta name="twitter:title" content={title}>
     {description && <meta name="twitter:description" content={description} />}
     <meta name="twitter:image" content={ogImage}>
-    {jsonLd && <script type="application/ld+json" set:html={JSON.stringify(jsonLd)} />}
+    {jsonLd && (Array.isArray(jsonLd)
+      ? jsonLd.map(block => <script type="application/ld+json" set:html={JSON.stringify(block)} />)
+      : <script type="application/ld+json" set:html={JSON.stringify(jsonLd)} />
+    )}
     <slot name="head" />
 </head>
 <body>
