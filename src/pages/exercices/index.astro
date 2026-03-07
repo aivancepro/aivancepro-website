@@ -1,11 +1,280 @@
 ---
 import BaseLayout from '../../layouts/BaseLayout.astro';
+
+const exercises = [
+  // PECTORAUX
+  { name: "Développé couché barre prise normale", muscle: "Pectoraux", equipment: "Barre", difficulty: "Intermédiaire", category: "pectoraux" },
+  { name: "Développé couché barre prise serrée", muscle: "Pectoraux", equipment: "Barre", difficulty: "Intermédiaire", category: "pectoraux" },
+  { name: "Développé couché barre prise large", muscle: "Pectoraux", equipment: "Barre", difficulty: "Intermédiaire", category: "pectoraux" },
+  { name: "Développé couché haltère", muscle: "Pectoraux", equipment: "Haltères", difficulty: "Intermédiaire", category: "pectoraux" },
+  { name: "Développé incliné barre prise normale", muscle: "Pectoraux supérieurs", equipment: "Barre", difficulty: "Intermédiaire", category: "pectoraux" },
+  { name: "Développé incliné barre prise serrée", muscle: "Pectoraux supérieurs", equipment: "Barre", difficulty: "Intermédiaire", category: "pectoraux" },
+  { name: "Développé incliné barre prise large", muscle: "Pectoraux supérieurs", equipment: "Barre", difficulty: "Intermédiaire", category: "pectoraux" },
+  { name: "Développé incliné haltère", muscle: "Pectoraux supérieurs", equipment: "Haltères", difficulty: "Intermédiaire", category: "pectoraux" },
+  { name: "Développé décliné barre prise normale", muscle: "Pectoraux inférieurs", equipment: "Barre", difficulty: "Avancé", category: "pectoraux" },
+  { name: "Développé décliné barre prise serrée", muscle: "Pectoraux inférieurs", equipment: "Barre", difficulty: "Avancé", category: "pectoraux" },
+  { name: "Développé décliné barre prise large", muscle: "Pectoraux inférieurs", equipment: "Barre", difficulty: "Avancé", category: "pectoraux" },
+  { name: "Développé décliné haltère", muscle: "Pectoraux inférieurs", equipment: "Haltères", difficulty: "Avancé", category: "pectoraux" },
+  { name: "Écarté couché haltère", muscle: "Pectoraux", equipment: "Haltères", difficulty: "Intermédiaire", category: "pectoraux" },
+  { name: "Écarté couché câble", muscle: "Pectoraux", equipment: "Câble", difficulty: "Intermédiaire", category: "pectoraux" },
+  { name: "Écarté incliné haltère", muscle: "Pectoraux supérieurs", equipment: "Haltères", difficulty: "Intermédiaire", category: "pectoraux" },
+  { name: "Écarté poulie vis-à-vis", muscle: "Pectoraux", equipment: "Câble", difficulty: "Intermédiaire", category: "pectoraux" },
+  { name: "Pompes classiques", muscle: "Pectoraux", equipment: "Poids du corps", difficulty: "Débutant", category: "pectoraux" },
+  { name: "Pompes lestées classiques", muscle: "Pectoraux", equipment: "Poids du corps + charge", difficulty: "Intermédiaire", category: "pectoraux" },
+  { name: "Pompes mains serrées", muscle: "Pectoraux / Triceps", equipment: "Poids du corps", difficulty: "Intermédiaire", category: "pectoraux" },
+  { name: "Pompes lestées mains serrées", muscle: "Pectoraux / Triceps", equipment: "Poids du corps + charge", difficulty: "Avancé", category: "pectoraux" },
+  { name: "Pompes mains larges", muscle: "Pectoraux", equipment: "Poids du corps", difficulty: "Débutant", category: "pectoraux" },
+  { name: "Pompes lestées mains larges", muscle: "Pectoraux", equipment: "Poids du corps + charge", difficulty: "Intermédiaire", category: "pectoraux" },
+  { name: "Pompes déclinées", muscle: "Pectoraux supérieurs", equipment: "Poids du corps", difficulty: "Intermédiaire", category: "pectoraux" },
+  { name: "Pompes lestées déclinées", muscle: "Pectoraux supérieurs", equipment: "Poids du corps + charge", difficulty: "Avancé", category: "pectoraux" },
+  { name: "Pompes inclinées", muscle: "Pectoraux inférieurs", equipment: "Poids du corps", difficulty: "Débutant", category: "pectoraux" },
+  { name: "Pompes lestées inclinées", muscle: "Pectoraux inférieurs", equipment: "Poids du corps + charge", difficulty: "Intermédiaire", category: "pectoraux" },
+  { name: "Pec deck machine", muscle: "Pectoraux", equipment: "Machine", difficulty: "Débutant", category: "pectoraux" },
+  { name: "Développé couché Smith machine", muscle: "Pectoraux", equipment: "Smith machine", difficulty: "Débutant", category: "pectoraux" },
+  { name: "Développé incliné Smith machine", muscle: "Pectoraux supérieurs", equipment: "Smith machine", difficulty: "Débutant", category: "pectoraux" },
+  { name: "Chest press machine", muscle: "Pectoraux", equipment: "Machine", difficulty: "Débutant", category: "pectoraux" },
+  // DOS
+  { name: "Tractions pronation prise normale", muscle: "Dorsaux", equipment: "Poids du corps", difficulty: "Intermédiaire", category: "dos" },
+  { name: "Tractions lestées pronation prise normale", muscle: "Dorsaux", equipment: "Poids du corps + charge", difficulty: "Avancé", category: "dos" },
+  { name: "Tractions pronation prise large", muscle: "Dorsaux", equipment: "Poids du corps", difficulty: "Avancé", category: "dos" },
+  { name: "Tractions lestées pronation prise large", muscle: "Dorsaux", equipment: "Poids du corps + charge", difficulty: "Avancé", category: "dos" },
+  { name: "Tractions supination prise normale", muscle: "Dorsaux / Biceps", equipment: "Poids du corps", difficulty: "Intermédiaire", category: "dos" },
+  { name: "Tractions lestées supination prise normale", muscle: "Dorsaux / Biceps", equipment: "Poids du corps + charge", difficulty: "Avancé", category: "dos" },
+  { name: "Tractions supination prise serrée", muscle: "Dorsaux / Biceps", equipment: "Poids du corps", difficulty: "Intermédiaire", category: "dos" },
+  { name: "Tractions lestées supination prise serrée", muscle: "Dorsaux / Biceps", equipment: "Poids du corps + charge", difficulty: "Avancé", category: "dos" },
+  { name: "Tractions supination prise large", muscle: "Dorsaux / Biceps", equipment: "Poids du corps", difficulty: "Avancé", category: "dos" },
+  { name: "Tractions lestées supination prise large", muscle: "Dorsaux / Biceps", equipment: "Poids du corps + charge", difficulty: "Avancé", category: "dos" },
+  { name: "Tractions neutre (mains face à face)", muscle: "Dorsaux", equipment: "Poids du corps", difficulty: "Intermédiaire", category: "dos" },
+  { name: "Tractions lestées neutre (mains face à face)", muscle: "Dorsaux", equipment: "Poids du corps + charge", difficulty: "Avancé", category: "dos" },
+  { name: "Tractions machine assistée", muscle: "Dorsaux", equipment: "Machine", difficulty: "Débutant", category: "dos" },
+  { name: "Tirage horizontal barre prise normale", muscle: "Dorsaux / Trapèzes", equipment: "Barre", difficulty: "Intermédiaire", category: "dos" },
+  { name: "Tirage horizontal barre prise large", muscle: "Dorsaux / Trapèzes", equipment: "Barre", difficulty: "Intermédiaire", category: "dos" },
+  { name: "Tirage horizontal câble", muscle: "Dorsaux / Trapèzes", equipment: "Câble", difficulty: "Débutant", category: "dos" },
+  { name: "Tirage horizontal machine", muscle: "Dorsaux / Trapèzes", equipment: "Machine", difficulty: "Débutant", category: "dos" },
+  { name: "Rowing barre prise pronation", muscle: "Dorsaux / Trapèzes", equipment: "Barre", difficulty: "Intermédiaire", category: "dos" },
+  { name: "Rowing barre prise supination", muscle: "Dorsaux / Trapèzes", equipment: "Barre", difficulty: "Intermédiaire", category: "dos" },
+  { name: "Rowing haltère", muscle: "Dorsaux", equipment: "Haltères", difficulty: "Intermédiaire", category: "dos" },
+  { name: "Rowing machine", muscle: "Dorsaux / Trapèzes", equipment: "Machine", difficulty: "Débutant", category: "dos" },
+  { name: "Rowing inversé poids du corps", muscle: "Dorsaux / Trapèzes", equipment: "Poids du corps", difficulty: "Débutant", category: "dos" },
+  { name: "T-bar rowing", muscle: "Dorsaux / Trapèzes", equipment: "Barre", difficulty: "Intermédiaire", category: "dos" },
+  { name: "Rowing T-bar machine", muscle: "Dorsaux / Trapèzes", equipment: "Machine", difficulty: "Débutant", category: "dos" },
+  { name: "Tirage vertical poulie prise pronation", muscle: "Dorsaux", equipment: "Câble", difficulty: "Débutant", category: "dos" },
+  { name: "Tirage vertical poulie prise supination", muscle: "Dorsaux / Biceps", equipment: "Câble", difficulty: "Débutant", category: "dos" },
+  { name: "Tirage vertical poulie prise serrée", muscle: "Dorsaux / Biceps", equipment: "Câble", difficulty: "Débutant", category: "dos" },
+  { name: "Tirage vertical machine", muscle: "Dorsaux", equipment: "Machine", difficulty: "Débutant", category: "dos" },
+  { name: "Soulevé de terre barre conventionnel", muscle: "Lombaires / Fessiers / Ischios", equipment: "Barre", difficulty: "Avancé", category: "dos" },
+  { name: "Soulevé de terre haltère conventionnel", muscle: "Lombaires / Fessiers / Ischios", equipment: "Haltères", difficulty: "Avancé", category: "dos" },
+  { name: "Soulevé de terre jambes tendues barre", muscle: "Ischios / Lombaires", equipment: "Barre", difficulty: "Avancé", category: "dos" },
+  { name: "Soulevé de terre jambes tendues haltère", muscle: "Ischios / Lombaires", equipment: "Haltères", difficulty: "Intermédiaire", category: "dos" },
+  { name: "Soulevé de terre sumo barre", muscle: "Fessiers / Ischios / Quadriceps", equipment: "Barre", difficulty: "Avancé", category: "dos" },
+  { name: "Pull-over haltère", muscle: "Dorsaux / Pectoraux", equipment: "Haltères", difficulty: "Intermédiaire", category: "dos" },
+  { name: "Pull-over barre", muscle: "Dorsaux / Pectoraux", equipment: "Barre", difficulty: "Intermédiaire", category: "dos" },
+  { name: "Pull-over câble", muscle: "Dorsaux", equipment: "Câble", difficulty: "Intermédiaire", category: "dos" },
+  { name: "Face pull câble", muscle: "Deltoïdes postérieurs / Trapèzes", equipment: "Câble", difficulty: "Débutant", category: "dos" },
+  { name: "Hyperextension", muscle: "Lombaires / Fessiers", equipment: "Poids du corps", difficulty: "Débutant", category: "dos" },
+  { name: "Hyperextension lestée", muscle: "Lombaires / Fessiers", equipment: "Poids du corps + charge", difficulty: "Intermédiaire", category: "dos" },
+  { name: "Good morning barre", muscle: "Lombaires / Ischios", equipment: "Barre", difficulty: "Intermédiaire", category: "dos" },
+  // ÉPAULES
+  { name: "Développé militaire barre", muscle: "Deltoïdes antérieurs", equipment: "Barre", difficulty: "Intermédiaire", category: "epaules" },
+  { name: "Développé militaire haltère", muscle: "Deltoïdes antérieurs", equipment: "Haltères", difficulty: "Intermédiaire", category: "epaules" },
+  { name: "Développé épaules machine", muscle: "Deltoïdes antérieurs", equipment: "Machine", difficulty: "Débutant", category: "epaules" },
+  { name: "Développé épaules Smith machine", muscle: "Deltoïdes antérieurs", equipment: "Smith machine", difficulty: "Débutant", category: "epaules" },
+  { name: "Arnold press haltère", muscle: "Deltoïdes", equipment: "Haltères", difficulty: "Avancé", category: "epaules" },
+  { name: "Élévations latérales haltère", muscle: "Deltoïdes latéraux", equipment: "Haltères", difficulty: "Débutant", category: "epaules" },
+  { name: "Élévations latérales poulie", muscle: "Deltoïdes latéraux", equipment: "Câble", difficulty: "Débutant", category: "epaules" },
+  { name: "Élévations latérales machine", muscle: "Deltoïdes latéraux", equipment: "Machine", difficulty: "Débutant", category: "epaules" },
+  { name: "Élévations latérales buste penché haltère", muscle: "Deltoïdes postérieurs", equipment: "Haltères", difficulty: "Intermédiaire", category: "epaules" },
+  { name: "Élévations frontales haltère", muscle: "Deltoïdes antérieurs", equipment: "Haltères", difficulty: "Débutant", category: "epaules" },
+  { name: "Élévations frontales barre", muscle: "Deltoïdes antérieurs", equipment: "Barre", difficulty: "Débutant", category: "epaules" },
+  { name: "Élévations frontales poulie", muscle: "Deltoïdes antérieurs", equipment: "Câble", difficulty: "Débutant", category: "epaules" },
+  { name: "Oiseau haltère", muscle: "Deltoïdes postérieurs", equipment: "Haltères", difficulty: "Intermédiaire", category: "epaules" },
+  { name: "Oiseau poulie", muscle: "Deltoïdes postérieurs", equipment: "Câble", difficulty: "Intermédiaire", category: "epaules" },
+  { name: "Oiseau machine (reverse pec deck)", muscle: "Deltoïdes postérieurs", equipment: "Machine", difficulty: "Débutant", category: "epaules" },
+  { name: "Shrug barre", muscle: "Trapèzes", equipment: "Barre", difficulty: "Débutant", category: "epaules" },
+  { name: "Shrug haltère", muscle: "Trapèzes", equipment: "Haltères", difficulty: "Débutant", category: "epaules" },
+  { name: "Shrug machine", muscle: "Trapèzes", equipment: "Machine", difficulty: "Débutant", category: "epaules" },
+  { name: "Upright row barre", muscle: "Deltoïdes latéraux / Trapèzes", equipment: "Barre", difficulty: "Intermédiaire", category: "epaules" },
+  { name: "Upright row haltère", muscle: "Deltoïdes latéraux / Trapèzes", equipment: "Haltères", difficulty: "Intermédiaire", category: "epaules" },
+  // BICEPS
+  { name: "Curl barre droite prise normale", muscle: "Biceps", equipment: "Barre", difficulty: "Débutant", category: "biceps" },
+  { name: "Curl barre droite prise serrée", muscle: "Biceps", equipment: "Barre", difficulty: "Débutant", category: "biceps" },
+  { name: "Curl barre EZ prise normale", muscle: "Biceps", equipment: "Barre EZ", difficulty: "Débutant", category: "biceps" },
+  { name: "Curl barre EZ prise serrée", muscle: "Biceps", equipment: "Barre EZ", difficulty: "Débutant", category: "biceps" },
+  { name: "Curl haltère", muscle: "Biceps", equipment: "Haltères", difficulty: "Débutant", category: "biceps" },
+  { name: "Curl incliné haltère", muscle: "Biceps", equipment: "Haltères", difficulty: "Intermédiaire", category: "biceps" },
+  { name: "Curl marteau haltère", muscle: "Biceps / Brachial", equipment: "Haltères", difficulty: "Débutant", category: "biceps" },
+  { name: "Curl concentré haltère", muscle: "Biceps", equipment: "Haltères", difficulty: "Intermédiaire", category: "biceps" },
+  { name: "Curl pupitre barre EZ", muscle: "Biceps", equipment: "Barre EZ", difficulty: "Intermédiaire", category: "biceps" },
+  { name: "Curl pupitre haltère", muscle: "Biceps", equipment: "Haltères", difficulty: "Intermédiaire", category: "biceps" },
+  { name: "Curl pupitre machine", muscle: "Biceps", equipment: "Machine", difficulty: "Débutant", category: "biceps" },
+  { name: "Curl câble poulie basse", muscle: "Biceps", equipment: "Câble", difficulty: "Débutant", category: "biceps" },
+  { name: "Curl câble poulie haute", muscle: "Biceps", equipment: "Câble", difficulty: "Intermédiaire", category: "biceps" },
+  { name: "Curl marteau câble corde", muscle: "Biceps / Brachial", equipment: "Câble", difficulty: "Débutant", category: "biceps" },
+  { name: "Curl inversé barre", muscle: "Brachial / Avant-bras", equipment: "Barre", difficulty: "Intermédiaire", category: "biceps" },
+  // TRICEPS
+  { name: "Extension barre droite", muscle: "Triceps", equipment: "Barre", difficulty: "Intermédiaire", category: "triceps" },
+  { name: "Extension barre EZ", muscle: "Triceps", equipment: "Barre EZ", difficulty: "Intermédiaire", category: "triceps" },
+  { name: "Extension haltère", muscle: "Triceps", equipment: "Haltères", difficulty: "Intermédiaire", category: "triceps" },
+  { name: "Extension overhead câble corde", muscle: "Triceps", equipment: "Câble", difficulty: "Intermédiaire", category: "triceps" },
+  { name: "Extension overhead haltère deux mains", muscle: "Triceps", equipment: "Haltères", difficulty: "Intermédiaire", category: "triceps" },
+  { name: "Extension triceps machine", muscle: "Triceps", equipment: "Machine", difficulty: "Débutant", category: "triceps" },
+  { name: "Dips poids du corps", muscle: "Triceps / Pectoraux", equipment: "Poids du corps", difficulty: "Intermédiaire", category: "triceps" },
+  { name: "Dips lestés", muscle: "Triceps / Pectoraux", equipment: "Poids du corps + charge", difficulty: "Avancé", category: "triceps" },
+  { name: "Dips machine assistée", muscle: "Triceps / Pectoraux", equipment: "Machine", difficulty: "Débutant", category: "triceps" },
+  { name: "Dips entre bancs poids du corps", muscle: "Triceps", equipment: "Poids du corps", difficulty: "Débutant", category: "triceps" },
+  { name: "Dips entre bancs lestés", muscle: "Triceps", equipment: "Poids du corps + charge", difficulty: "Intermédiaire", category: "triceps" },
+  { name: "Push-down poulie corde", muscle: "Triceps", equipment: "Câble", difficulty: "Débutant", category: "triceps" },
+  { name: "Push-down poulie barre droite", muscle: "Triceps", equipment: "Câble", difficulty: "Débutant", category: "triceps" },
+  { name: "Push-down poulie barre V", muscle: "Triceps", equipment: "Câble", difficulty: "Débutant", category: "triceps" },
+  { name: "Kickback haltère", muscle: "Triceps", equipment: "Haltères", difficulty: "Débutant", category: "triceps" },
+  { name: "Kickback poulie", muscle: "Triceps", equipment: "Câble", difficulty: "Débutant", category: "triceps" },
+  { name: "Développé couché prise serrée barre", muscle: "Triceps / Pectoraux", equipment: "Barre", difficulty: "Intermédiaire", category: "triceps" },
+  { name: "Développé couché prise serrée haltère", muscle: "Triceps / Pectoraux", equipment: "Haltères", difficulty: "Intermédiaire", category: "triceps" },
+  // JAMBES
+  { name: "Squat barre prise normale", muscle: "Quadriceps / Fessiers", equipment: "Barre", difficulty: "Intermédiaire", category: "jambes" },
+  { name: "Squat barre prise serrée", muscle: "Quadriceps / Fessiers", equipment: "Barre", difficulty: "Avancé", category: "jambes" },
+  { name: "Squat haltère", muscle: "Quadriceps / Fessiers", equipment: "Haltères", difficulty: "Intermédiaire", category: "jambes" },
+  { name: "Squat goblet", muscle: "Quadriceps / Fessiers", equipment: "Haltères", difficulty: "Débutant", category: "jambes" },
+  { name: "Squat Smith machine", muscle: "Quadriceps / Fessiers", equipment: "Smith machine", difficulty: "Débutant", category: "jambes" },
+  { name: "Squat sumo barre", muscle: "Quadriceps / Fessiers / Adducteurs", equipment: "Barre", difficulty: "Intermédiaire", category: "jambes" },
+  { name: "Squat sumo haltère", muscle: "Quadriceps / Fessiers / Adducteurs", equipment: "Haltères", difficulty: "Débutant", category: "jambes" },
+  { name: "Squat bulgare poids du corps", muscle: "Quadriceps / Fessiers", equipment: "Poids du corps", difficulty: "Intermédiaire", category: "jambes" },
+  { name: "Squat bulgare lesté", muscle: "Quadriceps / Fessiers", equipment: "Poids du corps + charge", difficulty: "Avancé", category: "jambes" },
+  { name: "Squat pistol", muscle: "Quadriceps / Fessiers", equipment: "Poids du corps", difficulty: "Avancé", category: "jambes" },
+  { name: "Sissy squat", muscle: "Quadriceps", equipment: "Poids du corps", difficulty: "Avancé", category: "jambes" },
+  { name: "Hack squat machine", muscle: "Quadriceps / Fessiers", equipment: "Machine", difficulty: "Intermédiaire", category: "jambes" },
+  { name: "Fentes barre", muscle: "Quadriceps / Fessiers", equipment: "Barre", difficulty: "Intermédiaire", category: "jambes" },
+  { name: "Fentes haltère", muscle: "Quadriceps / Fessiers", equipment: "Haltères", difficulty: "Débutant", category: "jambes" },
+  { name: "Fentes poids du corps", muscle: "Quadriceps / Fessiers", equipment: "Poids du corps", difficulty: "Débutant", category: "jambes" },
+  { name: "Fentes lestées", muscle: "Quadriceps / Fessiers", equipment: "Poids du corps + charge", difficulty: "Intermédiaire", category: "jambes" },
+  { name: "Fentes marchées haltère", muscle: "Quadriceps / Fessiers", equipment: "Haltères", difficulty: "Intermédiaire", category: "jambes" },
+  { name: "Step-up haltère", muscle: "Quadriceps / Fessiers", equipment: "Haltères", difficulty: "Intermédiaire", category: "jambes" },
+  { name: "Step-up barre", muscle: "Quadriceps / Fessiers", equipment: "Barre", difficulty: "Intermédiaire", category: "jambes" },
+  { name: "Presse à cuisses machine", muscle: "Quadriceps / Fessiers", equipment: "Machine", difficulty: "Débutant", category: "jambes" },
+  { name: "Presse à cuisses pieds hauts", muscle: "Fessiers / Ischios", equipment: "Machine", difficulty: "Intermédiaire", category: "jambes" },
+  { name: "Leg extension machine", muscle: "Quadriceps", equipment: "Machine", difficulty: "Débutant", category: "jambes" },
+  { name: "Leg curl machine", muscle: "Ischios", equipment: "Machine", difficulty: "Débutant", category: "jambes" },
+  { name: "Leg curl assis machine", muscle: "Ischios", equipment: "Machine", difficulty: "Débutant", category: "jambes" },
+  { name: "Leg curl allongé machine", muscle: "Ischios", equipment: "Machine", difficulty: "Débutant", category: "jambes" },
+  { name: "Nordic curl", muscle: "Ischios", equipment: "Poids du corps", difficulty: "Avancé", category: "jambes" },
+  { name: "Adducteurs machine", muscle: "Adducteurs", equipment: "Machine", difficulty: "Débutant", category: "jambes" },
+  { name: "Abducteurs machine", muscle: "Abducteurs / Fessiers", equipment: "Machine", difficulty: "Débutant", category: "jambes" },
+  { name: "Mollets debout barre", muscle: "Mollets", equipment: "Barre", difficulty: "Débutant", category: "jambes" },
+  { name: "Mollets debout haltère", muscle: "Mollets", equipment: "Haltères", difficulty: "Débutant", category: "jambes" },
+  { name: "Mollets debout machine", muscle: "Mollets", equipment: "Machine", difficulty: "Débutant", category: "jambes" },
+  { name: "Mollets assis machine", muscle: "Mollets", equipment: "Machine", difficulty: "Débutant", category: "jambes" },
+  { name: "Mollets assis haltère", muscle: "Mollets", equipment: "Haltères", difficulty: "Débutant", category: "jambes" },
+  // FESSIERS
+  { name: "Hip thrust barre", muscle: "Fessiers", equipment: "Barre", difficulty: "Intermédiaire", category: "fessiers" },
+  { name: "Hip thrust machine", muscle: "Fessiers", equipment: "Machine", difficulty: "Débutant", category: "fessiers" },
+  { name: "Hip thrust Smith machine", muscle: "Fessiers", equipment: "Smith machine", difficulty: "Débutant", category: "fessiers" },
+  { name: "Pont fessier poids du corps", muscle: "Fessiers", equipment: "Poids du corps", difficulty: "Débutant", category: "fessiers" },
+  { name: "Pont fessier lesté", muscle: "Fessiers", equipment: "Poids du corps + charge", difficulty: "Intermédiaire", category: "fessiers" },
+  { name: "Kickback fessier câble", muscle: "Fessiers", equipment: "Câble", difficulty: "Débutant", category: "fessiers" },
+  { name: "Kickback fessier machine", muscle: "Fessiers", equipment: "Machine", difficulty: "Débutant", category: "fessiers" },
+  // ABDOS / CORE
+  { name: "Crunch poids du corps", muscle: "Abdominaux", equipment: "Poids du corps", difficulty: "Débutant", category: "abdos" },
+  { name: "Crunch lesté", muscle: "Abdominaux", equipment: "Poids du corps + charge", difficulty: "Intermédiaire", category: "abdos" },
+  { name: "Crunch avec disque", muscle: "Abdominaux", equipment: "Disque", difficulty: "Intermédiaire", category: "abdos" },
+  { name: "Crunch machine", muscle: "Abdominaux", equipment: "Machine", difficulty: "Débutant", category: "abdos" },
+  { name: "Crunch décliné poids du corps", muscle: "Abdominaux", equipment: "Poids du corps", difficulty: "Intermédiaire", category: "abdos" },
+  { name: "Crunch décliné lesté", muscle: "Abdominaux", equipment: "Poids du corps + charge", difficulty: "Avancé", category: "abdos" },
+  { name: "Relevé de jambes poids du corps", muscle: "Abdominaux inférieurs", equipment: "Poids du corps", difficulty: "Intermédiaire", category: "abdos" },
+  { name: "Relevé de jambes lesté", muscle: "Abdominaux inférieurs", equipment: "Poids du corps + charge", difficulty: "Avancé", category: "abdos" },
+  { name: "Relevé de jambes barre fixe", muscle: "Abdominaux inférieurs", equipment: "Barre fixe", difficulty: "Avancé", category: "abdos" },
+  { name: "Relevé de jambes machine", muscle: "Abdominaux inférieurs", equipment: "Machine", difficulty: "Intermédiaire", category: "abdos" },
+  { name: "Gainage planche", muscle: "Core / Abdominaux", equipment: "Poids du corps", difficulty: "Débutant", category: "abdos" },
+  { name: "Gainage planche latérale", muscle: "Obliques / Core", equipment: "Poids du corps", difficulty: "Intermédiaire", category: "abdos" },
+  { name: "Russian twist poids du corps", muscle: "Obliques", equipment: "Poids du corps", difficulty: "Débutant", category: "abdos" },
+  { name: "Russian twist lesté", muscle: "Obliques", equipment: "Poids du corps + charge", difficulty: "Intermédiaire", category: "abdos" },
+  { name: "Russian twist haltère", muscle: "Obliques", equipment: "Haltères", difficulty: "Intermédiaire", category: "abdos" },
+  { name: "Russian twist médecine ball", muscle: "Obliques", equipment: "Médecine ball", difficulty: "Intermédiaire", category: "abdos" },
+  { name: "Sit-up poids du corps", muscle: "Abdominaux", equipment: "Poids du corps", difficulty: "Débutant", category: "abdos" },
+  { name: "Sit-up lesté", muscle: "Abdominaux", equipment: "Poids du corps + charge", difficulty: "Intermédiaire", category: "abdos" },
+  { name: "Sit-up avec disque", muscle: "Abdominaux", equipment: "Disque", difficulty: "Intermédiaire", category: "abdos" },
+  { name: "Mountain climbers poids du corps", muscle: "Core / Abdominaux", equipment: "Poids du corps", difficulty: "Intermédiaire", category: "abdos" },
+  { name: "Ab wheel rollout", muscle: "Core / Abdominaux", equipment: "Ab wheel", difficulty: "Intermédiaire", category: "abdos" },
+  { name: "Woodchop câble", muscle: "Obliques / Core", equipment: "Câble", difficulty: "Intermédiaire", category: "abdos" },
+  { name: "Pallof press câble", muscle: "Core / Obliques", equipment: "Câble", difficulty: "Intermédiaire", category: "abdos" },
+  { name: "Dead bug poids du corps", muscle: "Core / Abdominaux", equipment: "Poids du corps", difficulty: "Débutant", category: "abdos" },
+  { name: "Bird dog poids du corps", muscle: "Core / Lombaires", equipment: "Poids du corps", difficulty: "Débutant", category: "abdos" },
+  { name: "Hollow body hold", muscle: "Core / Abdominaux", equipment: "Poids du corps", difficulty: "Intermédiaire", category: "abdos" },
+  // AVANT-BRAS
+  { name: "Curl poignet barre", muscle: "Avant-bras", equipment: "Barre", difficulty: "Débutant", category: "avant-bras" },
+  { name: "Curl poignet haltère", muscle: "Avant-bras", equipment: "Haltères", difficulty: "Débutant", category: "avant-bras" },
+  { name: "Curl poignet inversé barre", muscle: "Avant-bras", equipment: "Barre", difficulty: "Débutant", category: "avant-bras" },
+  { name: "Farmer walk haltère", muscle: "Avant-bras / Trapèzes", equipment: "Haltères", difficulty: "Intermédiaire", category: "avant-bras" },
+  // KETTLEBELL
+  { name: "Kettlebell swing", muscle: "Fessiers / Ischios / Core", equipment: "Kettlebell", difficulty: "Intermédiaire", category: "fonctionnel" },
+  { name: "Kettlebell goblet squat", muscle: "Quadriceps / Fessiers", equipment: "Kettlebell", difficulty: "Débutant", category: "fonctionnel" },
+  { name: "Kettlebell clean and press", muscle: "Deltoïdes / Core", equipment: "Kettlebell", difficulty: "Avancé", category: "fonctionnel" },
+  { name: "Kettlebell snatch", muscle: "Deltoïdes / Core / Fessiers", equipment: "Kettlebell", difficulty: "Avancé", category: "fonctionnel" },
+  { name: "Kettlebell Turkish get-up", muscle: "Core / Épaules", equipment: "Kettlebell", difficulty: "Avancé", category: "fonctionnel" },
+  { name: "Kettlebell row", muscle: "Dorsaux", equipment: "Kettlebell", difficulty: "Intermédiaire", category: "fonctionnel" },
+  // PLYOMÉTRIE
+  { name: "Box jump", muscle: "Quadriceps / Fessiers", equipment: "Box", difficulty: "Intermédiaire", category: "fonctionnel" },
+  { name: "Jump squat poids du corps", muscle: "Quadriceps / Fessiers", equipment: "Poids du corps", difficulty: "Intermédiaire", category: "fonctionnel" },
+  { name: "Fentes sautées", muscle: "Quadriceps / Fessiers", equipment: "Poids du corps", difficulty: "Intermédiaire", category: "fonctionnel" },
+  { name: "Burpees", muscle: "Full body", equipment: "Poids du corps", difficulty: "Intermédiaire", category: "fonctionnel" },
+  // TRX / SUSPENSION
+  { name: "TRX row", muscle: "Dorsaux / Trapèzes", equipment: "TRX", difficulty: "Débutant", category: "fonctionnel" },
+  { name: "TRX chest press", muscle: "Pectoraux", equipment: "TRX", difficulty: "Intermédiaire", category: "fonctionnel" },
+  { name: "TRX face pull", muscle: "Deltoïdes postérieurs / Trapèzes", equipment: "TRX", difficulty: "Débutant", category: "fonctionnel" },
+  { name: "TRX Y raise", muscle: "Deltoïdes / Trapèzes", equipment: "TRX", difficulty: "Intermédiaire", category: "fonctionnel" },
+  { name: "TRX curl biceps", muscle: "Biceps", equipment: "TRX", difficulty: "Intermédiaire", category: "fonctionnel" },
+  { name: "TRX extension triceps", muscle: "Triceps", equipment: "TRX", difficulty: "Intermédiaire", category: "fonctionnel" },
+  { name: "TRX squat pistol", muscle: "Quadriceps / Fessiers", equipment: "TRX", difficulty: "Avancé", category: "fonctionnel" },
+  { name: "TRX hamstring curl", muscle: "Ischios / Fessiers", equipment: "TRX", difficulty: "Intermédiaire", category: "fonctionnel" },
+  { name: "TRX fente bulgare", muscle: "Quadriceps / Fessiers", equipment: "TRX", difficulty: "Intermédiaire", category: "fonctionnel" },
+  { name: "TRX pike", muscle: "Core / Abdominaux", equipment: "TRX", difficulty: "Avancé", category: "fonctionnel" },
+  { name: "TRX mountain climbers", muscle: "Core / Abdominaux", equipment: "TRX", difficulty: "Intermédiaire", category: "fonctionnel" },
+  { name: "TRX gainage", muscle: "Core / Abdominaux", equipment: "TRX", difficulty: "Débutant", category: "fonctionnel" },
+  // ÉLASTIQUES
+  { name: "Curl biceps élastique", muscle: "Biceps", equipment: "Élastique", difficulty: "Débutant", category: "fonctionnel" },
+  { name: "Extension triceps élastique", muscle: "Triceps", equipment: "Élastique", difficulty: "Débutant", category: "fonctionnel" },
+  { name: "Tirage dos élastique", muscle: "Dorsaux / Trapèzes", equipment: "Élastique", difficulty: "Débutant", category: "fonctionnel" },
+  { name: "Élévations latérales élastique", muscle: "Deltoïdes latéraux", equipment: "Élastique", difficulty: "Débutant", category: "fonctionnel" },
+  { name: "Chest press élastique", muscle: "Pectoraux", equipment: "Élastique", difficulty: "Débutant", category: "fonctionnel" },
+  { name: "Squat élastique", muscle: "Quadriceps / Fessiers", equipment: "Élastique", difficulty: "Débutant", category: "fonctionnel" },
+  { name: "Hip thrust élastique", muscle: "Fessiers", equipment: "Élastique", difficulty: "Débutant", category: "fonctionnel" },
+  { name: "Pull-apart élastique", muscle: "Deltoïdes postérieurs / Trapèzes", equipment: "Élastique", difficulty: "Débutant", category: "fonctionnel" },
+  { name: "Good morning élastique", muscle: "Lombaires / Ischios", equipment: "Élastique", difficulty: "Débutant", category: "fonctionnel" },
+  { name: "Pallof press élastique", muscle: "Core / Obliques", equipment: "Élastique", difficulty: "Intermédiaire", category: "fonctionnel" },
+  // MÉDECINE BALL
+  { name: "Medicine ball slam", muscle: "Full body / Core", equipment: "Médecine ball", difficulty: "Intermédiaire", category: "fonctionnel" },
+  { name: "Medicine ball wall ball", muscle: "Quadriceps / Épaules", equipment: "Médecine ball", difficulty: "Intermédiaire", category: "fonctionnel" },
+  { name: "Medicine ball chest pass", muscle: "Pectoraux / Triceps", equipment: "Médecine ball", difficulty: "Débutant", category: "fonctionnel" },
+  { name: "Medicine ball overhead throw", muscle: "Core / Épaules", equipment: "Médecine ball", difficulty: "Intermédiaire", category: "fonctionnel" },
+  { name: "Medicine ball rotational throw", muscle: "Obliques / Core", equipment: "Médecine ball", difficulty: "Intermédiaire", category: "fonctionnel" },
+  // CALISTHENICS AVANCÉ
+  { name: "Muscle-up", muscle: "Dorsaux / Pectoraux / Triceps", equipment: "Barre fixe", difficulty: "Avancé", category: "fonctionnel" },
+  { name: "L-sit", muscle: "Core / Abdominaux / Fléchisseurs", equipment: "Barres parallèles", difficulty: "Avancé", category: "fonctionnel" },
+  { name: "Front lever", muscle: "Dorsaux / Core", equipment: "Barre fixe", difficulty: "Avancé", category: "fonctionnel" },
+  { name: "Back lever", muscle: "Épaules / Core / Dorsaux", equipment: "Barre fixe", difficulty: "Avancé", category: "fonctionnel" },
+  { name: "Planche", muscle: "Épaules / Core / Pectoraux", equipment: "Sol", difficulty: "Avancé", category: "fonctionnel" },
+  { name: "Handstand push-up", muscle: "Deltoïdes / Triceps", equipment: "Poids du corps", difficulty: "Avancé", category: "fonctionnel" },
+  { name: "Dragon flag", muscle: "Core / Abdominaux", equipment: "Banc", difficulty: "Avancé", category: "fonctionnel" },
+  // LANDMINE
+  { name: "Landmine press", muscle: "Pectoraux / Deltoïdes", equipment: "Landmine", difficulty: "Intermédiaire", category: "fonctionnel" },
+  { name: "Landmine row", muscle: "Dorsaux / Trapèzes", equipment: "Landmine", difficulty: "Intermédiaire", category: "fonctionnel" },
+  { name: "Landmine squat", muscle: "Quadriceps / Fessiers", equipment: "Landmine", difficulty: "Intermédiaire", category: "fonctionnel" },
+  { name: "Landmine rotation", muscle: "Obliques / Core", equipment: "Landmine", difficulty: "Intermédiaire", category: "fonctionnel" },
+  { name: "Landmine deadlift", muscle: "Fessiers / Ischios / Dorsaux", equipment: "Landmine", difficulty: "Intermédiaire", category: "fonctionnel" },
+];
+
+const difficultyColors: Record<string, { bg: string; color: string }> = {
+  "Débutant": { bg: "rgba(16, 185, 129, 0.1)", color: "#10B981" },
+  "Intermédiaire": { bg: "rgba(245, 158, 11, 0.1)", color: "#F59E0B" },
+  "Avancé": { bg: "rgba(239, 68, 68, 0.1)", color: "#EF4444" },
+};
+
+const totalCount = exercises.length;
 ---
 
 <BaseLayout
   lang="fr"
-  title="Biblioth&egrave;que d'exercices - 240+ exercices de musculation - AIVancePro"
-  description="D&eacute;couvrez notre biblioth&egrave;que de plus de 240 exercices de musculation et fitness. Filtrez par groupe musculaire et trouvez l'exercice parfait."
+  title={`Bibliothèque d'exercices - ${totalCount} exercices de musculation - AIVancePro`}
+  description={`Découvrez notre bibliothèque de ${totalCount} exercices de musculation et fitness. Filtrez par groupe musculaire et trouvez l'exercice parfait.`}
   canonical="https://aivancepro.fr/exercices/"
   alternates={{ fr: 'https://aivancepro.fr/exercices/', en: 'https://aivancepro.fr/en/exercises/', de: 'https://aivancepro.fr/de/uebungen/' }}
 >
@@ -20,26 +289,31 @@ import BaseLayout from '../../layouts/BaseLayout.astro';
         .filter-btn { padding: 0.5rem 1.1rem; border-radius: 50px; border: 1px solid var(--border); background: var(--bg-card); color: var(--gray-500); font-size: 0.85rem; font-weight: 600; font-family: inherit; cursor: pointer; transition: all 0.2s; }
         .filter-btn:hover, .filter-btn.active { background: var(--blue); color: var(--white); border-color: var(--blue); }
 
-        .exercises-grid { max-width: 1100px; margin: 0 auto; padding: 2.5rem 2rem 4rem; display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.25rem; }
+        .search-bar { max-width: 500px; margin: 1.5rem auto 0; padding: 0 2rem; }
+        .search-input { width: 100%; padding: 0.7rem 1.25rem; border-radius: 12px; border: 1px solid var(--border); background: var(--bg-card); color: var(--text); font-size: 0.9rem; font-family: inherit; outline: none; transition: border-color 0.2s; }
+        .search-input::placeholder { color: var(--gray-400); }
+        .search-input:focus { border-color: var(--blue); }
 
-        .exercise-card { background: var(--bg-card); border: 1px solid var(--border); border-radius: 14px; padding: 1.25rem; transition: border-color 0.2s, transform 0.2s, box-shadow 0.2s; }
-        .exercise-card:hover { border-color: rgba(37,99,235,0.25); transform: translateY(-3px); box-shadow: 0 6px 20px rgba(0,0,0,0.05); }
-        .exercise-card .card-image { width: 100%; height: 140px; background: linear-gradient(135deg, var(--gray-100), var(--gray-200)); border-radius: 10px; display: flex; align-items: center; justify-content: center; color: var(--gray-400); font-size: 0.75rem; font-weight: 500; margin-bottom: 1rem; }
-        .exercise-card h3 { font-size: 1rem; font-weight: 700; margin-bottom: 0.4rem; }
-        .exercise-card .tags { display: flex; gap: 0.4rem; margin-bottom: 0.5rem; flex-wrap: wrap; }
-        .exercise-card .tag { padding: 0.15rem 0.5rem; border-radius: 50px; font-size: 0.65rem; font-weight: 600; }
-        .tag-muscle { background: rgba(37,99,235,0.08); color: var(--blue); }
-        .tag-compound { background: rgba(147,51,234,0.08); color: var(--purple); }
-        .tag-isolation { background: rgba(245,158,11,0.08); color: #D97706; }
-        .exercise-card p { color: var(--gray-500); font-size: 0.8rem; line-height: 1.5; }
+        .exercises-grid { max-width: 1100px; margin: 0 auto; padding: 2rem 2rem 4rem; display: grid; grid-template-columns: repeat(3, 1fr); gap: 1rem; }
+
+        .exercise-card { background: var(--bg-card); border: 1px solid var(--border); border-radius: 14px; padding: 1.25rem; transition: border-color 0.2s, transform 0.2s, box-shadow 0.2s; display: flex; flex-direction: column; gap: 0.6rem; }
+        .exercise-card:hover { border-color: rgba(37,99,235,0.25); transform: translateY(-3px); box-shadow: 0 6px 20px rgba(0,0,0,0.15); }
+        .exercise-card h3 { font-size: 0.95rem; font-weight: 700; line-height: 1.3; }
+        .exercise-card .tags { display: flex; gap: 0.35rem; flex-wrap: wrap; }
+        .exercise-card .tag { padding: 0.15rem 0.55rem; border-radius: 50px; font-size: 0.65rem; font-weight: 600; white-space: nowrap; }
+        .tag-muscle { background: rgba(37,99,235,0.1); color: var(--blue); }
+        .tag-equipment { background: rgba(147,51,234,0.1); color: var(--purple); }
+        .tag-difficulty { font-size: 0.6rem; font-weight: 700; }
 
         .exercises-count { text-align: center; padding: 1rem 2rem 0; color: var(--gray-400); font-size: 0.85rem; }
 
-        .cta-section { padding: 5rem 2rem; text-align: center; background: linear-gradient(135deg, var(--dark), #1a1145); color: var(--white); }
+        .cta-section { padding: 5rem 2rem; text-align: center; background: var(--bg-alt); }
         .cta-section h2 { font-size: 2.2rem; font-weight: 800; margin-bottom: 1rem; }
-        .cta-section p { color: rgba(255,255,255,0.6); font-size: 1rem; max-width: 480px; margin: 0 auto 2rem; }
+        .cta-section p { color: var(--gray-500); font-size: 1rem; max-width: 480px; margin: 0 auto 2rem; }
         .btn-primary { display: inline-flex; align-items: center; gap: 0.5rem; background: linear-gradient(135deg, var(--blue), var(--purple)); color: var(--white); text-decoration: none; font-size: 1rem; font-weight: 600; padding: 0.875rem 2rem; border-radius: 12px; transition: opacity 0.2s, transform 0.2s; box-shadow: 0 4px 15px rgba(37,99,235,0.3); }
         .btn-primary:hover { opacity: 0.92; transform: translateY(-2px); }
+
+        .no-results { text-align: center; padding: 3rem 2rem; color: var(--gray-400); font-size: 1rem; display: none; }
 
         @media (max-width: 1024px) { .exercises-grid { grid-template-columns: repeat(2, 1fr); } }
         @media (max-width: 768px) {
@@ -53,75 +327,92 @@ import BaseLayout from '../../layouts/BaseLayout.astro';
     <header class="page-header">
         <div class="section-label">Exercices</div>
         <h1>Biblioth&egrave;que d'exercices</h1>
-        <p>Plus de 240 exercices avec instructions d&eacute;taill&eacute;es. Filtrez par groupe musculaire pour trouver l'exercice qu'il vous faut.</p>
+        <p>{totalCount} exercices avec instructions d&eacute;taill&eacute;es. Filtrez par groupe musculaire pour trouver l'exercice qu'il vous faut.</p>
     </header>
 
     <div class="filter-bar">
-        <button class="filter-btn active" onclick="filterExercises('all', this)">Tous</button>
-        <button class="filter-btn" onclick="filterExercises('pectoraux', this)">Pectoraux</button>
-        <button class="filter-btn" onclick="filterExercises('dos', this)">Dos</button>
-        <button class="filter-btn" onclick="filterExercises('epaules', this)">&Eacute;paules</button>
-        <button class="filter-btn" onclick="filterExercises('bras', this)">Bras</button>
-        <button class="filter-btn" onclick="filterExercises('jambes', this)">Jambes</button>
-        <button class="filter-btn" onclick="filterExercises('abdos', this)">Abdos</button>
-        <button class="filter-btn" onclick="filterExercises('cardio', this)">Cardio</button>
+        <button class="filter-btn active" data-filter="all">Tous</button>
+        <button class="filter-btn" data-filter="pectoraux">Pectoraux</button>
+        <button class="filter-btn" data-filter="dos">Dos</button>
+        <button class="filter-btn" data-filter="epaules">&Eacute;paules</button>
+        <button class="filter-btn" data-filter="biceps">Biceps</button>
+        <button class="filter-btn" data-filter="triceps">Triceps</button>
+        <button class="filter-btn" data-filter="jambes">Jambes</button>
+        <button class="filter-btn" data-filter="fessiers">Fessiers</button>
+        <button class="filter-btn" data-filter="abdos">Abdos</button>
+        <button class="filter-btn" data-filter="avant-bras">Avant-bras</button>
+        <button class="filter-btn" data-filter="fonctionnel">Fonctionnel</button>
     </div>
 
-    <div class="exercises-count"><span id="count">24</span> exercices affich&eacute;s</div>
+    <div class="search-bar">
+        <input type="text" class="search-input" id="search" placeholder="Rechercher un exercice..." autocomplete="off" />
+    </div>
 
-    <section class="exercises-grid">
-        <div class="exercise-card" data-muscle="pectoraux"><div class="card-image img-placeholder">Photo D&eacute;velopp&eacute; couch&eacute;</div><h3>D&eacute;velopp&eacute; couch&eacute;</h3><div class="tags"><span class="tag tag-muscle">Pectoraux</span><span class="tag tag-compound">Compound</span></div><p>Exercice roi pour les pectoraux. Travaille aussi les triceps et les &eacute;paules ant&eacute;rieures.</p></div>
-        <div class="exercise-card" data-muscle="pectoraux"><div class="card-image img-placeholder">Photo D&eacute;velopp&eacute; inclin&eacute;</div><h3>D&eacute;velopp&eacute; inclin&eacute;</h3><div class="tags"><span class="tag tag-muscle">Pectoraux</span><span class="tag tag-compound">Compound</span></div><p>Cible la partie haute des pectoraux. Id&eacute;al pour d&eacute;velopper le haut de la poitrine.</p></div>
-        <div class="exercise-card" data-muscle="pectoraux"><div class="card-image img-placeholder">Photo &Eacute;cart&eacute;s halt&egrave;res</div><h3>&Eacute;cart&eacute;s aux halt&egrave;res</h3><div class="tags"><span class="tag tag-muscle">Pectoraux</span><span class="tag tag-isolation">Isolation</span></div><p>Isole les pectoraux avec un mouvement d'ouverture. Excellent pour l'&eacute;tirement et la contraction.</p></div>
-        <div class="exercise-card" data-muscle="pectoraux"><div class="card-image img-placeholder">Photo Dips</div><h3>Dips</h3><div class="tags"><span class="tag tag-muscle">Pectoraux</span><span class="tag tag-compound">Compound</span></div><p>Mouvement au poids de corps ciblant pectoraux et triceps. Ajustez l'inclinaison pour varier.</p></div>
+    <div class="exercises-count"><span id="count">{totalCount}</span> exercices affich&eacute;s</div>
 
-        <div class="exercise-card" data-muscle="dos"><div class="card-image img-placeholder">Photo Tractions</div><h3>Tractions</h3><div class="tags"><span class="tag tag-muscle">Dos</span><span class="tag tag-compound">Compound</span></div><p>Exercice fondamental pour le dos. D&eacute;veloppe la largeur du grand dorsal et les biceps.</p></div>
-        <div class="exercise-card" data-muscle="dos"><div class="card-image img-placeholder">Photo Rowing barre</div><h3>Rowing barre</h3><div class="tags"><span class="tag tag-muscle">Dos</span><span class="tag tag-compound">Compound</span></div><p>Travaille l'&eacute;paisseur du dos. Cible les rhombo&iuml;des, les trap&egrave;zes et le grand dorsal.</p></div>
-        <div class="exercise-card" data-muscle="dos"><div class="card-image img-placeholder">Photo Soulev&eacute; de terre</div><h3>Soulev&eacute; de terre</h3><div class="tags"><span class="tag tag-muscle">Dos</span><span class="tag tag-compound">Compound</span></div><p>Le mouvement le plus complet. Recrute le dos, les jambes, les fessiers et le core.</p></div>
-        <div class="exercise-card" data-muscle="dos"><div class="card-image img-placeholder">Photo Tirage vertical</div><h3>Tirage vertical</h3><div class="tags"><span class="tag tag-muscle">Dos</span><span class="tag tag-compound">Compound</span></div><p>Alternative aux tractions &agrave; la poulie haute. Permet de r&eacute;gler la charge pr&eacute;cis&eacute;ment.</p></div>
+    <div class="no-results" id="no-results">Aucun exercice trouv&eacute;.</div>
 
-        <div class="exercise-card" data-muscle="epaules"><div class="card-image img-placeholder">Photo D&eacute;velopp&eacute; militaire</div><h3>D&eacute;velopp&eacute; militaire</h3><div class="tags"><span class="tag tag-muscle">&Eacute;paules</span><span class="tag tag-compound">Compound</span></div><p>Mouvement principal pour les &eacute;paules. Travaille les delto&iuml;des et les triceps.</p></div>
-        <div class="exercise-card" data-muscle="epaules"><div class="card-image img-placeholder">Photo &Eacute;l&eacute;vations lat&eacute;rales</div><h3>&Eacute;l&eacute;vations lat&eacute;rales</h3><div class="tags"><span class="tag tag-muscle">&Eacute;paules</span><span class="tag tag-isolation">Isolation</span></div><p>Isole le delto&iuml;de lat&eacute;ral pour des &eacute;paules plus larges. Contr&ocirc;lez le mouvement.</p></div>
-        <div class="exercise-card" data-muscle="epaules"><div class="card-image img-placeholder">Photo Face pull</div><h3>Face pull</h3><div class="tags"><span class="tag tag-muscle">&Eacute;paules</span><span class="tag tag-isolation">Isolation</span></div><p>Cible le delto&iuml;de post&eacute;rieur et les rotateurs externes. Essentiel pour la sant&eacute; des &eacute;paules.</p></div>
-
-        <div class="exercise-card" data-muscle="bras"><div class="card-image img-placeholder">Photo Curl biceps</div><h3>Curl biceps</h3><div class="tags"><span class="tag tag-muscle">Bras</span><span class="tag tag-isolation">Isolation</span></div><p>L'exercice classique pour les biceps. Variantes : barre, halt&egrave;res, marteau.</p></div>
-        <div class="exercise-card" data-muscle="bras"><div class="card-image img-placeholder">Photo Extensions triceps</div><h3>Extensions triceps</h3><div class="tags"><span class="tag tag-muscle">Bras</span><span class="tag tag-isolation">Isolation</span></div><p>Isole les triceps &agrave; la poulie ou avec halt&egrave;res. Compl&eacute;ment id&eacute;al des mouvements de pouss&eacute;e.</p></div>
-        <div class="exercise-card" data-muscle="bras"><div class="card-image img-placeholder">Photo Curl marteau</div><h3>Curl marteau</h3><div class="tags"><span class="tag tag-muscle">Bras</span><span class="tag tag-isolation">Isolation</span></div><p>Cible le brachio-radial et le biceps brachial. Prise neutre pour des bras plus &eacute;pais.</p></div>
-
-        <div class="exercise-card" data-muscle="jambes"><div class="card-image img-placeholder">Photo Squat</div><h3>Squat</h3><div class="tags"><span class="tag tag-muscle">Jambes</span><span class="tag tag-compound">Compound</span></div><p>Le roi des exercices pour les jambes. Travaille quadriceps, fessiers et ischio-jambiers.</p></div>
-        <div class="exercise-card" data-muscle="jambes"><div class="card-image img-placeholder">Photo Fentes</div><h3>Fentes</h3><div class="tags"><span class="tag tag-muscle">Jambes</span><span class="tag tag-compound">Compound</span></div><p>Exercice unilat&eacute;ral excellent pour l'&eacute;quilibre, les quadriceps et les fessiers.</p></div>
-        <div class="exercise-card" data-muscle="jambes"><div class="card-image img-placeholder">Photo Leg press</div><h3>Leg press</h3><div class="tags"><span class="tag tag-muscle">Jambes</span><span class="tag tag-compound">Compound</span></div><p>Alternative au squat &agrave; la machine. Permet de charger lourd en toute s&eacute;curit&eacute;.</p></div>
-        <div class="exercise-card" data-muscle="jambes"><div class="card-image img-placeholder">Photo Leg curl</div><h3>Leg curl</h3><div class="tags"><span class="tag tag-muscle">Jambes</span><span class="tag tag-isolation">Isolation</span></div><p>Isole les ischio-jambiers. Essentiel pour l'&eacute;quilibre musculaire des jambes.</p></div>
-        <div class="exercise-card" data-muscle="jambes"><div class="card-image img-placeholder">Photo Hip thrust</div><h3>Hip thrust</h3><div class="tags"><span class="tag tag-muscle">Jambes</span><span class="tag tag-compound">Compound</span></div><p>Le meilleur exercice pour les fessiers. Extension de hanche avec charge progressive.</p></div>
-
-        <div class="exercise-card" data-muscle="abdos"><div class="card-image img-placeholder">Photo Crunch</div><h3>Crunch</h3><div class="tags"><span class="tag tag-muscle">Abdos</span><span class="tag tag-isolation">Isolation</span></div><p>Exercice de base pour les abdominaux. Concentrez-vous sur la contraction du grand droit.</p></div>
-        <div class="exercise-card" data-muscle="abdos"><div class="card-image img-placeholder">Photo Planche</div><h3>Planche (gainage)</h3><div class="tags"><span class="tag tag-muscle">Abdos</span><span class="tag tag-isolation">Isolation</span></div><p>Renforcement isomique du core. Am&eacute;liore la stabilit&eacute; et la posture g&eacute;n&eacute;rale.</p></div>
-        <div class="exercise-card" data-muscle="abdos"><div class="card-image img-placeholder">Photo Relev&eacute; de jambes</div><h3>Relev&eacute; de jambes suspendu</h3><div class="tags"><span class="tag tag-muscle">Abdos</span><span class="tag tag-isolation">Isolation</span></div><p>Cible la partie basse des abdominaux. Suspendu &agrave; la barre pour une amplitude maximale.</p></div>
-
-        <div class="exercise-card" data-muscle="cardio"><div class="card-image img-placeholder">Photo Rameur</div><h3>Rameur</h3><div class="tags"><span class="tag tag-muscle">Cardio</span><span class="tag tag-compound">Compound</span></div><p>Cardio complet sollicitant tout le corps. Excellent rapport effort/impact articulaire.</p></div>
-        <div class="exercise-card" data-muscle="cardio"><div class="card-image img-placeholder">Photo Corde &agrave; sauter</div><h3>Corde &agrave; sauter</h3><div class="tags"><span class="tag tag-muscle">Cardio</span><span class="tag tag-compound">Compound</span></div><p>Cardio haute intensit&eacute; et coordination. Parfait pour l'&eacute;chauffement ou le HIIT.</p></div>
+    <section class="exercises-grid" id="grid">
+        {exercises.map((ex) => {
+            const dc = difficultyColors[ex.difficulty] || { bg: "rgba(100,100,100,0.1)", color: "#888" };
+            return (
+                <div class="exercise-card" data-muscle={ex.category} data-name={ex.name.toLowerCase()}>
+                    <h3>{ex.name}</h3>
+                    <div class="tags">
+                        <span class="tag tag-muscle">{ex.muscle}</span>
+                        <span class="tag tag-equipment">{ex.equipment}</span>
+                        <span class="tag tag-difficulty" style={`background:${dc.bg};color:${dc.color}`}>{ex.difficulty}</span>
+                    </div>
+                </div>
+            );
+        })}
     </section>
 
     <section class="cta-section">
-        <h2>240+ exercices dans votre poche</h2>
+        <h2>{totalCount} exercices dans votre poche</h2>
         <p>T&eacute;l&eacute;chargez AIVancePro pour acc&eacute;der &agrave; tous les exercices avec vid&eacute;os, instructions et int&eacute;gration directe dans vos s&eacute;ances.</p>
         <a href="https://apps.apple.com/fr/app/aivancepro/id6756116760" class="btn-primary" target="_blank" rel="noopener">T&eacute;l&eacute;charger gratuitement</a>
     </section>
 
-    <script>
-        function filterExercises(muscle, btn) {
-            document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
-            btn.classList.add('active');
-            let count = 0;
-            document.querySelectorAll('.exercise-card').forEach(card => {
-                if (muscle === 'all' || card.dataset.muscle === muscle) {
-                    card.style.display = '';
-                    count++;
-                } else {
-                    card.style.display = 'none';
-                }
+    <script is:inline>
+        (function() {
+            var currentFilter = 'all';
+            var searchQuery = '';
+            var countEl = document.getElementById('count');
+            var noResults = document.getElementById('no-results');
+            var grid = document.getElementById('grid');
+
+            function update() {
+                var cards = document.querySelectorAll('.exercise-card');
+                var count = 0;
+                cards.forEach(function(card) {
+                    var matchFilter = currentFilter === 'all' || card.dataset.muscle === currentFilter;
+                    var matchSearch = !searchQuery || card.dataset.name.indexOf(searchQuery) !== -1;
+                    if (matchFilter && matchSearch) {
+                        card.style.display = '';
+                        count++;
+                    } else {
+                        card.style.display = 'none';
+                    }
+                });
+                countEl.textContent = count;
+                noResults.style.display = count === 0 ? 'block' : 'none';
+                grid.style.display = count === 0 ? 'none' : '';
+            }
+
+            document.querySelectorAll('.filter-btn').forEach(function(btn) {
+                btn.addEventListener('click', function() {
+                    document.querySelectorAll('.filter-btn').forEach(function(b) { b.classList.remove('active'); });
+                    btn.classList.add('active');
+                    currentFilter = btn.dataset.filter;
+                    update();
+                });
             });
-            document.getElementById('count').textContent = count;
-        }
+
+            document.getElementById('search').addEventListener('input', function(e) {
+                searchQuery = e.target.value.toLowerCase().normalize('NFD').replace(/[\u0300-\u036f]/g, '');
+                update();
+            });
+        })();
     </script>
 </BaseLayout>
