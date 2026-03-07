@@ -999,6 +999,236 @@
             height: 20px;
         }
 
+        /* ===== HOW IT WORKS ===== */
+        .how-it-works {
+            padding: 6rem 2rem;
+            background: var(--gray-50);
+        }
+
+        .steps-grid {
+            max-width: 900px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 2.5rem;
+            position: relative;
+        }
+
+        .steps-grid::before {
+            content: '';
+            position: absolute;
+            top: 40px;
+            left: 16%;
+            right: 16%;
+            height: 2px;
+            background: linear-gradient(90deg, var(--blue), var(--purple));
+            opacity: 0.2;
+        }
+
+        .step-card {
+            text-align: center;
+            position: relative;
+        }
+
+        .step-number {
+            width: 80px;
+            height: 80px;
+            border-radius: 50%;
+            background: linear-gradient(135deg, var(--blue), var(--purple));
+            color: var(--white);
+            font-size: 1.8rem;
+            font-weight: 800;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 1.25rem;
+            position: relative;
+            z-index: 1;
+        }
+
+        .step-card h3 {
+            font-size: 1.15rem;
+            font-weight: 700;
+            color: var(--gray-900);
+            margin-bottom: 0.5rem;
+        }
+
+        .step-card p {
+            font-size: 0.9rem;
+            color: var(--gray-500);
+            line-height: 1.6;
+            max-width: 240px;
+            margin: 0 auto;
+        }
+
+        /* ===== TESTIMONIALS ===== */
+        .testimonials {
+            padding: 7rem 2rem;
+        }
+
+        .testimonials-grid {
+            max-width: 1100px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 2rem;
+        }
+
+        .testimonial-card {
+            background: var(--white);
+            border: 1px solid var(--gray-200);
+            border-radius: 16px;
+            padding: 2rem;
+            transition: transform 0.2s, box-shadow 0.2s;
+        }
+
+        .testimonial-card:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 8px 30px rgba(0, 0, 0, 0.06);
+        }
+
+        .testimonial-stars {
+            color: #F59E0B;
+            font-size: 1.1rem;
+            margin-bottom: 1rem;
+            letter-spacing: 2px;
+        }
+
+        .testimonial-card blockquote {
+            font-size: 0.95rem;
+            color: var(--gray-700);
+            line-height: 1.7;
+            margin-bottom: 1.5rem;
+            font-style: italic;
+        }
+
+        .testimonial-author {
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+        }
+
+        .testimonial-avatar {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            background: linear-gradient(135deg, var(--blue), var(--purple));
+            color: var(--white);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 700;
+            font-size: 0.85rem;
+        }
+
+        .testimonial-author-info .name {
+            font-size: 0.9rem;
+            font-weight: 600;
+            color: var(--gray-900);
+        }
+
+        .testimonial-author-info .detail {
+            font-size: 0.8rem;
+            color: var(--gray-400);
+        }
+
+        /* ===== STORE BADGES (prominent) ===== */
+        .store-badges {
+            display: flex;
+            gap: 1rem;
+            justify-content: center;
+            align-items: center;
+            flex-wrap: wrap;
+            margin-top: 0.5rem;
+        }
+
+        .store-badge-link {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.6rem;
+            background: var(--gray-900);
+            color: var(--white);
+            text-decoration: none;
+            padding: 0.75rem 1.5rem;
+            border-radius: 12px;
+            transition: transform 0.2s, box-shadow 0.2s;
+        }
+
+        .store-badge-link:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+        }
+
+        .store-badge-link svg {
+            width: 24px;
+            height: 24px;
+        }
+
+        .store-badge-text {
+            display: flex;
+            flex-direction: column;
+            line-height: 1.2;
+        }
+
+        .store-badge-text .small {
+            font-size: 0.6rem;
+            font-weight: 400;
+            opacity: 0.8;
+        }
+
+        .store-badge-text .big {
+            font-size: 1rem;
+            font-weight: 700;
+        }
+
+        .store-rating {
+            text-align: center;
+            margin-top: 1rem;
+            font-size: 0.85rem;
+            color: var(--gray-500);
+        }
+
+        .store-rating .stars {
+            color: #F59E0B;
+            letter-spacing: 1px;
+        }
+
+        /* ===== STICKY CTA ===== */
+        .sticky-cta {
+            position: fixed;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+            border-top: 1px solid var(--gray-200);
+            padding: 0.75rem 2rem;
+            z-index: 99;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 1rem;
+            transform: translateY(100%);
+            transition: transform 0.3s ease;
+        }
+
+        .sticky-cta.visible {
+            transform: translateY(0);
+        }
+
+        .sticky-cta-text {
+            font-size: 0.9rem;
+            font-weight: 600;
+            color: var(--gray-700);
+        }
+
+        .sticky-cta .btn-primary {
+            padding: 0.6rem 1.5rem;
+            font-size: 0.875rem;
+            box-shadow: 0 2px 10px rgba(37, 99, 235, 0.25);
+        }
+
         /* ===== MOBILE MENU ===== */
         .mobile-menu {
             display: none;
@@ -1119,6 +1349,27 @@
             .final-cta h2 {
                 font-size: 2rem;
             }
+
+            .steps-grid {
+                grid-template-columns: 1fr;
+                gap: 2rem;
+            }
+
+            .steps-grid::before {
+                display: none;
+            }
+
+            .testimonials-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .store-badge-link {
+                padding: 0.6rem 1.2rem;
+            }
+
+            .sticky-cta-text {
+                display: none;
+            }
         }
 
         @media (max-width: 480px) {
@@ -1205,15 +1456,18 @@
             </div>
             <h1>Entra&icirc;nez-vous plus<br><span class="gradient">intelligemment</span></h1>
             <p>AIVancePro combine intelligence artificielle et science du sport pour cr&eacute;er des programmes d'entra&icirc;nement enti&egrave;rement personnalis&eacute;s. Progressez plus vite, sans vous blesser.</p>
-            <div class="hero-buttons">
-                <a href="https://apps.apple.com/fr/app/aivancepro/id6756116760" class="btn-primary" target="_blank" rel="noopener">
-                    <svg class="store-icon" viewBox="0 0 24 24" fill="currentColor"><path d="M18.71 19.5c-.83 1.24-1.71 2.45-3.05 2.47-1.34.03-1.77-.79-3.29-.79-1.53 0-2 .77-3.27.82-1.31.05-2.3-1.32-3.14-2.53C4.25 17 2.94 12.45 4.7 9.39c.87-1.52 2.43-2.48 4.12-2.51 1.28-.02 2.5.87 3.29.87.78 0 2.26-1.07 3.8-.91.65.03 2.47.26 3.64 1.98-.09.06-2.17 1.28-2.15 3.81.03 3.02 2.65 4.03 2.68 4.04-.03.07-.42 1.44-1.38 2.83M13 3.5c.73-.83 1.94-1.46 2.94-1.5.13 1.17-.34 2.35-1.04 3.19-.69.85-1.83 1.51-2.95 1.42-.15-1.15.41-2.35 1.05-3.11z"/></svg>
-                    App Store
+            <div class="store-badges">
+                <a href="https://apps.apple.com/fr/app/aivancepro/id6756116760" class="store-badge-link" target="_blank" rel="noopener">
+                    <svg viewBox="0 0 24 24" fill="currentColor"><path d="M18.71 19.5c-.83 1.24-1.71 2.45-3.05 2.47-1.34.03-1.77-.79-3.29-.79-1.53 0-2 .77-3.27.82-1.31.05-2.3-1.32-3.14-2.53C4.25 17 2.94 12.45 4.7 9.39c.87-1.52 2.43-2.48 4.12-2.51 1.28-.02 2.5.87 3.29.87.78 0 2.26-1.07 3.8-.91.65.03 2.47.26 3.64 1.98-.09.06-2.17 1.28-2.15 3.81.03 3.02 2.65 4.03 2.68 4.04-.03.07-.42 1.44-1.38 2.83M13 3.5c.73-.83 1.94-1.46 2.94-1.5.13 1.17-.34 2.35-1.04 3.19-.69.85-1.83 1.51-2.95 1.42-.15-1.15.41-2.35 1.05-3.11z"/></svg>
+                    <span class="store-badge-text"><span class="small">T&eacute;l&eacute;charger sur l'</span><span class="big">App Store</span></span>
                 </a>
-                <a href="https://play.google.com/store/apps/details?id=com.aivancepro.app" class="btn-secondary" target="_blank" rel="noopener">
-                    <svg class="store-icon" viewBox="0 0 24 24" fill="currentColor"><path d="M3.18 23.67c-.38-.39-.58-.94-.58-1.6V1.93c0-.66.2-1.21.58-1.6l.08-.08L14.74 11.7v.22L3.26 23.38l-.08-.08z"/><path d="M18.56 15.58l-3.82-3.84v-.22l3.82-3.84.08.05 4.53 2.57c1.29.73 1.29 1.93 0 2.67l-4.53 2.57-.08.04z" opacity=".8"/><path d="M18.65 15.53L14.74 11.6 3.18 23.2c.43.45 1.13.51 1.93.06l13.54-7.73" opacity=".6"/><path d="M18.65 7.68L5.11.95c-.8-.45-1.5-.39-1.93.06L14.74 12.6l3.91-3.92z" opacity=".6"/></svg>
-                    Google Play
+                <a href="https://play.google.com/store/apps/details?id=com.aivancepro.app" class="store-badge-link" target="_blank" rel="noopener">
+                    <svg viewBox="0 0 24 24" fill="currentColor"><path d="M3.18 23.67c-.38-.39-.58-.94-.58-1.6V1.93c0-.66.2-1.21.58-1.6l.08-.08L14.74 11.7v.22L3.26 23.38l-.08-.08z"/><path d="M18.56 15.58l-3.82-3.84v-.22l3.82-3.84.08.05 4.53 2.57c1.29.73 1.29 1.93 0 2.67l-4.53 2.57-.08.04z" opacity=".8"/><path d="M18.65 15.53L14.74 11.6 3.18 23.2c.43.45 1.13.51 1.93.06l13.54-7.73" opacity=".6"/><path d="M18.65 7.68L5.11.95c-.8-.45-1.5-.39-1.93.06L14.74 12.6l3.91-3.92z" opacity=".6"/></svg>
+                    <span class="store-badge-text"><span class="small">Disponible sur</span><span class="big">Google Play</span></span>
                 </a>
+            </div>
+            <div class="store-rating">
+                <span class="stars">&#9733;&#9733;&#9733;&#9733;&#9733;</span> &mdash; Gratuit &middot; iOS &amp; Android
             </div>
 
             <div class="hero-phones">
@@ -1242,6 +1496,34 @@
             <div class="proof-item">
                 <div class="number"><span class="gradient">24/7</span></div>
                 <div class="label">Coach disponible</div>
+            </div>
+        </div>
+    </section>
+
+    <!-- How it works -->
+    <section class="how-it-works">
+        <div class="section-inner">
+            <div class="section-header">
+                <div class="section-label">Comment &ccedil;a marche</div>
+                <h2 class="section-title">Commencez en 3 &eacute;tapes</h2>
+                <p class="section-subtitle">De l'inscription &agrave; votre premier entra&icirc;nement en quelques minutes.</p>
+            </div>
+            <div class="steps-grid">
+                <div class="step-card">
+                    <div class="step-number">1</div>
+                    <h3>D&eacute;finissez vos objectifs</h3>
+                    <p>Renseignez votre niveau, vos objectifs et votre &eacute;quipement. L'IA s'adapte &agrave; vous.</p>
+                </div>
+                <div class="step-card">
+                    <div class="step-number">2</div>
+                    <h3>L'IA cr&eacute;e votre programme</h3>
+                    <p>Recevez des s&eacute;ances personnalis&eacute;es g&eacute;n&eacute;r&eacute;es par intelligence artificielle.</p>
+                </div>
+                <div class="step-card">
+                    <div class="step-number">3</div>
+                    <h3>Suivez votre progression</h3>
+                    <p>Enregistrez vos performances et visualisez vos progr&egrave;s avec des graphiques d&eacute;taill&eacute;s.</p>
+                </div>
             </div>
         </div>
     </section>
@@ -1394,17 +1676,63 @@
         </div>
     </section>
 
+    <!-- Testimonials -->
+    <section class="testimonials">
+        <div class="section-inner">
+            <div class="section-header">
+                <div class="section-label">T&eacute;moignages</div>
+                <h2 class="section-title">Ce que disent nos utilisateurs</h2>
+                <p class="section-subtitle">Rejoignez des sportifs qui ont transform&eacute; leur entra&icirc;nement avec AIVancePro.</p>
+            </div>
+            <div class="testimonials-grid">
+                <div class="testimonial-card">
+                    <div class="testimonial-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+                    <blockquote>&laquo; Le coach IA est incroyable. Il comprend exactement ce dont j'ai besoin et adapte mes s&eacute;ances en fonction de ma fatigue et mes objectifs. &raquo;</blockquote>
+                    <div class="testimonial-author">
+                        <div class="testimonial-avatar">TM</div>
+                        <div class="testimonial-author-info">
+                            <div class="name">Thomas M.</div>
+                            <div class="detail">Musculation &middot; 8 mois</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="testimonial-card">
+                    <div class="testimonial-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+                    <blockquote>&laquo; J'ai enfin une app qui suit mes progr&egrave;s proprement. Les graphiques de progression sont super clairs et motivants. &raquo;</blockquote>
+                    <div class="testimonial-author">
+                        <div class="testimonial-avatar">SL</div>
+                        <div class="testimonial-author-info">
+                            <div class="name">Sarah L.</div>
+                            <div class="detail">Fitness &middot; 5 mois</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="testimonial-card">
+                    <div class="testimonial-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+                    <blockquote>&laquo; L'aspect communaut&eacute; est g&eacute;nial. On se motive entre potes avec les d&eacute;fis et le leaderboard. Bien mieux que les autres apps. &raquo;</blockquote>
+                    <div class="testimonial-author">
+                        <div class="testimonial-avatar">KR</div>
+                        <div class="testimonial-author-info">
+                            <div class="name">Kevin R.</div>
+                            <div class="detail">Crossfit &middot; 3 mois</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
     <!-- Pricing -->
     <section class="pricing" id="pricing">
         <div class="section-inner">
             <div class="section-header">
                 <div class="section-label">Tarifs</div>
                 <h2 class="section-title">Choisissez votre plan</h2>
-                <p class="section-subtitle">Commencez gratuitement, passez Premium pour d&eacute;bloquer tout le potentiel de votre entra&icirc;nement.</p>
+                <p class="section-subtitle">Commencez gratuitement, puis choisissez le plan qui correspond &agrave; vos ambitions.</p>
             </div>
 
-            <div class="pricing-grid">
-                <!-- Free -->
+            <div class="pricing-grid" style="grid-template-columns: repeat(3, 1fr); max-width: 1100px;">
+                <!-- Gratuit -->
                 <div class="pricing-card">
                     <div class="plan-name">Gratuit</div>
                     <div class="price">0&euro; <span>/ mois</span></div>
@@ -1422,23 +1750,23 @@
                             <svg viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/></svg>
                             Statistiques de base
                         </li>
-                        <li class="disabled">
-                            <svg viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M4.293 4.293a1 1 0 011.414 0L10 8.586l4.293-4.293a1 1 0 111.414 1.414L11.414 10l4.293 4.293a1 1 0 01-1.414 1.414L10 11.414l-4.293 4.293a1 1 0 01-1.414-1.414L8.586 10 4.293 5.707a1 1 0 010-1.414z" clip-rule="evenodd"/></svg>
-                            Coach IA illimit&eacute;
+                        <li>
+                            <svg viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/></svg>
+                            Timer &amp; repos automatique
                         </li>
                         <li class="disabled">
                             <svg viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M4.293 4.293a1 1 0 011.414 0L10 8.586l4.293-4.293a1 1 0 111.414 1.414L11.414 10l4.293 4.293a1 1 0 01-1.414 1.414L10 11.414l-4.293 4.293a1 1 0 01-1.414-1.414L8.586 10 4.293 5.707a1 1 0 010-1.414z" clip-rule="evenodd"/></svg>
-                            Analyses avanc&eacute;es
+                            Coach IA
                         </li>
                     </ul>
                     <a href="https://apps.apple.com/fr/app/aivancepro/id6756116760" class="btn-pricing outline" target="_blank" rel="noopener">Commencer gratuitement</a>
                 </div>
 
-                <!-- Premium -->
+                <!-- Pro -->
                 <div class="pricing-card featured">
-                    <div class="plan-name">Premium</div>
-                    <div class="price">9,99&euro; <span>/ mois</span></div>
-                    <div class="price-desc">Acc&egrave;s complet &agrave; toutes les fonctionnalit&eacute;s</div>
+                    <div class="plan-name">Pro</div>
+                    <div class="price">4,99&euro; <span>/ mois</span></div>
+                    <div class="price-desc">Pour progresser s&eacute;rieusement</div>
                     <ul class="pricing-features">
                         <li>
                             <svg viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/></svg>
@@ -1458,12 +1786,43 @@
                         </li>
                         <li>
                             <svg viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/></svg>
-                            Communaut&eacute; &amp; d&eacute;fis
+                            Templates d'entra&icirc;nement
                         </li>
                     </ul>
-                    <a href="/login.html" class="btn-pricing primary">S'abonner maintenant</a>
+                    <a href="/login.html" class="btn-pricing primary">S'abonner &agrave; Pro</a>
+                </div>
+
+                <!-- Elite -->
+                <div class="pricing-card">
+                    <div class="plan-name">Elite</div>
+                    <div class="price">7,99&euro; <span>/ mois</span></div>
+                    <div class="price-desc">L'exp&eacute;rience compl&egrave;te</div>
+                    <ul class="pricing-features">
+                        <li>
+                            <svg viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/></svg>
+                            Tout le plan Pro
+                        </li>
+                        <li>
+                            <svg viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/></svg>
+                            Communaut&eacute; &amp; d&eacute;fis
+                        </li>
+                        <li>
+                            <svg viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/></svg>
+                            Messagerie &amp; groupes
+                        </li>
+                        <li>
+                            <svg viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/></svg>
+                            Leaderboards &amp; classements
+                        </li>
+                        <li>
+                            <svg viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/></svg>
+                            Badges &amp; succ&egrave;s
+                        </li>
+                    </ul>
+                    <a href="/login.html" class="btn-pricing primary" style="background: linear-gradient(135deg, #9333EA, #6D28D9);">S'abonner &agrave; Elite</a>
                 </div>
             </div>
+            <p style="text-align:center; margin-top:1.5rem; font-size:0.85rem; color:var(--gray-400);"><a href="/pricing.html" style="color:var(--blue); text-decoration:none; font-weight:600;">Voir la comparaison d&eacute;taill&eacute;e des plans &rarr;</a></p>
         </div>
     </section>
 
@@ -1482,7 +1841,7 @@
                         <svg viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M5.23 7.21a.75.75 0 011.06.02L10 11.168l3.71-3.938a.75.75 0 111.08 1.04l-4.25 4.5a.75.75 0 01-1.08 0l-4.25-4.5a.75.75 0 01.02-1.06z" clip-rule="evenodd"/></svg>
                     </button>
                     <div class="faq-answer">
-                        <div class="faq-answer-inner">Oui, AIVancePro propose un plan gratuit qui inclut le suivi de s&eacute;ances, l'acc&egrave;s &agrave; +240 exercices et les statistiques de base. Le plan Premium &agrave; 9,99&euro;/mois d&eacute;bloque le coach IA illimit&eacute;, les analyses avanc&eacute;es et toutes les fonctionnalit&eacute;s communautaires.</div>
+                        <div class="faq-answer-inner">Oui, AIVancePro propose un plan gratuit qui inclut le suivi de s&eacute;ances, l'acc&egrave;s &agrave; +240 exercices et les statistiques de base. Le plan Pro &agrave; 4,99&euro;/mois ajoute le coach IA illimit&eacute; et les analyses avanc&eacute;es. Le plan Elite &agrave; 7,99&euro;/mois d&eacute;bloque en plus la communaut&eacute;, les d&eacute;fis et la messagerie.</div>
                     </div>
                 </div>
 
@@ -1547,6 +1906,15 @@
             T&eacute;l&eacute;charger gratuitement
         </a>
     </section>
+
+    <!-- Sticky CTA -->
+    <div class="sticky-cta" id="stickyCta">
+        <span class="sticky-cta-text">T&eacute;l&eacute;chargez AIVancePro gratuitement</span>
+        <a href="https://apps.apple.com/fr/app/aivancepro/id6756116760" class="btn-primary" target="_blank" rel="noopener">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M18.71 19.5c-.83 1.24-1.71 2.45-3.05 2.47-1.34.03-1.77-.79-3.29-.79-1.53 0-2 .77-3.27.82-1.31.05-2.3-1.32-3.14-2.53C4.25 17 2.94 12.45 4.7 9.39c.87-1.52 2.43-2.48 4.12-2.51 1.28-.02 2.5.87 3.29.87.78 0 2.26-1.07 3.8-.91.65.03 2.47.26 3.64 1.98-.09.06-2.17 1.28-2.15 3.81.03 3.02 2.65 4.03 2.68 4.04-.03.07-.42 1.44-1.38 2.83M13 3.5c.73-.83 1.94-1.46 2.94-1.5.13 1.17-.34 2.35-1.04 3.19-.69.85-1.83 1.51-2.95 1.42-.15-1.15.41-2.35 1.05-3.11z"/></svg>
+            T&eacute;l&eacute;charger
+        </a>
+    </div>
 
     <!-- Footer -->
     <footer>
@@ -1614,6 +1982,21 @@
             </div>
         </div>
     </footer>
+
+    <script>
+    // Sticky CTA - show after scrolling past hero
+    (function() {
+        var sticky = document.getElementById('stickyCta');
+        if (!sticky) return;
+        window.addEventListener('scroll', function() {
+            if (window.scrollY > 600) {
+                sticky.classList.add('visible');
+            } else {
+                sticky.classList.remove('visible');
+            }
+        });
+    })();
+    </script>
 
 </body>
 </html>
