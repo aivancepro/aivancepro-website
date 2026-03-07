@@ -10,11 +10,12 @@
     --green: #10B981;
 
     /* Dark theme palette */
-    --bg: #0a0a0f;
-    --bg-card: #111118;
-    --bg-elevated: #1a1a24;
-    --border: #1e1e2e;
-    --border-light: #2a2a3a;
+    --bg: #0d0d14;
+    --bg-alt: #151520;
+    --bg-card: #1a1a26;
+    --bg-elevated: #22222f;
+    --border: #2a2a3a;
+    --border-light: #33334a;
 
     --text: #f0f0f5;
     --text-secondary: #8888a0;
@@ -28,9 +29,9 @@
     --gray-500: #8888a0;
     --gray-400: #6a6a80;
     --gray-300: #3a3a4a;
-    --gray-200: #2a2a3a;
-    --gray-100: #1a1a24;
-    --gray-50: #111118;
+    --gray-200: #33334a;
+    --gray-100: #22222f;
+    --gray-50: #151520;
     --white: #FFFFFF;
 }
 
@@ -48,7 +49,7 @@ nav {
     top: 0;
     width: 100%;
     padding: 0.875rem 2rem;
-    background: rgba(10, 10, 15, 0.88);
+    background: rgba(13, 13, 20, 0.88);
     backdrop-filter: blur(20px);
     -webkit-backdrop-filter: blur(20px);
     z-index: 100;
