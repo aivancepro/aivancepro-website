@@ -6,12 +6,12 @@ readTime: "5 Min. Lesezeit"
 tag: "Tipps"
 lang: "de"
 slug: "haeufige-trainingsfehler"
-canonical: "https://aivancepro.fr/de/blog/haeufige-trainingsfehler.html"
+canonical: "https://aivancepro.fr/de/blog/haeufige-trainingsfehler/"
 keywords: "Trainingsfehler, häufige Fehler Fitness, Muskelaufbau Fehler, Trainingstipps, Fehler vermeiden"
 alternates:
-  fr: "https://aivancepro.fr/blog/erreurs-musculation.html"
-  en: "https://aivancepro.fr/en/blog/common-workout-mistakes.html"
-  de: "https://aivancepro.fr/de/blog/haeufige-trainingsfehler.html"
+  fr: "https://aivancepro.fr/blog/erreurs-musculation/"
+  en: "https://aivancepro.fr/en/blog/common-workout-mistakes/"
+  de: "https://aivancepro.fr/de/blog/haeufige-trainingsfehler/"
 ---
 
 Ob Sie gerade erst anfangen oder schon seit Jahren trainieren -- manche Fehler sind universell. Sie bremsen den Fortschritt, erhöhen das Verletzungsrisiko und verschwenden Stunden an Aufwand. Hier sind die 5 häufigsten Fallen und wie Sie sie vermeiden.

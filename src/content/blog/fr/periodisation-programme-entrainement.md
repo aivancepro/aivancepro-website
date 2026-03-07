@@ -6,12 +6,12 @@ readTime: "6 min de lecture"
 tag: "Programmation"
 lang: "fr"
 slug: "periodisation-programme-entrainement"
-canonical: "https://aivancepro.fr/blog/periodisation-programme-entrainement.html"
+canonical: "https://aivancepro.fr/blog/periodisation-programme-entrainement/"
 keywords: "périodisation musculation, programme structuré, mésocycle, deload, planification entraînement, progression musculation"
 alternates:
-  fr: "https://aivancepro.fr/blog/periodisation-programme-entrainement.html"
-  en: "https://aivancepro.fr/en/blog/periodization-training-program.html"
-  de: "https://aivancepro.fr/de/blog/periodisierung-trainingsplan.html"
+  fr: "https://aivancepro.fr/blog/periodisation-programme-entrainement/"
+  en: "https://aivancepro.fr/en/blog/periodization-training-program/"
+  de: "https://aivancepro.fr/de/blog/periodisierung-trainingsplan/"
 ---
 
 Vous vous entraînez depuis plusieurs mois mais vos progrès stagnent ? Vous enchainez les séances sans véritable plan à long terme ? Il est probable que votre programme manque de **périodisation**. Ce concept, utilisé par tous les athlètes de haut niveau, est la clé pour progresser durablement.

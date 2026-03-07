@@ -6,12 +6,12 @@ readTime: "4 min de lecture"
 tag: "Motivation"
 lang: "fr"
 slug: "motivation-sport"
-canonical: "https://aivancepro.fr/blog/motivation-sport.html"
+canonical: "https://aivancepro.fr/blog/motivation-sport/"
 keywords: "motivation sport, rester motivé musculation, ne pas abandonner entraînement, discipline sportive, habitude fitness"
 alternates:
-  fr: "https://aivancepro.fr/blog/motivation-sport.html"
-  en: "https://aivancepro.fr/en/blog/workout-motivation-tips.html"
-  de: "https://aivancepro.fr/de/blog/training-motivation-tipps.html"
+  fr: "https://aivancepro.fr/blog/motivation-sport/"
+  en: "https://aivancepro.fr/en/blog/workout-motivation-tips/"
+  de: "https://aivancepro.fr/de/blog/training-motivation-tipps/"
 ---
 
 On connaît tous ce scénario : janvier arrive, on s'inscrit à la salle, on y va tous les jours pendant deux semaines... puis plus rien. La motivation s'est évaporée. Pourtant, la différence entre ceux qui réussissent et les autres n'est pas le talent : c'est la **régularité**. Voici 5 stratégies concrètes pour tenir sur la durée.

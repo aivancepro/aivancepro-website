@@ -6,12 +6,12 @@ readTime: "5 min read"
 tag: "Artificial Intelligence"
 lang: "en"
 slug: "ai-fitness-coaching"
-canonical: "https://aivancepro.fr/en/blog/ai-fitness-coaching.html"
+canonical: "https://aivancepro.fr/en/blog/ai-fitness-coaching/"
 keywords: "AI fitness, virtual coach, artificial intelligence workout, personalized AI program, AI sports coaching"
 alternates:
-  fr: "https://aivancepro.fr/blog/coach-ia-fitness.html"
-  en: "https://aivancepro.fr/en/blog/ai-fitness-coaching.html"
-  de: "https://aivancepro.fr/de/blog/ki-fitness-coaching.html"
+  fr: "https://aivancepro.fr/blog/coach-ia-fitness/"
+  en: "https://aivancepro.fr/en/blog/ai-fitness-coaching/"
+  de: "https://aivancepro.fr/de/blog/ki-fitness-coaching/"
 ---
 
 Artificial intelligence is fundamentally transforming the fitness industry. What was once reserved for professional athletes with access to expensive personal trainers is now available to everyone thanks to advances in technology. But how exactly is AI changing the way we work out?

@@ -6,12 +6,12 @@ readTime: "13 min read"
 tag: "Home Gym"
 lang: "en"
 slug: "home-gym-guide"
-canonical: "https://aivancepro.fr/en/guides/home-gym-guide.html"
+canonical: "https://aivancepro.fr/en/guides/home-gym-guide/"
 keywords: "home gym, home workout, home gym equipment, barbell set, power rack, home gym budget, garage gym, training at home"
 alternates:
-  fr: "https://aivancepro.fr/guides/home-gym.html"
-  en: "https://aivancepro.fr/en/guides/home-gym-guide.html"
-  de: "https://aivancepro.fr/de/ratgeber/home-gym-ratgeber.html"
+  fr: "https://aivancepro.fr/guides/home-gym/"
+  en: "https://aivancepro.fr/en/guides/home-gym-guide/"
+  de: "https://aivancepro.fr/de/ratgeber/home-gym-ratgeber/"
 ---
 
 Training at home eliminates commute time, waiting for equipment and monthly gym fees. With the right setup, a home gym can be just as effective as any commercial facility for building strength and muscle. This guide covers everything from choosing your first piece of equipment on a tight budget to designing a complete garage gym and programming effective home workouts.

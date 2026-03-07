@@ -6,12 +6,12 @@ readTime: "18 Min. Lesezeit"
 tag: "Ernährung"
 lang: "de"
 slug: "ernaehrung-training"
-canonical: "https://aivancepro.fr/de/ratgeber/ernaehrung-training.html"
+canonical: "https://aivancepro.fr/de/ratgeber/ernaehrung-training/"
 keywords: "Ernährung Training, Protein Muskelaufbau, Makronährstoffe, Kalorienbedarf, Mahlzeiten-Timing, Supplements"
 alternates:
-  fr: "https://aivancepro.fr/guides/nutrition-musculation.html"
-  en: "https://aivancepro.fr/en/guides/nutrition-training.html"
-  de: "https://aivancepro.fr/de/ratgeber/ernaehrung-training.html"
+  fr: "https://aivancepro.fr/guides/nutrition-musculation/"
+  en: "https://aivancepro.fr/en/guides/nutrition-training/"
+  de: "https://aivancepro.fr/de/ratgeber/ernaehrung-training/"
 ---
 
 Training allein ist nur die halbe Miete. Ohne die richtige Ernährung werden Ihre Fortschritte im Krafttraining stark eingeschränkt -- egal, wie hart Sie trainieren. Dieser umfassende Ratgeber erklärt Ihnen alles, was Sie über Ernährung im Kontext des Krafttrainings wissen müssen: von der Kalorienberechnung über Makronährstoffe bis hin zu praktischen Mahlzeitenbeispielen.

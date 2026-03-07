@@ -6,11 +6,11 @@ readTime: "5 min read"
 tag: "Progress"
 lang: "en"
 slug: "tracking-fitness-progress"
-canonical: "https://aivancepro.fr/en/blog/tracking-fitness-progress.html"
+canonical: "https://aivancepro.fr/en/blog/tracking-fitness-progress/"
 keywords: "tracking fitness progress, workout tracker, measure athletic performance, training log, fitness tracking app"
 alternates:
-  fr: "https://aivancepro.fr/blog/suivi-progression-sportive.html"
-  en: "https://aivancepro.fr/en/blog/tracking-fitness-progress.html"
+  fr: "https://aivancepro.fr/blog/suivi-progression-sportive/"
+  en: "https://aivancepro.fr/en/blog/tracking-fitness-progress/"
 ---
 
 Imagine driving a car without a dashboard -- no speedometer, no fuel gauge. You're moving forward, but you have no idea how fast you're going or how long you can keep it up. That's exactly what most people do at the gym: they train without tracking their progress.

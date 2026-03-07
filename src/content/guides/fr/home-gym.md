@@ -6,12 +6,12 @@ readTime: "13 min de lecture"
 tag: "Home Gym"
 lang: "fr"
 slug: "home-gym"
-canonical: "https://aivancepro.fr/guides/home-gym.html"
+canonical: "https://aivancepro.fr/guides/home-gym/"
 keywords: "home gym, salle de sport maison, équipement musculation maison, entraînement domicile, rack musculation, haltères"
 alternates:
-  fr: "https://aivancepro.fr/guides/home-gym.html"
-  en: "https://aivancepro.fr/en/guides/home-gym-guide.html"
-  de: "https://aivancepro.fr/de/ratgeber/home-gym-einrichten.html"
+  fr: "https://aivancepro.fr/guides/home-gym/"
+  en: "https://aivancepro.fr/en/guides/home-gym-guide/"
+  de: "https://aivancepro.fr/de/ratgeber/home-gym-einrichten/"
 ---
 
 S'entraîner chez soi élimine les deux obstacles principaux de la régularité : le temps de trajet et les heures de pointe en salle. Avec le bon équipement et un espace bien aménagé, un home gym peut offrir des résultats équivalents à une salle de sport commerciale. Ce guide vous aide à planifier votre installation selon votre budget et votre espace disponible.

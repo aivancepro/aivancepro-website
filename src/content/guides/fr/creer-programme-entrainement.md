@@ -6,12 +6,12 @@ readTime: "12 min de lecture"
 tag: "Programmation"
 lang: "fr"
 slug: "creer-programme-entrainement"
-canonical: "https://aivancepro.fr/guides/creer-programme-entrainement.html"
+canonical: "https://aivancepro.fr/guides/creer-programme-entrainement/"
 keywords: "programme entraînement, créer programme musculation, PPL, upper lower, full body, volume entraînement, fréquence musculation"
 alternates:
-  fr: "https://aivancepro.fr/guides/creer-programme-entrainement.html"
-  en: "https://aivancepro.fr/en/guides/create-training-program.html"
-  de: "https://aivancepro.fr/de/ratgeber/trainingsplan-erstellen.html"
+  fr: "https://aivancepro.fr/guides/creer-programme-entrainement/"
+  en: "https://aivancepro.fr/en/guides/create-training-program/"
+  de: "https://aivancepro.fr/de/ratgeber/trainingsplan-erstellen/"
 ---
 
 Un programme d'entraînement bien construit fait la différence entre des progrès réguliers et des mois de stagnation. Pourtant, la majorité des pratiquants s'entraînent sans véritable plan, en enchaînant les exercices au hasard. Ce guide vous apprend à maîtriser les variables fondamentales d'un programme et à les assembler intelligemment.
@@ -30,7 +30,7 @@ Le volume optimal est individuel. Commencez par le bas de la fourchette et augme
 
 ### L'intensité
 
-L'intensité désigne le pourcentage de votre charge maximale (1RM) utilisé sur un exercice, ou de manière plus pratique, la proximité de l'échec musculaire ([RPE](/guides/comprendre-rpe-intensite.html)). Différentes plages d'intensité produisent différents résultats :
+L'intensité désigne le pourcentage de votre charge maximale (1RM) utilisé sur un exercice, ou de manière plus pratique, la proximité de l'échec musculaire ([RPE](/guides/comprendre-rpe-intensite/)). Différentes plages d'intensité produisent différents résultats :
 
 - **1-5 répétitions (85-100% 1RM)** : développement de la force maximale
 - **6-12 répétitions (65-85% 1RM)** : hypertrophie musculaire optimale

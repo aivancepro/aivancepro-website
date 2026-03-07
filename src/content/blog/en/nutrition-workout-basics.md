@@ -6,11 +6,11 @@ readTime: "7 min read"
 tag: "Nutrition"
 lang: "en"
 slug: "nutrition-workout-basics"
-canonical: "https://aivancepro.fr/en/blog/nutrition-workout-basics.html"
+canonical: "https://aivancepro.fr/en/blog/nutrition-workout-basics/"
 keywords: "workout nutrition, protein for muscle, sports diet, bulking calories, cutting nutrition, meal timing gym"
 alternates:
-  fr: "https://aivancepro.fr/blog/nutrition-musculation-bases.html"
-  en: "https://aivancepro.fr/en/blog/nutrition-workout-basics.html"
+  fr: "https://aivancepro.fr/blog/nutrition-musculation-bases/"
+  en: "https://aivancepro.fr/en/blog/nutrition-workout-basics/"
 ---
 
 It is often said that fitness is 70% diet. That may be an exaggeration, but one thing is certain: without proper nutrition, even the best training program will only deliver mediocre results. Here are the fundamentals of nutrition for weight training.

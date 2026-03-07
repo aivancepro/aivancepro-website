@@ -6,11 +6,11 @@ readTime: "6 min read"
 tag: "Programming"
 lang: "en"
 slug: "periodization-training-program"
-canonical: "https://aivancepro.fr/en/blog/periodization-training-program.html"
+canonical: "https://aivancepro.fr/en/blog/periodization-training-program/"
 keywords: "training periodization, structured program, mesocycle, deload, workout planning, strength progression"
 alternates:
-  fr: "https://aivancepro.fr/blog/periodisation-programme-entrainement.html"
-  en: "https://aivancepro.fr/en/blog/periodization-training-program.html"
+  fr: "https://aivancepro.fr/blog/periodisation-programme-entrainement/"
+  en: "https://aivancepro.fr/en/blog/periodization-training-program/"
 ---
 
 You have been training for several months but your progress has stalled? You are going from session to session without a real long-term plan? Chances are your program is missing **periodization**. This concept, used by every high-level athlete, is the key to lasting progress.

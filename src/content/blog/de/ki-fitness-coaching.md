@@ -6,12 +6,12 @@ readTime: "5 Min. Lesezeit"
 tag: "Künstliche Intelligenz"
 lang: "de"
 slug: "ki-fitness-coaching"
-canonical: "https://aivancepro.fr/de/blog/ki-fitness-coaching.html"
+canonical: "https://aivancepro.fr/de/blog/ki-fitness-coaching/"
 keywords: "KI Fitness, virtueller Coach, künstliche Intelligenz Training, personalisiertes KI-Programm, KI Sport-Coaching"
 alternates:
-  fr: "https://aivancepro.fr/blog/coach-ia-fitness.html"
-  en: "https://aivancepro.fr/en/blog/ai-fitness-coaching.html"
-  de: "https://aivancepro.fr/de/blog/ki-fitness-coaching.html"
+  fr: "https://aivancepro.fr/blog/coach-ia-fitness/"
+  en: "https://aivancepro.fr/en/blog/ai-fitness-coaching/"
+  de: "https://aivancepro.fr/de/blog/ki-fitness-coaching/"
 ---
 
 Künstliche Intelligenz verändert die Fitnessbranche von Grund auf. Was früher nur Profisportlern mit Zugang zu teuren Personal Trainern vorbehalten war, steht dank technologischer Fortschritte heute jedem zur Verfügung. Doch wie genau verändert KI die Art und Weise, wie wir trainieren?

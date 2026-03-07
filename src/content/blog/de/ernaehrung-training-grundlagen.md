@@ -6,12 +6,12 @@ readTime: "7 Min. Lesezeit"
 tag: "Ernährung"
 lang: "de"
 slug: "ernaehrung-training-grundlagen"
-canonical: "https://aivancepro.fr/de/blog/ernaehrung-training-grundlagen.html"
+canonical: "https://aivancepro.fr/de/blog/ernaehrung-training-grundlagen/"
 keywords: "Sporternährung, Ernährung Muskelaufbau, Protein Training, Makronährstoffe, Mahlzeiten-Timing, Ernährung Fitness"
 alternates:
-  fr: "https://aivancepro.fr/blog/nutrition-musculation-bases.html"
-  en: "https://aivancepro.fr/en/blog/nutrition-workout-basics.html"
-  de: "https://aivancepro.fr/de/blog/ernaehrung-training-grundlagen.html"
+  fr: "https://aivancepro.fr/blog/nutrition-musculation-bases/"
+  en: "https://aivancepro.fr/en/blog/nutrition-workout-basics/"
+  de: "https://aivancepro.fr/de/blog/ernaehrung-training-grundlagen/"
 ---
 
 Es heißt oft, Fitness bestehe zu 70 % aus Ernährung. Das mag übertrieben sein, aber eines steht fest: Ohne richtige Ernährung liefert selbst das beste Trainingsprogramm nur mäßige Ergebnisse. Hier sind die Grundlagen der Sporternährung.

@@ -6,12 +6,12 @@ readTime: "14 min read"
 tag: "Advanced"
 lang: "en"
 slug: "periodization-basics"
-canonical: "https://aivancepro.fr/en/guides/periodization-basics.html"
+canonical: "https://aivancepro.fr/en/guides/periodization-basics/"
 keywords: "periodization, linear periodization, undulating periodization, mesocycle, microcycle, macrocycle, deload, hypertrophy phase, strength phase, peaking"
 alternates:
-  fr: "https://aivancepro.fr/guides/periodisation.html"
-  en: "https://aivancepro.fr/en/guides/periodization-basics.html"
-  de: "https://aivancepro.fr/de/ratgeber/periodisierung-grundlagen.html"
+  fr: "https://aivancepro.fr/guides/periodisation/"
+  en: "https://aivancepro.fr/en/guides/periodization-basics/"
+  de: "https://aivancepro.fr/de/ratgeber/periodisierung-grundlagen/"
 ---
 
 If you have been training for more than a few months, you have probably noticed that progress slows down over time. The linear gains you enjoyed as a beginner -- adding weight every session, seeing visible changes every week -- gradually taper off. This is where periodization comes in. It is the systematic planning of training variables over time to continue making progress while managing fatigue and avoiding plateaus.

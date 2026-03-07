@@ -6,12 +6,12 @@ readTime: "9 min read"
 tag: "Technique"
 lang: "en"
 slug: "understanding-rpe"
-canonical: "https://aivancepro.fr/en/guides/understanding-rpe.html"
+canonical: "https://aivancepro.fr/en/guides/understanding-rpe/"
 keywords: "RPE, rate of perceived exertion, RIR, reps in reserve, training intensity, autoregulation, 1RM percentage, RPE scale"
 alternates:
-  fr: "https://aivancepro.fr/guides/comprendre-rpe-intensite.html"
-  en: "https://aivancepro.fr/en/guides/understanding-rpe.html"
-  de: "https://aivancepro.fr/de/ratgeber/rpe-intensitaet-verstehen.html"
+  fr: "https://aivancepro.fr/guides/comprendre-rpe-intensite/"
+  en: "https://aivancepro.fr/en/guides/understanding-rpe/"
+  de: "https://aivancepro.fr/de/ratgeber/rpe-intensitaet-verstehen/"
 ---
 
 How hard should you train? This is one of the most important questions in strength training, and RPE (Rate of Perceived Exertion) is one of the best tools for answering it. Instead of blindly following fixed percentages that may not reflect how you feel on any given day, RPE lets you adjust your training intensity in real time based on your actual performance capacity. This guide explains the RPE scale, how it relates to other intensity measures, and how to use it effectively in your programming.

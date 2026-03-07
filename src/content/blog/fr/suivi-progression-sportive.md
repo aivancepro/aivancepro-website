@@ -6,12 +6,12 @@ readTime: "5 min de lecture"
 tag: "Progression"
 lang: "fr"
 slug: "suivi-progression-sportive"
-canonical: "https://aivancepro.fr/blog/suivi-progression-sportive.html"
+canonical: "https://aivancepro.fr/blog/suivi-progression-sportive/"
 keywords: "suivi progression musculation, tracker entraînement, mesurer performances sport, carnet entraînement, application suivi fitness"
 alternates:
-  fr: "https://aivancepro.fr/blog/suivi-progression-sportive.html"
-  en: "https://aivancepro.fr/en/blog/tracking-fitness-progress.html"
-  de: "https://aivancepro.fr/de/blog/trainingsfortschritt-verfolgen.html"
+  fr: "https://aivancepro.fr/blog/suivi-progression-sportive/"
+  en: "https://aivancepro.fr/en/blog/tracking-fitness-progress/"
+  de: "https://aivancepro.fr/de/blog/trainingsfortschritt-verfolgen/"
 ---
 
 Imaginez conduire une voiture sans tableau de bord : pas de compteur de vitesse, pas de jauge d'essence. Vous avancez, mais vous ne savez pas à quelle allure ni combien de temps vous pouvez tenir. C'est exactement ce que font la plupart des gens en salle de sport : ils s'entraînent sans suivre leur progression.

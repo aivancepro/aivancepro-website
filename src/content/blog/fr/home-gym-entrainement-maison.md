@@ -6,12 +6,12 @@ readTime: "6 min de lecture"
 tag: "Home Gym"
 lang: "fr"
 slug: "home-gym-entrainement-maison"
-canonical: "https://aivancepro.fr/blog/home-gym-entrainement-maison.html"
+canonical: "https://aivancepro.fr/blog/home-gym-entrainement-maison/"
 keywords: "home gym, entraînement maison, musculation sans salle, exercices poids du corps, programme maison, équipement home gym"
 alternates:
-  fr: "https://aivancepro.fr/blog/home-gym-entrainement-maison.html"
-  en: "https://aivancepro.fr/en/blog/home-gym-guide.html"
-  de: "https://aivancepro.fr/de/blog/home-gym-zuhause-trainieren.html"
+  fr: "https://aivancepro.fr/blog/home-gym-entrainement-maison/"
+  en: "https://aivancepro.fr/en/blog/home-gym-guide/"
+  de: "https://aivancepro.fr/de/blog/home-gym-zuhause-trainieren/"
 ---
 
 Pas le temps d'aller à la salle ? Pas de salle près de chez vous ? Ou simplement envie de s'entraîner tranquillement chez soi ? L'entraînement à domicile est une alternative sérieuse à la salle de sport. Avec le bon équipement et la bonne approche, vous pouvez obtenir d'excellents résultats sans quitter votre salon.

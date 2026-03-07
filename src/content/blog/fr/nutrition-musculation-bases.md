@@ -6,12 +6,12 @@ readTime: "7 min de lecture"
 tag: "Nutrition"
 lang: "fr"
 slug: "nutrition-musculation-bases"
-canonical: "https://aivancepro.fr/blog/nutrition-musculation-bases.html"
+canonical: "https://aivancepro.fr/blog/nutrition-musculation-bases/"
 keywords: "nutrition musculation, protéines musculation, alimentation sport, diète musculation, calories prise de masse, nutrition sèche"
 alternates:
-  fr: "https://aivancepro.fr/blog/nutrition-musculation-bases.html"
-  en: "https://aivancepro.fr/en/blog/nutrition-workout-basics.html"
-  de: "https://aivancepro.fr/de/blog/ernaehrung-training-grundlagen.html"
+  fr: "https://aivancepro.fr/blog/nutrition-musculation-bases/"
+  en: "https://aivancepro.fr/en/blog/nutrition-workout-basics/"
+  de: "https://aivancepro.fr/de/blog/ernaehrung-training-grundlagen/"
 ---
 
 On dit souvent que la musculation se fait à 70% dans l'assiette. C'est peut-être exagéré, mais une chose est certaine : sans une alimentation adaptée, même le meilleur programme d'entraînement ne donnera que des résultats médiocres. Voici les fondamentaux de la nutrition pour la musculation.

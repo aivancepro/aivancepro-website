@@ -6,12 +6,12 @@ readTime: "11 min de lecture"
 tag: "Force"
 lang: "fr"
 slug: "progresser-developpe-couche"
-canonical: "https://aivancepro.fr/guides/progresser-developpe-couche.html"
+canonical: "https://aivancepro.fr/guides/progresser-developpe-couche/"
 keywords: "développé couché, bench press, progresser bench, technique bench press, exercices accessoires pectoraux"
 alternates:
-  fr: "https://aivancepro.fr/guides/progresser-developpe-couche.html"
-  en: "https://aivancepro.fr/en/guides/improve-bench-press.html"
-  de: "https://aivancepro.fr/de/ratgeber/bankdruecken-verbessern.html"
+  fr: "https://aivancepro.fr/guides/progresser-developpe-couche/"
+  en: "https://aivancepro.fr/en/guides/improve-bench-press/"
+  de: "https://aivancepro.fr/de/ratgeber/bankdruecken-verbessern/"
 ---
 
 Le développé couché est probablement l'exercice le plus populaire en salle de musculation. C'est aussi l'un de ceux où la technique a le plus d'impact sur les performances. Ce guide détaille les points techniques essentiels, les exercices accessoires et la programmation spécifique pour faire progresser votre bench press.

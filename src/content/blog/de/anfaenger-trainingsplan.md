@@ -6,12 +6,12 @@ readTime: "7 Min. Lesezeit"
 tag: "Training"
 lang: "de"
 slug: "anfaenger-trainingsplan"
-canonical: "https://aivancepro.fr/de/blog/anfaenger-trainingsplan.html"
+canonical: "https://aivancepro.fr/de/blog/anfaenger-trainingsplan/"
 keywords: "Trainingsplan Anfänger, Krafttraining Anfänger, Muskelaufbau Anfänger, Trainingsplan erstellen, erstes Training"
 alternates:
-  fr: "https://aivancepro.fr/blog/programme-musculation-debutant.html"
-  en: "https://aivancepro.fr/en/blog/beginner-workout-program.html"
-  de: "https://aivancepro.fr/de/blog/anfaenger-trainingsplan.html"
+  fr: "https://aivancepro.fr/blog/programme-musculation-debutant/"
+  en: "https://aivancepro.fr/en/blog/beginner-workout-program/"
+  de: "https://aivancepro.fr/de/blog/anfaenger-trainingsplan/"
 ---
 
 Sie haben sich entschieden, mit dem Krafttraining zu beginnen? Eine hervorragende Entscheidung für Ihre Gesundheit! Es ist eine der besten Entscheidungen, die Sie für Körper und Geist treffen können. Doch bei der Fülle an Informationen ist es leicht, den Überblick zu verlieren. Dieser Leitfaden gibt Ihnen die Grundlagen für einen effektiven Einstieg.

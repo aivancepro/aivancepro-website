@@ -6,12 +6,12 @@ readTime: "12 Min. Lesezeit"
 tag: "Programmierung"
 lang: "de"
 slug: "trainingsplan-erstellen"
-canonical: "https://aivancepro.fr/de/ratgeber/trainingsplan-erstellen.html"
+canonical: "https://aivancepro.fr/de/ratgeber/trainingsplan-erstellen/"
 keywords: "Trainingsplan erstellen, Trainingsvolumen, Trainingsintensität, PPL Split, Oberkörper Unterkörper, Ganzkörpertraining"
 alternates:
-  fr: "https://aivancepro.fr/guides/creer-programme-entrainement.html"
-  en: "https://aivancepro.fr/en/guides/create-training-program.html"
-  de: "https://aivancepro.fr/de/ratgeber/trainingsplan-erstellen.html"
+  fr: "https://aivancepro.fr/guides/creer-programme-entrainement/"
+  en: "https://aivancepro.fr/en/guides/create-training-program/"
+  de: "https://aivancepro.fr/de/ratgeber/trainingsplan-erstellen/"
 ---
 
 Ein gut strukturierter Trainingsplan ist der Unterschied zwischen ziellosen Workouts und echtem, messbarem Fortschritt. Ob Sie Muskeln aufbauen, Kraft steigern oder einfach fitter werden möchten -- die richtige Planung Ihrer Trainingseinheiten ist entscheidend. In diesem Ratgeber lernen Sie alle Variablen kennen, die einen effektiven Trainingsplan ausmachen, und wie Sie diese optimal auf Ihre Ziele abstimmen.

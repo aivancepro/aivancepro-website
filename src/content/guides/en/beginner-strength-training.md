@@ -6,12 +6,12 @@ readTime: "15 min read"
 tag: "Beginner"
 lang: "en"
 slug: "beginner-strength-training"
-canonical: "https://aivancepro.fr/en/guides/beginner-strength-training.html"
+canonical: "https://aivancepro.fr/en/guides/beginner-strength-training/"
 keywords: "beginner strength training, how to start lifting weights, full body workout, progressive overload, proper form, beginner gym program"
 alternates:
-  fr: "https://aivancepro.fr/guides/debutant-musculation.html"
-  en: "https://aivancepro.fr/en/guides/beginner-strength-training.html"
-  de: "https://aivancepro.fr/de/ratgeber/anfaenger-krafttraining.html"
+  fr: "https://aivancepro.fr/guides/debutant-musculation/"
+  en: "https://aivancepro.fr/en/guides/beginner-strength-training/"
+  de: "https://aivancepro.fr/de/ratgeber/anfaenger-krafttraining/"
 ---
 
 Strength training is one of the most transformative activities you can take up, regardless of your age or fitness background. Whether your goal is to build muscle, lose fat, improve your health or simply feel stronger in everyday life, lifting weights delivers results like nothing else. This guide covers everything a complete beginner needs to know to walk into the gym with confidence and start progressing from day one.

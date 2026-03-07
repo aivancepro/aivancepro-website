@@ -6,12 +6,12 @@ readTime: "18 min read"
 tag: "Nutrition"
 lang: "en"
 slug: "nutrition-training"
-canonical: "https://aivancepro.fr/en/guides/nutrition-training.html"
+canonical: "https://aivancepro.fr/en/guides/nutrition-training/"
 keywords: "nutrition training, protein intake, macros, caloric surplus, caloric deficit, meal timing, supplements, muscle building diet"
 alternates:
-  fr: "https://aivancepro.fr/guides/nutrition-musculation.html"
-  en: "https://aivancepro.fr/en/guides/nutrition-training.html"
-  de: "https://aivancepro.fr/de/ratgeber/ernaehrung-training.html"
+  fr: "https://aivancepro.fr/guides/nutrition-musculation/"
+  en: "https://aivancepro.fr/en/guides/nutrition-training/"
+  de: "https://aivancepro.fr/de/ratgeber/ernaehrung-training/"
 ---
 
 You can train with perfect form, follow the best program in the world and sleep eight hours every night, but if your nutrition is not dialed in, you will never reach your full potential. Nutrition is the fuel that powers muscle growth, recovery and performance. This guide covers everything you need to know, from calculating your caloric needs to choosing the right supplements, with practical meal examples you can start using today.

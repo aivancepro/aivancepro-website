@@ -6,12 +6,12 @@ readTime: "5 Min. Lesezeit"
 tag: "Fortschritt"
 lang: "de"
 slug: "trainingsfortschritt-verfolgen"
-canonical: "https://aivancepro.fr/de/blog/trainingsfortschritt-verfolgen.html"
+canonical: "https://aivancepro.fr/de/blog/trainingsfortschritt-verfolgen/"
 keywords: "Trainingsfortschritt, Fitness Tracking, Trainingsüberwachung, Fortschritt messen, Trainingsprotokoll"
 alternates:
-  fr: "https://aivancepro.fr/blog/suivi-progression-sportive.html"
-  en: "https://aivancepro.fr/en/blog/tracking-fitness-progress.html"
-  de: "https://aivancepro.fr/de/blog/trainingsfortschritt-verfolgen.html"
+  fr: "https://aivancepro.fr/blog/suivi-progression-sportive/"
+  en: "https://aivancepro.fr/en/blog/tracking-fitness-progress/"
+  de: "https://aivancepro.fr/de/blog/trainingsfortschritt-verfolgen/"
 ---
 
 Stellen Sie sich vor, Sie fahren ein Auto ohne Armaturenbrett -- kein Tacho, keine Tankanzeige. Sie bewegen sich vorwärts, haben aber keine Ahnung, wie schnell Sie fahren oder wie lange Sie noch durchhalten können. Genau das machen die meisten Menschen im Fitnessstudio: Sie trainieren, ohne ihre Fortschritte zu verfolgen.

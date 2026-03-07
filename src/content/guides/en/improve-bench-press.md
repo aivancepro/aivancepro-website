@@ -6,12 +6,12 @@ readTime: "11 min read"
 tag: "Strength"
 lang: "en"
 slug: "improve-bench-press"
-canonical: "https://aivancepro.fr/en/guides/improve-bench-press.html"
+canonical: "https://aivancepro.fr/en/guides/improve-bench-press/"
 keywords: "bench press, improve bench press, bench press technique, bench press program, bench press accessories, leg drive, bench press grip"
 alternates:
-  fr: "https://aivancepro.fr/guides/progresser-developpe-couche.html"
-  en: "https://aivancepro.fr/en/guides/improve-bench-press.html"
-  de: "https://aivancepro.fr/de/ratgeber/bankdruecken-verbessern.html"
+  fr: "https://aivancepro.fr/guides/progresser-developpe-couche/"
+  en: "https://aivancepro.fr/en/guides/improve-bench-press/"
+  de: "https://aivancepro.fr/de/ratgeber/bankdruecken-verbessern/"
 ---
 
 The bench press is arguably the most popular lift in the gym and the one people ask about most often. Whether you are chasing a new personal record, trying to break through a plateau or simply want to bench with better technique, this guide covers everything: the optimal setup, the best accessory work, how to program bench-specific training, and how to identify and fix your weak points.

@@ -6,12 +6,12 @@ readTime: "5 min read"
 tag: "Tips"
 lang: "en"
 slug: "common-workout-mistakes"
-canonical: "https://aivancepro.fr/en/blog/common-workout-mistakes.html"
+canonical: "https://aivancepro.fr/en/blog/common-workout-mistakes/"
 keywords: "workout mistakes, beginner mistakes gym, strength training tips, training progress, effective workout"
 alternates:
-  fr: "https://aivancepro.fr/blog/erreurs-musculation.html"
-  en: "https://aivancepro.fr/en/blog/common-workout-mistakes.html"
-  de: "https://aivancepro.fr/de/blog/haeufige-trainingsfehler.html"
+  fr: "https://aivancepro.fr/blog/erreurs-musculation/"
+  en: "https://aivancepro.fr/en/blog/common-workout-mistakes/"
+  de: "https://aivancepro.fr/de/blog/haeufige-trainingsfehler/"
 ---
 
 Whether you are just starting out or have been training for years, some mistakes are universal. They slow down progress, increase injury risk, and waste hours of effort. Here are the 5 most common pitfalls and how to avoid them.

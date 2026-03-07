@@ -6,12 +6,12 @@ readTime: "18 min de lecture"
 tag: "Nutrition"
 lang: "fr"
 slug: "nutrition-musculation"
-canonical: "https://aivancepro.fr/guides/nutrition-musculation.html"
+canonical: "https://aivancepro.fr/guides/nutrition-musculation/"
 keywords: "nutrition musculation, protéines musculation, calories musculation, macronutriments, régime prise de masse, sèche musculation"
 alternates:
-  fr: "https://aivancepro.fr/guides/nutrition-musculation.html"
-  en: "https://aivancepro.fr/en/guides/nutrition-weight-training.html"
-  de: "https://aivancepro.fr/de/ratgeber/ernaehrung-krafttraining.html"
+  fr: "https://aivancepro.fr/guides/nutrition-musculation/"
+  en: "https://aivancepro.fr/en/guides/nutrition-weight-training/"
+  de: "https://aivancepro.fr/de/ratgeber/ernaehrung-krafttraining/"
 ---
 
 L'entraînement ne représente qu'une partie de l'équation. Sans une alimentation adaptée, même le meilleur programme ne donnera pas de résultats optimaux. Ce guide détaille les principes nutritionnels essentiels pour soutenir votre progression en musculation, que votre objectif soit la prise de masse, la sèche ou la recomposition corporelle.

@@ -6,12 +6,12 @@ readTime: "4 Min. Lesezeit"
 tag: "Motivation"
 lang: "de"
 slug: "training-motivation-tipps"
-canonical: "https://aivancepro.fr/de/blog/training-motivation-tipps.html"
+canonical: "https://aivancepro.fr/de/blog/training-motivation-tipps/"
 keywords: "Training Motivation, Fitness Motivation Tipps, motiviert bleiben Sport, Trainingskonsistenz, Fitnessziele"
 alternates:
-  fr: "https://aivancepro.fr/blog/motivation-sport.html"
-  en: "https://aivancepro.fr/en/blog/workout-motivation-tips.html"
-  de: "https://aivancepro.fr/de/blog/training-motivation-tipps.html"
+  fr: "https://aivancepro.fr/blog/motivation-sport/"
+  en: "https://aivancepro.fr/en/blog/workout-motivation-tips/"
+  de: "https://aivancepro.fr/de/blog/training-motivation-tipps/"
 ---
 
 Wir kennen das Szenario alle -- der Januar kommt, Sie melden sich im Fitnessstudio an, gehen zwei Wochen lang jeden Tag hin... und dann nichts mehr. Die Motivation schwindet, die Ausreden häufen sich, und die Mitgliedskarte verstaubt in der Schublade. Der Unterschied zwischen denen, die Erfolg haben, und denen, die aufgeben, ist nicht Talent: Es ist **Konstanz**. Hier sind 5 bewährte Tipps, die Ihnen helfen, langfristig am Ball zu bleiben.

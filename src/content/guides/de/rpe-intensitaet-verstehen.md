@@ -6,12 +6,12 @@ readTime: "9 Min. Lesezeit"
 tag: "Technik"
 lang: "de"
 slug: "rpe-intensitaet-verstehen"
-canonical: "https://aivancepro.fr/de/ratgeber/rpe-intensitaet-verstehen.html"
+canonical: "https://aivancepro.fr/de/ratgeber/rpe-intensitaet-verstehen/"
 keywords: "RPE, Rate of Perceived Exertion, RIR, Reps in Reserve, 1RM Prozent, Autoregulation, Trainingsintensität"
 alternates:
-  fr: "https://aivancepro.fr/guides/comprendre-rpe-intensite.html"
-  en: "https://aivancepro.fr/en/guides/understanding-rpe.html"
-  de: "https://aivancepro.fr/de/ratgeber/rpe-intensitaet-verstehen.html"
+  fr: "https://aivancepro.fr/guides/comprendre-rpe-intensite/"
+  en: "https://aivancepro.fr/en/guides/understanding-rpe/"
+  de: "https://aivancepro.fr/de/ratgeber/rpe-intensitaet-verstehen/"
 ---
 
 Die Steuerung der Trainingsintensität ist einer der wichtigsten Aspekte einer intelligenten Trainingsplanung. Trainieren Sie zu leicht, machen Sie keine Fortschritte. Trainieren Sie zu schwer, riskieren Sie Übertraining und Verletzungen. Die RPE-Skala (Rate of Perceived Exertion) ist ein mächtiges Werkzeug, um die Intensität jedes Satzes präzise zu steuern. In diesem Ratgeber lernen Sie, wie Sie RPE effektiv in Ihrem Training einsetzen.

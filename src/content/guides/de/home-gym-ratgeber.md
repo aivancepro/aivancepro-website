@@ -6,12 +6,12 @@ readTime: "13 Min. Lesezeit"
 tag: "Home Gym"
 lang: "de"
 slug: "home-gym-ratgeber"
-canonical: "https://aivancepro.fr/de/ratgeber/home-gym-ratgeber.html"
+canonical: "https://aivancepro.fr/de/ratgeber/home-gym-ratgeber/"
 keywords: "Home Gym, Training zu Hause, Heimtraining, Langhantel kaufen, Power Rack, Home Gym Ausstattung, Fitnessraum"
 alternates:
-  fr: "https://aivancepro.fr/guides/home-gym.html"
-  en: "https://aivancepro.fr/en/guides/home-gym-guide.html"
-  de: "https://aivancepro.fr/de/ratgeber/home-gym-ratgeber.html"
+  fr: "https://aivancepro.fr/guides/home-gym/"
+  en: "https://aivancepro.fr/en/guides/home-gym-guide/"
+  de: "https://aivancepro.fr/de/ratgeber/home-gym-ratgeber/"
 ---
 
 Ein Home Gym bietet Unabhängigkeit, Zeitersparnis und langfristig oft günstigeres Training als ein Fitnessstudio-Abo. Doch wie richtet man einen effektiven Trainingsraum ein, ohne Tausende von Euro auszugeben? Welche Ausrüstung ist wirklich nötig? Dieser Ratgeber führt Sie Schritt für Schritt durch die Planung und Einrichtung Ihres eigenen Home Gyms.

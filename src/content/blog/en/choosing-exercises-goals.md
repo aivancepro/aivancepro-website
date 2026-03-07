@@ -6,12 +6,12 @@ readTime: "6 min read"
 tag: "Exercises"
 lang: "en"
 slug: "choosing-exercises-goals"
-canonical: "https://aivancepro.fr/en/blog/choosing-exercises-goals.html"
+canonical: "https://aivancepro.fr/en/blog/choosing-exercises-goals/"
 keywords: "choosing exercises gym, strength exercises, hypertrophy exercises, personalized program, best weight training exercises"
 alternates:
-  fr: "https://aivancepro.fr/blog/choisir-exercices-objectifs.html"
-  en: "https://aivancepro.fr/en/blog/choosing-exercises-goals.html"
-  de: "https://aivancepro.fr/de/blog/uebungen-nach-zielen.html"
+  fr: "https://aivancepro.fr/blog/choisir-exercices-objectifs/"
+  en: "https://aivancepro.fr/en/blog/choosing-exercises-goals/"
+  de: "https://aivancepro.fr/de/blog/uebungen-nach-zielen/"
 ---
 
 With hundreds of weight training exercises out there, it is easy to feel overwhelmed. Should I do squats or leg press? Bench press or flyes? The answer depends entirely on **your goals** and **your context**.

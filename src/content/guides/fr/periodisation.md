@@ -6,12 +6,12 @@ readTime: "14 min de lecture"
 tag: "Avancé"
 lang: "fr"
 slug: "periodisation"
-canonical: "https://aivancepro.fr/guides/periodisation.html"
+canonical: "https://aivancepro.fr/guides/periodisation/"
 keywords: "périodisation musculation, périodisation linéaire, périodisation ondulée, microcycle, mésocycle, macrocycle, deload"
 alternates:
-  fr: "https://aivancepro.fr/guides/periodisation.html"
-  en: "https://aivancepro.fr/en/guides/periodization-basics.html"
-  de: "https://aivancepro.fr/de/ratgeber/periodisierung-grundlagen.html"
+  fr: "https://aivancepro.fr/guides/periodisation/"
+  en: "https://aivancepro.fr/en/guides/periodization-basics/"
+  de: "https://aivancepro.fr/de/ratgeber/periodisierung-grundlagen/"
 ---
 
 La périodisation est l'art de planifier l'entraînement sur le long terme en alternant des phases de différentes intensités et volumes. C'est ce qui différencie un programme structuré d'un simple empilement de séances aléatoires. Que vous cherchiez à gagner en force, en masse musculaire ou en performance, la périodisation est l'outil qui vous permettra de progresser de manière continue et durable.

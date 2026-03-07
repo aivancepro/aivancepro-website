@@ -6,12 +6,12 @@ readTime: "6 Min. Lesezeit"
 tag: "Übungen"
 lang: "de"
 slug: "uebungen-nach-zielen"
-canonical: "https://aivancepro.fr/de/blog/uebungen-nach-zielen.html"
+canonical: "https://aivancepro.fr/de/blog/uebungen-nach-zielen/"
 keywords: "Übungen auswählen, Trainingsübungen Ziele, Hypertrophie Übungen, Kraft Übungen, Ausdauer Übungen, beste Übungen"
 alternates:
-  fr: "https://aivancepro.fr/blog/choisir-exercices-objectifs.html"
-  en: "https://aivancepro.fr/en/blog/choosing-exercises-goals.html"
-  de: "https://aivancepro.fr/de/blog/uebungen-nach-zielen.html"
+  fr: "https://aivancepro.fr/blog/choisir-exercices-objectifs/"
+  en: "https://aivancepro.fr/en/blog/choosing-exercises-goals/"
+  de: "https://aivancepro.fr/de/blog/uebungen-nach-zielen/"
 ---
 
 Bei Hunderten von Krafttrainingsübungen kann man schnell den Überblick verlieren. Sollte ich Kniebeugen oder Beinpresse machen? Bankdrücken oder Fliegende? Die Antwort hängt ganz von **Ihren Zielen** und **Ihren Rahmenbedingungen** ab.

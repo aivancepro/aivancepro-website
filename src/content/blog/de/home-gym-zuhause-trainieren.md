@@ -6,12 +6,12 @@ readTime: "6 Min. Lesezeit"
 tag: "Home Gym"
 lang: "de"
 slug: "home-gym-zuhause-trainieren"
-canonical: "https://aivancepro.fr/de/blog/home-gym-zuhause-trainieren.html"
+canonical: "https://aivancepro.fr/de/blog/home-gym-zuhause-trainieren/"
 keywords: "Home Gym, zuhause trainieren, Heimtraining, Eigengewichtsübungen, Home Gym Ausrüstung, Trainingsplan zuhause"
 alternates:
-  fr: "https://aivancepro.fr/blog/home-gym-entrainement-maison.html"
-  en: "https://aivancepro.fr/en/blog/home-gym-guide.html"
-  de: "https://aivancepro.fr/de/blog/home-gym-zuhause-trainieren.html"
+  fr: "https://aivancepro.fr/blog/home-gym-entrainement-maison/"
+  en: "https://aivancepro.fr/en/blog/home-gym-guide/"
+  de: "https://aivancepro.fr/de/blog/home-gym-zuhause-trainieren/"
 ---
 
 Keine Zeit fürs Fitnessstudio? Kein Studio in der Nähe? Oder möchten Sie einfach in Ruhe zu Hause trainieren? Home Training ist eine ernsthafte Alternative. Mit der richtigen Ausrüstung, einem soliden Plan und etwas Disziplin können Sie einen beeindruckenden Körper aufbauen, ohne jemals ein kommerzielles Fitnessstudio zu betreten. Dieser Leitfaden deckt alles ab, was Sie für den Einstieg brauchen.

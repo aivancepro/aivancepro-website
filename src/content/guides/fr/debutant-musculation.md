@@ -6,12 +6,12 @@ readTime: "15 min de lecture"
 tag: "Débutant"
 lang: "fr"
 slug: "debutant-musculation"
-canonical: "https://aivancepro.fr/guides/debutant-musculation.html"
+canonical: "https://aivancepro.fr/guides/debutant-musculation/"
 keywords: "débutant musculation, guide musculation, échauffement musculation, programme débutant, full body débutant, progression musculation"
 alternates:
-  fr: "https://aivancepro.fr/guides/debutant-musculation.html"
-  en: "https://aivancepro.fr/en/guides/beginner-weight-training.html"
-  de: "https://aivancepro.fr/de/ratgeber/anfaenger-krafttraining.html"
+  fr: "https://aivancepro.fr/guides/debutant-musculation/"
+  en: "https://aivancepro.fr/en/guides/beginner-weight-training/"
+  de: "https://aivancepro.fr/de/ratgeber/anfaenger-krafttraining/"
 ---
 
 Se lancer en musculation peut sembler intimidant. Entre les machines inconnues, les conseils contradictoires sur les réseaux sociaux et la peur de mal faire, beaucoup abandonnent avant même d'avoir commencé. Ce guide a pour objectif de vous donner toutes les clés pour démarrer sereinement, avec des fondations solides qui vous accompagneront tout au long de votre parcours.
@@ -147,6 +147,6 @@ Vous n'êtes plus débutant quand vous remplissez ces critères :
 - **Connexion musculaire** : vous sentez clairement quels muscles travaillent sur chaque exercice.
 - **Habitudes établies** : l'entraînement fait partie de votre routine depuis au moins 6 mois de pratique régulière.
 
-À ce stade, vous pouvez envisager des programmes plus complexes comme le Push/Pull/Legs (PPL), le Upper/Lower ou des programmes de spécialisation. La [création d'un programme d'entraînement efficace](/guides/creer-programme-entrainement.html) est abordée dans notre guide dédié.
+À ce stade, vous pouvez envisager des programmes plus complexes comme le Push/Pull/Legs (PPL), le Upper/Lower ou des programmes de spécialisation. La [création d'un programme d'entraînement efficace](/guides/creer-programme-entrainement/) est abordée dans notre guide dédié.
 
 L'essentiel à retenir : la musculation est un marathon, pas un sprint. Les fondations que vous posez maintenant détermineront la qualité de votre progression future. Maîtrisez les bases, soyez patient et restez régulier.

@@ -6,12 +6,12 @@ readTime: "6 Min. Lesezeit"
 tag: "Planung"
 lang: "de"
 slug: "periodisierung-trainingsplan"
-canonical: "https://aivancepro.fr/de/blog/periodisierung-trainingsplan.html"
+canonical: "https://aivancepro.fr/de/blog/periodisierung-trainingsplan/"
 keywords: "Periodisierung Training, Trainingsplanung, Mesozyklen, Deload Woche, Trainingszyklen, Programmgestaltung"
 alternates:
-  fr: "https://aivancepro.fr/blog/periodisation-programme-entrainement.html"
-  en: "https://aivancepro.fr/en/blog/periodization-training-program.html"
-  de: "https://aivancepro.fr/de/blog/periodisierung-trainingsplan.html"
+  fr: "https://aivancepro.fr/blog/periodisation-programme-entrainement/"
+  en: "https://aivancepro.fr/en/blog/periodization-training-program/"
+  de: "https://aivancepro.fr/de/blog/periodisierung-trainingsplan/"
 ---
 
 Sie trainieren seit mehreren Monaten, aber Ihre Fortschritte stagnieren? Sie gehen von Einheit zu Einheit, ohne einen echten langfristigen Plan? Wahrscheinlich fehlt Ihrem Programm die **Periodisierung**. Dieses Konzept, das von jedem Spitzensportler angewendet wird, ist der Schlüssel zu nachhaltigen Fortschritten.

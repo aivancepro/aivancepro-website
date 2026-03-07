@@ -6,12 +6,12 @@ readTime: "7 min read"
 tag: "Training"
 lang: "en"
 slug: "beginner-workout-program"
-canonical: "https://aivancepro.fr/en/blog/beginner-workout-program.html"
+canonical: "https://aivancepro.fr/en/blog/beginner-workout-program/"
 keywords: "beginner workout program, start weight training, basic exercises, 3 day program, beginner squat, full body"
 alternates:
-  fr: "https://aivancepro.fr/blog/programme-musculation-debutant.html"
-  en: "https://aivancepro.fr/en/blog/beginner-workout-program.html"
-  de: "https://aivancepro.fr/de/blog/anfaenger-trainingsplan.html"
+  fr: "https://aivancepro.fr/blog/programme-musculation-debutant/"
+  en: "https://aivancepro.fr/en/blog/beginner-workout-program/"
+  de: "https://aivancepro.fr/de/blog/anfaenger-trainingsplan/"
 ---
 
 You've decided to start weight training? Great decision for your health! It's one of the best choices you can make for both your body and mind. But with so much information out there, it's easy to feel overwhelmed. This guide gives you the basics to get started effectively.

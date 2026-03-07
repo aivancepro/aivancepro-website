@@ -6,12 +6,12 @@ readTime: "12 min read"
 tag: "Programming"
 lang: "en"
 slug: "create-training-program"
-canonical: "https://aivancepro.fr/en/guides/create-training-program.html"
+canonical: "https://aivancepro.fr/en/guides/create-training-program/"
 keywords: "training program, workout plan, PPL split, upper lower split, volume intensity frequency, progressive overload, exercise selection"
 alternates:
-  fr: "https://aivancepro.fr/guides/creer-programme-entrainement.html"
-  en: "https://aivancepro.fr/en/guides/create-training-program.html"
-  de: "https://aivancepro.fr/de/ratgeber/trainingsplan-erstellen.html"
+  fr: "https://aivancepro.fr/guides/creer-programme-entrainement/"
+  en: "https://aivancepro.fr/en/guides/create-training-program/"
+  de: "https://aivancepro.fr/de/ratgeber/trainingsplan-erstellen/"
 ---
 
 A well-designed training program is the difference between spinning your wheels in the gym and making real, measurable progress. Whether you are a beginner looking to graduate from random workouts or an intermediate lifter ready to optimize, understanding the key training variables and how they interact is essential. This guide walks you through every decision you need to make to build a program tailored to your goals, schedule and experience level.

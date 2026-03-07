@@ -6,12 +6,12 @@ readTime: "7 min de lecture"
 tag: "Musculation"
 lang: "fr"
 slug: "programme-musculation-debutant"
-canonical: "https://aivancepro.fr/blog/programme-musculation-debutant.html"
+canonical: "https://aivancepro.fr/blog/programme-musculation-debutant/"
 keywords: "programme musculation débutant, commencer musculation, exercices de base, programme 3 jours, squat débutant, full body"
 alternates:
-  fr: "https://aivancepro.fr/blog/programme-musculation-debutant.html"
-  en: "https://aivancepro.fr/en/blog/beginner-workout-program.html"
-  de: "https://aivancepro.fr/de/blog/anfaenger-trainingsplan.html"
+  fr: "https://aivancepro.fr/blog/programme-musculation-debutant/"
+  en: "https://aivancepro.fr/en/blog/beginner-workout-program/"
+  de: "https://aivancepro.fr/de/blog/anfaenger-trainingsplan/"
 ---
 
 Vous avez décidé de vous mettre à la musculation ? Félicitations ! C'est l'une des meilleures décisions que vous puissiez prendre pour votre santé. Mais face à la quantité d'informations disponibles, il est facile de se sentir perdu. Ce guide vous donne les bases pour démarrer efficacement.

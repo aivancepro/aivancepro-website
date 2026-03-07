@@ -6,12 +6,12 @@ readTime: "10 min de lecture"
 tag: "Récupération"
 lang: "fr"
 slug: "recuperation-prevention-blessures"
-canonical: "https://aivancepro.fr/guides/recuperation-prevention-blessures.html"
+canonical: "https://aivancepro.fr/guides/recuperation-prevention-blessures/"
 keywords: "récupération musculation, prévention blessures, surentraînement, deload, stretching, mobilité, foam rolling"
 alternates:
-  fr: "https://aivancepro.fr/guides/recuperation-prevention-blessures.html"
-  en: "https://aivancepro.fr/en/guides/recovery-injury-prevention.html"
-  de: "https://aivancepro.fr/de/ratgeber/regeneration-verletzungspraevention.html"
+  fr: "https://aivancepro.fr/guides/recuperation-prevention-blessures/"
+  en: "https://aivancepro.fr/en/guides/recovery-injury-prevention/"
+  de: "https://aivancepro.fr/de/ratgeber/regeneration-verletzungspraevention/"
 ---
 
 La récupération est le volet le plus sous-estimé de la musculation. Beaucoup de pratiquants pensent que les résultats viennent uniquement de l'entraînement, alors que c'est pendant le repos que le corps se reconstruit et s'adapte. Ce guide couvre tous les aspects de la récupération et les stratégies pour éviter les blessures.

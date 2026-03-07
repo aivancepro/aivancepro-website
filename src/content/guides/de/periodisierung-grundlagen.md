@@ -6,12 +6,12 @@ readTime: "14 Min. Lesezeit"
 tag: "Fortgeschritten"
 lang: "de"
 slug: "periodisierung-grundlagen"
-canonical: "https://aivancepro.fr/de/ratgeber/periodisierung-grundlagen.html"
+canonical: "https://aivancepro.fr/de/ratgeber/periodisierung-grundlagen/"
 keywords: "Periodisierung, Trainingsplanung, Mikrozyklen, Mesozyklen, Makrozyklen, Deload, Hypertrophie, Peaking"
 alternates:
-  fr: "https://aivancepro.fr/guides/periodisation.html"
-  en: "https://aivancepro.fr/en/guides/periodization-basics.html"
-  de: "https://aivancepro.fr/de/ratgeber/periodisierung-grundlagen.html"
+  fr: "https://aivancepro.fr/guides/periodisation/"
+  en: "https://aivancepro.fr/en/guides/periodization-basics/"
+  de: "https://aivancepro.fr/de/ratgeber/periodisierung-grundlagen/"
 ---
 
 Periodisierung ist die systematische Planung Ihres Trainings über längere Zeiträume hinweg. Anstatt jede Woche das gleiche Training zu absolvieren, variieren Sie Volumen, Intensität und Übungsauswahl in geplanten Zyklen. Dies ist der Schlüssel zu langfristigem Fortschritt ohne Plateaus und Übertraining. In diesem Ratgeber lernen Sie die verschiedenen Periodisierungsmodelle und deren praktische Anwendung kennen.

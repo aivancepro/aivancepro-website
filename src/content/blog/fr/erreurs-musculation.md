@@ -6,12 +6,12 @@ readTime: "5 min de lecture"
 tag: "Conseils"
 lang: "fr"
 slug: "erreurs-musculation"
-canonical: "https://aivancepro.fr/blog/erreurs-musculation.html"
+canonical: "https://aivancepro.fr/blog/erreurs-musculation/"
 keywords: "erreurs musculation, erreurs débutant musculation, progression musculation, conseils musculation, entraînement efficace"
 alternates:
-  fr: "https://aivancepro.fr/blog/erreurs-musculation.html"
-  en: "https://aivancepro.fr/en/blog/common-workout-mistakes.html"
-  de: "https://aivancepro.fr/de/blog/haeufige-trainingsfehler.html"
+  fr: "https://aivancepro.fr/blog/erreurs-musculation/"
+  en: "https://aivancepro.fr/en/blog/common-workout-mistakes/"
+  de: "https://aivancepro.fr/de/blog/haeufige-trainingsfehler/"
 ---
 
 Que vous débutiez ou que vous vous entraîniez depuis des années, certaines erreurs sont universelles. Elles freinent la progression, augmentent le risque de blessure et gâchent des heures d'effort. Voici les 5 pièges les plus courants et comment les éviter.

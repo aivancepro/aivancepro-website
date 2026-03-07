@@ -6,12 +6,12 @@ readTime: "10 Min. Lesezeit"
 tag: "Erholung"
 lang: "de"
 slug: "erholung-verletzungspraevention"
-canonical: "https://aivancepro.fr/de/ratgeber/erholung-verletzungspraevention.html"
+canonical: "https://aivancepro.fr/de/ratgeber/erholung-verletzungspraevention/"
 keywords: "Erholung Krafttraining, Verletzungsprävention, Übertraining, Deload, DOMS, Foam Rolling, Mobilität"
 alternates:
-  fr: "https://aivancepro.fr/guides/recuperation-prevention-blessures.html"
-  en: "https://aivancepro.fr/en/guides/recovery-injury-prevention.html"
-  de: "https://aivancepro.fr/de/ratgeber/erholung-verletzungspraevention.html"
+  fr: "https://aivancepro.fr/guides/recuperation-prevention-blessures/"
+  en: "https://aivancepro.fr/en/guides/recovery-injury-prevention/"
+  de: "https://aivancepro.fr/de/ratgeber/erholung-verletzungspraevention/"
 ---
 
 Viele Kraftsportler konzentrieren sich ausschließlich auf das Training selbst und vergessen dabei den wichtigsten Teil: die Erholung. Muskeln wachsen nicht während des Trainings, sondern in der Ruhephase danach. Wer die Erholung vernachlässigt, riskiert nicht nur stagnierenden Fortschritt, sondern auch ernsthafte Verletzungen. Dieser Ratgeber zeigt Ihnen, wie Sie optimal regenerieren und Verletzungen effektiv vorbeugen.

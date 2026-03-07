@@ -6,12 +6,12 @@ readTime: "15 Min. Lesezeit"
 tag: "Anfänger"
 lang: "de"
 slug: "anfaenger-krafttraining"
-canonical: "https://aivancepro.fr/de/ratgeber/anfaenger-krafttraining.html"
+canonical: "https://aivancepro.fr/de/ratgeber/anfaenger-krafttraining/"
 keywords: "Krafttraining Anfänger, Einsteiger Ratgeber, Muskelaufbau Grundlagen, Ganzkörpertraining, progressive Überlastung"
 alternates:
-  fr: "https://aivancepro.fr/guides/debutant-musculation.html"
-  en: "https://aivancepro.fr/en/guides/beginner-strength-training.html"
-  de: "https://aivancepro.fr/de/ratgeber/anfaenger-krafttraining.html"
+  fr: "https://aivancepro.fr/guides/debutant-musculation/"
+  en: "https://aivancepro.fr/en/guides/beginner-strength-training/"
+  de: "https://aivancepro.fr/de/ratgeber/anfaenger-krafttraining/"
 ---
 
 Das Krafttraining ist eine der effektivsten Möglichkeiten, Ihren Körper zu stärken, Ihre Gesundheit zu verbessern und Ihr Selbstvertrauen aufzubauen. Doch der Einstieg kann überwältigend wirken: Welche Übungen soll ich machen? Wie oft trainieren? Wie schwer sollte das Gewicht sein? Dieser umfassende Ratgeber beantwortet alle Fragen, die sich Einsteiger stellen, und gibt Ihnen einen klaren Fahrplan für die ersten Monate im Krafttraining.

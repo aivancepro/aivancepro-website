@@ -6,12 +6,12 @@ readTime: "11 Min. Lesezeit"
 tag: "Kraft"
 lang: "de"
 slug: "bankdruecken-verbessern"
-canonical: "https://aivancepro.fr/de/ratgeber/bankdruecken-verbessern.html"
+canonical: "https://aivancepro.fr/de/ratgeber/bankdruecken-verbessern/"
 keywords: "Bankdrücken verbessern, Bench Press Technik, Bankdrücken Programmierung, Hilfsübungen Bankdrücken, Beinantrieb"
 alternates:
-  fr: "https://aivancepro.fr/guides/progresser-developpe-couche.html"
-  en: "https://aivancepro.fr/en/guides/improve-bench-press.html"
-  de: "https://aivancepro.fr/de/ratgeber/bankdruecken-verbessern.html"
+  fr: "https://aivancepro.fr/guides/progresser-developpe-couche/"
+  en: "https://aivancepro.fr/en/guides/improve-bench-press/"
+  de: "https://aivancepro.fr/de/ratgeber/bankdruecken-verbessern/"
 ---
 
 Das Bankdrücken ist eine der drei großen Grundlagenübungen im Kraftsport und für viele Trainierende der wichtigste Maßstab für Oberkörperkraft. Doch nach den ersten Wochen schneller Fortschritte stagniert die Leistung häufig. Dieser Ratgeber zeigt Ihnen, wie Sie durch Technik-Optimierung, gezielte Hilfsübungen und intelligente Programmierung Ihr Bankdrücken nachhaltig verbessern.

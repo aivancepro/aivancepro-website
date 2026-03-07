@@ -6,12 +6,12 @@ readTime: "9 min de lecture"
 tag: "Technique"
 lang: "fr"
 slug: "comprendre-rpe-intensite"
-canonical: "https://aivancepro.fr/guides/comprendre-rpe-intensite.html"
+canonical: "https://aivancepro.fr/guides/comprendre-rpe-intensite/"
 keywords: "RPE musculation, RIR, intensité entraînement, autorégulation musculation, échelle RPE, 1RM, pourcentage charge maximale"
 alternates:
-  fr: "https://aivancepro.fr/guides/comprendre-rpe-intensite.html"
-  en: "https://aivancepro.fr/en/guides/understanding-rpe-intensity.html"
-  de: "https://aivancepro.fr/de/ratgeber/rpe-intensitaet-verstehen.html"
+  fr: "https://aivancepro.fr/guides/comprendre-rpe-intensite/"
+  en: "https://aivancepro.fr/en/guides/understanding-rpe-intensity/"
+  de: "https://aivancepro.fr/de/ratgeber/rpe-intensitaet-verstehen/"
 ---
 
 L'intensité est l'une des variables les plus importantes de l'entraînement, mais aussi l'une des plus mal comprises. Beaucoup de pratiquants s'entraînent soit trop près de l'échec à chaque série (risque de surentraînement), soit trop loin (stimulus insuffisant). L'échelle RPE offre un outil simple et puissant pour doser précisément l'effort et optimiser chaque séance.

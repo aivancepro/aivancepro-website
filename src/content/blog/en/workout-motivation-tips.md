@@ -6,11 +6,11 @@ readTime: "4 min read"
 tag: "Motivation"
 lang: "en"
 slug: "workout-motivation-tips"
-canonical: "https://aivancepro.fr/en/blog/workout-motivation-tips.html"
+canonical: "https://aivancepro.fr/en/blog/workout-motivation-tips/"
 keywords: "workout motivation, fitness motivation tips, stay motivated gym, training consistency, fitness goals, workout community"
 alternates:
-  fr: "https://aivancepro.fr/blog/motivation-sport.html"
-  en: "https://aivancepro.fr/en/blog/workout-motivation-tips.html"
+  fr: "https://aivancepro.fr/blog/motivation-sport/"
+  en: "https://aivancepro.fr/en/blog/workout-motivation-tips/"
 ---
 
 We all know the scenario -- January arrives, you sign up for the gym, go every day for two weeks... then nothing. Motivation fades, excuses pile up, and the membership card gathers dust at the bottom of a drawer. The difference between those who succeed and those who give up isn't talent: it's **consistency**. Here are 5 proven tips to help you stay on track for the long haul.

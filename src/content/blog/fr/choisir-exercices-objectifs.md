@@ -6,12 +6,12 @@ readTime: "6 min de lecture"
 tag: "Exercices"
 lang: "fr"
 slug: "choisir-exercices-objectifs"
-canonical: "https://aivancepro.fr/blog/choisir-exercices-objectifs.html"
+canonical: "https://aivancepro.fr/blog/choisir-exercices-objectifs/"
 keywords: "choix exercices musculation, exercices force, exercices hypertrophie, programme personnalisé, meilleurs exercices musculation"
 alternates:
-  fr: "https://aivancepro.fr/blog/choisir-exercices-objectifs.html"
-  en: "https://aivancepro.fr/en/blog/choosing-exercises-goals.html"
-  de: "https://aivancepro.fr/de/blog/uebungen-nach-zielen.html"
+  fr: "https://aivancepro.fr/blog/choisir-exercices-objectifs/"
+  en: "https://aivancepro.fr/en/blog/choosing-exercises-goals/"
+  de: "https://aivancepro.fr/de/blog/uebungen-nach-zielen/"
 ---
 
 Face aux centaines d'exercices de musculation existants, il est facile de se sentir perdu. Dois-je faire du squat ou de la presse à cuisses ? Du développé couché ou des écartés ? La réponse dépend entièrement de **vos objectifs** et de **votre contexte**.

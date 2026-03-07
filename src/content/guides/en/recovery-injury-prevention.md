@@ -6,12 +6,12 @@ readTime: "10 min read"
 tag: "Recovery"
 lang: "en"
 slug: "recovery-injury-prevention"
-canonical: "https://aivancepro.fr/en/guides/recovery-injury-prevention.html"
+canonical: "https://aivancepro.fr/en/guides/recovery-injury-prevention/"
 keywords: "recovery, injury prevention, overtraining, deload week, DOMS, stretching, mobility, foam rolling, sleep, rest day"
 alternates:
-  fr: "https://aivancepro.fr/guides/recuperation-prevention-blessures.html"
-  en: "https://aivancepro.fr/en/guides/recovery-injury-prevention.html"
-  de: "https://aivancepro.fr/de/ratgeber/erholung-verletzungspraevention.html"
+  fr: "https://aivancepro.fr/guides/recuperation-prevention-blessures/"
+  en: "https://aivancepro.fr/en/guides/recovery-injury-prevention/"
+  de: "https://aivancepro.fr/de/ratgeber/erholung-verletzungspraevention/"
 ---
 
 Training is the stimulus. Recovery is where the actual growth happens. Many lifters pour all their energy into their workouts while neglecting the factors that determine whether those workouts actually translate into progress: sleep, mobility, nutrition and intelligent fatigue management. This guide covers everything you need to know to recover optimally and stay injury-free for the long term.

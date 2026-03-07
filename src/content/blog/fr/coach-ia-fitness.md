@@ -6,12 +6,12 @@ readTime: "5 min de lecture"
 tag: "Intelligence Artificielle"
 lang: "fr"
 slug: "coach-ia-fitness"
-canonical: "https://aivancepro.fr/blog/coach-ia-fitness.html"
+canonical: "https://aivancepro.fr/blog/coach-ia-fitness/"
 keywords: "IA fitness, coach virtuel, intelligence artificielle musculation, programme personnalisé IA, coaching sportif IA"
 alternates:
-  fr: "https://aivancepro.fr/blog/coach-ia-fitness.html"
-  en: "https://aivancepro.fr/en/blog/ai-fitness-coaching.html"
-  de: "https://aivancepro.fr/de/blog/ki-fitness-coaching.html"
+  fr: "https://aivancepro.fr/blog/coach-ia-fitness/"
+  en: "https://aivancepro.fr/en/blog/ai-fitness-coaching/"
+  de: "https://aivancepro.fr/de/blog/ki-fitness-coaching/"
 ---
 
 L'intelligence artificielle est en train de transformer profondément le monde du fitness. Ce qui était autrefois réservé aux athlètes professionnels avec des coaches personnels coûteux est désormais accessible à tous grâce aux avancées technologiques. Mais concrètement, comment l'IA change-t-elle notre façon de nous entraîner ?
