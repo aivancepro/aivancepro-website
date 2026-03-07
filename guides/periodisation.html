@@ -1,0 +1,340 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/png" sizes="64x64" href="../assets/favicon-64.png">
+    <link rel="icon" type="image/png" sizes="48x48" href="../assets/favicon-48.png">
+    <link rel="apple-touch-icon" sizes="128x128" href="../assets/apple-touch-icon.png">
+    <title>Les bases de la p&eacute;riodisation - AIVancePro</title>
+    <meta name="description" content="Comprendre la p&eacute;riodisation en musculation : lin&eacute;aire, ondul&eacute;e, microcycles, m&eacute;socycles et macrocycles pour structurer votre progression.">
+    <meta name="keywords" content="p&eacute;riodisation musculation, p&eacute;riodisation lin&eacute;aire, p&eacute;riodisation ondul&eacute;e, microcycle, m&eacute;socycle, macrocycle, deload">
+    <link rel="canonical" href="https://aivancepro.fr/guides/periodisation.html">
+    <link rel="alternate" hreflang="fr" href="https://aivancepro.fr/guides/periodisation.html">
+    <link rel="alternate" hreflang="en" href="https://aivancepro.fr/en/guides/periodization-basics.html">
+    <link rel="alternate" hreflang="de" href="https://aivancepro.fr/de/ratgeber/periodisierung-grundlagen.html">
+    <link rel="alternate" hreflang="x-default" href="https://aivancepro.fr/guides/periodisation.html">
+    <meta property="og:type" content="article">
+    <meta property="og:url" content="https://aivancepro.fr/guides/periodisation.html">
+    <meta property="og:title" content="Les bases de la p&eacute;riodisation">
+    <meta property="og:description" content="Structurez votre entra&icirc;nement sur le long terme avec la p&eacute;riodisation.">
+    <meta property="og:site_name" content="AIVancePro">
+    <script type="application/ld+json">
+    {"@context":"https://schema.org","@type":"Article","headline":"Les bases de la p&eacute;riodisation","datePublished":"2026-03-07","author":{"@type":"Organization","name":"AS Corporation"}}
+    </script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        :root { --blue: #2563EB; --purple: #9333EA; --dark: #0F172A; --gray-900: #111827; --gray-700: #374151; --gray-500: #6B7280; --gray-400: #9CA3AF; --gray-200: #E5E7EB; --gray-100: #F3F4F6; --gray-50: #F9FAFB; --white: #FFFFFF; }
+        body { font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif; background: var(--white); color: var(--gray-900); line-height: 1.8; -webkit-font-smoothing: antialiased; }
+        nav { position: fixed; top: 0; width: 100%; padding: 0.875rem 2rem; background: rgba(255,255,255,0.92); backdrop-filter: blur(20px); -webkit-backdrop-filter: blur(20px); z-index: 100; display: flex; justify-content: center; border-bottom: 1px solid var(--gray-200); }
+        .nav-inner { max-width: 1200px; width: 100%; display: flex; justify-content: space-between; align-items: center; }
+        .logo { font-size: 1.4rem; font-weight: 800; color: var(--gray-900); text-decoration: none; display: flex; align-items: center; gap: 0.5rem; }
+        .logo img { width: 34px; height: 34px; border-radius: 8px; }
+        .logo-text { background: linear-gradient(135deg, var(--blue), var(--purple)); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; }
+        .nav-center { display: flex; gap: 2rem; align-items: center; list-style: none; }
+        .nav-center a { color: var(--gray-500); text-decoration: none; font-size: 0.9rem; font-weight: 500; transition: color 0.2s; }
+        .nav-center a:hover { color: var(--gray-900); }
+        .dropdown { position: relative; }
+        .dropdown-toggle { color: var(--blue); font-size: 0.9rem; font-weight: 500; cursor: pointer; display: flex; align-items: center; gap: 0.3rem; background: none; border: none; font-family: inherit; }
+        .dropdown-toggle svg { width: 12px; height: 12px; transition: transform 0.2s; }
+        .dropdown:hover .dropdown-toggle svg { transform: rotate(180deg); }
+        .dropdown-menu { position: absolute; top: calc(100% + 0.75rem); left: 50%; transform: translateX(-50%); background: var(--white); border: 1px solid var(--gray-200); border-radius: 12px; padding: 0.5rem; min-width: 220px; box-shadow: 0 10px 40px rgba(0,0,0,0.08); opacity: 0; visibility: hidden; transition: opacity 0.2s, visibility 0.2s, transform 0.2s; transform: translateX(-50%) translateY(4px); }
+        .dropdown:hover .dropdown-menu { opacity: 1; visibility: visible; transform: translateX(-50%) translateY(0); }
+        .dropdown-menu a { display: block; padding: 0.6rem 1rem; color: var(--gray-700); text-decoration: none; font-size: 0.875rem; font-weight: 500; border-radius: 8px; transition: background 0.15s, color 0.15s; }
+        .dropdown-menu a:hover { background: var(--gray-50); color: var(--blue); }
+        .nav-right { display: flex; align-items: center; gap: 1rem; }
+        .lang-switch { color: var(--gray-500); text-decoration: none; font-size: 0.8rem; font-weight: 600; border: 1px solid var(--gray-200); padding: 0.3rem 0.6rem; border-radius: 6px; transition: all 0.2s; }
+        .lang-switch:hover { color: var(--gray-900); border-color: var(--gray-400); }
+        .nav-cta { background: linear-gradient(135deg, var(--blue), var(--purple)); color: var(--white); text-decoration: none; font-size: 0.875rem; font-weight: 600; padding: 0.5rem 1.2rem; border-radius: 8px; transition: opacity 0.2s; }
+        .nav-cta:hover { opacity: 0.9; }
+        .mobile-menu-btn { display: none; background: none; border: none; cursor: pointer; padding: 0.5rem; }
+        .mobile-menu-btn span { display: block; width: 22px; height: 2px; background: var(--gray-700); margin: 5px 0; border-radius: 2px; }
+        .article-header { padding: 9rem 2rem 2rem; text-align: center; background: linear-gradient(180deg, var(--gray-50), var(--white)); }
+        .breadcrumb { font-size: 0.85rem; color: var(--gray-500); margin-bottom: 1rem; }
+        .breadcrumb a { color: var(--gray-500); text-decoration: none; }
+        .breadcrumb a:hover { color: var(--blue); }
+        .tag { display: inline-block; padding: 0.25rem 0.75rem; background: rgba(37,99,235,0.06); border-radius: 50px; font-size: 0.75rem; color: var(--blue); font-weight: 600; margin-bottom: 1rem; }
+        h1 { font-size: 2.5rem; font-weight: 800; margin-bottom: 0.5rem; line-height: 1.2; color: var(--gray-900); letter-spacing: -0.02em; }
+        .meta { color: var(--gray-500); margin-bottom: 0; font-size: 0.9rem; }
+        .article-content { max-width: 750px; margin: 0 auto; padding: 3rem 2rem 4rem; }
+        h2 { font-size: 1.5rem; font-weight: 700; margin-top: 2.5rem; margin-bottom: 1rem; color: var(--gray-900); }
+        h3 { font-size: 1.15rem; font-weight: 600; margin-top: 1.5rem; margin-bottom: 0.5rem; color: var(--gray-900); }
+        p { color: var(--gray-700); font-size: 0.95rem; margin-bottom: 1.2rem; }
+        ul, ol { padding-left: 1.5rem; margin-bottom: 1.2rem; }
+        li { color: var(--gray-700); font-size: 0.95rem; margin-bottom: 0.5rem; }
+        strong { color: var(--gray-900); }
+        a { color: var(--blue); }
+        .program-box { background: var(--gray-50); border: 1px solid var(--gray-200); border-radius: 12px; padding: 1.5rem; margin: 1.5rem 0; }
+        .program-box h4 { color: var(--blue); font-size: 1rem; margin-bottom: 0.75rem; }
+        .cta { background: var(--gray-50); border: 1px solid var(--gray-200); border-radius: 16px; padding: 2.5rem; text-align: center; margin-top: 3rem; }
+        .cta h3 { font-size: 1.3rem; margin-bottom: 0.75rem; margin-top: 0; color: var(--gray-900); }
+        .cta p { color: var(--gray-500); margin-bottom: 1.5rem; }
+        .cta-buttons { display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap; }
+        .cta-btn { display: inline-block; padding: 0.75rem 1.5rem; border-radius: 10px; text-decoration: none; font-weight: 600; font-size: 0.9rem; transition: transform 0.2s; }
+        .cta-btn:hover { transform: translateY(-2px); }
+        .cta-btn.primary { background: linear-gradient(135deg, var(--blue), var(--purple)); color: var(--white); }
+        .cta-btn.secondary { background: var(--white); border: 1px solid var(--gray-200); color: var(--gray-700); }
+        .back { display: inline-block; margin-top: 2rem; color: var(--gray-500); text-decoration: none; font-size: 0.9rem; }
+        .back:hover { color: var(--gray-900); }
+        footer { background: var(--gray-900); color: rgba(255,255,255,0.5); padding: 4rem 2rem 2rem; }
+        .footer-inner { max-width: 1100px; margin: 0 auto; }
+        .footer-grid { display: grid; grid-template-columns: 2fr 1fr 1fr 1fr; gap: 3rem; margin-bottom: 3rem; }
+        .footer-brand .logo { color: var(--white); margin-bottom: 1rem; }
+        .footer-brand p { font-size: 0.85rem; line-height: 1.6; color: rgba(255,255,255,0.4); max-width: 280px; }
+        .footer-col h4 { color: var(--white); font-size: 0.85rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.05em; margin-bottom: 1rem; }
+        .footer-col ul { list-style: none; display: flex; flex-direction: column; gap: 0.6rem; }
+        .footer-col a { color: rgba(255,255,255,0.4); text-decoration: none; font-size: 0.85rem; transition: color 0.2s; }
+        .footer-col a:hover { color: var(--white); }
+        .footer-bottom { border-top: 1px solid rgba(255,255,255,0.08); padding-top: 2rem; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 1rem; }
+        .footer-bottom p { font-size: 0.8rem; }
+        .footer-social { display: flex; gap: 1rem; }
+        .footer-social a { color: rgba(255,255,255,0.3); transition: color 0.2s; }
+        .footer-social a:hover { color: var(--white); }
+        .footer-social svg { width: 20px; height: 20px; }
+        .mobile-menu { display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: var(--white); z-index: 200; padding: 5rem 2rem 2rem; flex-direction: column; }
+        .mobile-menu.open { display: flex; }
+        .mobile-menu-close { position: absolute; top: 1rem; right: 1.5rem; background: none; border: none; font-size: 1.5rem; cursor: pointer; color: var(--gray-700); padding: 0.5rem; }
+        .mobile-menu a { display: block; padding: 1rem 0; font-size: 1.1rem; font-weight: 600; color: var(--gray-900); text-decoration: none; border-bottom: 1px solid var(--gray-100); }
+        @media (max-width: 768px) {
+            .nav-center, .nav-right .nav-cta { display: none; }
+            .mobile-menu-btn { display: block; }
+            .article-header { padding: 7rem 1.5rem 2rem; }
+            h1 { font-size: 1.8rem; }
+            .footer-grid { grid-template-columns: 1fr 1fr; gap: 2rem; }
+        }
+        @media (max-width: 480px) { .footer-grid { grid-template-columns: 1fr; } }
+    </style>
+</head>
+<body>
+    <nav>
+        <div class="nav-inner">
+            <a href="/" class="logo"><img src="../assets/logo.png" alt="AIVancePro"><span class="logo-text">AIVancePro</span></a>
+            <ul class="nav-center">
+                <li><a href="/#features">Fonctionnalit&eacute;s</a></li>
+                <li class="dropdown">
+                    <button class="dropdown-toggle">Articles <svg viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M5.23 7.21a.75.75 0 011.06.02L10 11.168l3.71-3.938a.75.75 0 111.08 1.04l-4.25 4.5a.75.75 0 01-1.08 0l-4.25-4.5a.75.75 0 01.02-1.06z" clip-rule="evenodd"/></svg></button>
+                    <div class="dropdown-menu">
+                        <a href="/blog/">Blog</a>
+                        <a href="/guides/">Guides</a>
+                        <a href="/exercices/">Biblioth&egrave;que d'exercices</a>
+                        <a href="/personal-training/">Personal Training</a>
+                        <a href="/workout-splits/">Workout Splits</a>
+                        <a href="/compound-vs-isolation/">Compound vs Isolation</a>
+                    </div>
+                </li>
+                <li><a href="/#pricing">Tarifs</a></li>
+                <li><a href="/#faq">FAQ</a></li>
+            </ul>
+            <div class="nav-right">
+                <a href="/en/guides/periodization-basics.html" class="lang-switch">EN</a>
+                <a href="https://apps.apple.com/fr/app/aivancepro/id6756116760" class="nav-cta" target="_blank" rel="noopener">T&eacute;l&eacute;charger</a>
+                <button class="mobile-menu-btn" onclick="document.getElementById('mobileMenu').classList.add('open')" aria-label="Menu"><span></span><span></span><span></span></button>
+            </div>
+        </div>
+    </nav>
+
+    <div id="mobileMenu" class="mobile-menu">
+        <button class="mobile-menu-close" onclick="document.getElementById('mobileMenu').classList.remove('open')">&times;</button>
+        <a href="/">Accueil</a><a href="/blog/">Blog</a><a href="/guides/">Guides</a><a href="/exercices/">Exercices</a><a href="/workout-splits/">Workout Splits</a><a href="/#pricing">Tarifs</a><a href="/en/guides/periodization-basics.html">English</a>
+    </div>
+
+    <header class="article-header">
+        <div class="breadcrumb"><a href="/">Accueil</a> &rsaquo; <a href="/guides/">Guides</a> &rsaquo; P&eacute;riodisation</div>
+        <span class="tag">Avanc&eacute;</span>
+        <h1>Les bases de la p&eacute;riodisation</h1>
+        <p class="meta">14 min de lecture</p>
+    </header>
+
+    <article class="article-content">
+        <p>La p&eacute;riodisation est l'art de planifier l'entra&icirc;nement sur le long terme en alternant des phases de diff&eacute;rentes intensit&eacute;s et volumes. C'est ce qui diff&eacute;rencie un programme structur&eacute; d'un simple empilement de s&eacute;ances al&eacute;atoires. Que vous cherchiez &agrave; gagner en force, en masse musculaire ou en performance, la p&eacute;riodisation est l'outil qui vous permettra de progresser de mani&egrave;re continue et durable.</p>
+
+        <h2>Qu'est-ce que la p&eacute;riodisation ?</h2>
+        <p>La p&eacute;riodisation consiste &agrave; organiser l'entra&icirc;nement en cycles de dur&eacute;es diff&eacute;rentes, chacun ayant un objectif sp&eacute;cifique. Le principe fondamental est simple : <strong>le corps ne peut pas &ecirc;tre au maximum de toutes ses qualit&eacute;s physiques en m&ecirc;me temps</strong>.</p>
+        <p>Tenter d'am&eacute;liorer simultan&eacute;ment la force maximale, l'endurance musculaire, l'hypertrophie et la puissance conduit in&eacute;vitablement &agrave; la stagnation. La p&eacute;riodisation r&eacute;sout ce probl&egrave;me en focalisant chaque phase sur un objectif principal, tout en maintenant les autres qualit&eacute;s &agrave; un niveau suffisant.</p>
+
+        <h3>Pourquoi p&eacute;riodiser ?</h3>
+        <ul>
+            <li><strong>Pr&eacute;vention de la stagnation</strong> : la variation planifi&eacute;e des stimuli emp&ecirc;che l'adaptation compl&egrave;te du corps, qui est la cause principale des plateaux.</li>
+            <li><strong>Gestion de la fatigue</strong> : alterner des phases intenses et des phases plus l&eacute;g&egrave;res permet de r&eacute;cup&eacute;rer sans perdre les acquis.</li>
+            <li><strong>Progression &agrave; long terme</strong> : chaque phase construit la suivante. La phase d'hypertrophie cr&eacute;e le tissu musculaire que la phase de force apprend &agrave; utiliser.</li>
+            <li><strong>Pr&eacute;vention des blessures</strong> : &eacute;viter de s'entra&icirc;ner lourd en permanence r&eacute;duit le stress sur les articulations et les tendons.</li>
+        </ul>
+
+        <h2>Les unit&eacute;s de temps de la p&eacute;riodisation</h2>
+
+        <h3>Le microcycle (1 semaine)</h3>
+        <p>Le microcycle est la plus petite unit&eacute; de planification. Il correspond g&eacute;n&eacute;ralement &agrave; une semaine d'entra&icirc;nement et d&eacute;finit :</p>
+        <ul>
+            <li>Le nombre de s&eacute;ances</li>
+            <li>Les exercices r&eacute;alis&eacute;s &agrave; chaque s&eacute;ance</li>
+            <li>Le volume (s&eacute;ries x r&eacute;p&eacute;titions) et l'intensit&eacute; (charges)</li>
+            <li>Les jours de repos</li>
+        </ul>
+        <p>Chaque microcycle doit &ecirc;tre l&eacute;g&egrave;rement plus exigeant que le pr&eacute;c&eacute;dent (surcharge progressive), tout en restant dans les limites de votre capacit&eacute; de r&eacute;cup&eacute;ration.</p>
+
+        <h3>Le m&eacute;socycle (3 &agrave; 6 semaines)</h3>
+        <p>Le m&eacute;socycle est un bloc d'entra&icirc;nement compos&eacute; de plusieurs microcycles, partageant un objectif commun. Par exemple, un m&eacute;socycle d'hypertrophie de 5 semaines pourrait se structurer ainsi :</p>
+        <div class="program-box">
+            <h4>Exemple de m&eacute;socycle hypertrophie (5 semaines)</h4>
+            <ul>
+                <li>Semaine 1 : 12 s&eacute;ries/muscle, RPE 7 (introduction)</li>
+                <li>Semaine 2 : 14 s&eacute;ries/muscle, RPE 7-8</li>
+                <li>Semaine 3 : 16 s&eacute;ries/muscle, RPE 8</li>
+                <li>Semaine 4 : 18 s&eacute;ries/muscle, RPE 8-9 (pic de volume)</li>
+                <li>Semaine 5 : 8 s&eacute;ries/muscle, RPE 6 (deload)</li>
+            </ul>
+        </div>
+        <p>Remarquez la progression graduelle du volume suivie d'une semaine de d&eacute;charge. Ce pattern &laquo; accumulation puis dissipation &raquo; est au coeur de toute p&eacute;riodisation efficace.</p>
+
+        <h3>Le macrocycle (3 &agrave; 12 mois)</h3>
+        <p>Le macrocycle est le plan global qui encha&icirc;ne plusieurs m&eacute;socycles pour atteindre un objectif majeur. Pour un pratiquant dont l'objectif est d'am&eacute;liorer sa force et sa masse musculaire sur 6 mois, un macrocycle pourrait ressembler &agrave; ceci :</p>
+        <div class="program-box">
+            <h4>Exemple de macrocycle 6 mois</h4>
+            <ul>
+                <li>M&eacute;socycle 1 (semaines 1-5) : Hypertrophie - volume &eacute;lev&eacute;, charges mod&eacute;r&eacute;es (65-75% 1RM)</li>
+                <li>M&eacute;socycle 2 (semaines 6-10) : Hypertrophie/Force - volume moyen, charges croissantes (70-80% 1RM)</li>
+                <li>M&eacute;socycle 3 (semaines 11-15) : Force - volume r&eacute;duit, charges &eacute;lev&eacute;es (80-90% 1RM)</li>
+                <li>M&eacute;socycle 4 (semaines 16-19) : Peaking - volume minimal, charges maximales (85-95% 1RM)</li>
+                <li>M&eacute;socycle 5 (semaines 20-24) : Transition/Hypertrophie - reprise progressive</li>
+            </ul>
+        </div>
+
+        <h2>P&eacute;riodisation lin&eacute;aire</h2>
+        <p>La p&eacute;riodisation lin&eacute;aire est le mod&egrave;le classique, d&eacute;velopp&eacute; dans les ann&eacute;es 1960 par le physiologiste russe Lev Matveyev. Son principe est simple : <strong>le volume diminue progressivement tandis que l'intensit&eacute; augmente</strong>.</p>
+
+        <h3>Fonctionnement</h3>
+        <p>On commence par une phase de volume &eacute;lev&eacute; avec des charges mod&eacute;r&eacute;es (hypertrophie), puis on r&eacute;duit progressivement le volume en augmentant les charges (force), jusqu'&agrave; atteindre un pic de performance (peaking).</p>
+        <div class="program-box">
+            <h4>Exemple sur 12 semaines</h4>
+            <ul>
+                <li>Semaines 1-4 : 4 x 12 @ 65% 1RM (hypertrophie)</li>
+                <li>Semaines 5-8 : 4 x 8 @ 75% 1RM (hypertrophie/force)</li>
+                <li>Semaines 9-11 : 5 x 5 @ 85% 1RM (force)</li>
+                <li>Semaine 12 : Test de maxima ou deload</li>
+            </ul>
+        </div>
+
+        <h3>Avantages et limites</h3>
+        <ul>
+            <li><strong>Avantage</strong> : tr&egrave;s simple &agrave; comprendre et &agrave; suivre. Id&eacute;al pour les d&eacute;butants et interm&eacute;diaires.</li>
+            <li><strong>Avantage</strong> : progression logique et pr&eacute;visible.</li>
+            <li><strong>Limite</strong> : les qualit&eacute;s travaill&eacute;es au d&eacute;but du cycle (endurance, hypertrophie) peuvent se d&eacute;grader quand on passe &agrave; la phase de force, car elles ne sont plus stimul&eacute;es.</li>
+            <li><strong>Limite</strong> : les cycles sont longs, rendant la planification moins flexible.</li>
+        </ul>
+
+        <h2>P&eacute;riodisation ondul&eacute;e</h2>
+        <p>La p&eacute;riodisation ondul&eacute;e r&eacute;pond aux limites du mod&egrave;le lin&eacute;aire en variant les stimuli de fa&ccedil;on plus fr&eacute;quente. Plut&ocirc;t que de changer de phase toutes les 4 semaines, on varie les param&egrave;tres <strong>&agrave; chaque s&eacute;ance ou chaque semaine</strong>.</p>
+
+        <h3>P&eacute;riodisation ondul&eacute;e quotidienne (DUP)</h3>
+        <p>Les charges, les r&eacute;p&eacute;titions et le volume changent &agrave; chaque s&eacute;ance de la semaine. Par exemple, pour le squat :</p>
+        <div class="program-box">
+            <h4>Exemple DUP pour le squat</h4>
+            <ul>
+                <li>Lundi : 4 x 6 @ 80% (force)</li>
+                <li>Mercredi : 3 x 12 @ 67% (hypertrophie)</li>
+                <li>Vendredi : 5 x 3 @ 87% (force/puissance)</li>
+            </ul>
+        </div>
+        <p>Cette approche pr&eacute;sente plusieurs avantages :</p>
+        <ul>
+            <li>Toutes les qualit&eacute;s physiques sont stimul&eacute;es chaque semaine.</li>
+            <li>La variation constante maintient le corps en adaptation permanente.</li>
+            <li>La r&eacute;cup&eacute;ration est facilit&eacute;e car aucune s&eacute;ance ne cr&eacute;e un stress excessif dans une seule direction.</li>
+        </ul>
+
+        <h3>P&eacute;riodisation ondul&eacute;e hebdomadaire</h3>
+        <p>Les param&egrave;tres changent d'une semaine &agrave; l'autre plut&ocirc;t qu'au sein de la m&ecirc;me semaine. C'est un bon compromis entre la simplicit&eacute; du mod&egrave;le lin&eacute;aire et la flexibilit&eacute; du mod&egrave;le ondul&eacute; quotidien.</p>
+        <div class="program-box">
+            <h4>Exemple ondul&eacute;e hebdomadaire</h4>
+            <ul>
+                <li>Semaine 1 : 4 x 10 @ 70% (volume &eacute;lev&eacute;)</li>
+                <li>Semaine 2 : 4 x 6 @ 80% (intensit&eacute; moyenne)</li>
+                <li>Semaine 3 : 5 x 3 @ 88% (intensit&eacute; &eacute;lev&eacute;e)</li>
+                <li>Semaine 4 : 3 x 8 @ 65% (deload)</li>
+            </ul>
+        </div>
+
+        <h2>Planifier ses phases</h2>
+
+        <h3>Phase d'hypertrophie (4-6 semaines)</h3>
+        <p>Objectif : augmenter la masse musculaire et la capacit&eacute; de travail.</p>
+        <ul>
+            <li>R&eacute;p&eacute;titions : 8-15 par s&eacute;rie</li>
+            <li>Volume : &eacute;lev&eacute; (16-25 s&eacute;ries par groupe musculaire par semaine)</li>
+            <li>Intensit&eacute; : mod&eacute;r&eacute;e (60-75% 1RM), RPE 7-8</li>
+            <li>Repos : 1,5 &agrave; 2,5 minutes entre les s&eacute;ries</li>
+        </ul>
+
+        <h3>Phase de force (4-6 semaines)</h3>
+        <p>Objectif : apprendre au syst&egrave;me nerveux &agrave; recruter efficacement le muscle construit pendant la phase d'hypertrophie.</p>
+        <ul>
+            <li>R&eacute;p&eacute;titions : 3-6 par s&eacute;rie</li>
+            <li>Volume : mod&eacute;r&eacute; (10-16 s&eacute;ries par groupe musculaire par semaine)</li>
+            <li>Intensit&eacute; : &eacute;lev&eacute;e (80-90% 1RM), RPE 8-9</li>
+            <li>Repos : 3 &agrave; 5 minutes entre les s&eacute;ries</li>
+        </ul>
+
+        <h3>Phase de peaking (2-3 semaines)</h3>
+        <p>Objectif : atteindre un pic de performance, souvent en vue d'une comp&eacute;tition ou d'un test de maxima.</p>
+        <ul>
+            <li>R&eacute;p&eacute;titions : 1-3 par s&eacute;rie</li>
+            <li>Volume : minimal (6-10 s&eacute;ries par groupe musculaire par semaine)</li>
+            <li>Intensit&eacute; : tr&egrave;s &eacute;lev&eacute;e (90-100% 1RM)</li>
+            <li>Repos : 4 &agrave; 6 minutes entre les s&eacute;ries</li>
+        </ul>
+
+        <h2>Quand et comment d&eacute;charger</h2>
+        <p>Le deload est une composante essentielle de la p&eacute;riodisation. Il permet de dissiper la fatigue accumul&eacute;e pendant les semaines de surcharge progressive.</p>
+
+        <h3>Fr&eacute;quence des deloads</h3>
+        <ul>
+            <li><strong>D&eacute;butants</strong> : toutes les 6 &agrave; 8 semaines (la fatigue s'accumule moins vite)</li>
+            <li><strong>Interm&eacute;diaires</strong> : toutes les 4 &agrave; 6 semaines</li>
+            <li><strong>Avanc&eacute;s</strong> : toutes les 3 &agrave; 4 semaines (volume et intensit&eacute; plus &eacute;lev&eacute;s = fatigue plus rapide)</li>
+        </ul>
+
+        <h3>Types de deload</h3>
+        <ul>
+            <li><strong>Deload volume</strong> : r&eacute;duisez le nombre de s&eacute;ries de 50% en gardant les m&ecirc;mes charges. Maintient les adaptations de force.</li>
+            <li><strong>Deload intensit&eacute;</strong> : r&eacute;duisez les charges de 40-50% en gardant le m&ecirc;me volume. Permet de travailler la technique.</li>
+            <li><strong>Repos actif</strong> : remplacez les s&eacute;ances par des activit&eacute;s l&eacute;g&egrave;res (marche, natation, yoga). Id&eacute;al apr&egrave;s un bloc particuli&egrave;rement &eacute;prouvant.</li>
+        </ul>
+
+        <p>La p&eacute;riodisation peut sembler complexe, mais son principe est intuitif : alterner des p&eacute;riodes de travail intensif et des p&eacute;riodes de r&eacute;cup&eacute;ration, avec une direction claire pour chaque phase. Commencez par un mod&egrave;le simple (lin&eacute;aire) et &eacute;voluez vers des mod&egrave;les plus sophistiqu&eacute;s au fur et &agrave; mesure de votre exp&eacute;rience.</p>
+
+        <div class="cta">
+            <h3>Structurez votre progression avec l'IA</h3>
+            <p>AIVancePro adapte votre programme en fonction de votre progression et vous guide &agrave; travers chaque phase.</p>
+            <div class="cta-buttons">
+                <a href="https://apps.apple.com/fr/app/aivancepro/id6756116760" class="cta-btn primary">App Store</a>
+                <span class="cta-btn secondary" style="opacity:0.6;cursor:default;">Google Play - Bient&ocirc;t</span>
+            </div>
+        </div>
+        <a href="/guides/" class="back">&larr; Retour aux guides</a>
+    </article>
+
+    <footer>
+        <div class="footer-inner">
+            <div class="footer-grid">
+                <div class="footer-brand"><a href="/" class="logo"><img src="../assets/logo.png" alt="AIVancePro"><span class="logo-text">AIVancePro</span></a><p>Votre coach fitness personnel propuls&eacute; par l'intelligence artificielle.</p></div>
+                <div class="footer-col"><h4>Produit</h4><ul><li><a href="/#features">Fonctionnalit&eacute;s</a></li><li><a href="/#pricing">Tarifs</a></li><li><a href="/#faq">FAQ</a></li><li><a href="/support.html">Support</a></li></ul></div>
+                <div class="footer-col"><h4>Articles</h4><ul><li><a href="/blog/">Blog</a></li><li><a href="/guides/">Guides</a></li><li><a href="/exercices/">Exercices</a></li><li><a href="/workout-splits/">Workout Splits</a></li></ul></div>
+                <div class="footer-col"><h4>L&eacute;gal</h4><ul><li><a href="/privacy.html">Confidentialit&eacute;</a></li><li><a href="/terms.html">CGU</a></li></ul></div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2026 AS Corporation. Tous droits r&eacute;serv&eacute;s.</p>
+                <div class="footer-social">
+                    <a href="https://www.instagram.com/aivancepro/" target="_blank" rel="noopener" aria-label="Instagram"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z"/></svg></a>
+                    <a href="https://www.tiktok.com/@aivancepro" target="_blank" rel="noopener" aria-label="TikTok"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M19.59 6.69a4.83 4.83 0 01-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 01-2.88 2.5 2.89 2.89 0 01-2.89-2.89 2.89 2.89 0 012.89-2.89c.28 0 .54.04.79.1v-3.5a6.37 6.37 0 00-.79-.05A6.34 6.34 0 003.15 15.2a6.34 6.34 0 0010.86 4.46V13.2a8.16 8.16 0 005.58 2.17V12a4.83 4.83 0 01-3.77-1.54V6.69h3.77z"/></svg></a>
+                    <a href="https://x.com/AIVancePro" target="_blank" rel="noopener" aria-label="X"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg></a>
+                    <a href="https://www.youtube.com/channel/UC8MGuOS22H-jXfe8Haqw8LA" target="_blank" rel="noopener" aria-label="YouTube"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M23.498 6.186a3.016 3.016 0 00-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 00.502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 002.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 002.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/></svg></a>
+                    <a href="https://www.linkedin.com/company/aivancepro" target="_blank" rel="noopener" aria-label="LinkedIn"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 01-2.063-2.065 2.064 2.064 0 112.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg></a>
+                </div>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>
