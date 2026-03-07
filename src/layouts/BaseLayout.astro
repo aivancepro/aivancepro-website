@@ -54,5 +54,20 @@ const localeMap = { fr: 'fr_FR', en: 'en_GB', de: 'de_DE' };
     <Nav lang={lang} />
     <slot />
     {!noFooter && <Footer lang={lang} />}
+    <script is:inline>
+    (function(){
+      var els = document.querySelectorAll('.reveal');
+      if (!els.length) return;
+      var obs = new IntersectionObserver(function(entries) {
+        entries.forEach(function(e) {
+          if (e.isIntersecting) {
+            e.target.classList.add('visible');
+            obs.unobserve(e.target);
+          }
+        });
+      }, { threshold: 0.15 });
+      els.forEach(function(el) { obs.observe(el); });
+    })();
+    </script>
 </body>
 </html>
