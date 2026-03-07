@@ -13,7 +13,9 @@ const categoryLabels: Record<string, string> = {
   programmation: 'Programmation',
 };
 
-const categories = [...new Set(posts.map(p => p.data.category).filter(Boolean))] as string[];
+const categoryOrder = Object.keys(categoryLabels);
+const categories = [...new Set(posts.map(p => p.data.category).filter(Boolean))]
+  .sort((a, b) => categoryOrder.indexOf(a!) - categoryOrder.indexOf(b!)) as string[];
 
 function formatDate(dateStr: string) {
   return new Date(dateStr).toLocaleDateString('fr-FR', { day: 'numeric', month: 'long', year: 'numeric' });
