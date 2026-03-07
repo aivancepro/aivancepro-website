@@ -1,11 +1,15 @@
 ---
 import BaseLayout from '../../../layouts/BaseLayout.astro';
+import { getCollection } from 'astro:content';
+
+const guides = (await getCollection('guides', ({ data }) => data.lang === 'de'))
+  .sort((a, b) => new Date(b.data.date).getTime() - new Date(a.data.date).getTime());
 ---
 
 <BaseLayout
   lang="de"
-  title="Fitness- &amp; Krafttraining-Ratgeber - AIVancePro"
-  description="Vollst&auml;ndige Fitness- und Krafttraining-Ratgeber. Lernen Sie die Grundlagen, erstellen Sie Ihr Programm und machen Sie effektiv Fortschritte."
+  title="Fitness- & Krafttraining-Ratgeber - AIVancePro"
+  description="Vollständige Fitness- und Krafttraining-Ratgeber. Lernen Sie die Grundlagen, erstellen Sie Ihr Programm und machen Sie effektiv Fortschritte."
   canonical="https://aivancepro.fr/de/ratgeber/"
   alternates={{ fr: 'https://aivancepro.fr/guides/', en: 'https://aivancepro.fr/en/guides/', de: 'https://aivancepro.fr/de/ratgeber/' }}
 >
@@ -152,83 +156,22 @@ import BaseLayout from '../../../layouts/BaseLayout.astro';
 
   <header class="page-header">
     <div class="section-label">Ratgeber</div>
-    <h1>Vollst&auml;ndige Ratgeber</h1>
-    <p>Ausf&uuml;hrliche Ratgeber, um jeden Aspekt Ihres Trainings zu meistern &ndash; vom Anf&auml;nger bis zum Fortgeschrittenen.</p>
+    <h1>Vollständige Ratgeber</h1>
+    <p>Ausführliche Ratgeber, um jeden Aspekt Ihres Trainings zu meistern – vom Anfänger bis zum Fortgeschrittenen.</p>
   </header>
 
   <section class="guides-grid">
-    <a href="/de/ratgeber/anfaenger-krafttraining/" class="guide-card">
-      <div class="card-image img-placeholder">Anf&auml;nger-Ratgeber Foto</div>
-      <div class="card-content">
-        <span class="tag">Anf&auml;nger</span>
-        <h2>Einsteiger-Ratgeber f&uuml;r Krafttraining</h2>
-        <p>Alles, was Sie wissen m&uuml;ssen, um mit dem Krafttraining zu beginnen: Grund&uuml;bungen, Programmaufbau und h&auml;ufige Fehler.</p>
-        <div class="meta">15 Min. Lesezeit</div>
-      </div>
-    </a>
-    <a href="/de/ratgeber/trainingsplan-erstellen/" class="guide-card">
-      <div class="card-image img-placeholder">Trainingsplan Foto</div>
-      <div class="card-content">
-        <span class="tag">Programmierung</span>
-        <h2>Einen effektiven Trainingsplan erstellen</h2>
-        <p>S&auml;tze, Wiederholungen, H&auml;ufigkeit und Volumen: die Schl&uuml;ssel zu einem Programm, das Ergebnisse liefert.</p>
-        <div class="meta">12 Min. Lesezeit</div>
-      </div>
-    </a>
-    <a href="/de/ratgeber/ernaehrung-training/" class="guide-card">
-      <div class="card-image img-placeholder">Ern&auml;hrung Foto</div>
-      <div class="card-content">
-        <span class="tag">Ern&auml;hrung</span>
-        <h2>Ern&auml;hrung und Training: Der vollst&auml;ndige Ratgeber</h2>
-        <p>Protein, Kalorien, Makros und Mahlzeiten-Timing. Alles, was Sie brauchen, um Ihre Ergebnisse durch Ern&auml;hrung zu optimieren.</p>
-        <div class="meta">18 Min. Lesezeit</div>
-      </div>
-    </a>
-    <a href="/de/ratgeber/erholung-verletzungspraevention/" class="guide-card">
-      <div class="card-image img-placeholder">Erholung Foto</div>
-      <div class="card-content">
-        <span class="tag">Erholung</span>
-        <h2>Erholung und Verletzungspr&auml;vention</h2>
-        <p>Schlaf, Dehnung, Deload und Erm&uuml;dungsmanagement. Lernen Sie, sich besser zu erholen, um schneller Fortschritte zu machen.</p>
-        <div class="meta">10 Min. Lesezeit</div>
-      </div>
-    </a>
-    <a href="/de/ratgeber/periodisierung-grundlagen/" class="guide-card">
-      <div class="card-image img-placeholder">Periodisierung Foto</div>
-      <div class="card-content">
-        <span class="tag">Fortgeschritten</span>
-        <h2>Grundlagen der Periodisierung</h2>
-        <p>Mikrozyklen, Mesozyklen und Makrozyklen: Strukturieren Sie Ihr langfristiges Training, um ohne Plateau Fortschritte zu machen.</p>
-        <div class="meta">14 Min. Lesezeit</div>
-      </div>
-    </a>
-    <a href="/de/ratgeber/bankdruecken-verbessern/" class="guide-card">
-      <div class="card-image img-placeholder">Bankdr&uuml;cken Foto</div>
-      <div class="card-content">
-        <span class="tag">Kraft</span>
-        <h2>So verbessern Sie Ihr Bankdr&uuml;cken</h2>
-        <p>Technik, Programmierung und Hilfs&uuml;bungen, um Ihr Bankdr&uuml;cken effektiv zu steigern.</p>
-        <div class="meta">11 Min. Lesezeit</div>
-      </div>
-    </a>
-    <a href="/de/ratgeber/home-gym-ratgeber/" class="guide-card">
-      <div class="card-image img-placeholder">Home Gym Foto</div>
-      <div class="card-content">
-        <span class="tag">Home Gym</span>
-        <h2>Home Gym Ratgeber: Training zu Hause</h2>
-        <p>Grundausstattung, Einrichtung und angepasste Programme f&uuml;r effektives Training zu Hause.</p>
-        <div class="meta">13 Min. Lesezeit</div>
-      </div>
-    </a>
-    <a href="/de/ratgeber/rpe-intensitaet-verstehen/" class="guide-card">
-      <div class="card-image img-placeholder">RPE Foto</div>
-      <div class="card-content">
-        <span class="tag">Technik</span>
-        <h2>RPE und Intensit&auml;t verstehen</h2>
-        <p>RPE-Skala, RIR und 1RM-Prozent: So dosieren Sie die Intensit&auml;t, um jede Trainingseinheit zu optimieren.</p>
-        <div class="meta">9 Min. Lesezeit</div>
-      </div>
-    </a>
+    {guides.map(guide => (
+      <a href={`/de/ratgeber/${guide.data.slug}/`} class="guide-card">
+        <div class="card-image img-placeholder">{guide.data.tag}</div>
+        <div class="card-content">
+          <span class="tag">{guide.data.tag}</span>
+          <h2>{guide.data.title}</h2>
+          <p>{guide.data.description}</p>
+          <div class="meta">{guide.data.readTime}</div>
+        </div>
+      </a>
+    ))}
   </section>
 
   <section class="cta-section">

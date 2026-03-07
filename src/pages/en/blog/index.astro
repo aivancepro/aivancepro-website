@@ -1,10 +1,28 @@
 ---
 import BaseLayout from '../../../layouts/BaseLayout.astro';
+import { getCollection } from 'astro:content';
+
+const posts = (await getCollection('blog', ({ data }) => data.lang === 'en'))
+  .sort((a, b) => new Date(b.data.date).getTime() - new Date(a.data.date).getTime());
+
+const categoryLabels: Record<string, string> = {
+  ai: 'AI',
+  workout: 'Workout',
+  nutrition: 'Nutrition',
+  tips: 'Tips',
+  programming: 'Programming',
+};
+
+const categories = [...new Set(posts.map(p => p.data.category).filter(Boolean))] as string[];
+
+function formatDate(dateStr: string) {
+  return new Date(dateStr).toLocaleDateString('en-US', { month: 'long', day: 'numeric', year: 'numeric' });
+}
 ---
 
 <BaseLayout
   lang="en"
-  title="Fitness &amp; Workout Blog - AIVancePro"
+  title="Fitness & Workout Blog - AIVancePro"
   description="Fitness tips, workout advice and training guides. Optimize your performance with the help of AI coaching."
   canonical="https://aivancepro.fr/en/blog/"
   alternates={{ fr: 'https://aivancepro.fr/blog/', en: 'https://aivancepro.fr/en/blog/', de: 'https://aivancepro.fr/de/blog/' }}
@@ -159,100 +177,30 @@ import BaseLayout from '../../../layouts/BaseLayout.astro';
 
   <header class="blog-header">
     <div class="section-label">Blog</div>
-    <h1>Fitness &amp; Workout</h1>
+    <h1>Fitness & Workout</h1>
     <p>Tips, guides and advice to optimize your training and reach your goals.</p>
     <div class="category-filter">
       <button class="filter-btn active" onclick="filterArticles('all', this)">All</button>
-      <button class="filter-btn" onclick="filterArticles('ai', this)">AI</button>
-      <button class="filter-btn" onclick="filterArticles('workout', this)">Workout</button>
-      <button class="filter-btn" onclick="filterArticles('nutrition', this)">Nutrition</button>
-      <button class="filter-btn" onclick="filterArticles('tips', this)">Tips</button>
-      <button class="filter-btn" onclick="filterArticles('programming', this)">Programming</button>
+      {categories.map(cat => (
+        <button class="filter-btn" onclick={`filterArticles('${cat}', this)`}>
+          {categoryLabels[cat] || cat}
+        </button>
+      ))}
     </div>
   </header>
 
   <section class="articles">
-    <a href="/en/blog/ai-fitness-coaching/" class="article-card featured" data-category="ai">
-      <div class="card-image">Photo AI Coaching</div>
-      <div class="card-content">
-        <span class="tag">Artificial Intelligence</span>
-        <h2>How AI is revolutionizing fitness coaching</h2>
-        <p>Discover how artificial intelligence is transforming sports training by offering ultra-personalized programs adapted to each profile.</p>
-        <div class="meta">February 7, 2026 &middot; 5 min read</div>
-      </div>
-    </a>
-    <a href="/en/blog/beginner-workout-program/" class="article-card" data-category="workout">
-      <div class="card-image">Photo Beginner</div>
-      <div class="card-content">
-        <span class="tag">Workout</span>
-        <h2>Beginner workout program: where to start</h2>
-        <p>New to weightlifting? Here's the complete guide to building your first effective training program.</p>
-        <div class="meta">February 7, 2026 &middot; 7 min</div>
-      </div>
-    </a>
-    <a href="/en/blog/tracking-fitness-progress/" class="article-card" data-category="tips">
-      <div class="card-image">Photo Progress</div>
-      <div class="card-content">
-        <span class="tag">Progress</span>
-        <h2>The importance of tracking fitness progress</h2>
-        <p>Why tracking your progress is the key to lasting results.</p>
-        <div class="meta">February 7, 2026 &middot; 5 min</div>
-      </div>
-    </a>
-    <a href="/en/blog/workout-motivation-tips/" class="article-card" data-category="tips">
-      <div class="card-image">Photo Motivation</div>
-      <div class="card-content">
-        <span class="tag">Motivation</span>
-        <h2>5 tips to stay motivated in your training</h2>
-        <p>Motivation is the fuel of athletic success. 5 concrete strategies.</p>
-        <div class="meta">February 7, 2026 &middot; 4 min</div>
-      </div>
-    </a>
-    <a href="/en/blog/home-gym-guide/" class="article-card" data-category="tips">
-      <div class="card-image">Photo Home Gym</div>
-      <div class="card-content">
-        <span class="tag">Home Gym</span>
-        <h2>Working out at home: complete guide</h2>
-        <p>No gym needed to make progress. Create your training space.</p>
-        <div class="meta">February 7, 2026 &middot; 6 min</div>
-      </div>
-    </a>
-    <a href="/en/blog/periodization-training-program/" class="article-card" data-category="programming">
-      <div class="card-image">Photo Periodization</div>
-      <div class="card-content">
-        <span class="tag">Programming</span>
-        <h2>Periodization: structuring your program</h2>
-        <p>Cycles, mesocycles, deload: understand everything to progress sustainably.</p>
-        <div class="meta">March 3, 2026 &middot; 6 min</div>
-      </div>
-    </a>
-    <a href="/en/blog/common-workout-mistakes/" class="article-card" data-category="workout">
-      <div class="card-image">Photo Mistakes</div>
-      <div class="card-content">
-        <span class="tag">Tips</span>
-        <h2>5 common workout mistakes</h2>
-        <p>Common pitfalls that slow your progress and how to fix them.</p>
-        <div class="meta">March 3, 2026 &middot; 5 min</div>
-      </div>
-    </a>
-    <a href="/en/blog/nutrition-workout-basics/" class="article-card" data-category="nutrition">
-      <div class="card-image">Photo Nutrition</div>
-      <div class="card-content">
-        <span class="tag">Nutrition</span>
-        <h2>Nutrition and workout: the basics</h2>
-        <p>Protein, carbs, fats and meal timing to support your progress.</p>
-        <div class="meta">March 3, 2026 &middot; 7 min</div>
-      </div>
-    </a>
-    <a href="/en/blog/choosing-exercises-goals/" class="article-card" data-category="workout">
-      <div class="card-image">Photo Exercises</div>
-      <div class="card-content">
-        <span class="tag">Exercises</span>
-        <h2>How to choose exercises based on your goals</h2>
-        <p>Strength, hypertrophy, endurance: guide to selecting the right exercises.</p>
-        <div class="meta">March 3, 2026 &middot; 6 min</div>
-      </div>
-    </a>
+    {posts.map((post, i) => (
+      <a href={`/en/blog/${post.data.slug}/`} class={`article-card${i === 0 ? ' featured' : ''}`} data-category={post.data.category}>
+        <div class="card-image">{post.data.tag}</div>
+        <div class="card-content">
+          <span class="tag">{post.data.tag}</span>
+          <h2>{post.data.title}</h2>
+          <p>{post.data.description}</p>
+          <div class="meta">{formatDate(post.data.date)} &middot; {post.data.readTime}</div>
+        </div>
+      </a>
+    ))}
   </section>
 
   <script>

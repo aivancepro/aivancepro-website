@@ -1,10 +1,14 @@
 ---
 import BaseLayout from '../../../layouts/BaseLayout.astro';
+import { getCollection } from 'astro:content';
+
+const guides = (await getCollection('guides', ({ data }) => data.lang === 'en'))
+  .sort((a, b) => new Date(b.data.date).getTime() - new Date(a.data.date).getTime());
 ---
 
 <BaseLayout
   lang="en"
-  title="Fitness &amp; Strength Training Guides - AIVancePro"
+  title="Fitness & Strength Training Guides - AIVancePro"
   description="Complete fitness and strength training guides. Learn the basics, create your program and progress effectively."
   canonical="https://aivancepro.fr/en/guides/"
   alternates={{ fr: 'https://aivancepro.fr/guides/', en: 'https://aivancepro.fr/en/guides/', de: 'https://aivancepro.fr/de/ratgeber/' }}
@@ -157,78 +161,17 @@ import BaseLayout from '../../../layouts/BaseLayout.astro';
   </header>
 
   <section class="guides-grid">
-    <a href="/en/guides/beginner-strength-training/" class="guide-card">
-      <div class="card-image img-placeholder">Beginner Guide Photo</div>
-      <div class="card-content">
-        <span class="tag">Beginner</span>
-        <h2>Beginner's Guide to Strength Training</h2>
-        <p>Everything you need to know to start strength training: basic exercises, program structure and mistakes to avoid.</p>
-        <div class="meta">15 min read</div>
-      </div>
-    </a>
-    <a href="/en/guides/create-training-program/" class="guide-card">
-      <div class="card-image img-placeholder">Program Photo</div>
-      <div class="card-content">
-        <span class="tag">Programming</span>
-        <h2>Creating an Effective Training Program</h2>
-        <p>Sets, reps, frequency and volume: the keys to building a program that delivers results.</p>
-        <div class="meta">12 min read</div>
-      </div>
-    </a>
-    <a href="/en/guides/nutrition-training/" class="guide-card">
-      <div class="card-image img-placeholder">Nutrition Photo</div>
-      <div class="card-content">
-        <span class="tag">Nutrition</span>
-        <h2>Nutrition and Training: The Complete Guide</h2>
-        <p>Protein, calories, macros and meal timing. Everything you need to optimize your results through nutrition.</p>
-        <div class="meta">18 min read</div>
-      </div>
-    </a>
-    <a href="/en/guides/recovery-injury-prevention/" class="guide-card">
-      <div class="card-image img-placeholder">Recovery Photo</div>
-      <div class="card-content">
-        <span class="tag">Recovery</span>
-        <h2>Recovery and Injury Prevention</h2>
-        <p>Sleep, stretching, deload and fatigue management. Learn to recover better to progress faster.</p>
-        <div class="meta">10 min read</div>
-      </div>
-    </a>
-    <a href="/en/guides/periodization-basics/" class="guide-card">
-      <div class="card-image img-placeholder">Periodization Photo</div>
-      <div class="card-content">
-        <span class="tag">Advanced</span>
-        <h2>Periodization Basics</h2>
-        <p>Microcycles, mesocycles and macrocycles: structure your long-term training to progress without plateauing.</p>
-        <div class="meta">14 min read</div>
-      </div>
-    </a>
-    <a href="/en/guides/improve-bench-press/" class="guide-card">
-      <div class="card-image img-placeholder">Bench Press Photo</div>
-      <div class="card-content">
-        <span class="tag">Strength</span>
-        <h2>How to Improve Your Bench Press</h2>
-        <p>Technique, programming and accessory exercises to effectively increase your bench press.</p>
-        <div class="meta">11 min read</div>
-      </div>
-    </a>
-    <a href="/en/guides/home-gym-guide/" class="guide-card">
-      <div class="card-image img-placeholder">Home Gym Photo</div>
-      <div class="card-content">
-        <span class="tag">Home Gym</span>
-        <h2>Home Gym Guide: Training at Home</h2>
-        <p>Essential equipment, setup and adapted programs for effective training at home.</p>
-        <div class="meta">13 min read</div>
-      </div>
-    </a>
-    <a href="/en/guides/understanding-rpe/" class="guide-card">
-      <div class="card-image img-placeholder">RPE Photo</div>
-      <div class="card-content">
-        <span class="tag">Technique</span>
-        <h2>Understanding RPE and Intensity</h2>
-        <p>RPE scale, RIR and 1RM percentage: how to dose intensity to optimize every session.</p>
-        <div class="meta">9 min read</div>
-      </div>
-    </a>
+    {guides.map(guide => (
+      <a href={`/en/guides/${guide.data.slug}/`} class="guide-card">
+        <div class="card-image img-placeholder">{guide.data.tag}</div>
+        <div class="card-content">
+          <span class="tag">{guide.data.tag}</span>
+          <h2>{guide.data.title}</h2>
+          <p>{guide.data.description}</p>
+          <div class="meta">{guide.data.readTime}</div>
+        </div>
+      </a>
+    ))}
   </section>
 
   <section class="cta-section">

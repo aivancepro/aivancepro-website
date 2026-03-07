@@ -1,11 +1,15 @@
 ---
 import BaseLayout from '../../layouts/BaseLayout.astro';
+import { getCollection } from 'astro:content';
+
+const guides = (await getCollection('guides', ({ data }) => data.lang === 'fr'))
+  .sort((a, b) => new Date(b.data.date).getTime() - new Date(a.data.date).getTime());
 ---
 
 <BaseLayout
   lang="fr"
-  title="Guides Fitness &amp; Musculation - AIVancePro"
-  description="Guides complets de fitness et musculation. Apprenez les bases, cr&eacute;ez votre programme et progressez efficacement."
+  title="Guides Fitness & Musculation - AIVancePro"
+  description="Guides complets de fitness et musculation. Apprenez les bases, créez votre programme et progressez efficacement."
   canonical="https://aivancepro.fr/guides/"
   alternates={{ fr: 'https://aivancepro.fr/guides/', en: 'https://aivancepro.fr/en/guides/', de: 'https://aivancepro.fr/de/ratgeber/' }}
 >
@@ -153,94 +157,26 @@ import BaseLayout from '../../layouts/BaseLayout.astro';
   <header class="page-header">
     <div class="section-label">Guides</div>
     <h1>Guides complets</h1>
-    <p>Des guides d&eacute;taill&eacute;s pour ma&icirc;triser chaque aspect de votre entra&icirc;nement, du d&eacute;butant &agrave; l'avanc&eacute;.</p>
+    <p>Des guides détaillés pour maîtriser chaque aspect de votre entraînement, du débutant à l'avancé.</p>
   </header>
 
   <section class="guides-grid">
-    <a href="/guides/debutant-musculation/" class="guide-card">
-      <div class="card-image img-placeholder">Photo Guide d&eacute;butant</div>
-      <div class="card-content">
-        <span class="tag">D&eacute;butant</span>
-        <h2>Guide du d&eacute;butant en musculation</h2>
-        <p>Tout ce que vous devez savoir pour commencer la musculation : exercices de base, structure de programme et erreurs &agrave; &eacute;viter.</p>
-        <div class="meta">15 min de lecture</div>
-      </div>
-    </a>
-
-    <a href="/guides/creer-programme-entrainement/" class="guide-card">
-      <div class="card-image img-placeholder">Photo Programme</div>
-      <div class="card-content">
-        <span class="tag">Programmation</span>
-        <h2>Cr&eacute;er un programme d'entra&icirc;nement efficace</h2>
-        <p>S&eacute;ries, r&eacute;p&eacute;titions, fr&eacute;quence et volume : les cl&eacute;s pour construire un programme qui donne des r&eacute;sultats.</p>
-        <div class="meta">12 min de lecture</div>
-      </div>
-    </a>
-
-    <a href="/guides/nutrition-musculation/" class="guide-card">
-      <div class="card-image img-placeholder">Photo Nutrition</div>
-      <div class="card-content">
-        <span class="tag">Nutrition</span>
-        <h2>Nutrition et musculation : le guide complet</h2>
-        <p>Prot&eacute;ines, calories, macros et timing des repas. Tout comprendre pour optimiser vos r&eacute;sultats par l'alimentation.</p>
-        <div class="meta">18 min de lecture</div>
-      </div>
-    </a>
-
-    <a href="/guides/recuperation-prevention-blessures/" class="guide-card">
-      <div class="card-image img-placeholder">Photo R&eacute;cup&eacute;ration</div>
-      <div class="card-content">
-        <span class="tag">R&eacute;cup&eacute;ration</span>
-        <h2>R&eacute;cup&eacute;ration et pr&eacute;vention des blessures</h2>
-        <p>Sommeil, stretching, deload et gestion de la fatigue. Apprenez &agrave; r&eacute;cup&eacute;rer pour mieux progresser.</p>
-        <div class="meta">10 min de lecture</div>
-      </div>
-    </a>
-
-    <a href="/guides/periodisation/" class="guide-card">
-      <div class="card-image img-placeholder">Photo P&eacute;riodisation</div>
-      <div class="card-content">
-        <span class="tag">Avanc&eacute;</span>
-        <h2>Les bases de la p&eacute;riodisation</h2>
-        <p>Microcycles, m&eacute;socycles et macrocycles : structurez votre entra&icirc;nement sur le long terme pour progresser sans stagner.</p>
-        <div class="meta">14 min de lecture</div>
-      </div>
-    </a>
-
-    <a href="/guides/progresser-developpe-couche/" class="guide-card">
-      <div class="card-image img-placeholder">Photo D&eacute;velopp&eacute; couch&eacute;</div>
-      <div class="card-content">
-        <span class="tag">Force</span>
-        <h2>Comment progresser au d&eacute;velopp&eacute; couch&eacute;</h2>
-        <p>Technique, programmation et exercices accessoires pour augmenter votre d&eacute;velopp&eacute; couch&eacute; efficacement.</p>
-        <div class="meta">11 min de lecture</div>
-      </div>
-    </a>
-
-    <a href="/guides/home-gym/" class="guide-card">
-      <div class="card-image img-placeholder">Photo Home Gym</div>
-      <div class="card-content">
-        <span class="tag">Home Gym</span>
-        <h2>Guide du home gym : s'entra&icirc;ner chez soi</h2>
-        <p>&Eacute;quipement essentiel, am&eacute;nagement et programmes adapt&eacute;s pour un entra&icirc;nement efficace &agrave; domicile.</p>
-        <div class="meta">13 min de lecture</div>
-      </div>
-    </a>
-
-    <a href="/guides/comprendre-rpe-intensite/" class="guide-card">
-      <div class="card-image img-placeholder">Photo RPE</div>
-      <div class="card-content">
-        <span class="tag">Technique</span>
-        <h2>Comprendre le RPE et l'intensit&eacute;</h2>
-        <p>&Eacute;chelle RPE, RIR et pourcentage de 1RM : comment doser l'intensit&eacute; pour optimiser chaque s&eacute;ance.</p>
-        <div class="meta">9 min de lecture</div>
-      </div>
-    </a>
+    {guides.map(guide => (
+      <a href={`/guides/${guide.data.slug}/`} class="guide-card">
+        <div class="card-image img-placeholder">{guide.data.tag}</div>
+        <div class="card-content">
+          <span class="tag">{guide.data.tag}</span>
+          <h2>{guide.data.title}</h2>
+          <p>{guide.data.description}</p>
+          <div class="meta">{guide.data.readTime}</div>
+        </div>
+      </a>
+    ))}
   </section>
 
   <section class="cta-section">
-    <h2>Passez &agrave; la pratique</h2>
-    <p>T&eacute;l&eacute;chargez AIVancePro et laissez le coach IA appliquer ces principes &agrave; votre entra&icirc;nement.</p>
-    <a href="https://apps.apple.com/fr/app/aivancepro/id6756116760" class="btn-primary" target="_blank" rel="noopener">T&eacute;l&eacute;charger gratuitement</a>
+    <h2>Passez à la pratique</h2>
+    <p>Téléchargez AIVancePro et laissez le coach IA appliquer ces principes à votre entraînement.</p>
+    <a href="https://apps.apple.com/fr/app/aivancepro/id6756116760" class="btn-primary" target="_blank" rel="noopener">Télécharger gratuitement</a>
   </section>
 </BaseLayout>

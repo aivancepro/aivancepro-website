@@ -1,11 +1,29 @@
 ---
 import BaseLayout from '../../../layouts/BaseLayout.astro';
+import { getCollection } from 'astro:content';
+
+const posts = (await getCollection('blog', ({ data }) => data.lang === 'de'))
+  .sort((a, b) => new Date(b.data.date).getTime() - new Date(a.data.date).getTime());
+
+const categoryLabels: Record<string, string> = {
+  ki: 'Künstliche Intelligenz',
+  training: 'Training',
+  ernaehrung: 'Ernährung',
+  tipps: 'Tipps',
+  planung: 'Planung',
+};
+
+const categories = [...new Set(posts.map(p => p.data.category).filter(Boolean))] as string[];
+
+function formatDate(dateStr: string) {
+  return new Date(dateStr).toLocaleDateString('de-DE', { day: 'numeric', month: 'long', year: 'numeric' });
+}
 ---
 
 <BaseLayout
   lang="de"
-  title="Fitness &amp; Krafttraining Blog - AIVancePro"
-  description="Fitness-Tipps, Trainingsratschl&auml;ge und Anleitungen. Optimieren Sie Ihre Leistung mit KI-Coaching."
+  title="Fitness & Krafttraining Blog - AIVancePro"
+  description="Fitness-Tipps, Trainingsratschläge und Anleitungen. Optimieren Sie Ihre Leistung mit KI-Coaching."
   canonical="https://aivancepro.fr/de/blog/"
   alternates={{ fr: 'https://aivancepro.fr/blog/', en: 'https://aivancepro.fr/en/blog/', de: 'https://aivancepro.fr/de/blog/' }}
 >
@@ -159,100 +177,30 @@ import BaseLayout from '../../../layouts/BaseLayout.astro';
 
   <header class="blog-header">
     <div class="section-label">Blog</div>
-    <h1>Fitness &amp; Krafttraining</h1>
-    <p>Tipps, Anleitungen und Ratschl&auml;ge zur Optimierung Ihres Trainings und zum Erreichen Ihrer Ziele.</p>
+    <h1>Fitness & Krafttraining</h1>
+    <p>Tipps, Anleitungen und Ratschläge zur Optimierung Ihres Trainings und zum Erreichen Ihrer Ziele.</p>
     <div class="category-filter">
       <button class="filter-btn active" onclick="filterArticles('all', this)">Alle</button>
-      <button class="filter-btn" onclick="filterArticles('ki', this)">K&uuml;nstliche Intelligenz</button>
-      <button class="filter-btn" onclick="filterArticles('training', this)">Training</button>
-      <button class="filter-btn" onclick="filterArticles('ernaehrung', this)">Ern&auml;hrung</button>
-      <button class="filter-btn" onclick="filterArticles('tipps', this)">Tipps</button>
-      <button class="filter-btn" onclick="filterArticles('planung', this)">Planung</button>
+      {categories.map(cat => (
+        <button class="filter-btn" onclick={`filterArticles('${cat}', this)`}>
+          {categoryLabels[cat] || cat}
+        </button>
+      ))}
     </div>
   </header>
 
   <section class="articles">
-    <a href="/de/blog/ki-fitness-coaching/" class="article-card featured" data-category="ki">
-      <div class="card-image">Foto KI-Coaching</div>
-      <div class="card-content">
-        <span class="tag">K&uuml;nstliche Intelligenz</span>
-        <h2>Wie KI das Fitness-Coaching revolutioniert</h2>
-        <p>Entdecken Sie, wie k&uuml;nstliche Intelligenz das Sporttraining durch ultra-personalisierte Programme ver&auml;ndert.</p>
-        <div class="meta">7. Februar 2026 &middot; 5 Min. Lesezeit</div>
-      </div>
-    </a>
-    <a href="/de/blog/anfaenger-trainingsplan/" class="article-card" data-category="training">
-      <div class="card-image">Foto Anf&auml;nger</div>
-      <div class="card-content">
-        <span class="tag">Training</span>
-        <h2>Trainingsplan f&uuml;r Anf&auml;nger: Wo anfangen?</h2>
-        <p>Neu im Krafttraining? Der komplette Leitfaden f&uuml;r Ihren ersten effektiven Trainingsplan.</p>
-        <div class="meta">7. Februar 2026 &middot; 7 Min.</div>
-      </div>
-    </a>
-    <a href="/de/blog/trainingsfortschritt-verfolgen/" class="article-card" data-category="tipps">
-      <div class="card-image">Foto Fortschritt</div>
-      <div class="card-content">
-        <span class="tag">Fortschritt</span>
-        <h2>Die Bedeutung der Trainings&uuml;berwachung</h2>
-        <p>Warum die Verfolgung Ihres Fortschritts der Schl&uuml;ssel zu dauerhaften Ergebnissen ist.</p>
-        <div class="meta">7. Februar 2026 &middot; 5 Min.</div>
-      </div>
-    </a>
-    <a href="/de/blog/training-motivation-tipps/" class="article-card" data-category="tipps">
-      <div class="card-image">Foto Motivation</div>
-      <div class="card-content">
-        <span class="tag">Motivation</span>
-        <h2>5 Tipps, um beim Training motiviert zu bleiben</h2>
-        <p>Motivation ist der Treibstoff des sportlichen Erfolgs. 5 konkrete Strategien.</p>
-        <div class="meta">7. Februar 2026 &middot; 4 Min.</div>
-      </div>
-    </a>
-    <a href="/de/blog/home-gym-zuhause-trainieren/" class="article-card" data-category="tipps">
-      <div class="card-image">Foto Home Gym</div>
-      <div class="card-content">
-        <span class="tag">Home Gym</span>
-        <h2>Zuhause trainieren: Der komplette Leitfaden</h2>
-        <p>Kein Fitnessstudio n&ouml;tig. Erstellen Sie Ihren Trainingsraum.</p>
-        <div class="meta">7. Februar 2026 &middot; 6 Min.</div>
-      </div>
-    </a>
-    <a href="/de/blog/periodisierung-trainingsplan/" class="article-card" data-category="planung">
-      <div class="card-image">Foto Periodisierung</div>
-      <div class="card-content">
-        <span class="tag">Planung</span>
-        <h2>Periodisierung: Ihr Programm strukturieren</h2>
-        <p>Zyklen, Mesozyklen, Deload: Alles verstehen, um nachhaltig Fortschritte zu machen.</p>
-        <div class="meta">3. M&auml;rz 2026 &middot; 6 Min.</div>
-      </div>
-    </a>
-    <a href="/de/blog/haeufige-trainingsfehler/" class="article-card" data-category="training">
-      <div class="card-image">Foto Fehler</div>
-      <div class="card-content">
-        <span class="tag">Tipps</span>
-        <h2>5 h&auml;ufige Trainingsfehler</h2>
-        <p>H&auml;ufige Fallen, die Ihren Fortschritt bremsen, und wie Sie sie beheben.</p>
-        <div class="meta">3. M&auml;rz 2026 &middot; 5 Min.</div>
-      </div>
-    </a>
-    <a href="/de/blog/ernaehrung-training-grundlagen/" class="article-card" data-category="ernaehrung">
-      <div class="card-image">Foto Ern&auml;hrung</div>
-      <div class="card-content">
-        <span class="tag">Ern&auml;hrung</span>
-        <h2>Ern&auml;hrung und Training: Die Grundlagen</h2>
-        <p>Protein, Kohlenhydrate, Fette und Mahlzeiten-Timing f&uuml;r Ihren Fortschritt.</p>
-        <div class="meta">3. M&auml;rz 2026 &middot; 7 Min.</div>
-      </div>
-    </a>
-    <a href="/de/blog/uebungen-nach-zielen/" class="article-card" data-category="training">
-      <div class="card-image">Foto &Uuml;bungen</div>
-      <div class="card-content">
-        <span class="tag">&Uuml;bungen</span>
-        <h2>&Uuml;bungen nach Zielen ausw&auml;hlen</h2>
-        <p>Kraft, Hypertrophie, Ausdauer: Leitfaden zur Auswahl der richtigen &Uuml;bungen.</p>
-        <div class="meta">3. M&auml;rz 2026 &middot; 6 Min.</div>
-      </div>
-    </a>
+    {posts.map((post, i) => (
+      <a href={`/de/blog/${post.data.slug}/`} class={`article-card${i === 0 ? ' featured' : ''}`} data-category={post.data.category}>
+        <div class="card-image">{post.data.tag}</div>
+        <div class="card-content">
+          <span class="tag">{post.data.tag}</span>
+          <h2>{post.data.title}</h2>
+          <p>{post.data.description}</p>
+          <div class="meta">{formatDate(post.data.date)} &middot; {post.data.readTime}</div>
+        </div>
+      </a>
+    ))}
   </section>
 
   <script>

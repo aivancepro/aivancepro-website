@@ -1,11 +1,29 @@
 ---
 import BaseLayout from '../../layouts/BaseLayout.astro';
+import { getCollection } from 'astro:content';
+
+const posts = (await getCollection('blog', ({ data }) => data.lang === 'fr'))
+  .sort((a, b) => new Date(b.data.date).getTime() - new Date(a.data.date).getTime());
+
+const categoryLabels: Record<string, string> = {
+  ia: 'Intelligence Artificielle',
+  musculation: 'Musculation',
+  nutrition: 'Nutrition',
+  conseils: 'Conseils',
+  programmation: 'Programmation',
+};
+
+const categories = [...new Set(posts.map(p => p.data.category).filter(Boolean))] as string[];
+
+function formatDate(dateStr: string) {
+  return new Date(dateStr).toLocaleDateString('fr-FR', { day: 'numeric', month: 'long', year: 'numeric' });
+}
 ---
 
 <BaseLayout
   lang="fr"
-  title="Blog Fitness &amp; Musculation - AIVancePro"
-  description="Conseils fitness, musculation et entra&icirc;nement. D&eacute;couvrez nos articles pour optimiser vos performances sportives avec l'aide de l'IA."
+  title="Blog Fitness & Musculation - AIVancePro"
+  description="Conseils fitness, musculation et entraînement. Découvrez nos articles pour optimiser vos performances sportives avec l'aide de l'IA."
   canonical="https://aivancepro.fr/blog/"
   alternates={{ fr: 'https://aivancepro.fr/blog/', en: 'https://aivancepro.fr/en/blog/', de: 'https://aivancepro.fr/de/blog/' }}
 >
@@ -163,109 +181,31 @@ import BaseLayout from '../../layouts/BaseLayout.astro';
 
   <header class="blog-header">
     <div class="section-label">Blog</div>
-    <h1>Fitness &amp; Musculation</h1>
-    <p>Conseils, guides et astuces pour optimiser votre entra&icirc;nement et atteindre vos objectifs.</p>
+    <h1>Fitness & Musculation</h1>
+    <p>Conseils, guides et astuces pour optimiser votre entraînement et atteindre vos objectifs.</p>
 
     <div class="category-filter">
       <button class="filter-btn active" onclick="filterArticles('all', this)">Tous</button>
-      <button class="filter-btn" onclick="filterArticles('ia', this)">Intelligence Artificielle</button>
-      <button class="filter-btn" onclick="filterArticles('musculation', this)">Musculation</button>
-      <button class="filter-btn" onclick="filterArticles('nutrition', this)">Nutrition</button>
-      <button class="filter-btn" onclick="filterArticles('conseils', this)">Conseils</button>
-      <button class="filter-btn" onclick="filterArticles('programmation', this)">Programmation</button>
+      {categories.map(cat => (
+        <button class="filter-btn" onclick={`filterArticles('${cat}', this)`}>
+          {categoryLabels[cat] || cat}
+        </button>
+      ))}
     </div>
   </header>
 
   <section class="articles">
-    <a href="/blog/coach-ia-fitness/" class="article-card featured" data-category="ia">
-      <div class="card-image">Photo Coach IA</div>
-      <div class="card-content">
-        <span class="tag">Intelligence Artificielle</span>
-        <h2>Comment l'IA r&eacute;volutionne le coaching fitness</h2>
-        <p>D&eacute;couvrez comment l'intelligence artificielle transforme l'entra&icirc;nement sportif en proposant des programmes ultra-personnalis&eacute;s adapt&eacute;s &agrave; chaque profil.</p>
-        <div class="meta">7 f&eacute;vrier 2026 &middot; 5 min de lecture</div>
-      </div>
-    </a>
-
-    <a href="/blog/programme-musculation-debutant/" class="article-card" data-category="musculation">
-      <div class="card-image">Photo Musculation d&eacute;butant</div>
-      <div class="card-content">
-        <span class="tag">Musculation</span>
-        <h2>Programme musculation d&eacute;butant : par o&ugrave; commencer</h2>
-        <p>Vous d&eacute;butez en musculation ? Voici le guide complet pour construire votre premier programme d'entra&icirc;nement efficace.</p>
-        <div class="meta">7 f&eacute;vrier 2026 &middot; 7 min</div>
-      </div>
-    </a>
-
-    <a href="/blog/suivi-progression-sportive/" class="article-card" data-category="conseils">
-      <div class="card-image">Photo Suivi progression</div>
-      <div class="card-content">
-        <span class="tag">Progression</span>
-        <h2>L'importance du suivi de progression sportive</h2>
-        <p>Pourquoi suivre sa progression est la cl&eacute; pour des r&eacute;sultats durables.</p>
-        <div class="meta">7 f&eacute;vrier 2026 &middot; 5 min</div>
-      </div>
-    </a>
-
-    <a href="/blog/motivation-sport/" class="article-card" data-category="conseils">
-      <div class="card-image">Photo Motivation</div>
-      <div class="card-content">
-        <span class="tag">Motivation</span>
-        <h2>5 astuces pour rester motiv&eacute; dans son entra&icirc;nement</h2>
-        <p>La motivation est le carburant de la r&eacute;ussite sportive. 5 strat&eacute;gies concr&egrave;tes.</p>
-        <div class="meta">7 f&eacute;vrier 2026 &middot; 4 min</div>
-      </div>
-    </a>
-
-    <a href="/blog/home-gym-entrainement-maison/" class="article-card" data-category="conseils">
-      <div class="card-image">Photo Home Gym</div>
-      <div class="card-content">
-        <span class="tag">Home Gym</span>
-        <h2>S'entra&icirc;ner &agrave; la maison : guide complet</h2>
-        <p>Pas besoin de salle de sport pour progresser. Cr&eacute;ez votre espace d'entra&icirc;nement.</p>
-        <div class="meta">7 f&eacute;vrier 2026 &middot; 6 min</div>
-      </div>
-    </a>
-
-    <a href="/blog/periodisation-programme-entrainement/" class="article-card" data-category="programmation">
-      <div class="card-image">Photo P&eacute;riodisation</div>
-      <div class="card-content">
-        <span class="tag">Programmation</span>
-        <h2>P&eacute;riodisation : structurer son programme</h2>
-        <p>Cycles, m&eacute;socycles, deload : tout comprendre pour progresser durablement.</p>
-        <div class="meta">3 mars 2026 &middot; 6 min</div>
-      </div>
-    </a>
-
-    <a href="/blog/erreurs-musculation/" class="article-card" data-category="musculation">
-      <div class="card-image">Photo Erreurs musculation</div>
-      <div class="card-content">
-        <span class="tag">Conseils</span>
-        <h2>5 erreurs courantes en musculation</h2>
-        <p>Les pi&egrave;ges fr&eacute;quents qui freinent votre progression et comment les corriger.</p>
-        <div class="meta">3 mars 2026 &middot; 5 min</div>
-      </div>
-    </a>
-
-    <a href="/blog/nutrition-musculation-bases/" class="article-card" data-category="nutrition">
-      <div class="card-image">Photo Nutrition</div>
-      <div class="card-content">
-        <span class="tag">Nutrition</span>
-        <h2>Nutrition et musculation : les bases</h2>
-        <p>Prot&eacute;ines, glucides, lipides et timing des repas pour soutenir votre progression.</p>
-        <div class="meta">3 mars 2026 &middot; 7 min</div>
-      </div>
-    </a>
-
-    <a href="/blog/choisir-exercices-objectifs/" class="article-card" data-category="musculation">
-      <div class="card-image">Photo Exercices</div>
-      <div class="card-content">
-        <span class="tag">Exercices</span>
-        <h2>Comment choisir ses exercices selon ses objectifs</h2>
-        <p>Force, hypertrophie, endurance : guide pour s&eacute;lectionner les bons exercices.</p>
-        <div class="meta">3 mars 2026 &middot; 6 min</div>
-      </div>
-    </a>
+    {posts.map((post, i) => (
+      <a href={`/blog/${post.data.slug}/`} class={`article-card${i === 0 ? ' featured' : ''}`} data-category={post.data.category}>
+        <div class="card-image">{post.data.tag}</div>
+        <div class="card-content">
+          <span class="tag">{post.data.tag}</span>
+          <h2>{post.data.title}</h2>
+          <p>{post.data.description}</p>
+          <div class="meta">{formatDate(post.data.date)} &middot; {post.data.readTime}</div>
+        </div>
+      </a>
+    ))}
   </section>
 
   <script>
