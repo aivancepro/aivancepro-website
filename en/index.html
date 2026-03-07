@@ -228,20 +228,94 @@
             gap: 1rem;
         }
 
-        .lang-switch {
-            color: var(--gray-500);
-            text-decoration: none;
+        .lang-dropdown {
+            position: relative;
+        }
+
+        .lang-dropdown-toggle {
+            display: flex;
+            align-items: center;
+            gap: 0.4rem;
+            background: none;
+            border: 1px solid var(--gray-200);
+            border-radius: 8px;
+            padding: 0.4rem 0.7rem;
+            cursor: pointer;
+            font-family: inherit;
             font-size: 0.8rem;
             font-weight: 600;
-            border: 1px solid var(--gray-200);
-            padding: 0.3rem 0.6rem;
-            border-radius: 6px;
+            color: var(--gray-500);
             transition: all 0.2s;
         }
 
-        .lang-switch:hover {
-            color: var(--gray-900);
+        .lang-dropdown-toggle:hover {
             border-color: var(--gray-400);
+            color: var(--gray-900);
+        }
+
+        .lang-dropdown-toggle .flag {
+            font-size: 1.1rem;
+            line-height: 1;
+        }
+
+        .lang-dropdown-toggle svg {
+            width: 10px;
+            height: 10px;
+            transition: transform 0.2s;
+        }
+
+        .lang-dropdown:hover .lang-dropdown-toggle svg {
+            transform: rotate(180deg);
+        }
+
+        .lang-dropdown-menu {
+            position: absolute;
+            top: calc(100% + 0.5rem);
+            right: 0;
+            background: var(--white);
+            border: 1px solid var(--gray-200);
+            border-radius: 10px;
+            padding: 0.35rem;
+            min-width: 150px;
+            box-shadow: 0 8px 30px rgba(0, 0, 0, 0.08);
+            opacity: 0;
+            visibility: hidden;
+            transform: translateY(4px);
+            transition: opacity 0.2s, visibility 0.2s, transform 0.2s;
+            z-index: 101;
+        }
+
+        .lang-dropdown:hover .lang-dropdown-menu {
+            opacity: 1;
+            visibility: visible;
+            transform: translateY(0);
+        }
+
+        .lang-dropdown-menu a {
+            display: flex;
+            align-items: center;
+            gap: 0.6rem;
+            padding: 0.5rem 0.75rem;
+            color: var(--gray-700);
+            text-decoration: none;
+            font-size: 0.85rem;
+            font-weight: 500;
+            border-radius: 7px;
+            transition: background 0.15s;
+        }
+
+        .lang-dropdown-menu a:hover {
+            background: var(--gray-50);
+        }
+
+        .lang-dropdown-menu a .flag {
+            font-size: 1.2rem;
+            line-height: 1;
+        }
+
+        .lang-dropdown-menu a.active {
+            font-weight: 700;
+            color: var(--blue);
         }
 
         .nav-login {
@@ -1508,8 +1582,17 @@
             </ul>
 
             <div class="nav-right">
-                <a href="/" class="lang-switch">FR</a>
-                <a href="/de/" class="lang-switch">DE</a>
+                <div class="lang-dropdown">
+                    <button class="lang-dropdown-toggle">
+                        <span class="flag">🇬🇧</span> EN
+                        <svg width="12" height="12" viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M5.23 7.21a.75.75 0 011.06.02L10 11.168l3.71-3.938a.75.75 0 111.08 1.04l-4.25 4.5a.75.75 0 01-1.08 0l-4.25-4.5a.75.75 0 01.02-1.06z" clip-rule="evenodd"/></svg>
+                    </button>
+                    <div class="lang-dropdown-menu">
+                        <a href="/"><span class="flag">🇫🇷</span> Français</a>
+                        <a href="/en/" class="active"><span class="flag">🇬🇧</span> English</a>
+                        <a href="/de/"><span class="flag">🇩🇪</span> Deutsch</a>
+                    </div>
+                </div>
                 <a href="/login.html" class="nav-login">Login</a>
                 <a href="https://apps.apple.com/app/aivancepro/id6756116760" class="nav-cta" target="_blank" rel="noopener">Download</a>
                 <button class="mobile-menu-btn" onclick="document.getElementById('mobileMenu').classList.add('open')" aria-label="Menu">
@@ -1534,8 +1617,8 @@
         <a href="#pricing" onclick="document.getElementById('mobileMenu').classList.remove('open')">Pricing</a>
         <a href="#faq" onclick="document.getElementById('mobileMenu').classList.remove('open')">FAQ</a>
         <a href="/login.html">Login</a>
-        <a href="/">Fran&ccedil;ais</a>
-        <a href="/de/">Deutsch</a>
+        <a href="/">🇫🇷 Fran&ccedil;ais</a>
+        <a href="/de/">🇩🇪 Deutsch</a>
     </div>
 
     <!-- Hero -->
