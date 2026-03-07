@@ -336,6 +336,7 @@
         .hero h1 {
             font-size: 4rem;
             font-weight: 900;
+            font-style: italic;
             line-height: 1.08;
             letter-spacing: -0.03em;
             color: var(--gray-900);
@@ -510,7 +511,9 @@
         }
 
         .section-label {
-            display: inline-block;
+            display: inline-flex;
+            align-items: center;
+            gap: 0.4rem;
             font-size: 0.8rem;
             font-weight: 700;
             text-transform: uppercase;
@@ -519,9 +522,24 @@
             margin-bottom: 0.75rem;
         }
 
+        .showcase .section-label::before {
+            content: '';
+            display: inline-block;
+            width: 18px;
+            height: 18px;
+            background: var(--blue);
+            border-radius: 50%;
+            background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 20 20' fill='white'%3E%3Cpath fill-rule='evenodd' d='M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z' clip-rule='evenodd'/%3E%3C/svg%3E");
+            background-size: 12px 12px;
+            background-repeat: no-repeat;
+            background-position: center;
+            flex-shrink: 0;
+        }
+
         .section-title {
             font-size: 2.8rem;
-            font-weight: 800;
+            font-weight: 900;
+            font-style: italic;
             letter-spacing: -0.02em;
             color: var(--gray-900);
             margin-bottom: 1rem;
@@ -597,7 +615,7 @@
 
         /* ===== SHOWCASE SECTION (alternating) ===== */
         .showcase {
-            padding: 5rem 2rem;
+            padding: 6rem 2rem;
         }
 
         .showcase:nth-child(even) {
@@ -622,19 +640,21 @@
         }
 
         .showcase-text h2 {
-            font-size: 2.2rem;
-            font-weight: 800;
+            font-size: 2.6rem;
+            font-weight: 900;
+            font-style: italic;
             letter-spacing: -0.02em;
             color: var(--gray-900);
             margin-bottom: 1rem;
-            line-height: 1.2;
+            line-height: 1.15;
         }
 
         .showcase-text p {
-            font-size: 1rem;
+            font-size: 1.05rem;
             color: var(--gray-500);
             line-height: 1.7;
-            margin-bottom: 1.5rem;
+            margin-bottom: 1.75rem;
+            max-width: 480px;
         }
 
         .showcase-list {
@@ -649,15 +669,20 @@
             align-items: flex-start;
             gap: 0.75rem;
             font-size: 0.95rem;
+            font-weight: 500;
             color: var(--gray-700);
         }
 
         .showcase-list li svg {
-            width: 20px;
-            height: 20px;
+            width: 18px;
+            height: 18px;
             flex-shrink: 0;
             margin-top: 2px;
-            color: var(--blue);
+            color: var(--white);
+            background: var(--blue);
+            border-radius: 50%;
+            padding: 3px;
+            box-sizing: content-box;
         }
 
         .showcase-image {
@@ -666,14 +691,14 @@
         }
 
         .showcase-image .phone-mockup {
-            width: 280px;
+            width: 300px;
             border-radius: 32px;
-            box-shadow: 0 20px 50px rgba(0, 0, 0, 0.1);
+            box-shadow: 0 25px 60px rgba(0, 0, 0, 0.12);
         }
 
         .showcase-image .img-placeholder {
-            width: 280px;
-            height: 560px;
+            width: 300px;
+            height: 600px;
             border-radius: 32px;
         }
 
@@ -892,7 +917,8 @@
 
         .final-cta h2 {
             font-size: 2.8rem;
-            font-weight: 800;
+            font-weight: 900;
+            font-style: italic;
             letter-spacing: -0.02em;
             margin-bottom: 1rem;
         }
@@ -1617,7 +1643,7 @@
             </div>
             <div class="showcase-image">
                 <!-- Placeholder: remplacer par image Nao Banana -->
-                <div class="img-placeholder" style="width:280px;height:560px;border-radius:32px;">Photo Coach IA</div>
+                <div class="img-placeholder" style="width:300px;height:600px;border-radius:32px;">Photo Coach IA</div>
             </div>
         </div>
     </section>
@@ -1646,7 +1672,7 @@
             </div>
             <div class="showcase-image">
                 <!-- Placeholder: remplacer par image Nao Banana -->
-                <div class="img-placeholder" style="width:280px;height:560px;border-radius:32px;">Photo Progression</div>
+                <div class="img-placeholder" style="width:300px;height:600px;border-radius:32px;">Photo Progression</div>
             </div>
         </div>
     </section>
@@ -1675,7 +1701,7 @@
             </div>
             <div class="showcase-image">
                 <!-- Placeholder: remplacer par image Nao Banana -->
-                <div class="img-placeholder" style="width:280px;height:560px;border-radius:32px;">Photo Communaut&eacute;</div>
+                <div class="img-placeholder" style="width:300px;height:600px;border-radius:32px;">Photo Communaut&eacute;</div>
             </div>
         </div>
     </section>
