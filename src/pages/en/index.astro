@@ -135,21 +135,21 @@ const jsonLd = {
             display: inline-flex;
             align-items: center;
             gap: 0.5rem;
-            background: var(--white);
-            color: var(--gray-700);
+            background: var(--bg-card);
+            color: var(--text);
             text-decoration: none;
             font-size: 1rem;
             font-weight: 600;
             padding: 0.875rem 2rem;
             border-radius: 12px;
-            border: 1px solid var(--gray-200);
+            border: 1px solid var(--border-light);
             transition: all 0.2s;
         }
 
         .btn-secondary:hover {
             border-color: var(--gray-400);
             transform: translateY(-2px);
-            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.06);
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
         }
 
         .store-icon {
@@ -327,9 +327,9 @@ const jsonLd = {
         .feature-card {
             padding: 2.25rem;
             border-radius: 20px;
-            border: none;
-            background: var(--white);
-            box-shadow: 0 2px 12px rgba(0, 0, 0, 0.04);
+            border: 1px solid var(--border);
+            background: var(--bg-card);
+            box-shadow: none;
             transition: box-shadow 0.3s, transform 0.3s;
             position: relative;
             overflow: hidden;
@@ -348,7 +348,7 @@ const jsonLd = {
         }
 
         .feature-card:hover {
-            box-shadow: 0 16px 40px rgba(0, 0, 0, 0.08);
+            box-shadow: 0 16px 40px rgba(0, 0, 0, 0.3);
             transform: translateY(-6px);
         }
 
@@ -501,8 +501,8 @@ const jsonLd = {
         }
 
         .pricing-card {
-            background: var(--white);
-            border: 1px solid var(--gray-200);
+            background: var(--bg-card);
+            border: 1px solid var(--border);
             border-radius: 20px;
             padding: 2.5rem;
             position: relative;
@@ -511,7 +511,7 @@ const jsonLd = {
 
         .pricing-card:hover {
             transform: translateY(-4px);
-            box-shadow: 0 12px 40px rgba(0, 0, 0, 0.06);
+            box-shadow: 0 12px 40px rgba(0, 0, 0, 0.3);
         }
 
         .pricing-card.featured {
@@ -614,9 +614,9 @@ const jsonLd = {
         }
 
         .btn-pricing.outline {
-            background: var(--white);
-            color: var(--gray-700);
-            border: 1px solid var(--gray-200);
+            background: var(--bg-elevated);
+            color: var(--text);
+            border: 1px solid var(--border-light);
         }
 
         .btn-pricing.outline:hover {
@@ -649,9 +649,9 @@ const jsonLd = {
         }
 
         .faq-show-all button {
-            background: var(--white);
-            border: 1px solid var(--gray-200);
-            color: var(--gray-700);
+            background: var(--bg-card);
+            border: 1px solid var(--border-light);
+            color: var(--text);
             font-family: inherit;
             font-size: 0.95rem;
             font-weight: 600;
@@ -699,7 +699,7 @@ const jsonLd = {
         }
 
         .faq-item {
-            border-bottom: 1px solid var(--gray-200);
+            border-bottom: 1px solid var(--border);
         }
 
         .faq-question {
@@ -882,8 +882,8 @@ const jsonLd = {
         }
 
         .testimonial-card {
-            background: var(--white);
-            border: 1px solid var(--gray-200);
+            background: var(--bg-card);
+            border: 1px solid var(--border);
             border-radius: 16px;
             padding: 2rem;
             transition: transform 0.2s, box-shadow 0.2s;
@@ -891,7 +891,7 @@ const jsonLd = {
 
         .testimonial-card:hover {
             transform: translateY(-4px);
-            box-shadow: 0 8px 30px rgba(0, 0, 0, 0.06);
+            box-shadow: 0 8px 30px rgba(0, 0, 0, 0.3);
         }
 
         .testimonial-stars {

@@ -11,18 +11,18 @@ import BaseLayout from '../../../layouts/BaseLayout.astro';
 >
   <Fragment slot="head">
     <style>
-        .page-header { padding: 9rem 2rem 2rem; text-align: center; background: linear-gradient(180deg, var(--gray-50), var(--white)); }
+        .page-header { padding: 9rem 2rem 2rem; text-align: center; background: linear-gradient(180deg, var(--bg-card), var(--bg)); }
         .section-label { display: inline-block; font-size: 0.8rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.08em; color: var(--blue); margin-bottom: 0.75rem; }
         .page-header h1 { font-size: 2.8rem; font-weight: 800; letter-spacing: -0.02em; margin-bottom: 1rem; }
         .page-header p { color: var(--gray-500); font-size: 1.1rem; max-width: 550px; margin: 0 auto; }
 
         .filter-bar { max-width: 1100px; margin: 2rem auto 0; display: flex; justify-content: center; gap: 0.5rem; flex-wrap: wrap; padding: 0 2rem; }
-        .filter-btn { padding: 0.5rem 1.1rem; border-radius: 50px; border: 1px solid var(--gray-200); background: var(--white); color: var(--gray-500); font-size: 0.85rem; font-weight: 600; font-family: inherit; cursor: pointer; transition: all 0.2s; }
+        .filter-btn { padding: 0.5rem 1.1rem; border-radius: 50px; border: 1px solid var(--border); background: var(--bg-card); color: var(--gray-500); font-size: 0.85rem; font-weight: 600; font-family: inherit; cursor: pointer; transition: all 0.2s; }
         .filter-btn:hover, .filter-btn.active { background: var(--blue); color: var(--white); border-color: var(--blue); }
 
         .exercises-grid { max-width: 1100px; margin: 0 auto; padding: 2.5rem 2rem 4rem; display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.25rem; }
 
-        .exercise-card { background: var(--white); border: 1px solid var(--gray-200); border-radius: 14px; padding: 1.25rem; transition: border-color 0.2s, transform 0.2s, box-shadow 0.2s; }
+        .exercise-card { background: var(--bg-card); border: 1px solid var(--border); border-radius: 14px; padding: 1.25rem; transition: border-color 0.2s, transform 0.2s, box-shadow 0.2s; }
         .exercise-card:hover { border-color: rgba(37,99,235,0.25); transform: translateY(-3px); box-shadow: 0 6px 20px rgba(0,0,0,0.05); }
         .exercise-card .card-image { width: 100%; height: 140px; background: linear-gradient(135deg, var(--gray-100), var(--gray-200)); border-radius: 10px; display: flex; align-items: center; justify-content: center; color: var(--gray-400); font-size: 0.75rem; font-weight: 500; margin-bottom: 1rem; }
         .exercise-card h3 { font-size: 1rem; font-weight: 700; margin-bottom: 0.4rem; }

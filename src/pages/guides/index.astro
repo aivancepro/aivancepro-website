@@ -18,7 +18,7 @@ const guides = (await getCollection('guides', ({ data }) => data.lang === 'fr'))
       .page-header {
         padding: 9rem 2rem 3rem;
         text-align: center;
-        background: linear-gradient(180deg, var(--gray-50), var(--white));
+        background: linear-gradient(180deg, var(--bg-card), var(--bg));
       }
       .section-label {
         display: inline-block;
@@ -50,7 +50,7 @@ const guides = (await getCollection('guides', ({ data }) => data.lang === 'fr'))
         gap: 1.5rem;
       }
       .guide-card {
-        background: var(--white);
+        background: var(--bg-card);
         border: 1px solid var(--gray-200);
         border-radius: 16px;
         overflow: hidden;

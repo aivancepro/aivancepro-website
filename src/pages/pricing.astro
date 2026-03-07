@@ -14,7 +14,7 @@ import BaseLayout from '../layouts/BaseLayout.astro';
       .pricing-hero {
           padding: 8rem 2rem 4rem;
           text-align: center;
-          background: linear-gradient(180deg, var(--gray-50) 0%, var(--white) 100%);
+          background: linear-gradient(180deg, var(--bg-card) 0%, var(--bg) 100%);
       }
       .pricing-hero h1 {
           font-size: 3rem;
@@ -45,7 +45,7 @@ import BaseLayout from '../layouts/BaseLayout.astro';
           align-items: start;
       }
       .pricing-card {
-          background: var(--white);
+          background: var(--bg-card);
           border: 1px solid var(--gray-200);
           border-radius: 20px;
           padding: 2.5rem;
@@ -85,11 +85,11 @@ import BaseLayout from '../layouts/BaseLayout.astro';
       .btn-pricing { display: block; width: 100%; text-align: center; padding: 0.875rem; border-radius: 12px; font-size: 0.95rem; font-weight: 600; text-decoration: none; transition: all 0.2s; }
       .btn-pricing.primary { background: linear-gradient(135deg, var(--blue), var(--purple)); color: var(--white); box-shadow: 0 4px 15px rgba(37, 99, 235, 0.25); }
       .btn-pricing.primary:hover { opacity: 0.92; transform: translateY(-2px); }
-      .btn-pricing.outline { background: var(--white); color: var(--gray-700); border: 1px solid var(--gray-200); }
+      .btn-pricing.outline { background: var(--bg-elevated); color: var(--text); border: 1px solid var(--border-light); }
       .btn-pricing.outline:hover { border-color: var(--blue); color: var(--blue); }
-      .comparison-section { padding: 5rem 2rem; background: var(--gray-50); }
+      .comparison-section { padding: 5rem 2rem; background: var(--bg-card); }
       .comparison-section h2 { text-align: center; font-size: 2rem; font-weight: 800; margin-bottom: 3rem; color: var(--gray-900); }
-      .comparison-table { max-width: 900px; margin: 0 auto; border-collapse: collapse; width: 100%; background: var(--white); border-radius: 16px; overflow: hidden; box-shadow: 0 4px 20px rgba(0, 0, 0, 0.04); }
+      .comparison-table { max-width: 900px; margin: 0 auto; border-collapse: collapse; width: 100%; background: var(--bg-card); border-radius: 16px; overflow: hidden; box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2); }
       .comparison-table th, .comparison-table td { padding: 1rem 1.25rem; text-align: center; border-bottom: 1px solid var(--gray-100); font-size: 0.9rem; }
       .comparison-table th { background: var(--gray-900); color: var(--white); font-weight: 700; font-size: 0.85rem; text-transform: uppercase; letter-spacing: 0.05em; }
       .comparison-table th:first-child { text-align: left; }
