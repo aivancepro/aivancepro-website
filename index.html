@@ -871,8 +871,36 @@
             padding: 7rem 2rem;
         }
 
+        .faq-category {
+            max-width: 800px;
+            margin: 0 auto 4rem;
+        }
+
+        .faq-category:last-child {
+            margin-bottom: 0;
+        }
+
+        .faq-category-title {
+            font-size: 1.6rem;
+            font-weight: 800;
+            font-style: italic;
+            text-transform: uppercase;
+            letter-spacing: 0.02em;
+            color: var(--gray-900);
+            text-align: center;
+            margin-bottom: 2rem;
+        }
+
+        .faq-subcategory-title {
+            font-size: 1.1rem;
+            font-weight: 700;
+            color: var(--blue);
+            text-align: center;
+            margin: 2.5rem 0 1.25rem;
+        }
+
         .faq-list {
-            max-width: 700px;
+            max-width: 800px;
             margin: 0 auto;
             display: flex;
             flex-direction: column;
@@ -888,32 +916,59 @@
             background: none;
             border: none;
             text-align: left;
-            padding: 1.5rem 0;
-            font-size: 1.05rem;
-            font-weight: 600;
-            color: var(--gray-900);
+            padding: 1.25rem 0;
+            font-size: 1rem;
+            font-weight: 500;
+            color: var(--gray-500);
             cursor: pointer;
             display: flex;
             justify-content: space-between;
             align-items: center;
             font-family: inherit;
             transition: color 0.2s;
+            gap: 1rem;
         }
 
         .faq-question:hover {
-            color: var(--blue);
+            color: var(--gray-900);
         }
 
-        .faq-question svg {
-            width: 20px;
-            height: 20px;
-            color: var(--gray-400);
-            transition: transform 0.3s;
+        .faq-question .faq-icon {
+            width: 24px;
+            height: 24px;
             flex-shrink: 0;
+            position: relative;
+            display: flex;
+            align-items: center;
+            justify-content: center;
         }
 
-        .faq-item.open .faq-question svg {
-            transform: rotate(180deg);
+        .faq-question .faq-icon::before,
+        .faq-question .faq-icon::after {
+            content: '';
+            position: absolute;
+            background: var(--gray-400);
+            transition: transform 0.3s, opacity 0.3s;
+        }
+
+        .faq-question .faq-icon::before {
+            width: 16px;
+            height: 2px;
+        }
+
+        .faq-question .faq-icon::after {
+            width: 2px;
+            height: 16px;
+        }
+
+        .faq-item.open .faq-question .faq-icon::after {
+            transform: rotate(90deg);
+            opacity: 0;
+        }
+
+        .faq-item.open .faq-question {
+            color: var(--gray-900);
+            font-weight: 600;
         }
 
         .faq-answer {
@@ -1885,182 +1940,420 @@
     <!-- FAQ -->
     <section class="faq" id="faq">
         <div class="section-inner">
-            <div class="section-header">
-                <div class="section-label">FAQ</div>
-                <h2 class="section-title">Questions fr&eacute;quentes</h2>
-            </div>
 
-            <div class="faq-list">
-                <div class="faq-item">
-                    <button class="faq-question" onclick="this.parentElement.classList.toggle('open')">
-                        AIVancePro est-il gratuit ?
-                        <svg viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M5.23 7.21a.75.75 0 011.06.02L10 11.168l3.71-3.938a.75.75 0 111.08 1.04l-4.25 4.5a.75.75 0 01-1.08 0l-4.25-4.5a.75.75 0 01.02-1.06z" clip-rule="evenodd"/></svg>
-                    </button>
-                    <div class="faq-answer">
-                        <div class="faq-answer-inner">Oui, AIVancePro propose un plan gratuit qui inclut le suivi de s&eacute;ances, l'acc&egrave;s &agrave; +240 exercices et les statistiques de base. Le plan Pro &agrave; 4,99&euro;/mois ajoute le coach IA illimit&eacute; et les analyses avanc&eacute;es. Le plan Elite &agrave; 7,99&euro;/mois d&eacute;bloque en plus la communaut&eacute;, les d&eacute;fis et la messagerie.</div>
+            <!-- Cat&eacute;gorie 1: G&eacute;n&eacute;ral -->
+            <div class="faq-category">
+                <h2 class="faq-category-title">Questions g&eacute;n&eacute;rales sur AIVancePro</h2>
+                <div class="faq-list">
+                    <div class="faq-item">
+                        <button class="faq-question" onclick="this.parentElement.classList.toggle('open')">
+                            Qu'est-ce qu'AIVancePro ?
+                            <span class="faq-icon"></span>
+                        </button>
+                        <div class="faq-answer"><div class="faq-answer-inner">AIVancePro est une application de coaching fitness propuls&eacute;e par l'intelligence artificielle. Elle g&eacute;n&egrave;re des programmes d'entra&icirc;nement personnalis&eacute;s, suit votre progression et vous accompagne avec un coach IA conversationnel disponible 24h/24.</div></div>
                     </div>
-                </div>
-
-                <div class="faq-item">
-                    <button class="faq-question" onclick="this.parentElement.classList.toggle('open')">
-                        Comment fonctionne le coach IA ?
-                        <svg viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M5.23 7.21a.75.75 0 011.06.02L10 11.168l3.71-3.938a.75.75 0 111.08 1.04l-4.25 4.5a.75.75 0 01-1.08 0l-4.25-4.5a.75.75 0 01.02-1.06z" clip-rule="evenodd"/></svg>
-                    </button>
-                    <div class="faq-answer">
-                        <div class="faq-answer-inner">Le coach IA utilise l'intelligence artificielle pour analyser votre profil, votre historique d'entra&icirc;nement et vos objectifs. Vous pouvez lui parler naturellement : &laquo; Cr&eacute;e-moi une s&eacute;ance pecs/&eacute;paules &raquo;, &laquo; Comment am&eacute;liorer mon d&eacute;velopp&eacute; couch&eacute; ? &raquo;. Il g&eacute;n&egrave;re des programmes sur mesure et s'adapte &agrave; votre progression.</div>
+                    <div class="faq-item">
+                        <button class="faq-question" onclick="this.parentElement.classList.toggle('open')">
+                            &Agrave; qui s'adresse AIVancePro ?
+                            <span class="faq-icon"></span>
+                        </button>
+                        <div class="faq-answer"><div class="faq-answer-inner">AIVancePro s'adresse &agrave; tous : d&eacute;butants complets, sportifs interm&eacute;diaires et pratiquants avanc&eacute;s. L'IA adapte automatiquement les exercices, les charges et le volume &agrave; votre niveau et vos objectifs.</div></div>
                     </div>
-                </div>
-
-                <div class="faq-item">
-                    <button class="faq-question" onclick="this.parentElement.classList.toggle('open')">
-                        Sur quelles plateformes AIVancePro est-il disponible ?
-                        <svg viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M5.23 7.21a.75.75 0 011.06.02L10 11.168l3.71-3.938a.75.75 0 111.08 1.04l-4.25 4.5a.75.75 0 01-1.08 0l-4.25-4.5a.75.75 0 01.02-1.06z" clip-rule="evenodd"/></svg>
-                    </button>
-                    <div class="faq-answer">
-                        <div class="faq-answer-inner">AIVancePro est disponible sur iOS (App Store) et Android (Google Play). T&eacute;l&eacute;chargez l'application gratuitement sur votre appareil.</div>
+                    <div class="faq-item">
+                        <button class="faq-question" onclick="this.parentElement.classList.toggle('open')">
+                            AIVancePro convient-il aux d&eacute;butants ?
+                            <span class="faq-icon"></span>
+                        </button>
+                        <div class="faq-answer"><div class="faq-answer-inner">Oui, l'application est id&eacute;ale pour les d&eacute;butants. Le coach IA explique chaque exercice, adapte la difficult&eacute; et un guide d'int&eacute;gration vous accompagne dans vos premiers pas.</div></div>
                     </div>
-                </div>
-
-                <div class="faq-item">
-                    <button class="faq-question" onclick="this.parentElement.classList.toggle('open')">
-                        Puis-je annuler mon abonnement &agrave; tout moment ?
-                        <svg viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M5.23 7.21a.75.75 0 011.06.02L10 11.168l3.71-3.938a.75.75 0 111.08 1.04l-4.25 4.5a.75.75 0 01-1.08 0l-4.25-4.5a.75.75 0 01.02-1.06z" clip-rule="evenodd"/></svg>
-                    </button>
-                    <div class="faq-answer">
-                        <div class="faq-answer-inner">Absolument. Vous pouvez annuler votre abonnement &agrave; tout moment depuis les param&egrave;tres de l'app ou de votre compte App Store/Google Play. Il n'y a aucun engagement.</div>
+                    <div class="faq-item">
+                        <button class="faq-question" onclick="this.parentElement.classList.toggle('open')">
+                            Sur quelles plateformes AIVancePro est-il disponible ?
+                            <span class="faq-icon"></span>
+                        </button>
+                        <div class="faq-answer"><div class="faq-answer-inner">AIVancePro est disponible sur iOS (App Store) et Android (Google Play). T&eacute;l&eacute;chargez l'application gratuitement sur votre appareil.</div></div>
                     </div>
-                </div>
-
-                <div class="faq-item">
-                    <button class="faq-question" onclick="this.parentElement.classList.toggle('open')">
-                        AIVancePro convient-il aux d&eacute;butants ?
-                        <svg viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M5.23 7.21a.75.75 0 011.06.02L10 11.168l3.71-3.938a.75.75 0 111.08 1.04l-4.25 4.5a.75.75 0 01-1.08 0l-4.25-4.5a.75.75 0 01.02-1.06z" clip-rule="evenodd"/></svg>
-                    </button>
-                    <div class="faq-answer">
-                        <div class="faq-answer-inner">Oui, l'application est con&ccedil;ue pour tous les niveaux. Le coach IA adapte automatiquement les exercices, les charges et le volume &agrave; votre exp&eacute;rience. Un guide d'int&eacute;gration aide les d&eacute;butants &agrave; d&eacute;marrer.</div>
+                    <div class="faq-item">
+                        <button class="faq-question" onclick="this.parentElement.classList.toggle('open')">
+                            En quoi AIVancePro est diff&eacute;rent des autres apps de musculation ?
+                            <span class="faq-icon"></span>
+                        </button>
+                        <div class="faq-answer"><div class="faq-answer-inner">AIVancePro combine un v&eacute;ritable coach IA conversationnel, un suivi de progression d&eacute;taill&eacute; et une communaut&eacute; active. Contrairement aux apps avec des programmes g&eacute;n&eacute;riques, notre IA analyse vos performances, s'adapte &agrave; votre &eacute;quipement et g&eacute;n&egrave;re des s&eacute;ances enti&egrave;rement personnalis&eacute;es.</div></div>
                     </div>
-                </div>
-
-                <div class="faq-item">
-                    <button class="faq-question" onclick="this.parentElement.classList.toggle('open')">
-                        En quoi AIVancePro est diff&eacute;rent des autres apps de musculation ?
-                        <svg viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M5.23 7.21a.75.75 0 011.06.02L10 11.168l3.71-3.938a.75.75 0 111.08 1.04l-4.25 4.5a.75.75 0 01-1.08 0l-4.25-4.5a.75.75 0 01.02-1.06z" clip-rule="evenodd"/></svg>
-                    </button>
-                    <div class="faq-answer">
-                        <div class="faq-answer-inner">AIVancePro combine un v&eacute;ritable coach IA conversationnel, un suivi de progression d&eacute;taill&eacute; et une communaut&eacute; active. Contrairement aux apps qui proposent des programmes g&eacute;n&eacute;riques, notre IA analyse vos performances, s'adapte &agrave; votre &eacute;quipement et g&eacute;n&egrave;re des s&eacute;ances enti&egrave;rement personnalis&eacute;es.</div>
+                    <div class="faq-item">
+                        <button class="faq-question" onclick="this.parentElement.classList.toggle('open')">
+                            Puis-je utiliser AIVancePro &agrave; la maison sans mat&eacute;riel ?
+                            <span class="faq-icon"></span>
+                        </button>
+                        <div class="faq-answer"><div class="faq-answer-inner">Oui, AIVancePro propose de nombreux exercices au poids du corps. Indiquez simplement votre &eacute;quipement (ou aucun) et le coach IA g&eacute;n&eacute;rera des s&eacute;ances adapt&eacute;es &agrave; votre situation.</div></div>
                     </div>
-                </div>
-
-                <div class="faq-item">
-                    <button class="faq-question" onclick="this.parentElement.classList.toggle('open')">
-                        Comment les s&eacute;ances sont-elles personnalis&eacute;es ?
-                        <svg viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M5.23 7.21a.75.75 0 011.06.02L10 11.168l3.71-3.938a.75.75 0 111.08 1.04l-4.25 4.5a.75.75 0 01-1.08 0l-4.25-4.5a.75.75 0 01.02-1.06z" clip-rule="evenodd"/></svg>
-                    </button>
-                    <div class="faq-answer">
-                        <div class="faq-answer-inner">L'IA prend en compte votre niveau, vos objectifs (prise de muscle, perte de poids, force...), votre &eacute;quipement disponible, vos pr&eacute;f&eacute;rences d'exercices et votre historique d'entra&icirc;nement. Chaque s&eacute;ance est g&eacute;n&eacute;r&eacute;e sp&eacute;cifiquement pour vous.</div>
+                    <div class="faq-item">
+                        <button class="faq-question" onclick="this.parentElement.classList.toggle('open')">
+                            AIVancePro propose-t-il uniquement de la musculation ?
+                            <span class="faq-icon"></span>
+                        </button>
+                        <div class="faq-answer"><div class="faq-answer-inner">Non, AIVancePro couvre aussi le cardio, le HIIT, le circuit training et les exercices au poids du corps. Vous pouvez cr&eacute;er des s&eacute;ances cardio d&eacute;di&eacute;es ou mixer musculation et cardio selon vos objectifs.</div></div>
                     </div>
-                </div>
-
-                <div class="faq-item">
-                    <button class="faq-question" onclick="this.parentElement.classList.toggle('open')">
-                        Puis-je m'entra&icirc;ner &agrave; la maison sans mat&eacute;riel ?
-                        <svg viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M5.23 7.21a.75.75 0 011.06.02L10 11.168l3.71-3.938a.75.75 0 111.08 1.04l-4.25 4.5a.75.75 0 01-1.08 0l-4.25-4.5a.75.75 0 01.02-1.06z" clip-rule="evenodd"/></svg>
-                    </button>
-                    <div class="faq-answer">
-                        <div class="faq-answer-inner">Oui, AIVancePro propose de nombreux exercices au poids du corps. Indiquez simplement votre &eacute;quipement disponible (ou aucun) et le coach IA g&eacute;n&eacute;rera des s&eacute;ances adapt&eacute;es &agrave; votre situation.</div>
-                    </div>
-                </div>
-
-                <div class="faq-item">
-                    <button class="faq-question" onclick="this.parentElement.classList.toggle('open')">
-                        Puis-je suivre mes records personnels et ma progression ?
-                        <svg viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M5.23 7.21a.75.75 0 011.06.02L10 11.168l3.71-3.938a.75.75 0 111.08 1.04l-4.25 4.5a.75.75 0 01-1.08 0l-4.25-4.5a.75.75 0 01.02-1.06z" clip-rule="evenodd"/></svg>
-                    </button>
-                    <div class="faq-answer">
-                        <div class="faq-answer-inner">Absolument. AIVancePro enregistre automatiquement vos records personnels, g&eacute;n&egrave;re des graphiques de volume, de force et de distribution musculaire, et propose un calendrier d'activit&eacute; pour visualiser votre r&eacute;gularit&eacute;.</div>
-                    </div>
-                </div>
-
-                <div class="faq-item">
-                    <button class="faq-question" onclick="this.parentElement.classList.toggle('open')">
-                        Combien d'exercices sont disponibles ?
-                        <svg viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M5.23 7.21a.75.75 0 011.06.02L10 11.168l3.71-3.938a.75.75 0 111.08 1.04l-4.25 4.5a.75.75 0 01-1.08 0l-4.25-4.5a.75.75 0 01.02-1.06z" clip-rule="evenodd"/></svg>
-                    </button>
-                    <div class="faq-answer">
-                        <div class="faq-answer-inner">La base de donn&eacute;es comprend plus de 240 exercices couvrant tous les groupes musculaires, avec des vid&eacute;os et des instructions d&eacute;taill&eacute;es pour chaque mouvement. Elle inclut des exercices pour tous les types d'&eacute;quipement.</div>
-                    </div>
-                </div>
-
-                <div class="faq-item">
-                    <button class="faq-question" onclick="this.parentElement.classList.toggle('open')">
-                        Le coach IA peut-il cr&eacute;er un plan d'entra&icirc;nement complet ?
-                        <svg viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M5.23 7.21a.75.75 0 011.06.02L10 11.168l3.71-3.938a.75.75 0 111.08 1.04l-4.25 4.5a.75.75 0 01-1.08 0l-4.25-4.5a.75.75 0 01.02-1.06z" clip-rule="evenodd"/></svg>
-                    </button>
-                    <div class="faq-answer">
-                        <div class="faq-answer-inner">Oui, le coach IA peut g&eacute;n&eacute;rer des plans d'entra&icirc;nement complets sur plusieurs semaines, avec une p&eacute;riodisation adapt&eacute;e. Demandez-lui simplement : &laquo; Cr&eacute;e-moi un programme sur 4 semaines &raquo; et il s'occupera du reste.</div>
-                    </div>
-                </div>
-
-                <div class="faq-item">
-                    <button class="faq-question" onclick="this.parentElement.classList.toggle('open')">
-                        Y a-t-il un timer de repos int&eacute;gr&eacute; ?
-                        <svg viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M5.23 7.21a.75.75 0 011.06.02L10 11.168l3.71-3.938a.75.75 0 111.08 1.04l-4.25 4.5a.75.75 0 01-1.08 0l-4.25-4.5a.75.75 0 01.02-1.06z" clip-rule="evenodd"/></svg>
-                    </button>
-                    <div class="faq-answer">
-                        <div class="faq-answer-inner">Oui, un chronom&egrave;tre flottant est int&eacute;gr&eacute; avec des temps de repos automatiques adapt&eacute;s &agrave; chaque exercice. Il reste visible pendant toute votre s&eacute;ance pour un suivi optimal.</div>
-                    </div>
-                </div>
-
-                <div class="faq-item">
-                    <button class="faq-question" onclick="this.parentElement.classList.toggle('open')">
-                        Puis-je enregistrer des templates de s&eacute;ances ?
-                        <svg viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M5.23 7.21a.75.75 0 011.06.02L10 11.168l3.71-3.938a.75.75 0 111.08 1.04l-4.25 4.5a.75.75 0 01-1.08 0l-4.25-4.5a.75.75 0 01.02-1.06z" clip-rule="evenodd"/></svg>
-                    </button>
-                    <div class="faq-answer">
-                        <div class="faq-answer-inner">Oui, vous pouvez sauvegarder n'importe quelle s&eacute;ance comme template pour la r&eacute;utiliser rapidement. C'est id&eacute;al pour vos routines habituelles que vous souhaitez r&eacute;p&eacute;ter r&eacute;guli&egrave;rement.</div>
-                    </div>
-                </div>
-
-                <div class="faq-item">
-                    <button class="faq-question" onclick="this.parentElement.classList.toggle('open')">
-                        Comment fonctionne la communaut&eacute; ?
-                        <svg viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M5.23 7.21a.75.75 0 011.06.02L10 11.168l3.71-3.938a.75.75 0 111.08 1.04l-4.25 4.5a.75.75 0 01-1.08 0l-4.25-4.5a.75.75 0 01.02-1.06z" clip-rule="evenodd"/></svg>
-                    </button>
-                    <div class="faq-answer">
-                        <div class="faq-answer-inner">Avec le plan Elite, vous pouvez cr&eacute;er ou rejoindre des groupes, lancer des d&eacute;fis entre amis, consulter les leaderboards et &eacute;changer via la messagerie int&eacute;gr&eacute;e. C'est un excellent moyen de rester motiv&eacute;.</div>
-                    </div>
-                </div>
-
-                <div class="faq-item">
-                    <button class="faq-question" onclick="this.parentElement.classList.toggle('open')">
-                        Mes donn&eacute;es sont-elles s&eacute;curis&eacute;es ?
-                        <svg viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M5.23 7.21a.75.75 0 011.06.02L10 11.168l3.71-3.938a.75.75 0 111.08 1.04l-4.25 4.5a.75.75 0 01-1.08 0l-4.25-4.5a.75.75 0 01.02-1.06z" clip-rule="evenodd"/></svg>
-                    </button>
-                    <div class="faq-answer">
-                        <div class="faq-answer-inner">Vos donn&eacute;es sont h&eacute;berg&eacute;es de mani&egrave;re s&eacute;curis&eacute;e et chiffr&eacute;es. Nous ne vendons jamais vos donn&eacute;es personnelles. Consultez notre <a href="/privacy.html" style="color:var(--blue);">politique de confidentialit&eacute;</a> pour en savoir plus.</div>
-                    </div>
-                </div>
-
-                <div class="faq-item">
-                    <button class="faq-question" onclick="this.parentElement.classList.toggle('open')">
-                        Puis-je supprimer mon compte ?
-                        <svg viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M5.23 7.21a.75.75 0 011.06.02L10 11.168l3.71-3.938a.75.75 0 111.08 1.04l-4.25 4.5a.75.75 0 01-1.08 0l-4.25-4.5a.75.75 0 01.02-1.06z" clip-rule="evenodd"/></svg>
-                    </button>
-                    <div class="faq-answer">
-                        <div class="faq-answer-inner">Oui, vous pouvez supprimer votre compte &agrave; tout moment depuis les param&egrave;tres de l'application. Toutes vos donn&eacute;es personnelles seront d&eacute;finitivement supprim&eacute;es.</div>
-                    </div>
-                </div>
-
-                <div class="faq-item">
-                    <button class="faq-question" onclick="this.parentElement.classList.toggle('open')">
-                        Quelle est la diff&eacute;rence entre le plan Pro et Elite ?
-                        <svg viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M5.23 7.21a.75.75 0 011.06.02L10 11.168l3.71-3.938a.75.75 0 111.08 1.04l-4.25 4.5a.75.75 0 01-1.08 0l-4.25-4.5a.75.75 0 01.02-1.06z" clip-rule="evenodd"/></svg>
-                    </button>
-                    <div class="faq-answer">
-                        <div class="faq-answer-inner">Le plan Pro (4,99&euro;/mois) inclut le coach IA illimit&eacute;, les analyses avanc&eacute;es, la p&eacute;riodisation et les templates. Le plan Elite (7,99&euro;/mois) ajoute toutes les fonctionnalit&eacute;s communautaires : groupes, d&eacute;fis, messagerie, leaderboards et badges. <a href="/pricing.html" style="color:var(--blue);">Voir la comparaison compl&egrave;te</a>.</div>
+                    <div class="faq-item">
+                        <button class="faq-question" onclick="this.parentElement.classList.toggle('open')">
+                            Puis-je utiliser AIVancePro en voyage ?
+                            <span class="faq-icon"></span>
+                        </button>
+                        <div class="faq-answer"><div class="faq-answer-inner">Oui, il vous suffit de modifier votre &eacute;quipement disponible et le coach IA s'adapte imm&eacute;diatement. En d&eacute;placement avec peu de mat&eacute;riel ? Il g&eacute;n&eacute;rera une s&eacute;ance adapt&eacute;e.</div></div>
                     </div>
                 </div>
             </div>
+
+            <!-- Cat&eacute;gorie 2: Fonctionnalit&eacute;s & exp&eacute;rience -->
+            <div class="faq-category">
+                <h2 class="faq-category-title">Fonctionnalit&eacute;s &amp; exp&eacute;rience utilisateur</h2>
+                <div class="faq-list">
+                    <div class="faq-item">
+                        <button class="faq-question" onclick="this.parentElement.classList.toggle('open')">
+                            Comment fonctionne le coach IA ?
+                            <span class="faq-icon"></span>
+                        </button>
+                        <div class="faq-answer"><div class="faq-answer-inner">Le coach IA utilise l'intelligence artificielle pour analyser votre profil, votre historique et vos objectifs. Parlez-lui naturellement : &laquo; Cr&eacute;e-moi une s&eacute;ance pecs/&eacute;paules &raquo;, &laquo; Comment am&eacute;liorer mon d&eacute;velopp&eacute; couch&eacute; ? &raquo;. Il g&eacute;n&egrave;re des programmes sur mesure.</div></div>
+                    </div>
+                    <div class="faq-item">
+                        <button class="faq-question" onclick="this.parentElement.classList.toggle('open')">
+                            Comment les s&eacute;ances sont-elles personnalis&eacute;es ?
+                            <span class="faq-icon"></span>
+                        </button>
+                        <div class="faq-answer"><div class="faq-answer-inner">L'IA prend en compte votre niveau, vos objectifs (prise de muscle, perte de poids, force...), votre &eacute;quipement disponible, vos pr&eacute;f&eacute;rences d'exercices et votre historique. Chaque s&eacute;ance est g&eacute;n&eacute;r&eacute;e sp&eacute;cifiquement pour vous.</div></div>
+                    </div>
+                    <div class="faq-item">
+                        <button class="faq-question" onclick="this.parentElement.classList.toggle('open')">
+                            Le coach IA peut-il cr&eacute;er un plan d'entra&icirc;nement complet ?
+                            <span class="faq-icon"></span>
+                        </button>
+                        <div class="faq-answer"><div class="faq-answer-inner">Oui, le coach IA g&eacute;n&egrave;re des plans complets sur plusieurs semaines avec p&eacute;riodisation. Demandez-lui : &laquo; Cr&eacute;e-moi un programme sur 4 semaines &raquo; et il s'occupe du reste.</div></div>
+                    </div>
+                    <div class="faq-item">
+                        <button class="faq-question" onclick="this.parentElement.classList.toggle('open')">
+                            Puis-je suivre mes records personnels et ma progression ?
+                            <span class="faq-icon"></span>
+                        </button>
+                        <div class="faq-answer"><div class="faq-answer-inner">Absolument. AIVancePro enregistre automatiquement vos records personnels, g&eacute;n&egrave;re des graphiques de volume, de force et de distribution musculaire, et propose un calendrier d'activit&eacute; pour visualiser votre r&eacute;gularit&eacute;.</div></div>
+                    </div>
+                    <div class="faq-item">
+                        <button class="faq-question" onclick="this.parentElement.classList.toggle('open')">
+                            Combien d'exercices sont disponibles ?
+                            <span class="faq-icon"></span>
+                        </button>
+                        <div class="faq-answer"><div class="faq-answer-inner">Plus de 240 exercices couvrant tous les groupes musculaires, avec vid&eacute;os et instructions d&eacute;taill&eacute;es. La base inclut des exercices pour halt&egrave;res, barres, machines, c&acirc;bles, &eacute;lastiques et poids du corps.</div></div>
+                    </div>
+                    <div class="faq-item">
+                        <button class="faq-question" onclick="this.parentElement.classList.toggle('open')">
+                            Y a-t-il un timer de repos int&eacute;gr&eacute; ?
+                            <span class="faq-icon"></span>
+                        </button>
+                        <div class="faq-answer"><div class="faq-answer-inner">Oui, un chronom&egrave;tre flottant est int&eacute;gr&eacute; avec des temps de repos automatiques adapt&eacute;s &agrave; chaque exercice. Il reste visible pendant toute votre s&eacute;ance.</div></div>
+                    </div>
+                    <div class="faq-item">
+                        <button class="faq-question" onclick="this.parentElement.classList.toggle('open')">
+                            Puis-je enregistrer des templates de s&eacute;ances ?
+                            <span class="faq-icon"></span>
+                        </button>
+                        <div class="faq-answer"><div class="faq-answer-inner">Oui, sauvegardez n'importe quelle s&eacute;ance comme template pour la r&eacute;utiliser rapidement. Id&eacute;al pour vos routines habituelles.</div></div>
+                    </div>
+                    <div class="faq-item">
+                        <button class="faq-question" onclick="this.parentElement.classList.toggle('open')">
+                            Le coach IA aide-t-il &agrave; corriger la technique ?
+                            <span class="faq-icon"></span>
+                        </button>
+                        <div class="faq-answer"><div class="faq-answer-inner">Oui, demandez-lui des conseils sur la forme d'un exercice et il vous expliquera la bonne technique, les erreurs courantes &agrave; &eacute;viter et les variantes adapt&eacute;es &agrave; votre niveau.</div></div>
+                    </div>
+                    <div class="faq-item">
+                        <button class="faq-question" onclick="this.parentElement.classList.toggle('open')">
+                            Comment fonctionne la communaut&eacute; ?
+                            <span class="faq-icon"></span>
+                        </button>
+                        <div class="faq-answer"><div class="faq-answer-inner">Avec le plan Elite, cr&eacute;ez ou rejoignez des groupes, lancez des d&eacute;fis entre amis, consultez les leaderboards et &eacute;changez via la messagerie int&eacute;gr&eacute;e. Un excellent moyen de rester motiv&eacute;.</div></div>
+                    </div>
+                    <div class="faq-item">
+                        <button class="faq-question" onclick="this.parentElement.classList.toggle('open')">
+                            L'app propose-t-elle des vid&eacute;os d'exercices ?
+                            <span class="faq-icon"></span>
+                        </button>
+                        <div class="faq-answer"><div class="faq-answer-inner">Oui, chaque exercice dispose de vid&eacute;os d&eacute;monstratives et d'instructions d&eacute;taill&eacute;es pour vous assurer une ex&eacute;cution correcte et s&eacute;curitaire.</div></div>
+                    </div>
+                    <div class="faq-item">
+                        <button class="faq-question" onclick="this.parentElement.classList.toggle('open')">
+                            Puis-je modifier une s&eacute;ance g&eacute;n&eacute;r&eacute;e par l'IA ?
+                            <span class="faq-icon"></span>
+                        </button>
+                        <div class="faq-answer"><div class="faq-answer-inner">Bien s&ucirc;r. Vous pouvez ajouter, supprimer ou remplacer des exercices, ajuster les s&eacute;ries, les r&eacute;p&eacute;titions et les charges &agrave; tout moment pendant ou avant la s&eacute;ance.</div></div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Cat&eacute;gorie 3: Fondamentaux musculation -->
+            <div class="faq-category">
+                <h2 class="faq-category-title">Fondamentaux : comprendre la musculation</h2>
+                <div class="faq-list">
+                    <div class="faq-item">
+                        <button class="faq-question" onclick="this.parentElement.classList.toggle('open')">
+                            Qu'est-ce que la musculation et en quoi diff&egrave;re-t-elle du cardio ?
+                            <span class="faq-icon"></span>
+                        </button>
+                        <div class="faq-answer"><div class="faq-answer-inner">La musculation vise &agrave; renforcer les muscles en utilisant une r&eacute;sistance (poids, &eacute;lastiques, poids du corps). Le cardio vise l'endurance cardiovasculaire. Les deux sont compl&eacute;mentaires et AIVancePro vous aide &agrave; combiner les deux selon vos objectifs.</div></div>
+                    </div>
+                    <div class="faq-item">
+                        <button class="faq-question" onclick="this.parentElement.classList.toggle('open')">
+                            Pourquoi la musculation est-elle importante pour la sant&eacute; ?
+                            <span class="faq-icon"></span>
+                        </button>
+                        <div class="faq-answer"><div class="faq-answer-inner">La musculation renforce les os, am&eacute;liore le m&eacute;tabolisme, r&eacute;duit le risque de blessures, am&eacute;liore la posture et contribue &agrave; la sant&eacute; mentale. Elle est recommand&eacute;e &agrave; tous les &acirc;ges.</div></div>
+                    </div>
+                    <div class="faq-item">
+                        <button class="faq-question" onclick="this.parentElement.classList.toggle('open')">
+                            Quelle diff&eacute;rence entre hypertrophie, force et endurance ?
+                            <span class="faq-icon"></span>
+                        </button>
+                        <div class="faq-answer"><div class="faq-answer-inner">L'hypertrophie vise le volume musculaire (8-12 r&eacute;ps), la force maximale travaille avec des charges lourdes (1-5 r&eacute;ps), et l'endurance musculaire utilise des charges l&eacute;g&egrave;res avec beaucoup de r&eacute;p&eacute;titions (15+). AIVancePro adapte les param&egrave;tres selon votre objectif.</div></div>
+                    </div>
+                    <div class="faq-item">
+                        <button class="faq-question" onclick="this.parentElement.classList.toggle('open')">
+                            Combien de fois par semaine faut-il s'entra&icirc;ner ?
+                            <span class="faq-icon"></span>
+                        </button>
+                        <div class="faq-answer"><div class="faq-answer-inner">G&eacute;n&eacute;ralement 3 &agrave; 5 fois par semaine pour des r&eacute;sultats optimaux. Le coach IA ajuste la fr&eacute;quence et le volume en fonction de votre disponibilit&eacute; et de votre r&eacute;cup&eacute;ration.</div></div>
+                    </div>
+                    <div class="faq-item">
+                        <button class="faq-question" onclick="this.parentElement.classList.toggle('open')">
+                            Qu'est-ce que la surcharge progressive et pourquoi est-ce important ?
+                            <span class="faq-icon"></span>
+                        </button>
+                        <div class="faq-answer"><div class="faq-answer-inner">La surcharge progressive consiste &agrave; augmenter graduellement la charge, les r&eacute;p&eacute;titions ou le volume pour continuer &agrave; progresser. C'est le principe fondamental de la progression en musculation. AIVancePro suit votre progression et vous aide &agrave; appliquer ce principe.</div></div>
+                    </div>
+                    <div class="faq-item">
+                        <button class="faq-question" onclick="this.parentElement.classList.toggle('open')">
+                            Peut-on perdre du gras avec la musculation ?
+                            <span class="faq-icon"></span>
+                        </button>
+                        <div class="faq-answer"><div class="faq-answer-inner">Oui, la musculation augmente votre m&eacute;tabolisme de base et br&ucirc;le des calories pendant et apr&egrave;s l'entra&icirc;nement. Combin&eacute;e &agrave; une alimentation adapt&eacute;e, c'est un des moyens les plus efficaces pour perdre du gras.</div></div>
+                    </div>
+                    <div class="faq-item">
+                        <button class="faq-question" onclick="this.parentElement.classList.toggle('open')">
+                            Faut-il soulever lourd pour avoir des r&eacute;sultats ?
+                            <span class="faq-icon"></span>
+                        </button>
+                        <div class="faq-answer"><div class="faq-answer-inner">Pas forc&eacute;ment. La r&eacute;gularit&eacute;, la bonne technique et la surcharge progressive comptent davantage que la charge absolue. M&ecirc;me avec des charges mod&eacute;r&eacute;es, vous pouvez obtenir d'excellents r&eacute;sultats.</div></div>
+                    </div>
+                    <div class="faq-item">
+                        <button class="faq-question" onclick="this.parentElement.classList.toggle('open')">
+                            De quel &eacute;quipement ai-je besoin pour commencer ?
+                            <span class="faq-icon"></span>
+                        </button>
+                        <div class="faq-answer"><div class="faq-answer-inner">Aucun &eacute;quipement n'est obligatoire ! Vous pouvez commencer au poids du corps. Pour progresser plus vite, une paire d'halt&egrave;res r&eacute;glables est un excellent investissement. AIVancePro s'adapte &agrave; votre mat&eacute;riel.</div></div>
+                    </div>
+                    <div class="faq-item">
+                        <button class="faq-question" onclick="this.parentElement.classList.toggle('open')">
+                            Quels sont les groupes musculaires les plus importants &agrave; travailler ?
+                            <span class="faq-icon"></span>
+                        </button>
+                        <div class="faq-answer"><div class="faq-answer-inner">Un programme &eacute;quilibr&eacute; doit couvrir tous les grands groupes : pectoraux, dos, &eacute;paules, bras, jambes et abdominaux. Le coach IA veille &agrave; &eacute;quilibrer la distribution musculaire de vos s&eacute;ances.</div></div>
+                    </div>
+                    <div class="faq-item">
+                        <button class="faq-question" onclick="this.parentElement.classList.toggle('open')">
+                            Pourquoi la r&eacute;cup&eacute;ration est-elle aussi importante que l'entra&icirc;nement ?
+                            <span class="faq-icon"></span>
+                        </button>
+                        <div class="faq-answer"><div class="faq-answer-inner">Les muscles se r&eacute;parent et se renforcent pendant le repos. Sans r&eacute;cup&eacute;ration suffisante, vous risquez le surentra&icirc;nement et les blessures. AIVancePro analyse votre charge et vous alerte si votre volume est trop &eacute;lev&eacute;.</div></div>
+                    </div>
+                    <div class="faq-item">
+                        <button class="faq-question" onclick="this.parentElement.classList.toggle('open')">
+                            La musculation est-elle sans risque pour les d&eacute;butants ?
+                            <span class="faq-icon"></span>
+                        </button>
+                        <div class="faq-answer"><div class="faq-answer-inner">Oui, &agrave; condition de respecter la bonne technique et de progresser graduellement. AIVancePro propose des exercices adapt&eacute;s aux d&eacute;butants avec des instructions d&eacute;taill&eacute;es pour minimiser les risques.</div></div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Cat&eacute;gorie 4: Selon vos objectifs -->
+            <div class="faq-category">
+                <h2 class="faq-category-title">Fondamentaux selon vos objectifs</h2>
+
+                <h3 class="faq-subcategory-title">S&eacute;cher &amp; se d&eacute;finir</h3>
+                <div class="faq-list">
+                    <div class="faq-item">
+                        <button class="faq-question" onclick="this.parentElement.classList.toggle('open')">
+                            Quel type d'entra&icirc;nement pour s&eacute;cher ?
+                            <span class="faq-icon"></span>
+                        </button>
+                        <div class="faq-answer"><div class="faq-answer-inner">Un mix de musculation (pour pr&eacute;server la masse musculaire) et de cardio/HIIT (pour augmenter la d&eacute;pense calorique) est id&eacute;al. Le coach IA cr&eacute;e des programmes &eacute;quilibr&eacute;s pour cet objectif.</div></div>
+                    </div>
+                    <div class="faq-item">
+                        <button class="faq-question" onclick="this.parentElement.classList.toggle('open')">
+                            Faut-il faire du cardio pour s&eacute;cher ?
+                            <span class="faq-icon"></span>
+                        </button>
+                        <div class="faq-answer"><div class="faq-answer-inner">Le cardio aide &agrave; cr&eacute;er un d&eacute;ficit calorique, mais ce n'est pas obligatoire. La nutrition joue un r&ocirc;le plus important. Le cardio est un outil suppl&eacute;mentaire que le coach IA peut int&eacute;grer &agrave; votre programme.</div></div>
+                    </div>
+                    <div class="faq-item">
+                        <button class="faq-question" onclick="this.parentElement.classList.toggle('open')">
+                            Quel r&ocirc;le jouent les r&eacute;p&eacute;titions et les s&eacute;ries pour s&eacute;cher ?
+                            <span class="faq-icon"></span>
+                        </button>
+                        <div class="faq-answer"><div class="faq-answer-inner">Pendant une s&egrave;che, maintenir des charges lourdes avec des r&eacute;ps mod&eacute;r&eacute;es (6-12) aide &agrave; pr&eacute;server la masse musculaire. Augmenter les r&eacute;ps avec des charges l&eacute;g&egrave;res peut ajouter un effet calorique, mais ne doit pas remplacer le travail lourd.</div></div>
+                    </div>
+                    <div class="faq-item">
+                        <button class="faq-question" onclick="this.parentElement.classList.toggle('open')">
+                            Peut-on s&eacute;cher avec des exercices au poids du corps ?
+                            <span class="faq-icon"></span>
+                        </button>
+                        <div class="faq-answer"><div class="faq-answer-inner">Oui, les exercices au poids du corps &agrave; haute intensit&eacute; (burpees, pompes, squats jump...) sont tr&egrave;s efficaces pour br&ucirc;ler des calories. AIVancePro peut g&eacute;n&eacute;rer des circuits HIIT sans mat&eacute;riel.</div></div>
+                    </div>
+                </div>
+
+                <h3 class="faq-subcategory-title">Prendre du muscle &amp; devenir plus fort</h3>
+                <div class="faq-list">
+                    <div class="faq-item">
+                        <button class="faq-question" onclick="this.parentElement.classList.toggle('open')">
+                            Comment AIVancePro aide-t-il &agrave; prendre du muscle ?
+                            <span class="faq-icon"></span>
+                        </button>
+                        <div class="faq-answer"><div class="faq-answer-inner">L'IA g&eacute;n&egrave;re des programmes d'hypertrophie avec le bon volume, la bonne intensit&eacute; et la bonne fr&eacute;quence. Elle suit votre progression et ajuste les charges pour garantir une surcharge progressive optimale.</div></div>
+                    </div>
+                    <div class="faq-item">
+                        <button class="faq-question" onclick="this.parentElement.classList.toggle('open')">
+                            Quel split est le meilleur pour prendre du muscle ?
+                            <span class="faq-icon"></span>
+                        </button>
+                        <div class="faq-answer"><div class="faq-answer-inner">&Ccedil;a d&eacute;pend de votre disponibilit&eacute;. Push/Pull/Legs, Upper/Lower ou Full Body sont tous efficaces. Le coach IA recommande le split optimal en fonction de vos jours d'entra&icirc;nement.</div></div>
+                    </div>
+                    <div class="faq-item">
+                        <button class="faq-question" onclick="this.parentElement.classList.toggle('open')">
+                            Combien de temps faut-il pour voir des r&eacute;sultats ?
+                            <span class="faq-icon"></span>
+                        </button>
+                        <div class="faq-answer"><div class="faq-answer-inner">Les premiers progr&egrave;s en force se ressentent d&egrave;s 2-3 semaines. Les changements physiques visibles apparaissent g&eacute;n&eacute;ralement apr&egrave;s 6 &agrave; 8 semaines d'entra&icirc;nement r&eacute;gulier. AIVancePro vous aide &agrave; visualiser ces progr&egrave;s.</div></div>
+                    </div>
+                    <div class="faq-item">
+                        <button class="faq-question" onclick="this.parentElement.classList.toggle('open')">
+                            Faut-il des suppl&eacute;ments pour prendre du muscle ?
+                            <span class="faq-icon"></span>
+                        </button>
+                        <div class="faq-answer"><div class="faq-answer-inner">Non, les suppl&eacute;ments ne sont pas n&eacute;cessaires. Une alimentation &eacute;quilibr&eacute;e riche en prot&eacute;ines suffit. La cr&eacute;atine et la whey peuvent &ecirc;tre pratiques mais ne sont pas indispensables.</div></div>
+                    </div>
+                </div>
+
+                <h3 class="faq-subcategory-title">Rester en forme &amp; en bonne sant&eacute;</h3>
+                <div class="faq-list">
+                    <div class="faq-item">
+                        <button class="faq-question" onclick="this.parentElement.classList.toggle('open')">
+                            Quelle routine pour rester en bonne sant&eacute; g&eacute;n&eacute;rale ?
+                            <span class="faq-icon"></span>
+                        </button>
+                        <div class="faq-answer"><div class="faq-answer-inner">2 &agrave; 3 s&eacute;ances de musculation par semaine combin&eacute;es &agrave; un peu de cardio suffisent pour maintenir une bonne sant&eacute;. Le coach IA cr&eacute;e des programmes &eacute;quilibr&eacute;s adapt&eacute;s &agrave; cet objectif.</div></div>
+                    </div>
+                    <div class="faq-item">
+                        <button class="faq-question" onclick="this.parentElement.classList.toggle('open')">
+                            J'ai plus de 40 ans, la musculation est-elle encore efficace ?
+                            <span class="faq-icon"></span>
+                        </button>
+                        <div class="faq-answer"><div class="faq-answer-inner">Absolument ! La musculation est m&ecirc;me recommand&eacute;e &agrave; partir de 40 ans pour lutter contre la perte musculaire li&eacute;e &agrave; l'&acirc;ge. Le coach IA adapte l'intensit&eacute; et le volume &agrave; votre profil.</div></div>
+                    </div>
+                    <div class="faq-item">
+                        <button class="faq-question" onclick="this.parentElement.classList.toggle('open')">
+                            Faut-il s'entra&icirc;ner tous les jours ?
+                            <span class="faq-icon"></span>
+                        </button>
+                        <div class="faq-answer"><div class="faq-answer-inner">Non, le repos est essentiel pour la progression. 3 &agrave; 5 s&eacute;ances par semaine avec des jours de repos suffisent. AIVancePro int&egrave;gre la r&eacute;cup&eacute;ration dans la planification.</div></div>
+                    </div>
+                    <div class="faq-item">
+                        <button class="faq-question" onclick="this.parentElement.classList.toggle('open')">
+                            AIVancePro peut-il aider &agrave; am&eacute;liorer la force fonctionnelle ?
+                            <span class="faq-icon"></span>
+                        </button>
+                        <div class="faq-answer"><div class="faq-answer-inner">Oui, le coach IA peut g&eacute;n&eacute;rer des programmes ax&eacute;s sur la force fonctionnelle avec des exercices compos&eacute;s et des mouvements qui am&eacute;liorent les gestes du quotidien.</div></div>
+                    </div>
+                </div>
+
+                <h3 class="faq-subcategory-title">Perdre du poids</h3>
+                <div class="faq-list">
+                    <div class="faq-item">
+                        <button class="faq-question" onclick="this.parentElement.classList.toggle('open')">
+                            La musculation est-elle efficace pour perdre du poids ?
+                            <span class="faq-icon"></span>
+                        </button>
+                        <div class="faq-answer"><div class="faq-answer-inner">Oui, la musculation augmente le m&eacute;tabolisme de base, ce qui signifie que vous br&ucirc;lez plus de calories m&ecirc;me au repos. Combin&eacute;e &agrave; un d&eacute;ficit calorique, c'est tr&egrave;s efficace.</div></div>
+                    </div>
+                    <div class="faq-item">
+                        <button class="faq-question" onclick="this.parentElement.classList.toggle('open')">
+                            Combien de calories br&ucirc;le une s&eacute;ance de musculation ?
+                            <span class="faq-icon"></span>
+                        </button>
+                        <div class="faq-answer"><div class="faq-answer-inner">Une s&eacute;ance de musculation de 45 &agrave; 60 minutes br&ucirc;le en moyenne 200 &agrave; 400 calories, selon l'intensit&eacute;. L'effet &laquo; afterburn &raquo; fait que vous continuez &agrave; br&ucirc;ler des calories pendant des heures apr&egrave;s la s&eacute;ance.</div></div>
+                    </div>
+                    <div class="faq-item">
+                        <button class="faq-question" onclick="this.parentElement.classList.toggle('open')">
+                            Faut-il &ecirc;tre en d&eacute;ficit calorique pour perdre du poids ?
+                            <span class="faq-icon"></span>
+                        </button>
+                        <div class="faq-answer"><div class="faq-answer-inner">Oui, le d&eacute;ficit calorique est n&eacute;cessaire pour perdre du poids. La musculation aide &agrave; maintenir la masse musculaire pendant la perte de poids pour &eacute;viter l'effet &laquo; skinny fat &raquo;.</div></div>
+                    </div>
+                    <div class="faq-item">
+                        <button class="faq-question" onclick="this.parentElement.classList.toggle('open')">
+                            Musculation ou cardio : qu'est-ce qui est mieux pour perdre du poids ?
+                            <span class="faq-icon"></span>
+                        </button>
+                        <div class="faq-answer"><div class="faq-answer-inner">Les deux sont compl&eacute;mentaires. La musculation pr&eacute;serve le muscle et augmente le m&eacute;tabolisme, le cardio br&ucirc;le des calories suppl&eacute;mentaires. AIVancePro peut combiner les deux dans vos programmes.</div></div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Cat&eacute;gorie 5: Abonnement -->
+            <div class="faq-category">
+                <h2 class="faq-category-title">Abonnement &amp; compte</h2>
+                <div class="faq-list">
+                    <div class="faq-item">
+                        <button class="faq-question" onclick="this.parentElement.classList.toggle('open')">
+                            Combien co&ucirc;te AIVancePro ?
+                            <span class="faq-icon"></span>
+                        </button>
+                        <div class="faq-answer"><div class="faq-answer-inner">AIVancePro est gratuit avec des fonctionnalit&eacute;s de base. Le plan Pro &agrave; 4,99&euro;/mois d&eacute;bloque le coach IA illimit&eacute; et les analyses avanc&eacute;es. Le plan Elite &agrave; 7,99&euro;/mois ajoute la communaut&eacute;, les d&eacute;fis et la messagerie. <a href="/pricing.html" style="color:var(--blue);">Voir la comparaison compl&egrave;te</a>.</div></div>
+                    </div>
+                    <div class="faq-item">
+                        <button class="faq-question" onclick="this.parentElement.classList.toggle('open')">
+                            Quelle est la diff&eacute;rence entre Pro et Elite ?
+                            <span class="faq-icon"></span>
+                        </button>
+                        <div class="faq-answer"><div class="faq-answer-inner">Le plan Pro inclut le coach IA illimit&eacute;, les analyses avanc&eacute;es, la p&eacute;riodisation et les templates. Le plan Elite ajoute les fonctionnalit&eacute;s communautaires : groupes, d&eacute;fis, messagerie, leaderboards et badges.</div></div>
+                    </div>
+                    <div class="faq-item">
+                        <button class="faq-question" onclick="this.parentElement.classList.toggle('open')">
+                            Puis-je annuler mon abonnement &agrave; tout moment ?
+                            <span class="faq-icon"></span>
+                        </button>
+                        <div class="faq-answer"><div class="faq-answer-inner">Oui, annulez &agrave; tout moment depuis les param&egrave;tres de l'app ou votre compte App Store/Google Play. Aucun engagement, aucun frais cach&eacute;.</div></div>
+                    </div>
+                    <div class="faq-item">
+                        <button class="faq-question" onclick="this.parentElement.classList.toggle('open')">
+                            Comment changer de plan ?
+                            <span class="faq-icon"></span>
+                        </button>
+                        <div class="faq-answer"><div class="faq-answer-inner">Vous pouvez passer d'un plan &agrave; un autre directement depuis les param&egrave;tres de l'application. Le changement prend effet imm&eacute;diatement.</div></div>
+                    </div>
+                    <div class="faq-item">
+                        <button class="faq-question" onclick="this.parentElement.classList.toggle('open')">
+                            Mes donn&eacute;es sont-elles s&eacute;curis&eacute;es ?
+                            <span class="faq-icon"></span>
+                        </button>
+                        <div class="faq-answer"><div class="faq-answer-inner">Vos donn&eacute;es sont h&eacute;berg&eacute;es de mani&egrave;re s&eacute;curis&eacute;e et chiffr&eacute;es. Nous ne vendons jamais vos donn&eacute;es. Consultez notre <a href="/privacy.html" style="color:var(--blue);">politique de confidentialit&eacute;</a>.</div></div>
+                    </div>
+                    <div class="faq-item">
+                        <button class="faq-question" onclick="this.parentElement.classList.toggle('open')">
+                            Puis-je supprimer mon compte ?
+                            <span class="faq-icon"></span>
+                        </button>
+                        <div class="faq-answer"><div class="faq-answer-inner">Oui, supprimez votre compte &agrave; tout moment depuis les param&egrave;tres de l'application. Toutes vos donn&eacute;es personnelles seront d&eacute;finitivement supprim&eacute;es.</div></div>
+                    </div>
+                </div>
+            </div>
+
         </div>
     </section>
 
