@@ -48,7 +48,7 @@ const currentLang = languages[lang];
                     ))}
                 </div>
             </div>
-            <a href={i.links.login} class="nav-login">{i.nav.login}</a>
+            <a href={i.links.login} class="nav-login" id="nav-login-link" data-account-url={i.links.account}>{i.nav.login}</a>
             <a href={i.links.appStore} class="nav-cta" target="_blank" rel="noopener">{i.nav.download}</a>
             <button class="mobile-menu-btn" onclick="document.getElementById('mobileMenu').classList.add('open')" aria-label={i.nav.menu}>
                 <span></span><span></span><span></span>
@@ -71,8 +71,38 @@ const currentLang = languages[lang];
     </div>
     <a href={i.links.pricing} onclick="document.getElementById('mobileMenu').classList.remove('open')">{i.nav.pricing}</a>
     <a href={i.links.faq} onclick="document.getElementById('mobileMenu').classList.remove('open')">{i.nav.faq}</a>
-    <a href={i.links.login}>{i.nav.login}</a>
+    <a href={i.links.login} id="mobile-login-link" data-account-url={i.links.account}>{i.nav.login}</a>
     {Object.entries(languages).filter(([code]) => code !== lang).map(([code, l]) => (
         <a href={t[code].links.home}>{l.flag} {l.label}</a>
     ))}
 </div>
+
+<script is:inline>
+(function() {
+  var SUPABASE_URL = 'https://vzmtvhcvyqzkmestdbko.supabase.co';
+  var storageKey = 'sb-vzmtvhcvyqzkmestdbko-auth-token';
+  try {
+    var raw = localStorage.getItem(storageKey);
+    if (!raw) return;
+    var parsed = JSON.parse(raw);
+    if (!parsed || !parsed.access_token) return;
+    // Check token not expired
+    var exp = parsed.expires_at;
+    if (exp && exp * 1000 < Date.now()) return;
+    // User is logged in - update nav links
+    var labels = { fr: 'Mon compte', en: 'My Account', de: 'Mein Konto' };
+    var lang = document.documentElement.lang || 'fr';
+    var label = labels[lang] || labels.fr;
+    var navLink = document.getElementById('nav-login-link');
+    var mobileLink = document.getElementById('mobile-login-link');
+    if (navLink) {
+      navLink.href = navLink.dataset.accountUrl;
+      navLink.textContent = label;
+    }
+    if (mobileLink) {
+      mobileLink.href = mobileLink.dataset.accountUrl;
+      mobileLink.textContent = label;
+    }
+  } catch(e) {}
+})();
+</script>

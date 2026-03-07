@@ -1,0 +1,240 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+---
+
+<BaseLayout
+  lang="en"
+  title="My Account - AIVancePro"
+  description="Manage your subscription and view your AIVancePro statistics."
+  noFooter={true}
+>
+  <Fragment slot="head">
+    <meta name="robots" content="noindex, nofollow">
+    <style>
+      body { background: var(--gray-50); min-height: 100vh; }
+      .account-container { max-width: 800px; margin: 0 auto; padding: 7rem 2rem 4rem; }
+      .account-header { display: flex; align-items: center; justify-content: space-between; margin-bottom: 2rem; }
+      .account-header h1 { font-size: 1.8rem; font-weight: 800; color: var(--gray-900); }
+      .btn-logout { padding: 0.5rem 1.25rem; border: 1px solid var(--gray-200); border-radius: 10px; background: var(--white); color: var(--gray-600); font-size: 0.85rem; font-weight: 600; font-family: inherit; cursor: pointer; transition: all 0.2s; }
+      .btn-logout:hover { border-color: var(--gray-400); color: var(--gray-900); }
+
+      /* Subscription card */
+      .sub-card { background: var(--white); border: 1px solid var(--gray-200); border-radius: 16px; padding: 2rem; margin-bottom: 1.5rem; }
+      .sub-card.pro { border-color: rgba(37,99,235,0.3); background: linear-gradient(135deg, rgba(37,99,235,0.03), rgba(147,51,234,0.03)); }
+      .sub-card.elite { border-color: rgba(147,51,234,0.3); background: linear-gradient(135deg, rgba(147,51,234,0.03), rgba(234,179,8,0.03)); }
+      .sub-top { display: flex; align-items: center; gap: 1rem; margin-bottom: 1rem; }
+      .sub-icon { width: 48px; height: 48px; border-radius: 12px; display: flex; align-items: center; justify-content: center; }
+      .sub-icon.free { background: var(--gray-100); color: var(--gray-500); }
+      .sub-icon.pro { background: linear-gradient(135deg, var(--blue), var(--purple)); color: white; }
+      .sub-icon.elite { background: linear-gradient(135deg, #9333EA, #EAB308); color: white; }
+      .sub-icon svg { width: 24px; height: 24px; }
+      .sub-info h2 { font-size: 1.2rem; font-weight: 700; color: var(--gray-900); margin: 0; }
+      .sub-badge { display: inline-block; padding: 0.2rem 0.6rem; border-radius: 50px; font-size: 0.7rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.05em; margin-top: 0.25rem; }
+      .sub-badge.free { background: var(--gray-100); color: var(--gray-600); }
+      .sub-badge.pro { background: rgba(37,99,235,0.1); color: var(--blue); }
+      .sub-badge.elite { background: rgba(147,51,234,0.1); color: #9333EA; }
+      .sub-badge.trial { background: rgba(234,179,8,0.1); color: #CA8A04; }
+      .sub-email { color: var(--gray-500); font-size: 0.85rem; margin-top: 0.5rem; }
+
+      /* Stats grid */
+      .stats-title { font-size: 1.1rem; font-weight: 700; color: var(--gray-900); margin-bottom: 1rem; }
+      .stats-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1rem; margin-bottom: 1.5rem; }
+      .stat-card { background: var(--white); border: 1px solid var(--gray-200); border-radius: 14px; padding: 1.25rem; text-align: center; }
+      .stat-value { font-size: 2rem; font-weight: 800; color: var(--gray-900); line-height: 1; }
+      .stat-value.blue { background: linear-gradient(135deg, var(--blue), var(--purple)); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
+      .stat-label { font-size: 0.8rem; color: var(--gray-500); margin-top: 0.35rem; font-weight: 500; }
+
+      /* Upgrade CTA */
+      .upgrade-card { background: var(--white); border: 1px solid var(--gray-200); border-radius: 16px; padding: 2rem; text-align: center; }
+      .upgrade-card h3 { font-size: 1.2rem; font-weight: 700; color: var(--gray-900); margin-bottom: 0.5rem; }
+      .upgrade-card p { color: var(--gray-500); font-size: 0.9rem; margin-bottom: 1.5rem; }
+      .upgrade-plans { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; max-width: 500px; margin: 0 auto; }
+      .plan-option { border: 1px solid var(--gray-200); border-radius: 14px; padding: 1.25rem; cursor: pointer; transition: all 0.2s; text-decoration: none; color: inherit; display: block; }
+      .plan-option:hover { border-color: var(--blue); transform: translateY(-2px); box-shadow: 0 4px 12px rgba(37,99,235,0.1); }
+      .plan-option .plan-name { font-weight: 700; font-size: 1rem; color: var(--gray-900); }
+      .plan-option .plan-price { font-size: 1.5rem; font-weight: 800; margin: 0.5rem 0 0.25rem; }
+      .plan-option .plan-price.blue { color: var(--blue); }
+      .plan-option .plan-price.purple { color: #9333EA; }
+      .plan-option .plan-period { font-size: 0.75rem; color: var(--gray-500); }
+      .plan-option .plan-feat { font-size: 0.8rem; color: var(--gray-600); margin-top: 0.75rem; line-height: 1.5; }
+      .plan-option.current { opacity: 0.5; pointer-events: none; }
+      .plan-option.current .plan-name::after { content: ' (current)'; font-weight: 400; font-size: 0.8rem; color: var(--gray-400); }
+      .app-cta { margin-top: 1rem; font-size: 0.8rem; color: var(--gray-400); }
+      .app-cta a { color: var(--blue); text-decoration: none; font-weight: 600; }
+
+      /* Loading */
+      .loading { text-align: center; padding: 4rem 2rem; color: var(--gray-400); font-size: 0.9rem; }
+      .spinner { width: 32px; height: 32px; border: 3px solid var(--gray-200); border-top-color: var(--blue); border-radius: 50%; animation: spin 0.8s linear infinite; margin: 0 auto 1rem; }
+      @keyframes spin { to { transform: rotate(360deg); } }
+
+      @media (max-width: 640px) {
+        .stats-grid { grid-template-columns: 1fr 1fr; }
+        .upgrade-plans { grid-template-columns: 1fr; }
+        .account-header { flex-direction: column; align-items: flex-start; gap: 1rem; }
+      }
+    </style>
+  </Fragment>
+
+  <div class="account-container">
+    <div id="loading" class="loading">
+      <div class="spinner"></div>
+      Loading...
+    </div>
+
+    <div id="account-content" style="display:none;">
+      <div class="account-header">
+        <h1>My Account</h1>
+        <button class="btn-logout" id="btn-logout">Log out</button>
+      </div>
+
+      <!-- Subscription status -->
+      <div class="sub-card" id="sub-card">
+        <div class="sub-top">
+          <div class="sub-icon" id="sub-icon">
+            <svg id="icon-zap" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/></svg>
+            <svg id="icon-sparkles" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="display:none;"><path d="M9.937 15.5A2 2 0 0 0 8.5 14.063l-6.135-1.582a.5.5 0 0 1 0-.962L8.5 9.936A2 2 0 0 0 9.937 8.5l1.582-6.135a.5.5 0 0 1 .963 0L14.063 8.5A2 2 0 0 0 15.5 9.937l6.135 1.581a.5.5 0 0 1 0 .964L15.5 14.063a2 2 0 0 0-1.437 1.437l-1.582 6.135a.5.5 0 0 1-.963 0z"/></svg>
+            <svg id="icon-crown" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="display:none;"><path d="M11.562 3.266a.5.5 0 0 1 .876 0L15.39 8.87a1 1 0 0 0 1.516.294L21.183 5.5a.5.5 0 0 1 .798.519l-2.834 10.246a1 1 0 0 1-.956.734H5.81a1 1 0 0 1-.957-.734L2.02 6.02a.5.5 0 0 1 .798-.519l4.276 3.664a1 1 0 0 0 1.516-.294z"/><path d="M5.5 21h13"/></svg>
+          </div>
+          <div class="sub-info">
+            <h2 id="sub-plan-name">Free</h2>
+            <span class="sub-badge free" id="sub-badge">Free</span>
+          </div>
+        </div>
+        <div class="sub-email" id="sub-email"></div>
+      </div>
+
+      <!-- Stats -->
+      <h3 class="stats-title">Your statistics</h3>
+      <div class="stats-grid">
+        <div class="stat-card">
+          <div class="stat-value blue" id="stat-sessions">-</div>
+          <div class="stat-label">Sessions</div>
+        </div>
+        <div class="stat-card">
+          <div class="stat-value blue" id="stat-exercises">-</div>
+          <div class="stat-label">Exercises</div>
+        </div>
+        <div class="stat-card">
+          <div class="stat-value blue" id="stat-volume">-</div>
+          <div class="stat-label">Total volume (kg)</div>
+        </div>
+      </div>
+
+      <!-- Upgrade -->
+      <div class="upgrade-card" id="upgrade-card">
+        <h3 id="upgrade-title">Upgrade your plan</h3>
+        <p id="upgrade-desc">Unlock the full potential of your AI personal coach.</p>
+        <div class="upgrade-plans" id="upgrade-plans">
+          <div class="plan-option" id="plan-pro">
+            <div class="plan-name">Pro</div>
+            <div class="plan-price blue">4,99&euro;</div>
+            <div class="plan-period">/ month</div>
+            <div class="plan-feat">150 AI messages / month<br>Workout generation<br>4-week plan</div>
+          </div>
+          <div class="plan-option" id="plan-elite">
+            <div class="plan-name">Elite</div>
+            <div class="plan-price purple">7,99&euro;</div>
+            <div class="plan-period">/ month</div>
+            <div class="plan-feat">Unlimited AI<br>Plans up to 12 weeks<br>Overtraining analysis</div>
+          </div>
+        </div>
+        <p class="app-cta">Subscribe directly from the <a href="https://apps.apple.com/app/aivancepro/id6756116760" target="_blank" rel="noopener">mobile app</a></p>
+      </div>
+    </div>
+  </div>
+
+  <script is:inline src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2/dist/umd/supabase.min.js"></script>
+  <script is:inline>
+  (function() {
+    var SUPABASE_URL = 'https://vzmtvhcvyqzkmestdbko.supabase.co';
+    var SUPABASE_KEY = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InZ6bXR2aGN2eXF6a21lc3RkYmtvIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NzA4OTA0MTEsImV4cCI6MjA4NjQ2NjQxMX0.rvBz2uIsr3YtLIw84Kor3eVFpH4FiXVZgbufiJH3uio';
+    var sb = window.supabase.createClient(SUPABASE_URL, SUPABASE_KEY);
+
+    async function init() {
+      var res = await sb.auth.getSession();
+      if (!res.data.session) {
+        window.location.href = '/en/login/';
+        return;
+      }
+
+      var user = res.data.session.user;
+      var email = user.email;
+
+      // Fetch profile
+      var profileRes = await sb.from('public_profile').select('*').eq('user_email', email).single();
+      var profile = profileRes.data || {};
+      var plan = profile.subscription_status || 'free';
+
+      // Show content
+      document.getElementById('loading').style.display = 'none';
+      document.getElementById('account-content').style.display = 'block';
+
+      // Set subscription info
+      document.getElementById('sub-email').textContent = email;
+      var planNames = { free: 'Free', pro: 'Pro', elite: 'Elite', trial: 'Pro Trial' };
+      var planBadges = { free: 'Free', pro: 'Pro', elite: 'Elite', trial: 'Trial' };
+      document.getElementById('sub-plan-name').textContent = planNames[plan] || 'Free';
+
+      var badge = document.getElementById('sub-badge');
+      badge.textContent = planBadges[plan] || 'Free';
+      badge.className = 'sub-badge ' + (plan === 'trial' ? 'trial' : plan);
+
+      var subCard = document.getElementById('sub-card');
+      var subIcon = document.getElementById('sub-icon');
+      subCard.className = 'sub-card ' + (plan === 'trial' ? 'pro' : plan);
+      subIcon.className = 'sub-icon ' + (plan === 'trial' ? 'pro' : plan);
+
+      // Icons
+      document.getElementById('icon-zap').style.display = plan === 'free' ? 'block' : 'none';
+      document.getElementById('icon-sparkles').style.display = (plan === 'pro' || plan === 'trial') ? 'block' : 'none';
+      document.getElementById('icon-crown').style.display = plan === 'elite' ? 'block' : 'none';
+
+      // Upgrade card
+      var upgradeCard = document.getElementById('upgrade-card');
+      if (plan === 'elite') {
+        upgradeCard.innerHTML = '<h3>You\'re Elite!</h3><p>You have access to all AIVancePro features.</p>';
+      } else if (plan === 'pro' || plan === 'trial') {
+        document.getElementById('plan-pro').classList.add('current');
+        document.getElementById('upgrade-title').textContent = 'Upgrade to Elite';
+        document.getElementById('upgrade-desc').textContent = 'Unlock unlimited AI and overtraining analysis.';
+      }
+
+      // Fetch stats
+      var sessionsRes = await sb.from('session').select('id', { count: 'exact', head: true }).eq('created_by', email);
+      var sessionCount = sessionsRes.count || 0;
+      document.getElementById('stat-sessions').textContent = sessionCount;
+
+      var logsRes = await sb.from('exercise_log').select('id, sets', { count: 'exact' }).eq('created_by', email);
+      var logs = logsRes.data || [];
+      document.getElementById('stat-exercises').textContent = logsRes.count || logs.length;
+
+      // Calculate total volume
+      var totalVolume = 0;
+      logs.forEach(function(log) {
+        if (log.sets && Array.isArray(log.sets)) {
+          log.sets.forEach(function(s) {
+            var w = parseFloat(s.weight) || 0;
+            var r = parseInt(s.reps) || 0;
+            totalVolume += w * r;
+          });
+        }
+      });
+      if (totalVolume >= 1000000) {
+        document.getElementById('stat-volume').textContent = (totalVolume / 1000000).toFixed(1) + 'M';
+      } else if (totalVolume >= 1000) {
+        document.getElementById('stat-volume').textContent = Math.round(totalVolume / 1000) + 'k';
+      } else {
+        document.getElementById('stat-volume').textContent = Math.round(totalVolume);
+      }
+
+      // Logout
+      document.getElementById('btn-logout').addEventListener('click', async function() {
+        await sb.auth.signOut();
+        window.location.href = '/en/';
+      });
+    }
+
+    init();
+  })();
+  </script>
+</BaseLayout>
