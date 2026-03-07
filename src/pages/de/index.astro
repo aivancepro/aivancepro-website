@@ -164,6 +164,7 @@ const jsonLd = {
         .hero-phones .phone {
             position: absolute;
             width: 220px;
+            transition: transform 0.4s ease;
         }
 
         .hero-phones .phone-center {
@@ -174,6 +175,10 @@ const jsonLd = {
             width: 240px;
         }
 
+        .hero-phones .phone-center:hover {
+            transform: translateX(-50%) translateY(-12px) scale(1.03);
+        }
+
         .hero-phones .phone-left {
             left: 0;
             top: 40px;
@@ -181,11 +186,21 @@ const jsonLd = {
             transform: rotate(-6deg);
         }
 
+        .hero-phones .phone-left:hover {
+            transform: rotate(-6deg) translateY(-12px) scale(1.03);
+            z-index: 4;
+        }
+
         .hero-phones .phone-right {
             right: 0;
             top: 40px;
             z-index: 2;
             transform: rotate(6deg);
+        }
+
+        .hero-phones .phone-right:hover {
+            transform: rotate(6deg) translateY(-12px) scale(1.03);
+            z-index: 4;
         }
 
         /* Placeholder for images */
