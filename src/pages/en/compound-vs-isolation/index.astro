@@ -1,0 +1,118 @@
+---
+import BaseLayout from '../../../layouts/BaseLayout.astro';
+---
+
+<BaseLayout
+  lang="en"
+  title="Compound vs Isolation Exercises: The Complete Guide - AIVancePro"
+  description="What's the difference between compound (multi-joint) and isolation (single-joint) exercises? Complete guide to optimize your program."
+  canonical="https://aivancepro.fr/en/compound-vs-isolation/"
+  ogType="article"
+  alternates={{ fr: 'https://aivancepro.fr/compound-vs-isolation/', en: 'https://aivancepro.fr/en/compound-vs-isolation/', de: 'https://aivancepro.fr/de/compound-vs-isolation/' }}
+>
+  <Fragment slot="head">
+    <style>
+      .article-header { padding: 9rem 2rem 3rem; text-align: center; background: linear-gradient(180deg, var(--gray-50), var(--white)); }
+      .section-label { display: inline-block; font-size: 0.8rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.08em; color: var(--blue); margin-bottom: 0.75rem; }
+      .article-header h1 { font-size: 2.8rem; font-weight: 800; letter-spacing: -0.02em; margin-bottom: 1rem; max-width: 750px; margin-left: auto; margin-right: auto; }
+      .article-header p { color: var(--gray-500); font-size: 1.1rem; max-width: 600px; margin: 0 auto; }
+      .article-content { max-width: 750px; margin: 0 auto; padding: 3rem 2rem 4rem; }
+      .article-content h2 { font-size: 1.6rem; font-weight: 800; margin: 3rem 0 1rem; }
+      .article-content h3 { font-size: 1.2rem; font-weight: 700; margin: 2rem 0 0.75rem; }
+      .article-content p { color: var(--gray-700); font-size: 1rem; line-height: 1.8; margin-bottom: 1.25rem; }
+      .article-content ul { margin: 1rem 0 1.5rem 1.5rem; }
+      .article-content li { color: var(--gray-700); font-size: 1rem; line-height: 1.8; margin-bottom: 0.5rem; }
+      .article-content .img-placeholder { width: 100%; height: 350px; background: linear-gradient(135deg, var(--gray-100), var(--gray-200)); border-radius: 16px; display: flex; align-items: center; justify-content: center; color: var(--gray-400); font-size: 0.85rem; margin: 2rem 0; }
+      .exercise-examples { display: grid; grid-template-columns: repeat(2, 1fr); gap: 1rem; margin: 1.5rem 0; }
+      .exercise-example { background: var(--gray-50); border: 1px solid var(--gray-200); border-radius: 12px; padding: 1.25rem; }
+      .exercise-example h4 { font-size: 0.95rem; font-weight: 700; margin-bottom: 0.25rem; }
+      .exercise-example p { font-size: 0.85rem; color: var(--gray-500); margin-bottom: 0; }
+      .comparison-table { width: 100%; border-collapse: collapse; margin: 2rem 0; border-radius: 12px; overflow: hidden; border: 1px solid var(--gray-200); }
+      .comparison-table th { background: var(--gray-50); padding: 1rem; text-align: left; font-size: 0.85rem; font-weight: 700; color: var(--gray-900); border-bottom: 1px solid var(--gray-200); }
+      .comparison-table td { padding: 0.875rem 1rem; font-size: 0.9rem; color: var(--gray-700); border-bottom: 1px solid var(--gray-100); }
+      .cta-section { padding: 5rem 2rem; text-align: center; background: linear-gradient(135deg, var(--dark), #1a1145); color: var(--white); }
+      .cta-section h2 { font-size: 2.2rem; font-weight: 800; margin-bottom: 1rem; }
+      .cta-section p { color: rgba(255,255,255,0.6); font-size: 1rem; max-width: 480px; margin: 0 auto 2rem; }
+      .btn-primary { display: inline-flex; background: linear-gradient(135deg, var(--blue), var(--purple)); color: var(--white); text-decoration: none; font-size: 1rem; font-weight: 600; padding: 0.875rem 2rem; border-radius: 12px; box-shadow: 0 4px 15px rgba(37,99,235,0.3); transition: opacity 0.2s, transform 0.2s; }
+      .btn-primary:hover { opacity: 0.92; transform: translateY(-2px); }
+      @media (max-width: 768px) {
+          .article-header { padding: 7rem 1.5rem 2rem; }
+          .article-header h1 { font-size: 2rem; }
+          .exercise-examples { grid-template-columns: 1fr; }
+      }
+    </style>
+  </Fragment>
+
+  <header class="article-header">
+      <div class="section-label">Exercises</div>
+      <h1>Compound vs Isolation: Which Type of Exercise Should You Choose?</h1>
+      <p>Multi-joint or single-joint? Understand the difference and learn how to combine them for an optimal program.</p>
+  </header>
+
+  <article class="article-content">
+      <h2>Compound exercises (multi-joint)</h2>
+      <p>Compound exercises engage <strong>multiple joints and muscle groups</strong> simultaneously. They allow you to lift heavier loads and recruit maximum muscle fibers in a single movement.</p>
+      <p>They are the foundation of any good training program. They develop functional strength and burn more calories per rep.</p>
+
+      <h3>Compound exercise examples</h3>
+      <div class="exercise-examples">
+          <div class="exercise-example"><h4>Squat</h4><p>Quads, glutes, hamstrings, core</p></div>
+          <div class="exercise-example"><h4>Bench Press</h4><p>Chest, triceps, anterior shoulders</p></div>
+          <div class="exercise-example"><h4>Deadlift</h4><p>Back, glutes, hamstrings, traps</p></div>
+          <div class="exercise-example"><h4>Pull-ups</h4><p>Lats, biceps, rhomboids</p></div>
+          <div class="exercise-example"><h4>Overhead Press</h4><p>Deltoids, triceps, traps</p></div>
+          <div class="exercise-example"><h4>Barbell Row</h4><p>Back, biceps, traps, rhomboids</p></div>
+      </div>
+
+      <div class="img-placeholder">Compound Exercises Photo</div>
+
+      <h2>Isolation exercises (single-joint)</h2>
+      <p>Isolation exercises target <strong>a single muscle or muscle group</strong> by engaging only one joint. They are perfect for correcting imbalances, targeting a lagging muscle or finishing a workout with specific volume.</p>
+
+      <h3>Isolation exercise examples</h3>
+      <div class="exercise-examples">
+          <div class="exercise-example"><h4>Bicep Curl</h4><p>Biceps only</p></div>
+          <div class="exercise-example"><h4>Tricep Extensions</h4><p>Triceps only</p></div>
+          <div class="exercise-example"><h4>Lateral Raises</h4><p>Lateral deltoid</p></div>
+          <div class="exercise-example"><h4>Leg Curl</h4><p>Hamstrings</p></div>
+          <div class="exercise-example"><h4>Leg Extension</h4><p>Quadriceps</p></div>
+          <div class="exercise-example"><h4>Dumbbell Flyes</h4><p>Chest (stretch)</p></div>
+      </div>
+
+      <h2>Comparison table</h2>
+      <table class="comparison-table">
+          <thead>
+              <tr><th></th><th>Compound</th><th>Isolation</th></tr>
+          </thead>
+          <tbody>
+              <tr><td><strong>Muscles worked</strong></td><td>Multiple groups</td><td>Single muscle</td></tr>
+              <tr><td><strong>Load potential</strong></td><td>High</td><td>Moderate</td></tr>
+              <tr><td><strong>Calorie burn</strong></td><td>High</td><td>Low</td></tr>
+              <tr><td><strong>Strength gains</strong></td><td>Excellent</td><td>Limited</td></tr>
+              <tr><td><strong>Precise targeting</strong></td><td>Moderate</td><td>Excellent</td></tr>
+              <tr><td><strong>Injury risk</strong></td><td>Higher (technique)</td><td>Lower</td></tr>
+              <tr><td><strong>Best for</strong></td><td>Strength, mass, performance</td><td>Finishing, balance, volume</td></tr>
+          </tbody>
+      </table>
+
+      <div class="img-placeholder">Compound vs Isolation Comparison Photo</div>
+
+      <h2>When to use each type?</h2>
+      <p><strong>Start with compounds.</strong> Always place your multi-joint exercises at the beginning of your session when you're fresh and can lift heavy safely.</p>
+      <p><strong>Finish with isolation.</strong> Use isolation exercises at the end of your session to target muscles that weren't sufficiently stimulated, or to add volume on a weak point.</p>
+
+      <h2>The 80/20 rule</h2>
+      <p>A good program generally follows the 80/20 rule: <strong>80% compound exercises, 20% isolation</strong>. This ratio ensures a solid strength foundation while allowing targeted work.</p>
+
+      <h2>AIVancePro balances for you</h2>
+      <p>AIVancePro's AI coach knows this rule and applies it automatically. When generating a session, it places compounds first and completes with isolation based on your needs and history.</p>
+
+      <div class="img-placeholder">AIVancePro Exercise Balance Photo</div>
+  </article>
+
+  <section class="cta-section">
+      <h2>The right balance, automatically</h2>
+      <p>AIVancePro generates workouts with the perfect mix of compound and isolation exercises for your goals.</p>
+      <a href="https://apps.apple.com/app/aivancepro/id6756116760" class="btn-primary" target="_blank" rel="noopener">Download for free</a>
+  </section>
+</BaseLayout>

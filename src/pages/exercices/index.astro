@@ -1,0 +1,127 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+---
+
+<BaseLayout
+  lang="fr"
+  title="Biblioth&egrave;que d'exercices - 240+ exercices de musculation - AIVancePro"
+  description="D&eacute;couvrez notre biblioth&egrave;que de plus de 240 exercices de musculation et fitness. Filtrez par groupe musculaire et trouvez l'exercice parfait."
+  canonical="https://aivancepro.fr/exercices/"
+  alternates={{ fr: 'https://aivancepro.fr/exercices/', en: 'https://aivancepro.fr/en/exercises/', de: 'https://aivancepro.fr/de/uebungen/' }}
+>
+  <Fragment slot="head">
+    <style>
+        .page-header { padding: 9rem 2rem 2rem; text-align: center; background: linear-gradient(180deg, var(--gray-50), var(--white)); }
+        .section-label { display: inline-block; font-size: 0.8rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.08em; color: var(--blue); margin-bottom: 0.75rem; }
+        .page-header h1 { font-size: 2.8rem; font-weight: 800; letter-spacing: -0.02em; margin-bottom: 1rem; }
+        .page-header p { color: var(--gray-500); font-size: 1.1rem; max-width: 550px; margin: 0 auto; }
+
+        .filter-bar { max-width: 1100px; margin: 2rem auto 0; display: flex; justify-content: center; gap: 0.5rem; flex-wrap: wrap; padding: 0 2rem; }
+        .filter-btn { padding: 0.5rem 1.1rem; border-radius: 50px; border: 1px solid var(--gray-200); background: var(--white); color: var(--gray-500); font-size: 0.85rem; font-weight: 600; font-family: inherit; cursor: pointer; transition: all 0.2s; }
+        .filter-btn:hover, .filter-btn.active { background: var(--blue); color: var(--white); border-color: var(--blue); }
+
+        .exercises-grid { max-width: 1100px; margin: 0 auto; padding: 2.5rem 2rem 4rem; display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.25rem; }
+
+        .exercise-card { background: var(--white); border: 1px solid var(--gray-200); border-radius: 14px; padding: 1.25rem; transition: border-color 0.2s, transform 0.2s, box-shadow 0.2s; }
+        .exercise-card:hover { border-color: rgba(37,99,235,0.25); transform: translateY(-3px); box-shadow: 0 6px 20px rgba(0,0,0,0.05); }
+        .exercise-card .card-image { width: 100%; height: 140px; background: linear-gradient(135deg, var(--gray-100), var(--gray-200)); border-radius: 10px; display: flex; align-items: center; justify-content: center; color: var(--gray-400); font-size: 0.75rem; font-weight: 500; margin-bottom: 1rem; }
+        .exercise-card h3 { font-size: 1rem; font-weight: 700; margin-bottom: 0.4rem; }
+        .exercise-card .tags { display: flex; gap: 0.4rem; margin-bottom: 0.5rem; flex-wrap: wrap; }
+        .exercise-card .tag { padding: 0.15rem 0.5rem; border-radius: 50px; font-size: 0.65rem; font-weight: 600; }
+        .tag-muscle { background: rgba(37,99,235,0.08); color: var(--blue); }
+        .tag-compound { background: rgba(147,51,234,0.08); color: var(--purple); }
+        .tag-isolation { background: rgba(245,158,11,0.08); color: #D97706; }
+        .exercise-card p { color: var(--gray-500); font-size: 0.8rem; line-height: 1.5; }
+
+        .exercises-count { text-align: center; padding: 1rem 2rem 0; color: var(--gray-400); font-size: 0.85rem; }
+
+        .cta-section { padding: 5rem 2rem; text-align: center; background: linear-gradient(135deg, var(--dark), #1a1145); color: var(--white); }
+        .cta-section h2 { font-size: 2.2rem; font-weight: 800; margin-bottom: 1rem; }
+        .cta-section p { color: rgba(255,255,255,0.6); font-size: 1rem; max-width: 480px; margin: 0 auto 2rem; }
+        .btn-primary { display: inline-flex; align-items: center; gap: 0.5rem; background: linear-gradient(135deg, var(--blue), var(--purple)); color: var(--white); text-decoration: none; font-size: 1rem; font-weight: 600; padding: 0.875rem 2rem; border-radius: 12px; transition: opacity 0.2s, transform 0.2s; box-shadow: 0 4px 15px rgba(37,99,235,0.3); }
+        .btn-primary:hover { opacity: 0.92; transform: translateY(-2px); }
+
+        @media (max-width: 1024px) { .exercises-grid { grid-template-columns: repeat(2, 1fr); } }
+        @media (max-width: 768px) {
+            .page-header { padding: 7rem 1.5rem 2rem; }
+            .page-header h1 { font-size: 2rem; }
+            .exercises-grid { grid-template-columns: 1fr; }
+        }
+    </style>
+  </Fragment>
+
+    <header class="page-header">
+        <div class="section-label">Exercices</div>
+        <h1>Biblioth&egrave;que d'exercices</h1>
+        <p>Plus de 240 exercices avec instructions d&eacute;taill&eacute;es. Filtrez par groupe musculaire pour trouver l'exercice qu'il vous faut.</p>
+    </header>
+
+    <div class="filter-bar">
+        <button class="filter-btn active" onclick="filterExercises('all', this)">Tous</button>
+        <button class="filter-btn" onclick="filterExercises('pectoraux', this)">Pectoraux</button>
+        <button class="filter-btn" onclick="filterExercises('dos', this)">Dos</button>
+        <button class="filter-btn" onclick="filterExercises('epaules', this)">&Eacute;paules</button>
+        <button class="filter-btn" onclick="filterExercises('bras', this)">Bras</button>
+        <button class="filter-btn" onclick="filterExercises('jambes', this)">Jambes</button>
+        <button class="filter-btn" onclick="filterExercises('abdos', this)">Abdos</button>
+        <button class="filter-btn" onclick="filterExercises('cardio', this)">Cardio</button>
+    </div>
+
+    <div class="exercises-count"><span id="count">24</span> exercices affich&eacute;s</div>
+
+    <section class="exercises-grid">
+        <div class="exercise-card" data-muscle="pectoraux"><div class="card-image img-placeholder">Photo D&eacute;velopp&eacute; couch&eacute;</div><h3>D&eacute;velopp&eacute; couch&eacute;</h3><div class="tags"><span class="tag tag-muscle">Pectoraux</span><span class="tag tag-compound">Compound</span></div><p>Exercice roi pour les pectoraux. Travaille aussi les triceps et les &eacute;paules ant&eacute;rieures.</p></div>
+        <div class="exercise-card" data-muscle="pectoraux"><div class="card-image img-placeholder">Photo D&eacute;velopp&eacute; inclin&eacute;</div><h3>D&eacute;velopp&eacute; inclin&eacute;</h3><div class="tags"><span class="tag tag-muscle">Pectoraux</span><span class="tag tag-compound">Compound</span></div><p>Cible la partie haute des pectoraux. Id&eacute;al pour d&eacute;velopper le haut de la poitrine.</p></div>
+        <div class="exercise-card" data-muscle="pectoraux"><div class="card-image img-placeholder">Photo &Eacute;cart&eacute;s halt&egrave;res</div><h3>&Eacute;cart&eacute;s aux halt&egrave;res</h3><div class="tags"><span class="tag tag-muscle">Pectoraux</span><span class="tag tag-isolation">Isolation</span></div><p>Isole les pectoraux avec un mouvement d'ouverture. Excellent pour l'&eacute;tirement et la contraction.</p></div>
+        <div class="exercise-card" data-muscle="pectoraux"><div class="card-image img-placeholder">Photo Dips</div><h3>Dips</h3><div class="tags"><span class="tag tag-muscle">Pectoraux</span><span class="tag tag-compound">Compound</span></div><p>Mouvement au poids de corps ciblant pectoraux et triceps. Ajustez l'inclinaison pour varier.</p></div>
+
+        <div class="exercise-card" data-muscle="dos"><div class="card-image img-placeholder">Photo Tractions</div><h3>Tractions</h3><div class="tags"><span class="tag tag-muscle">Dos</span><span class="tag tag-compound">Compound</span></div><p>Exercice fondamental pour le dos. D&eacute;veloppe la largeur du grand dorsal et les biceps.</p></div>
+        <div class="exercise-card" data-muscle="dos"><div class="card-image img-placeholder">Photo Rowing barre</div><h3>Rowing barre</h3><div class="tags"><span class="tag tag-muscle">Dos</span><span class="tag tag-compound">Compound</span></div><p>Travaille l'&eacute;paisseur du dos. Cible les rhombo&iuml;des, les trap&egrave;zes et le grand dorsal.</p></div>
+        <div class="exercise-card" data-muscle="dos"><div class="card-image img-placeholder">Photo Soulev&eacute; de terre</div><h3>Soulev&eacute; de terre</h3><div class="tags"><span class="tag tag-muscle">Dos</span><span class="tag tag-compound">Compound</span></div><p>Le mouvement le plus complet. Recrute le dos, les jambes, les fessiers et le core.</p></div>
+        <div class="exercise-card" data-muscle="dos"><div class="card-image img-placeholder">Photo Tirage vertical</div><h3>Tirage vertical</h3><div class="tags"><span class="tag tag-muscle">Dos</span><span class="tag tag-compound">Compound</span></div><p>Alternative aux tractions &agrave; la poulie haute. Permet de r&eacute;gler la charge pr&eacute;cis&eacute;ment.</p></div>
+
+        <div class="exercise-card" data-muscle="epaules"><div class="card-image img-placeholder">Photo D&eacute;velopp&eacute; militaire</div><h3>D&eacute;velopp&eacute; militaire</h3><div class="tags"><span class="tag tag-muscle">&Eacute;paules</span><span class="tag tag-compound">Compound</span></div><p>Mouvement principal pour les &eacute;paules. Travaille les delto&iuml;des et les triceps.</p></div>
+        <div class="exercise-card" data-muscle="epaules"><div class="card-image img-placeholder">Photo &Eacute;l&eacute;vations lat&eacute;rales</div><h3>&Eacute;l&eacute;vations lat&eacute;rales</h3><div class="tags"><span class="tag tag-muscle">&Eacute;paules</span><span class="tag tag-isolation">Isolation</span></div><p>Isole le delto&iuml;de lat&eacute;ral pour des &eacute;paules plus larges. Contr&ocirc;lez le mouvement.</p></div>
+        <div class="exercise-card" data-muscle="epaules"><div class="card-image img-placeholder">Photo Face pull</div><h3>Face pull</h3><div class="tags"><span class="tag tag-muscle">&Eacute;paules</span><span class="tag tag-isolation">Isolation</span></div><p>Cible le delto&iuml;de post&eacute;rieur et les rotateurs externes. Essentiel pour la sant&eacute; des &eacute;paules.</p></div>
+
+        <div class="exercise-card" data-muscle="bras"><div class="card-image img-placeholder">Photo Curl biceps</div><h3>Curl biceps</h3><div class="tags"><span class="tag tag-muscle">Bras</span><span class="tag tag-isolation">Isolation</span></div><p>L'exercice classique pour les biceps. Variantes : barre, halt&egrave;res, marteau.</p></div>
+        <div class="exercise-card" data-muscle="bras"><div class="card-image img-placeholder">Photo Extensions triceps</div><h3>Extensions triceps</h3><div class="tags"><span class="tag tag-muscle">Bras</span><span class="tag tag-isolation">Isolation</span></div><p>Isole les triceps &agrave; la poulie ou avec halt&egrave;res. Compl&eacute;ment id&eacute;al des mouvements de pouss&eacute;e.</p></div>
+        <div class="exercise-card" data-muscle="bras"><div class="card-image img-placeholder">Photo Curl marteau</div><h3>Curl marteau</h3><div class="tags"><span class="tag tag-muscle">Bras</span><span class="tag tag-isolation">Isolation</span></div><p>Cible le brachio-radial et le biceps brachial. Prise neutre pour des bras plus &eacute;pais.</p></div>
+
+        <div class="exercise-card" data-muscle="jambes"><div class="card-image img-placeholder">Photo Squat</div><h3>Squat</h3><div class="tags"><span class="tag tag-muscle">Jambes</span><span class="tag tag-compound">Compound</span></div><p>Le roi des exercices pour les jambes. Travaille quadriceps, fessiers et ischio-jambiers.</p></div>
+        <div class="exercise-card" data-muscle="jambes"><div class="card-image img-placeholder">Photo Fentes</div><h3>Fentes</h3><div class="tags"><span class="tag tag-muscle">Jambes</span><span class="tag tag-compound">Compound</span></div><p>Exercice unilat&eacute;ral excellent pour l'&eacute;quilibre, les quadriceps et les fessiers.</p></div>
+        <div class="exercise-card" data-muscle="jambes"><div class="card-image img-placeholder">Photo Leg press</div><h3>Leg press</h3><div class="tags"><span class="tag tag-muscle">Jambes</span><span class="tag tag-compound">Compound</span></div><p>Alternative au squat &agrave; la machine. Permet de charger lourd en toute s&eacute;curit&eacute;.</p></div>
+        <div class="exercise-card" data-muscle="jambes"><div class="card-image img-placeholder">Photo Leg curl</div><h3>Leg curl</h3><div class="tags"><span class="tag tag-muscle">Jambes</span><span class="tag tag-isolation">Isolation</span></div><p>Isole les ischio-jambiers. Essentiel pour l'&eacute;quilibre musculaire des jambes.</p></div>
+        <div class="exercise-card" data-muscle="jambes"><div class="card-image img-placeholder">Photo Hip thrust</div><h3>Hip thrust</h3><div class="tags"><span class="tag tag-muscle">Jambes</span><span class="tag tag-compound">Compound</span></div><p>Le meilleur exercice pour les fessiers. Extension de hanche avec charge progressive.</p></div>
+
+        <div class="exercise-card" data-muscle="abdos"><div class="card-image img-placeholder">Photo Crunch</div><h3>Crunch</h3><div class="tags"><span class="tag tag-muscle">Abdos</span><span class="tag tag-isolation">Isolation</span></div><p>Exercice de base pour les abdominaux. Concentrez-vous sur la contraction du grand droit.</p></div>
+        <div class="exercise-card" data-muscle="abdos"><div class="card-image img-placeholder">Photo Planche</div><h3>Planche (gainage)</h3><div class="tags"><span class="tag tag-muscle">Abdos</span><span class="tag tag-isolation">Isolation</span></div><p>Renforcement isomique du core. Am&eacute;liore la stabilit&eacute; et la posture g&eacute;n&eacute;rale.</p></div>
+        <div class="exercise-card" data-muscle="abdos"><div class="card-image img-placeholder">Photo Relev&eacute; de jambes</div><h3>Relev&eacute; de jambes suspendu</h3><div class="tags"><span class="tag tag-muscle">Abdos</span><span class="tag tag-isolation">Isolation</span></div><p>Cible la partie basse des abdominaux. Suspendu &agrave; la barre pour une amplitude maximale.</p></div>
+
+        <div class="exercise-card" data-muscle="cardio"><div class="card-image img-placeholder">Photo Rameur</div><h3>Rameur</h3><div class="tags"><span class="tag tag-muscle">Cardio</span><span class="tag tag-compound">Compound</span></div><p>Cardio complet sollicitant tout le corps. Excellent rapport effort/impact articulaire.</p></div>
+        <div class="exercise-card" data-muscle="cardio"><div class="card-image img-placeholder">Photo Corde &agrave; sauter</div><h3>Corde &agrave; sauter</h3><div class="tags"><span class="tag tag-muscle">Cardio</span><span class="tag tag-compound">Compound</span></div><p>Cardio haute intensit&eacute; et coordination. Parfait pour l'&eacute;chauffement ou le HIIT.</p></div>
+    </section>
+
+    <section class="cta-section">
+        <h2>240+ exercices dans votre poche</h2>
+        <p>T&eacute;l&eacute;chargez AIVancePro pour acc&eacute;der &agrave; tous les exercices avec vid&eacute;os, instructions et int&eacute;gration directe dans vos s&eacute;ances.</p>
+        <a href="https://apps.apple.com/fr/app/aivancepro/id6756116760" class="btn-primary" target="_blank" rel="noopener">T&eacute;l&eacute;charger gratuitement</a>
+    </section>
+
+    <script>
+        function filterExercises(muscle, btn) {
+            document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
+            btn.classList.add('active');
+            let count = 0;
+            document.querySelectorAll('.exercise-card').forEach(card => {
+                if (muscle === 'all' || card.dataset.muscle === muscle) {
+                    card.style.display = '';
+                    count++;
+                } else {
+                    card.style.display = 'none';
+                }
+            });
+            document.getElementById('count').textContent = count;
+        }
+    </script>
+</BaseLayout>

@@ -1,0 +1,77 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+---
+
+<BaseLayout
+  lang="en"
+  title="Help Center - AIVancePro"
+  description="AIVancePro Help Center. FAQ, contact and technical support for the fitness coaching app."
+  canonical="https://aivancepro.fr/en/support.html"
+  alternates={{ fr: 'https://aivancepro.fr/support.html', en: 'https://aivancepro.fr/en/support.html', de: 'https://aivancepro.fr/de/support.html' }}
+>
+  <Fragment slot="head">
+    <style>
+      .page-header { padding: 9rem 2rem 2rem; text-align: center; background: linear-gradient(180deg, var(--gray-50), var(--white)); }
+      .page-header h1 { font-size: 2.8rem; font-weight: 800; color: var(--gray-900); margin-bottom: 0.5rem; }
+      .page-header p { color: var(--gray-500); font-size: 1.05rem; max-width: 600px; margin: 0 auto; }
+      .content { max-width: 800px; margin: 0 auto; padding: 2rem 2rem 4rem; }
+      .content h2 { font-size: 1.4rem; font-weight: 700; color: var(--gray-900); margin-top: 2.5rem; margin-bottom: 1rem; }
+      .content p, .content li { color: var(--gray-700); font-size: 0.95rem; margin-bottom: 1rem; }
+      .content ul { padding-left: 1.5rem; margin-bottom: 1rem; }
+      .content strong { color: var(--gray-900); }
+      .content a { color: var(--blue); }
+      .contact-box { background: var(--gray-50); border: 1px solid var(--gray-200); border-radius: 16px; padding: 2rem; margin: 1.5rem 0; }
+      .contact-box p { margin-bottom: 0.75rem; }
+      .faq-item { background: var(--gray-50); border: 1px solid var(--gray-200); border-radius: 12px; padding: 1.5rem; margin: 1rem 0; }
+      .faq-item h3 { font-size: 1rem; font-weight: 600; color: var(--blue); margin-bottom: 0.75rem; }
+      .faq-item p { margin-bottom: 0.5rem; }
+      .faq-item ol { padding-left: 1.5rem; }
+      .faq-item ol li { margin-bottom: 0.3rem; }
+      .back { display: inline-block; margin-top: 2rem; color: var(--gray-500); text-decoration: none; font-size: 0.9rem; }
+      .back:hover { color: var(--gray-900); }
+      @media (max-width: 768px) {
+          .page-header { padding: 7rem 1.5rem 1.5rem; }
+          .page-header h1 { font-size: 1.8rem; }
+      }
+    </style>
+  </Fragment>
+
+  <header class="page-header">
+      <h1>Help Center</h1>
+      <p>We are committed to providing the best possible experience for our users. If you encounter any issues or have questions, please use the resources below.</p>
+  </header>
+
+  <div class="content">
+      <h2>Contact Us</h2>
+      <div class="contact-box">
+          <p><strong>By email:</strong> <a href="mailto:aivancepro@gmail.com">aivancepro@gmail.com</a></p>
+          <p style="color: var(--gray-500); font-size: 0.85rem;">Our team typically responds within 24 to 48 hours.</p>
+          <p style="margin-top: 1rem;"><strong>Support form:</strong> <a href="https://forms.gle/F2NVKGcma7Y4auQc8" target="_blank" rel="noopener">Open the form</a></p>
+          <p style="color: var(--gray-500); font-size: 0.85rem;">Please provide as much detail as possible (device model, operating system version, and steps to reproduce the issue).</p>
+      </div>
+
+      <h2>Frequently Asked Questions (FAQ)</h2>
+
+      <div class="faq-item">
+          <h3>The app won&#8217;t launch or displays a blank screen. What should I do?</h3>
+          <ol>
+              <li>Make sure you have installed the latest version available on the App Store or Google Play.</li>
+              <li>Check your Internet connection (Wi-Fi or cellular).</li>
+              <li>Try force-closing and restarting the app.</li>
+          </ol>
+      </div>
+
+      <div class="faq-item">
+          <h3>How can I request the deletion of my data or my account?</h3>
+          <p>You can request the deletion of your account directly in the app settings or by contacting us at <a href="mailto:aivancepro@gmail.com">aivancepro@gmail.com</a>. We comply with all data privacy regulations.</p>
+      </div>
+
+      <h2>Legal</h2>
+      <ul>
+          <li><a href="/en/privacy.html">Privacy Policy</a></li>
+          <li><a href="/en/terms.html">Terms of Use</a></li>
+      </ul>
+
+      <a href="/en/" class="back">&larr; Back to home</a>
+  </div>
+</BaseLayout>

@@ -1,0 +1,239 @@
+---
+import BaseLayout from '../../../layouts/BaseLayout.astro';
+---
+
+<BaseLayout
+  lang="en"
+  title="Fitness &amp; Strength Training Guides - AIVancePro"
+  description="Complete fitness and strength training guides. Learn the basics, create your program and progress effectively."
+  canonical="https://aivancepro.fr/en/guides/"
+  alternates={{ fr: 'https://aivancepro.fr/guides/', en: 'https://aivancepro.fr/en/guides/', de: 'https://aivancepro.fr/de/ratgeber/' }}
+>
+  <Fragment slot="head">
+    <style>
+      .page-header {
+        padding: 9rem 2rem 3rem;
+        text-align: center;
+        background: linear-gradient(180deg, var(--gray-50), var(--white));
+      }
+      .section-label {
+        display: inline-block;
+        font-size: 0.8rem;
+        font-weight: 700;
+        text-transform: uppercase;
+        letter-spacing: 0.08em;
+        color: var(--blue);
+        margin-bottom: 0.75rem;
+      }
+      .page-header h1 {
+        font-size: 2.8rem;
+        font-weight: 800;
+        letter-spacing: -0.02em;
+        margin-bottom: 1rem;
+      }
+      .page-header p {
+        color: var(--gray-500);
+        font-size: 1.1rem;
+        max-width: 550px;
+        margin: 0 auto;
+      }
+      .guides-grid {
+        max-width: 1000px;
+        margin: 0 auto;
+        padding: 3rem 2rem 6rem;
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 1.5rem;
+      }
+      .guide-card {
+        background: var(--white);
+        border: 1px solid var(--gray-200);
+        border-radius: 16px;
+        overflow: hidden;
+        text-decoration: none;
+        color: var(--gray-900);
+        transition: border-color 0.2s, transform 0.2s, box-shadow 0.2s;
+        display: flex;
+        flex-direction: column;
+      }
+      .guide-card:hover {
+        border-color: rgba(37, 99, 235, 0.3);
+        transform: translateY(-4px);
+        box-shadow: 0 8px 30px rgba(0, 0, 0, 0.06);
+      }
+      .guide-card .card-image {
+        width: 100%;
+        height: 180px;
+        background: linear-gradient(135deg, var(--gray-100), var(--gray-200));
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        color: var(--gray-400);
+        font-size: 0.8rem;
+        font-weight: 500;
+      }
+      .guide-card .card-content {
+        padding: 1.5rem;
+        flex: 1;
+        display: flex;
+        flex-direction: column;
+      }
+      .guide-card .tag {
+        display: inline-block;
+        padding: 0.2rem 0.6rem;
+        background: rgba(37, 99, 235, 0.06);
+        border-radius: 50px;
+        font-size: 0.7rem;
+        color: var(--blue);
+        font-weight: 600;
+        margin-bottom: 0.75rem;
+        width: fit-content;
+      }
+      .guide-card h2 {
+        font-size: 1.1rem;
+        font-weight: 700;
+        margin-bottom: 0.5rem;
+        line-height: 1.35;
+      }
+      .guide-card p {
+        color: var(--gray-500);
+        font-size: 0.85rem;
+        line-height: 1.6;
+        flex: 1;
+      }
+      .guide-card .meta {
+        margin-top: 1rem;
+        font-size: 0.75rem;
+        color: var(--gray-400);
+        font-weight: 500;
+      }
+      .cta-section {
+        padding: 5rem 2rem;
+        text-align: center;
+        background: linear-gradient(135deg, var(--dark), #1a1145);
+        color: var(--white);
+      }
+      .cta-section h2 {
+        font-size: 2.2rem;
+        font-weight: 800;
+        margin-bottom: 1rem;
+      }
+      .cta-section p {
+        color: rgba(255, 255, 255, 0.6);
+        font-size: 1rem;
+        max-width: 450px;
+        margin: 0 auto 2rem;
+      }
+      .btn-primary {
+        display: inline-flex;
+        align-items: center;
+        gap: 0.5rem;
+        background: linear-gradient(135deg, var(--blue), var(--purple));
+        color: var(--white);
+        text-decoration: none;
+        font-size: 1rem;
+        font-weight: 600;
+        padding: 0.875rem 2rem;
+        border-radius: 12px;
+        transition: opacity 0.2s, transform 0.2s;
+        box-shadow: 0 4px 15px rgba(37, 99, 235, 0.3);
+      }
+      .btn-primary:hover {
+        opacity: 0.92;
+        transform: translateY(-2px);
+      }
+      @media (max-width: 768px) {
+        .page-header { padding: 7rem 1.5rem 2rem; }
+        .page-header h1 { font-size: 2rem; }
+        .guides-grid { grid-template-columns: 1fr; }
+      }
+    </style>
+  </Fragment>
+
+  <header class="page-header">
+    <div class="section-label">Guides</div>
+    <h1>Complete Guides</h1>
+    <p>Detailed guides to master every aspect of your training, from beginner to advanced.</p>
+  </header>
+
+  <section class="guides-grid">
+    <a href="/en/guides/beginner-strength-training/" class="guide-card">
+      <div class="card-image img-placeholder">Beginner Guide Photo</div>
+      <div class="card-content">
+        <span class="tag">Beginner</span>
+        <h2>Beginner's Guide to Strength Training</h2>
+        <p>Everything you need to know to start strength training: basic exercises, program structure and mistakes to avoid.</p>
+        <div class="meta">15 min read</div>
+      </div>
+    </a>
+    <a href="/en/guides/create-training-program/" class="guide-card">
+      <div class="card-image img-placeholder">Program Photo</div>
+      <div class="card-content">
+        <span class="tag">Programming</span>
+        <h2>Creating an Effective Training Program</h2>
+        <p>Sets, reps, frequency and volume: the keys to building a program that delivers results.</p>
+        <div class="meta">12 min read</div>
+      </div>
+    </a>
+    <a href="/en/guides/nutrition-training/" class="guide-card">
+      <div class="card-image img-placeholder">Nutrition Photo</div>
+      <div class="card-content">
+        <span class="tag">Nutrition</span>
+        <h2>Nutrition and Training: The Complete Guide</h2>
+        <p>Protein, calories, macros and meal timing. Everything you need to optimize your results through nutrition.</p>
+        <div class="meta">18 min read</div>
+      </div>
+    </a>
+    <a href="/en/guides/recovery-injury-prevention/" class="guide-card">
+      <div class="card-image img-placeholder">Recovery Photo</div>
+      <div class="card-content">
+        <span class="tag">Recovery</span>
+        <h2>Recovery and Injury Prevention</h2>
+        <p>Sleep, stretching, deload and fatigue management. Learn to recover better to progress faster.</p>
+        <div class="meta">10 min read</div>
+      </div>
+    </a>
+    <a href="/en/guides/periodization-basics/" class="guide-card">
+      <div class="card-image img-placeholder">Periodization Photo</div>
+      <div class="card-content">
+        <span class="tag">Advanced</span>
+        <h2>Periodization Basics</h2>
+        <p>Microcycles, mesocycles and macrocycles: structure your long-term training to progress without plateauing.</p>
+        <div class="meta">14 min read</div>
+      </div>
+    </a>
+    <a href="/en/guides/improve-bench-press/" class="guide-card">
+      <div class="card-image img-placeholder">Bench Press Photo</div>
+      <div class="card-content">
+        <span class="tag">Strength</span>
+        <h2>How to Improve Your Bench Press</h2>
+        <p>Technique, programming and accessory exercises to effectively increase your bench press.</p>
+        <div class="meta">11 min read</div>
+      </div>
+    </a>
+    <a href="/en/guides/home-gym-guide/" class="guide-card">
+      <div class="card-image img-placeholder">Home Gym Photo</div>
+      <div class="card-content">
+        <span class="tag">Home Gym</span>
+        <h2>Home Gym Guide: Training at Home</h2>
+        <p>Essential equipment, setup and adapted programs for effective training at home.</p>
+        <div class="meta">13 min read</div>
+      </div>
+    </a>
+    <a href="/en/guides/understanding-rpe/" class="guide-card">
+      <div class="card-image img-placeholder">RPE Photo</div>
+      <div class="card-content">
+        <span class="tag">Technique</span>
+        <h2>Understanding RPE and Intensity</h2>
+        <p>RPE scale, RIR and 1RM percentage: how to dose intensity to optimize every session.</p>
+        <div class="meta">9 min read</div>
+      </div>
+    </a>
+  </section>
+
+  <section class="cta-section">
+    <h2>Put it into practice</h2>
+    <p>Download AIVancePro and let the AI coach apply these principles to your training.</p>
+    <a href="https://apps.apple.com/app/aivancepro/id6756116760" class="btn-primary" target="_blank" rel="noopener">Download for free</a>
+  </section>
+</BaseLayout>

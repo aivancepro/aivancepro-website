@@ -1,0 +1,164 @@
+export const languages = {
+  fr: { flag: '\u{1F1EB}\u{1F1F7}', label: 'Fran\u00e7ais', short: 'FR' },
+  en: { flag: '\u{1F1EC}\u{1F1E7}', label: 'English', short: 'EN' },
+  de: { flag: '\u{1F1E9}\u{1F1EA}', label: 'Deutsch', short: 'DE' },
+};
+
+export const t = {
+  fr: {
+    nav: {
+      features: 'Fonctionnalit\u00e9s',
+      articles: 'Articles',
+      blog: 'Blog',
+      guides: 'Guides',
+      exercises: "Biblioth\u00e8que d'exercices",
+      personalTraining: 'Personal Training',
+      workoutSplits: 'Workout Splits',
+      compoundIsolation: 'Compound vs Isolation',
+      pricing: 'Tarifs',
+      faq: 'FAQ',
+      login: 'Connexion',
+      download: 'T\u00e9l\u00e9charger',
+      close: 'Fermer',
+      menu: 'Menu',
+    },
+    footer: {
+      tagline: 'Votre coach fitness personnel propuls\u00e9 par l\'intelligence artificielle.',
+      product: 'Produit',
+      support: 'Support',
+      legal: 'L\u00e9gal',
+      privacy: 'Confidentialit\u00e9',
+      terms: 'CGU',
+      copyright: '\u00a9 2026 AS Corporation. Tous droits r\u00e9serv\u00e9s.',
+    },
+    links: {
+      home: '/',
+      features: '/#features',
+      pricing: '/#pricing',
+      faq: '/#faq',
+      blog: '/blog/',
+      guides: '/guides/',
+      exercises: '/exercices/',
+      personalTraining: '/personal-training/',
+      workoutSplits: '/workout-splits/',
+      compoundIsolation: '/compound-vs-isolation/',
+      login: '/login.html',
+      privacy: '/privacy.html',
+      terms: '/terms.html',
+      support: '/support.html',
+      appStore: 'https://apps.apple.com/fr/app/aivancepro/id6756116760',
+      playStore: 'https://play.google.com/store/apps/details?id=com.aivancepro.app',
+    },
+  },
+  en: {
+    nav: {
+      features: 'Features',
+      articles: 'Articles',
+      blog: 'Blog',
+      guides: 'Guides',
+      exercises: 'Exercise Library',
+      personalTraining: 'Personal Training',
+      workoutSplits: 'Workout Splits',
+      compoundIsolation: 'Compound vs Isolation',
+      pricing: 'Pricing',
+      faq: 'FAQ',
+      login: 'Login',
+      download: 'Download',
+      close: 'Close',
+      menu: 'Menu',
+    },
+    footer: {
+      tagline: 'Your personal AI-powered fitness coach.',
+      product: 'Product',
+      support: 'Support',
+      legal: 'Legal',
+      privacy: 'Privacy',
+      terms: 'Terms',
+      copyright: '\u00a9 2026 AS Corporation. All rights reserved.',
+    },
+    links: {
+      home: '/en/',
+      features: '/en/#features',
+      pricing: '/en/#pricing',
+      faq: '/en/#faq',
+      blog: '/en/blog/',
+      guides: '/en/guides/',
+      exercises: '/en/exercises/',
+      personalTraining: '/en/personal-training/',
+      workoutSplits: '/en/workout-splits/',
+      compoundIsolation: '/en/compound-vs-isolation/',
+      login: '/login.html',
+      privacy: '/en/privacy.html',
+      terms: '/en/terms.html',
+      support: '/en/support.html',
+      appStore: 'https://apps.apple.com/app/aivancepro/id6756116760',
+      playStore: 'https://play.google.com/store/apps/details?id=com.aivancepro.app',
+    },
+  },
+  de: {
+    nav: {
+      features: 'Funktionen',
+      articles: 'Artikel',
+      blog: 'Blog',
+      guides: 'Ratgeber',
+      exercises: '\u00dcbungsbibliothek',
+      personalTraining: 'Personal Training',
+      workoutSplits: 'Workout Splits',
+      compoundIsolation: 'Compound vs Isolation',
+      pricing: 'Preise',
+      faq: 'FAQ',
+      login: 'Anmelden',
+      download: 'Herunterladen',
+      close: 'Schlie\u00dfen',
+      menu: 'Men\u00fc',
+    },
+    footer: {
+      tagline: 'Ihr pers\u00f6nlicher KI-gest\u00fctzter Fitness-Coach.',
+      product: 'Produkt',
+      support: 'Support',
+      legal: 'Rechtliches',
+      privacy: 'Datenschutz',
+      terms: 'AGB',
+      copyright: '\u00a9 2026 AS Corporation. Alle Rechte vorbehalten.',
+    },
+    links: {
+      home: '/de/',
+      features: '/de/#funktionen',
+      pricing: '/de/#preise',
+      faq: '/de/#faq',
+      blog: '/de/blog/',
+      guides: '/de/ratgeber/',
+      exercises: '/de/uebungen/',
+      personalTraining: '/de/personal-training/',
+      workoutSplits: '/de/workout-splits/',
+      compoundIsolation: '/de/compound-vs-isolation/',
+      login: '/de/login.html',
+      privacy: '/de/datenschutz.html',
+      terms: '/de/agb.html',
+      support: '/de/support.html',
+      appStore: 'https://apps.apple.com/de/app/aivancepro/id6756116760',
+      playStore: 'https://play.google.com/store/apps/details?id=com.aivancepro.app',
+    },
+  },
+};
+
+export function getLangFromUrl(url) {
+  const path = typeof url === 'string' ? url : url.pathname;
+  if (path.startsWith('/en/') || path === '/en') return 'en';
+  if (path.startsWith('/de/') || path === '/de') return 'de';
+  return 'fr';
+}
+
+export function getAlternateUrls(currentPath) {
+  const base = 'https://aivancepro.fr';
+  // Remove language prefix
+  let path = currentPath;
+  if (path.startsWith('/en/')) path = path.slice(3);
+  else if (path.startsWith('/de/')) path = path.slice(3);
+
+  return {
+    fr: base + (path || '/'),
+    en: base + '/en' + (path || '/'),
+    de: base + '/de' + (path || '/'),
+  };
+}

@@ -1,0 +1,69 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+---
+
+<BaseLayout
+  lang="en"
+  title="Privacy Policy - AIVancePro"
+  description="AIVancePro Privacy Policy. Learn how we protect your personal data."
+  canonical="https://aivancepro.fr/en/privacy.html"
+  alternates={{ fr: 'https://aivancepro.fr/privacy.html', en: 'https://aivancepro.fr/en/privacy.html', de: 'https://aivancepro.fr/de/datenschutz.html' }}
+>
+  <Fragment slot="head">
+    <style>
+      .page-header { padding: 9rem 2rem 2rem; text-align: center; background: linear-gradient(180deg, var(--gray-50), var(--white)); }
+      .page-header h1 { font-size: 2.8rem; font-weight: 800; color: var(--gray-900); margin-bottom: 0.5rem; }
+      .page-header .date { color: var(--gray-500); font-size: 0.9rem; }
+      .content { max-width: 800px; margin: 0 auto; padding: 2rem 2rem 4rem; }
+      .content h2 { font-size: 1.4rem; font-weight: 700; color: var(--gray-900); margin-top: 2.5rem; margin-bottom: 1rem; }
+      .content p, .content li { color: var(--gray-700); font-size: 0.95rem; margin-bottom: 1rem; }
+      .content ul { padding-left: 1.5rem; margin-bottom: 1rem; }
+      .content strong { color: var(--gray-900); }
+      .content a { color: var(--blue); }
+      .back { display: inline-block; margin-top: 2rem; color: var(--gray-500); text-decoration: none; font-size: 0.9rem; }
+      .back:hover { color: var(--gray-900); }
+      @media (max-width: 768px) {
+          .page-header { padding: 7rem 1.5rem 1.5rem; }
+          .page-header h1 { font-size: 1.8rem; }
+      }
+    </style>
+  </Fragment>
+
+    <header class="page-header">
+        <h1>Privacy Policy</h1>
+        <p class="date">Last updated: November 25, 2025</p>
+    </header>
+
+    <div class="content">
+        <h2>1. Data Collection</h2>
+        <p>We collect data that you provide to us directly, such as your profile information (name, email, age, etc.), your training data (exercises, sets, reps, weight, RPE), your goals, and your body measurements.</p>
+
+        <h2>2. Use of Data</h2>
+        <p>Your data is used to:</p>
+        <ul>
+            <li>Personalize your experience and training programs through our AI.</li>
+            <li>Track your progress and provide relevant analytics.</li>
+            <li>Power community features (if you choose to use them).</li>
+            <li>Improve our artificial intelligence algorithms.</li>
+        </ul>
+        <p>Your training data may be used anonymously to improve our AI models, but it will never be shared with third parties in a way that would allow you to be personally identified.</p>
+
+        <h2>3. Data Sharing</h2>
+        <p>We do not sell, trade, or rent your personal information to third parties. Interactions within community features (feed, messages) are visible to other users based on your privacy settings.</p>
+
+        <h2>4. Data Security</h2>
+        <p>We implement security measures to protect your data. All data is encrypted during transfer and storage.</p>
+
+        <h2>5. Data Retention and Deletion</h2>
+        <p>We retain your data as long as your account is active. You can request the complete deletion of your account and all associated data at any time from the application settings.</p>
+        <p>When you delete your account, we commit to permanently erasing your email address, profile information, training data, and any other personal information from our databases within a reasonable timeframe.</p>
+
+        <h2>6. In-App Purchases</h2>
+        <p>We do not store any payment information. Transactions are processed securely by the platform provider (e.g., Apple App Store).</p>
+
+        <h2>7. Contact</h2>
+        <p>For any questions regarding this privacy policy, please contact us at <a href="mailto:aivancepro@gmail.com">aivancepro@gmail.com</a>.</p>
+
+        <a href="/en/" class="back">&larr; Back to home</a>
+    </div>
+</BaseLayout>

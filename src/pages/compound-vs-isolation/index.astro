@@ -1,0 +1,123 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+---
+
+<BaseLayout
+  lang="fr"
+  title="Exercices Compound vs Isolation : le guide complet - AIVancePro"
+  description="Quelle diff&eacute;rence entre exercices compound (polyarticulaires) et isolation (monoarticulaires) ? Guide complet pour optimiser votre programme."
+  canonical="https://aivancepro.fr/compound-vs-isolation/"
+  ogType="article"
+  alternates={{ fr: 'https://aivancepro.fr/compound-vs-isolation/', en: 'https://aivancepro.fr/en/compound-vs-isolation/', de: 'https://aivancepro.fr/de/compound-vs-isolation/' }}
+>
+  <Fragment slot="head">
+    <style>
+        .article-header { padding: 9rem 2rem 3rem; text-align: center; background: linear-gradient(180deg, var(--gray-50), var(--white)); }
+        .section-label { display: inline-block; font-size: 0.8rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.08em; color: var(--blue); margin-bottom: 0.75rem; }
+        .article-header h1 { font-size: 2.8rem; font-weight: 800; letter-spacing: -0.02em; margin-bottom: 1rem; max-width: 750px; margin-left: auto; margin-right: auto; }
+        .article-header p { color: var(--gray-500); font-size: 1.1rem; max-width: 600px; margin: 0 auto; }
+
+        .article-content { max-width: 750px; margin: 0 auto; padding: 3rem 2rem 4rem; }
+        .article-content h2 { font-size: 1.6rem; font-weight: 800; margin: 3rem 0 1rem; }
+        .article-content h3 { font-size: 1.2rem; font-weight: 700; margin: 2rem 0 0.75rem; }
+        .article-content p { color: var(--gray-700); font-size: 1rem; line-height: 1.8; margin-bottom: 1.25rem; }
+        .article-content ul { margin: 1rem 0 1.5rem 1.5rem; }
+        .article-content li { color: var(--gray-700); font-size: 1rem; line-height: 1.8; margin-bottom: 0.5rem; }
+        .article-content .img-placeholder { width: 100%; height: 350px; background: linear-gradient(135deg, var(--gray-100), var(--gray-200)); border-radius: 16px; display: flex; align-items: center; justify-content: center; color: var(--gray-400); font-size: 0.85rem; margin: 2rem 0; }
+
+        .exercise-examples { display: grid; grid-template-columns: repeat(2, 1fr); gap: 1rem; margin: 1.5rem 0; }
+        .exercise-example { background: var(--gray-50); border: 1px solid var(--gray-200); border-radius: 12px; padding: 1.25rem; }
+        .exercise-example h4 { font-size: 0.95rem; font-weight: 700; margin-bottom: 0.25rem; }
+        .exercise-example p { font-size: 0.85rem; color: var(--gray-500); margin-bottom: 0; }
+
+        .comparison-table { width: 100%; border-collapse: collapse; margin: 2rem 0; border-radius: 12px; overflow: hidden; border: 1px solid var(--gray-200); }
+        .comparison-table th { background: var(--gray-50); padding: 1rem; text-align: left; font-size: 0.85rem; font-weight: 700; color: var(--gray-900); border-bottom: 1px solid var(--gray-200); }
+        .comparison-table td { padding: 0.875rem 1rem; font-size: 0.9rem; color: var(--gray-700); border-bottom: 1px solid var(--gray-100); }
+
+        .cta-section { padding: 5rem 2rem; text-align: center; background: linear-gradient(135deg, var(--dark), #1a1145); color: var(--white); }
+        .cta-section h2 { font-size: 2.2rem; font-weight: 800; margin-bottom: 1rem; }
+        .cta-section p { color: rgba(255,255,255,0.6); font-size: 1rem; max-width: 480px; margin: 0 auto 2rem; }
+        .btn-primary { display: inline-flex; background: linear-gradient(135deg, var(--blue), var(--purple)); color: var(--white); text-decoration: none; font-size: 1rem; font-weight: 600; padding: 0.875rem 2rem; border-radius: 12px; box-shadow: 0 4px 15px rgba(37,99,235,0.3); transition: opacity 0.2s, transform 0.2s; }
+        .btn-primary:hover { opacity: 0.92; transform: translateY(-2px); }
+
+        @media (max-width: 768px) {
+            .article-header { padding: 7rem 1.5rem 2rem; }
+            .article-header h1 { font-size: 2rem; }
+            .exercise-examples { grid-template-columns: 1fr; }
+        }
+    </style>
+  </Fragment>
+
+    <header class="article-header">
+        <div class="section-label">Exercices</div>
+        <h1>Compound vs Isolation : quel type d'exercice choisir ?</h1>
+        <p>Polyarticulaires ou monoarticulaires ? Comprenez la diff&eacute;rence et apprenez &agrave; les combiner pour un programme optimal.</p>
+    </header>
+
+    <article class="article-content">
+        <h2>Exercices compound (polyarticulaires)</h2>
+        <p>Les exercices compound sollicitent <strong>plusieurs articulations et groupes musculaires</strong> simultan&eacute;ment. Ils permettent de soulever des charges plus lourdes et de recruter un maximum de fibres musculaires en un seul mouvement.</p>
+        <p>Ce sont les fondations de tout bon programme de musculation. Ils d&eacute;veloppent la force fonctionnelle et br&ucirc;lent plus de calories par r&eacute;p&eacute;tition.</p>
+
+        <h3>Exemples d'exercices compound</h3>
+        <div class="exercise-examples">
+            <div class="exercise-example"><h4>Squat</h4><p>Quadriceps, fessiers, ischio-jambiers, core</p></div>
+            <div class="exercise-example"><h4>D&eacute;velopp&eacute; couch&eacute;</h4><p>Pectoraux, triceps, &eacute;paules ant&eacute;rieures</p></div>
+            <div class="exercise-example"><h4>Soulev&eacute; de terre</h4><p>Dos, fessiers, ischio-jambiers, trap&egrave;zes</p></div>
+            <div class="exercise-example"><h4>Tractions</h4><p>Grand dorsal, biceps, rhombo&iuml;des</p></div>
+            <div class="exercise-example"><h4>D&eacute;velopp&eacute; militaire</h4><p>Delto&iuml;des, triceps, trap&egrave;zes</p></div>
+            <div class="exercise-example"><h4>Rowing barre</h4><p>Dos, biceps, trap&egrave;zes, rhombo&iuml;des</p></div>
+        </div>
+
+        <div class="img-placeholder">Photo Exercices compound</div>
+
+        <h2>Exercices d'isolation (monoarticulaires)</h2>
+        <p>Les exercices d'isolation ciblent <strong>un seul muscle ou groupe musculaire</strong> en ne mobilisant qu'une seule articulation. Ils sont parfaits pour corriger des d&eacute;s&eacute;quilibres, cibler un muscle en retard ou finir un entra&icirc;nement avec du volume sp&eacute;cifique.</p>
+
+        <h3>Exemples d'exercices d'isolation</h3>
+        <div class="exercise-examples">
+            <div class="exercise-example"><h4>Curl biceps</h4><p>Biceps uniquement</p></div>
+            <div class="exercise-example"><h4>Extensions triceps</h4><p>Triceps uniquement</p></div>
+            <div class="exercise-example"><h4>&Eacute;l&eacute;vations lat&eacute;rales</h4><p>Delto&iuml;de lat&eacute;ral</p></div>
+            <div class="exercise-example"><h4>Leg curl</h4><p>Ischio-jambiers</p></div>
+            <div class="exercise-example"><h4>Leg extension</h4><p>Quadriceps</p></div>
+            <div class="exercise-example"><h4>&Eacute;cart&eacute;s halt&egrave;res</h4><p>Pectoraux (stretch)</p></div>
+        </div>
+
+        <h2>Tableau comparatif</h2>
+        <table class="comparison-table">
+            <thead>
+                <tr><th></th><th>Compound</th><th>Isolation</th></tr>
+            </thead>
+            <tbody>
+                <tr><td><strong>Muscles travaill&eacute;s</strong></td><td>Plusieurs groupes</td><td>Un seul muscle</td></tr>
+                <tr><td><strong>Charge possible</strong></td><td>&Eacute;lev&eacute;e</td><td>Mod&eacute;r&eacute;e</td></tr>
+                <tr><td><strong>D&eacute;pense calorique</strong></td><td>Haute</td><td>Faible</td></tr>
+                <tr><td><strong>Gain de force</strong></td><td>Excellent</td><td>Limit&eacute;</td></tr>
+                <tr><td><strong>Ciblage pr&eacute;cis</strong></td><td>Mod&eacute;r&eacute;</td><td>Excellent</td></tr>
+                <tr><td><strong>Risque blessure</strong></td><td>Plus &eacute;lev&eacute; (technique)</td><td>Plus faible</td></tr>
+                <tr><td><strong>Id&eacute;al pour</strong></td><td>Force, masse, performance</td><td>Finition, &eacute;quilibre, volume</td></tr>
+            </tbody>
+        </table>
+
+        <div class="img-placeholder">Photo Comparaison compound vs isolation</div>
+
+        <h2>Quand utiliser chaque type ?</h2>
+        <p><strong>Commencez par les compound.</strong> Placez toujours vos exercices polyarticulaires en d&eacute;but de s&eacute;ance quand vous &ecirc;tes frais et que vous pouvez soulever lourd en toute s&eacute;curit&eacute;.</p>
+        <p><strong>Finissez par l'isolation.</strong> Utilisez les exercices d'isolation en fin de s&eacute;ance pour cibler les muscles qui n'ont pas &eacute;t&eacute; suffisamment stimul&eacute;s, ou pour ajouter du volume sur un point faible.</p>
+
+        <h2>La r&egrave;gle du 80/20</h2>
+        <p>Un bon programme suit g&eacute;n&eacute;ralement la r&egrave;gle du 80/20 : <strong>80% d'exercices compound, 20% d'isolation</strong>. Cette r&eacute;partition assure une base de force solide tout en permettant un travail cibl&eacute;.</p>
+
+        <h2>AIVancePro &eacute;quilibre pour vous</h2>
+        <p>Le coach IA d'AIVancePro conna&icirc;t cette r&egrave;gle et l'applique automatiquement. Quand il g&eacute;n&egrave;re une s&eacute;ance, il place les compound en premier et compl&egrave;te avec de l'isolation selon vos besoins et votre historique.</p>
+
+        <div class="img-placeholder">Photo AIVancePro &eacute;quilibre exercices</div>
+    </article>
+
+    <section class="cta-section">
+        <h2>Le bon &eacute;quilibre, automatiquement</h2>
+        <p>AIVancePro g&eacute;n&egrave;re des s&eacute;ances avec le mix parfait de compound et d'isolation pour vos objectifs.</p>
+        <a href="https://apps.apple.com/fr/app/aivancepro/id6756116760" class="btn-primary" target="_blank" rel="noopener">T&eacute;l&eacute;charger gratuitement</a>
+    </section>
+</BaseLayout>

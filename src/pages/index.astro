@@ -1,0 +1,2108 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+
+const lang = 'fr';
+const jsonLd = {
+  "@context": "https://schema.org",
+  "@type": "MobileApplication",
+  "name": "AIVancePro",
+  "description": "Coach fitness personnel propuls\u00e9 par l'intelligence artificielle avec programmes personnalis\u00e9s et suivi de progression.",
+  "operatingSystem": "iOS, Android",
+  "applicationCategory": "HealthApplication",
+  "offers": { "@type": "Offer", "price": "0", "priceCurrency": "EUR" },
+  "author": { "@type": "Organization", "name": "AS Corporation", "url": "https://aivancepro.fr" },
+  "installUrl": [
+    "https://apps.apple.com/fr/app/aivancepro/id6756116760",
+    "https://play.google.com/store/apps/details?id=com.aivancepro.app"
+  ]
+};
+---
+
+<BaseLayout
+  lang={lang}
+  title="AIVancePro - Votre coach fitness personnel propuls\u00e9 par l'IA"
+  description="AIVancePro est votre coach fitness personnel propuls\u00e9 par l'intelligence artificielle. Programmes personnalis\u00e9s, suivi de progression et communaut\u00e9 sportive."
+  canonical="https://aivancepro.fr/"
+  alternates={{ fr: 'https://aivancepro.fr/', en: 'https://aivancepro.fr/en/', de: 'https://aivancepro.fr/de/' }}
+  jsonLd={jsonLd}
+>
+  <Fragment slot="head">
+    <meta name="keywords" content="coach fitness IA, application musculation, programme entra\u00eenement personnalis\u00e9, suivi progression sportive, coach personnel virtuel">
+    <style>
+        /* ===== HERO ===== */
+        .hero {
+            padding: 10rem 2rem 6rem;
+            text-align: center;
+            background: linear-gradient(180deg, var(--gray-50) 0%, var(--white) 100%);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -20%;
+            width: 140%;
+            height: 100%;
+            background: radial-gradient(ellipse at 30% 50%, rgba(37, 99, 235, 0.06) 0%, transparent 60%),
+                        radial-gradient(ellipse at 70% 50%, rgba(147, 51, 234, 0.05) 0%, transparent 60%);
+            pointer-events: none;
+        }
+
+        .hero-content {
+            max-width: 800px;
+            margin: 0 auto;
+            position: relative;
+            z-index: 1;
+        }
+
+        .hero-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            padding: 0.4rem 1rem;
+            background: linear-gradient(135deg, rgba(37, 99, 235, 0.08), rgba(147, 51, 234, 0.08));
+            border: 1px solid rgba(37, 99, 235, 0.15);
+            border-radius: 50px;
+            font-size: 0.8rem;
+            font-weight: 600;
+            color: var(--blue);
+            margin-bottom: 1.5rem;
+        }
+
+        .hero h1 {
+            font-size: 4rem;
+            font-weight: 900;
+            font-style: normal;
+            line-height: 1.08;
+            letter-spacing: -0.03em;
+            color: var(--gray-900);
+            margin-bottom: 1.5rem;
+        }
+
+        .hero h1 .gradient {
+            background: linear-gradient(135deg, var(--blue), var(--purple));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .hero p {
+            font-size: 1.2rem;
+            color: var(--gray-500);
+            max-width: 560px;
+            margin: 0 auto 2.5rem;
+            line-height: 1.7;
+        }
+
+        .hero-buttons {
+            display: flex;
+            gap: 1rem;
+            justify-content: center;
+            flex-wrap: wrap;
+            margin-bottom: 3rem;
+        }
+
+        .btn-primary {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            background: linear-gradient(135deg, var(--blue), var(--purple));
+            color: var(--white);
+            text-decoration: none;
+            font-size: 1rem;
+            font-weight: 600;
+            padding: 0.875rem 2rem;
+            border-radius: 12px;
+            transition: opacity 0.2s, transform 0.2s;
+            box-shadow: 0 4px 15px rgba(37, 99, 235, 0.3);
+        }
+
+        .btn-primary:hover {
+            opacity: 0.92;
+            transform: translateY(-2px);
+            box-shadow: 0 8px 25px rgba(37, 99, 235, 0.35);
+        }
+
+        .btn-secondary {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            background: var(--white);
+            color: var(--gray-700);
+            text-decoration: none;
+            font-size: 1rem;
+            font-weight: 600;
+            padding: 0.875rem 2rem;
+            border-radius: 12px;
+            border: 1px solid var(--gray-200);
+            transition: all 0.2s;
+        }
+
+        .btn-secondary:hover {
+            border-color: var(--gray-400);
+            transform: translateY(-2px);
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.06);
+        }
+
+        .store-icon {
+            width: 20px;
+            height: 20px;
+        }
+
+        .hero-phones {
+            position: relative;
+            max-width: 700px;
+            margin: 0 auto;
+            height: 500px;
+        }
+
+        .hero-phones .phone {
+            position: absolute;
+            width: 240px;
+            border-radius: 28px;
+            box-shadow: 0 25px 60px rgba(0, 0, 0, 0.12);
+        }
+
+        .hero-phones .phone-center {
+            left: 50%;
+            transform: translateX(-50%);
+            top: 0;
+            z-index: 3;
+            width: 260px;
+        }
+
+        .hero-phones .phone-left {
+            left: 10%;
+            top: 40px;
+            z-index: 2;
+            transform: rotate(-6deg);
+        }
+
+        .hero-phones .phone-right {
+            right: 10%;
+            top: 40px;
+            z-index: 2;
+            transform: rotate(6deg);
+        }
+
+        /* Placeholder for images */
+        .img-placeholder {
+            background: linear-gradient(135deg, var(--gray-100), var(--gray-200));
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--gray-400);
+            font-size: 0.8rem;
+            font-weight: 500;
+        }
+
+        /* ===== SOCIAL PROOF ===== */
+        .social-proof {
+            padding: 3rem 2rem;
+            border-top: 1px solid var(--gray-100);
+            border-bottom: 1px solid var(--gray-100);
+        }
+
+        .social-proof-inner {
+            max-width: 900px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: center;
+            gap: 4rem;
+            flex-wrap: wrap;
+        }
+
+        .proof-item {
+            text-align: center;
+        }
+
+        .proof-item .number {
+            font-size: 2rem;
+            font-weight: 800;
+            color: var(--gray-900);
+            letter-spacing: -0.02em;
+        }
+
+        .proof-item .number .gradient {
+            background: linear-gradient(135deg, var(--blue), var(--purple));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .proof-item .label {
+            font-size: 0.85rem;
+            color: var(--gray-500);
+            margin-top: 0.25rem;
+        }
+
+        /* ===== FEATURES ===== */
+        .features {
+            padding: 7rem 2rem;
+            background: var(--gray-50);
+        }
+
+        .section-inner {
+            max-width: 1100px;
+            margin: 0 auto;
+        }
+
+        .section-label {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.4rem;
+            font-size: 0.8rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.08em;
+            color: var(--blue);
+            margin-bottom: 0.75rem;
+        }
+
+        .showcase .section-label::before {
+            content: '';
+            display: inline-block;
+            width: 18px;
+            height: 18px;
+            background: var(--blue);
+            border-radius: 50%;
+            background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 20 20' fill='white'%3E%3Cpath fill-rule='evenodd' d='M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z' clip-rule='evenodd'/%3E%3C/svg%3E");
+            background-size: 12px 12px;
+            background-repeat: no-repeat;
+            background-position: center;
+            flex-shrink: 0;
+        }
+
+        .section-title {
+            font-size: 2.8rem;
+            font-weight: 900;
+            font-style: normal;
+            letter-spacing: -0.02em;
+            color: var(--gray-900);
+            margin-bottom: 1rem;
+            line-height: 1.15;
+        }
+
+        .section-subtitle {
+            font-size: 1.1rem;
+            color: var(--gray-500);
+            max-width: 550px;
+            line-height: 1.7;
+        }
+
+        .section-header {
+            text-align: center;
+            margin-bottom: 4rem;
+        }
+
+        .section-header .section-subtitle {
+            margin: 0 auto;
+        }
+
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 1.5rem;
+        }
+
+        .feature-card {
+            padding: 2.25rem;
+            border-radius: 20px;
+            border: none;
+            background: var(--white);
+            box-shadow: 0 2px 12px rgba(0, 0, 0, 0.04);
+            transition: box-shadow 0.3s, transform 0.3s;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .feature-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 4px;
+            border-radius: 20px 20px 0 0;
+            opacity: 0;
+            transition: opacity 0.3s;
+        }
+
+        .feature-card:hover {
+            box-shadow: 0 16px 40px rgba(0, 0, 0, 0.08);
+            transform: translateY(-6px);
+        }
+
+        .feature-card:hover::before {
+            opacity: 1;
+        }
+
+        .feature-card:nth-child(1)::before { background: linear-gradient(90deg, #2563EB, #3B82F6); }
+        .feature-card:nth-child(2)::before { background: linear-gradient(90deg, #9333EA, #A855F7); }
+        .feature-card:nth-child(3)::before { background: linear-gradient(90deg, #10B981, #34D399); }
+        .feature-card:nth-child(4)::before { background: linear-gradient(90deg, #F59E0B, #FBBF24); }
+        .feature-card:nth-child(5)::before { background: linear-gradient(90deg, #EF4444, #F87171); }
+        .feature-card:nth-child(6)::before { background: linear-gradient(90deg, #14B8A6, #2DD4BF); }
+
+        .feature-icon {
+            width: 56px;
+            height: 56px;
+            border-radius: 16px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 1.5rem;
+            font-size: 1.5rem;
+        }
+
+        .feature-icon.blue { background: linear-gradient(135deg, rgba(37, 99, 235, 0.12), rgba(59, 130, 246, 0.06)); }
+        .feature-icon.purple { background: linear-gradient(135deg, rgba(147, 51, 234, 0.12), rgba(168, 85, 247, 0.06)); }
+        .feature-icon.green { background: linear-gradient(135deg, rgba(16, 185, 129, 0.12), rgba(52, 211, 153, 0.06)); }
+        .feature-icon.orange { background: linear-gradient(135deg, rgba(245, 158, 11, 0.12), rgba(251, 191, 36, 0.06)); }
+        .feature-icon.red { background: linear-gradient(135deg, rgba(239, 68, 68, 0.12), rgba(248, 113, 113, 0.06)); }
+        .feature-icon.teal { background: linear-gradient(135deg, rgba(20, 184, 166, 0.12), rgba(45, 212, 191, 0.06)); }
+
+        .feature-card h3 {
+            font-size: 1.2rem;
+            font-weight: 800;
+            color: var(--gray-900);
+            margin-bottom: 0.6rem;
+        }
+
+        .feature-card p {
+            font-size: 0.9rem;
+            color: var(--gray-500);
+            line-height: 1.65;
+        }
+
+        /* ===== SHOWCASE SECTION (alternating) ===== */
+        .showcase {
+            padding: 6rem 2rem;
+        }
+
+        .showcase:nth-child(even) {
+            background: var(--gray-50);
+        }
+
+        .showcase-inner {
+            max-width: 1100px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 4rem;
+            align-items: center;
+        }
+
+        .showcase-inner.reverse {
+            direction: rtl;
+        }
+
+        .showcase-inner.reverse > * {
+            direction: ltr;
+        }
+
+        .showcase-text h2 {
+            font-size: 2.6rem;
+            font-weight: 900;
+            font-style: normal;
+            letter-spacing: -0.02em;
+            color: var(--gray-900);
+            margin-bottom: 1rem;
+            line-height: 1.15;
+        }
+
+        .showcase-text p {
+            font-size: 1.05rem;
+            color: var(--gray-500);
+            line-height: 1.7;
+            margin-bottom: 1.75rem;
+            max-width: 480px;
+        }
+
+        .showcase-list {
+            list-style: none;
+            display: flex;
+            flex-direction: column;
+            gap: 0.75rem;
+        }
+
+        .showcase-list li {
+            display: flex;
+            align-items: flex-start;
+            gap: 0.75rem;
+            font-size: 0.95rem;
+            font-weight: 500;
+            color: var(--gray-700);
+        }
+
+        .showcase-list li svg {
+            width: 18px;
+            height: 18px;
+            flex-shrink: 0;
+            margin-top: 2px;
+            color: var(--white);
+            background: var(--blue);
+            border-radius: 50%;
+            padding: 3px;
+            box-sizing: content-box;
+        }
+
+        .showcase-image {
+            display: flex;
+            justify-content: center;
+        }
+
+        .showcase-image .phone-mockup {
+            width: 300px;
+            border-radius: 32px;
+            box-shadow: 0 25px 60px rgba(0, 0, 0, 0.12);
+        }
+
+        .showcase-image .img-placeholder {
+            width: 300px;
+            height: 600px;
+            border-radius: 32px;
+        }
+
+        /* ===== PRICING ===== */
+        .pricing {
+            padding: 7rem 2rem;
+            background: var(--gray-50);
+        }
+
+        .pricing-grid {
+            max-width: 800px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 2rem;
+        }
+
+        .pricing-card {
+            background: var(--white);
+            border: 1px solid var(--gray-200);
+            border-radius: 20px;
+            padding: 2.5rem;
+            position: relative;
+            transition: transform 0.2s, box-shadow 0.2s;
+        }
+
+        .pricing-card:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 12px 40px rgba(0, 0, 0, 0.06);
+        }
+
+        .pricing-card.featured {
+            border-color: var(--blue);
+            box-shadow: 0 8px 30px rgba(37, 99, 235, 0.1);
+        }
+
+        .pricing-card.featured::before {
+            content: 'Populaire';
+            position: absolute;
+            top: -12px;
+            left: 50%;
+            transform: translateX(-50%);
+            background: linear-gradient(135deg, var(--blue), var(--purple));
+            color: var(--white);
+            font-size: 0.75rem;
+            font-weight: 700;
+            padding: 0.3rem 1rem;
+            border-radius: 50px;
+        }
+
+        .pricing-card .plan-name {
+            font-size: 1.1rem;
+            font-weight: 700;
+            color: var(--gray-900);
+            margin-bottom: 0.5rem;
+        }
+
+        .pricing-card .price {
+            font-size: 3rem;
+            font-weight: 800;
+            color: var(--gray-900);
+            letter-spacing: -0.03em;
+        }
+
+        .pricing-card .price span {
+            font-size: 1rem;
+            font-weight: 500;
+            color: var(--gray-500);
+        }
+
+        .pricing-card .price-desc {
+            font-size: 0.85rem;
+            color: var(--gray-500);
+            margin-bottom: 2rem;
+        }
+
+        .pricing-features {
+            list-style: none;
+            display: flex;
+            flex-direction: column;
+            gap: 0.75rem;
+            margin-bottom: 2rem;
+        }
+
+        .pricing-features li {
+            display: flex;
+            align-items: center;
+            gap: 0.6rem;
+            font-size: 0.9rem;
+            color: var(--gray-700);
+        }
+
+        .pricing-features li svg {
+            width: 18px;
+            height: 18px;
+            color: var(--blue);
+            flex-shrink: 0;
+        }
+
+        .pricing-features li.disabled {
+            color: var(--gray-400);
+        }
+
+        .pricing-features li.disabled svg {
+            color: var(--gray-300);
+        }
+
+        .btn-pricing {
+            display: block;
+            width: 100%;
+            text-align: center;
+            padding: 0.875rem;
+            border-radius: 12px;
+            font-size: 0.95rem;
+            font-weight: 600;
+            text-decoration: none;
+            transition: all 0.2s;
+        }
+
+        .btn-pricing.primary {
+            background: linear-gradient(135deg, var(--blue), var(--purple));
+            color: var(--white);
+            box-shadow: 0 4px 15px rgba(37, 99, 235, 0.25);
+        }
+
+        .btn-pricing.primary:hover {
+            opacity: 0.92;
+            transform: translateY(-2px);
+        }
+
+        .btn-pricing.outline {
+            background: var(--white);
+            color: var(--gray-700);
+            border: 1px solid var(--gray-200);
+        }
+
+        .btn-pricing.outline:hover {
+            border-color: var(--blue);
+            color: var(--blue);
+        }
+
+        /* ===== FAQ ===== */
+        .faq {
+            padding: 7rem 2rem;
+        }
+
+        .faq-category {
+            max-width: 800px;
+            margin: 0 auto 4rem;
+        }
+
+        .faq-category:last-child {
+            margin-bottom: 0;
+        }
+
+        .faq-category.faq-hidden {
+            display: none;
+        }
+
+        .faq-show-all {
+            display: flex;
+            justify-content: center;
+            margin-top: 2.5rem;
+        }
+
+        .faq-show-all button {
+            background: var(--white);
+            border: 1px solid var(--gray-200);
+            color: var(--gray-700);
+            font-family: inherit;
+            font-size: 0.95rem;
+            font-weight: 600;
+            padding: 0.875rem 2rem;
+            border-radius: 12px;
+            cursor: pointer;
+            transition: all 0.2s;
+        }
+
+        .faq-show-all button:hover {
+            border-color: var(--blue);
+            color: var(--blue);
+            box-shadow: 0 4px 12px rgba(37, 99, 235, 0.08);
+        }
+
+        .faq-show-all.hidden {
+            display: none;
+        }
+
+        .faq-category-title {
+            font-size: 1.6rem;
+            font-weight: 800;
+            font-style: normal;
+            text-transform: uppercase;
+            letter-spacing: 0.02em;
+            color: var(--gray-900);
+            text-align: center;
+            margin-bottom: 2rem;
+        }
+
+        .faq-subcategory-title {
+            font-size: 1.1rem;
+            font-weight: 700;
+            color: var(--blue);
+            text-align: center;
+            margin: 2.5rem 0 1.25rem;
+        }
+
+        .faq-list {
+            max-width: 800px;
+            margin: 0 auto;
+            display: flex;
+            flex-direction: column;
+            gap: 0;
+        }
+
+        .faq-item {
+            border-bottom: 1px solid var(--gray-200);
+        }
+
+        .faq-question {
+            width: 100%;
+            background: none;
+            border: none;
+            text-align: left;
+            padding: 1.25rem 0;
+            font-size: 1rem;
+            font-weight: 500;
+            color: var(--gray-500);
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-family: inherit;
+            transition: color 0.2s;
+            gap: 1rem;
+        }
+
+        .faq-question:hover {
+            color: var(--gray-900);
+        }
+
+        .faq-question .faq-icon {
+            width: 24px;
+            height: 24px;
+            flex-shrink: 0;
+            position: relative;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .faq-question .faq-icon::before,
+        .faq-question .faq-icon::after {
+            content: '';
+            position: absolute;
+            background: var(--gray-400);
+            transition: transform 0.3s, opacity 0.3s;
+        }
+
+        .faq-question .faq-icon::before {
+            width: 16px;
+            height: 2px;
+        }
+
+        .faq-question .faq-icon::after {
+            width: 2px;
+            height: 16px;
+        }
+
+        .faq-item.open .faq-question .faq-icon::after {
+            transform: rotate(90deg);
+            opacity: 0;
+        }
+
+        .faq-item.open .faq-question {
+            color: var(--gray-900);
+            font-weight: 600;
+        }
+
+        .faq-answer {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.3s ease;
+        }
+
+        .faq-answer-inner {
+            padding: 0 0 1.5rem;
+            font-size: 0.95rem;
+            color: var(--gray-500);
+            line-height: 1.7;
+        }
+
+        .faq-item.open .faq-answer {
+            max-height: 500px;
+        }
+
+        /* ===== FINAL CTA ===== */
+        .final-cta {
+            padding: 7rem 2rem;
+            text-align: center;
+            background: linear-gradient(135deg, var(--dark) 0%, #1a1145 100%);
+            color: var(--white);
+        }
+
+        .final-cta h2 {
+            font-size: 2.8rem;
+            font-weight: 900;
+            font-style: normal;
+            letter-spacing: -0.02em;
+            margin-bottom: 1rem;
+        }
+
+        .final-cta p {
+            font-size: 1.1rem;
+            color: rgba(255, 255, 255, 0.6);
+            max-width: 500px;
+            margin: 0 auto 2.5rem;
+        }
+
+        .final-cta .btn-primary {
+            box-shadow: 0 4px 20px rgba(37, 99, 235, 0.4);
+        }
+
+        /* ===== FOOTER ===== */
+        footer {
+            background: var(--gray-900);
+            color: rgba(255, 255, 255, 0.5);
+            padding: 4rem 2rem 2rem;
+        }
+
+        .footer-inner {
+            max-width: 1100px;
+            margin: 0 auto;
+        }
+
+        .footer-grid {
+            display: grid;
+            grid-template-columns: 2fr 1fr 1fr 1fr;
+            gap: 3rem;
+            margin-bottom: 3rem;
+        }
+
+        .footer-brand .logo {
+            color: var(--white);
+            margin-bottom: 1rem;
+        }
+
+        .footer-brand p {
+            font-size: 0.85rem;
+            line-height: 1.6;
+            color: rgba(255, 255, 255, 0.4);
+            max-width: 280px;
+        }
+
+        .footer-col h4 {
+            color: var(--white);
+            font-size: 0.85rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            margin-bottom: 1rem;
+        }
+
+        .footer-col ul {
+            list-style: none;
+            display: flex;
+            flex-direction: column;
+            gap: 0.6rem;
+        }
+
+        .footer-col a {
+            color: rgba(255, 255, 255, 0.4);
+            text-decoration: none;
+            font-size: 0.85rem;
+            transition: color 0.2s;
+        }
+
+        .footer-col a:hover {
+            color: var(--white);
+        }
+
+        .footer-bottom {
+            border-top: 1px solid rgba(255, 255, 255, 0.08);
+            padding-top: 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 1rem;
+        }
+
+        .footer-bottom p {
+            font-size: 0.8rem;
+        }
+
+        .footer-social {
+            display: flex;
+            gap: 1rem;
+        }
+
+        .footer-social a {
+            color: rgba(255, 255, 255, 0.3);
+            transition: color 0.2s;
+        }
+
+        .footer-social a:hover {
+            color: var(--white);
+        }
+
+        .footer-social svg {
+            width: 20px;
+            height: 20px;
+        }
+
+        /* ===== HOW IT WORKS ===== */
+        .how-it-works {
+            padding: 6rem 2rem;
+            background: var(--gray-50);
+        }
+
+        .steps-grid {
+            max-width: 900px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 2.5rem;
+            position: relative;
+        }
+
+        .steps-grid::before {
+            content: '';
+            position: absolute;
+            top: 40px;
+            left: 16%;
+            right: 16%;
+            height: 2px;
+            background: linear-gradient(90deg, var(--blue), var(--purple));
+            opacity: 0.2;
+        }
+
+        .step-card {
+            text-align: center;
+            position: relative;
+        }
+
+        .step-number {
+            width: 80px;
+            height: 80px;
+            border-radius: 50%;
+            background: linear-gradient(135deg, var(--blue), var(--purple));
+            color: var(--white);
+            font-size: 1.8rem;
+            font-weight: 800;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 1.25rem;
+            position: relative;
+            z-index: 1;
+        }
+
+        .step-card h3 {
+            font-size: 1.15rem;
+            font-weight: 700;
+            color: var(--gray-900);
+            margin-bottom: 0.5rem;
+        }
+
+        .step-card p {
+            font-size: 0.9rem;
+            color: var(--gray-500);
+            line-height: 1.6;
+            max-width: 240px;
+            margin: 0 auto;
+        }
+
+        /* ===== TESTIMONIALS ===== */
+        .testimonials {
+            padding: 7rem 2rem;
+        }
+
+        .testimonials-grid {
+            max-width: 1100px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 2rem;
+        }
+
+        .testimonial-card {
+            background: var(--white);
+            border: 1px solid var(--gray-200);
+            border-radius: 16px;
+            padding: 2rem;
+            transition: transform 0.2s, box-shadow 0.2s;
+        }
+
+        .testimonial-card:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 8px 30px rgba(0, 0, 0, 0.06);
+        }
+
+        .testimonial-stars {
+            color: #F59E0B;
+            font-size: 1.1rem;
+            margin-bottom: 1rem;
+            letter-spacing: 2px;
+        }
+
+        .testimonial-card blockquote {
+            font-size: 0.95rem;
+            color: var(--gray-700);
+            line-height: 1.7;
+            margin-bottom: 1.5rem;
+            font-style: normal;
+        }
+
+        .testimonial-author {
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+        }
+
+        .testimonial-avatar {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            background: linear-gradient(135deg, var(--blue), var(--purple));
+            color: var(--white);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 700;
+            font-size: 0.85rem;
+        }
+
+        .testimonial-author-info .name {
+            font-size: 0.9rem;
+            font-weight: 600;
+            color: var(--gray-900);
+        }
+
+        .testimonial-author-info .detail {
+            font-size: 0.8rem;
+            color: var(--gray-400);
+        }
+
+        /* ===== STORE BADGES (prominent) ===== */
+        .store-badges {
+            display: flex;
+            gap: 1rem;
+            justify-content: center;
+            align-items: center;
+            flex-wrap: wrap;
+            margin-top: 0.5rem;
+        }
+
+        .store-badge-link {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.6rem;
+            background: linear-gradient(135deg, var(--blue), var(--purple));
+            color: var(--white);
+            text-decoration: none;
+            padding: 0.75rem 1.5rem;
+            border-radius: 12px;
+            transition: transform 0.2s, box-shadow 0.2s, opacity 0.2s;
+            box-shadow: 0 4px 15px rgba(37, 99, 235, 0.3);
+        }
+
+        .store-badge-link:hover {
+            transform: translateY(-2px);
+            opacity: 0.92;
+            box-shadow: 0 8px 25px rgba(37, 99, 235, 0.35);
+        }
+
+        .store-badge-link svg {
+            width: 24px;
+            height: 24px;
+        }
+
+        .store-badge-text {
+            display: flex;
+            flex-direction: column;
+            line-height: 1.2;
+        }
+
+        .store-badge-text .small {
+            font-size: 0.6rem;
+            font-weight: 400;
+            opacity: 0.8;
+        }
+
+        .store-badge-text .big {
+            font-size: 1rem;
+            font-weight: 700;
+        }
+
+        .store-rating {
+            text-align: center;
+            margin-top: 1rem;
+            font-size: 0.85rem;
+            color: var(--gray-500);
+        }
+
+        .store-rating .stars {
+            color: #F59E0B;
+            letter-spacing: 1px;
+        }
+
+        /* ===== STICKY CTA ===== */
+        .sticky-cta {
+            position: fixed;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+            border-top: 1px solid var(--gray-200);
+            padding: 0.75rem 2rem;
+            z-index: 99;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 1rem;
+            transform: translateY(100%);
+            transition: transform 0.3s ease;
+        }
+
+        .sticky-cta.visible {
+            transform: translateY(0);
+        }
+
+        .sticky-cta-text {
+            font-size: 0.9rem;
+            font-weight: 600;
+            color: var(--gray-700);
+        }
+
+        .sticky-cta .btn-primary {
+            padding: 0.6rem 1.5rem;
+            font-size: 0.875rem;
+            box-shadow: 0 2px 10px rgba(37, 99, 235, 0.25);
+        }
+
+        /* ===== MOBILE MENU ===== */
+        .mobile-menu {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: var(--white);
+            z-index: 200;
+            padding: 5rem 2rem 2rem;
+            flex-direction: column;
+        }
+
+        .mobile-menu.open {
+            display: flex;
+        }
+
+        .mobile-menu-close {
+            position: absolute;
+            top: 1rem;
+            right: 1.5rem;
+            background: none;
+            border: none;
+            font-size: 1.5rem;
+            cursor: pointer;
+            color: var(--gray-700);
+            padding: 0.5rem;
+        }
+
+        .mobile-menu a {
+            display: block;
+            padding: 1rem 0;
+            font-size: 1.1rem;
+            font-weight: 600;
+            color: var(--gray-900);
+            text-decoration: none;
+            border-bottom: 1px solid var(--gray-100);
+        }
+
+        .mobile-menu .mobile-sub {
+            padding-left: 1.5rem;
+        }
+
+        .mobile-menu .mobile-sub a {
+            font-size: 1rem;
+            font-weight: 500;
+            color: var(--gray-500);
+        }
+
+        /* ===== RESPONSIVE ===== */
+        @media (max-width: 1024px) {
+            .features-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+
+        @media (max-width: 768px) {
+            .nav-center, .nav-right .nav-login, .nav-right .nav-cta {
+                display: none;
+            }
+
+            .mobile-menu-btn {
+                display: block;
+            }
+
+            .hero {
+                padding: 8rem 1.5rem 4rem;
+            }
+
+            .hero h1 {
+                font-size: 2.5rem;
+            }
+
+            .hero p {
+                font-size: 1.05rem;
+            }
+
+            .hero-phones {
+                height: 350px;
+            }
+
+            .hero-phones .phone {
+                width: 180px;
+            }
+
+            .hero-phones .phone-center {
+                width: 200px;
+            }
+
+            .section-title {
+                font-size: 2rem;
+            }
+
+            .features-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .showcase-inner, .showcase-inner.reverse {
+                grid-template-columns: 1fr;
+                gap: 2rem;
+                direction: ltr;
+            }
+
+            .pricing-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .footer-grid {
+                grid-template-columns: 1fr 1fr;
+                gap: 2rem;
+            }
+
+            .social-proof-inner {
+                gap: 2rem;
+            }
+
+            .final-cta h2 {
+                font-size: 2rem;
+            }
+
+            .steps-grid {
+                grid-template-columns: 1fr;
+                gap: 2rem;
+            }
+
+            .steps-grid::before {
+                display: none;
+            }
+
+            .testimonials-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .store-badge-link {
+                padding: 0.6rem 1.2rem;
+            }
+
+            .sticky-cta-text {
+                display: none;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .hero h1 {
+                font-size: 2rem;
+            }
+
+            .hero-buttons {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .footer-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+  </Fragment>
+
+    <!-- Hero -->
+    <section class="hero">
+        <div class="hero-content">
+            <div class="hero-badge">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z"/></svg>
+                Coach IA pour la musculation
+            </div>
+            <h1>Entra&icirc;nez-vous plus<br><span class="gradient">intelligemment</span></h1>
+            <p>AIVancePro combine intelligence artificielle et science du sport pour cr&eacute;er des programmes d'entra&icirc;nement enti&egrave;rement personnalis&eacute;s. Progressez plus vite, sans vous blesser.</p>
+            <div class="store-badges">
+                <a href="https://apps.apple.com/fr/app/aivancepro/id6756116760" class="store-badge-link" target="_blank" rel="noopener">
+                    <svg viewBox="0 0 24 24" fill="currentColor"><path d="M18.71 19.5c-.83 1.24-1.71 2.45-3.05 2.47-1.34.03-1.77-.79-3.29-.79-1.53 0-2 .77-3.27.82-1.31.05-2.3-1.32-3.14-2.53C4.25 17 2.94 12.45 4.7 9.39c.87-1.52 2.43-2.48 4.12-2.51 1.28-.02 2.5.87 3.29.87.78 0 2.26-1.07 3.8-.91.65.03 2.47.26 3.64 1.98-.09.06-2.17 1.28-2.15 3.81.03 3.02 2.65 4.03 2.68 4.04-.03.07-.42 1.44-1.38 2.83M13 3.5c.73-.83 1.94-1.46 2.94-1.5.13 1.17-.34 2.35-1.04 3.19-.69.85-1.83 1.51-2.95 1.42-.15-1.15.41-2.35 1.05-3.11z"/></svg>
+                    <span class="store-badge-text"><span class="small">T&eacute;l&eacute;charger sur l'</span><span class="big">App Store</span></span>
+                </a>
+                <a href="https://play.google.com/store/apps/details?id=com.aivancepro.app" class="store-badge-link" target="_blank" rel="noopener">
+                    <svg viewBox="0 0 24 24" fill="currentColor"><path d="M3.18 23.67c-.38-.39-.58-.94-.58-1.6V1.93c0-.66.2-1.21.58-1.6l.08-.08L14.74 11.7v.22L3.26 23.38l-.08-.08z"/><path d="M18.56 15.58l-3.82-3.84v-.22l3.82-3.84.08.05 4.53 2.57c1.29.73 1.29 1.93 0 2.67l-4.53 2.57-.08.04z" opacity=".8"/><path d="M18.65 15.53L14.74 11.6 3.18 23.2c.43.45 1.13.51 1.93.06l13.54-7.73" opacity=".6"/><path d="M18.65 7.68L5.11.95c-.8-.45-1.5-.39-1.93.06L14.74 12.6l3.91-3.92z" opacity=".6"/></svg>
+                    <span class="store-badge-text"><span class="small">Disponible sur</span><span class="big">Google Play</span></span>
+                </a>
+            </div>
+            <div class="store-rating">
+                <span class="stars">&#9733;&#9733;&#9733;&#9733;&#9733;</span> &mdash; Gratuit &middot; iOS &amp; Android
+            </div>
+
+            <div class="hero-phones">
+                <img src="/assets/screenshots/fr/slice-2.png" alt="Coach IA AIVancePro" class="phone phone-left">
+                <img src="/assets/screenshots/fr/slice-4.png" alt="Dashboard AIVancePro" class="phone phone-center">
+                <img src="/assets/screenshots/fr/slice-6.png" alt="Suivi progression AIVancePro" class="phone phone-right">
+            </div>
+        </div>
+    </section>
+
+    <!-- Social Proof -->
+    <section class="social-proof">
+        <div class="social-proof-inner">
+            <div class="proof-item">
+                <div class="number"><span class="gradient">240+</span></div>
+                <div class="label">Exercices disponibles</div>
+            </div>
+            <div class="proof-item">
+                <div class="number"><span class="gradient">100%</span></div>
+                <div class="label">Personnalis&eacute; par l'IA</div>
+            </div>
+            <div class="proof-item">
+                <div class="number"><span class="gradient">iOS</span></div>
+                <div class="label">& Android</div>
+            </div>
+            <div class="proof-item">
+                <div class="number"><span class="gradient">24/7</span></div>
+                <div class="label">Coach disponible</div>
+            </div>
+        </div>
+    </section>
+
+    <!-- How it works -->
+    <section class="how-it-works">
+        <div class="section-inner">
+            <div class="section-header">
+                <div class="section-label">Comment &ccedil;a marche</div>
+                <h2 class="section-title">Commencez en 3 &eacute;tapes</h2>
+                <p class="section-subtitle">De l'inscription &agrave; votre premier entra&icirc;nement en quelques minutes.</p>
+            </div>
+            <div class="steps-grid">
+                <div class="step-card">
+                    <div class="step-number">1</div>
+                    <h3>D&eacute;finissez vos objectifs</h3>
+                    <p>Renseignez votre niveau, vos objectifs et votre &eacute;quipement. L'IA s'adapte &agrave; vous.</p>
+                </div>
+                <div class="step-card">
+                    <div class="step-number">2</div>
+                    <h3>L'IA cr&eacute;e votre programme</h3>
+                    <p>Recevez des s&eacute;ances personnalis&eacute;es g&eacute;n&eacute;r&eacute;es par intelligence artificielle.</p>
+                </div>
+                <div class="step-card">
+                    <div class="step-number">3</div>
+                    <h3>Suivez votre progression</h3>
+                    <p>Enregistrez vos performances et visualisez vos progr&egrave;s avec des graphiques d&eacute;taill&eacute;s.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Features -->
+    <section class="features" id="features">
+        <div class="section-inner">
+            <div class="section-header">
+                <div class="section-label">Fonctionnalit&eacute;s</div>
+                <h2 class="section-title">Tout ce qu'il faut pour progresser</h2>
+                <p class="section-subtitle">Un coach personnel, une salle de sport et un carnet d'entra&icirc;nement, le tout dans votre poche.</p>
+            </div>
+
+            <div class="features-grid">
+                <div class="feature-card">
+                    <div class="feature-icon blue">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#2563EB" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>
+                    </div>
+                    <h3>Coach IA conversationnel</h3>
+                    <p>Discutez avec votre coach IA pour g&eacute;n&eacute;rer des s&eacute;ances, obtenir des conseils et adapter vos programmes en temps r&eacute;el.</p>
+                </div>
+
+                <div class="feature-card">
+                    <div class="feature-icon purple">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#9333EA" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z"/></svg>
+                    </div>
+                    <h3>+240 exercices</h3>
+                    <p>Base de donn&eacute;es compl&egrave;te d'exercices avec vid&eacute;os et instructions d&eacute;taill&eacute;es pour une ex&eacute;cution parfaite.</p>
+                </div>
+
+                <div class="feature-card">
+                    <div class="feature-icon green">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#10B981" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/></svg>
+                    </div>
+                    <h3>Suivi de progression</h3>
+                    <p>Suivez vos performances, records personnels et volume d'entra&icirc;nement avec des graphiques d&eacute;taill&eacute;s et clairs.</p>
+                </div>
+
+                <div class="feature-card">
+                    <div class="feature-icon orange">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#F59E0B" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 20h9"/><path d="M16.5 3.5a2.12 2.12 0 0 1 3 3L7 19l-4 1 1-4L16.5 3.5z"/></svg>
+                    </div>
+                    <h3>Programmes personnalis&eacute;s</h3>
+                    <p>L'IA adapte chaque s&eacute;ance &agrave; votre niveau, vos objectifs et votre &eacute;quipement disponible.</p>
+                </div>
+
+                <div class="feature-card">
+                    <div class="feature-icon red">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#EF4444" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+                    </div>
+                    <h3>Communaut&eacute; active</h3>
+                    <p>Rejoignez des groupes, partagez vos performances et restez motiv&eacute; gr&acirc;ce &agrave; une communaut&eacute; de sportifs.</p>
+                </div>
+
+                <div class="feature-card">
+                    <div class="feature-icon teal">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#14B8A6" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+                    </div>
+                    <h3>Timer & suivi en direct</h3>
+                    <p>Chronom&egrave;tre int&eacute;gr&eacute;, temps de repos automatis&eacute; et suivi en temps r&eacute;el pendant vos s&eacute;ances.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Showcase 1: Coach IA -->
+    <section class="showcase">
+        <div class="showcase-inner">
+            <div class="showcase-text">
+                <div class="section-label">Coach IA</div>
+                <h2>Votre coach personnel, disponible 24h/24</h2>
+                <p>Demandez-lui de g&eacute;n&eacute;rer une s&eacute;ance, d'expliquer un exercice ou d'adapter votre programme. Il conna&icirc;t votre historique et s'adapte &agrave; vous.</p>
+                <ul class="showcase-list">
+                    <li>
+                        <svg viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/></svg>
+                        G&eacute;n&eacute;ration de s&eacute;ances et de plans d'entra&icirc;nement personnalis&eacute;s
+                    </li>
+                    <li>
+                        <svg viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/></svg>
+                        Analyse de votre progression et de vos performances
+                    </li>
+                    <li>
+                        <svg viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/></svg>
+                        Conseils personnalis&eacute;s en temps r&eacute;el
+                    </li>
+                </ul>
+            </div>
+            <div class="showcase-image">
+                <!-- Placeholder: remplacer par image Nao Banana -->
+                <div class="img-placeholder" style="width:300px;height:600px;border-radius:32px;">Photo Coach IA</div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Showcase 2: Progression -->
+    <section class="showcase">
+        <div class="showcase-inner reverse">
+            <div class="showcase-text">
+                <div class="section-label">Progression</div>
+                <h2>Visualisez chaque progr&egrave;s</h2>
+                <p>Graphiques de volume, records personnels, distribution musculaire, calendrier d'activit&eacute;... Tout est trac&eacute; automatiquement.</p>
+                <ul class="showcase-list">
+                    <li>
+                        <svg viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/></svg>
+                        Graphiques de progression d&eacute;taill&eacute;s
+                    </li>
+                    <li>
+                        <svg viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/></svg>
+                        Records personnels automatiques
+                    </li>
+                    <li>
+                        <svg viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/></svg>
+                        Analyse IA de votre &eacute;volution
+                    </li>
+                </ul>
+            </div>
+            <div class="showcase-image">
+                <!-- Placeholder: remplacer par image Nao Banana -->
+                <div class="img-placeholder" style="width:300px;height:600px;border-radius:32px;">Photo Progression</div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Showcase 3: Communaut&eacute; -->
+    <section class="showcase">
+        <div class="showcase-inner">
+            <div class="showcase-text">
+                <div class="section-label">Communaut&eacute;</div>
+                <h2>Entra&icirc;nez-vous ensemble</h2>
+                <p>Cr&eacute;ez des groupes, d&eacute;fiez vos amis, partagez vos performances et motivez-vous mutuellement.</p>
+                <ul class="showcase-list">
+                    <li>
+                        <svg viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/></svg>
+                        Groupes et d&eacute;fis entre amis
+                    </li>
+                    <li>
+                        <svg viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/></svg>
+                        Classements et leaderboards
+                    </li>
+                    <li>
+                        <svg viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/></svg>
+                        Messagerie int&eacute;gr&eacute;e
+                    </li>
+                </ul>
+            </div>
+            <div class="showcase-image">
+                <!-- Placeholder: remplacer par image Nao Banana -->
+                <div class="img-placeholder" style="width:300px;height:600px;border-radius:32px;">Photo Communaut&eacute;</div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials -->
+    <section class="testimonials">
+        <div class="section-inner">
+            <div class="section-header">
+                <div class="section-label">T&eacute;moignages</div>
+                <h2 class="section-title">Ce que disent nos utilisateurs</h2>
+                <p class="section-subtitle">Rejoignez des sportifs qui ont transform&eacute; leur entra&icirc;nement avec AIVancePro.</p>
+            </div>
+            <div class="testimonials-grid">
+                <div class="testimonial-card">
+                    <div class="testimonial-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+                    <blockquote>&laquo; Le coach IA est incroyable. Il comprend exactement ce dont j'ai besoin et adapte mes s&eacute;ances en fonction de ma fatigue et mes objectifs. &raquo;</blockquote>
+                    <div class="testimonial-author">
+                        <div class="testimonial-avatar">TM</div>
+                        <div class="testimonial-author-info">
+                            <div class="name">Thomas M.</div>
+                            <div class="detail">Musculation &middot; 8 mois</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="testimonial-card">
+                    <div class="testimonial-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+                    <blockquote>&laquo; J'ai enfin une app qui suit mes progr&egrave;s proprement. Les graphiques de progression sont super clairs et motivants. &raquo;</blockquote>
+                    <div class="testimonial-author">
+                        <div class="testimonial-avatar">SL</div>
+                        <div class="testimonial-author-info">
+                            <div class="name">Sarah L.</div>
+                            <div class="detail">Fitness &middot; 5 mois</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="testimonial-card">
+                    <div class="testimonial-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+                    <blockquote>&laquo; L'aspect communaut&eacute; est g&eacute;nial. On se motive entre potes avec les d&eacute;fis et le leaderboard. Bien mieux que les autres apps. &raquo;</blockquote>
+                    <div class="testimonial-author">
+                        <div class="testimonial-avatar">KR</div>
+                        <div class="testimonial-author-info">
+                            <div class="name">Kevin R.</div>
+                            <div class="detail">Crossfit &middot; 3 mois</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Pricing -->
+    <section class="pricing" id="pricing">
+        <div class="section-inner">
+            <div class="section-header">
+                <div class="section-label">Tarifs</div>
+                <h2 class="section-title">Choisissez votre plan</h2>
+                <p class="section-subtitle">Commencez gratuitement, puis choisissez le plan qui correspond &agrave; vos ambitions.</p>
+            </div>
+
+            <div class="pricing-grid" style="grid-template-columns: repeat(3, 1fr); max-width: 1100px;">
+                <!-- Gratuit -->
+                <div class="pricing-card">
+                    <div class="plan-name">Gratuit</div>
+                    <div class="price">0&euro; <span>/ mois</span></div>
+                    <div class="price-desc">Pour d&eacute;couvrir l'application</div>
+                    <ul class="pricing-features">
+                        <li>
+                            <svg viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/></svg>
+                            Suivi de s&eacute;ances
+                        </li>
+                        <li>
+                            <svg viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/></svg>
+                            +240 exercices
+                        </li>
+                        <li>
+                            <svg viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/></svg>
+                            Statistiques de base
+                        </li>
+                        <li>
+                            <svg viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/></svg>
+                            Timer &amp; repos automatique
+                        </li>
+                        <li class="disabled">
+                            <svg viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M4.293 4.293a1 1 0 011.414 0L10 8.586l4.293-4.293a1 1 0 111.414 1.414L11.414 10l4.293 4.293a1 1 0 01-1.414 1.414L10 11.414l-4.293 4.293a1 1 0 01-1.414-1.414L8.586 10 4.293 5.707a1 1 0 010-1.414z" clip-rule="evenodd"/></svg>
+                            Coach IA
+                        </li>
+                    </ul>
+                    <a href="https://apps.apple.com/fr/app/aivancepro/id6756116760" class="btn-pricing outline" target="_blank" rel="noopener">Commencer gratuitement</a>
+                </div>
+
+                <!-- Pro -->
+                <div class="pricing-card featured">
+                    <div class="plan-name">Pro</div>
+                    <div class="price">4,99&euro; <span>/ mois</span></div>
+                    <div class="price-desc">Pour progresser s&eacute;rieusement</div>
+                    <ul class="pricing-features">
+                        <li>
+                            <svg viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/></svg>
+                            Tout le plan Gratuit
+                        </li>
+                        <li>
+                            <svg viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/></svg>
+                            Coach IA illimit&eacute;
+                        </li>
+                        <li>
+                            <svg viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/></svg>
+                            Analyses &amp; graphiques avanc&eacute;s
+                        </li>
+                        <li>
+                            <svg viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/></svg>
+                            P&eacute;riodisation automatique
+                        </li>
+                        <li>
+                            <svg viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/></svg>
+                            Templates d'entra&icirc;nement
+                        </li>
+                    </ul>
+                    <a href="/login.html" class="btn-pricing primary">S'abonner &agrave; Pro</a>
+                </div>
+
+                <!-- Elite -->
+                <div class="pricing-card">
+                    <div class="plan-name">Elite</div>
+                    <div class="price">7,99&euro; <span>/ mois</span></div>
+                    <div class="price-desc">L'exp&eacute;rience compl&egrave;te</div>
+                    <ul class="pricing-features">
+                        <li>
+                            <svg viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/></svg>
+                            Tout le plan Pro
+                        </li>
+                        <li>
+                            <svg viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/></svg>
+                            Communaut&eacute; &amp; d&eacute;fis
+                        </li>
+                        <li>
+                            <svg viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/></svg>
+                            Messagerie &amp; groupes
+                        </li>
+                        <li>
+                            <svg viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/></svg>
+                            Leaderboards &amp; classements
+                        </li>
+                        <li>
+                            <svg viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/></svg>
+                            Badges &amp; succ&egrave;s
+                        </li>
+                    </ul>
+                    <a href="/login.html" class="btn-pricing primary" style="background: linear-gradient(135deg, #9333EA, #6D28D9);">S'abonner &agrave; Elite</a>
+                </div>
+            </div>
+            <p style="text-align:center; margin-top:1.5rem; font-size:0.85rem; color:var(--gray-400);"><a href="/pricing.html" style="color:var(--blue); text-decoration:none; font-weight:600;">Voir la comparaison d&eacute;taill&eacute;e des plans &rarr;</a></p>
+        </div>
+    </section>
+
+    <!-- FAQ -->
+    <section class="faq" id="faq">
+        <div class="section-inner">
+
+            <!-- Cat&eacute;gorie 1: G&eacute;n&eacute;ral -->
+            <div class="faq-category">
+                <h2 class="faq-category-title">Questions g&eacute;n&eacute;rales sur AIVancePro</h2>
+                <div class="faq-list">
+                    <div class="faq-item">
+                        <button class="faq-question" onclick="this.parentElement.classList.toggle('open')">
+                            Qu'est-ce qu'AIVancePro ?
+                            <span class="faq-icon"></span>
+                        </button>
+                        <div class="faq-answer"><div class="faq-answer-inner">AIVancePro est une application de coaching fitness propuls&eacute;e par l'intelligence artificielle. Elle g&eacute;n&egrave;re des programmes d'entra&icirc;nement personnalis&eacute;s, suit votre progression et vous accompagne avec un coach IA conversationnel disponible 24h/24.</div></div>
+                    </div>
+                    <div class="faq-item">
+                        <button class="faq-question" onclick="this.parentElement.classList.toggle('open')">
+                            &Agrave; qui s'adresse AIVancePro ?
+                            <span class="faq-icon"></span>
+                        </button>
+                        <div class="faq-answer"><div class="faq-answer-inner">AIVancePro s'adresse &agrave; tous : d&eacute;butants complets, sportifs interm&eacute;diaires et pratiquants avanc&eacute;s. L'IA adapte automatiquement les exercices, les charges et le volume &agrave; votre niveau et vos objectifs.</div></div>
+                    </div>
+                    <div class="faq-item">
+                        <button class="faq-question" onclick="this.parentElement.classList.toggle('open')">
+                            AIVancePro convient-il aux d&eacute;butants ?
+                            <span class="faq-icon"></span>
+                        </button>
+                        <div class="faq-answer"><div class="faq-answer-inner">Oui, l'application est id&eacute;ale pour les d&eacute;butants. Le coach IA explique chaque exercice, adapte la difficult&eacute; et un guide d'int&eacute;gration vous accompagne dans vos premiers pas.</div></div>
+                    </div>
+                    <div class="faq-item">
+                        <button class="faq-question" onclick="this.parentElement.classList.toggle('open')">
+                            Sur quelles plateformes AIVancePro est-il disponible ?
+                            <span class="faq-icon"></span>
+                        </button>
+                        <div class="faq-answer"><div class="faq-answer-inner">AIVancePro est disponible sur iOS (App Store) et Android (Google Play). T&eacute;l&eacute;chargez l'application gratuitement sur votre appareil.</div></div>
+                    </div>
+                    <div class="faq-item">
+                        <button class="faq-question" onclick="this.parentElement.classList.toggle('open')">
+                            En quoi AIVancePro est diff&eacute;rent des autres apps de musculation ?
+                            <span class="faq-icon"></span>
+                        </button>
+                        <div class="faq-answer"><div class="faq-answer-inner">AIVancePro combine un v&eacute;ritable coach IA conversationnel, un suivi de progression d&eacute;taill&eacute; et une communaut&eacute; active. Contrairement aux apps avec des programmes g&eacute;n&eacute;riques, notre IA analyse vos performances, s'adapte &agrave; votre &eacute;quipement et g&eacute;n&egrave;re des s&eacute;ances enti&egrave;rement personnalis&eacute;es.</div></div>
+                    </div>
+                    <div class="faq-item">
+                        <button class="faq-question" onclick="this.parentElement.classList.toggle('open')">
+                            Puis-je utiliser AIVancePro &agrave; la maison sans mat&eacute;riel ?
+                            <span class="faq-icon"></span>
+                        </button>
+                        <div class="faq-answer"><div class="faq-answer-inner">Oui, AIVancePro propose de nombreux exercices au poids du corps. Indiquez simplement votre &eacute;quipement (ou aucun) et le coach IA g&eacute;n&eacute;rera des s&eacute;ances adapt&eacute;es &agrave; votre situation.</div></div>
+                    </div>
+                    <div class="faq-item">
+                        <button class="faq-question" onclick="this.parentElement.classList.toggle('open')">
+                            AIVancePro propose-t-il uniquement de la musculation ?
+                            <span class="faq-icon"></span>
+                        </button>
+                        <div class="faq-answer"><div class="faq-answer-inner">Non, AIVancePro couvre aussi le cardio, le HIIT, le circuit training et les exercices au poids du corps. Vous pouvez cr&eacute;er des s&eacute;ances cardio d&eacute;di&eacute;es ou mixer musculation et cardio selon vos objectifs.</div></div>
+                    </div>
+                    <div class="faq-item">
+                        <button class="faq-question" onclick="this.parentElement.classList.toggle('open')">
+                            Puis-je utiliser AIVancePro en voyage ?
+                            <span class="faq-icon"></span>
+                        </button>
+                        <div class="faq-answer"><div class="faq-answer-inner">Oui, il vous suffit de modifier votre &eacute;quipement disponible et le coach IA s'adapte imm&eacute;diatement. En d&eacute;placement avec peu de mat&eacute;riel ? Il g&eacute;n&eacute;rera une s&eacute;ance adapt&eacute;e.</div></div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Cat&eacute;gorie 2: Fonctionnalit&eacute;s & exp&eacute;rience -->
+            <div class="faq-category faq-hidden">
+                <h2 class="faq-category-title">Fonctionnalit&eacute;s &amp; exp&eacute;rience utilisateur</h2>
+                <div class="faq-list">
+                    <div class="faq-item">
+                        <button class="faq-question" onclick="this.parentElement.classList.toggle('open')">
+                            Comment fonctionne le coach IA ?
+                            <span class="faq-icon"></span>
+                        </button>
+                        <div class="faq-answer"><div class="faq-answer-inner">Le coach IA utilise l'intelligence artificielle pour analyser votre profil, votre historique et vos objectifs. Parlez-lui naturellement : &laquo; Cr&eacute;e-moi une s&eacute;ance pecs/&eacute;paules &raquo;, &laquo; Comment am&eacute;liorer mon d&eacute;velopp&eacute; couch&eacute; ? &raquo;. Il g&eacute;n&egrave;re des programmes sur mesure.</div></div>
+                    </div>
+                    <div class="faq-item">
+                        <button class="faq-question" onclick="this.parentElement.classList.toggle('open')">
+                            Comment les s&eacute;ances sont-elles personnalis&eacute;es ?
+                            <span class="faq-icon"></span>
+                        </button>
+                        <div class="faq-answer"><div class="faq-answer-inner">L'IA prend en compte votre niveau, vos objectifs (prise de muscle, perte de poids, force...), votre &eacute;quipement disponible, vos pr&eacute;f&eacute;rences d'exercices et votre historique. Chaque s&eacute;ance est g&eacute;n&eacute;r&eacute;e sp&eacute;cifiquement pour vous.</div></div>
+                    </div>
+                    <div class="faq-item">
+                        <button class="faq-question" onclick="this.parentElement.classList.toggle('open')">
+                            Le coach IA peut-il cr&eacute;er un plan d'entra&icirc;nement complet ?
+                            <span class="faq-icon"></span>
+                        </button>
+                        <div class="faq-answer"><div class="faq-answer-inner">Oui, le coach IA g&eacute;n&egrave;re des plans complets sur plusieurs semaines avec p&eacute;riodisation. Demandez-lui : &laquo; Cr&eacute;e-moi un programme sur 4 semaines &raquo; et il s'occupe du reste.</div></div>
+                    </div>
+                    <div class="faq-item">
+                        <button class="faq-question" onclick="this.parentElement.classList.toggle('open')">
+                            Puis-je suivre mes records personnels et ma progression ?
+                            <span class="faq-icon"></span>
+                        </button>
+                        <div class="faq-answer"><div class="faq-answer-inner">Absolument. AIVancePro enregistre automatiquement vos records personnels, g&eacute;n&egrave;re des graphiques de volume, de force et de distribution musculaire, et propose un calendrier d'activit&eacute; pour visualiser votre r&eacute;gularit&eacute;.</div></div>
+                    </div>
+                    <div class="faq-item">
+                        <button class="faq-question" onclick="this.parentElement.classList.toggle('open')">
+                            Combien d'exercices sont disponibles ?
+                            <span class="faq-icon"></span>
+                        </button>
+                        <div class="faq-answer"><div class="faq-answer-inner">Plus de 240 exercices couvrant tous les groupes musculaires, avec vid&eacute;os et instructions d&eacute;taill&eacute;es. La base inclut des exercices pour halt&egrave;res, barres, machines, c&acirc;bles, &eacute;lastiques et poids du corps.</div></div>
+                    </div>
+                    <div class="faq-item">
+                        <button class="faq-question" onclick="this.parentElement.classList.toggle('open')">
+                            Y a-t-il un timer de repos int&eacute;gr&eacute; ?
+                            <span class="faq-icon"></span>
+                        </button>
+                        <div class="faq-answer"><div class="faq-answer-inner">Oui, un chronom&egrave;tre flottant est int&eacute;gr&eacute; avec des temps de repos automatiques adapt&eacute;s &agrave; chaque exercice. Il reste visible pendant toute votre s&eacute;ance.</div></div>
+                    </div>
+                    <div class="faq-item">
+                        <button class="faq-question" onclick="this.parentElement.classList.toggle('open')">
+                            Puis-je enregistrer des templates de s&eacute;ances ?
+                            <span class="faq-icon"></span>
+                        </button>
+                        <div class="faq-answer"><div class="faq-answer-inner">Oui, sauvegardez n'importe quelle s&eacute;ance comme template pour la r&eacute;utiliser rapidement. Id&eacute;al pour vos routines habituelles.</div></div>
+                    </div>
+                    <div class="faq-item">
+                        <button class="faq-question" onclick="this.parentElement.classList.toggle('open')">
+                            Le coach IA aide-t-il &agrave; corriger la technique ?
+                            <span class="faq-icon"></span>
+                        </button>
+                        <div class="faq-answer"><div class="faq-answer-inner">Oui, demandez-lui des conseils sur la forme d'un exercice et il vous expliquera la bonne technique, les erreurs courantes &agrave; &eacute;viter et les variantes adapt&eacute;es &agrave; votre niveau.</div></div>
+                    </div>
+                    <div class="faq-item">
+                        <button class="faq-question" onclick="this.parentElement.classList.toggle('open')">
+                            Comment fonctionne la communaut&eacute; ?
+                            <span class="faq-icon"></span>
+                        </button>
+                        <div class="faq-answer"><div class="faq-answer-inner">Avec le plan Elite, cr&eacute;ez ou rejoignez des groupes, lancez des d&eacute;fis entre amis, consultez les leaderboards et &eacute;changez via la messagerie int&eacute;gr&eacute;e. Un excellent moyen de rester motiv&eacute;.</div></div>
+                    </div>
+                    <div class="faq-item">
+                        <button class="faq-question" onclick="this.parentElement.classList.toggle('open')">
+                            L'app propose-t-elle des vid&eacute;os d'exercices ?
+                            <span class="faq-icon"></span>
+                        </button>
+                        <div class="faq-answer"><div class="faq-answer-inner">Oui, chaque exercice dispose de vid&eacute;os d&eacute;monstratives et d'instructions d&eacute;taill&eacute;es pour vous assurer une ex&eacute;cution correcte et s&eacute;curitaire.</div></div>
+                    </div>
+                    <div class="faq-item">
+                        <button class="faq-question" onclick="this.parentElement.classList.toggle('open')">
+                            Puis-je modifier une s&eacute;ance g&eacute;n&eacute;r&eacute;e par l'IA ?
+                            <span class="faq-icon"></span>
+                        </button>
+                        <div class="faq-answer"><div class="faq-answer-inner">Bien s&ucirc;r. Vous pouvez ajouter, supprimer ou remplacer des exercices, ajuster les s&eacute;ries, les r&eacute;p&eacute;titions et les charges &agrave; tout moment pendant ou avant la s&eacute;ance.</div></div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Cat&eacute;gorie 3: Fondamentaux musculation -->
+            <div class="faq-category faq-hidden">
+                <h2 class="faq-category-title">Fondamentaux : comprendre la musculation</h2>
+                <div class="faq-list">
+                    <div class="faq-item">
+                        <button class="faq-question" onclick="this.parentElement.classList.toggle('open')">
+                            Qu'est-ce que la musculation et en quoi diff&egrave;re-t-elle du cardio ?
+                            <span class="faq-icon"></span>
+                        </button>
+                        <div class="faq-answer"><div class="faq-answer-inner">La musculation vise &agrave; renforcer les muscles en utilisant une r&eacute;sistance (poids, &eacute;lastiques, poids du corps). Le cardio vise l'endurance cardiovasculaire. Les deux sont compl&eacute;mentaires et AIVancePro vous aide &agrave; combiner les deux selon vos objectifs.</div></div>
+                    </div>
+                    <div class="faq-item">
+                        <button class="faq-question" onclick="this.parentElement.classList.toggle('open')">
+                            Pourquoi la musculation est-elle importante pour la sant&eacute; ?
+                            <span class="faq-icon"></span>
+                        </button>
+                        <div class="faq-answer"><div class="faq-answer-inner">La musculation renforce les os, am&eacute;liore le m&eacute;tabolisme, r&eacute;duit le risque de blessures, am&eacute;liore la posture et contribue &agrave; la sant&eacute; mentale. Elle est recommand&eacute;e &agrave; tous les &acirc;ges.</div></div>
+                    </div>
+                    <div class="faq-item">
+                        <button class="faq-question" onclick="this.parentElement.classList.toggle('open')">
+                            Quelle diff&eacute;rence entre hypertrophie, force et endurance ?
+                            <span class="faq-icon"></span>
+                        </button>
+                        <div class="faq-answer"><div class="faq-answer-inner">L'hypertrophie vise le volume musculaire (8-12 r&eacute;ps), la force maximale travaille avec des charges lourdes (1-5 r&eacute;ps), et l'endurance musculaire utilise des charges l&eacute;g&egrave;res avec beaucoup de r&eacute;p&eacute;titions (15+). AIVancePro adapte les param&egrave;tres selon votre objectif.</div></div>
+                    </div>
+                    <div class="faq-item">
+                        <button class="faq-question" onclick="this.parentElement.classList.toggle('open')">
+                            Combien de fois par semaine faut-il s'entra&icirc;ner ?
+                            <span class="faq-icon"></span>
+                        </button>
+                        <div class="faq-answer"><div class="faq-answer-inner">G&eacute;n&eacute;ralement 3 &agrave; 5 fois par semaine pour des r&eacute;sultats optimaux. Le coach IA ajuste la fr&eacute;quence et le volume en fonction de votre disponibilit&eacute; et de votre r&eacute;cup&eacute;ration.</div></div>
+                    </div>
+                    <div class="faq-item">
+                        <button class="faq-question" onclick="this.parentElement.classList.toggle('open')">
+                            Qu'est-ce que la surcharge progressive et pourquoi est-ce important ?
+                            <span class="faq-icon"></span>
+                        </button>
+                        <div class="faq-answer"><div class="faq-answer-inner">La surcharge progressive consiste &agrave; augmenter graduellement la charge, les r&eacute;p&eacute;titions ou le volume pour continuer &agrave; progresser. C'est le principe fondamental de la progression en musculation. AIVancePro suit votre progression et vous aide &agrave; appliquer ce principe.</div></div>
+                    </div>
+                    <div class="faq-item">
+                        <button class="faq-question" onclick="this.parentElement.classList.toggle('open')">
+                            Peut-on perdre du gras avec la musculation ?
+                            <span class="faq-icon"></span>
+                        </button>
+                        <div class="faq-answer"><div class="faq-answer-inner">Oui, la musculation augmente votre m&eacute;tabolisme de base et br&ucirc;le des calories pendant et apr&egrave;s l'entra&icirc;nement. Combin&eacute;e &agrave; une alimentation adapt&eacute;e, c'est un des moyens les plus efficaces pour perdre du gras.</div></div>
+                    </div>
+                    <div class="faq-item">
+                        <button class="faq-question" onclick="this.parentElement.classList.toggle('open')">
+                            Faut-il soulever lourd pour avoir des r&eacute;sultats ?
+                            <span class="faq-icon"></span>
+                        </button>
+                        <div class="faq-answer"><div class="faq-answer-inner">Pas forc&eacute;ment. La r&eacute;gularit&eacute;, la bonne technique et la surcharge progressive comptent davantage que la charge absolue. M&ecirc;me avec des charges mod&eacute;r&eacute;es, vous pouvez obtenir d'excellents r&eacute;sultats.</div></div>
+                    </div>
+                    <div class="faq-item">
+                        <button class="faq-question" onclick="this.parentElement.classList.toggle('open')">
+                            De quel &eacute;quipement ai-je besoin pour commencer ?
+                            <span class="faq-icon"></span>
+                        </button>
+                        <div class="faq-answer"><div class="faq-answer-inner">Aucun &eacute;quipement n'est obligatoire ! Vous pouvez commencer au poids du corps. Pour progresser plus vite, une paire d'halt&egrave;res r&eacute;glables est un excellent investissement. AIVancePro s'adapte &agrave; votre mat&eacute;riel.</div></div>
+                    </div>
+                    <div class="faq-item">
+                        <button class="faq-question" onclick="this.parentElement.classList.toggle('open')">
+                            Quels sont les groupes musculaires les plus importants &agrave; travailler ?
+                            <span class="faq-icon"></span>
+                        </button>
+                        <div class="faq-answer"><div class="faq-answer-inner">Un programme &eacute;quilibr&eacute; doit couvrir tous les grands groupes : pectoraux, dos, &eacute;paules, bras, jambes et abdominaux. Le coach IA veille &agrave; &eacute;quilibrer la distribution musculaire de vos s&eacute;ances.</div></div>
+                    </div>
+                    <div class="faq-item">
+                        <button class="faq-question" onclick="this.parentElement.classList.toggle('open')">
+                            Pourquoi la r&eacute;cup&eacute;ration est-elle aussi importante que l'entra&icirc;nement ?
+                            <span class="faq-icon"></span>
+                        </button>
+                        <div class="faq-answer"><div class="faq-answer-inner">Les muscles se r&eacute;parent et se renforcent pendant le repos. Sans r&eacute;cup&eacute;ration suffisante, vous risquez le surentra&icirc;nement et les blessures. AIVancePro analyse votre charge et vous alerte si votre volume est trop &eacute;lev&eacute;.</div></div>
+                    </div>
+                    <div class="faq-item">
+                        <button class="faq-question" onclick="this.parentElement.classList.toggle('open')">
+                            La musculation est-elle sans risque pour les d&eacute;butants ?
+                            <span class="faq-icon"></span>
+                        </button>
+                        <div class="faq-answer"><div class="faq-answer-inner">Oui, &agrave; condition de respecter la bonne technique et de progresser graduellement. AIVancePro propose des exercices adapt&eacute;s aux d&eacute;butants avec des instructions d&eacute;taill&eacute;es pour minimiser les risques.</div></div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Cat&eacute;gorie 4: Selon vos objectifs -->
+            <div class="faq-category faq-hidden">
+                <h2 class="faq-category-title">Fondamentaux selon vos objectifs</h2>
+
+                <h3 class="faq-subcategory-title">S&eacute;cher &amp; se d&eacute;finir</h3>
+                <div class="faq-list">
+                    <div class="faq-item">
+                        <button class="faq-question" onclick="this.parentElement.classList.toggle('open')">
+                            Quel type d'entra&icirc;nement pour s&eacute;cher ?
+                            <span class="faq-icon"></span>
+                        </button>
+                        <div class="faq-answer"><div class="faq-answer-inner">Un mix de musculation (pour pr&eacute;server la masse musculaire) et de cardio/HIIT (pour augmenter la d&eacute;pense calorique) est id&eacute;al. Le coach IA cr&eacute;e des programmes &eacute;quilibr&eacute;s pour cet objectif.</div></div>
+                    </div>
+                    <div class="faq-item">
+                        <button class="faq-question" onclick="this.parentElement.classList.toggle('open')">
+                            Faut-il faire du cardio pour s&eacute;cher ?
+                            <span class="faq-icon"></span>
+                        </button>
+                        <div class="faq-answer"><div class="faq-answer-inner">Le cardio aide &agrave; cr&eacute;er un d&eacute;ficit calorique, mais ce n'est pas obligatoire. La nutrition joue un r&ocirc;le plus important. Le cardio est un outil suppl&eacute;mentaire que le coach IA peut int&eacute;grer &agrave; votre programme.</div></div>
+                    </div>
+                    <div class="faq-item">
+                        <button class="faq-question" onclick="this.parentElement.classList.toggle('open')">
+                            Quel r&ocirc;le jouent les r&eacute;p&eacute;titions et les s&eacute;ries pour s&eacute;cher ?
+                            <span class="faq-icon"></span>
+                        </button>
+                        <div class="faq-answer"><div class="faq-answer-inner">Pendant une s&egrave;che, maintenir des charges lourdes avec des r&eacute;ps mod&eacute;r&eacute;es (6-12) aide &agrave; pr&eacute;server la masse musculaire. Augmenter les r&eacute;ps avec des charges l&eacute;g&egrave;res peut ajouter un effet calorique, mais ne doit pas remplacer le travail lourd.</div></div>
+                    </div>
+                    <div class="faq-item">
+                        <button class="faq-question" onclick="this.parentElement.classList.toggle('open')">
+                            Peut-on s&eacute;cher avec des exercices au poids du corps ?
+                            <span class="faq-icon"></span>
+                        </button>
+                        <div class="faq-answer"><div class="faq-answer-inner">Oui, les exercices au poids du corps &agrave; haute intensit&eacute; (burpees, pompes, squats jump...) sont tr&egrave;s efficaces pour br&ucirc;ler des calories. AIVancePro peut g&eacute;n&eacute;rer des circuits HIIT sans mat&eacute;riel.</div></div>
+                    </div>
+                </div>
+
+                <h3 class="faq-subcategory-title">Prendre du muscle &amp; devenir plus fort</h3>
+                <div class="faq-list">
+                    <div class="faq-item">
+                        <button class="faq-question" onclick="this.parentElement.classList.toggle('open')">
+                            Comment AIVancePro aide-t-il &agrave; prendre du muscle ?
+                            <span class="faq-icon"></span>
+                        </button>
+                        <div class="faq-answer"><div class="faq-answer-inner">L'IA g&eacute;n&egrave;re des programmes d'hypertrophie avec le bon volume, la bonne intensit&eacute; et la bonne fr&eacute;quence. Elle suit votre progression et ajuste les charges pour garantir une surcharge progressive optimale.</div></div>
+                    </div>
+                    <div class="faq-item">
+                        <button class="faq-question" onclick="this.parentElement.classList.toggle('open')">
+                            Quel split est le meilleur pour prendre du muscle ?
+                            <span class="faq-icon"></span>
+                        </button>
+                        <div class="faq-answer"><div class="faq-answer-inner">&Ccedil;a d&eacute;pend de votre disponibilit&eacute;. Push/Pull/Legs, Upper/Lower ou Full Body sont tous efficaces. Le coach IA recommande le split optimal en fonction de vos jours d'entra&icirc;nement.</div></div>
+                    </div>
+                    <div class="faq-item">
+                        <button class="faq-question" onclick="this.parentElement.classList.toggle('open')">
+                            Combien de temps faut-il pour voir des r&eacute;sultats ?
+                            <span class="faq-icon"></span>
+                        </button>
+                        <div class="faq-answer"><div class="faq-answer-inner">Les premiers progr&egrave;s en force se ressentent d&egrave;s 2-3 semaines. Les changements physiques visibles apparaissent g&eacute;n&eacute;ralement apr&egrave;s 6 &agrave; 8 semaines d'entra&icirc;nement r&eacute;gulier. AIVancePro vous aide &agrave; visualiser ces progr&egrave;s.</div></div>
+                    </div>
+                    <div class="faq-item">
+                        <button class="faq-question" onclick="this.parentElement.classList.toggle('open')">
+                            Faut-il des suppl&eacute;ments pour prendre du muscle ?
+                            <span class="faq-icon"></span>
+                        </button>
+                        <div class="faq-answer"><div class="faq-answer-inner">Non, les suppl&eacute;ments ne sont pas n&eacute;cessaires. Une alimentation &eacute;quilibr&eacute;e riche en prot&eacute;ines suffit. La cr&eacute;atine et la whey peuvent &ecirc;tre pratiques mais ne sont pas indispensables.</div></div>
+                    </div>
+                </div>
+
+                <h3 class="faq-subcategory-title">Rester en forme &amp; en bonne sant&eacute;</h3>
+                <div class="faq-list">
+                    <div class="faq-item">
+                        <button class="faq-question" onclick="this.parentElement.classList.toggle('open')">
+                            Quelle routine pour rester en bonne sant&eacute; g&eacute;n&eacute;rale ?
+                            <span class="faq-icon"></span>
+                        </button>
+                        <div class="faq-answer"><div class="faq-answer-inner">2 &agrave; 3 s&eacute;ances de musculation par semaine combin&eacute;es &agrave; un peu de cardio suffisent pour maintenir une bonne sant&eacute;. Le coach IA cr&eacute;e des programmes &eacute;quilibr&eacute;s adapt&eacute;s &agrave; cet objectif.</div></div>
+                    </div>
+                    <div class="faq-item">
+                        <button class="faq-question" onclick="this.parentElement.classList.toggle('open')">
+                            J'ai plus de 40 ans, la musculation est-elle encore efficace ?
+                            <span class="faq-icon"></span>
+                        </button>
+                        <div class="faq-answer"><div class="faq-answer-inner">Absolument ! La musculation est m&ecirc;me recommand&eacute;e &agrave; partir de 40 ans pour lutter contre la perte musculaire li&eacute;e &agrave; l'&acirc;ge. Le coach IA adapte l'intensit&eacute; et le volume &agrave; votre profil.</div></div>
+                    </div>
+                    <div class="faq-item">
+                        <button class="faq-question" onclick="this.parentElement.classList.toggle('open')">
+                            Faut-il s'entra&icirc;ner tous les jours ?
+                            <span class="faq-icon"></span>
+                        </button>
+                        <div class="faq-answer"><div class="faq-answer-inner">Non, le repos est essentiel pour la progression. 3 &agrave; 5 s&eacute;ances par semaine avec des jours de repos suffisent. AIVancePro int&egrave;gre la r&eacute;cup&eacute;ration dans la planification.</div></div>
+                    </div>
+                    <div class="faq-item">
+                        <button class="faq-question" onclick="this.parentElement.classList.toggle('open')">
+                            AIVancePro peut-il aider &agrave; am&eacute;liorer la force fonctionnelle ?
+                            <span class="faq-icon"></span>
+                        </button>
+                        <div class="faq-answer"><div class="faq-answer-inner">Oui, le coach IA peut g&eacute;n&eacute;rer des programmes ax&eacute;s sur la force fonctionnelle avec des exercices compos&eacute;s et des mouvements qui am&eacute;liorent les gestes du quotidien.</div></div>
+                    </div>
+                </div>
+
+                <h3 class="faq-subcategory-title">Perdre du poids</h3>
+                <div class="faq-list">
+                    <div class="faq-item">
+                        <button class="faq-question" onclick="this.parentElement.classList.toggle('open')">
+                            La musculation est-elle efficace pour perdre du poids ?
+                            <span class="faq-icon"></span>
+                        </button>
+                        <div class="faq-answer"><div class="faq-answer-inner">Oui, la musculation augmente le m&eacute;tabolisme de base, ce qui signifie que vous br&ucirc;lez plus de calories m&ecirc;me au repos. Combin&eacute;e &agrave; un d&eacute;ficit calorique, c'est tr&egrave;s efficace.</div></div>
+                    </div>
+                    <div class="faq-item">
+                        <button class="faq-question" onclick="this.parentElement.classList.toggle('open')">
+                            Combien de calories br&ucirc;le une s&eacute;ance de musculation ?
+                            <span class="faq-icon"></span>
+                        </button>
+                        <div class="faq-answer"><div class="faq-answer-inner">Une s&eacute;ance de musculation de 45 &agrave; 60 minutes br&ucirc;le en moyenne 200 &agrave; 400 calories, selon l'intensit&eacute;. L'effet &laquo; afterburn &raquo; fait que vous continuez &agrave; br&ucirc;ler des calories pendant des heures apr&egrave;s la s&eacute;ance.</div></div>
+                    </div>
+                    <div class="faq-item">
+                        <button class="faq-question" onclick="this.parentElement.classList.toggle('open')">
+                            Faut-il &ecirc;tre en d&eacute;ficit calorique pour perdre du poids ?
+                            <span class="faq-icon"></span>
+                        </button>
+                        <div class="faq-answer"><div class="faq-answer-inner">Oui, le d&eacute;ficit calorique est n&eacute;cessaire pour perdre du poids. La musculation aide &agrave; maintenir la masse musculaire pendant la perte de poids pour &eacute;viter l'effet &laquo; skinny fat &raquo;.</div></div>
+                    </div>
+                    <div class="faq-item">
+                        <button class="faq-question" onclick="this.parentElement.classList.toggle('open')">
+                            Musculation ou cardio : qu'est-ce qui est mieux pour perdre du poids ?
+                            <span class="faq-icon"></span>
+                        </button>
+                        <div class="faq-answer"><div class="faq-answer-inner">Les deux sont compl&eacute;mentaires. La musculation pr&eacute;serve le muscle et augmente le m&eacute;tabolisme, le cardio br&ucirc;le des calories suppl&eacute;mentaires. AIVancePro peut combiner les deux dans vos programmes.</div></div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Cat&eacute;gorie 5: Abonnement -->
+            <div class="faq-category faq-hidden">
+                <h2 class="faq-category-title">Abonnement &amp; compte</h2>
+                <div class="faq-list">
+                    <div class="faq-item">
+                        <button class="faq-question" onclick="this.parentElement.classList.toggle('open')">
+                            Combien co&ucirc;te AIVancePro ?
+                            <span class="faq-icon"></span>
+                        </button>
+                        <div class="faq-answer"><div class="faq-answer-inner">AIVancePro est gratuit avec des fonctionnalit&eacute;s de base. Le plan Pro &agrave; 4,99&euro;/mois d&eacute;bloque le coach IA illimit&eacute; et les analyses avanc&eacute;es. Le plan Elite &agrave; 7,99&euro;/mois ajoute la communaut&eacute;, les d&eacute;fis et la messagerie. <a href="/pricing.html" style="color:var(--blue);">Voir la comparaison compl&egrave;te</a>.</div></div>
+                    </div>
+                    <div class="faq-item">
+                        <button class="faq-question" onclick="this.parentElement.classList.toggle('open')">
+                            Quelle est la diff&eacute;rence entre Pro et Elite ?
+                            <span class="faq-icon"></span>
+                        </button>
+                        <div class="faq-answer"><div class="faq-answer-inner">Le plan Pro inclut le coach IA illimit&eacute;, les analyses avanc&eacute;es, la p&eacute;riodisation et les templates. Le plan Elite ajoute les fonctionnalit&eacute;s communautaires : groupes, d&eacute;fis, messagerie, leaderboards et badges.</div></div>
+                    </div>
+                    <div class="faq-item">
+                        <button class="faq-question" onclick="this.parentElement.classList.toggle('open')">
+                            Puis-je annuler mon abonnement &agrave; tout moment ?
+                            <span class="faq-icon"></span>
+                        </button>
+                        <div class="faq-answer"><div class="faq-answer-inner">Oui, annulez &agrave; tout moment depuis les param&egrave;tres de l'app ou votre compte App Store/Google Play. Aucun engagement, aucun frais cach&eacute;.</div></div>
+                    </div>
+                    <div class="faq-item">
+                        <button class="faq-question" onclick="this.parentElement.classList.toggle('open')">
+                            Comment changer de plan ?
+                            <span class="faq-icon"></span>
+                        </button>
+                        <div class="faq-answer"><div class="faq-answer-inner">Vous pouvez passer d'un plan &agrave; un autre directement depuis les param&egrave;tres de l'application. Le changement prend effet imm&eacute;diatement.</div></div>
+                    </div>
+                    <div class="faq-item">
+                        <button class="faq-question" onclick="this.parentElement.classList.toggle('open')">
+                            Mes donn&eacute;es sont-elles s&eacute;curis&eacute;es ?
+                            <span class="faq-icon"></span>
+                        </button>
+                        <div class="faq-answer"><div class="faq-answer-inner">Vos donn&eacute;es sont h&eacute;berg&eacute;es de mani&egrave;re s&eacute;curis&eacute;e et chiffr&eacute;es. Nous ne vendons jamais vos donn&eacute;es. Consultez notre <a href="/privacy.html" style="color:var(--blue);">politique de confidentialit&eacute;</a>.</div></div>
+                    </div>
+                    <div class="faq-item">
+                        <button class="faq-question" onclick="this.parentElement.classList.toggle('open')">
+                            Puis-je supprimer mon compte ?
+                            <span class="faq-icon"></span>
+                        </button>
+                        <div class="faq-answer"><div class="faq-answer-inner">Oui, supprimez votre compte &agrave; tout moment depuis les param&egrave;tres de l'application. Toutes vos donn&eacute;es personnelles seront d&eacute;finitivement supprim&eacute;es.</div></div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="faq-show-all" id="faqShowAll">
+                <button onclick="document.querySelectorAll('.faq-hidden').forEach(el=>el.classList.remove('faq-hidden'));this.parentElement.classList.add('hidden');">Voir toute la FAQ</button>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- Final CTA -->
+    <section class="final-cta">
+        <h2>Pr&ecirc;t &agrave; transformer votre entra&icirc;nement ?</h2>
+        <p>T&eacute;l&eacute;chargez AIVancePro gratuitement et commencez &agrave; vous entra&icirc;ner intelligemment d&egrave;s aujourd'hui.</p>
+        <a href="https://apps.apple.com/fr/app/aivancepro/id6756116760" class="btn-primary" target="_blank" rel="noopener">
+            T&eacute;l&eacute;charger gratuitement
+        </a>
+    </section>
+
+    <!-- Sticky CTA -->
+    <div class="sticky-cta" id="stickyCta">
+        <span class="sticky-cta-text">T&eacute;l&eacute;chargez AIVancePro gratuitement</span>
+        <a href="https://apps.apple.com/fr/app/aivancepro/id6756116760" class="btn-primary" target="_blank" rel="noopener">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M18.71 19.5c-.83 1.24-1.71 2.45-3.05 2.47-1.34.03-1.77-.79-3.29-.79-1.53 0-2 .77-3.27.82-1.31.05-2.3-1.32-3.14-2.53C4.25 17 2.94 12.45 4.7 9.39c.87-1.52 2.43-2.48 4.12-2.51 1.28-.02 2.5.87 3.29.87.78 0 2.26-1.07 3.8-.91.65.03 2.47.26 3.64 1.98-.09.06-2.17 1.28-2.15 3.81.03 3.02 2.65 4.03 2.68 4.04-.03.07-.42 1.44-1.38 2.83M13 3.5c.73-.83 1.94-1.46 2.94-1.5.13 1.17-.34 2.35-1.04 3.19-.69.85-1.83 1.51-2.95 1.42-.15-1.15.41-2.35 1.05-3.11z"/></svg>
+            T&eacute;l&eacute;charger
+        </a>
+    </div>
+
+    <!-- Footer -->
+
+    <script>
+    (function() {
+        var sticky = document.getElementById('stickyCta');
+        if (!sticky) return;
+        window.addEventListener('scroll', function() {
+            if (window.scrollY > 600) {
+                sticky.classList.add('visible');
+            } else {
+                sticky.classList.remove('visible');
+            }
+        });
+    })();
+    </script>
+</BaseLayout>

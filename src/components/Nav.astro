@@ -1,0 +1,78 @@
+---
+import { languages, t } from '../i18n.js';
+
+const { lang = 'fr' } = Astro.props;
+const i = t[lang];
+const chevronSvg = `<svg viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M5.23 7.21a.75.75 0 011.06.02L10 11.168l3.71-3.938a.75.75 0 111.08 1.04l-4.25 4.5a.75.75 0 01-1.08 0l-4.25-4.5a.75.75 0 01.02-1.06z" clip-rule="evenodd"/></svg>`;
+const currentLang = languages[lang];
+---
+
+<nav>
+    <div class="nav-inner">
+        <a href={i.links.home} class="logo">
+            <img src="/assets/logo.png" alt="AIVancePro">
+            <span class="logo-text">AIVancePro</span>
+        </a>
+
+        <ul class="nav-center">
+            <li><a href={i.links.features}>{i.nav.features}</a></li>
+            <li class="dropdown">
+                <button class="dropdown-toggle">
+                    {i.nav.articles}
+                    <Fragment set:html={chevronSvg} />
+                </button>
+                <div class="dropdown-menu">
+                    <a href={i.links.blog}>{i.nav.blog}</a>
+                    <a href={i.links.guides}>{i.nav.guides}</a>
+                    <a href={i.links.exercises}>{i.nav.exercises}</a>
+                    <a href={i.links.personalTraining}>{i.nav.personalTraining}</a>
+                    <a href={i.links.workoutSplits}>{i.nav.workoutSplits}</a>
+                    <a href={i.links.compoundIsolation}>{i.nav.compoundIsolation}</a>
+                </div>
+            </li>
+            <li><a href={i.links.pricing}>{i.nav.pricing}</a></li>
+            <li><a href={i.links.faq}>{i.nav.faq}</a></li>
+        </ul>
+
+        <div class="nav-right">
+            <div class="lang-dropdown">
+                <button class="lang-dropdown-toggle">
+                    <span class="flag">{currentLang.flag}</span> {currentLang.short}
+                    <svg width="12" height="12" viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M5.23 7.21a.75.75 0 011.06.02L10 11.168l3.71-3.938a.75.75 0 111.08 1.04l-4.25 4.5a.75.75 0 01-1.08 0l-4.25-4.5a.75.75 0 01.02-1.06z" clip-rule="evenodd"/></svg>
+                </button>
+                <div class="lang-dropdown-menu">
+                    {Object.entries(languages).map(([code, l]) => (
+                        <a href={t[code].links.home} class={code === lang ? 'active' : ''}>
+                            <span class="flag">{l.flag}</span> {l.label}
+                        </a>
+                    ))}
+                </div>
+            </div>
+            <a href={i.links.login} class="nav-login">{i.nav.login}</a>
+            <a href={i.links.appStore} class="nav-cta" target="_blank" rel="noopener">{i.nav.download}</a>
+            <button class="mobile-menu-btn" onclick="document.getElementById('mobileMenu').classList.add('open')" aria-label={i.nav.menu}>
+                <span></span><span></span><span></span>
+            </button>
+        </div>
+    </div>
+</nav>
+
+<!-- Mobile Menu -->
+<div id="mobileMenu" class="mobile-menu">
+    <button class="mobile-menu-close" onclick="document.getElementById('mobileMenu').classList.remove('open')" aria-label={i.nav.close}>&times;</button>
+    <a href={i.links.features} onclick="document.getElementById('mobileMenu').classList.remove('open')">{i.nav.features}</a>
+    <a href={i.links.blog}>{i.nav.blog}</a>
+    <div class="mobile-sub">
+        <a href={i.links.guides}>{i.nav.guides}</a>
+        <a href={i.links.exercises}>{i.nav.exercises}</a>
+        <a href={i.links.personalTraining}>{i.nav.personalTraining}</a>
+        <a href={i.links.workoutSplits}>{i.nav.workoutSplits}</a>
+        <a href={i.links.compoundIsolation}>{i.nav.compoundIsolation}</a>
+    </div>
+    <a href={i.links.pricing} onclick="document.getElementById('mobileMenu').classList.remove('open')">{i.nav.pricing}</a>
+    <a href={i.links.faq} onclick="document.getElementById('mobileMenu').classList.remove('open')">{i.nav.faq}</a>
+    <a href={i.links.login}>{i.nav.login}</a>
+    {Object.entries(languages).filter(([code]) => code !== lang).map(([code, l]) => (
+        <a href={t[code].links.home}>{l.flag} {l.label}</a>
+    ))}
+</div>

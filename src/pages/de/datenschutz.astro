@@ -1,0 +1,71 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+---
+
+<BaseLayout
+  lang="de"
+  title="Datenschutzerkl&auml;rung - AIVancePro"
+  description="Datenschutzerkl&auml;rung von AIVancePro. Erfahren Sie, wie wir Ihre personenbezogenen Daten sch&uuml;tzen."
+  canonical="https://aivancepro.fr/de/datenschutz.html"
+  alternates={{ fr: 'https://aivancepro.fr/privacy.html', en: 'https://aivancepro.fr/en/privacy.html', de: 'https://aivancepro.fr/de/datenschutz.html' }}
+>
+  <Fragment slot="head">
+    <style>
+      .page-header { padding: 9rem 2rem 2rem; text-align: center; background: linear-gradient(180deg, var(--gray-50), var(--white)); }
+      .section-label { display: inline-block; font-size: 0.8rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.08em; color: var(--blue); margin-bottom: 0.75rem; }
+      .page-header h1 { font-size: 2.8rem; font-weight: 800; letter-spacing: -0.02em; margin-bottom: 1rem; color: var(--gray-900); }
+      .page-header .date { color: var(--gray-500); font-size: 0.9rem; }
+      .content { max-width: 800px; margin: 0 auto; padding: 3rem 2rem 4rem; }
+      .content h2 { font-size: 1.4rem; font-weight: 700; color: var(--gray-900); margin-top: 2.5rem; margin-bottom: 1rem; }
+      .content p, .content li { color: var(--gray-700); font-size: 0.95rem; margin-bottom: 1rem; }
+      .content ul { padding-left: 1.5rem; margin-bottom: 1rem; }
+      .content strong { color: var(--gray-900); }
+      .content a { color: var(--blue); }
+      .back { display: inline-block; margin-top: 2rem; color: var(--gray-500); text-decoration: none; font-size: 0.9rem; }
+      .back:hover { color: var(--gray-900); }
+      @media (max-width: 768px) {
+          .page-header { padding: 7rem 1.5rem 2rem; }
+          .page-header h1 { font-size: 2rem; }
+      }
+    </style>
+  </Fragment>
+
+    <header class="page-header">
+        <div class="section-label">Rechtliches</div>
+        <h1>Datenschutzerkl&auml;rung</h1>
+        <p class="date">Letzte Aktualisierung: 25. November 2025</p>
+    </header>
+
+    <div class="content">
+        <h2>1. Datenerhebung</h2>
+        <p>Wir erheben Daten, die Sie uns direkt zur Verf&uuml;gung stellen, wie z.&nbsp;B. Ihre Profilinformationen (Name, E-Mail, Alter usw.), Ihre Trainingsdaten (&Uuml;bungen, S&auml;tze, Wiederholungen, Gewicht, RPE), Ihre Ziele und Ihre K&ouml;rperma&szlig;e.</p>
+
+        <h2>2. Verwendung der Daten</h2>
+        <p>Ihre Daten werden verwendet, um:</p>
+        <ul>
+            <li>Ihr Erlebnis und Ihre Trainingspl&auml;ne mithilfe unserer KI zu personalisieren.</li>
+            <li>Ihren Fortschritt zu verfolgen und relevante Analysen bereitzustellen.</li>
+            <li>Die Community-Funktionen zu betreiben (sofern Sie diese nutzen m&ouml;chten).</li>
+            <li>Unsere Algorithmen der k&uuml;nstlichen Intelligenz zu verbessern.</li>
+        </ul>
+        <p>Ihre Trainingsdaten k&ouml;nnen in anonymisierter Form zur Verbesserung unserer KI-Modelle verwendet werden, werden jedoch niemals in einer Weise an Dritte weitergegeben, die eine pers&ouml;nliche Identifizierung erm&ouml;glicht.</p>
+
+        <h2>3. Weitergabe von Daten</h2>
+        <p>Wir verkaufen, tauschen oder vermieten Ihre personenbezogenen Daten nicht an Dritte. Interaktionen innerhalb der Community-Funktionen (Feed, Nachrichten) sind f&uuml;r andere Nutzer gem&auml;&szlig; Ihren Datenschutzeinstellungen sichtbar.</p>
+
+        <h2>4. Datensicherheit</h2>
+        <p>Wir setzen Sicherheitsma&szlig;nahmen ein, um Ihre Daten zu sch&uuml;tzen. Alle Daten werden w&auml;hrend der &Uuml;bertragung und Speicherung verschl&uuml;sselt.</p>
+
+        <h2>5. Aufbewahrung und L&ouml;schung von Daten</h2>
+        <p>Wir bewahren Ihre Daten auf, solange Ihr Konto aktiv ist. Sie k&ouml;nnen jederzeit die vollst&auml;ndige L&ouml;schung Ihres Kontos und aller damit verbundenen Daten &uuml;ber die App-Einstellungen beantragen.</p>
+        <p>Wenn Sie Ihr Konto l&ouml;schen, verpflichten wir uns, Ihre E-Mail-Adresse, Profilinformationen, Trainingsdaten und alle anderen personenbezogenen Daten innerhalb einer angemessenen Frist unwiderruflich aus unseren Datenbanken zu entfernen.</p>
+
+        <h2>6. In-App-K&auml;ufe</h2>
+        <p>Wir speichern keine Zahlungsinformationen. Transaktionen werden sicher &uuml;ber den Plattformanbieter abgewickelt (z.&nbsp;B. den Apple App Store).</p>
+
+        <h2>7. Kontakt</h2>
+        <p>Bei Fragen zu dieser Datenschutzerkl&auml;rung kontaktieren Sie uns bitte unter <a href="mailto:aivancepro@gmail.com">aivancepro@gmail.com</a>.</p>
+
+        <a href="/de/" class="back">&larr; Zur&uuml;ck zur Startseite</a>
+    </div>
+</BaseLayout>

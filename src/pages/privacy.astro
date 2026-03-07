@@ -1,0 +1,71 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+---
+
+<BaseLayout
+  lang="fr"
+  title="Politique de confidentialit&eacute; - AIVancePro"
+  description="Politique de confidentialit&eacute; d'AIVancePro. D&eacute;couvrez comment nous prot&eacute;geons vos donn&eacute;es personnelles."
+  canonical="https://aivancepro.fr/privacy.html"
+  alternates={{ fr: 'https://aivancepro.fr/privacy.html', en: 'https://aivancepro.fr/en/privacy.html', de: 'https://aivancepro.fr/de/datenschutz.html' }}
+>
+  <Fragment slot="head">
+    <style>
+      .page-header { padding: 9rem 2rem 2rem; text-align: center; background: linear-gradient(180deg, var(--gray-50), var(--white)); }
+      .section-label { display: inline-block; font-size: 0.8rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.08em; color: var(--blue); margin-bottom: 0.75rem; }
+      .page-header h1 { font-size: 2.8rem; font-weight: 800; letter-spacing: -0.02em; margin-bottom: 1rem; color: var(--gray-900); }
+      .page-header .date { color: var(--gray-500); font-size: 0.9rem; }
+      .content { max-width: 800px; margin: 0 auto; padding: 3rem 2rem 4rem; }
+      .content h2 { font-size: 1.4rem; font-weight: 700; color: var(--gray-900); margin-top: 2.5rem; margin-bottom: 1rem; }
+      .content p, .content li { color: var(--gray-700); font-size: 0.95rem; margin-bottom: 1rem; }
+      .content ul { padding-left: 1.5rem; margin-bottom: 1rem; }
+      .content strong { color: var(--gray-900); }
+      .content a { color: var(--blue); }
+      .back { display: inline-block; margin-top: 2rem; color: var(--gray-500); text-decoration: none; font-size: 0.9rem; }
+      .back:hover { color: var(--gray-900); }
+      @media (max-width: 768px) {
+          .page-header { padding: 7rem 1.5rem 2rem; }
+          .page-header h1 { font-size: 2rem; }
+      }
+    </style>
+  </Fragment>
+
+    <header class="page-header">
+        <div class="section-label">L&eacute;gal</div>
+        <h1>Politique de confidentialit&eacute;</h1>
+        <p class="date">Derni&egrave;re mise &agrave; jour : 25 novembre 2025</p>
+    </header>
+
+    <div class="content">
+        <h2>1. Collecte de donn&eacute;es</h2>
+        <p>Nous collectons les donn&eacute;es que vous nous fournissez directement, telles que vos informations de profil (nom, e-mail, &acirc;ge, etc.), vos donn&eacute;es d'entra&icirc;nement (exercices, s&eacute;ries, r&eacute;p&eacute;titions, poids, RPE), vos objectifs et vos mensurations.</p>
+
+        <h2>2. Utilisation des donn&eacute;es</h2>
+        <p>Vos donn&eacute;es sont utilis&eacute;es pour :</p>
+        <ul>
+            <li>Personnaliser votre exp&eacute;rience et vos programmes d'entra&icirc;nement gr&acirc;ce &agrave; notre IA.</li>
+            <li>Suivre vos progr&egrave;s et fournir des analyses pertinentes.</li>
+            <li>Alimenter les fonctionnalit&eacute;s communautaires (si vous choisissez de les utiliser).</li>
+            <li>Am&eacute;liorer nos algorithmes d'intelligence artificielle.</li>
+        </ul>
+        <p>Vos donn&eacute;es d'entra&icirc;nement peuvent &ecirc;tre utilis&eacute;es de mani&egrave;re anonyme pour am&eacute;liorer nos mod&egrave;les d'IA, mais elles ne seront jamais partag&eacute;es avec des tiers d'une mani&egrave;re qui permettrait de vous identifier personnellement.</p>
+
+        <h2>3. Partage des donn&eacute;es</h2>
+        <p>Nous ne vendons, n'&eacute;changeons ni ne louons vos informations personnelles &agrave; des tiers. Les interactions au sein des fonctionnalit&eacute;s communautaires (flux, messages) sont visibles par les autres utilisateurs en fonction de vos param&egrave;tres de confidentialit&eacute;.</p>
+
+        <h2>4. S&eacute;curit&eacute; des donn&eacute;es</h2>
+        <p>Nous mettons en &oelig;uvre des mesures de s&eacute;curit&eacute; pour prot&eacute;ger vos donn&eacute;es. Toutes les donn&eacute;es sont crypt&eacute;es pendant leur transfert et leur stockage.</p>
+
+        <h2>5. Conservation et suppression des donn&eacute;es</h2>
+        <p>Nous conservons vos donn&eacute;es tant que votre compte est actif. Vous pouvez demander la suppression compl&egrave;te de votre compte et de toutes les donn&eacute;es associ&eacute;es &agrave; tout moment &agrave; partir des param&egrave;tres de l'application.</p>
+        <p>Lorsque vous supprimez votre compte, nous nous engageons &agrave; effacer d&eacute;finitivement votre adresse e-mail, vos informations de profil, vos donn&eacute;es d'entra&icirc;nement et toute autre information personnelle de nos bases de donn&eacute;es dans un d&eacute;lai raisonnable.</p>
+
+        <h2>6. Achats int&eacute;gr&eacute;s &agrave; l'application</h2>
+        <p>Nous ne conservons aucune information de paiement. Les transactions sont trait&eacute;es de mani&egrave;re s&eacute;curis&eacute;e par le fournisseur de la plateforme (par exemple, l'App Store d'Apple).</p>
+
+        <h2>7. Contact</h2>
+        <p>Pour toute question concernant cette politique de confidentialit&eacute;, veuillez nous contacter &agrave; <a href="mailto:aivancepro@gmail.com">aivancepro@gmail.com</a>.</p>
+
+        <a href="/" class="back">&larr; Retour &agrave; l'accueil</a>
+    </div>
+</BaseLayout>

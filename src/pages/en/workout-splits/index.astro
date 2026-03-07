@@ -1,0 +1,123 @@
+---
+import BaseLayout from '../../../layouts/BaseLayout.astro';
+---
+
+<BaseLayout
+  lang="en"
+  title="Workout Splits: Best Training Programs Explained - AIVancePro"
+  description="Full Body, Upper/Lower, Push/Pull/Legs or Bro Split? Discover which workout split to choose based on your level and goals."
+  canonical="https://aivancepro.fr/en/workout-splits/"
+  ogType="article"
+  alternates={{ fr: 'https://aivancepro.fr/workout-splits/', en: 'https://aivancepro.fr/en/workout-splits/', de: 'https://aivancepro.fr/de/workout-splits/' }}
+>
+  <Fragment slot="head">
+    <style>
+      .article-header { padding: 9rem 2rem 3rem; text-align: center; background: linear-gradient(180deg, var(--gray-50), var(--white)); }
+      .section-label { display: inline-block; font-size: 0.8rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.08em; color: var(--blue); margin-bottom: 0.75rem; }
+      .article-header h1 { font-size: 2.8rem; font-weight: 800; letter-spacing: -0.02em; margin-bottom: 1rem; max-width: 700px; margin-left: auto; margin-right: auto; }
+      .article-header p { color: var(--gray-500); font-size: 1.1rem; max-width: 600px; margin: 0 auto; }
+      .article-content { max-width: 750px; margin: 0 auto; padding: 3rem 2rem 4rem; }
+      .article-content h2 { font-size: 1.6rem; font-weight: 800; margin: 3rem 0 1rem; }
+      .article-content p { color: var(--gray-700); font-size: 1rem; line-height: 1.8; margin-bottom: 1.25rem; }
+      .article-content ul { margin: 1rem 0 1.5rem 1.5rem; }
+      .article-content li { color: var(--gray-700); font-size: 1rem; line-height: 1.8; margin-bottom: 0.5rem; }
+      .article-content .img-placeholder { width: 100%; height: 350px; background: linear-gradient(135deg, var(--gray-100), var(--gray-200)); border-radius: 16px; display: flex; align-items: center; justify-content: center; color: var(--gray-400); font-size: 0.85rem; margin: 2rem 0; }
+      .split-card { background: var(--gray-50); border: 1px solid var(--gray-200); border-radius: 16px; padding: 2rem; margin: 2rem 0; }
+      .split-card h3 { font-size: 1.3rem; font-weight: 800; margin-bottom: 0.25rem; color: var(--gray-900); }
+      .split-card .split-meta { font-size: 0.85rem; color: var(--blue); font-weight: 600; margin-bottom: 1rem; }
+      .split-card p { color: var(--gray-700); font-size: 0.95rem; line-height: 1.7; margin-bottom: 0.75rem; }
+      .split-card .tags { display: flex; gap: 0.5rem; flex-wrap: wrap; margin-top: 0.75rem; }
+      .split-card .tag { padding: 0.25rem 0.75rem; border-radius: 50px; font-size: 0.75rem; font-weight: 600; background: rgba(37,99,235,0.08); color: var(--blue); }
+      .comparison-table { width: 100%; border-collapse: collapse; margin: 2rem 0; border-radius: 12px; overflow: hidden; border: 1px solid var(--gray-200); }
+      .comparison-table th { background: var(--gray-50); padding: 0.875rem; text-align: left; font-size: 0.8rem; font-weight: 700; color: var(--gray-900); border-bottom: 1px solid var(--gray-200); }
+      .comparison-table td { padding: 0.75rem 0.875rem; font-size: 0.85rem; color: var(--gray-700); border-bottom: 1px solid var(--gray-100); }
+      .cta-section { padding: 5rem 2rem; text-align: center; background: linear-gradient(135deg, var(--dark), #1a1145); color: var(--white); }
+      .cta-section h2 { font-size: 2.2rem; font-weight: 800; margin-bottom: 1rem; }
+      .cta-section p { color: rgba(255,255,255,0.6); font-size: 1rem; max-width: 480px; margin: 0 auto 2rem; }
+      .btn-primary { display: inline-flex; background: linear-gradient(135deg, var(--blue), var(--purple)); color: var(--white); text-decoration: none; font-size: 1rem; font-weight: 600; padding: 0.875rem 2rem; border-radius: 12px; box-shadow: 0 4px 15px rgba(37,99,235,0.3); transition: opacity 0.2s, transform 0.2s; }
+      .btn-primary:hover { opacity: 0.92; transform: translateY(-2px); }
+      @media (max-width: 768px) {
+          .article-header { padding: 7rem 1.5rem 2rem; }
+          .article-header h1 { font-size: 2rem; }
+      }
+    </style>
+  </Fragment>
+
+  <header class="article-header">
+      <div class="section-label">Programming</div>
+      <h1>Workout Splits: Which Training Program Should You Choose?</h1>
+      <p>Full Body, Upper/Lower, PPL or Bro Split? Complete comparison to find the ideal split based on your level and availability.</p>
+  </header>
+
+  <article class="article-content">
+      <h2>What is a workout split?</h2>
+      <p>A workout split is how you distribute your muscle groups across your training days. Choosing the right split depends on your experience, goals and the number of days you can dedicate to the gym.</p>
+
+      <div class="img-placeholder">Workout Split Overview Photo</div>
+
+      <div class="split-card">
+          <h3>Full Body</h3>
+          <div class="split-meta">3 days / week</div>
+          <p>Each session works the entire body. Ideal for beginners and those with limited time. Each muscle is stimulated 3x per week, maximizing protein synthesis for novices.</p>
+          <p><strong>Best for:</strong> Beginners, busy schedules, returning after a break.</p>
+          <div class="tags"><span class="tag">Mon: Full Body A</span><span class="tag">Wed: Full Body B</span><span class="tag">Fri: Full Body C</span></div>
+      </div>
+
+      <div class="split-card">
+          <h3>Upper / Lower</h3>
+          <div class="split-meta">4 days / week</div>
+          <p>Alternates between upper body and lower body. Good balance between volume and recovery. Each muscle is trained 2x per week.</p>
+          <p><strong>Best for:</strong> Intermediates, steady and structured progression.</p>
+          <div class="tags"><span class="tag">Mon: Upper</span><span class="tag">Tue: Lower</span><span class="tag">Thu: Upper</span><span class="tag">Fri: Lower</span></div>
+      </div>
+
+      <div class="split-card">
+          <h3>Push / Pull / Legs (PPL)</h3>
+          <div class="split-meta">6 days / week</div>
+          <p>The most popular split in strength training. Separates pushing movements, pulling movements and legs. High volume with 2x frequency per muscle.</p>
+          <p><strong>Best for:</strong> Intermediate to advanced, dedicated lifters who can train 6 days.</p>
+          <div class="tags"><span class="tag">Mon: Push</span><span class="tag">Tue: Pull</span><span class="tag">Wed: Legs</span><span class="tag">Thu: Push</span><span class="tag">Fri: Pull</span><span class="tag">Sat: Legs</span></div>
+      </div>
+
+      <div class="split-card">
+          <h3>Bro Split</h3>
+          <div class="split-meta">5 days / week</div>
+          <p>One muscle group per day. High volume per muscle but low frequency (1x/week). Popular among advanced bodybuilders.</p>
+          <p><strong>Best for:</strong> Advanced lifters seeking maximum volume per muscle group.</p>
+          <div class="tags"><span class="tag">Mon: Chest</span><span class="tag">Tue: Back</span><span class="tag">Wed: Shoulders</span><span class="tag">Thu: Legs</span><span class="tag">Fri: Arms</span></div>
+      </div>
+
+      <h2>Split comparison</h2>
+
+      <table class="comparison-table">
+          <thead>
+              <tr><th>Split</th><th>Days</th><th>Frequency/muscle</th><th>Level</th><th>Best for</th></tr>
+          </thead>
+          <tbody>
+              <tr><td><strong>Full Body</strong></td><td>3</td><td>3x/week</td><td>Beginner</td><td>Solid foundation</td></tr>
+              <tr><td><strong>Upper/Lower</strong></td><td>4</td><td>2x/week</td><td>Intermediate</td><td>Balance</td></tr>
+              <tr><td><strong>PPL</strong></td><td>6</td><td>2x/week</td><td>Intermediate+</td><td>Hypertrophy</td></tr>
+              <tr><td><strong>Bro Split</strong></td><td>5</td><td>1x/week</td><td>Advanced</td><td>Max volume</td></tr>
+          </tbody>
+      </table>
+
+      <h2>How to choose your split?</h2>
+      <p>The best split is the one you can follow <strong>consistently</strong>. Consistency always beats theoretical optimization. Ask yourself these questions:</p>
+      <ul>
+          <li>How many days per week can you train?</li>
+          <li>How long have you been strength training?</li>
+          <li>What is your main goal (strength, hypertrophy, general health)?</li>
+      </ul>
+
+      <h2>AIVancePro chooses for you</h2>
+      <p>Don't want to overthink it? AIVancePro's AI coach analyzes your profile, availability and goals to automatically generate the optimal split. It adjusts your program as you progress.</p>
+
+      <div class="img-placeholder">AIVancePro Generating a Split Photo</div>
+  </article>
+
+  <section class="cta-section">
+      <h2>Find your ideal split</h2>
+      <p>Let AIVancePro's AI coach create the perfect program for you.</p>
+      <a href="https://apps.apple.com/app/aivancepro/id6756116760" class="btn-primary" target="_blank" rel="noopener">Download for free</a>
+  </section>
+</BaseLayout>

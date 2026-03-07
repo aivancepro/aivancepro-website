@@ -1,0 +1,230 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+---
+
+<BaseLayout
+  lang="en"
+  title="Pricing - AIVancePro | Free, Pro and Elite Plans"
+  description="Discover AIVancePro pricing. Free plan, Pro at 4.99&euro;/month and Elite at 7.99&euro;/month. Compare features and choose your plan."
+  canonical="https://aivancepro.fr/en/pricing.html"
+  alternates={{ fr: 'https://aivancepro.fr/pricing.html', en: 'https://aivancepro.fr/en/pricing.html', de: 'https://aivancepro.fr/de/preise.html' }}
+>
+  <Fragment slot="head">
+    <style>
+      .pricing-hero {
+          padding: 8rem 2rem 4rem;
+          text-align: center;
+          background: linear-gradient(180deg, var(--gray-50) 0%, var(--white) 100%);
+      }
+      .pricing-hero h1 {
+          font-size: 3rem;
+          font-weight: 900;
+          letter-spacing: -0.03em;
+          color: var(--gray-900);
+          margin-bottom: 1rem;
+      }
+      .pricing-hero h1 .gradient {
+          background: linear-gradient(135deg, var(--blue), var(--purple));
+          -webkit-background-clip: text;
+          -webkit-text-fill-color: transparent;
+          background-clip: text;
+      }
+      .pricing-hero p {
+          font-size: 1.15rem;
+          color: var(--gray-500);
+          max-width: 550px;
+          margin: 0 auto;
+      }
+      .pricing-section { padding: 3rem 2rem 5rem; }
+      .pricing-grid {
+          max-width: 1100px;
+          margin: 0 auto;
+          display: grid;
+          grid-template-columns: repeat(3, 1fr);
+          gap: 2rem;
+          align-items: start;
+      }
+      .pricing-card {
+          background: var(--white);
+          border: 1px solid var(--gray-200);
+          border-radius: 20px;
+          padding: 2.5rem;
+          position: relative;
+          transition: transform 0.2s, box-shadow 0.2s;
+      }
+      .pricing-card:hover {
+          transform: translateY(-4px);
+          box-shadow: 0 12px 40px rgba(0, 0, 0, 0.06);
+      }
+      .pricing-card.featured {
+          border-color: var(--blue);
+          box-shadow: 0 8px 30px rgba(37, 99, 235, 0.1);
+      }
+      .pricing-card.featured::before {
+          content: 'Popular';
+          position: absolute;
+          top: -12px;
+          left: 50%;
+          transform: translateX(-50%);
+          background: linear-gradient(135deg, var(--blue), var(--purple));
+          color: var(--white);
+          font-size: 0.75rem;
+          font-weight: 700;
+          padding: 0.3rem 1rem;
+          border-radius: 50px;
+      }
+      .plan-name { font-size: 1.1rem; font-weight: 700; color: var(--gray-900); margin-bottom: 0.5rem; }
+      .price { font-size: 3rem; font-weight: 800; color: var(--gray-900); letter-spacing: -0.03em; }
+      .price span { font-size: 1rem; font-weight: 500; color: var(--gray-500); }
+      .price-desc { font-size: 0.85rem; color: var(--gray-500); margin-bottom: 2rem; }
+      .pricing-features { list-style: none; display: flex; flex-direction: column; gap: 0.75rem; margin-bottom: 2rem; }
+      .pricing-features li { display: flex; align-items: center; gap: 0.6rem; font-size: 0.9rem; color: var(--gray-700); }
+      .pricing-features li svg { width: 18px; height: 18px; color: var(--blue); flex-shrink: 0; }
+      .pricing-features li.disabled { color: var(--gray-400); }
+      .pricing-features li.disabled svg { color: var(--gray-300); }
+      .btn-pricing { display: block; width: 100%; text-align: center; padding: 0.875rem; border-radius: 12px; font-size: 0.95rem; font-weight: 600; text-decoration: none; transition: all 0.2s; }
+      .btn-pricing.primary { background: linear-gradient(135deg, var(--blue), var(--purple)); color: var(--white); box-shadow: 0 4px 15px rgba(37, 99, 235, 0.25); }
+      .btn-pricing.primary:hover { opacity: 0.92; transform: translateY(-2px); }
+      .btn-pricing.outline { background: var(--white); color: var(--gray-700); border: 1px solid var(--gray-200); }
+      .btn-pricing.outline:hover { border-color: var(--blue); color: var(--blue); }
+      .comparison-section { padding: 5rem 2rem; background: var(--gray-50); }
+      .comparison-section h2 { text-align: center; font-size: 2rem; font-weight: 800; margin-bottom: 3rem; color: var(--gray-900); }
+      .comparison-table { max-width: 900px; margin: 0 auto; border-collapse: collapse; width: 100%; background: var(--white); border-radius: 16px; overflow: hidden; box-shadow: 0 4px 20px rgba(0, 0, 0, 0.04); }
+      .comparison-table th, .comparison-table td { padding: 1rem 1.25rem; text-align: center; border-bottom: 1px solid var(--gray-100); font-size: 0.9rem; }
+      .comparison-table th { background: var(--gray-900); color: var(--white); font-weight: 700; font-size: 0.85rem; text-transform: uppercase; letter-spacing: 0.05em; }
+      .comparison-table th:first-child { text-align: left; }
+      .comparison-table td:first-child { text-align: left; font-weight: 500; color: var(--gray-700); }
+      .comparison-table tr:last-child td { border-bottom: none; }
+      .comparison-table .check { color: var(--green); font-size: 1.2rem; }
+      .comparison-table .cross { color: var(--gray-300); font-size: 1rem; }
+      .faq-section { padding: 5rem 2rem; }
+      .faq-section h2 { text-align: center; font-size: 2rem; font-weight: 800; margin-bottom: 3rem; color: var(--gray-900); }
+      .faq-list { max-width: 700px; margin: 0 auto; }
+      .faq-item { border-bottom: 1px solid var(--gray-200); }
+      .faq-question { width: 100%; background: none; border: none; text-align: left; padding: 1.5rem 0; font-size: 1.05rem; font-weight: 600; color: var(--gray-900); cursor: pointer; display: flex; justify-content: space-between; align-items: center; font-family: inherit; transition: color 0.2s; }
+      .faq-question:hover { color: var(--blue); }
+      .faq-question svg { width: 20px; height: 20px; color: var(--gray-400); transition: transform 0.3s; flex-shrink: 0; }
+      .faq-item.open .faq-question svg { transform: rotate(180deg); }
+      .faq-answer { max-height: 0; overflow: hidden; transition: max-height 0.3s ease; }
+      .faq-answer-inner { padding: 0 0 1.5rem; font-size: 0.95rem; color: var(--gray-500); line-height: 1.7; }
+      .faq-item.open .faq-answer { max-height: 300px; }
+      @media (max-width: 768px) {
+          .pricing-hero h1 { font-size: 2.2rem; }
+          .pricing-grid { grid-template-columns: 1fr; }
+          .comparison-table { font-size: 0.8rem; }
+          .comparison-table th, .comparison-table td { padding: 0.75rem 0.5rem; }
+      }
+    </style>
+  </Fragment>
+
+    <!-- Hero -->
+    <section class="pricing-hero">
+        <h1>Choose your <span class="gradient">plan</span></h1>
+        <p>Start for free, then upgrade to Pro or Elite to unlock the full potential of your training.</p>
+    </section>
+
+    <!-- Pricing Cards -->
+    <section class="pricing-section">
+        <div class="pricing-grid">
+            <div class="pricing-card">
+                <div class="plan-name">Free</div>
+                <div class="price">0&euro; <span>/ month</span></div>
+                <div class="price-desc">To discover the app</div>
+                <ul class="pricing-features">
+                    <li><svg viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/></svg>Unlimited session tracking</li>
+                    <li><svg viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/></svg>+240 exercises with details</li>
+                    <li><svg viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/></svg>Basic statistics</li>
+                    <li><svg viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/></svg>Timer &amp; auto rest</li>
+                    <li><svg viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/></svg>Session history</li>
+                </ul>
+                <a href="https://apps.apple.com/app/aivancepro/id6756116760" class="btn-pricing outline" target="_blank" rel="noopener">Get started for free</a>
+            </div>
+            <div class="pricing-card featured">
+                <div class="plan-name">Pro</div>
+                <div class="price">4.99&euro; <span>/ month</span></div>
+                <div class="price-desc">To progress seriously</div>
+                <ul class="pricing-features">
+                    <li><svg viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/></svg>Everything in Free</li>
+                    <li><svg viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/></svg>Unlimited AI coach</li>
+                    <li><svg viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/></svg>Advanced analytics &amp; charts</li>
+                    <li><svg viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/></svg>Auto periodization</li>
+                    <li><svg viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/></svg>Workout templates</li>
+                    <li><svg viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/></svg>Automatic personal records</li>
+                </ul>
+                <a href="/login.html" class="btn-pricing primary">Subscribe to Pro</a>
+            </div>
+            <div class="pricing-card">
+                <div class="plan-name">Elite</div>
+                <div class="price">7.99&euro; <span>/ month</span></div>
+                <div class="price-desc">The complete experience</div>
+                <ul class="pricing-features">
+                    <li><svg viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/></svg>Everything in Pro</li>
+                    <li><svg viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/></svg>Community &amp; challenges</li>
+                    <li><svg viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/></svg>Messaging &amp; groups</li>
+                    <li><svg viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/></svg>Leaderboards &amp; rankings</li>
+                    <li><svg viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/></svg>Badges &amp; achievements</li>
+                    <li><svg viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/></svg>Social sharing</li>
+                </ul>
+                <a href="/login.html" class="btn-pricing primary" style="background: linear-gradient(135deg, #9333EA, #6D28D9);">Subscribe to Elite</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Comparison Table -->
+    <section class="comparison-section">
+        <h2>Detailed Comparison</h2>
+        <table class="comparison-table">
+            <thead><tr><th>Feature</th><th>Free</th><th>Pro</th><th>Elite</th></tr></thead>
+            <tbody>
+                <tr><td>Session tracking</td><td class="check">&#10003;</td><td class="check">&#10003;</td><td class="check">&#10003;</td></tr>
+                <tr><td>+240 exercises</td><td class="check">&#10003;</td><td class="check">&#10003;</td><td class="check">&#10003;</td></tr>
+                <tr><td>Timer &amp; auto rest</td><td class="check">&#10003;</td><td class="check">&#10003;</td><td class="check">&#10003;</td></tr>
+                <tr><td>Basic statistics</td><td class="check">&#10003;</td><td class="check">&#10003;</td><td class="check">&#10003;</td></tr>
+                <tr><td>Unlimited AI coach</td><td class="cross">&mdash;</td><td class="check">&#10003;</td><td class="check">&#10003;</td></tr>
+                <tr><td>Advanced charts &amp; analytics</td><td class="cross">&mdash;</td><td class="check">&#10003;</td><td class="check">&#10003;</td></tr>
+                <tr><td>Auto periodization</td><td class="cross">&mdash;</td><td class="check">&#10003;</td><td class="check">&#10003;</td></tr>
+                <tr><td>Workout templates</td><td class="cross">&mdash;</td><td class="check">&#10003;</td><td class="check">&#10003;</td></tr>
+                <tr><td>Automatic personal records</td><td class="cross">&mdash;</td><td class="check">&#10003;</td><td class="check">&#10003;</td></tr>
+                <tr><td>Community &amp; challenges</td><td class="cross">&mdash;</td><td class="cross">&mdash;</td><td class="check">&#10003;</td></tr>
+                <tr><td>Messaging &amp; groups</td><td class="cross">&mdash;</td><td class="cross">&mdash;</td><td class="check">&#10003;</td></tr>
+                <tr><td>Leaderboards</td><td class="cross">&mdash;</td><td class="cross">&mdash;</td><td class="check">&#10003;</td></tr>
+                <tr><td>Badges &amp; achievements</td><td class="cross">&mdash;</td><td class="cross">&mdash;</td><td class="check">&#10003;</td></tr>
+            </tbody>
+        </table>
+    </section>
+
+    <!-- FAQ Pricing -->
+    <section class="faq-section">
+        <h2>Frequently Asked Questions About Pricing</h2>
+        <div class="faq-list">
+            <div class="faq-item">
+                <button class="faq-question" onclick="this.parentElement.classList.toggle('open')">
+                    Can I change plans at any time?
+                    <svg viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M5.23 7.21a.75.75 0 011.06.02L10 11.168l3.71-3.938a.75.75 0 111.08 1.04l-4.25 4.5a.75.75 0 01-1.08 0l-4.25-4.5a.75.75 0 01.02-1.06z" clip-rule="evenodd"/></svg>
+                </button>
+                <div class="faq-answer"><div class="faq-answer-inner">Yes, you can upgrade from Pro to Elite or downgrade at any time. The change takes effect immediately.</div></div>
+            </div>
+            <div class="faq-item">
+                <button class="faq-question" onclick="this.parentElement.classList.toggle('open')">
+                    Is there a commitment?
+                    <svg viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M5.23 7.21a.75.75 0 011.06.02L10 11.168l3.71-3.938a.75.75 0 111.08 1.04l-4.25 4.5a.75.75 0 01-1.08 0l-4.25-4.5a.75.75 0 01.02-1.06z" clip-rule="evenodd"/></svg>
+                </button>
+                <div class="faq-answer"><div class="faq-answer-inner">No commitment. You can cancel your subscription at any time from the App Store or Google Play.</div></div>
+            </div>
+            <div class="faq-item">
+                <button class="faq-question" onclick="this.parentElement.classList.toggle('open')">
+                    Is the Free plan really free?
+                    <svg viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M5.23 7.21a.75.75 0 011.06.02L10 11.168l3.71-3.938a.75.75 0 111.08 1.04l-4.25 4.5a.75.75 0 01-1.08 0l-4.25-4.5a.75.75 0 01.02-1.06z" clip-rule="evenodd"/></svg>
+                </button>
+                <div class="faq-answer"><div class="faq-answer-inner">Absolutely. The Free plan gives you access to session tracking, 240+ exercises and basic statistics, with no time limit and no credit card required.</div></div>
+            </div>
+            <div class="faq-item">
+                <button class="faq-question" onclick="this.parentElement.classList.toggle('open')">
+                    How does payment work?
+                    <svg viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M5.23 7.21a.75.75 0 011.06.02L10 11.168l3.71-3.938a.75.75 0 111.08 1.04l-4.25 4.5a.75.75 0 01-1.08 0l-4.25-4.5a.75.75 0 01.02-1.06z" clip-rule="evenodd"/></svg>
+                </button>
+                <div class="faq-answer"><div class="faq-answer-inner">Payment is handled directly by the App Store (iOS) or Google Play (Android). Your subscription renews automatically each month unless cancelled.</div></div>
+            </div>
+        </div>
+    </section>
+</BaseLayout>

@@ -1,0 +1,68 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+---
+
+<BaseLayout
+  lang="en"
+  title="Terms of Use - AIVancePro"
+  description="Terms of use for AIVancePro, your AI-powered personal fitness coach."
+  canonical="https://aivancepro.fr/en/terms.html"
+  alternates={{ fr: 'https://aivancepro.fr/terms.html', en: 'https://aivancepro.fr/en/terms.html', de: 'https://aivancepro.fr/de/agb.html' }}
+>
+  <Fragment slot="head">
+    <style>
+      .page-header { padding: 9rem 2rem 2rem; text-align: center; background: linear-gradient(180deg, var(--gray-50), var(--white)); }
+      .page-header h1 { font-size: 2.8rem; font-weight: 800; color: var(--gray-900); margin-bottom: 0.5rem; }
+      .page-header .date { color: var(--gray-500); font-size: 0.9rem; }
+      .content { max-width: 800px; margin: 0 auto; padding: 2rem 2rem 4rem; }
+      .content h2 { font-size: 1.4rem; font-weight: 700; color: var(--gray-900); margin-top: 2.5rem; margin-bottom: 1rem; }
+      .content p, .content li { color: var(--gray-700); font-size: 0.95rem; margin-bottom: 1rem; }
+      .content ul { padding-left: 1.5rem; margin-bottom: 1rem; }
+      .content strong { color: var(--gray-900); }
+      .content a { color: var(--blue); }
+      .back { display: inline-block; margin-top: 2rem; color: var(--gray-500); text-decoration: none; font-size: 0.9rem; }
+      .back:hover { color: var(--gray-900); }
+      @media (max-width: 768px) {
+          .page-header { padding: 7rem 1.5rem 1.5rem; }
+          .page-header h1 { font-size: 1.8rem; }
+      }
+    </style>
+  </Fragment>
+
+    <header class="page-header">
+        <h1>Terms of Use</h1>
+        <p class="date">Last updated: November 25, 2025</p>
+    </header>
+
+    <div class="content">
+        <h2>1. Introduction</h2>
+        <p>Welcome to <strong>AIVancePro</strong>. By using our application, you agree to be bound by these terms of use. Please read them carefully.</p>
+
+        <h2>2. Services Provided</h2>
+        <p>AIVancePro is an AI-powered fitness coaching application. We offer free features as well as paid subscriptions (&ldquo;Pro&rdquo;, &ldquo;Elite&rdquo;) that provide access to advanced features.</p>
+
+        <h2>3. Subscriptions and In-App Purchases</h2>
+        <p>Subscriptions are managed through the in-app purchase systems of the platform from which you downloaded the application (for example, the Apple App Store). Payments will be processed by that platform. Renewal, cancellation, and refund terms are subject to the policies of the relevant platform.</p>
+        <p>The features associated with each subscription tier are described within the application. We reserve the right to modify these features at any time.</p>
+
+        <h2>4. Acceptable Use</h2>
+        <p>You agree to use AIVancePro responsibly and not to use the application for any illegal or prohibited purposes. You are solely responsible for the data you enter and the interactions you have within the community.</p>
+
+        <h2>5. Medical Disclaimer</h2>
+        <p>AIVancePro provides AI-based suggestions and analyses. This information does <strong>not</strong> constitute professional medical advice. Always consult a healthcare professional before starting any new exercise program. Use of our programs is at your own risk.</p>
+
+        <h2>6. Intellectual Property</h2>
+        <p>All content within the application (code, design, text, logos) is our exclusive property. Any unauthorized reproduction or distribution is strictly prohibited.</p>
+
+        <h2>7. Changes to the Terms of Use</h2>
+        <p>We reserve the right to modify these terms of use at any time. Changes will take effect as soon as they are published within the application.</p>
+
+        <h2>8. Contact</h2>
+        <p>If you have any questions regarding these terms of use, please contact us at <a href="mailto:aivancepro@gmail.com">aivancepro@gmail.com</a>.</p>
+
+        <h2>9. Standard EULA</h2>
+        <p>In addition to these terms, the use of AIVancePro is also subject to Apple&rsquo;s Standard End User License Agreement (EULA). You can view it here: <a href="https://www.apple.com/legal/internet-services/itunes/dev/stdeula/" target="_blank" rel="noopener">https://www.apple.com/legal/internet-services/itunes/dev/stdeula/</a></p>
+
+        <a href="/en/" class="back">&larr; Back to home</a>
+    </div>
+</BaseLayout>

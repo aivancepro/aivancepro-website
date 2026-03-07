@@ -1,0 +1,37 @@
+---
+import { getCollection, render } from 'astro:content';
+import ArticleLayout from '../../../layouts/ArticleLayout.astro';
+
+export async function getStaticPaths() {
+  const guides = await getCollection('guides', ({ data }) => data.lang === 'en');
+  return guides.map((guide) => ({
+    params: { slug: guide.data.slug },
+    props: { guide },
+  }));
+}
+
+const { guide } = Astro.props;
+const { Content } = await render(guide);
+---
+
+<ArticleLayout
+  lang="en"
+  title={guide.data.title}
+  description={guide.data.description}
+  canonical={guide.data.canonical}
+  alternates={guide.data.alternates}
+  tag={guide.data.tag}
+  date={guide.data.date}
+  readTime={guide.data.readTime}
+  backLink="/en/guides/"
+  backLabel="Back to guides"
+  jsonLd={{
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "headline": guide.data.title,
+    "datePublished": guide.data.date,
+    "author": { "@type": "Organization", "name": "AS Corporation" },
+  }}
+>
+  <Content />
+</ArticleLayout>

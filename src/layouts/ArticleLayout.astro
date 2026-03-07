@@ -1,0 +1,84 @@
+---
+import BaseLayout from './BaseLayout.astro';
+import { t } from '../i18n.js';
+
+const {
+  lang = 'fr',
+  title,
+  description,
+  canonical,
+  alternates = {},
+  tag,
+  date,
+  readTime,
+  backLink,
+  backLabel,
+  jsonLd,
+} = Astro.props;
+
+const i = t[lang];
+const ctaLabels = {
+  fr: { title: 'Essayez le coaching IA gratuitement', text: 'T\u00e9l\u00e9chargez AIVancePro et d\u00e9couvrez un entra\u00eenement vraiment personnalis\u00e9.', playLabel: 'Google Play' },
+  en: { title: 'Try AI coaching for free', text: 'Download AIVancePro and discover truly personalized training.', playLabel: 'Google Play' },
+  de: { title: 'KI-Coaching kostenlos testen', text: 'Laden Sie AIVancePro herunter und entdecken Sie wirklich personalisiertes Training.', playLabel: 'Google Play' },
+};
+const cta = ctaLabels[lang];
+---
+
+<BaseLayout
+  lang={lang}
+  title={title}
+  description={description}
+  canonical={canonical}
+  ogType="article"
+  alternates={alternates}
+  jsonLd={jsonLd}
+>
+  <Fragment slot="head">
+    <style>
+      .article-header { padding: 9rem 2rem 2rem; text-align: center; background: linear-gradient(180deg, var(--gray-50), var(--white)); }
+      .tag { display: inline-block; padding: 0.25rem 0.75rem; background: rgba(37,99,235,0.06); border-radius: 50px; font-size: 0.75rem; color: var(--blue); font-weight: 600; margin-bottom: 1rem; }
+      .article-header h1 { font-size: 2.5rem; font-weight: 800; margin-bottom: 0.5rem; line-height: 1.2; color: var(--gray-900); letter-spacing: -0.02em; }
+      .meta { color: var(--gray-500); margin-bottom: 0; font-size: 0.9rem; }
+      .breadcrumb { font-size: 0.85rem; color: var(--gray-500); margin-bottom: 1rem; }
+      .breadcrumb a { color: var(--gray-500); text-decoration: none; }
+      .breadcrumb a:hover { color: var(--blue); }
+      .article-content { max-width: 750px; margin: 0 auto; padding: 3rem 2rem 4rem; }
+      .article-content h2 { font-size: 1.5rem; font-weight: 700; margin-top: 2.5rem; margin-bottom: 1rem; color: var(--gray-900); }
+      .article-content h3 { font-size: 1.15rem; font-weight: 600; margin-top: 1.5rem; margin-bottom: 0.5rem; color: var(--gray-900); }
+      .article-content p { color: var(--gray-700); font-size: 0.95rem; margin-bottom: 1.2rem; line-height: 1.8; }
+      .article-content ul, .article-content ol { padding-left: 1.5rem; margin-bottom: 1.2rem; }
+      .article-content li { color: var(--gray-700); font-size: 0.95rem; margin-bottom: 0.5rem; }
+      .article-content strong { color: var(--gray-900); }
+      .article-content a { color: var(--blue); }
+      .program-box { background: var(--gray-50); border: 1px solid var(--gray-200); border-radius: 12px; padding: 1.5rem; margin: 1.5rem 0; }
+      .program-box h4 { color: var(--blue); font-size: 1rem; margin-bottom: 0.75rem; }
+      .back { display: inline-block; margin-top: 2rem; color: var(--gray-500); text-decoration: none; font-size: 0.9rem; }
+      .back:hover { color: var(--gray-900); }
+      @media (max-width: 768px) {
+        .article-header { padding: 7rem 1.5rem 2rem; }
+        .article-header h1 { font-size: 1.8rem; }
+      }
+    </style>
+  </Fragment>
+
+  <header class="article-header">
+    {tag && <span class="tag">{tag}</span>}
+    <h1>{title}</h1>
+    {date && <p class="meta">{date}{readTime ? ` \u00b7 ${readTime}` : ''}</p>}
+  </header>
+
+  <article class="article-content">
+    <slot />
+
+    <div class="cta">
+      <h3>{cta.title}</h3>
+      <p>{cta.text}</p>
+      <div class="cta-buttons">
+        <a href={i.links.appStore} class="cta-btn primary">App Store</a>
+        <a href={i.links.playStore} class="cta-btn primary">{cta.playLabel}</a>
+      </div>
+    </div>
+    {backLink && <a href={backLink} class="back">&larr; {backLabel}</a>}
+  </article>
+</BaseLayout>

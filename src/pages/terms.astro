@@ -1,0 +1,70 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+---
+
+<BaseLayout
+  lang="fr"
+  title="Conditions d'utilisation - AIVancePro"
+  description="Conditions d'utilisation d'AIVancePro, votre coach fitness personnel propuls&eacute; par l'IA."
+  canonical="https://aivancepro.fr/terms.html"
+  alternates={{ fr: 'https://aivancepro.fr/terms.html', en: 'https://aivancepro.fr/en/terms.html', de: 'https://aivancepro.fr/de/agb.html' }}
+>
+  <Fragment slot="head">
+    <style>
+      .page-header { padding: 9rem 2rem 2rem; text-align: center; background: linear-gradient(180deg, var(--gray-50), var(--white)); }
+      .section-label { display: inline-block; font-size: 0.8rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.08em; color: var(--blue); margin-bottom: 0.75rem; }
+      .page-header h1 { font-size: 2.8rem; font-weight: 800; letter-spacing: -0.02em; margin-bottom: 1rem; color: var(--gray-900); }
+      .page-header .date { color: var(--gray-500); font-size: 0.9rem; }
+      .content { max-width: 800px; margin: 0 auto; padding: 3rem 2rem 4rem; }
+      .content h2 { font-size: 1.4rem; font-weight: 700; color: var(--gray-900); margin-top: 2.5rem; margin-bottom: 1rem; }
+      .content p, .content li { color: var(--gray-700); font-size: 0.95rem; margin-bottom: 1rem; }
+      .content ul { padding-left: 1.5rem; margin-bottom: 1rem; }
+      .content strong { color: var(--gray-900); }
+      .content a { color: var(--blue); }
+      .back { display: inline-block; margin-top: 2rem; color: var(--gray-500); text-decoration: none; font-size: 0.9rem; }
+      .back:hover { color: var(--gray-900); }
+      @media (max-width: 768px) {
+          .page-header { padding: 7rem 1.5rem 2rem; }
+          .page-header h1 { font-size: 2rem; }
+      }
+    </style>
+  </Fragment>
+
+    <header class="page-header">
+        <div class="section-label">L&eacute;gal</div>
+        <h1>Conditions d'utilisation</h1>
+        <p class="date">Derni&egrave;re mise &agrave; jour : 25 novembre 2025</p>
+    </header>
+
+    <div class="content">
+        <h2>1. Introduction</h2>
+        <p>Bienvenue sur <strong>AIVancePro</strong>. En utilisant notre application, vous acceptez d'&ecirc;tre li&eacute; par les pr&eacute;sentes conditions d'utilisation. Veuillez les lire attentivement.</p>
+
+        <h2>2. Services fournis</h2>
+        <p>AIVancePro est une application de coaching sportif bas&eacute;e sur l'intelligence artificielle. Nous proposons des fonctionnalit&eacute;s gratuites ainsi que des abonnements payants (&laquo; Pro &raquo;, &laquo; Elite &raquo;) qui donnent acc&egrave;s &agrave; des fonctionnalit&eacute;s avanc&eacute;es.</p>
+
+        <h2>3. Abonnements et achats int&eacute;gr&eacute;s</h2>
+        <p>Les abonnements sont g&eacute;r&eacute;s via les syst&egrave;mes d'achat int&eacute;gr&eacute;s &agrave; la plateforme sur laquelle vous avez t&eacute;l&eacute;charg&eacute; l'application (par exemple, l'App Store d'Apple). Les paiements seront trait&eacute;s par cette plateforme. Les conditions de renouvellement, d'annulation et de remboursement sont soumises aux politiques de la plateforme concern&eacute;e.</p>
+        <p>Les fonctionnalit&eacute;s associ&eacute;es &agrave; chaque niveau d'abonnement sont d&eacute;crites dans l'application. Nous nous r&eacute;servons le droit de modifier ces fonctionnalit&eacute;s &agrave; tout moment.</p>
+
+        <h2>4. Utilisation acceptable</h2>
+        <p>Vous acceptez d'utiliser AIVancePro de mani&egrave;re responsable et de ne pas utiliser l'application &agrave; des fins ill&eacute;gales ou interdites. Vous &ecirc;tes seul responsable des donn&eacute;es que vous saisissez et des interactions que vous avez au sein de la communaut&eacute;.</p>
+
+        <h2>5. Avertissement m&eacute;dical</h2>
+        <p>AIVancePro fournit des suggestions et des analyses bas&eacute;es sur l'IA. Ces informations <strong>ne</strong> constituent <strong>pas</strong> un avis m&eacute;dical professionnel. Consultez toujours un professionnel de sant&eacute; avant de commencer tout nouveau programme d'exercice physique. L'utilisation de nos programmes se fait &agrave; vos propres risques.</p>
+
+        <h2>6. Propri&eacute;t&eacute; intellectuelle</h2>
+        <p>Tout le contenu de l'application (code, conception, texte, logos) est notre propri&eacute;t&eacute; exclusive. Toute reproduction ou distribution non autoris&eacute;e est strictement interdite.</p>
+
+        <h2>7. Modifications des conditions d'utilisation</h2>
+        <p>Nous nous r&eacute;servons le droit de modifier les pr&eacute;sentes conditions d'utilisation &agrave; tout moment. Les modifications entreront en vigueur d&egrave;s leur publication dans l'application.</p>
+
+        <h2>8. Contact</h2>
+        <p>Si vous avez des questions concernant les pr&eacute;sentes conditions d'utilisation, veuillez nous contacter &agrave; <a href="mailto:aivancepro@gmail.com">aivancepro@gmail.com</a>.</p>
+
+        <h2>9. CLUF Standard (EULA)</h2>
+        <p>En compl&eacute;ment des pr&eacute;sentes conditions, l'utilisation d'AIVancePro est &eacute;galement soumise au Contrat de licence d'utilisateur final standard d'Apple (EULA/CLUF). Vous pouvez le consulter ici : <a href="https://www.apple.com/legal/internet-services/itunes/dev/stdeula/" target="_blank" rel="noopener">https://www.apple.com/legal/internet-services/itunes/dev/stdeula/</a></p>
+
+        <a href="/" class="back">&larr; Retour &agrave; l'accueil</a>
+    </div>
+</BaseLayout>

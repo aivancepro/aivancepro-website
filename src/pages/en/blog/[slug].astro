@@ -1,0 +1,38 @@
+---
+import { getCollection, render } from 'astro:content';
+import ArticleLayout from '../../../layouts/ArticleLayout.astro';
+
+export async function getStaticPaths() {
+  const posts = await getCollection('blog', ({ data }) => data.lang === 'en');
+  return posts.map((post) => ({
+    params: { slug: post.data.slug },
+    props: { post },
+  }));
+}
+
+const { post } = Astro.props;
+const { Content } = await render(post);
+---
+
+<ArticleLayout
+  lang="en"
+  title={post.data.title}
+  description={post.data.description}
+  canonical={post.data.canonical}
+  alternates={post.data.alternates}
+  tag={post.data.tag}
+  date={post.data.date}
+  readTime={post.data.readTime}
+  backLink="/en/blog/"
+  backLabel="Back to blog"
+  jsonLd={{
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "headline": post.data.title,
+    "datePublished": post.data.date,
+    "author": { "@type": "Organization", "name": "AS Corporation" },
+    "publisher": { "@type": "Organization", "name": "AIVancePro", "url": "https://aivancepro.fr" },
+  }}
+>
+  <Content />
+</ArticleLayout>

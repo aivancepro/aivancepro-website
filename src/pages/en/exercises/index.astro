@@ -1,0 +1,121 @@
+---
+import BaseLayout from '../../../layouts/BaseLayout.astro';
+---
+
+<BaseLayout
+  lang="en"
+  title="Exercise Library - 240+ Strength Training Exercises - AIVancePro"
+  description="Discover our library of over 240 strength training and fitness exercises. Filter by muscle group and find the perfect exercise."
+  canonical="https://aivancepro.fr/en/exercises/"
+  alternates={{ fr: 'https://aivancepro.fr/exercices/', en: 'https://aivancepro.fr/en/exercises/', de: 'https://aivancepro.fr/de/uebungen/' }}
+>
+  <Fragment slot="head">
+    <style>
+      .page-header { padding: 9rem 2rem 2rem; text-align: center; background: linear-gradient(180deg, var(--gray-50), var(--white)); }
+      .section-label { display: inline-block; font-size: 0.8rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.08em; color: var(--blue); margin-bottom: 0.75rem; }
+      .page-header h1 { font-size: 2.8rem; font-weight: 800; letter-spacing: -0.02em; margin-bottom: 1rem; }
+      .page-header p { color: var(--gray-500); font-size: 1.1rem; max-width: 550px; margin: 0 auto; }
+      .filter-bar { max-width: 1100px; margin: 2rem auto 0; display: flex; justify-content: center; gap: 0.5rem; flex-wrap: wrap; padding: 0 2rem; }
+      .filter-btn { padding: 0.5rem 1.1rem; border-radius: 50px; border: 1px solid var(--gray-200); background: var(--white); color: var(--gray-500); font-size: 0.85rem; font-weight: 600; font-family: inherit; cursor: pointer; transition: all 0.2s; }
+      .filter-btn:hover, .filter-btn.active { background: var(--blue); color: var(--white); border-color: var(--blue); }
+      .exercises-grid { max-width: 1100px; margin: 0 auto; padding: 2.5rem 2rem 4rem; display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.25rem; }
+      .exercise-card { background: var(--white); border: 1px solid var(--gray-200); border-radius: 14px; padding: 1.25rem; transition: border-color 0.2s, transform 0.2s, box-shadow 0.2s; }
+      .exercise-card:hover { border-color: rgba(37,99,235,0.25); transform: translateY(-3px); box-shadow: 0 6px 20px rgba(0,0,0,0.05); }
+      .exercise-card .card-image { width: 100%; height: 140px; background: linear-gradient(135deg, var(--gray-100), var(--gray-200)); border-radius: 10px; display: flex; align-items: center; justify-content: center; color: var(--gray-400); font-size: 0.75rem; font-weight: 500; margin-bottom: 1rem; }
+      .exercise-card h3 { font-size: 1rem; font-weight: 700; margin-bottom: 0.4rem; }
+      .exercise-card .tags { display: flex; gap: 0.4rem; margin-bottom: 0.5rem; flex-wrap: wrap; }
+      .exercise-card .tag { padding: 0.15rem 0.5rem; border-radius: 50px; font-size: 0.65rem; font-weight: 600; }
+      .tag-muscle { background: rgba(37,99,235,0.08); color: var(--blue); }
+      .tag-compound { background: rgba(147,51,234,0.08); color: var(--purple); }
+      .tag-isolation { background: rgba(245,158,11,0.08); color: #D97706; }
+      .exercise-card p { color: var(--gray-500); font-size: 0.8rem; line-height: 1.5; }
+      .exercises-count { text-align: center; padding: 1rem 2rem 0; color: var(--gray-400); font-size: 0.85rem; }
+      .cta-section { padding: 5rem 2rem; text-align: center; background: linear-gradient(135deg, var(--dark), #1a1145); color: var(--white); }
+      .cta-section h2 { font-size: 2.2rem; font-weight: 800; margin-bottom: 1rem; }
+      .cta-section p { color: rgba(255,255,255,0.6); font-size: 1rem; max-width: 480px; margin: 0 auto 2rem; }
+      .btn-primary { display: inline-flex; align-items: center; gap: 0.5rem; background: linear-gradient(135deg, var(--blue), var(--purple)); color: var(--white); text-decoration: none; font-size: 1rem; font-weight: 600; padding: 0.875rem 2rem; border-radius: 12px; transition: opacity 0.2s, transform 0.2s; box-shadow: 0 4px 15px rgba(37,99,235,0.3); }
+      .btn-primary:hover { opacity: 0.92; transform: translateY(-2px); }
+      @media (max-width: 1024px) { .exercises-grid { grid-template-columns: repeat(2, 1fr); } }
+      @media (max-width: 768px) {
+          .page-header { padding: 7rem 1.5rem 2rem; }
+          .page-header h1 { font-size: 2rem; }
+          .exercises-grid { grid-template-columns: 1fr; }
+      }
+    </style>
+  </Fragment>
+
+  <header class="page-header">
+      <div class="section-label">Exercises</div>
+      <h1>Exercise Library</h1>
+      <p>Over 240 exercises with detailed instructions. Filter by muscle group to find the perfect exercise for you.</p>
+  </header>
+
+  <div class="filter-bar">
+      <button class="filter-btn active" onclick="filterExercises('all', this)">All</button>
+      <button class="filter-btn" onclick="filterExercises('chest', this)">Chest</button>
+      <button class="filter-btn" onclick="filterExercises('back', this)">Back</button>
+      <button class="filter-btn" onclick="filterExercises('shoulders', this)">Shoulders</button>
+      <button class="filter-btn" onclick="filterExercises('arms', this)">Arms</button>
+      <button class="filter-btn" onclick="filterExercises('legs', this)">Legs</button>
+      <button class="filter-btn" onclick="filterExercises('abs', this)">Abs</button>
+      <button class="filter-btn" onclick="filterExercises('cardio', this)">Cardio</button>
+  </div>
+
+  <div class="exercises-count"><span id="count">24</span> exercises shown</div>
+
+  <section class="exercises-grid">
+      <div class="exercise-card" data-muscle="chest"><div class="card-image img-placeholder">Bench Press Photo</div><h3>Bench Press</h3><div class="tags"><span class="tag tag-muscle">Chest</span><span class="tag tag-compound">Compound</span></div><p>The king of chest exercises. Also works triceps and anterior shoulders.</p></div>
+      <div class="exercise-card" data-muscle="chest"><div class="card-image img-placeholder">Incline Press Photo</div><h3>Incline Bench Press</h3><div class="tags"><span class="tag tag-muscle">Chest</span><span class="tag tag-compound">Compound</span></div><p>Targets the upper chest. Ideal for developing the upper pectoral area.</p></div>
+      <div class="exercise-card" data-muscle="chest"><div class="card-image img-placeholder">Dumbbell Flyes Photo</div><h3>Dumbbell Flyes</h3><div class="tags"><span class="tag tag-muscle">Chest</span><span class="tag tag-isolation">Isolation</span></div><p>Isolates the chest with an opening motion. Excellent for stretch and contraction.</p></div>
+      <div class="exercise-card" data-muscle="chest"><div class="card-image img-placeholder">Dips Photo</div><h3>Dips</h3><div class="tags"><span class="tag tag-muscle">Chest</span><span class="tag tag-compound">Compound</span></div><p>Bodyweight movement targeting chest and triceps. Adjust lean angle to vary emphasis.</p></div>
+
+      <div class="exercise-card" data-muscle="back"><div class="card-image img-placeholder">Pull-ups Photo</div><h3>Pull-ups</h3><div class="tags"><span class="tag tag-muscle">Back</span><span class="tag tag-compound">Compound</span></div><p>Foundational back exercise. Builds lat width and bicep strength.</p></div>
+      <div class="exercise-card" data-muscle="back"><div class="card-image img-placeholder">Barbell Row Photo</div><h3>Barbell Row</h3><div class="tags"><span class="tag tag-muscle">Back</span><span class="tag tag-compound">Compound</span></div><p>Builds back thickness. Targets rhomboids, traps and lats.</p></div>
+      <div class="exercise-card" data-muscle="back"><div class="card-image img-placeholder">Deadlift Photo</div><h3>Deadlift</h3><div class="tags"><span class="tag tag-muscle">Back</span><span class="tag tag-compound">Compound</span></div><p>The most complete movement. Recruits back, legs, glutes and core.</p></div>
+      <div class="exercise-card" data-muscle="back"><div class="card-image img-placeholder">Lat Pulldown Photo</div><h3>Lat Pulldown</h3><div class="tags"><span class="tag tag-muscle">Back</span><span class="tag tag-compound">Compound</span></div><p>Cable alternative to pull-ups. Allows precise load adjustment.</p></div>
+
+      <div class="exercise-card" data-muscle="shoulders"><div class="card-image img-placeholder">Overhead Press Photo</div><h3>Overhead Press</h3><div class="tags"><span class="tag tag-muscle">Shoulders</span><span class="tag tag-compound">Compound</span></div><p>Primary shoulder movement. Works deltoids and triceps.</p></div>
+      <div class="exercise-card" data-muscle="shoulders"><div class="card-image img-placeholder">Lateral Raises Photo</div><h3>Lateral Raises</h3><div class="tags"><span class="tag tag-muscle">Shoulders</span><span class="tag tag-isolation">Isolation</span></div><p>Isolates the lateral deltoid for wider shoulders. Control the movement.</p></div>
+      <div class="exercise-card" data-muscle="shoulders"><div class="card-image img-placeholder">Face Pull Photo</div><h3>Face Pull</h3><div class="tags"><span class="tag tag-muscle">Shoulders</span><span class="tag tag-isolation">Isolation</span></div><p>Targets rear deltoid and external rotators. Essential for shoulder health.</p></div>
+
+      <div class="exercise-card" data-muscle="arms"><div class="card-image img-placeholder">Bicep Curl Photo</div><h3>Bicep Curl</h3><div class="tags"><span class="tag tag-muscle">Arms</span><span class="tag tag-isolation">Isolation</span></div><p>The classic bicep exercise. Variations: barbell, dumbbell, hammer.</p></div>
+      <div class="exercise-card" data-muscle="arms"><div class="card-image img-placeholder">Tricep Extensions Photo</div><h3>Tricep Extensions</h3><div class="tags"><span class="tag tag-muscle">Arms</span><span class="tag tag-isolation">Isolation</span></div><p>Isolates the triceps with cable or dumbbells. Ideal complement to pressing movements.</p></div>
+      <div class="exercise-card" data-muscle="arms"><div class="card-image img-placeholder">Hammer Curl Photo</div><h3>Hammer Curl</h3><div class="tags"><span class="tag tag-muscle">Arms</span><span class="tag tag-isolation">Isolation</span></div><p>Targets the brachioradialis and brachialis. Neutral grip for thicker arms.</p></div>
+
+      <div class="exercise-card" data-muscle="legs"><div class="card-image img-placeholder">Squat Photo</div><h3>Squat</h3><div class="tags"><span class="tag tag-muscle">Legs</span><span class="tag tag-compound">Compound</span></div><p>The king of leg exercises. Works quads, glutes and hamstrings.</p></div>
+      <div class="exercise-card" data-muscle="legs"><div class="card-image img-placeholder">Lunges Photo</div><h3>Lunges</h3><div class="tags"><span class="tag tag-muscle">Legs</span><span class="tag tag-compound">Compound</span></div><p>Excellent unilateral exercise for balance, quads and glutes.</p></div>
+      <div class="exercise-card" data-muscle="legs"><div class="card-image img-placeholder">Leg Press Photo</div><h3>Leg Press</h3><div class="tags"><span class="tag tag-muscle">Legs</span><span class="tag tag-compound">Compound</span></div><p>Machine alternative to squats. Allows heavy loading with safety.</p></div>
+      <div class="exercise-card" data-muscle="legs"><div class="card-image img-placeholder">Leg Curl Photo</div><h3>Leg Curl</h3><div class="tags"><span class="tag tag-muscle">Legs</span><span class="tag tag-isolation">Isolation</span></div><p>Isolates the hamstrings. Essential for leg muscle balance.</p></div>
+      <div class="exercise-card" data-muscle="legs"><div class="card-image img-placeholder">Hip Thrust Photo</div><h3>Hip Thrust</h3><div class="tags"><span class="tag tag-muscle">Legs</span><span class="tag tag-compound">Compound</span></div><p>The best glute exercise. Hip extension with progressive overload.</p></div>
+
+      <div class="exercise-card" data-muscle="abs"><div class="card-image img-placeholder">Crunch Photo</div><h3>Crunch</h3><div class="tags"><span class="tag tag-muscle">Abs</span><span class="tag tag-isolation">Isolation</span></div><p>Basic ab exercise. Focus on the contraction of the rectus abdominis.</p></div>
+      <div class="exercise-card" data-muscle="abs"><div class="card-image img-placeholder">Plank Photo</div><h3>Plank</h3><div class="tags"><span class="tag tag-muscle">Abs</span><span class="tag tag-isolation">Isolation</span></div><p>Isometric core strengthening. Improves overall stability and posture.</p></div>
+      <div class="exercise-card" data-muscle="abs"><div class="card-image img-placeholder">Hanging Leg Raise Photo</div><h3>Hanging Leg Raise</h3><div class="tags"><span class="tag tag-muscle">Abs</span><span class="tag tag-isolation">Isolation</span></div><p>Targets the lower abs. Hang from a bar for maximum range of motion.</p></div>
+
+      <div class="exercise-card" data-muscle="cardio"><div class="card-image img-placeholder">Rowing Machine Photo</div><h3>Rowing Machine</h3><div class="tags"><span class="tag tag-muscle">Cardio</span><span class="tag tag-compound">Compound</span></div><p>Full-body cardio engaging the entire body. Excellent effort-to-joint-impact ratio.</p></div>
+      <div class="exercise-card" data-muscle="cardio"><div class="card-image img-placeholder">Jump Rope Photo</div><h3>Jump Rope</h3><div class="tags"><span class="tag tag-muscle">Cardio</span><span class="tag tag-compound">Compound</span></div><p>High-intensity cardio and coordination. Perfect for warm-up or HIIT.</p></div>
+  </section>
+
+  <section class="cta-section">
+      <h2>240+ exercises in your pocket</h2>
+      <p>Download AIVancePro to access all exercises with videos, instructions and direct integration into your workouts.</p>
+      <a href="https://apps.apple.com/app/aivancepro/id6756116760" class="btn-primary" target="_blank" rel="noopener">Download for free</a>
+  </section>
+
+  <script>
+      function filterExercises(muscle, btn) {
+          document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
+          btn.classList.add('active');
+          let count = 0;
+          document.querySelectorAll('.exercise-card').forEach(card => {
+              if (muscle === 'all' || card.dataset.muscle === muscle) {
+                  card.style.display = '';
+                  count++;
+              } else {
+                  card.style.display = 'none';
+              }
+          });
+          document.getElementById('count').textContent = count;
+      }
+  </script>
+</BaseLayout>

@@ -1,0 +1,267 @@
+---
+import BaseLayout from '../../../layouts/BaseLayout.astro';
+---
+
+<BaseLayout
+  lang="de"
+  title="Fitness &amp; Krafttraining Blog - AIVancePro"
+  description="Fitness-Tipps, Trainingsratschl&auml;ge und Anleitungen. Optimieren Sie Ihre Leistung mit KI-Coaching."
+  canonical="https://aivancepro.fr/de/blog/"
+  alternates={{ fr: 'https://aivancepro.fr/blog/', en: 'https://aivancepro.fr/en/blog/', de: 'https://aivancepro.fr/de/blog/' }}
+>
+  <Fragment slot="head">
+    <style>
+      .blog-header {
+        padding: 9rem 2rem 3rem;
+        text-align: center;
+        background: linear-gradient(180deg, var(--gray-50), var(--white));
+      }
+      .section-label {
+        display: inline-block;
+        font-size: 0.8rem;
+        font-weight: 700;
+        text-transform: uppercase;
+        letter-spacing: 0.08em;
+        color: var(--blue);
+        margin-bottom: 0.75rem;
+      }
+      .blog-header h1 {
+        font-size: 2.8rem;
+        font-weight: 800;
+        letter-spacing: -0.02em;
+        margin-bottom: 1rem;
+      }
+      .blog-header p {
+        color: var(--gray-500);
+        font-size: 1.1rem;
+        max-width: 550px;
+        margin: 0 auto;
+      }
+      .category-filter {
+        max-width: 900px;
+        margin: 2rem auto 0;
+        display: flex;
+        justify-content: center;
+        gap: 0.5rem;
+        flex-wrap: wrap;
+        padding: 0 2rem;
+      }
+      .filter-btn {
+        padding: 0.4rem 1rem;
+        border-radius: 50px;
+        border: 1px solid var(--gray-200);
+        background: var(--white);
+        color: var(--gray-500);
+        font-size: 0.8rem;
+        font-weight: 600;
+        font-family: inherit;
+        cursor: pointer;
+        transition: all 0.2s;
+      }
+      .filter-btn:hover, .filter-btn.active {
+        background: var(--blue);
+        color: var(--white);
+        border-color: var(--blue);
+      }
+      .articles {
+        max-width: 900px;
+        margin: 0 auto;
+        padding: 3rem 2rem 6rem;
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 1.5rem;
+      }
+      .article-card {
+        background: var(--white);
+        border: 1px solid var(--gray-200);
+        border-radius: 16px;
+        overflow: hidden;
+        transition: border-color 0.2s, transform 0.2s, box-shadow 0.2s;
+        text-decoration: none;
+        color: var(--gray-900);
+        display: flex;
+        flex-direction: column;
+      }
+      .article-card:hover {
+        border-color: rgba(37, 99, 235, 0.3);
+        transform: translateY(-4px);
+        box-shadow: 0 8px 30px rgba(0, 0, 0, 0.06);
+      }
+      .article-card .card-image {
+        width: 100%;
+        height: 180px;
+        background: linear-gradient(135deg, var(--gray-100), var(--gray-200));
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        color: var(--gray-400);
+        font-size: 0.8rem;
+      }
+      .article-card .card-content {
+        padding: 1.5rem;
+        flex: 1;
+        display: flex;
+        flex-direction: column;
+      }
+      .article-card .tag {
+        display: inline-block;
+        padding: 0.2rem 0.6rem;
+        background: rgba(37, 99, 235, 0.06);
+        border-radius: 50px;
+        font-size: 0.7rem;
+        color: var(--blue);
+        font-weight: 600;
+        margin-bottom: 0.75rem;
+        width: fit-content;
+      }
+      .article-card h2 {
+        font-size: 1.1rem;
+        font-weight: 700;
+        margin-bottom: 0.5rem;
+        line-height: 1.35;
+      }
+      .article-card p {
+        color: var(--gray-500);
+        font-size: 0.85rem;
+        line-height: 1.6;
+        flex: 1;
+      }
+      .article-card .meta {
+        margin-top: 1rem;
+        font-size: 0.75rem;
+        color: var(--gray-400);
+        font-weight: 500;
+      }
+      .article-card.featured {
+        grid-column: 1 / -1;
+        flex-direction: row;
+      }
+      .article-card.featured .card-image {
+        width: 45%;
+        height: auto;
+        min-height: 250px;
+      }
+      .article-card.featured .card-content {
+        padding: 2rem;
+      }
+      .article-card.featured h2 {
+        font-size: 1.4rem;
+      }
+      @media (max-width: 768px) {
+        .blog-header h1 { font-size: 2rem; }
+        .blog-header { padding: 7rem 1.5rem 2rem; }
+        .articles { grid-template-columns: 1fr; }
+        .article-card.featured { flex-direction: column; }
+        .article-card.featured .card-image { width: 100%; min-height: 180px; }
+      }
+    </style>
+  </Fragment>
+
+  <header class="blog-header">
+    <div class="section-label">Blog</div>
+    <h1>Fitness &amp; Krafttraining</h1>
+    <p>Tipps, Anleitungen und Ratschl&auml;ge zur Optimierung Ihres Trainings und zum Erreichen Ihrer Ziele.</p>
+    <div class="category-filter">
+      <button class="filter-btn active" onclick="filterArticles('all', this)">Alle</button>
+      <button class="filter-btn" onclick="filterArticles('ki', this)">K&uuml;nstliche Intelligenz</button>
+      <button class="filter-btn" onclick="filterArticles('training', this)">Training</button>
+      <button class="filter-btn" onclick="filterArticles('ernaehrung', this)">Ern&auml;hrung</button>
+      <button class="filter-btn" onclick="filterArticles('tipps', this)">Tipps</button>
+      <button class="filter-btn" onclick="filterArticles('planung', this)">Planung</button>
+    </div>
+  </header>
+
+  <section class="articles">
+    <a href="/de/blog/ki-fitness-coaching/" class="article-card featured" data-category="ki">
+      <div class="card-image">Foto KI-Coaching</div>
+      <div class="card-content">
+        <span class="tag">K&uuml;nstliche Intelligenz</span>
+        <h2>Wie KI das Fitness-Coaching revolutioniert</h2>
+        <p>Entdecken Sie, wie k&uuml;nstliche Intelligenz das Sporttraining durch ultra-personalisierte Programme ver&auml;ndert.</p>
+        <div class="meta">7. Februar 2026 &middot; 5 Min. Lesezeit</div>
+      </div>
+    </a>
+    <a href="/de/blog/anfaenger-trainingsplan/" class="article-card" data-category="training">
+      <div class="card-image">Foto Anf&auml;nger</div>
+      <div class="card-content">
+        <span class="tag">Training</span>
+        <h2>Trainingsplan f&uuml;r Anf&auml;nger: Wo anfangen?</h2>
+        <p>Neu im Krafttraining? Der komplette Leitfaden f&uuml;r Ihren ersten effektiven Trainingsplan.</p>
+        <div class="meta">7. Februar 2026 &middot; 7 Min.</div>
+      </div>
+    </a>
+    <a href="/de/blog/trainingsfortschritt-verfolgen/" class="article-card" data-category="tipps">
+      <div class="card-image">Foto Fortschritt</div>
+      <div class="card-content">
+        <span class="tag">Fortschritt</span>
+        <h2>Die Bedeutung der Trainings&uuml;berwachung</h2>
+        <p>Warum die Verfolgung Ihres Fortschritts der Schl&uuml;ssel zu dauerhaften Ergebnissen ist.</p>
+        <div class="meta">7. Februar 2026 &middot; 5 Min.</div>
+      </div>
+    </a>
+    <a href="/de/blog/training-motivation-tipps/" class="article-card" data-category="tipps">
+      <div class="card-image">Foto Motivation</div>
+      <div class="card-content">
+        <span class="tag">Motivation</span>
+        <h2>5 Tipps, um beim Training motiviert zu bleiben</h2>
+        <p>Motivation ist der Treibstoff des sportlichen Erfolgs. 5 konkrete Strategien.</p>
+        <div class="meta">7. Februar 2026 &middot; 4 Min.</div>
+      </div>
+    </a>
+    <a href="/de/blog/home-gym-zuhause-trainieren/" class="article-card" data-category="tipps">
+      <div class="card-image">Foto Home Gym</div>
+      <div class="card-content">
+        <span class="tag">Home Gym</span>
+        <h2>Zuhause trainieren: Der komplette Leitfaden</h2>
+        <p>Kein Fitnessstudio n&ouml;tig. Erstellen Sie Ihren Trainingsraum.</p>
+        <div class="meta">7. Februar 2026 &middot; 6 Min.</div>
+      </div>
+    </a>
+    <a href="/de/blog/periodisierung-trainingsplan/" class="article-card" data-category="planung">
+      <div class="card-image">Foto Periodisierung</div>
+      <div class="card-content">
+        <span class="tag">Planung</span>
+        <h2>Periodisierung: Ihr Programm strukturieren</h2>
+        <p>Zyklen, Mesozyklen, Deload: Alles verstehen, um nachhaltig Fortschritte zu machen.</p>
+        <div class="meta">3. M&auml;rz 2026 &middot; 6 Min.</div>
+      </div>
+    </a>
+    <a href="/de/blog/haeufige-trainingsfehler/" class="article-card" data-category="training">
+      <div class="card-image">Foto Fehler</div>
+      <div class="card-content">
+        <span class="tag">Tipps</span>
+        <h2>5 h&auml;ufige Trainingsfehler</h2>
+        <p>H&auml;ufige Fallen, die Ihren Fortschritt bremsen, und wie Sie sie beheben.</p>
+        <div class="meta">3. M&auml;rz 2026 &middot; 5 Min.</div>
+      </div>
+    </a>
+    <a href="/de/blog/ernaehrung-training-grundlagen/" class="article-card" data-category="ernaehrung">
+      <div class="card-image">Foto Ern&auml;hrung</div>
+      <div class="card-content">
+        <span class="tag">Ern&auml;hrung</span>
+        <h2>Ern&auml;hrung und Training: Die Grundlagen</h2>
+        <p>Protein, Kohlenhydrate, Fette und Mahlzeiten-Timing f&uuml;r Ihren Fortschritt.</p>
+        <div class="meta">3. M&auml;rz 2026 &middot; 7 Min.</div>
+      </div>
+    </a>
+    <a href="/de/blog/uebungen-nach-zielen/" class="article-card" data-category="training">
+      <div class="card-image">Foto &Uuml;bungen</div>
+      <div class="card-content">
+        <span class="tag">&Uuml;bungen</span>
+        <h2>&Uuml;bungen nach Zielen ausw&auml;hlen</h2>
+        <p>Kraft, Hypertrophie, Ausdauer: Leitfaden zur Auswahl der richtigen &Uuml;bungen.</p>
+        <div class="meta">3. M&auml;rz 2026 &middot; 6 Min.</div>
+      </div>
+    </a>
+  </section>
+
+  <script>
+    function filterArticles(category, btn) {
+      document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
+      btn.classList.add('active');
+      document.querySelectorAll('.article-card').forEach(card => {
+        card.style.display = (category === 'all' || card.dataset.category === category) ? '' : 'none';
+      });
+    }
+  </script>
+</BaseLayout>
