@@ -1,11 +1,59 @@
 ---
 import BaseLayout from '../../../layouts/BaseLayout.astro';
+import { exercises, toSlug } from '../../../data/exercises-de.js';
+
+const difficultyColors = {
+  "Beginner": { bg: "rgba(16, 185, 129, 0.1)", color: "#10B981" },
+  "Intermediate": { bg: "rgba(245, 158, 11, 0.1)", color: "#F59E0B" },
+  "Advanced": { bg: "rgba(239, 68, 68, 0.1)", color: "#EF4444" },
+};
+
+const totalCount = exercises.length;
+
+const muscleGroups = [
+  { id: "pectoraux", label: "Brust", icon: "💪" },
+  { id: "dos", label: "Rücken", icon: "🔙" },
+  { id: "epaules", label: "Schultern", icon: "🏋️" },
+  { id: "biceps", label: "Bizeps", icon: "💪" },
+  { id: "triceps", label: "Trizeps", icon: "🦾" },
+  { id: "jambes", label: "Beine", icon: "🦵" },
+  { id: "fessiers", label: "Gesäß", icon: "🍑" },
+  { id: "abdos", label: "Bauch", icon: "🎯" },
+  { id: "avant-bras", label: "Unterarme", icon: "✊" },
+  { id: "fonctionnel", label: "Funktionell", icon: "⚡" },
+];
+
+const equipmentList = [
+  { id: "Barbell", label: "Langhantel", icon: "🏋️" },
+  { id: "Dumbbells", label: "Kurzhanteln", icon: "🏋️" },
+  { id: "Machine", label: "Maschine", icon: "⚙️" },
+  { id: "Cable", label: "Kabelzug", icon: "🔗" },
+  { id: "Bodyweight", label: "Eigengewicht", icon: "🧍" },
+  { id: "Bodyweight + load", label: "Gewichtet", icon: "🎒" },
+  { id: "Smith machine", label: "Multipresse", icon: "🏗️" },
+  { id: "Kettlebell", label: "Kettlebell", icon: "🔔" },
+  { id: "EZ Bar", label: "SZ-Stange", icon: "〰️" },
+  { id: "Resistance band", label: "Widerstandsband", icon: "🪢" },
+  { id: "TRX", label: "TRX", icon: "🪢" },
+  { id: "Landmine", label: "Landmine", icon: "💣" },
+  { id: "Medicine ball", label: "Medizinball", icon: "⚽" },
+];
+
+const muscleGroupCounts = {};
+muscleGroups.forEach(m => {
+  muscleGroupCounts[m.id] = exercises.filter(e => e.category === m.id).length;
+});
+
+const equipmentCounts = {};
+equipmentList.forEach(eq => {
+  equipmentCounts[eq.id] = exercises.filter(e => e.equipment === eq.id).length;
+});
 ---
 
 <BaseLayout
   lang="de"
-  title="&Uuml;bungsbibliothek - 240+ Krafttraining &Uuml;bungen - AIVancePro"
-  description="Entdecken Sie unsere Bibliothek mit &uuml;ber 240 Krafttraining- und Fitness&uuml;bungen. Filtern Sie nach Muskelgruppe und finden Sie die perfekte &Uuml;bung."
+  title={`Übungsbibliothek - ${totalCount} Krafttraining Übungen - AIVancePro`}
+  description={`Entdecken Sie unsere Bibliothek mit ${totalCount} Krafttraining- und Fitnessübungen. Filtern Sie nach Muskelgruppe oder Gerät und finden Sie die perfekte Übung.`}
   canonical="https://aivancepro.fr/de/uebungen/"
   alternates={{ fr: 'https://aivancepro.fr/exercices/', en: 'https://aivancepro.fr/en/exercises/', de: 'https://aivancepro.fr/de/uebungen/' }}
 >
@@ -14,114 +62,253 @@ import BaseLayout from '../../../layouts/BaseLayout.astro';
         .page-header { padding: 9rem 2rem 2rem; text-align: center; background: linear-gradient(180deg, var(--bg-card), var(--bg)); }
         .section-label { display: inline-block; font-size: 0.8rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.08em; color: var(--blue); margin-bottom: 0.75rem; }
         .page-header h1 { font-size: 2.8rem; font-weight: 800; letter-spacing: -0.02em; margin-bottom: 1rem; }
-        .page-header p { color: var(--gray-500); font-size: 1.1rem; max-width: 550px; margin: 0 auto; }
+        .page-header p { color: var(--gray-500); font-size: 1.1rem; max-width: 600px; margin: 0 auto; }
 
-        .filter-bar { max-width: 1100px; margin: 2rem auto 0; display: flex; justify-content: center; gap: 0.5rem; flex-wrap: wrap; padding: 0 2rem; }
-        .filter-btn { padding: 0.5rem 1.1rem; border-radius: 50px; border: 1px solid var(--border); background: var(--bg-card); color: var(--gray-500); font-size: 0.85rem; font-weight: 600; font-family: inherit; cursor: pointer; transition: all 0.2s; }
+        .browse-section { max-width: 1100px; margin: 0 auto; padding: 3rem 2rem 0; }
+        .browse-section h2 { font-size: 1.5rem; font-weight: 800; margin-bottom: 1.25rem; }
+        .browse-grid { display: grid; grid-template-columns: repeat(5, 1fr); gap: 0.75rem; }
+        .browse-card { background: var(--bg-card); border: 1px solid var(--border); border-radius: 12px; padding: 1rem; text-align: center; cursor: pointer; transition: all 0.2s; text-decoration: none; color: inherit; display: flex; flex-direction: column; align-items: center; gap: 0.4rem; font-family: inherit; }
+        .browse-card:hover { border-color: var(--blue); transform: translateY(-2px); box-shadow: 0 4px 15px rgba(0,0,0,0.15); }
+        .browse-card.active { border-color: var(--blue); background: rgba(37,99,235,0.08); }
+        .browse-card .browse-icon { font-size: 1.5rem; line-height: 1; }
+        .browse-card .browse-label { font-size: 0.85rem; font-weight: 700; }
+        .browse-card .browse-count { font-size: 0.7rem; color: var(--gray-400); }
+
+        .filter-bar { max-width: 1100px; margin: 2.5rem auto 0; padding: 0 2rem; }
+        .filter-row { display: flex; align-items: center; gap: 0.5rem; flex-wrap: wrap; margin-bottom: 0.75rem; }
+        .filter-label { font-size: 0.75rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.05em; color: var(--gray-400); min-width: fit-content; }
+        .filter-btn { padding: 0.4rem 0.9rem; border-radius: 50px; border: 1px solid var(--border); background: var(--bg-card); color: var(--gray-500); font-size: 0.8rem; font-weight: 600; font-family: inherit; cursor: pointer; transition: all 0.2s; }
         .filter-btn:hover, .filter-btn.active { background: var(--blue); color: var(--white); border-color: var(--blue); }
+        .filter-btn-equip:hover, .filter-btn-equip.active { background: var(--purple); color: var(--white); border-color: var(--purple); }
 
-        .exercises-grid { max-width: 1100px; margin: 0 auto; padding: 2.5rem 2rem 4rem; display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.25rem; }
+        .search-bar { max-width: 500px; margin: 1.5rem auto 0; padding: 0 2rem; }
+        .search-input { width: 100%; padding: 0.7rem 1.25rem; border-radius: 12px; border: 1px solid var(--border); background: var(--bg-card); color: var(--text); font-size: 0.9rem; font-family: inherit; outline: none; transition: border-color 0.2s; box-sizing: border-box; }
+        .search-input::placeholder { color: var(--gray-400); }
+        .search-input:focus { border-color: var(--blue); }
 
-        .exercise-card { background: var(--bg-card); border: 1px solid var(--border); border-radius: 14px; padding: 1.25rem; transition: border-color 0.2s, transform 0.2s, box-shadow 0.2s; }
-        .exercise-card:hover { border-color: rgba(37,99,235,0.25); transform: translateY(-3px); box-shadow: 0 6px 20px rgba(0,0,0,0.05); }
-        .exercise-card .card-image { width: 100%; height: 140px; background: linear-gradient(135deg, var(--gray-100), var(--gray-200)); border-radius: 10px; display: flex; align-items: center; justify-content: center; color: var(--gray-400); font-size: 0.75rem; font-weight: 500; margin-bottom: 1rem; }
-        .exercise-card h3 { font-size: 1rem; font-weight: 700; margin-bottom: 0.4rem; }
-        .exercise-card .tags { display: flex; gap: 0.4rem; margin-bottom: 0.5rem; flex-wrap: wrap; }
-        .exercise-card .tag { padding: 0.15rem 0.5rem; border-radius: 50px; font-size: 0.65rem; font-weight: 600; }
-        .tag-muscle { background: rgba(37,99,235,0.08); color: var(--blue); }
-        .tag-compound { background: rgba(147,51,234,0.08); color: var(--purple); }
-        .tag-isolation { background: rgba(245,158,11,0.08); color: #D97706; }
-        .exercise-card p { color: var(--gray-500); font-size: 0.8rem; line-height: 1.5; }
+        .exercises-grid { max-width: 1100px; margin: 0 auto; padding: 2rem 2rem 4rem; display: grid; grid-template-columns: repeat(3, 1fr); gap: 1rem; }
+
+        .exercise-card { background: var(--bg-card); border: 1px solid var(--border); border-radius: 14px; padding: 1.25rem; transition: border-color 0.2s, transform 0.2s, box-shadow 0.2s; display: flex; flex-direction: column; gap: 0.5rem; text-decoration: none; color: inherit; }
+        .exercise-card:hover { border-color: rgba(37,99,235,0.25); transform: translateY(-3px); box-shadow: 0 6px 20px rgba(0,0,0,0.15); }
+        .exercise-card h3 { font-size: 0.95rem; font-weight: 700; line-height: 1.3; color: var(--text); }
+        .exercise-card .desc { color: var(--gray-500); font-size: 0.8rem; line-height: 1.5; }
+        .exercise-card .tags { display: flex; gap: 0.35rem; flex-wrap: wrap; margin-top: auto; }
+        .exercise-card .tag { padding: 0.15rem 0.55rem; border-radius: 50px; font-size: 0.65rem; font-weight: 600; white-space: nowrap; }
+        .tag-muscle { background: rgba(37,99,235,0.1); color: var(--blue); }
+        .tag-equipment { background: rgba(147,51,234,0.1); color: var(--purple); }
+        .tag-difficulty { font-size: 0.6rem; font-weight: 700; }
 
         .exercises-count { text-align: center; padding: 1rem 2rem 0; color: var(--gray-400); font-size: 0.85rem; }
 
-        .cta-section { padding: 5rem 2rem; text-align: center; background: linear-gradient(135deg, var(--dark), #1a1145); color: var(--white); }
+        .cta-section { padding: 5rem 2rem; text-align: center; background: var(--bg-alt); }
         .cta-section h2 { font-size: 2.2rem; font-weight: 800; margin-bottom: 1rem; }
-        .cta-section p { color: rgba(255,255,255,0.6); font-size: 1rem; max-width: 480px; margin: 0 auto 2rem; }
+        .cta-section p { color: var(--gray-500); font-size: 1rem; max-width: 480px; margin: 0 auto 2rem; }
         .btn-primary { display: inline-flex; align-items: center; gap: 0.5rem; background: linear-gradient(135deg, var(--blue), var(--purple)); color: var(--white); text-decoration: none; font-size: 1rem; font-weight: 600; padding: 0.875rem 2rem; border-radius: 12px; transition: opacity 0.2s, transform 0.2s; box-shadow: 0 4px 15px rgba(37,99,235,0.3); }
         .btn-primary:hover { opacity: 0.92; transform: translateY(-2px); }
 
-        @media (max-width: 1024px) { .exercises-grid { grid-template-columns: repeat(2, 1fr); } }
+        .no-results { text-align: center; padding: 3rem 2rem; color: var(--gray-400); font-size: 1rem; display: none; }
+
+        @media (max-width: 1024px) {
+            .exercises-grid { grid-template-columns: repeat(2, 1fr); }
+            .browse-grid { grid-template-columns: repeat(4, 1fr); }
+        }
         @media (max-width: 768px) {
             .page-header { padding: 7rem 1.5rem 2rem; }
             .page-header h1 { font-size: 2rem; }
             .exercises-grid { grid-template-columns: 1fr; }
+            .browse-grid { grid-template-columns: repeat(3, 1fr); }
+            .browse-section { padding: 2rem 1.5rem 0; }
+            .filter-bar { padding: 0 1.5rem; }
+        }
+        @media (max-width: 480px) {
+            .browse-grid { grid-template-columns: repeat(2, 1fr); }
         }
     </style>
   </Fragment>
 
     <header class="page-header">
-        <div class="section-label">&Uuml;bungen</div>
-        <h1>&Uuml;bungsbibliothek</h1>
-        <p>&Uuml;ber 240 &Uuml;bungen mit detaillierten Anleitungen. Filtern Sie nach Muskelgruppe, um die perfekte &Uuml;bung f&uuml;r Sie zu finden.</p>
+        <div class="section-label">Übungen</div>
+        <h1>Übungsbibliothek</h1>
+        <p>{totalCount} Übungen mit detaillierten Anleitungen. Durchsuchen Sie nach Muskelgruppe, Gerät oder suchen Sie eine Übung.</p>
     </header>
 
-    <div class="filter-bar">
-        <button class="filter-btn active" onclick="filterExercises('all', this)">Alle</button>
-        <button class="filter-btn" onclick="filterExercises('brust', this)">Brust</button>
-        <button class="filter-btn" onclick="filterExercises('ruecken', this)">R&uuml;cken</button>
-        <button class="filter-btn" onclick="filterExercises('schultern', this)">Schultern</button>
-        <button class="filter-btn" onclick="filterExercises('arme', this)">Arme</button>
-        <button class="filter-btn" onclick="filterExercises('beine', this)">Beine</button>
-        <button class="filter-btn" onclick="filterExercises('bauch', this)">Bauch</button>
-        <button class="filter-btn" onclick="filterExercises('cardio', this)">Cardio</button>
+    <section class="browse-section">
+        <h2>Nach Muskelgruppe durchsuchen</h2>
+        <div class="browse-grid">
+            {muscleGroups.map(m => (
+                <button class="browse-card" data-browse="muscle" data-value={m.id}>
+                    <span class="browse-icon">{m.icon}</span>
+                    <span class="browse-label">{m.label}</span>
+                    <span class="browse-count">{muscleGroupCounts[m.id]} Übungen</span>
+                </button>
+            ))}
+        </div>
+    </section>
+
+    <section class="browse-section">
+        <h2>Nach Gerät durchsuchen</h2>
+        <div class="browse-grid">
+            {equipmentList.map(eq => (
+                <button class="browse-card" data-browse="equipment" data-value={eq.id}>
+                    <span class="browse-icon">{eq.icon}</span>
+                    <span class="browse-label">{eq.label}</span>
+                    <span class="browse-count">{equipmentCounts[eq.id]} Übungen</span>
+                </button>
+            ))}
+        </div>
+    </section>
+
+    <div class="filter-bar" id="filterBar">
+        <div class="filter-row">
+            <span class="filter-label">Muskel:</span>
+            <button class="filter-btn active" data-filter="muscle" data-value="all">Alle</button>
+            {muscleGroups.map(m => (
+                <button class="filter-btn" data-filter="muscle" data-value={m.id}>{m.label}</button>
+            ))}
+        </div>
+        <div class="filter-row">
+            <span class="filter-label">Gerät:</span>
+            <button class="filter-btn filter-btn-equip active" data-filter="equipment" data-value="all">Alle</button>
+            {equipmentList.map(eq => (
+                <button class="filter-btn filter-btn-equip" data-filter="equipment" data-value={eq.id}>{eq.label}</button>
+            ))}
+        </div>
     </div>
 
-    <div class="exercises-count"><span id="count">24</span> &Uuml;bungen angezeigt</div>
+    <div class="search-bar">
+        <input type="text" class="search-input" id="search" placeholder="Übung suchen..." autocomplete="off" />
+    </div>
 
-    <section class="exercises-grid">
-        <div class="exercise-card" data-muscle="brust"><div class="card-image img-placeholder">Bankdr&uuml;cken Foto</div><h3>Bankdr&uuml;cken</h3><div class="tags"><span class="tag tag-muscle">Brust</span><span class="tag tag-compound">Compound</span></div><p>Der K&ouml;nig der Brust&uuml;bungen. Trainiert auch Trizeps und vordere Schultern.</p></div>
-        <div class="exercise-card" data-muscle="brust"><div class="card-image img-placeholder">Schr&auml;gbankdr&uuml;cken Foto</div><h3>Schr&auml;gbankdr&uuml;cken</h3><div class="tags"><span class="tag tag-muscle">Brust</span><span class="tag tag-compound">Compound</span></div><p>Zielt auf die obere Brust ab. Ideal f&uuml;r die Entwicklung des oberen Brustbereichs.</p></div>
-        <div class="exercise-card" data-muscle="brust"><div class="card-image img-placeholder">Kurzhantel-Flyes Foto</div><h3>Kurzhantel-Flyes</h3><div class="tags"><span class="tag tag-muscle">Brust</span><span class="tag tag-isolation">Isolation</span></div><p>Isoliert die Brust mit einer &Ouml;ffnungsbewegung. Hervorragend f&uuml;r Dehnung und Kontraktion.</p></div>
-        <div class="exercise-card" data-muscle="brust"><div class="card-image img-placeholder">Dips Foto</div><h3>Dips</h3><div class="tags"><span class="tag tag-muscle">Brust</span><span class="tag tag-compound">Compound</span></div><p>Eigengewichts&uuml;bung f&uuml;r Brust und Trizeps. Neigungswinkel variieren f&uuml;r unterschiedliche Belastung.</p></div>
+    <div class="exercises-count"><span id="count">{totalCount}</span> Übungen angezeigt</div>
 
-        <div class="exercise-card" data-muscle="ruecken"><div class="card-image img-placeholder">Klimmz&uuml;ge Foto</div><h3>Klimmz&uuml;ge</h3><div class="tags"><span class="tag tag-muscle">R&uuml;cken</span><span class="tag tag-compound">Compound</span></div><p>Grundlegende R&uuml;cken&uuml;bung. Baut Latissimus-Breite und Bizepskraft auf.</p></div>
-        <div class="exercise-card" data-muscle="ruecken"><div class="card-image img-placeholder">Langhantelrudern Foto</div><h3>Langhantelrudern</h3><div class="tags"><span class="tag tag-muscle">R&uuml;cken</span><span class="tag tag-compound">Compound</span></div><p>Baut R&uuml;ckendicke auf. Zielt auf Rhomboide, Trapezius und Latissimus ab.</p></div>
-        <div class="exercise-card" data-muscle="ruecken"><div class="card-image img-placeholder">Kreuzheben Foto</div><h3>Kreuzheben</h3><div class="tags"><span class="tag tag-muscle">R&uuml;cken</span><span class="tag tag-compound">Compound</span></div><p>Die vollst&auml;ndigste &Uuml;bung. Beansprucht R&uuml;cken, Beine, Ges&auml;&szlig; und Rumpf.</p></div>
-        <div class="exercise-card" data-muscle="ruecken"><div class="card-image img-placeholder">Latzug Foto</div><h3>Latzug</h3><div class="tags"><span class="tag tag-muscle">R&uuml;cken</span><span class="tag tag-compound">Compound</span></div><p>Kabel-Alternative zu Klimmz&uuml;gen. Erm&ouml;glicht pr&auml;zise Gewichtsanpassung.</p></div>
+    <div class="no-results" id="no-results">Keine Übung gefunden.</div>
 
-        <div class="exercise-card" data-muscle="schultern"><div class="card-image img-placeholder">Schulterdr&uuml;cken Foto</div><h3>Schulterdr&uuml;cken</h3><div class="tags"><span class="tag tag-muscle">Schultern</span><span class="tag tag-compound">Compound</span></div><p>Prim&auml;re Schulter&uuml;bung. Trainiert Deltamuskeln und Trizeps.</p></div>
-        <div class="exercise-card" data-muscle="schultern"><div class="card-image img-placeholder">Seitheben Foto</div><h3>Seitheben</h3><div class="tags"><span class="tag tag-muscle">Schultern</span><span class="tag tag-isolation">Isolation</span></div><p>Isoliert den seitlichen Deltamuskel f&uuml;r breitere Schultern. Bewegung kontrollieren.</p></div>
-        <div class="exercise-card" data-muscle="schultern"><div class="card-image img-placeholder">Face Pull Foto</div><h3>Face Pull</h3><div class="tags"><span class="tag tag-muscle">Schultern</span><span class="tag tag-isolation">Isolation</span></div><p>Zielt auf den hinteren Deltamuskel und Au&szlig;enrollatoren ab. Unverzichtbar f&uuml;r die Schultergesundheit.</p></div>
-
-        <div class="exercise-card" data-muscle="arme"><div class="card-image img-placeholder">Bizeps-Curl Foto</div><h3>Bizeps-Curl</h3><div class="tags"><span class="tag tag-muscle">Arme</span><span class="tag tag-isolation">Isolation</span></div><p>Die klassische Bizeps&uuml;bung. Varianten: Langhantel, Kurzhantel, Hammer.</p></div>
-        <div class="exercise-card" data-muscle="arme"><div class="card-image img-placeholder">Trizepsdr&uuml;cken Foto</div><h3>Trizepsdr&uuml;cken</h3><div class="tags"><span class="tag tag-muscle">Arme</span><span class="tag tag-isolation">Isolation</span></div><p>Isoliert den Trizeps mit Kabel oder Kurzhanteln. Ideale Erg&auml;nzung zu Dr&uuml;ck&uuml;bungen.</p></div>
-        <div class="exercise-card" data-muscle="arme"><div class="card-image img-placeholder">Hammer-Curl Foto</div><h3>Hammer-Curl</h3><div class="tags"><span class="tag tag-muscle">Arme</span><span class="tag tag-isolation">Isolation</span></div><p>Zielt auf Brachioradialis und Brachialis ab. Neutraler Griff f&uuml;r dickere Arme.</p></div>
-
-        <div class="exercise-card" data-muscle="beine"><div class="card-image img-placeholder">Kniebeuge Foto</div><h3>Kniebeuge</h3><div class="tags"><span class="tag tag-muscle">Beine</span><span class="tag tag-compound">Compound</span></div><p>Der K&ouml;nig der Bein&uuml;bungen. Trainiert Quadrizeps, Ges&auml;&szlig; und hintere Oberschenkel.</p></div>
-        <div class="exercise-card" data-muscle="beine"><div class="card-image img-placeholder">Ausfallschritte Foto</div><h3>Ausfallschritte</h3><div class="tags"><span class="tag tag-muscle">Beine</span><span class="tag tag-compound">Compound</span></div><p>Hervorragende unilaterale &Uuml;bung f&uuml;r Gleichgewicht, Quadrizeps und Ges&auml;&szlig;.</p></div>
-        <div class="exercise-card" data-muscle="beine"><div class="card-image img-placeholder">Beinpresse Foto</div><h3>Beinpresse</h3><div class="tags"><span class="tag tag-muscle">Beine</span><span class="tag tag-compound">Compound</span></div><p>Maschinen-Alternative zur Kniebeuge. Erm&ouml;glicht schweres Laden mit Sicherheit.</p></div>
-        <div class="exercise-card" data-muscle="beine"><div class="card-image img-placeholder">Beincurl Foto</div><h3>Beincurl</h3><div class="tags"><span class="tag tag-muscle">Beine</span><span class="tag tag-isolation">Isolation</span></div><p>Isoliert die hintere Oberschenkelmuskulatur. Unverzichtbar f&uuml;r das muskul&auml;re Gleichgewicht der Beine.</p></div>
-        <div class="exercise-card" data-muscle="beine"><div class="card-image img-placeholder">Hip Thrust Foto</div><h3>Hip Thrust</h3><div class="tags"><span class="tag tag-muscle">Beine</span><span class="tag tag-compound">Compound</span></div><p>Die beste Ges&auml;&szlig;&uuml;bung. H&uuml;ftstreckung mit progressiver &Uuml;berlastung.</p></div>
-
-        <div class="exercise-card" data-muscle="bauch"><div class="card-image img-placeholder">Crunch Foto</div><h3>Crunch</h3><div class="tags"><span class="tag tag-muscle">Bauch</span><span class="tag tag-isolation">Isolation</span></div><p>Grundlegende Bauch&uuml;bung. Fokus auf die Kontraktion des geraden Bauchmuskels.</p></div>
-        <div class="exercise-card" data-muscle="bauch"><div class="card-image img-placeholder">Plank Foto</div><h3>Plank</h3><div class="tags"><span class="tag tag-muscle">Bauch</span><span class="tag tag-isolation">Isolation</span></div><p>Isometrische Rumpfkr&auml;ftigung. Verbessert allgemeine Stabilit&auml;t und Haltung.</p></div>
-        <div class="exercise-card" data-muscle="bauch"><div class="card-image img-placeholder">H&auml;ngendes Beinheben Foto</div><h3>H&auml;ngendes Beinheben</h3><div class="tags"><span class="tag tag-muscle">Bauch</span><span class="tag tag-isolation">Isolation</span></div><p>Zielt auf die unteren Bauchmuskeln ab. An einer Stange h&auml;ngen f&uuml;r maximalen Bewegungsumfang.</p></div>
-
-        <div class="exercise-card" data-muscle="cardio"><div class="card-image img-placeholder">Ruderger&auml;t Foto</div><h3>Ruderger&auml;t</h3><div class="tags"><span class="tag tag-muscle">Cardio</span><span class="tag tag-compound">Compound</span></div><p>Ganzk&ouml;rper-Cardio, das den gesamten K&ouml;rper beansprucht. Hervorragendes Aufwand-zu-Gelenkbelastung-Verh&auml;ltnis.</p></div>
-        <div class="exercise-card" data-muscle="cardio"><div class="card-image img-placeholder">Seilspringen Foto</div><h3>Seilspringen</h3><div class="tags"><span class="tag tag-muscle">Cardio</span><span class="tag tag-compound">Compound</span></div><p>Hochintensives Cardio und Koordination. Perfekt zum Aufw&auml;rmen oder f&uuml;r HIIT.</p></div>
+    <section class="exercises-grid" id="grid">
+        {exercises.map((ex) => {
+            const dc = difficultyColors[ex.difficulty] || { bg: "rgba(100,100,100,0.1)", color: "#888" };
+            const slug = toSlug(ex.name);
+            return (
+                <a href={`/de/uebungen/${slug}/`} class="exercise-card" data-muscle={ex.category} data-equipment={ex.equipment} data-name={ex.name.toLowerCase()}>
+                    <h3>{ex.name}</h3>
+                    <p class="desc">{ex.desc}</p>
+                    <div class="tags">
+                        <span class="tag tag-muscle">{ex.muscle}</span>
+                        <span class="tag tag-equipment">{ex.equipment}</span>
+                        <span class="tag tag-difficulty" style={`background:${dc.bg};color:${dc.color}`}>{ex.difficulty}</span>
+                    </div>
+                </a>
+            );
+        })}
     </section>
 
     <section class="cta-section">
-        <h2>240+ &Uuml;bungen in Ihrer Tasche</h2>
-        <p>Laden Sie AIVancePro herunter, um auf alle &Uuml;bungen mit Videos, Anleitungen und direkter Integration in Ihre Workouts zuzugreifen.</p>
-        <a href="https://apps.apple.com/app/aivancepro/id6756116760" class="btn-primary" target="_blank" rel="noopener">Kostenlos herunterladen</a>
+        <h2>{totalCount} Übungen in Ihrer Tasche</h2>
+        <p>Laden Sie AIVancePro herunter, um auf alle Übungen mit Videos, Anleitungen und direkter Integration in Ihre Workouts zuzugreifen.</p>
+        <a href="https://apps.apple.com/de/app/aivancepro/id6756116760" class="btn-primary" target="_blank" rel="noopener">Kostenlos herunterladen</a>
     </section>
 
-    <script>
-        function filterExercises(muscle, btn) {
-            document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
-            btn.classList.add('active');
-            let count = 0;
-            document.querySelectorAll('.exercise-card').forEach(card => {
-                if (muscle === 'all' || card.dataset.muscle === muscle) {
-                    card.style.display = '';
-                    count++;
-                } else {
-                    card.style.display = 'none';
-                }
+    <script is:inline>
+        (function() {
+            var currentMuscle = 'all';
+            var currentEquipment = 'all';
+            var searchQuery = '';
+            var countEl = document.getElementById('count');
+            var noResults = document.getElementById('no-results');
+            var grid = document.getElementById('grid');
+
+            function normalize(str) {
+                return str.toLowerCase().normalize('NFD').replace(/[\u0300-\u036f]/g, '');
+            }
+
+            function update() {
+                var cards = document.querySelectorAll('.exercise-card');
+                var count = 0;
+                cards.forEach(function(card) {
+                    var matchMuscle = currentMuscle === 'all' || card.dataset.muscle === currentMuscle;
+                    var matchEquipment = currentEquipment === 'all' || card.dataset.equipment === currentEquipment;
+                    var matchSearch = !searchQuery || normalize(card.dataset.name).indexOf(searchQuery) !== -1;
+                    if (matchMuscle && matchEquipment && matchSearch) {
+                        card.style.display = '';
+                        count++;
+                    } else {
+                        card.style.display = 'none';
+                    }
+                });
+                countEl.textContent = count;
+                noResults.style.display = count === 0 ? 'block' : 'none';
+                grid.style.display = count === 0 ? 'none' : '';
+            }
+
+            document.querySelectorAll('[data-filter="muscle"]').forEach(function(btn) {
+                btn.addEventListener('click', function() {
+                    document.querySelectorAll('[data-filter="muscle"]').forEach(function(b) { b.classList.remove('active'); });
+                    btn.classList.add('active');
+                    currentMuscle = btn.dataset.value;
+                    document.querySelectorAll('[data-browse="muscle"]').forEach(function(c) { c.classList.remove('active'); });
+                    if (currentMuscle !== 'all') {
+                        document.querySelector('[data-browse="muscle"][data-value="' + currentMuscle + '"]')?.classList.add('active');
+                    }
+                    update();
+                });
             });
-            document.getElementById('count').textContent = count;
-        }
+
+            document.querySelectorAll('[data-filter="equipment"]').forEach(function(btn) {
+                btn.addEventListener('click', function() {
+                    document.querySelectorAll('[data-filter="equipment"]').forEach(function(b) { b.classList.remove('active'); });
+                    btn.classList.add('active');
+                    currentEquipment = btn.dataset.value;
+                    document.querySelectorAll('[data-browse="equipment"]').forEach(function(c) { c.classList.remove('active'); });
+                    if (currentEquipment !== 'all') {
+                        document.querySelector('[data-browse="equipment"][data-value="' + currentEquipment + '"]')?.classList.add('active');
+                    }
+                    update();
+                });
+            });
+
+            document.querySelectorAll('[data-browse="muscle"]').forEach(function(card) {
+                card.addEventListener('click', function() {
+                    var val = card.dataset.value;
+                    var isActive = card.classList.contains('active');
+                    document.querySelectorAll('[data-browse="muscle"]').forEach(function(c) { c.classList.remove('active'); });
+                    document.querySelectorAll('[data-filter="muscle"]').forEach(function(b) { b.classList.remove('active'); });
+                    if (isActive) {
+                        currentMuscle = 'all';
+                        document.querySelector('[data-filter="muscle"][data-value="all"]').classList.add('active');
+                    } else {
+                        currentMuscle = val;
+                        card.classList.add('active');
+                        var filterBtn = document.querySelector('[data-filter="muscle"][data-value="' + val + '"]');
+                        if (filterBtn) filterBtn.classList.add('active');
+                    }
+                    update();
+                    document.getElementById('filterBar').scrollIntoView({ behavior: 'smooth', block: 'start' });
+                });
+            });
+
+            document.querySelectorAll('[data-browse="equipment"]').forEach(function(card) {
+                card.addEventListener('click', function() {
+                    var val = card.dataset.value;
+                    var isActive = card.classList.contains('active');
+                    document.querySelectorAll('[data-browse="equipment"]').forEach(function(c) { c.classList.remove('active'); });
+                    document.querySelectorAll('[data-filter="equipment"]').forEach(function(b) { b.classList.remove('active'); });
+                    if (isActive) {
+                        currentEquipment = 'all';
+                        document.querySelector('[data-filter="equipment"][data-value="all"]').classList.add('active');
+                    } else {
+                        currentEquipment = val;
+                        card.classList.add('active');
+                        var filterBtn = document.querySelector('[data-filter="equipment"][data-value="' + val + '"]');
+                        if (filterBtn) filterBtn.classList.add('active');
+                    }
+                    update();
+                    document.getElementById('filterBar').scrollIntoView({ behavior: 'smooth', block: 'start' });
+                });
+            });
+
+            document.getElementById('search').addEventListener('input', function(e) {
+                searchQuery = normalize(e.target.value);
+                update();
+            });
+        })();
     </script>
 </BaseLayout>
