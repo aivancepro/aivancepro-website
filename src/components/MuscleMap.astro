@@ -1,0 +1,187 @@
+---
+interface Props {
+  category: string;
+}
+
+import { frontParts, backParts } from '../data/muscle-paths.js';
+
+const { category } = Astro.props;
+
+// Structural slugs (never highlighted, always gray)
+const structural = new Set(['head', 'hair', 'hands', 'feet', 'ankles', 'knees', 'neck', 'tibialis']);
+
+// Front view highlights per category
+const frontHL: Record<string, { primary: string[]; secondary: string[] }> = {
+  pectoraux:    { primary: ['chest'], secondary: ['deltoids', 'triceps'] },
+  dos:          { primary: ['trapezius'], secondary: ['biceps'] },
+  epaules:      { primary: ['deltoids'], secondary: ['trapezius', 'triceps'] },
+  biceps:       { primary: ['biceps'], secondary: ['forearm', 'deltoids'] },
+  triceps:      { primary: ['triceps'], secondary: ['deltoids', 'chest'] },
+  jambes:       { primary: ['quadriceps', 'adductors'], secondary: ['calves', 'tibialis'] },
+  fessiers:     { primary: [], secondary: ['quadriceps', 'adductors'] },
+  abdos:        { primary: ['abs', 'obliques'], secondary: [] },
+  'avant-bras': { primary: ['forearm'], secondary: ['biceps'] },
+  fonctionnel:  { primary: ['abs', 'quadriceps'], secondary: ['deltoids', 'obliques'] },
+};
+
+// Back view highlights per category
+const backHL: Record<string, { primary: string[]; secondary: string[] }> = {
+  pectoraux:    { primary: [], secondary: ['deltoids', 'triceps'] },
+  dos:          { primary: ['upper-back', 'trapezius'], secondary: ['deltoids', 'lower-back', 'forearm'] },
+  epaules:      { primary: ['deltoids'], secondary: ['trapezius', 'triceps'] },
+  biceps:       { primary: [], secondary: ['forearm'] },
+  triceps:      { primary: ['triceps'], secondary: [] },
+  jambes:       { primary: ['hamstring', 'gluteal'], secondary: ['calves', 'lower-back', 'adductors'] },
+  fessiers:     { primary: ['gluteal'], secondary: ['hamstring', 'lower-back'] },
+  abdos:        { primary: [], secondary: ['lower-back'] },
+  'avant-bras': { primary: ['forearm'], secondary: [] },
+  fonctionnel:  { primary: ['gluteal'], secondary: ['upper-back', 'hamstring', 'lower-back'] },
+};
+
+const fh = frontHL[category] || frontHL.fonctionnel;
+const bh = backHL[category] || backHL.fonctionnel;
+
+const fPrimary = new Set(fh.primary);
+const fSecondary = new Set(fh.secondary);
+const bPrimary = new Set(bh.primary);
+const bSecondary = new Set(bh.secondary);
+
+function frontCls(slug: string) {
+  if (structural.has(slug)) return 'mm-st';
+  if (fPrimary.has(slug)) return 'mm-p';
+  if (fSecondary.has(slug)) return 'mm-s';
+  return 'mm-i';
+}
+
+function backCls(slug: string) {
+  if (structural.has(slug)) return 'mm-st';
+  if (bPrimary.has(slug)) return 'mm-p';
+  if (bSecondary.has(slug)) return 'mm-s';
+  return 'mm-i';
+}
+---
+
+<div class="muscle-map-wrapper">
+  <div class="muscle-map-views">
+    <!-- FRONT VIEW -->
+    <div class="mm-view">
+      <svg viewBox="40 80 660 1280" xmlns="http://www.w3.org/2000/svg">
+        <defs>
+          <linearGradient id="gp" x1="0" y1="0" x2="0" y2="1">
+            <stop offset="0%" stop-color="#3B82F6" />
+            <stop offset="100%" stop-color="#1D4ED8" />
+          </linearGradient>
+          <linearGradient id="gs" x1="0" y1="0" x2="0" y2="1">
+            <stop offset="0%" stop-color="#A855F7" />
+            <stop offset="100%" stop-color="#7C3AED" />
+          </linearGradient>
+        </defs>
+        {frontParts.map((part: any) => (
+          <g class={frontCls(part.slug)}>
+            {part.paths.left?.map((d: string) => <path d={d} />)}
+            {part.paths.right?.map((d: string) => <path d={d} />)}
+            {part.paths.common?.map((d: string) => <path d={d} />)}
+          </g>
+        ))}
+      </svg>
+      <span class="mm-label">Face</span>
+    </div>
+
+    <!-- BACK VIEW -->
+    <div class="mm-view">
+      <svg viewBox="780 80 640 1280" xmlns="http://www.w3.org/2000/svg">
+        {backParts.map((part: any) => (
+          <g class={backCls(part.slug)}>
+            {part.paths.left?.map((d: string) => <path d={d} />)}
+            {part.paths.right?.map((d: string) => <path d={d} />)}
+            {part.paths.common?.map((d: string) => <path d={d} />)}
+          </g>
+        ))}
+      </svg>
+      <span class="mm-label">Dos</span>
+    </div>
+  </div>
+
+  <!-- Legend -->
+  <div class="mm-legend">
+    <span class="mm-legend-item"><span class="mm-dot mm-dot-p"></span> Principal</span>
+    <span class="mm-legend-item"><span class="mm-dot mm-dot-s"></span> Secondaire</span>
+  </div>
+</div>
+
+<style>
+  .muscle-map-wrapper {
+    background: var(--bg-card);
+    border: 1px solid var(--border);
+    border-radius: 14px;
+    padding: 1.25rem 0.75rem 0.75rem;
+  }
+  .muscle-map-views {
+    display: flex;
+    justify-content: center;
+    gap: 0.5rem;
+  }
+  .mm-view {
+    text-align: center;
+    width: 140px;
+  }
+  .mm-view svg {
+    width: 100%;
+    height: auto;
+  }
+  .mm-label {
+    display: block;
+    font-size: 0.7rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    color: var(--gray-400);
+    margin-top: 0.25rem;
+  }
+
+  /* Structural parts (head, hair, hands, feet, etc.) */
+  .mm-st { fill: #d1d5db; }
+  /* Inactive muscles */
+  .mm-i { fill: #d1d5db; }
+  /* Primary muscles */
+  .mm-p { fill: url(#gp); }
+  /* Secondary muscles */
+  .mm-s { fill: url(#gs); opacity: 0.55; }
+
+  /* Subtle separation between shapes */
+  .mm-st path, .mm-i path, .mm-p path, .mm-s path {
+    stroke: white;
+    stroke-width: 0.5;
+    stroke-linejoin: round;
+  }
+
+  /* Legend */
+  .mm-legend {
+    display: flex;
+    justify-content: center;
+    gap: 1.25rem;
+    margin-top: 0.5rem;
+    padding-top: 0.5rem;
+    border-top: 1px solid var(--border);
+  }
+  .mm-legend-item {
+    display: flex;
+    align-items: center;
+    gap: 0.35rem;
+    font-size: 0.72rem;
+    font-weight: 600;
+    color: var(--gray-500);
+  }
+  .mm-dot {
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+  }
+  .mm-dot-p { background: linear-gradient(135deg, #3B82F6, #1D4ED8); }
+  .mm-dot-s { background: linear-gradient(135deg, #A855F7, #7C3AED); opacity: 0.65; }
+
+  @media (prefers-color-scheme: dark) {
+    .mm-st, .mm-i { fill: #4b5563; }
+    .mm-st path, .mm-i path, .mm-p path, .mm-s path { stroke: var(--bg-card); }
+  }
+</style>
