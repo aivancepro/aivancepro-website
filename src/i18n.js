@@ -7,6 +7,7 @@ export const languages = {
 export const t = {
   fr: {
     nav: {
+      product: 'Produit',
       features: 'Fonctionnalit\u00e9s',
       articles: 'Articles',
       blog: 'Blog',
@@ -57,6 +58,7 @@ export const t = {
   },
   en: {
     nav: {
+      product: 'Product',
       features: 'Features',
       articles: 'Articles',
       blog: 'Blog',
@@ -107,6 +109,7 @@ export const t = {
   },
   de: {
     nav: {
+      product: 'Produkt',
       features: 'Funktionen',
       articles: 'Artikel',
       blog: 'Blog',

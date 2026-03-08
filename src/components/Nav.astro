@@ -15,7 +15,16 @@ const currentLang = languages[lang];
         </a>
 
         <ul class="nav-center">
-            <li><a href={i.links.features}>{i.nav.features}</a></li>
+            <li class="dropdown">
+                <button class="dropdown-toggle">
+                    {i.nav.product}
+                    <Fragment set:html={chevronSvg} />
+                </button>
+                <div class="dropdown-menu">
+                    <a href={i.links.features}>{i.nav.features}</a>
+                    <a href={i.links.changelog}>{i.nav.changelog}</a>
+                </div>
+            </li>
             <li class="dropdown">
                 <button class="dropdown-toggle">
                     {i.nav.articles}
@@ -32,16 +41,7 @@ const currentLang = languages[lang];
             <li><a href={i.links.exercises}>{i.nav.exercises}</a></li>
             <li><a href={i.links.pricing}>{i.nav.pricing}</a></li>
             <li><a href={i.links.faq}>{i.nav.faq}</a></li>
-            <li class="dropdown">
-                <button class="dropdown-toggle">
-                    {i.nav.more}
-                    <Fragment set:html={chevronSvg} />
-                </button>
-                <div class="dropdown-menu">
-                    <a href={i.links.changelog}>{i.nav.changelog}</a>
-                    <a href={i.links.support}>{i.nav.support}</a>
-                </div>
-            </li>
+            <li><a href={i.links.support}>{i.nav.support}</a></li>
         </ul>
 
         <div class="nav-right">
@@ -71,7 +71,8 @@ const currentLang = languages[lang];
 <!-- Mobile Menu -->
 <div id="mobileMenu" class="mobile-menu">
     <button class="mobile-menu-close" onclick="document.getElementById('mobileMenu').classList.remove('open')" aria-label={i.nav.close}>&times;</button>
-    <a href={i.links.features} onclick="document.getElementById('mobileMenu').classList.remove('open')">{i.nav.features}</a>
+    <a href={i.links.features}>{i.nav.features}</a>
+    <a href={i.links.changelog}>{i.nav.changelog}</a>
     <a href={i.links.blog}>{i.nav.blog}</a>
     <div class="mobile-sub">
         <a href={i.links.guides}>{i.nav.guides}</a>
@@ -80,9 +81,8 @@ const currentLang = languages[lang];
         <a href={i.links.compoundIsolation}>{i.nav.compoundIsolation}</a>
     </div>
     <a href={i.links.exercises}>{i.nav.exercises}</a>
-    <a href={i.links.pricing} onclick="document.getElementById('mobileMenu').classList.remove('open')">{i.nav.pricing}</a>
-    <a href={i.links.faq} onclick="document.getElementById('mobileMenu').classList.remove('open')">{i.nav.faq}</a>
-    <a href={i.links.changelog}>{i.nav.changelog}</a>
+    <a href={i.links.pricing}>{i.nav.pricing}</a>
+    <a href={i.links.faq}>{i.nav.faq}</a>
     <a href={i.links.support}>{i.nav.support}</a>
     <a href={i.links.login} id="mobile-login-link" data-account-url={i.links.account}>{i.nav.login}</a>
     {Object.entries(languages).filter(([code]) => code !== lang).map(([code, l]) => (
