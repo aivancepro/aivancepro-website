@@ -1,0 +1,684 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+
+const lang = 'de';
+const faqItems = [
+  { q: "Was ist AIVancePro?", a: "AIVancePro ist eine KI-gestützte Fitness-Coaching-App. Sie erstellt personalisierte Trainingsprogramme, verfolgt Ihren Fortschritt und unterstützt Sie mit einem konversationellen KI-Coach, der rund um die Uhr verfügbar ist." },
+  { q: "Für wen ist AIVancePro?", a: "AIVancePro richtet sich an alle: komplette Anfänger, fortgeschrittene Sportler und erfahrene Trainierende. Die KI passt Übungen, Gewichte und Volumen automatisch an Ihr Niveau und Ihre Ziele an." },
+  { q: "Ist AIVancePro für Anfänger geeignet?", a: "Ja, die App ist ideal für Anfänger. Der KI-Coach erklärt jede Übung, passt die Schwierigkeit an und ein Einführungsguide begleitet Sie bei Ihren ersten Schritten." },
+  { q: "Auf welchen Plattformen ist AIVancePro verfügbar?", a: "AIVancePro ist auf iOS (App Store) und Android (Google Play) verfügbar. Laden Sie die App kostenlos auf Ihr Gerät herunter." },
+  { q: "Was unterscheidet AIVancePro von anderen Fitness-Apps?", a: "AIVancePro kombiniert einen echten konversationellen KI-Coach, detailliertes Fortschrittstracking und eine aktive Community. Im Gegensatz zu Apps mit generischen Programmen analysiert unsere KI Ihre Leistung, passt sich an Ihre Ausrüstung an und erstellt vollständig personalisierte Trainingseinheiten." },
+  { q: "Kann ich AIVancePro zu Hause ohne Geräte nutzen?", a: "Ja, AIVancePro bietet zahlreiche Bodyweight-Übungen. Geben Sie einfach Ihre Ausrüstung an (oder keine) und der KI-Coach erstellt an Ihre Situation angepasste Trainingseinheiten." },
+  { q: "Bietet AIVancePro nur Krafttraining an?", a: "Nein, AIVancePro umfasst auch Cardio, HIIT, Zirkeltraining und Bodyweight-Übungen. Sie können eigene Cardio-Einheiten erstellen oder Kraft- und Cardiotraining nach Ihren Zielen kombinieren." },
+  { q: "Kann ich AIVancePro auf Reisen nutzen?", a: "Ja, ändern Sie einfach Ihre verfügbare Ausrüstung und der KI-Coach passt sich sofort an. Unterwegs mit wenig Equipment? Er erstellt ein angepasstes Training." },
+  { q: "Wie funktioniert der KI-Coach?", a: "Der KI-Coach nutzt künstliche Intelligenz, um Ihr Profil, Ihre Historie und Ihre Ziele zu analysieren. Sprechen Sie ihn natürlich an: 'Erstelle ein Brust/Schulter-Training', 'Wie kann ich mein Bankdrücken verbessern?'. Er erstellt maßgeschneiderte Programme." },
+  { q: "Wie werden die Trainingseinheiten personalisiert?", a: "Die KI berücksichtigt Ihr Niveau, Ihre Ziele (Muskelaufbau, Gewichtsverlust, Kraft...), Ihre verfügbare Ausrüstung, Ihre Übungspräferenzen und Ihre Historie. Jede Einheit wird speziell für Sie erstellt." },
+  { q: "Kann der KI-Coach einen kompletten Trainingsplan erstellen?", a: "Ja, der KI-Coach erstellt komplette Mehrwochenpläne mit Periodisierung. Fragen Sie ihn: 'Erstelle mir ein 4-Wochen-Programm' und er kümmert sich um den Rest." },
+  { q: "Kann ich meine persönlichen Rekorde und meinen Fortschritt verfolgen?", a: "Absolut. AIVancePro zeichnet automatisch Ihre persönlichen Rekorde auf, erstellt Diagramme für Volumen, Kraft und Muskelverteilung und bietet einen Aktivitätskalender zur Visualisierung Ihrer Regelmäßigkeit." },
+  { q: "Wie viele Übungen sind verfügbar?", a: "Über 240 Übungen für alle Muskelgruppen, mit Videos und detaillierten Anleitungen. Die Datenbank umfasst Übungen für Kurzhanteln, Langhanteln, Maschinen, Kabel, Widerstandsbänder und Bodyweight." },
+  { q: "Gibt es einen integrierten Pausentimer?", a: "Ja, ein schwebender Timer ist integriert mit automatischen Pausenzeiten, die an jede Übung angepasst sind. Er bleibt während Ihrer gesamten Trainingseinheit sichtbar." },
+  { q: "Kann ich Trainingsvorlagen speichern?", a: "Ja, speichern Sie jede Trainingseinheit als Vorlage, um sie schnell wiederzuverwenden. Ideal für Ihre regelmäßigen Routinen." },
+  { q: "Hilft der KI-Coach bei der Technikkorrektur?", a: "Ja, fragen Sie ihn nach Ratschlägen zur Übungsausführung und er erklärt Ihnen die richtige Technik, häufige Fehler und Varianten, die zu Ihrem Niveau passen." },
+  { q: "Wie funktioniert die Community?", a: "Mit dem Elite-Plan können Sie Gruppen erstellen oder beitreten, Challenges mit Freunden starten, Bestenlisten einsehen und über den integrierten Messenger chatten. Eine großartige Möglichkeit, motiviert zu bleiben." },
+  { q: "Bietet die App Übungsvideos?", a: "Ja, jede Übung verfügt über Demonstrationsvideos und detaillierte Anleitungen für eine korrekte und sichere Ausführung." },
+  { q: "Kann ich eine KI-generierte Einheit ändern?", a: "Natürlich. Sie können Übungen hinzufügen, entfernen oder ersetzen und Sätze, Wiederholungen und Gewichte jederzeit während oder vor dem Training anpassen." },
+  { q: "Was ist Krafttraining und wie unterscheidet es sich von Cardio?", a: "Krafttraining zielt darauf ab, die Muskeln durch Widerstand (Gewichte, Bänder, Körpergewicht) zu stärken. Cardio zielt auf die Herz-Kreislauf-Ausdauer ab. Beide ergänzen sich und AIVancePro hilft Ihnen, beides nach Ihren Zielen zu kombinieren." },
+  { q: "Warum ist Krafttraining wichtig für die Gesundheit?", a: "Krafttraining stärkt die Knochen, verbessert den Stoffwechsel, reduziert das Verletzungsrisiko, verbessert die Haltung und trägt zur psychischen Gesundheit bei. Es wird in jedem Alter empfohlen." },
+  { q: "Was ist der Unterschied zwischen Hypertrophie, Kraft und Ausdauer?", a: "Hypertrophie zielt auf Muskelvolumen ab (8-12 Wdh.), maximale Kraft arbeitet mit schweren Lasten (1-5 Wdh.) und Muskelausdauer nutzt leichte Lasten mit vielen Wiederholungen (15+). AIVancePro passt die Parameter an Ihr Ziel an." },
+  { q: "Wie oft pro Woche sollte ich trainieren?", a: "In der Regel 3 bis 5 Mal pro Woche für optimale Ergebnisse. Der KI-Coach passt Häufigkeit und Volumen an Ihre Verfügbarkeit und Erholung an." },
+  { q: "Was ist progressive Überlastung und warum ist sie wichtig?", a: "Progressive Überlastung bedeutet, die Last, Wiederholungen oder das Volumen schrittweise zu steigern, um weiter Fortschritte zu machen. Es ist das Grundprinzip der Progression im Krafttraining. AIVancePro verfolgt Ihren Fortschritt und hilft Ihnen, dieses Prinzip anzuwenden." },
+  { q: "Kann man mit Krafttraining Fett verlieren?", a: "Ja, Krafttraining erhöht Ihren Grundumsatz und verbrennt Kalorien während und nach dem Training. In Kombination mit einer angepassten Ernährung ist es einer der effektivsten Wege, Fett zu verlieren." },
+  { q: "Muss ich schwer heben, um Ergebnisse zu erzielen?", a: "Nicht unbedingt. Regelmäßigkeit, gute Technik und progressive Überlastung sind wichtiger als das absolute Gewicht. Auch mit moderaten Gewichten können Sie hervorragende Ergebnisse erzielen." },
+  { q: "Welche Ausrüstung brauche ich zum Anfangen?", a: "Keine Ausrüstung ist erforderlich! Sie können mit dem Körpergewicht beginnen. Für schnellere Fortschritte ist ein Paar verstellbare Kurzhanteln eine großartige Investition. AIVancePro passt sich an Ihre Ausrüstung an." },
+  { q: "Welche Muskelgruppen sind am wichtigsten zu trainieren?", a: "Ein ausgewogenes Programm sollte alle großen Gruppen abdecken: Brust, Rücken, Schultern, Arme, Beine und Bauch. Der KI-Coach sorgt für eine ausgewogene Muskelverteilung in Ihren Einheiten." },
+  { q: "Warum ist Erholung genauso wichtig wie Training?", a: "Muskeln reparieren und stärken sich in der Ruhephase. Ohne ausreichende Erholung riskieren Sie Übertraining und Verletzungen. AIVancePro analysiert Ihre Belastung und warnt Sie, wenn Ihr Volumen zu hoch ist." },
+  { q: "Ist Krafttraining für Anfänger sicher?", a: "Ja, solange Sie die richtige Technik befolgen und schrittweise steigern. AIVancePro bietet anfängerfreundliche Übungen mit detaillierten Anleitungen, um Risiken zu minimieren." },
+  { q: "Welche Art von Training ist am besten zum Definieren?", a: "Eine Mischung aus Krafttraining (zum Erhalt der Muskelmasse) und Cardio/HIIT (zur Steigerung des Kalorienverbrauchs) ist ideal. Der KI-Coach erstellt ausgewogene Programme für dieses Ziel." },
+  { q: "Brauche ich Cardio zum Definieren?", a: "Cardio hilft, ein Kaloriendefizit zu schaffen, ist aber nicht zwingend erforderlich. Die Ernährung spielt eine wichtigere Rolle. Cardio ist ein zusätzliches Werkzeug, das der KI-Coach in Ihr Programm integrieren kann." },
+  { q: "Welche Rolle spielen Wiederholungen und Sätze beim Definieren?", a: "Während einer Definitionsphase hilft das Beibehalten schwerer Lasten mit moderaten Wiederholungen (6-12), die Muskelmasse zu erhalten. Mehr Wiederholungen mit leichten Gewichten können einen kalorischen Effekt haben, sollten aber schweres Training nicht ersetzen." },
+  { q: "Kann man mit Bodyweight-Übungen definieren?", a: "Ja, hochintensive Bodyweight-Übungen (Burpees, Liegestütze, Squat Jumps...) sind sehr effektiv zum Kalorienverbrennen. AIVancePro kann HIIT-Zirkel ohne Equipment erstellen." },
+  { q: "Wie hilft AIVancePro beim Muskelaufbau?", a: "Die KI erstellt Hypertrophie-Programme mit dem richtigen Volumen, der richtigen Intensität und Frequenz. Sie verfolgt Ihren Fortschritt und passt die Gewichte an, um eine optimale progressive Überlastung zu gewährleisten." },
+  { q: "Welcher Split ist am besten für Muskelaufbau?", a: "Das hängt von Ihrer Verfügbarkeit ab. Push/Pull/Legs, Ober-/Unterkörper oder Ganzkörper sind alle effektiv. Der KI-Coach empfiehlt den optimalen Split basierend auf Ihren Trainingstagen." },
+  { q: "Wie lange dauert es, bis man Ergebnisse sieht?", a: "Erste Kraftzuwächse sind innerhalb von 2-3 Wochen spürbar. Sichtbare körperliche Veränderungen treten in der Regel nach 6 bis 8 Wochen regelmäßigen Trainings auf. AIVancePro hilft Ihnen, diese Fortschritte zu visualisieren." },
+  { q: "Brauche ich Nahrungsergänzungsmittel für Muskelaufbau?", a: "Nein, Nahrungsergänzungsmittel sind nicht notwendig. Eine ausgewogene, proteinreiche Ernährung reicht aus. Kreatin und Whey können praktisch sein, sind aber nicht unerlässlich." },
+  { q: "Welche Routine ist am besten für die allgemeine Gesundheit?", a: "2 bis 3 Krafttrainingseinheiten pro Woche kombiniert mit etwas Cardio reichen aus, um eine gute Gesundheit zu erhalten. Der KI-Coach erstellt ausgewogene Programme, die auf dieses Ziel abgestimmt sind." },
+  { q: "Ich bin über 40, ist Krafttraining noch effektiv?", a: "Absolut! Krafttraining wird sogar ab 40 empfohlen, um dem altersbedingten Muskelverlust entgegenzuwirken. Der KI-Coach passt Intensität und Volumen an Ihr Profil an." },
+  { q: "Muss ich jeden Tag trainieren?", a: "Nein, Ruhe ist essentiell für den Fortschritt. 3 bis 5 Einheiten pro Woche mit Ruhetagen reichen aus. AIVancePro integriert die Erholung in die Planung." },
+  { q: "Kann AIVancePro helfen, die funktionelle Kraft zu verbessern?", a: "Ja, der KI-Coach kann Programme erstellen, die auf funktionelle Kraft ausgerichtet sind, mit Verbundübungen und Bewegungen, die alltägliche Aktivitäten verbessern." },
+  { q: "Ist Krafttraining effektiv zum Abnehmen?", a: "Ja, Krafttraining erhöht den Grundumsatz, was bedeutet, dass Sie auch im Ruhezustand mehr Kalorien verbrennen. In Kombination mit einem Kaloriendefizit ist es sehr effektiv." },
+  { q: "Wie viele Kalorien verbrennt eine Krafttrainingseinheit?", a: "Eine 45- bis 60-minütige Krafttrainingseinheit verbrennt durchschnittlich 200 bis 400 Kalorien, je nach Intensität. Der 'Nachbrenneffekt' bedeutet, dass Sie noch Stunden nach dem Training weiter Kalorien verbrennen." },
+  { q: "Brauche ich ein Kaloriendefizit zum Abnehmen?", a: "Ja, ein Kaloriendefizit ist notwendig zum Abnehmen. Krafttraining hilft, die Muskelmasse während des Gewichtsverlusts zu erhalten und den 'Skinny Fat'-Effekt zu vermeiden." },
+  { q: "Krafttraining oder Cardio: Was ist besser zum Abnehmen?", a: "Beides ergänzt sich. Krafttraining erhält die Muskeln und steigert den Stoffwechsel, Cardio verbrennt zusätzliche Kalorien. AIVancePro kann beides in Ihren Programmen kombinieren." },
+  { q: "Was kostet AIVancePro?", a: "AIVancePro ist mit Grundfunktionen kostenlos. Der Pro-Plan für 4,99€/Monat schaltet unbegrenztes KI-Coaching und erweiterte Analysen frei. Der Elite-Plan für 7,99€/Monat fügt Community-Funktionen, Challenges und Messaging hinzu." },
+  { q: "Was ist der Unterschied zwischen Pro und Elite?", a: "Der Pro-Plan umfasst unbegrenztes KI-Coaching, erweiterte Analysen, Periodisierung und Vorlagen. Der Elite-Plan fügt Community-Funktionen hinzu: Gruppen, Challenges, Messaging, Bestenlisten und Abzeichen." },
+  { q: "Kann ich mein Abonnement jederzeit kündigen?", a: "Ja, kündigen Sie jederzeit über die App-Einstellungen oder Ihr App Store/Google Play-Konto. Keine Vertragsbindung, keine versteckten Gebühren." },
+  { q: "Wie wechsle ich den Plan?", a: "Sie können den Plan direkt in den App-Einstellungen wechseln. Die Änderung wird sofort wirksam." },
+  { q: "Sind meine Daten sicher?", a: "Ihre Daten werden sicher gehostet und verschlüsselt. Wir verkaufen niemals Ihre Daten." },
+  { q: "Kann ich mein Konto löschen?", a: "Ja, löschen Sie Ihr Konto jederzeit über die App-Einstellungen. Alle Ihre persönlichen Daten werden dauerhaft gelöscht." },
+];
+
+const jsonLd = {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": faqItems.map(item => ({
+    "@type": "Question",
+    "name": item.q,
+    "acceptedAnswer": {
+      "@type": "Answer",
+      "text": item.a
+    }
+  }))
+};
+---
+
+<BaseLayout
+  lang={lang}
+  title="FAQ - AIVancePro | H&auml;ufig gestellte Fragen"
+  description="Alle Antworten auf Ihre Fragen zu AIVancePro: Funktionen, KI-Coach, Abonnements, Krafttraining, Gewichtsverlust und mehr."
+  canonical="https://aivancepro.fr/de/faq/"
+  alternates={{ fr: 'https://aivancepro.fr/faq/', en: 'https://aivancepro.fr/en/faq/', de: 'https://aivancepro.fr/de/faq/' }}
+  jsonLd={jsonLd}
+>
+  <Fragment slot="head">
+    <style>
+      .faq-hero {
+          padding: 8rem 2rem 4rem;
+          text-align: center;
+          background: linear-gradient(180deg, var(--bg-card) 0%, var(--bg) 100%);
+      }
+      .faq-hero h1 {
+          font-size: 3rem;
+          font-weight: 900;
+          letter-spacing: -0.03em;
+          color: var(--gray-900);
+          margin-bottom: 1rem;
+      }
+      .faq-hero h1 .gradient {
+          background: linear-gradient(135deg, var(--blue), var(--purple));
+          -webkit-background-clip: text;
+          -webkit-text-fill-color: transparent;
+          background-clip: text;
+      }
+      .faq-hero p {
+          font-size: 1.15rem;
+          color: var(--gray-500);
+          max-width: 600px;
+          margin: 0 auto;
+      }
+      .faq-page { padding: 3rem 2rem 5rem; }
+      .faq-category {
+          max-width: 800px;
+          margin: 0 auto 4rem;
+      }
+      .faq-category:last-child { margin-bottom: 0; }
+      .faq-category-title {
+          font-size: 1.6rem;
+          font-weight: 800;
+          text-transform: uppercase;
+          letter-spacing: 0.02em;
+          color: var(--gray-900);
+          text-align: center;
+          margin-bottom: 2rem;
+      }
+      .faq-subcategory-title {
+          font-size: 1.1rem;
+          font-weight: 700;
+          color: var(--blue);
+          text-align: center;
+          margin: 2.5rem 0 1.25rem;
+      }
+      .faq-list {
+          max-width: 800px;
+          margin: 0 auto;
+          display: flex;
+          flex-direction: column;
+          gap: 0;
+      }
+      .faq-item { border-bottom: 1px solid var(--border); }
+      .faq-question {
+          width: 100%;
+          background: none;
+          border: none;
+          text-align: left;
+          padding: 1.25rem 0;
+          font-size: 1rem;
+          font-weight: 500;
+          color: var(--gray-500);
+          cursor: pointer;
+          display: flex;
+          justify-content: space-between;
+          align-items: center;
+          font-family: inherit;
+          transition: color 0.2s;
+          gap: 1rem;
+      }
+      .faq-question:hover { color: var(--gray-900); }
+      .faq-question .faq-icon {
+          width: 24px;
+          height: 24px;
+          flex-shrink: 0;
+          position: relative;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+      }
+      .faq-question .faq-icon::before,
+      .faq-question .faq-icon::after {
+          content: '';
+          position: absolute;
+          background: var(--gray-400);
+          transition: transform 0.3s, opacity 0.3s;
+      }
+      .faq-question .faq-icon::before { width: 16px; height: 2px; }
+      .faq-question .faq-icon::after { width: 2px; height: 16px; }
+      .faq-item.open .faq-question .faq-icon::after {
+          transform: rotate(90deg);
+          opacity: 0;
+      }
+      .faq-item.open .faq-question {
+          color: var(--gray-900);
+          font-weight: 600;
+      }
+      .faq-answer {
+          max-height: 0;
+          overflow: hidden;
+          transition: max-height 0.3s ease;
+      }
+      .faq-answer-inner {
+          padding: 0 0 1.5rem;
+          font-size: 0.95rem;
+          color: var(--gray-500);
+          line-height: 1.7;
+      }
+      .faq-answer-inner a { color: var(--blue); }
+      .faq-item.open .faq-answer { max-height: 500px; }
+      .faq-cta {
+          padding: 5rem 2rem;
+          text-align: center;
+          background: var(--bg-card);
+      }
+      .faq-cta h2 {
+          font-size: 2rem;
+          font-weight: 800;
+          color: var(--gray-900);
+          margin-bottom: 1rem;
+      }
+      .faq-cta p {
+          color: var(--gray-500);
+          font-size: 1.05rem;
+          margin-bottom: 2rem;
+      }
+      .faq-cta .btn-primary {
+          display: inline-block;
+          background: linear-gradient(135deg, var(--blue), var(--purple));
+          color: var(--white);
+          font-weight: 600;
+          font-size: 0.95rem;
+          padding: 0.875rem 2rem;
+          border-radius: 12px;
+          text-decoration: none;
+          transition: all 0.2s;
+          box-shadow: 0 4px 15px rgba(37, 99, 235, 0.25);
+      }
+      .faq-cta .btn-primary:hover {
+          opacity: 0.92;
+          transform: translateY(-2px);
+      }
+      .faq-cta .btn-secondary {
+          display: inline-block;
+          background: var(--bg-elevated);
+          color: var(--text);
+          border: 1px solid var(--border-light);
+          font-weight: 600;
+          font-size: 0.95rem;
+          padding: 0.875rem 2rem;
+          border-radius: 12px;
+          text-decoration: none;
+          transition: all 0.2s;
+          margin-left: 1rem;
+      }
+      .faq-cta .btn-secondary:hover {
+          border-color: var(--blue);
+          color: var(--blue);
+      }
+      @media (max-width: 768px) {
+          .faq-hero h1 { font-size: 2.2rem; }
+          .faq-cta .btn-secondary { margin-left: 0; margin-top: 1rem; display: block; }
+          .faq-cta .btn-primary { display: block; }
+      }
+    </style>
+  </Fragment>
+
+    <!-- Hero -->
+    <section class="faq-hero">
+        <h1>H&auml;ufig gestellte <span class="gradient">Fragen</span></h1>
+        <p>Finden Sie Antworten auf alle Ihre Fragen zu AIVancePro, KI-Fitness-Coaching, Krafttraining und unseren Abonnements.</p>
+    </section>
+
+    <!-- FAQ Content -->
+    <section class="faq-page">
+
+        <!-- Kategorie 1: Allgemein -->
+        <div class="faq-category">
+            <h2 class="faq-category-title">Allgemeine Fragen zu AIVancePro</h2>
+            <div class="faq-list">
+                <div class="faq-item">
+                    <button class="faq-question" onclick="this.parentElement.classList.toggle('open')">
+                        Was ist AIVancePro?
+                        <span class="faq-icon"></span>
+                    </button>
+                    <div class="faq-answer"><div class="faq-answer-inner">AIVancePro ist eine KI-gest&uuml;tzte Fitness-Coaching-App. Sie erstellt personalisierte Trainingsprogramme, verfolgt Ihren Fortschritt und unterst&uuml;tzt Sie mit einem konversationellen KI-Coach, der rund um die Uhr verf&uuml;gbar ist.</div></div>
+                </div>
+                <div class="faq-item">
+                    <button class="faq-question" onclick="this.parentElement.classList.toggle('open')">
+                        F&uuml;r wen ist AIVancePro?
+                        <span class="faq-icon"></span>
+                    </button>
+                    <div class="faq-answer"><div class="faq-answer-inner">AIVancePro richtet sich an alle: komplette Anf&auml;nger, fortgeschrittene Sportler und erfahrene Trainierende. Die KI passt &Uuml;bungen, Gewichte und Volumen automatisch an Ihr Niveau und Ihre Ziele an.</div></div>
+                </div>
+                <div class="faq-item">
+                    <button class="faq-question" onclick="this.parentElement.classList.toggle('open')">
+                        Ist AIVancePro f&uuml;r Anf&auml;nger geeignet?
+                        <span class="faq-icon"></span>
+                    </button>
+                    <div class="faq-answer"><div class="faq-answer-inner">Ja, die App ist ideal f&uuml;r Anf&auml;nger. Der KI-Coach erkl&auml;rt jede &Uuml;bung, passt die Schwierigkeit an und ein Einf&uuml;hrungsguide begleitet Sie bei Ihren ersten Schritten.</div></div>
+                </div>
+                <div class="faq-item">
+                    <button class="faq-question" onclick="this.parentElement.classList.toggle('open')">
+                        Auf welchen Plattformen ist AIVancePro verf&uuml;gbar?
+                        <span class="faq-icon"></span>
+                    </button>
+                    <div class="faq-answer"><div class="faq-answer-inner">AIVancePro ist auf iOS (App Store) und Android (Google Play) verf&uuml;gbar. Laden Sie die App kostenlos auf Ihr Ger&auml;t herunter.</div></div>
+                </div>
+                <div class="faq-item">
+                    <button class="faq-question" onclick="this.parentElement.classList.toggle('open')">
+                        Was unterscheidet AIVancePro von anderen Fitness-Apps?
+                        <span class="faq-icon"></span>
+                    </button>
+                    <div class="faq-answer"><div class="faq-answer-inner">AIVancePro kombiniert einen echten konversationellen KI-Coach, detailliertes Fortschrittstracking und eine aktive Community. Im Gegensatz zu Apps mit generischen Programmen analysiert unsere KI Ihre Leistung, passt sich an Ihre Ausr&uuml;stung an und erstellt vollst&auml;ndig personalisierte Trainingseinheiten.</div></div>
+                </div>
+                <div class="faq-item">
+                    <button class="faq-question" onclick="this.parentElement.classList.toggle('open')">
+                        Kann ich AIVancePro zu Hause ohne Ger&auml;te nutzen?
+                        <span class="faq-icon"></span>
+                    </button>
+                    <div class="faq-answer"><div class="faq-answer-inner">Ja, AIVancePro bietet zahlreiche Bodyweight-&Uuml;bungen. Geben Sie einfach Ihre Ausr&uuml;stung an (oder keine) und der KI-Coach erstellt an Ihre Situation angepasste Trainingseinheiten.</div></div>
+                </div>
+                <div class="faq-item">
+                    <button class="faq-question" onclick="this.parentElement.classList.toggle('open')">
+                        Bietet AIVancePro nur Krafttraining an?
+                        <span class="faq-icon"></span>
+                    </button>
+                    <div class="faq-answer"><div class="faq-answer-inner">Nein, AIVancePro umfasst auch Cardio, HIIT, Zirkeltraining und Bodyweight-&Uuml;bungen. Sie k&ouml;nnen eigene Cardio-Einheiten erstellen oder Kraft- und Cardiotraining nach Ihren Zielen kombinieren.</div></div>
+                </div>
+                <div class="faq-item">
+                    <button class="faq-question" onclick="this.parentElement.classList.toggle('open')">
+                        Kann ich AIVancePro auf Reisen nutzen?
+                        <span class="faq-icon"></span>
+                    </button>
+                    <div class="faq-answer"><div class="faq-answer-inner">Ja, &auml;ndern Sie einfach Ihre verf&uuml;gbare Ausr&uuml;stung und der KI-Coach passt sich sofort an. Unterwegs mit wenig Equipment? Er erstellt ein angepasstes Training.</div></div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Kategorie 2: Funktionen -->
+        <div class="faq-category">
+            <h2 class="faq-category-title">Funktionen &amp; Benutzererfahrung</h2>
+            <div class="faq-list">
+                <div class="faq-item">
+                    <button class="faq-question" onclick="this.parentElement.classList.toggle('open')">
+                        Wie funktioniert der KI-Coach?
+                        <span class="faq-icon"></span>
+                    </button>
+                    <div class="faq-answer"><div class="faq-answer-inner">Der KI-Coach nutzt k&uuml;nstliche Intelligenz, um Ihr Profil, Ihre Historie und Ihre Ziele zu analysieren. Sprechen Sie ihn nat&uuml;rlich an: &laquo; Erstelle ein Brust/Schulter-Training &raquo;, &laquo; Wie kann ich mein Bankdr&uuml;cken verbessern? &raquo;. Er erstellt ma&szlig;geschneiderte Programme.</div></div>
+                </div>
+                <div class="faq-item">
+                    <button class="faq-question" onclick="this.parentElement.classList.toggle('open')">
+                        Wie werden die Trainingseinheiten personalisiert?
+                        <span class="faq-icon"></span>
+                    </button>
+                    <div class="faq-answer"><div class="faq-answer-inner">Die KI ber&uuml;cksichtigt Ihr Niveau, Ihre Ziele (Muskelaufbau, Gewichtsverlust, Kraft...), Ihre verf&uuml;gbare Ausr&uuml;stung, Ihre &Uuml;bungspr&auml;ferenzen und Ihre Historie. Jede Einheit wird speziell f&uuml;r Sie erstellt.</div></div>
+                </div>
+                <div class="faq-item">
+                    <button class="faq-question" onclick="this.parentElement.classList.toggle('open')">
+                        Kann der KI-Coach einen kompletten Trainingsplan erstellen?
+                        <span class="faq-icon"></span>
+                    </button>
+                    <div class="faq-answer"><div class="faq-answer-inner">Ja, der KI-Coach erstellt komplette Mehrwochenpl&auml;ne mit Periodisierung. Fragen Sie ihn: &laquo; Erstelle mir ein 4-Wochen-Programm &raquo; und er k&uuml;mmert sich um den Rest.</div></div>
+                </div>
+                <div class="faq-item">
+                    <button class="faq-question" onclick="this.parentElement.classList.toggle('open')">
+                        Kann ich meine pers&ouml;nlichen Rekorde und meinen Fortschritt verfolgen?
+                        <span class="faq-icon"></span>
+                    </button>
+                    <div class="faq-answer"><div class="faq-answer-inner">Absolut. AIVancePro zeichnet automatisch Ihre pers&ouml;nlichen Rekorde auf, erstellt Diagramme f&uuml;r Volumen, Kraft und Muskelverteilung und bietet einen Aktivit&auml;tskalender zur Visualisierung Ihrer Regelm&auml;&szlig;igkeit.</div></div>
+                </div>
+                <div class="faq-item">
+                    <button class="faq-question" onclick="this.parentElement.classList.toggle('open')">
+                        Wie viele &Uuml;bungen sind verf&uuml;gbar?
+                        <span class="faq-icon"></span>
+                    </button>
+                    <div class="faq-answer"><div class="faq-answer-inner">&Uuml;ber 240 &Uuml;bungen f&uuml;r alle Muskelgruppen, mit Videos und detaillierten Anleitungen. Die Datenbank umfasst &Uuml;bungen f&uuml;r Kurzhanteln, Langhanteln, Maschinen, Kabel, Widerstandsb&auml;nder und Bodyweight.</div></div>
+                </div>
+                <div class="faq-item">
+                    <button class="faq-question" onclick="this.parentElement.classList.toggle('open')">
+                        Gibt es einen integrierten Pausentimer?
+                        <span class="faq-icon"></span>
+                    </button>
+                    <div class="faq-answer"><div class="faq-answer-inner">Ja, ein schwebender Timer ist integriert mit automatischen Pausenzeiten, die an jede &Uuml;bung angepasst sind. Er bleibt w&auml;hrend Ihrer gesamten Trainingseinheit sichtbar.</div></div>
+                </div>
+                <div class="faq-item">
+                    <button class="faq-question" onclick="this.parentElement.classList.toggle('open')">
+                        Kann ich Trainingsvorlagen speichern?
+                        <span class="faq-icon"></span>
+                    </button>
+                    <div class="faq-answer"><div class="faq-answer-inner">Ja, speichern Sie jede Trainingseinheit als Vorlage, um sie schnell wiederzuverwenden. Ideal f&uuml;r Ihre regelm&auml;&szlig;igen Routinen.</div></div>
+                </div>
+                <div class="faq-item">
+                    <button class="faq-question" onclick="this.parentElement.classList.toggle('open')">
+                        Hilft der KI-Coach bei der Technikkorrektur?
+                        <span class="faq-icon"></span>
+                    </button>
+                    <div class="faq-answer"><div class="faq-answer-inner">Ja, fragen Sie ihn nach Ratschl&auml;gen zur &Uuml;bungsausf&uuml;hrung und er erkl&auml;rt Ihnen die richtige Technik, h&auml;ufige Fehler und Varianten, die zu Ihrem Niveau passen.</div></div>
+                </div>
+                <div class="faq-item">
+                    <button class="faq-question" onclick="this.parentElement.classList.toggle('open')">
+                        Wie funktioniert die Community?
+                        <span class="faq-icon"></span>
+                    </button>
+                    <div class="faq-answer"><div class="faq-answer-inner">Mit dem Elite-Plan k&ouml;nnen Sie Gruppen erstellen oder beitreten, Challenges mit Freunden starten, Bestenlisten einsehen und &uuml;ber den integrierten Messenger chatten. Eine gro&szlig;artige M&ouml;glichkeit, motiviert zu bleiben.</div></div>
+                </div>
+                <div class="faq-item">
+                    <button class="faq-question" onclick="this.parentElement.classList.toggle('open')">
+                        Bietet die App &Uuml;bungsvideos?
+                        <span class="faq-icon"></span>
+                    </button>
+                    <div class="faq-answer"><div class="faq-answer-inner">Ja, jede &Uuml;bung verf&uuml;gt &uuml;ber Demonstrationsvideos und detaillierte Anleitungen f&uuml;r eine korrekte und sichere Ausf&uuml;hrung.</div></div>
+                </div>
+                <div class="faq-item">
+                    <button class="faq-question" onclick="this.parentElement.classList.toggle('open')">
+                        Kann ich eine KI-generierte Einheit &auml;ndern?
+                        <span class="faq-icon"></span>
+                    </button>
+                    <div class="faq-answer"><div class="faq-answer-inner">Nat&uuml;rlich. Sie k&ouml;nnen &Uuml;bungen hinzuf&uuml;gen, entfernen oder ersetzen und S&auml;tze, Wiederholungen und Gewichte jederzeit w&auml;hrend oder vor dem Training anpassen.</div></div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Kategorie 3: Grundlagen -->
+        <div class="faq-category">
+            <h2 class="faq-category-title">Grundlagen: Krafttraining verstehen</h2>
+            <div class="faq-list">
+                <div class="faq-item">
+                    <button class="faq-question" onclick="this.parentElement.classList.toggle('open')">
+                        Was ist Krafttraining und wie unterscheidet es sich von Cardio?
+                        <span class="faq-icon"></span>
+                    </button>
+                    <div class="faq-answer"><div class="faq-answer-inner">Krafttraining zielt darauf ab, die Muskeln durch Widerstand (Gewichte, B&auml;nder, K&ouml;rpergewicht) zu st&auml;rken. Cardio zielt auf die Herz-Kreislauf-Ausdauer ab. Beide erg&auml;nzen sich und AIVancePro hilft Ihnen, beides nach Ihren Zielen zu kombinieren.</div></div>
+                </div>
+                <div class="faq-item">
+                    <button class="faq-question" onclick="this.parentElement.classList.toggle('open')">
+                        Warum ist Krafttraining wichtig f&uuml;r die Gesundheit?
+                        <span class="faq-icon"></span>
+                    </button>
+                    <div class="faq-answer"><div class="faq-answer-inner">Krafttraining st&auml;rkt die Knochen, verbessert den Stoffwechsel, reduziert das Verletzungsrisiko, verbessert die Haltung und tr&auml;gt zur psychischen Gesundheit bei. Es wird in jedem Alter empfohlen.</div></div>
+                </div>
+                <div class="faq-item">
+                    <button class="faq-question" onclick="this.parentElement.classList.toggle('open')">
+                        Was ist der Unterschied zwischen Hypertrophie, Kraft und Ausdauer?
+                        <span class="faq-icon"></span>
+                    </button>
+                    <div class="faq-answer"><div class="faq-answer-inner">Hypertrophie zielt auf Muskelvolumen ab (8-12 Wdh.), maximale Kraft arbeitet mit schweren Lasten (1-5 Wdh.) und Muskelausdauer nutzt leichte Lasten mit vielen Wiederholungen (15+). AIVancePro passt die Parameter an Ihr Ziel an.</div></div>
+                </div>
+                <div class="faq-item">
+                    <button class="faq-question" onclick="this.parentElement.classList.toggle('open')">
+                        Wie oft pro Woche sollte ich trainieren?
+                        <span class="faq-icon"></span>
+                    </button>
+                    <div class="faq-answer"><div class="faq-answer-inner">In der Regel 3 bis 5 Mal pro Woche f&uuml;r optimale Ergebnisse. Der KI-Coach passt H&auml;ufigkeit und Volumen an Ihre Verf&uuml;gbarkeit und Erholung an.</div></div>
+                </div>
+                <div class="faq-item">
+                    <button class="faq-question" onclick="this.parentElement.classList.toggle('open')">
+                        Was ist progressive &Uuml;berlastung und warum ist sie wichtig?
+                        <span class="faq-icon"></span>
+                    </button>
+                    <div class="faq-answer"><div class="faq-answer-inner">Progressive &Uuml;berlastung bedeutet, die Last, Wiederholungen oder das Volumen schrittweise zu steigern, um weiter Fortschritte zu machen. Es ist das Grundprinzip der Progression im Krafttraining. AIVancePro verfolgt Ihren Fortschritt und hilft Ihnen, dieses Prinzip anzuwenden.</div></div>
+                </div>
+                <div class="faq-item">
+                    <button class="faq-question" onclick="this.parentElement.classList.toggle('open')">
+                        Kann man mit Krafttraining Fett verlieren?
+                        <span class="faq-icon"></span>
+                    </button>
+                    <div class="faq-answer"><div class="faq-answer-inner">Ja, Krafttraining erh&ouml;ht Ihren Grundumsatz und verbrennt Kalorien w&auml;hrend und nach dem Training. In Kombination mit einer angepassten Ern&auml;hrung ist es einer der effektivsten Wege, Fett zu verlieren.</div></div>
+                </div>
+                <div class="faq-item">
+                    <button class="faq-question" onclick="this.parentElement.classList.toggle('open')">
+                        Muss ich schwer heben, um Ergebnisse zu erzielen?
+                        <span class="faq-icon"></span>
+                    </button>
+                    <div class="faq-answer"><div class="faq-answer-inner">Nicht unbedingt. Regelm&auml;&szlig;igkeit, gute Technik und progressive &Uuml;berlastung sind wichtiger als das absolute Gewicht. Auch mit moderaten Gewichten k&ouml;nnen Sie hervorragende Ergebnisse erzielen.</div></div>
+                </div>
+                <div class="faq-item">
+                    <button class="faq-question" onclick="this.parentElement.classList.toggle('open')">
+                        Welche Ausr&uuml;stung brauche ich zum Anfangen?
+                        <span class="faq-icon"></span>
+                    </button>
+                    <div class="faq-answer"><div class="faq-answer-inner">Keine Ausr&uuml;stung ist erforderlich! Sie k&ouml;nnen mit dem K&ouml;rpergewicht beginnen. F&uuml;r schnellere Fortschritte ist ein Paar verstellbare Kurzhanteln eine gro&szlig;artige Investition. AIVancePro passt sich an Ihre Ausr&uuml;stung an.</div></div>
+                </div>
+                <div class="faq-item">
+                    <button class="faq-question" onclick="this.parentElement.classList.toggle('open')">
+                        Welche Muskelgruppen sind am wichtigsten zu trainieren?
+                        <span class="faq-icon"></span>
+                    </button>
+                    <div class="faq-answer"><div class="faq-answer-inner">Ein ausgewogenes Programm sollte alle gro&szlig;en Gruppen abdecken: Brust, R&uuml;cken, Schultern, Arme, Beine und Bauch. Der KI-Coach sorgt f&uuml;r eine ausgewogene Muskelverteilung in Ihren Einheiten.</div></div>
+                </div>
+                <div class="faq-item">
+                    <button class="faq-question" onclick="this.parentElement.classList.toggle('open')">
+                        Warum ist Erholung genauso wichtig wie Training?
+                        <span class="faq-icon"></span>
+                    </button>
+                    <div class="faq-answer"><div class="faq-answer-inner">Muskeln reparieren und st&auml;rken sich in der Ruhephase. Ohne ausreichende Erholung riskieren Sie &Uuml;bertraining und Verletzungen. AIVancePro analysiert Ihre Belastung und warnt Sie, wenn Ihr Volumen zu hoch ist.</div></div>
+                </div>
+                <div class="faq-item">
+                    <button class="faq-question" onclick="this.parentElement.classList.toggle('open')">
+                        Ist Krafttraining f&uuml;r Anf&auml;nger sicher?
+                        <span class="faq-icon"></span>
+                    </button>
+                    <div class="faq-answer"><div class="faq-answer-inner">Ja, solange Sie die richtige Technik befolgen und schrittweise steigern. AIVancePro bietet anf&auml;ngerfreundliche &Uuml;bungen mit detaillierten Anleitungen, um Risiken zu minimieren.</div></div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Kategorie 4: Nach Zielen -->
+        <div class="faq-category">
+            <h2 class="faq-category-title">Grundlagen nach Zielen</h2>
+
+            <h3 class="faq-subcategory-title">Definieren &amp; schlank werden</h3>
+            <div class="faq-list">
+                <div class="faq-item">
+                    <button class="faq-question" onclick="this.parentElement.classList.toggle('open')">
+                        Welche Art von Training ist am besten zum Definieren?
+                        <span class="faq-icon"></span>
+                    </button>
+                    <div class="faq-answer"><div class="faq-answer-inner">Eine Mischung aus Krafttraining (zum Erhalt der Muskelmasse) und Cardio/HIIT (zur Steigerung des Kalorienverbrauchs) ist ideal. Der KI-Coach erstellt ausgewogene Programme f&uuml;r dieses Ziel.</div></div>
+                </div>
+                <div class="faq-item">
+                    <button class="faq-question" onclick="this.parentElement.classList.toggle('open')">
+                        Brauche ich Cardio zum Definieren?
+                        <span class="faq-icon"></span>
+                    </button>
+                    <div class="faq-answer"><div class="faq-answer-inner">Cardio hilft, ein Kaloriendefizit zu schaffen, ist aber nicht zwingend erforderlich. Die Ern&auml;hrung spielt eine wichtigere Rolle. Cardio ist ein zus&auml;tzliches Werkzeug, das der KI-Coach in Ihr Programm integrieren kann.</div></div>
+                </div>
+                <div class="faq-item">
+                    <button class="faq-question" onclick="this.parentElement.classList.toggle('open')">
+                        Welche Rolle spielen Wiederholungen und S&auml;tze beim Definieren?
+                        <span class="faq-icon"></span>
+                    </button>
+                    <div class="faq-answer"><div class="faq-answer-inner">W&auml;hrend einer Definitionsphase hilft das Beibehalten schwerer Lasten mit moderaten Wiederholungen (6-12), die Muskelmasse zu erhalten. Mehr Wiederholungen mit leichten Gewichten k&ouml;nnen einen kalorischen Effekt haben, sollten aber schweres Training nicht ersetzen.</div></div>
+                </div>
+                <div class="faq-item">
+                    <button class="faq-question" onclick="this.parentElement.classList.toggle('open')">
+                        Kann man mit Bodyweight-&Uuml;bungen definieren?
+                        <span class="faq-icon"></span>
+                    </button>
+                    <div class="faq-answer"><div class="faq-answer-inner">Ja, hochintensive Bodyweight-&Uuml;bungen (Burpees, Liegest&uuml;tze, Squat Jumps...) sind sehr effektiv zum Kalorienverbrennen. AIVancePro kann HIIT-Zirkel ohne Equipment erstellen.</div></div>
+                </div>
+            </div>
+
+            <h3 class="faq-subcategory-title">Muskelaufbau &amp; st&auml;rker werden</h3>
+            <div class="faq-list">
+                <div class="faq-item">
+                    <button class="faq-question" onclick="this.parentElement.classList.toggle('open')">
+                        Wie hilft AIVancePro beim Muskelaufbau?
+                        <span class="faq-icon"></span>
+                    </button>
+                    <div class="faq-answer"><div class="faq-answer-inner">Die KI erstellt Hypertrophie-Programme mit dem richtigen Volumen, der richtigen Intensit&auml;t und Frequenz. Sie verfolgt Ihren Fortschritt und passt die Gewichte an, um eine optimale progressive &Uuml;berlastung zu gew&auml;hrleisten.</div></div>
+                </div>
+                <div class="faq-item">
+                    <button class="faq-question" onclick="this.parentElement.classList.toggle('open')">
+                        Welcher Split ist am besten f&uuml;r Muskelaufbau?
+                        <span class="faq-icon"></span>
+                    </button>
+                    <div class="faq-answer"><div class="faq-answer-inner">Das h&auml;ngt von Ihrer Verf&uuml;gbarkeit ab. Push/Pull/Legs, Ober-/Unterk&ouml;rper oder Ganzk&ouml;rper sind alle effektiv. Der KI-Coach empfiehlt den optimalen Split basierend auf Ihren Trainingstagen.</div></div>
+                </div>
+                <div class="faq-item">
+                    <button class="faq-question" onclick="this.parentElement.classList.toggle('open')">
+                        Wie lange dauert es, bis man Ergebnisse sieht?
+                        <span class="faq-icon"></span>
+                    </button>
+                    <div class="faq-answer"><div class="faq-answer-inner">Erste Kraftzuw&auml;chse sind innerhalb von 2-3 Wochen sp&uuml;rbar. Sichtbare k&ouml;rperliche Ver&auml;nderungen treten in der Regel nach 6 bis 8 Wochen regelm&auml;&szlig;igen Trainings auf. AIVancePro hilft Ihnen, diese Fortschritte zu visualisieren.</div></div>
+                </div>
+                <div class="faq-item">
+                    <button class="faq-question" onclick="this.parentElement.classList.toggle('open')">
+                        Brauche ich Nahrungserg&auml;nzungsmittel f&uuml;r Muskelaufbau?
+                        <span class="faq-icon"></span>
+                    </button>
+                    <div class="faq-answer"><div class="faq-answer-inner">Nein, Nahrungserg&auml;nzungsmittel sind nicht notwendig. Eine ausgewogene, proteinreiche Ern&auml;hrung reicht aus. Kreatin und Whey k&ouml;nnen praktisch sein, sind aber nicht unerl&auml;sslich.</div></div>
+                </div>
+            </div>
+
+            <h3 class="faq-subcategory-title">Fit &amp; gesund bleiben</h3>
+            <div class="faq-list">
+                <div class="faq-item">
+                    <button class="faq-question" onclick="this.parentElement.classList.toggle('open')">
+                        Welche Routine ist am besten f&uuml;r die allgemeine Gesundheit?
+                        <span class="faq-icon"></span>
+                    </button>
+                    <div class="faq-answer"><div class="faq-answer-inner">2 bis 3 Krafttrainingseinheiten pro Woche kombiniert mit etwas Cardio reichen aus, um eine gute Gesundheit zu erhalten. Der KI-Coach erstellt ausgewogene Programme, die auf dieses Ziel abgestimmt sind.</div></div>
+                </div>
+                <div class="faq-item">
+                    <button class="faq-question" onclick="this.parentElement.classList.toggle('open')">
+                        Ich bin &uuml;ber 40, ist Krafttraining noch effektiv?
+                        <span class="faq-icon"></span>
+                    </button>
+                    <div class="faq-answer"><div class="faq-answer-inner">Absolut! Krafttraining wird sogar ab 40 empfohlen, um dem altersbedingten Muskelverlust entgegenzuwirken. Der KI-Coach passt Intensit&auml;t und Volumen an Ihr Profil an.</div></div>
+                </div>
+                <div class="faq-item">
+                    <button class="faq-question" onclick="this.parentElement.classList.toggle('open')">
+                        Muss ich jeden Tag trainieren?
+                        <span class="faq-icon"></span>
+                    </button>
+                    <div class="faq-answer"><div class="faq-answer-inner">Nein, Ruhe ist essentiell f&uuml;r den Fortschritt. 3 bis 5 Einheiten pro Woche mit Ruhetagen reichen aus. AIVancePro integriert die Erholung in die Planung.</div></div>
+                </div>
+                <div class="faq-item">
+                    <button class="faq-question" onclick="this.parentElement.classList.toggle('open')">
+                        Kann AIVancePro helfen, die funktionelle Kraft zu verbessern?
+                        <span class="faq-icon"></span>
+                    </button>
+                    <div class="faq-answer"><div class="faq-answer-inner">Ja, der KI-Coach kann Programme erstellen, die auf funktionelle Kraft ausgerichtet sind, mit Verbund&uuml;bungen und Bewegungen, die allt&auml;gliche Aktivit&auml;ten verbessern.</div></div>
+                </div>
+            </div>
+
+            <h3 class="faq-subcategory-title">Abnehmen</h3>
+            <div class="faq-list">
+                <div class="faq-item">
+                    <button class="faq-question" onclick="this.parentElement.classList.toggle('open')">
+                        Ist Krafttraining effektiv zum Abnehmen?
+                        <span class="faq-icon"></span>
+                    </button>
+                    <div class="faq-answer"><div class="faq-answer-inner">Ja, Krafttraining erh&ouml;ht den Grundumsatz, was bedeutet, dass Sie auch im Ruhezustand mehr Kalorien verbrennen. In Kombination mit einem Kaloriendefizit ist es sehr effektiv.</div></div>
+                </div>
+                <div class="faq-item">
+                    <button class="faq-question" onclick="this.parentElement.classList.toggle('open')">
+                        Wie viele Kalorien verbrennt eine Krafttrainingseinheit?
+                        <span class="faq-icon"></span>
+                    </button>
+                    <div class="faq-answer"><div class="faq-answer-inner">Eine 45- bis 60-min&uuml;tige Krafttrainingseinheit verbrennt durchschnittlich 200 bis 400 Kalorien, je nach Intensit&auml;t. Der &laquo; Nachbrenneffekt &raquo; bedeutet, dass Sie noch Stunden nach dem Training weiter Kalorien verbrennen.</div></div>
+                </div>
+                <div class="faq-item">
+                    <button class="faq-question" onclick="this.parentElement.classList.toggle('open')">
+                        Brauche ich ein Kaloriendefizit zum Abnehmen?
+                        <span class="faq-icon"></span>
+                    </button>
+                    <div class="faq-answer"><div class="faq-answer-inner">Ja, ein Kaloriendefizit ist notwendig zum Abnehmen. Krafttraining hilft, die Muskelmasse w&auml;hrend des Gewichtsverlusts zu erhalten und den &laquo; Skinny Fat &raquo;-Effekt zu vermeiden.</div></div>
+                </div>
+                <div class="faq-item">
+                    <button class="faq-question" onclick="this.parentElement.classList.toggle('open')">
+                        Krafttraining oder Cardio: Was ist besser zum Abnehmen?
+                        <span class="faq-icon"></span>
+                    </button>
+                    <div class="faq-answer"><div class="faq-answer-inner">Beides erg&auml;nzt sich. Krafttraining erh&auml;lt die Muskeln und steigert den Stoffwechsel, Cardio verbrennt zus&auml;tzliche Kalorien. AIVancePro kann beides in Ihren Programmen kombinieren.</div></div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Kategorie 5: Abonnement -->
+        <div class="faq-category">
+            <h2 class="faq-category-title">Abonnement &amp; Konto</h2>
+            <div class="faq-list">
+                <div class="faq-item">
+                    <button class="faq-question" onclick="this.parentElement.classList.toggle('open')">
+                        Was kostet AIVancePro?
+                        <span class="faq-icon"></span>
+                    </button>
+                    <div class="faq-answer"><div class="faq-answer-inner">AIVancePro ist mit Grundfunktionen kostenlos. Der Pro-Plan f&uuml;r 4,99&euro;/Monat schaltet unbegrenztes KI-Coaching und erweiterte Analysen frei. Der Elite-Plan f&uuml;r 7,99&euro;/Monat f&uuml;gt Community-Funktionen, Challenges und Messaging hinzu. <a href="/de/preise/">Vollst&auml;ndigen Vergleich ansehen</a>.</div></div>
+                </div>
+                <div class="faq-item">
+                    <button class="faq-question" onclick="this.parentElement.classList.toggle('open')">
+                        Was ist der Unterschied zwischen Pro und Elite?
+                        <span class="faq-icon"></span>
+                    </button>
+                    <div class="faq-answer"><div class="faq-answer-inner">Der Pro-Plan umfasst unbegrenztes KI-Coaching, erweiterte Analysen, Periodisierung und Vorlagen. Der Elite-Plan f&uuml;gt Community-Funktionen hinzu: Gruppen, Challenges, Messaging, Bestenlisten und Abzeichen.</div></div>
+                </div>
+                <div class="faq-item">
+                    <button class="faq-question" onclick="this.parentElement.classList.toggle('open')">
+                        Kann ich mein Abonnement jederzeit k&uuml;ndigen?
+                        <span class="faq-icon"></span>
+                    </button>
+                    <div class="faq-answer"><div class="faq-answer-inner">Ja, k&uuml;ndigen Sie jederzeit &uuml;ber die App-Einstellungen oder Ihr App Store/Google Play-Konto. Keine Vertragsbindung, keine versteckten Geb&uuml;hren.</div></div>
+                </div>
+                <div class="faq-item">
+                    <button class="faq-question" onclick="this.parentElement.classList.toggle('open')">
+                        Wie wechsle ich den Plan?
+                        <span class="faq-icon"></span>
+                    </button>
+                    <div class="faq-answer"><div class="faq-answer-inner">Sie k&ouml;nnen den Plan direkt in den App-Einstellungen wechseln. Die &Auml;nderung wird sofort wirksam.</div></div>
+                </div>
+                <div class="faq-item">
+                    <button class="faq-question" onclick="this.parentElement.classList.toggle('open')">
+                        Sind meine Daten sicher?
+                        <span class="faq-icon"></span>
+                    </button>
+                    <div class="faq-answer"><div class="faq-answer-inner">Ihre Daten werden sicher gehostet und verschl&uuml;sselt. Wir verkaufen niemals Ihre Daten. Lesen Sie unsere <a href="/de/datenschutz/">Datenschutzrichtlinie</a>.</div></div>
+                </div>
+                <div class="faq-item">
+                    <button class="faq-question" onclick="this.parentElement.classList.toggle('open')">
+                        Kann ich mein Konto l&ouml;schen?
+                        <span class="faq-icon"></span>
+                    </button>
+                    <div class="faq-answer"><div class="faq-answer-inner">Ja, l&ouml;schen Sie Ihr Konto jederzeit &uuml;ber die App-Einstellungen. Alle Ihre pers&ouml;nlichen Daten werden dauerhaft gel&ouml;scht.</div></div>
+                </div>
+            </div>
+        </div>
+
+    </section>
+
+    <!-- CTA -->
+    <section class="faq-cta">
+        <h2>Haben Sie weitere Fragen?</h2>
+        <p>Unser Team ist f&uuml;r Sie da. Kontaktieren Sie uns oder laden Sie die App herunter, um AIVancePro selbst zu entdecken.</p>
+        <a href="https://apps.apple.com/app/aivancepro/id6756116760" class="btn-primary" target="_blank" rel="noopener">Kostenlos herunterladen</a>
+        <a href="/de/support/" class="btn-secondary">Kontaktieren Sie uns</a>
+    </section>
+
+</BaseLayout>
