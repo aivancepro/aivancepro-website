@@ -519,6 +519,80 @@ footer {
     max-width: 280px;
 }
 
+.newsletter-form {
+    margin-top: 1.25rem;
+}
+
+.newsletter-form h4 {
+    color: var(--text);
+    font-size: 0.85rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    margin-bottom: 0.75rem;
+}
+
+.newsletter-input-wrap {
+    display: flex;
+    gap: 0;
+    border-radius: 10px;
+    overflow: hidden;
+    border: 1px solid var(--border);
+    background: var(--bg-card);
+    transition: border-color 0.2s;
+}
+
+.newsletter-input-wrap:focus-within {
+    border-color: var(--blue);
+}
+
+.newsletter-input-wrap input {
+    flex: 1;
+    padding: 0.6rem 0.85rem;
+    background: transparent;
+    border: none;
+    outline: none;
+    color: var(--text);
+    font-size: 0.85rem;
+    font-family: inherit;
+    min-width: 0;
+}
+
+.newsletter-input-wrap input::placeholder {
+    color: var(--text-muted);
+}
+
+.newsletter-input-wrap button {
+    padding: 0.6rem 1rem;
+    background: linear-gradient(135deg, var(--blue), var(--purple));
+    color: white;
+    border: none;
+    font-size: 0.8rem;
+    font-weight: 600;
+    font-family: inherit;
+    cursor: pointer;
+    white-space: nowrap;
+    transition: opacity 0.2s;
+}
+
+.newsletter-input-wrap button:hover {
+    opacity: 0.9;
+}
+
+.newsletter-msg {
+    font-size: 0.8rem;
+    margin-top: 0.5rem;
+    min-height: 1.2em;
+}
+
+.newsletter-msg.success {
+    color: var(--green);
+}
+
+.newsletter-msg.error {
+    color: #ef4444;
+}
+
 .footer-col h4 {
     color: var(--text);
     font-size: 0.85rem;

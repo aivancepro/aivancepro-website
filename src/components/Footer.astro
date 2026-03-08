@@ -14,6 +14,16 @@ const i = t[lang];
                     <span class="logo-text">AIVancePro</span>
                 </a>
                 <p>{i.footer.tagline}</p>
+                <div class="newsletter-form">
+                    <h4>{i.newsletter.title}</h4>
+                    <form id="newsletterForm" data-lang={lang} data-success={i.newsletter.success} data-error={i.newsletter.error} data-duplicate={i.newsletter.duplicate}>
+                        <div class="newsletter-input-wrap">
+                            <input type="email" id="newsletterEmail" placeholder={i.newsletter.placeholder} required>
+                            <button type="submit">{i.newsletter.button}</button>
+                        </div>
+                        <p class="newsletter-msg" id="newsletterMsg"></p>
+                    </form>
+                </div>
             </div>
 
             <div class="footer-col">

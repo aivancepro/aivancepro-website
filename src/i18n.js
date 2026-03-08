@@ -38,6 +38,14 @@ export const t = {
       terms: 'CGU',
       copyright: '\u00a9 2026 AS Corporation. Tous droits r\u00e9serv\u00e9s.',
     },
+    newsletter: {
+      title: 'Newsletter',
+      placeholder: 'Votre adresse email',
+      button: "S'abonner",
+      success: 'Merci ! Vous êtes inscrit.',
+      error: 'Une erreur est survenue. Réessayez.',
+      duplicate: 'Vous êtes déjà inscrit.',
+    },
     cookie: {
       text: 'Ce site utilise des cookies pour améliorer votre expérience.',
       accept: 'Accepter',
@@ -103,6 +111,14 @@ export const t = {
       terms: 'Terms',
       copyright: '\u00a9 2026 AS Corporation. All rights reserved.',
     },
+    newsletter: {
+      title: 'Newsletter',
+      placeholder: 'Your email address',
+      button: 'Subscribe',
+      success: 'Thank you! You are subscribed.',
+      error: 'Something went wrong. Try again.',
+      duplicate: 'You are already subscribed.',
+    },
     cookie: {
       text: 'This site uses cookies to improve your experience.',
       accept: 'Accept',
@@ -167,6 +183,14 @@ export const t = {
       privacy: 'Datenschutz',
       terms: 'AGB',
       copyright: '\u00a9 2026 AS Corporation. Alle Rechte vorbehalten.',
+    },
+    newsletter: {
+      title: 'Newsletter',
+      placeholder: 'Ihre E-Mail-Adresse',
+      button: 'Abonnieren',
+      success: 'Danke! Sie sind angemeldet.',
+      error: 'Ein Fehler ist aufgetreten. Versuchen Sie es erneut.',
+      duplicate: 'Sie sind bereits angemeldet.',
     },
     cookie: {
       text: 'Diese Website verwendet Cookies, um Ihre Erfahrung zu verbessern.',

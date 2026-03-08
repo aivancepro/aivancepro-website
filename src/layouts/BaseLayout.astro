@@ -143,6 +143,49 @@ const localeMap = { fr: 'fr_FR', en: 'en_GB', de: 'de_DE' };
         localStorage.setItem('cookie_consent', 'rejected');
         banner.classList.remove('show');
       });
+      // Newsletter form
+      var nlForm = document.getElementById('newsletterForm');
+      if (nlForm) {
+        nlForm.addEventListener('submit', function(e) {
+          e.preventDefault();
+          var email = document.getElementById('newsletterEmail').value.trim();
+          var msg = document.getElementById('newsletterMsg');
+          var btn = nlForm.querySelector('button[type="submit"]');
+          var lang = nlForm.dataset.lang || 'fr';
+          if (!email) return;
+          btn.disabled = true;
+          msg.textContent = '';
+          msg.className = 'newsletter-msg';
+
+          fetch('https://vzmtvhcvyqzkmestdbko.supabase.co/rest/v1/newsletter_subscribers', {
+            method: 'POST',
+            headers: {
+              'Content-Type': 'application/json',
+              'apikey': 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InZ6bXR2aGN2eXF6a21lc3RkYmtvIiwicm9sZSI6ImFub24iLCJpYXQiOjE3MzU5OTgyOTQsImV4cCI6MjA1MTU3NDI5NH0.kGFORJqHey9OKMfaKJ95qr6PxPmJdQIpN8BkS0j8MNQ',
+              'Authorization': 'Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InZ6bXR2aGN2eXF6a21lc3RkYmtvIiwicm9sZSI6ImFub24iLCJpYXQiOjE3MzU5OTgyOTQsImV4cCI6MjA1MTU3NDI5NH0.kGFORJqHey9OKMfaKJ95qr6PxPmJdQIpN8BkS0j8MNQ',
+              'Prefer': 'return=minimal'
+            },
+            body: JSON.stringify({ email: email, lang: lang })
+          }).then(function(res) {
+            if (res.ok) {
+              msg.textContent = nlForm.dataset.success;
+              msg.className = 'newsletter-msg success';
+              document.getElementById('newsletterEmail').value = '';
+            } else if (res.status === 409) {
+              msg.textContent = nlForm.dataset.duplicate;
+              msg.className = 'newsletter-msg error';
+            } else {
+              msg.textContent = nlForm.dataset.error;
+              msg.className = 'newsletter-msg error';
+            }
+            btn.disabled = false;
+          }).catch(function() {
+            msg.textContent = nlForm.dataset.error;
+            msg.className = 'newsletter-msg error';
+            btn.disabled = false;
+          });
+        });
+      }
     })();
     </script>
 </body>
