@@ -85,10 +85,7 @@ nav {
 }
 
 .logo-text {
-    background: linear-gradient(135deg, var(--blue), var(--purple));
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    background-clip: text;
+    color: #fff;
 }
 
 .nav-center {
@@ -465,10 +462,7 @@ nav {
 }
 
 .gradient {
-    background: linear-gradient(135deg, var(--blue), var(--purple));
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    background-clip: text;
+    color: #fff;
 }
 
 /* ===== FOOTER ===== */
