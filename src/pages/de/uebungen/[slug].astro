@@ -11,6 +11,30 @@ const difficultyColors: Record<string, { bg: string; color: string }> = {
   "Advanced": { bg: "rgba(239, 68, 68, 0.1)", color: "#EF4444" },
 };
 
+// --- Helper: difficulty labels DE ---
+const difficultyLabels: Record<string, string> = {
+  "Beginner": "Anfänger",
+  "Intermediate": "Fortgeschritten",
+  "Advanced": "Experte",
+};
+
+// --- Helper: equipment labels DE ---
+const equipmentLabels: Record<string, string> = {
+  "Barbell": "Langhantel",
+  "Dumbbells": "Kurzhanteln",
+  "Machine": "Maschine",
+  "Cable": "Kabelzug",
+  "Bodyweight": "Körpergewicht",
+  "Kettlebell": "Kettlebell",
+  "EZ Bar": "SZ-Stange",
+  "Resistance Band": "Widerstandsband",
+  "Pull-up Bar": "Klimmzugstange",
+  "Bench": "Bank",
+  "Smith Machine": "Smith-Maschine",
+  "Dip Station": "Dipstation",
+  "Foam Roller": "Faszienrolle",
+};
+
 // --- Helper: category labels ---
 const categoryLabels: Record<string, string> = {
   pectoraux: "Brust",
@@ -27,16 +51,16 @@ const categoryLabels: Record<string, string> = {
 
 // --- Helper: secondary muscles by category ---
 const secondaryMuscles: Record<string, { primary: string[]; secondary: string[] }> = {
-  pectoraux: { primary: ["Pectoralis major", "Pectoralis minor"], secondary: ["Anterior deltoids", "Triceps", "Serratus anterior"] },
-  dos: { primary: ["Latissimus dorsi", "Trapezius", "Rhomboids"], secondary: ["Biceps", "Erector spinae", "Rear deltoids"] },
-  epaules: { primary: ["Anterior deltoid", "Lateral deltoid", "Posterior deltoid"], secondary: ["Trapezius", "Triceps", "Serratus anterior"] },
-  biceps: { primary: ["Biceps brachii", "Brachialis"], secondary: ["Brachioradialis", "Forearms", "Anterior deltoid"] },
-  triceps: { primary: ["Triceps brachii (3 heads)"], secondary: ["Anterior deltoids", "Chest", "Anconeus"] },
-  jambes: { primary: ["Quadriceps", "Hamstrings", "Glutes"], secondary: ["Adductors", "Calves", "Core"] },
-  fessiers: { primary: ["Gluteus maximus", "Gluteus medius", "Gluteus minimus"], secondary: ["Hamstrings", "Quadriceps", "Core"] },
-  abdos: { primary: ["Rectus abdominis", "Obliques"], secondary: ["Transverse abdominis", "Hip flexors", "Erector spinae"] },
-  "avant-bras": { primary: ["Wrist flexors", "Wrist extensors"], secondary: ["Brachioradialis", "Pronator", "Supinator"] },
-  fonctionnel: { primary: ["Multiple muscle groups"], secondary: ["Core", "Stabilizers", "Postural muscles"] },
+  pectoraux: { primary: ["Großer Brustmuskel", "Kleiner Brustmuskel"], secondary: ["Vorderer Deltamuskel", "Trizeps", "Vorderer Sägemuskel"] },
+  dos: { primary: ["Latissimus dorsi", "Trapezmuskel", "Rautenmuskel"], secondary: ["Bizeps", "Rückenstrecker", "Hinterer Deltamuskel"] },
+  epaules: { primary: ["Vorderer Deltamuskel", "Seitlicher Deltamuskel", "Hinterer Deltamuskel"], secondary: ["Trapezmuskel", "Trizeps", "Vorderer Sägemuskel"] },
+  biceps: { primary: ["Bizeps", "Brachialis"], secondary: ["Brachioradialis", "Unterarme", "Vorderer Deltamuskel"] },
+  triceps: { primary: ["Trizeps (3 Köpfe)"], secondary: ["Vorderer Deltamuskel", "Brustmuskel", "Anconeus"] },
+  jambes: { primary: ["Quadrizeps", "Beinbeuger", "Gesäßmuskel"], secondary: ["Adduktoren", "Waden", "Rumpfmuskulatur"] },
+  fessiers: { primary: ["Großer Gesäßmuskel", "Mittlerer Gesäßmuskel", "Kleiner Gesäßmuskel"], secondary: ["Beinbeuger", "Quadrizeps", "Rumpfmuskulatur"] },
+  abdos: { primary: ["Gerader Bauchmuskel", "Schräge Bauchmuskeln"], secondary: ["Querer Bauchmuskel", "Hüftbeuger", "Rückenstrecker"] },
+  "avant-bras": { primary: ["Handgelenkbeuger", "Handgelenkstrecker"], secondary: ["Brachioradialis", "Pronator", "Supinator"] },
+  fonctionnel: { primary: ["Mehrere Muskelgruppen"], secondary: ["Rumpfmuskulatur", "Stabilisatoren", "Haltungsmuskeln"] },
 };
 
 // --- Helper: generate steps ---
@@ -48,298 +72,298 @@ function getSteps(ex: typeof exercises[0]): string[] {
   if (n.includes('press') && !n.includes('pallof') && !n.includes('pull-apart') || n.includes('bench press')) {
     if (n.includes('incline')) {
       return [
-        "Set the bench to a 30-45 degree angle and sit firmly with feet flat on the floor.",
-        `Grasp ${eq.includes('dumbbell') ? 'the dumbbells' : eq.includes('barbell') ? 'the bar' : 'the handles'} with an appropriate grip, arms extended above your chest.`,
-        "Lower slowly while controlling the movement, elbows at about 45 degrees from your torso.",
-        "Push upward while contracting the upper chest until arms are fully extended.",
-        "Repeat while keeping shoulder blades squeezed and back slightly arched throughout."
+        "Stellen Sie die Bank auf einen 30-45 Grad Winkel ein und setzen Sie sich fest mit den Füßen flach auf dem Boden.",
+        `Greifen Sie ${eq.includes('dumbbell') ? 'die Kurzhanteln' : eq.includes('barbell') ? 'die Stange' : 'die Griffe'} mit einem angemessenen Griff, Arme über der Brust ausgestreckt.`,
+        "Senken Sie langsam und kontrolliert ab, Ellbogen etwa 45 Grad vom Oberkörper entfernt.",
+        "Drücken Sie nach oben und spannen Sie die obere Brustmuskulatur an, bis die Arme vollständig gestreckt sind.",
+        "Wiederholen Sie die Bewegung, wobei die Schulterblätter zusammengezogen und der Rücken leicht gewölbt bleiben."
       ];
     }
     if (n.includes('decline')) {
       return [
-        "Position yourself on a decline bench with feet secured under the supports.",
-        `Grasp ${eq.includes('dumbbell') ? 'the dumbbells' : 'the bar'} with an appropriate grip, arms extended.`,
-        "Lower the weight toward the lower chest while controlling the descent.",
-        "Push upward while strongly contracting the lower chest muscles.",
-        "Keep shoulder blades squeezed and avoid bouncing at the bottom of the movement."
+        "Positionieren Sie sich auf einer Schrägbank (Decline) mit den Füßen unter den Polstern gesichert.",
+        `Greifen Sie ${eq.includes('dumbbell') ? 'die Kurzhanteln' : 'die Stange'} mit einem angemessenen Griff, Arme ausgestreckt.`,
+        "Senken Sie das Gewicht kontrolliert zur unteren Brust ab.",
+        "Drücken Sie nach oben und spannen Sie die untere Brustmuskulatur kräftig an.",
+        "Halten Sie die Schulterblätter zusammengezogen und vermeiden Sie ein Abprallen am tiefsten Punkt."
       ];
     }
     if (n.includes('overhead') || n.includes('shoulder') || n.includes('arnold') || n.includes('military')) {
       return [
-        `Sit or stand, ${eq.includes('dumbbell') ? 'dumbbells at shoulder height' : eq.includes('barbell') ? 'bar at collarbone level' : 'hands on the handles'}.`,
-        "Brace your core and keep your back straight throughout the movement.",
-        "Push the weight overhead while exhaling, to near-full arm extension.",
-        "Lower slowly back to shoulder height while controlling the eccentric phase.",
-        "Avoid excessively arching your back and maintain steady breathing."
+        `Sitzen oder stehen Sie, ${eq.includes('dumbbell') ? 'Kurzhanteln auf Schulterhöhe' : eq.includes('barbell') ? 'Stange auf Schlüsselbeinhöhe' : 'Hände an den Griffen'}.`,
+        "Spannen Sie Ihre Rumpfmuskulatur an und halten Sie den Rücken während der gesamten Bewegung gerade.",
+        "Drücken Sie das Gewicht beim Ausatmen über den Kopf bis zur nahezu vollständigen Armstreckung.",
+        "Senken Sie langsam zurück auf Schulterhöhe und kontrollieren Sie die exzentrische Phase.",
+        "Vermeiden Sie ein übermäßiges Hohlkreuz und achten Sie auf eine gleichmäßige Atmung."
       ];
     }
     return [
-      "Lie on a flat bench, feet flat on the floor, shoulder blades squeezed against the bench.",
-      `Grasp ${eq.includes('dumbbell') ? 'the dumbbells' : eq.includes('barbell') ? 'the bar' : 'the handles'} with a shoulder-width or slightly wider grip.`,
-      "Unlock the weight and bring it above your chest, arms extended.",
-      "Lower slowly toward the mid-chest while keeping elbows at 45 degrees.",
-      "Push explosively upward while contracting the chest until lockout."
+      "Legen Sie sich auf eine Flachbank, Füße flach auf dem Boden, Schulterblätter gegen die Bank gedrückt.",
+      `Greifen Sie ${eq.includes('dumbbell') ? 'die Kurzhanteln' : eq.includes('barbell') ? 'die Stange' : 'die Griffe'} schulterbreit oder etwas weiter.`,
+      "Heben Sie das Gewicht ab und bringen Sie es über Ihre Brust, Arme gestreckt.",
+      "Senken Sie langsam zur mittleren Brust ab, Ellbogen im 45-Grad-Winkel.",
+      "Drücken Sie explosiv nach oben und spannen Sie die Brustmuskulatur bis zum Lockout an."
     ];
   }
 
   if (n.includes('fly') || n.includes('crossover') || n.includes('pec deck')) {
     return [
-      `Position yourself on ${eq.includes('machine') ? 'the machine' : 'a flat or incline bench'}, back firmly pressed.`,
-      `Grasp ${eq.includes('dumbbell') ? 'the dumbbells with arms extended above your chest' : eq.includes('cable') ? 'the handles on each side' : 'the machine handles'}.`,
-      "Open your arms in an arc, elbows slightly bent, stretching the chest.",
-      "Bring your arms back together while strongly contracting the chest.",
-      "Control each rep without jerking to protect the shoulder joint."
+      `Positionieren Sie sich auf ${eq.includes('machine') ? 'der Maschine' : 'einer Flach- oder Schrägbank'}, Rücken fest angelehnt.`,
+      `Greifen Sie ${eq.includes('dumbbell') ? 'die Kurzhanteln mit über der Brust ausgestreckten Armen' : eq.includes('cable') ? 'die Griffe auf jeder Seite' : 'die Maschinengriffe'}.`,
+      "Öffnen Sie die Arme in einem Bogen, Ellbogen leicht gebeugt, und dehnen Sie die Brust.",
+      "Führen Sie die Arme wieder zusammen und spannen Sie die Brustmuskulatur kräftig an.",
+      "Kontrollieren Sie jede Wiederholung ohne Schwung, um das Schultergelenk zu schützen."
     ];
   }
 
   if (n.includes('push-up')) {
     return [
-      `Place yourself in plank position, hands ${n.includes('close') ? 'close together under your chest' : n.includes('wide') ? 'wider than shoulder-width' : 'shoulder-width apart'}${n.includes('decline') ? ', feet elevated on a surface' : n.includes('incline') ? ', hands elevated on a surface' : ''}.`,
-      "Keep your body aligned from head to feet, core engaged.",
-      "Bend your arms to lower your chest toward the floor with control.",
-      "Push back up to full extension while exhaling.",
-      "Maintain core engagement throughout and avoid sagging your hips."
+      `Gehen Sie in die Plank-Position, Hände ${n.includes('close') ? 'eng zusammen unter der Brust' : n.includes('wide') ? 'weiter als schulterbreit' : 'schulterbreit aufgestellt'}${n.includes('decline') ? ', Füße auf einer erhöhten Fläche' : n.includes('incline') ? ', Hände auf einer erhöhten Fläche' : ''}.`,
+      "Halten Sie Ihren Körper von Kopf bis Fuß in einer Linie, Rumpfmuskulatur angespannt.",
+      "Beugen Sie die Arme und senken Sie die Brust kontrolliert zum Boden.",
+      "Drücken Sie sich beim Ausatmen zurück in die volle Streckung.",
+      "Halten Sie die Rumpfspannung durchgehend und vermeiden Sie ein Durchhängen der Hüfte."
     ];
   }
 
   if (n.includes('pull-up') || n.includes('chin-up')) {
-    const grip = n.includes('underhand') || n.includes('chin') ? 'palms facing you (underhand)' : n.includes('neutral') ? 'palms facing each other (neutral)' : 'palms facing away (overhand)';
-    const width = n.includes('close') ? 'hands close together' : n.includes('wide') ? 'hands wider than shoulder-width' : 'hands shoulder-width apart';
+    const grip = n.includes('underhand') || n.includes('chin') ? 'Handflächen zu Ihnen (Untergriff)' : n.includes('neutral') ? 'Handflächen zueinander (Neutralgriff)' : 'Handflächen nach vorne (Obergriff)';
+    const width = n.includes('close') ? 'Hände eng zusammen' : n.includes('wide') ? 'Hände weiter als schulterbreit' : 'Hände schulterbreit';
     return [
-      `Grasp the bar with a ${grip} grip, ${width}.`,
-      "Start from a dead hang, shoulders engaged (shoulder blades down and squeezed).",
-      "Pull your body upward, bringing your chin above the bar.",
-      "Contract your lats at the top then lower slowly.",
-      "Avoid swinging and control the descent to maximize the work."
+      `Greifen Sie die Stange mit ${grip}, ${width}.`,
+      "Starten Sie aus dem Aushang, Schultern aktiviert (Schulterblätter nach unten und zusammengezogen).",
+      "Ziehen Sie Ihren Körper nach oben, bis das Kinn über der Stange ist.",
+      "Spannen Sie den Latissimus oben an und senken Sie sich langsam ab.",
+      "Vermeiden Sie Schwung und kontrollieren Sie das Ablassen, um die Muskelarbeit zu maximieren."
     ];
   }
 
   if (n.includes('row') && !n.includes('upright')) {
     return [
-      `Position yourself ${eq.includes('machine') ? 'on the machine, chest against the support' : eq.includes('cable') ? 'seated facing the low pulley, feet on the foot pads' : 'bent at 45 degrees, back flat, knees slightly bent'}.`,
-      `Grasp ${eq.includes('dumbbell') ? 'the dumbbell with one hand, other hand on the bench' : eq.includes('cable') ? 'the handle or bar' : 'the bar with the appropriate grip'}.`,
-      "Pull the weight toward your navel while squeezing your shoulder blades together.",
-      "Hold the contraction for a second then release slowly with control.",
-      "Keep your back neutral and avoid using body momentum to cheat."
+      `Positionieren Sie sich ${eq.includes('machine') ? 'an der Maschine, Brust gegen das Polster' : eq.includes('cable') ? 'sitzend vor der unteren Rolle, Füße auf den Fußplatten' : 'mit 45 Grad vorgebeugt, Rücken gerade, Knie leicht gebeugt'}.`,
+      `Greifen Sie ${eq.includes('dumbbell') ? 'die Kurzhantel mit einer Hand, die andere Hand auf der Bank' : eq.includes('cable') ? 'den Griff oder die Stange' : 'die Stange mit dem entsprechenden Griff'}.`,
+      "Ziehen Sie das Gewicht zum Bauchnabel und drücken Sie die Schulterblätter zusammen.",
+      "Halten Sie die Kontraktion eine Sekunde und lassen Sie dann langsam und kontrolliert nach.",
+      "Halten Sie den Rücken neutral und vermeiden Sie Schwungholen mit dem Körper."
     ];
   }
 
   if (n.includes('pulldown') || n.includes('lat pull')) {
     return [
-      "Sit at the machine with thighs secured under the pads.",
-      "Grasp the bar or handle with the indicated grip, arms extended overhead.",
-      "Pull the bar to the top of your chest while squeezing your shoulder blades.",
-      "Hold the contraction at the bottom then return slowly with control.",
-      "Avoid leaning excessively backward to cheat."
+      "Setzen Sie sich an die Maschine, Oberschenkel unter den Polstern gesichert.",
+      "Greifen Sie die Stange oder den Griff mit dem angegebenen Griff, Arme über dem Kopf gestreckt.",
+      "Ziehen Sie die Stange zur oberen Brust und drücken Sie die Schulterblätter zusammen.",
+      "Halten Sie die Kontraktion am tiefsten Punkt und kehren Sie langsam und kontrolliert zurück.",
+      "Vermeiden Sie übermäßiges Zurücklehnen zum Schwungholen."
     ];
   }
 
   if (n.includes('deadlift') || n.includes('stiff-leg')) {
     return [
-      `Stand in front of ${eq.includes('barbell') ? 'the barbell' : 'the dumbbells'}, feet ${n.includes('sumo') ? 'wide apart, toes pointed outward' : 'shoulder-width apart'}.`,
-      "Hinge at the hips and bend knees to grasp the weight, back flat and chest up.",
-      "Brace your core and push the floor away with your feet to initiate the lift.",
-      "Rise by extending hips and knees simultaneously, keeping the bar close to your body.",
-      "At the top, squeeze your glutes then lower by pushing hips back."
+      `Stellen Sie sich vor ${eq.includes('barbell') ? 'die Langhantel' : 'die Kurzhanteln'}, Füße ${n.includes('sumo') ? 'weit auseinander, Zehen nach außen gedreht' : 'schulterbreit auseinander'}.`,
+      "Beugen Sie sich in der Hüfte und knicken Sie die Knie, um das Gewicht zu greifen, Rücken gerade und Brust heraus.",
+      "Spannen Sie die Rumpfmuskulatur an und drücken Sie den Boden mit den Füßen weg, um die Bewegung einzuleiten.",
+      "Richten Sie sich auf, indem Sie Hüfte und Knie gleichzeitig strecken, die Stange nah am Körper.",
+      "Drücken Sie oben den Gesäßmuskel zusammen und senken Sie ab, indem Sie die Hüfte nach hinten schieben."
     ];
   }
 
   if (n.includes('squat') && !n.includes('pistol') && !n.includes('sissy')) {
     return [
-      `Position yourself ${eq.includes('barbell') ? 'with the bar on your traps' : eq.includes('dumbbell') ? 'dumbbells at your sides or against your chest' : eq.includes('machine') ? 'in the machine, shoulders under the pads' : 'feet shoulder-width apart'}${n.includes('sumo') ? ', feet wide apart, toes pointed outward' : n.includes('bulgarian') ? ', rear foot elevated on a bench' : ''}.`,
-      "Keep your torso upright, gaze forward and core braced.",
-      "Descend by pushing your hips back as if sitting down, knees tracking over toes.",
-      "Go down at least until thighs are parallel to the floor.",
-      "Push through your heels to rise while contracting quads and glutes."
+      `Positionieren Sie sich ${eq.includes('barbell') ? 'mit der Stange auf dem Trapezmuskel' : eq.includes('dumbbell') ? 'Kurzhanteln seitlich oder vor der Brust' : eq.includes('machine') ? 'in der Maschine, Schultern unter den Polstern' : 'Füße schulterbreit auseinander'}${n.includes('sumo') ? ', Füße weit auseinander, Zehen nach außen gedreht' : n.includes('bulgarian') ? ', hinterer Fuß auf einer Bank erhöht' : ''}.`,
+      "Halten Sie den Oberkörper aufrecht, Blick nach vorne und Rumpfmuskulatur angespannt.",
+      "Senken Sie sich ab, indem Sie die Hüfte nach hinten schieben, als würden Sie sich hinsetzen, Knie über den Zehen.",
+      "Gehen Sie mindestens so tief, bis die Oberschenkel parallel zum Boden sind.",
+      "Drücken Sie sich über die Fersen nach oben und spannen Sie Quadrizeps und Gesäßmuskel an."
     ];
   }
 
   if (n.includes('lunge') && !n.includes('bulgarian')) {
     return [
-      `Stand upright, ${eq.includes('barbell') ? 'bar on your shoulders' : eq.includes('dumbbell') ? 'dumbbells at your sides' : 'arms at your sides'}.`,
-      "Take a large step forward (or backward) while keeping your torso upright.",
-      "Bend both knees to 90 degrees, rear knee hovering just above the floor.",
-      "Push through your front heel to return to the starting position.",
-      "Alternate legs or work one side at a time depending on the variation."
+      `Stehen Sie aufrecht, ${eq.includes('barbell') ? 'Stange auf den Schultern' : eq.includes('dumbbell') ? 'Kurzhanteln seitlich' : 'Arme seitlich'}.`,
+      "Machen Sie einen großen Schritt nach vorne (oder hinten) und halten Sie den Oberkörper aufrecht.",
+      "Beugen Sie beide Knie auf 90 Grad, das hintere Knie schwebt knapp über dem Boden.",
+      "Drücken Sie sich über die vordere Ferse zurück in die Ausgangsposition.",
+      "Wechseln Sie die Beine ab oder arbeiten Sie je nach Variante eine Seite nach der anderen."
     ];
   }
 
   if (n.includes('curl') && !n.includes('leg curl') && !n.includes('hamstring') && !n.includes('nordic') && !n.includes('wrist')) {
     return [
-      `Stand or sit, ${eq.includes('barbell') ? 'bar in hand' : eq.includes('dumbbell') ? 'dumbbells in hand' : eq.includes('cable') ? 'facing the pulley' : 'arms at your sides'}${n.includes('preacher') ? ', arms on the preacher pad' : n.includes('incline') ? ', back against the incline bench' : n.includes('concentration') ? ', elbow braced on thigh' : ''}.`,
-      "Keep your elbows fixed at your sides (except for specific variations).",
-      "Curl your arms by contracting the biceps to raise the weight.",
-      "Squeeze hard at the top of the movement for one second.",
-      "Lower slowly while controlling the eccentric phase without dropping the weight."
+      `Stehen oder sitzen Sie, ${eq.includes('barbell') ? 'Stange in der Hand' : eq.includes('dumbbell') ? 'Kurzhanteln in der Hand' : eq.includes('cable') ? 'vor der Rolle stehend' : 'Arme seitlich'}${n.includes('preacher') ? ', Arme auf dem Preacher-Polster' : n.includes('incline') ? ', Rücken gegen die Schrägbank gelehnt' : n.includes('concentration') ? ', Ellbogen am Oberschenkel abgestützt' : ''}.`,
+      "Halten Sie die Ellbogen fixiert an den Seiten (außer bei bestimmten Varianten).",
+      "Beugen Sie die Arme, indem Sie den Bizeps anspannen, um das Gewicht zu heben.",
+      "Drücken Sie oben in der Bewegung eine Sekunde lang kräftig zusammen.",
+      "Senken Sie langsam ab und kontrollieren Sie die exzentrische Phase, ohne das Gewicht fallen zu lassen."
     ];
   }
 
   if (n.includes('extension') || n.includes('pushdown') || n.includes('kickback')) {
     return [
-      `Position yourself ${eq.includes('cable') ? 'facing the high pulley' : eq.includes('dumbbell') ? 'seated or standing' : 'on the machine'}${n.includes('overhead') ? ', arms above your head' : n.includes('kickback') ? ', torso bent forward, arms at your sides' : ''}.`,
-      `Grasp ${eq.includes('cable') ? 'the rope or bar' : eq.includes('dumbbell') ? 'the dumbbell' : 'the handles'} with a firm grip.`,
-      "Keep elbows fixed and close to your body (except overhead).",
-      "Extend your arms while contracting the triceps to lockout.",
-      "Return slowly to the starting position while resisting the weight."
+      `Positionieren Sie sich ${eq.includes('cable') ? 'vor der oberen Rolle' : eq.includes('dumbbell') ? 'sitzend oder stehend' : 'an der Maschine'}${n.includes('overhead') ? ', Arme über dem Kopf' : n.includes('kickback') ? ', Oberkörper vorgebeugt, Arme seitlich' : ''}.`,
+      `Greifen Sie ${eq.includes('cable') ? 'das Seil oder die Stange' : eq.includes('dumbbell') ? 'die Kurzhantel' : 'die Griffe'} mit festem Griff.`,
+      "Halten Sie die Ellbogen fixiert und nah am Körper (außer bei Überkopf-Varianten).",
+      "Strecken Sie die Arme und spannen Sie den Trizeps bis zum Lockout an.",
+      "Kehren Sie langsam in die Ausgangsposition zurück und kontrollieren Sie das Gewicht."
     ];
   }
 
   if (n.includes('dip')) {
     return [
-      `Grasp the parallel bars ${n.includes('bench') ? '(or place your hands on a bench with feet in front)' : ''} and push up to arm extension.`,
-      "Lean your torso slightly forward to target the chest, or stay upright for triceps.",
-      "Lower by bending your elbows to a 90-degree angle.",
-      "Push upward while contracting the triceps and chest.",
-      "Control the descent and avoid going too deep to protect the shoulders."
+      `Greifen Sie die Parallelholme ${n.includes('bench') ? '(oder stützen Sie die Hände auf einer Bank, Füße davor)' : ''} und drücken Sie sich bis zur Armstreckung hoch.`,
+      "Neigen Sie den Oberkörper leicht nach vorne, um die Brust zu beanspruchen, oder bleiben Sie aufrecht für den Trizeps.",
+      "Senken Sie sich ab, indem Sie die Ellbogen auf 90 Grad beugen.",
+      "Drücken Sie sich nach oben und spannen Sie Trizeps und Brustmuskulatur an.",
+      "Kontrollieren Sie das Absenken und gehen Sie nicht zu tief, um die Schultern zu schützen."
     ];
   }
 
   if (n.includes('raise') || n.includes('reverse fly')) {
-    const direction = n.includes('front') ? 'in front of you' : n.includes('bent') || n.includes('reverse') ? 'to the sides while bent over' : 'to the sides';
+    const direction = n.includes('front') ? 'vor Ihrem Körper' : n.includes('bent') || n.includes('reverse') ? 'seitlich im vorgebeugten Zustand' : 'seitlich';
     return [
-      `Stand${n.includes('bent') || n.includes('reverse') ? ' with torso bent at 45 degrees' : ''}, ${eq.includes('dumbbell') ? 'dumbbells in hand' : eq.includes('cable') ? 'pulley handle in hand' : eq.includes('machine') ? 'arms against the machine pads' : 'band under feet'}.`,
-      `Raise your arms ${direction} to shoulder height, elbows slightly bent.`,
-      "Hold the contraction at the top for one second.",
-      "Lower slowly while controlling the movement.",
-      "Avoid using momentum and keep the movement smooth and controlled."
+      `Stehen Sie${n.includes('bent') || n.includes('reverse') ? ' mit dem Oberkörper um 45 Grad vorgebeugt' : ''}, ${eq.includes('dumbbell') ? 'Kurzhanteln in der Hand' : eq.includes('cable') ? 'Kabelgriff in der Hand' : eq.includes('machine') ? 'Arme gegen die Maschinenpolster' : 'Band unter den Füßen'}.`,
+      `Heben Sie die Arme ${direction} bis auf Schulterhöhe, Ellbogen leicht gebeugt.`,
+      "Halten Sie die Kontraktion oben eine Sekunde lang.",
+      "Senken Sie langsam und kontrolliert ab.",
+      "Vermeiden Sie Schwung und halten Sie die Bewegung gleichmäßig und kontrolliert."
     ];
   }
 
   if (n.includes('shrug')) {
     return [
-      `Stand upright, ${eq.includes('barbell') ? 'barbell in front of you' : eq.includes('dumbbell') ? 'dumbbells at your sides' : 'hands on machine handles'}.`,
-      "With arms straight, shrug your shoulders as high as possible toward your ears.",
-      "Hold the contraction at the top for 1-2 seconds.",
-      "Lower shoulders slowly back to the starting position.",
-      "Keep arms straight throughout; only the shoulders should move."
+      `Stehen Sie aufrecht, ${eq.includes('barbell') ? 'Langhantel vor Ihnen' : eq.includes('dumbbell') ? 'Kurzhanteln seitlich' : 'Hände an den Maschinengriffen'}.`,
+      "Ziehen Sie mit gestreckten Armen die Schultern so hoch wie möglich zu den Ohren.",
+      "Halten Sie die Kontraktion oben 1-2 Sekunden.",
+      "Senken Sie die Schultern langsam in die Ausgangsposition zurück.",
+      "Halten Sie die Arme durchgehend gestreckt; nur die Schultern sollten sich bewegen."
     ];
   }
 
   if (n.includes('hip thrust') || n.includes('glute bridge')) {
     return [
-      `${n.includes('bridge') ? 'Lie on the floor' : 'Sit on the floor with upper back against a bench'}, knees bent, feet flat.`,
-      `${eq.includes('barbell') ? 'Place the barbell on your hips with a pad for protection.' : eq.includes('machine') ? 'Adjust the machine and hip pad.' : 'Optionally place a weight on your hips.'}`,
-      "Push through your heels to lift your hips to full extension.",
-      "Squeeze your glutes hard at the top for 1-2 seconds.",
-      "Lower hips slowly without completely touching the floor between reps."
+      `${n.includes('bridge') ? 'Legen Sie sich auf den Boden' : 'Setzen Sie sich auf den Boden, oberer Rücken gegen eine Bank gelehnt'}, Knie gebeugt, Füße flach aufgestellt.`,
+      `${eq.includes('barbell') ? 'Legen Sie die Langhantel mit einem Polster zum Schutz auf Ihre Hüfte.' : eq.includes('machine') ? 'Passen Sie die Maschine und das Hüftpolster an.' : 'Legen Sie optional ein Gewicht auf Ihre Hüfte.'}`,
+      "Drücken Sie sich über die Fersen hoch, bis die Hüfte vollständig gestreckt ist.",
+      "Spannen Sie den Gesäßmuskel oben 1-2 Sekunden kräftig an.",
+      "Senken Sie die Hüfte langsam ab, ohne zwischen den Wiederholungen den Boden vollständig zu berühren."
     ];
   }
 
   if (n.includes('leg extension') || n.includes('leg curl')) {
     return [
-      "Sit on the machine and adjust the seat and pad to your body.",
-      "Place your legs against the pad, hands on the side handles.",
-      `${n.includes('extension') ? 'Extend your legs while contracting the quadriceps.' : 'Curl your legs while contracting the hamstrings.'}`,
-      "Hold the contraction at end range for one second.",
-      "Return slowly to the starting position while resisting the weight."
+      "Setzen Sie sich an die Maschine und passen Sie Sitz und Polster an Ihren Körper an.",
+      "Legen Sie die Beine gegen das Polster, Hände an den seitlichen Griffen.",
+      `${n.includes('extension') ? 'Strecken Sie die Beine und spannen Sie den Quadrizeps an.' : 'Beugen Sie die Beine und spannen Sie die Beinbeuger an.'}`,
+      "Halten Sie die Kontraktion am Endpunkt eine Sekunde lang.",
+      "Kehren Sie langsam in die Ausgangsposition zurück und kontrollieren Sie das Gewicht."
     ];
   }
 
   if (n.includes('crunch') || n.includes('sit-up') || n.includes('leg raise')) {
     return [
-      `${n.includes('leg raise') || n.includes('hanging') ? 'Lie on the floor (or hang from the bar)' : 'Lie on your back, knees bent, feet flat on the floor'}${n.includes('decline') ? ' on a decline bench' : ''}.`,
-      `${n.includes('weighted') || n.includes('plate') ? 'Hold the weight against your chest or with arms extended.' : 'Place your hands behind your head or crossed on your chest.'}`,
-      `${n.includes('leg raise') || n.includes('hanging') ? 'Raise your legs by contracting the lower abs.' : 'Lift your shoulders off the floor by contracting the abs.'}`,
-      "Exhale during the contraction and hold the position for one second.",
-      "Lower slowly without completely releasing the tension on the abs."
+      `${n.includes('leg raise') || n.includes('hanging') ? 'Legen Sie sich auf den Boden (oder hängen Sie an der Stange)' : 'Legen Sie sich auf den Rücken, Knie gebeugt, Füße flach auf dem Boden'}${n.includes('decline') ? ' auf einer Schrägbank' : ''}.`,
+      `${n.includes('weighted') || n.includes('plate') ? 'Halten Sie das Gewicht gegen die Brust oder mit ausgestreckten Armen.' : 'Legen Sie die Hände hinter den Kopf oder gekreuzt auf die Brust.'}`,
+      `${n.includes('leg raise') || n.includes('hanging') ? 'Heben Sie die Beine an, indem Sie die unteren Bauchmuskeln anspannen.' : 'Heben Sie die Schultern vom Boden ab, indem Sie die Bauchmuskeln anspannen.'}`,
+      "Atmen Sie während der Kontraktion aus und halten Sie die Position eine Sekunde.",
+      "Senken Sie langsam ab, ohne die Spannung auf den Bauchmuskeln vollständig zu lösen."
     ];
   }
 
   if (n.includes('plank') && !n.includes('planche')) {
     return [
-      "Support yourself on your forearms and toes (or on your side for the lateral version).",
-      "Align your body from head to feet, abs and glutes contracted.",
-      "Hold the position without letting your hips sag or rise.",
-      "Breathe steadily and in a controlled manner throughout.",
-      "Hold for the desired duration (30 seconds to 2 minutes)."
+      "Stützen Sie sich auf Unterarme und Zehenspitzen (oder seitlich für die laterale Variante).",
+      "Richten Sie Ihren Körper von Kopf bis Fuß aus, Bauchmuskeln und Gesäß angespannt.",
+      "Halten Sie die Position, ohne die Hüfte durchhängen oder hochsteigen zu lassen.",
+      "Atmen Sie gleichmäßig und kontrolliert während der gesamten Übung.",
+      "Halten Sie die gewünschte Dauer (30 Sekunden bis 2 Minuten)."
     ];
   }
 
   if (n.includes('russian twist')) {
     return [
-      "Sit on the floor, knees bent, feet slightly off the ground.",
-      `${eq.includes('bodyweight') && !n.includes('weighted') ? 'Join your hands in front of you.' : 'Hold the weight in front of your chest.'}`,
-      "Lean your torso slightly back to engage the abs.",
-      "Rotate your torso to one side then the other, touching the floor each rotation.",
-      "Keep feet stable and control the movement without rushing."
+      "Setzen Sie sich auf den Boden, Knie gebeugt, Füße leicht vom Boden angehoben.",
+      `${eq.includes('bodyweight') && !n.includes('weighted') ? 'Führen Sie die Hände vor Ihrem Körper zusammen.' : 'Halten Sie das Gewicht vor Ihrer Brust.'}`,
+      "Lehnen Sie den Oberkörper leicht nach hinten, um die Bauchmuskeln zu aktivieren.",
+      "Drehen Sie den Oberkörper zu einer Seite und dann zur anderen, bei jeder Drehung den Boden berühren.",
+      "Halten Sie die Füße stabil und kontrollieren Sie die Bewegung ohne Hektik."
     ];
   }
 
   if (n.includes('kettlebell')) {
     if (n.includes('swing')) {
       return [
-        "Stand with feet wider than shoulder-width, kettlebell on the floor in front of you.",
-        "Grasp the kettlebell with both hands, back flat, hips pushed back.",
-        "Swing the kettlebell between your legs then drive your hips forward.",
-        "Let the kettlebell rise to shoulder height using hip momentum.",
-        "Control the return and chain reps in a fluid, continuous motion."
+        "Stehen Sie mit den Füßen weiter als schulterbreit, Kettlebell auf dem Boden vor Ihnen.",
+        "Greifen Sie die Kettlebell mit beiden Händen, Rücken gerade, Hüfte nach hinten geschoben.",
+        "Schwingen Sie die Kettlebell zwischen Ihren Beinen hindurch und treiben Sie dann die Hüfte nach vorne.",
+        "Lassen Sie die Kettlebell durch den Hüftschwung auf Schulterhöhe steigen.",
+        "Kontrollieren Sie die Rückbewegung und verketten Sie die Wiederholungen in einer fließenden, kontinuierlichen Bewegung."
       ];
     }
     return [
-      "Grasp the kettlebell with a firm grip, feet shoulder-width apart.",
-      "Brace your core and keep a neutral back throughout the exercise.",
-      "Execute the movement in a controlled manner following the specific technique.",
-      "Hold the contraction at the peak of the movement.",
-      "Return to the starting position while controlling the descent."
+      "Greifen Sie die Kettlebell mit festem Griff, Füße schulterbreit auseinander.",
+      "Spannen Sie die Rumpfmuskulatur an und halten Sie den Rücken während der gesamten Übung neutral.",
+      "Führen Sie die Bewegung kontrolliert und mit der spezifischen Technik aus.",
+      "Halten Sie die Kontraktion am höchsten Punkt der Bewegung.",
+      "Kehren Sie kontrolliert in die Ausgangsposition zurück."
     ];
   }
 
   if (n.includes('calf')) {
     return [
-      `Position yourself ${n.includes('seated') ? 'seated on the machine, knees under the pads' : 'standing with balls of feet on the edge of a step or machine'}.`,
-      `${eq.includes('barbell') ? 'Bar on your shoulders.' : eq.includes('dumbbell') ? 'Dumbbells at your sides or on your knees.' : 'Shoulders under the machine pads.'}`,
-      "Lower your heels as far as possible to stretch the calves.",
-      "Rise onto your toes as high as possible while contracting hard.",
-      "Hold the contraction at the top for 1-2 seconds then lower slowly."
+      `Positionieren Sie sich ${n.includes('seated') ? 'sitzend an der Maschine, Knie unter den Polstern' : 'stehend mit den Fußballen auf der Kante einer Stufe oder Maschine'}.`,
+      `${eq.includes('barbell') ? 'Stange auf den Schultern.' : eq.includes('dumbbell') ? 'Kurzhanteln seitlich oder auf den Knien.' : 'Schultern unter den Maschinenpolstern.'}`,
+      "Senken Sie die Fersen so weit wie möglich ab, um die Waden zu dehnen.",
+      "Heben Sie sich so hoch wie möglich auf die Zehenspitzen und spannen Sie kräftig an.",
+      "Halten Sie die Kontraktion oben 1-2 Sekunden und senken Sie dann langsam ab."
     ];
   }
 
   if (n.includes('leg press') || n.includes('hack squat')) {
     return [
-      "Sit on the machine with your back firmly against the backrest.",
-      `Place your feet on the platform ${n.includes('high') ? 'in a high position to target the glutes' : 'shoulder-width apart'}.`,
-      "Unlock the machine and lower the platform by bending your knees.",
-      "Go down to a 90-degree knee angle (or deeper if mobility allows).",
-      "Push through your heels to rise without fully locking the knees."
+      "Setzen Sie sich an die Maschine, Rücken fest gegen die Rückenlehne gedrückt.",
+      `Stellen Sie die Füße auf die Plattform ${n.includes('high') ? 'in einer hohen Position, um den Gesäßmuskel zu beanspruchen' : 'schulterbreit auseinander'}.`,
+      "Entriegeln Sie die Maschine und senken Sie die Plattform durch Beugen der Knie ab.",
+      "Gehen Sie bis zu einem 90-Grad-Kniewinkel hinunter (oder tiefer, wenn die Beweglichkeit es erlaubt).",
+      "Drücken Sie sich über die Fersen nach oben, ohne die Knie vollständig durchzustrecken."
     ];
   }
 
   if (n.includes('trx')) {
     return [
-      "Adjust the TRX straps to the appropriate length for the exercise.",
-      "Grasp the handles or place your feet in the straps as needed.",
-      "Brace your core and maintain proper body alignment.",
-      "Execute the movement in a controlled manner using your bodyweight as resistance.",
-      "Adjust your body angle to increase or decrease difficulty."
+      "Passen Sie die TRX-Bänder auf die richtige Länge für die Übung an.",
+      "Greifen Sie die Griffe oder platzieren Sie die Füße je nach Bedarf in den Schlaufen.",
+      "Spannen Sie die Rumpfmuskulatur an und halten Sie eine korrekte Körperausrichtung.",
+      "Führen Sie die Bewegung kontrolliert aus und nutzen Sie Ihr Körpergewicht als Widerstand.",
+      "Passen Sie Ihren Körperwinkel an, um den Schwierigkeitsgrad zu erhöhen oder zu verringern."
     ];
   }
 
   if (eq.includes('resistance band') || eq.includes('band')) {
     return [
-      "Anchor the band to an appropriate point or under your feet as needed.",
-      "Grasp the band with a firm grip while maintaining baseline tension.",
-      "Execute the movement while controlling the increasing band resistance.",
-      "Hold the contraction at the point of maximum tension.",
-      "Return slowly to the starting position while resisting the band."
+      "Befestigen Sie das Band an einem geeigneten Punkt oder unter Ihren Füßen.",
+      "Greifen Sie das Band mit festem Griff und halten Sie eine Grundspannung aufrecht.",
+      "Führen Sie die Bewegung aus und kontrollieren Sie den zunehmenden Bandwiderstand.",
+      "Halten Sie die Kontraktion am Punkt der maximalen Spannung.",
+      "Kehren Sie langsam in die Ausgangsposition zurück und kontrollieren Sie das Band."
     ];
   }
 
   if (n.includes('medicine ball')) {
     return [
-      "Grasp the medicine ball with both hands, feet shoulder-width apart.",
-      "Brace your core and prepare for the explosive movement.",
-      "Execute the throw or movement with power using your whole body.",
-      "Control the catch and return to the starting position.",
-      "Chain repetitions while maintaining good form and consistent intensity."
+      "Greifen Sie den Medizinball mit beiden Händen, Füße schulterbreit auseinander.",
+      "Spannen Sie die Rumpfmuskulatur an und bereiten Sie sich auf die explosive Bewegung vor.",
+      "Führen Sie den Wurf oder die Bewegung kraftvoll mit dem ganzen Körper aus.",
+      "Kontrollieren Sie das Fangen und kehren Sie in die Ausgangsposition zurück.",
+      "Verketten Sie die Wiederholungen bei guter Form und gleichmäßiger Intensität."
     ];
   }
 
   return [
-    "Position yourself in the appropriate starting position for this exercise.",
-    "Brace your core and ensure proper body alignment.",
-    "Execute the movement in a controlled manner following correct technique.",
-    "Hold the contraction at the peak of the movement for one second.",
-    "Return slowly to the starting position and repeat for the desired number of reps."
+    "Positionieren Sie sich in der richtigen Ausgangsposition für diese Übung.",
+    "Spannen Sie die Rumpfmuskulatur an und achten Sie auf eine korrekte Körperausrichtung.",
+    "Führen Sie die Bewegung kontrolliert und mit der richtigen Technik aus.",
+    "Halten Sie die Kontraktion am höchsten Punkt der Bewegung eine Sekunde lang.",
+    "Kehren Sie langsam in die Ausgangsposition zurück und wiederholen Sie die gewünschte Anzahl an Wiederholungen."
   ];
 }
 
@@ -347,54 +371,54 @@ function getSteps(ex: typeof exercises[0]): string[] {
 function getMistakes(ex: typeof exercises[0]): string[] {
   const mistakesByCategory: Record<string, string[]> = {
     pectoraux: [
-      "Bouncing the weight off your chest instead of controlling the descent.",
-      "Lifting your hips off the bench or arching your back excessively.",
-      "Flaring elbows to 90 degrees, which overloads the shoulders."
+      "Das Gewicht von der Brust abprallen lassen, anstatt das Absenken zu kontrollieren.",
+      "Die Hüfte von der Bank abheben oder den Rücken übermäßig wölben.",
+      "Die Ellbogen auf 90 Grad abspreizen, was die Schultern überlastet."
     ],
     dos: [
-      "Rounding your back during the movement, risking lower back injury.",
-      "Using body momentum to cheat instead of pulling with the back.",
-      "Not squeezing the shoulder blades at the end of contraction, reducing effectiveness."
+      "Den Rücken während der Bewegung runden, was zu Verletzungen des unteren Rückens führen kann.",
+      "Schwung mit dem Körper holen, anstatt gezielt mit dem Rücken zu ziehen.",
+      "Die Schulterblätter am Ende der Kontraktion nicht zusammendrücken, was die Effektivität verringert."
     ],
     epaules: [
-      "Raising the weight too high or too fast using body momentum.",
-      "Arching the back excessively during overhead presses.",
-      "Using weights that are too heavy, compromising form and risking injury."
+      "Das Gewicht zu hoch oder zu schnell mit Körperschwung heben.",
+      "Den Rücken beim Überkopfdrücken übermäßig ins Hohlkreuz bringen.",
+      "Zu schwere Gewichte verwenden, was die Form beeinträchtigt und das Verletzungsrisiko erhöht."
     ],
     biceps: [
-      "Swinging the torso to generate momentum instead of isolating the biceps.",
-      "Not fully extending the arms, limiting the range of motion.",
-      "Lifting the elbows forward, shifting the work to the deltoids."
+      "Den Oberkörper schwingen, um Schwung zu erzeugen, anstatt den Bizeps zu isolieren.",
+      "Die Arme nicht vollständig strecken, was den Bewegungsumfang einschränkt.",
+      "Die Ellbogen nach vorne heben, wodurch die Arbeit auf die Deltamuskeln verlagert wird."
     ],
     triceps: [
-      "Flaring the elbows during the movement, reducing triceps isolation.",
-      "Using body momentum to push the weight instead of controlling it.",
-      "Not reaching full extension, missing the maximum contraction."
+      "Die Ellbogen während der Bewegung abspreizen, was die Trizeps-Isolation verringert.",
+      "Schwung mit dem Körper nutzen, um das Gewicht zu drücken, anstatt es zu kontrollieren.",
+      "Die volle Streckung nicht erreichen, wodurch die maximale Kontraktion fehlt."
     ],
     jambes: [
-      "Letting the knees cave inward during the movement.",
-      "Not going deep enough, limiting muscle recruitment.",
-      "Rounding the back instead of maintaining an upright and braced posture."
+      "Die Knie während der Bewegung nach innen fallen lassen.",
+      "Nicht tief genug gehen, was die Muskelrekrutierung einschränkt.",
+      "Den Rücken runden, anstatt eine aufrechte und stabile Haltung beizubehalten."
     ],
     fessiers: [
-      "Not raising the hips high enough for a complete contraction.",
-      "Arching the lower back instead of keeping the pelvis in posterior tilt.",
-      "Pushing through the toes instead of the heels, reducing glute engagement."
+      "Die Hüfte nicht hoch genug heben für eine vollständige Kontraktion.",
+      "Den unteren Rücken ins Hohlkreuz bringen, anstatt das Becken in posteriorer Neigung zu halten.",
+      "Über die Zehen statt über die Fersen drücken, was die Gesäßaktivierung verringert."
     ],
     abdos: [
-      "Pulling on the neck with your hands, risking cervical pain.",
-      "Using momentum instead of controlling the movement with the abs.",
-      "Not maintaining tension on the abs during the lowering phase."
+      "Mit den Händen am Nacken ziehen, was zu Nackenschmerzen führen kann.",
+      "Schwung nutzen, anstatt die Bewegung mit den Bauchmuskeln zu kontrollieren.",
+      "Die Spannung auf den Bauchmuskeln während der Absenkphase nicht aufrechterhalten."
     ],
     "avant-bras": [
-      "Moving the entire arm instead of isolating movement at the wrist.",
-      "Using too much weight, compromising range of motion.",
-      "Neglecting the eccentric phase by letting the weight drop too quickly."
+      "Den gesamten Arm bewegen, anstatt die Bewegung auf das Handgelenk zu isolieren.",
+      "Zu viel Gewicht verwenden, was den Bewegungsumfang beeinträchtigt.",
+      "Die exzentrische Phase vernachlässigen, indem das Gewicht zu schnell abgelassen wird."
     ],
     fonctionnel: [
-      "Sacrificing technique to go faster or lift heavier.",
-      "Not bracing the core, reducing stability and movement efficiency.",
-      "Skipping warm-up before explosive movements, increasing injury risk."
+      "Die Technik opfern, um schneller zu werden oder schwerer zu heben.",
+      "Die Rumpfmuskulatur nicht anspannen, was die Stabilität und Bewegungseffizienz verringert.",
+      "Das Aufwärmen vor explosiven Bewegungen auslassen, was das Verletzungsrisiko erhöht."
     ],
   };
   return mistakesByCategory[ex.category] || mistakesByCategory.fonctionnel;
@@ -411,6 +435,8 @@ export function getStaticPaths() {
 const { exercise } = Astro.props;
 const slug = toSlug(exercise.name);
 const dc = difficultyColors[exercise.difficulty] || { bg: "rgba(100,100,100,0.1)", color: "#888" };
+const difficultyLabel = difficultyLabels[exercise.difficulty] || exercise.difficulty;
+const equipmentLabel = equipmentLabels[exercise.equipment] || exercise.equipment;
 const muscles = secondaryMuscles[exercise.category] || secondaryMuscles.fonctionnel;
 const steps = getSteps(exercise);
 const mistakes = getMistakes(exercise);
@@ -524,12 +550,12 @@ const catLabel = categoryLabels[exercise.category] || exercise.category;
       </div>
       <div class="info-item">
         <div class="info-label">Ausrüstung</div>
-        <div class="info-value">{exercise.equipment}</div>
+        <div class="info-value">{equipmentLabel}</div>
       </div>
       <div class="info-item">
         <div class="info-label">Schwierigkeit</div>
         <div class="info-value">
-          <span class="difficulty-badge" style={`background:${dc.bg};color:${dc.color}`}>{exercise.difficulty}</span>
+          <span class="difficulty-badge" style={`background:${dc.bg};color:${dc.color}`}>{difficultyLabel}</span>
         </div>
       </div>
     </div>
@@ -598,7 +624,7 @@ const catLabel = categoryLabels[exercise.category] || exercise.category;
               <h4>{v.name}</h4>
               <div class="tags">
                 <span class="tag tag-muscle">{v.muscle}</span>
-                <span class="tag tag-equipment">{v.equipment}</span>
+                <span class="tag tag-equipment">{equipmentLabels[v.equipment] || v.equipment}</span>
               </div>
             </a>
           ))}
@@ -607,8 +633,8 @@ const catLabel = categoryLabels[exercise.category] || exercise.category;
     )}
 
     <div class="cta-box">
-      <h3>Füge diese Übung zu deinem Training hinzu</h3>
-      <p>Lade AIVancePro herunter, um deine Leistung zu verfolgen, personalisiertes KI-Coaching zu erhalten und schneller Fortschritte zu machen.</p>
+      <h3>Fügen Sie diese Übung Ihrem Training hinzu</h3>
+      <p>Laden Sie AIVancePro herunter, um Ihre Leistung zu verfolgen, personalisiertes KI-Coaching zu erhalten und schneller Fortschritte zu machen.</p>
       <a href="https://apps.apple.com/app/aivancepro/id6756116760" class="btn-primary" target="_blank" rel="noopener">Kostenlos herunterladen</a>
     </div>
   </div>
