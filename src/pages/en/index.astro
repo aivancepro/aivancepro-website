@@ -1032,11 +1032,10 @@ const jsonLd = {
             .features-grid {
                 grid-template-columns: 1fr;
             }
-            .features-grid .feature-card {
-                grid-column: span 1;
-            }
+            .features-grid .feature-card,
+            .features-grid .feature-card:nth-child(4),
             .features-grid .feature-card:nth-child(5) {
-                grid-column: 1 / 2;
+                grid-column: auto;
             }
         }
 
