@@ -52,11 +52,52 @@ const localeMap = { fr: 'fr_FR', en: 'en_GB', de: 'de_DE' };
       : <script type="application/ld+json" set:html={JSON.stringify(jsonLd)} />
     )}
     <slot name="head" />
+    <script is:inline>
+      (function(){var t=localStorage.getItem('theme');if(t)document.documentElement.setAttribute('data-theme',t);})();
+    </script>
 </head>
 <body>
     <Nav lang={lang} />
     <slot />
     {!noFooter && <Footer lang={lang} />}
+    <!-- Search Modal -->
+    <div class="search-overlay" id="searchOverlay">
+        <div class="search-box">
+            <div class="search-input-wrap">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
+                <input type="text" id="searchInput" placeholder={i.search.placeholder} autocomplete="off">
+                <kbd class="search-kbd">Esc</kbd>
+            </div>
+            <div class="search-results" id="searchResults">
+                <a href={i.links.home} data-title={i.nav.home} data-desc="AIVancePro"><div class="result-title">{i.nav.home}</div></a>
+                <a href={i.links.features} data-title={i.nav.features} data-desc={i.nav.product}><div class="result-title">{i.nav.features}</div><div class="result-desc">{i.nav.product}</div></a>
+                <a href={i.links.exercises} data-title={i.nav.exercises} data-desc={i.nav.product}><div class="result-title">{i.nav.exercises}</div><div class="result-desc">{i.nav.product}</div></a>
+                <a href={i.links.reviews} data-title={i.nav.reviews} data-desc={i.nav.product}><div class="result-title">{i.nav.reviews}</div><div class="result-desc">{i.nav.product}</div></a>
+                <a href={i.links.pricing} data-title={i.nav.pricing} data-desc={i.nav.pricing}><div class="result-title">{i.nav.pricing}</div></a>
+                <a href={i.links.changelog} data-title={i.nav.changelog} data-desc={i.nav.product}><div class="result-title">{i.nav.changelog}</div><div class="result-desc">{i.nav.product}</div></a>
+                <a href={i.links.blog} data-title={i.nav.blog} data-desc={i.nav.articles}><div class="result-title">{i.nav.blog}</div><div class="result-desc">{i.nav.articles}</div></a>
+                <a href={i.links.guides} data-title={i.nav.guides} data-desc={i.nav.articles}><div class="result-title">{i.nav.guides}</div><div class="result-desc">{i.nav.articles}</div></a>
+                <a href={i.links.personalTraining} data-title={i.nav.personalTraining} data-desc={i.nav.articles}><div class="result-title">{i.nav.personalTraining}</div><div class="result-desc">{i.nav.articles}</div></a>
+                <a href={i.links.workoutSplits} data-title={i.nav.workoutSplits} data-desc={i.nav.articles}><div class="result-title">{i.nav.workoutSplits}</div><div class="result-desc">{i.nav.articles}</div></a>
+                <a href={i.links.compoundIsolation} data-title={i.nav.compoundIsolation} data-desc={i.nav.articles}><div class="result-title">{i.nav.compoundIsolation}</div><div class="result-desc">{i.nav.articles}</div></a>
+                <a href={i.links.faq} data-title={i.nav.faq} data-desc={i.nav.help}><div class="result-title">{i.nav.faq}</div><div class="result-desc">{i.nav.help}</div></a>
+                <a href={i.links.support} data-title={i.nav.support} data-desc={i.nav.help}><div class="result-title">{i.nav.support}</div><div class="result-desc">{i.nav.help}</div></a>
+                <div class="no-results" style="display:none">{i.search.noResults}</div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Exit Intent Popup -->
+    <div class="exit-popup-overlay" id="exitPopup">
+        <div class="exit-popup">
+            <button class="exit-popup-close" id="exitPopupClose">&times;</button>
+            <h3>{i.exitIntent.title}</h3>
+            <p>{i.exitIntent.text}</p>
+            <a href={i.links.appStore} class="btn-primary" target="_blank" rel="noopener">{i.exitIntent.btn}</a>
+            <button class="dismiss-link" id="exitPopupDismiss">{i.exitIntent.dismiss}</button>
+        </div>
+    </div>
+
     <!-- Cookie Banner -->
     <div id="cookieBanner" class="cookie-banner">
         <div class="cookie-inner">
@@ -143,6 +184,52 @@ const localeMap = { fr: 'fr_FR', en: 'en_GB', de: 'de_DE' };
         localStorage.setItem('cookie_consent', 'rejected');
         banner.classList.remove('show');
       });
+      // Exit intent popup
+      var exitPopup = document.getElementById('exitPopup');
+      if (exitPopup && !localStorage.getItem('exit_popup_dismissed')) {
+        var exitShown = false;
+        document.addEventListener('mouseleave', function(e) {
+          if (e.clientY < 0 && !exitShown) {
+            exitShown = true;
+            exitPopup.classList.add('show');
+          }
+        });
+        var closeExit = function() {
+          exitPopup.classList.remove('show');
+          localStorage.setItem('exit_popup_dismissed', '1');
+        };
+        var exitClose = document.getElementById('exitPopupClose');
+        var exitDismiss = document.getElementById('exitPopupDismiss');
+        if (exitClose) exitClose.addEventListener('click', closeExit);
+        if (exitDismiss) exitDismiss.addEventListener('click', closeExit);
+        exitPopup.addEventListener('click', function(e) { if (e.target === exitPopup) closeExit(); });
+      }
+
+      // Testimonials carousel (mobile)
+      var track = document.querySelector('.testimonials-track');
+      if (track) {
+        var slider = track.querySelector('.testimonials-slider');
+        var cards = slider ? slider.querySelectorAll('.testimonial-card') : [];
+        var dots = document.querySelectorAll('.testimonials-dot');
+        if (cards.length > 1) {
+          var currentSlide = 0;
+          var autoInterval;
+          function goToSlide(n) {
+            currentSlide = n;
+            if (slider) slider.style.transform = 'translateX(-' + (n * 100) + '%)';
+            dots.forEach(function(d, i) { d.classList.toggle('active', i === n); });
+          }
+          dots.forEach(function(d, i) {
+            d.addEventListener('click', function() { goToSlide(i); resetAuto(); });
+          });
+          function resetAuto() {
+            clearInterval(autoInterval);
+            autoInterval = setInterval(function() { goToSlide((currentSlide + 1) % cards.length); }, 5000);
+          }
+          resetAuto();
+        }
+      }
+
       // Newsletter form
       var nlForm = document.getElementById('newsletterForm');
       if (nlForm) {

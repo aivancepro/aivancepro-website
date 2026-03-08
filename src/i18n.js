@@ -51,6 +51,24 @@ export const t = {
       accept: 'Accepter',
       reject: 'Refuser',
     },
+    exitIntent: {
+      title: 'Avant de partir...',
+      text: 'Téléchargez AIVancePro gratuitement et commencez à progresser dès aujourd\'hui.',
+      btn: 'Télécharger gratuitement',
+      dismiss: 'Non merci',
+    },
+    search: {
+      placeholder: 'Rechercher...',
+      noResults: 'Aucun résultat trouvé.',
+    },
+    breadcrumb: {
+      home: 'Accueil',
+      blog: 'Blog',
+      guides: 'Guides',
+    },
+    share: {
+      title: 'Partager cet article',
+    },
     notFound: {
       title: 'Page non trouvée',
       description: 'La page que vous recherchez n\'existe pas ou a été déplacée.',
@@ -124,6 +142,24 @@ export const t = {
       accept: 'Accept',
       reject: 'Reject',
     },
+    exitIntent: {
+      title: 'Before you go...',
+      text: 'Download AIVancePro for free and start progressing today.',
+      btn: 'Download for free',
+      dismiss: 'No thanks',
+    },
+    search: {
+      placeholder: 'Search...',
+      noResults: 'No results found.',
+    },
+    breadcrumb: {
+      home: 'Home',
+      blog: 'Blog',
+      guides: 'Guides',
+    },
+    share: {
+      title: 'Share this article',
+    },
     notFound: {
       title: 'Page not found',
       description: 'The page you are looking for does not exist or has been moved.',
@@ -196,6 +232,24 @@ export const t = {
       text: 'Diese Website verwendet Cookies, um Ihre Erfahrung zu verbessern.',
       accept: 'Akzeptieren',
       reject: 'Ablehnen',
+    },
+    exitIntent: {
+      title: 'Bevor Sie gehen...',
+      text: 'Laden Sie AIVancePro kostenlos herunter und starten Sie noch heute.',
+      btn: 'Kostenlos herunterladen',
+      dismiss: 'Nein danke',
+    },
+    search: {
+      placeholder: 'Suchen...',
+      noResults: 'Keine Ergebnisse gefunden.',
+    },
+    breadcrumb: {
+      home: 'Startseite',
+      blog: 'Blog',
+      guides: 'Ratgeber',
+    },
+    share: {
+      title: 'Artikel teilen',
     },
     notFound: {
       title: 'Seite nicht gefunden',

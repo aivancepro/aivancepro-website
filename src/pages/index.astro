@@ -1514,6 +1514,15 @@ const jsonLd = {
                     </div>
                 </div>
             </div>
+            <!-- Mobile carousel track (populated by JS) -->
+            <div class="testimonials-track" style="display:none">
+                <div class="testimonials-slider"></div>
+                <div class="testimonials-dots">
+                    <button class="testimonials-dot active"></button>
+                    <button class="testimonials-dot"></button>
+                    <button class="testimonials-dot"></button>
+                </div>
+            </div>
             <div class="testimonials-actions reveal">
                 <a href="/avis/">Voir tous les avis</a>
                 <span class="sep">&middot;</span>
@@ -2062,5 +2071,26 @@ const jsonLd = {
             T&eacute;l&eacute;charger gratuitement
         </a>
     </section>
+
+    <script is:inline>
+    // Mobile testimonials carousel
+    (function() {
+      if (window.innerWidth > 768) return;
+      var grid = document.querySelector('.testimonials-grid');
+      var track = document.querySelector('.testimonials-track');
+      if (!grid || !track) return;
+      var cards = grid.querySelectorAll('.testimonial-card');
+      var slider = track.querySelector('.testimonials-slider');
+      if (!slider || !cards.length) return;
+      cards.forEach(function(card) {
+        var clone = card.cloneNode(true);
+        clone.style.minWidth = '100%';
+        clone.style.flex = '0 0 100%';
+        slider.appendChild(clone);
+      });
+      grid.style.display = 'none';
+      track.style.display = 'block';
+    })();
+    </script>
 
 </BaseLayout>
