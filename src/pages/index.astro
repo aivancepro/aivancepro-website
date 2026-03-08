@@ -1174,7 +1174,7 @@ const jsonLd = {
         /* ===== RESPONSIVE ===== */
         @media (max-width: 1024px) {
             .features-grid {
-                grid-template-columns: repeat(2, 1fr);
+                grid-template-columns: 1fr;
             }
             .features-grid .feature-card {
                 grid-column: span 1;
@@ -1185,9 +1185,6 @@ const jsonLd = {
         }
 
         @media (max-width: 768px) {
-            .features-grid {
-                grid-template-columns: 1fr;
-            }
             .nav-center, .nav-right .nav-login, .nav-right .nav-cta {
                 display: none;
             }
