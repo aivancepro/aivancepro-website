@@ -32,6 +32,16 @@ const currentLang = languages[lang];
             <li><a href={i.links.exercises}>{i.nav.exercises}</a></li>
             <li><a href={i.links.pricing}>{i.nav.pricing}</a></li>
             <li><a href={i.links.faq}>{i.nav.faq}</a></li>
+            <li class="dropdown">
+                <button class="dropdown-toggle">
+                    {i.nav.more}
+                    <Fragment set:html={chevronSvg} />
+                </button>
+                <div class="dropdown-menu">
+                    <a href={i.links.changelog}>{i.nav.changelog}</a>
+                    <a href={i.links.support}>{i.nav.support}</a>
+                </div>
+            </li>
         </ul>
 
         <div class="nav-right">
@@ -72,6 +82,8 @@ const currentLang = languages[lang];
     <a href={i.links.exercises}>{i.nav.exercises}</a>
     <a href={i.links.pricing} onclick="document.getElementById('mobileMenu').classList.remove('open')">{i.nav.pricing}</a>
     <a href={i.links.faq} onclick="document.getElementById('mobileMenu').classList.remove('open')">{i.nav.faq}</a>
+    <a href={i.links.changelog}>{i.nav.changelog}</a>
+    <a href={i.links.support}>{i.nav.support}</a>
     <a href={i.links.login} id="mobile-login-link" data-account-url={i.links.account}>{i.nav.login}</a>
     {Object.entries(languages).filter(([code]) => code !== lang).map(([code, l]) => (
         <a href={t[code].links.home}>{l.flag} {l.label}</a>
