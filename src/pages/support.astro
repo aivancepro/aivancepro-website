@@ -24,11 +24,18 @@ import BaseLayout from '../layouts/BaseLayout.astro';
         a { color: var(--blue); }
         .contact-box { background: var(--gray-50); border: 1px solid var(--gray-200); border-radius: 16px; padding: 2rem; margin: 1.5rem 0; }
         .contact-box p { margin-bottom: 0.75rem; }
-        .faq-item { background: var(--gray-50); border: 1px solid var(--gray-200); border-radius: 12px; padding: 1.5rem; margin: 1rem 0; }
-        .faq-item h3 { font-size: 1rem; font-weight: 600; color: var(--blue); margin-bottom: 0.75rem; }
-        .faq-item p { margin-bottom: 0.5rem; }
-        .faq-item ol { padding-left: 1.5rem; }
-        .faq-item ol li { margin-bottom: 0.3rem; }
+        .faq-section h2 { font-size: 1.6rem; font-weight: 800; margin-bottom: 2rem; color: var(--gray-900); }
+        .faq-list { max-width: 700px; }
+        .faq-item { border-bottom: 1px solid var(--gray-200); }
+        .faq-question { width: 100%; background: none; border: none; text-align: left; padding: 1.5rem 0; font-size: 1.05rem; font-weight: 600; color: var(--gray-900); cursor: pointer; display: flex; justify-content: space-between; align-items: center; font-family: inherit; transition: color 0.2s; }
+        .faq-question:hover { color: var(--blue); }
+        .faq-question svg { width: 20px; height: 20px; color: var(--gray-400); transition: transform 0.3s; flex-shrink: 0; }
+        .faq-item.open .faq-question svg { transform: rotate(180deg); }
+        .faq-answer { max-height: 0; overflow: hidden; transition: max-height 0.3s ease; }
+        .faq-answer-inner { padding: 0 0 1.5rem; font-size: 0.95rem; color: var(--gray-500); line-height: 1.7; }
+        .faq-answer-inner ol { padding-left: 1.5rem; margin-top: 0.5rem; }
+        .faq-answer-inner ol li { margin-bottom: 0.3rem; }
+        .faq-item.open .faq-answer { max-height: 300px; }
         .back { display: inline-block; margin-top: 2rem; color: var(--gray-500); text-decoration: none; font-size: 0.9rem; }
         .back:hover { color: var(--gray-900); }
 
@@ -54,20 +61,30 @@ import BaseLayout from '../layouts/BaseLayout.astro';
             <p style="color: var(--gray-500); font-size: 0.85rem;">Veuillez fournir autant de d&eacute;tails que possible (mod&egrave;le de l'appareil, version du syst&egrave;me d'exploitation et &eacute;tapes pour reproduire le probl&egrave;me).</p>
         </div>
 
-        <h2>Foire aux questions (FAQ)</h2>
-
-        <div class="faq-item">
-            <h3>L'application ne se lance pas ou affiche un &eacute;cran vide, que dois-je faire ?</h3>
-            <ol>
-                <li>Assurez-vous d'avoir install&eacute; la derni&egrave;re version disponible sur l'App Store ou Google Play.</li>
-                <li>V&eacute;rifiez votre connexion Internet (Wi-Fi ou cellulaire).</li>
-                <li>Essayez de forcer la fermeture et de red&eacute;marrer l'application.</li>
-            </ol>
-        </div>
-
-        <div class="faq-item">
-            <h3>Comment puis-je demander la suppression de mes donn&eacute;es ou de mon compte ?</h3>
-            <p>Vous pouvez demander la suppression de votre compte directement dans les param&egrave;tres de l'application ou en nous contactant &agrave; <a href="mailto:aivancepro@gmail.com">aivancepro@gmail.com</a>. Nous respectons toutes les r&eacute;glementations en mati&egrave;re de confidentialit&eacute; des donn&eacute;es.</p>
+        <div class="faq-section">
+            <h2>Questions fr&eacute;quentes</h2>
+            <div class="faq-list">
+                <div class="faq-item">
+                    <button class="faq-question" onclick="this.parentElement.classList.toggle('open')">
+                        L'application ne se lance pas ou affiche un &eacute;cran vide, que dois-je faire ?
+                        <svg viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M5.23 7.21a.75.75 0 011.06.02L10 11.168l3.71-3.938a.75.75 0 111.08 1.04l-4.25 4.5a.75.75 0 01-1.08 0l-4.25-4.5a.75.75 0 01.02-1.06z" clip-rule="evenodd"/></svg>
+                    </button>
+                    <div class="faq-answer"><div class="faq-answer-inner">
+                        <ol>
+                            <li>Assurez-vous d'avoir install&eacute; la derni&egrave;re version disponible sur l'App Store ou Google Play.</li>
+                            <li>V&eacute;rifiez votre connexion Internet (Wi-Fi ou cellulaire).</li>
+                            <li>Essayez de forcer la fermeture et de red&eacute;marrer l'application.</li>
+                        </ol>
+                    </div></div>
+                </div>
+                <div class="faq-item">
+                    <button class="faq-question" onclick="this.parentElement.classList.toggle('open')">
+                        Comment demander la suppression de mes donn&eacute;es ou de mon compte ?
+                        <svg viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M5.23 7.21a.75.75 0 011.06.02L10 11.168l3.71-3.938a.75.75 0 111.08 1.04l-4.25 4.5a.75.75 0 01-1.08 0l-4.25-4.5a.75.75 0 01.02-1.06z" clip-rule="evenodd"/></svg>
+                    </button>
+                    <div class="faq-answer"><div class="faq-answer-inner">Vous pouvez demander la suppression de votre compte directement dans les param&egrave;tres de l'application ou en nous contactant &agrave; <a href="mailto:aivancepro@gmail.com">aivancepro@gmail.com</a>. Nous respectons toutes les r&eacute;glementations en mati&egrave;re de confidentialit&eacute; des donn&eacute;es.</div></div>
+                </div>
+            </div>
         </div>
 
         <h2>Mentions l&eacute;gales</h2>

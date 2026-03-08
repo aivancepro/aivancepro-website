@@ -24,11 +24,18 @@ import BaseLayout from '../../layouts/BaseLayout.astro';
         a { color: var(--blue); }
         .contact-box { background: var(--gray-50); border: 1px solid var(--gray-200); border-radius: 16px; padding: 2rem; margin: 1.5rem 0; }
         .contact-box p { margin-bottom: 0.75rem; }
-        .faq-item { background: var(--gray-50); border: 1px solid var(--gray-200); border-radius: 12px; padding: 1.5rem; margin: 1rem 0; }
-        .faq-item h3 { font-size: 1rem; font-weight: 600; color: var(--blue); margin-bottom: 0.75rem; }
-        .faq-item p { margin-bottom: 0.5rem; }
-        .faq-item ol { padding-left: 1.5rem; }
-        .faq-item ol li { margin-bottom: 0.3rem; }
+        .faq-section h2 { font-size: 1.6rem; font-weight: 800; margin-bottom: 2rem; color: var(--gray-900); }
+        .faq-list { max-width: 700px; }
+        .faq-item { border-bottom: 1px solid var(--gray-200); }
+        .faq-question { width: 100%; background: none; border: none; text-align: left; padding: 1.5rem 0; font-size: 1.05rem; font-weight: 600; color: var(--gray-900); cursor: pointer; display: flex; justify-content: space-between; align-items: center; font-family: inherit; transition: color 0.2s; }
+        .faq-question:hover { color: var(--blue); }
+        .faq-question svg { width: 20px; height: 20px; color: var(--gray-400); transition: transform 0.3s; flex-shrink: 0; }
+        .faq-item.open .faq-question svg { transform: rotate(180deg); }
+        .faq-answer { max-height: 0; overflow: hidden; transition: max-height 0.3s ease; }
+        .faq-answer-inner { padding: 0 0 1.5rem; font-size: 0.95rem; color: var(--gray-500); line-height: 1.7; }
+        .faq-answer-inner ol { padding-left: 1.5rem; margin-top: 0.5rem; }
+        .faq-answer-inner ol li { margin-bottom: 0.3rem; }
+        .faq-item.open .faq-answer { max-height: 300px; }
         .back { display: inline-block; margin-top: 2rem; color: var(--gray-500); text-decoration: none; font-size: 0.9rem; }
         .back:hover { color: var(--gray-900); }
 
@@ -54,20 +61,30 @@ import BaseLayout from '../../layouts/BaseLayout.astro';
             <p style="color: var(--gray-500); font-size: 0.85rem;">Bitte geben Sie so viele Details wie m&ouml;glich an (Ger&auml;temodell, Betriebssystemversion und Schritte zur Reproduktion des Problems).</p>
         </div>
 
-        <h2>H&auml;ufig gestellte Fragen (FAQ)</h2>
-
-        <div class="faq-item">
-            <h3>Die App startet nicht oder zeigt einen leeren Bildschirm an. Was soll ich tun?</h3>
-            <ol>
-                <li>Stellen Sie sicher, dass Sie die neueste Version aus dem App Store oder Google Play installiert haben.</li>
-                <li>&Uuml;berpr&uuml;fen Sie Ihre Internetverbindung (WLAN oder Mobilfunk).</li>
-                <li>Versuchen Sie, die App zu beenden und neu zu starten.</li>
-            </ol>
-        </div>
-
-        <div class="faq-item">
-            <h3>Wie kann ich die L&ouml;schung meiner Daten oder meines Kontos beantragen?</h3>
-            <p>Sie k&ouml;nnen die L&ouml;schung Ihres Kontos direkt in den App-Einstellungen beantragen oder uns unter <a href="mailto:aivancepro@gmail.com">aivancepro@gmail.com</a> kontaktieren. Wir halten alle geltenden Datenschutzbestimmungen ein.</p>
+        <div class="faq-section">
+            <h2>H&auml;ufig gestellte Fragen</h2>
+            <div class="faq-list">
+                <div class="faq-item">
+                    <button class="faq-question" onclick="this.parentElement.classList.toggle('open')">
+                        Die App startet nicht oder zeigt einen leeren Bildschirm an. Was soll ich tun?
+                        <svg viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M5.23 7.21a.75.75 0 011.06.02L10 11.168l3.71-3.938a.75.75 0 111.08 1.04l-4.25 4.5a.75.75 0 01-1.08 0l-4.25-4.5a.75.75 0 01.02-1.06z" clip-rule="evenodd"/></svg>
+                    </button>
+                    <div class="faq-answer"><div class="faq-answer-inner">
+                        <ol>
+                            <li>Stellen Sie sicher, dass Sie die neueste Version aus dem App Store oder Google Play installiert haben.</li>
+                            <li>&Uuml;berpr&uuml;fen Sie Ihre Internetverbindung (WLAN oder Mobilfunk).</li>
+                            <li>Versuchen Sie, die App zu beenden und neu zu starten.</li>
+                        </ol>
+                    </div></div>
+                </div>
+                <div class="faq-item">
+                    <button class="faq-question" onclick="this.parentElement.classList.toggle('open')">
+                        Wie kann ich die L&ouml;schung meiner Daten oder meines Kontos beantragen?
+                        <svg viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M5.23 7.21a.75.75 0 011.06.02L10 11.168l3.71-3.938a.75.75 0 111.08 1.04l-4.25 4.5a.75.75 0 01-1.08 0l-4.25-4.5a.75.75 0 01.02-1.06z" clip-rule="evenodd"/></svg>
+                    </button>
+                    <div class="faq-answer"><div class="faq-answer-inner">Sie k&ouml;nnen die L&ouml;schung Ihres Kontos direkt in den App-Einstellungen beantragen oder uns unter <a href="mailto:aivancepro@gmail.com">aivancepro@gmail.com</a> kontaktieren. Wir halten alle geltenden Datenschutzbestimmungen ein.</div></div>
+                </div>
+            </div>
         </div>
 
         <h2>Rechtliche Hinweise</h2>
