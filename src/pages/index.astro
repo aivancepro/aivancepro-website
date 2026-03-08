@@ -1269,6 +1269,10 @@ const jsonLd = {
         }
 
         @media (max-width: 480px) {
+            .hero {
+                padding: 7rem 1rem 3rem;
+            }
+
             .hero h1 {
                 font-size: 2rem;
             }
@@ -1278,8 +1282,38 @@ const jsonLd = {
                 align-items: center;
             }
 
+            .hero-buttons .btn-primary,
+            .hero-buttons .btn-secondary {
+                width: 100%;
+                justify-content: center;
+            }
+
+            .features-section,
+            .showcase-section,
+            .steps-section,
+            .testimonials-section,
+            .social-proof-section,
+            .final-cta-section {
+                padding-left: 1rem;
+                padding-right: 1rem;
+            }
+
+            .pricing-section {
+                padding-left: 1rem;
+                padding-right: 1rem;
+            }
+
             .footer-grid {
                 grid-template-columns: 1fr;
+            }
+
+            .store-badges {
+                flex-direction: column;
+                align-items: stretch;
+            }
+
+            .store-badge-link {
+                justify-content: center;
             }
         }
     </style>

@@ -79,17 +79,30 @@ const currentLang = languages[lang];
 
 <script is:inline>
 (function() {
-  var SUPABASE_URL = 'https://vzmtvhcvyqzkmestdbko.supabase.co';
+  // Touch support for dropdowns (tablets showing desktop nav)
+  document.querySelectorAll('.lang-dropdown-toggle, .dropdown-toggle').forEach(function(btn) {
+    btn.addEventListener('click', function(e) {
+      e.stopPropagation();
+      var parent = btn.closest('.lang-dropdown, .dropdown');
+      if (!parent) return;
+      var isOpen = parent.classList.contains('touch-open');
+      document.querySelectorAll('.touch-open').forEach(function(el) { el.classList.remove('touch-open'); });
+      if (!isOpen) parent.classList.add('touch-open');
+    });
+  });
+  document.addEventListener('click', function() {
+    document.querySelectorAll('.touch-open').forEach(function(el) { el.classList.remove('touch-open'); });
+  });
+
+  // Auth state check
   var storageKey = 'sb-vzmtvhcvyqzkmestdbko-auth-token';
   try {
     var raw = localStorage.getItem(storageKey);
     if (!raw) return;
     var parsed = JSON.parse(raw);
     if (!parsed || !parsed.access_token) return;
-    // Check token not expired
     var exp = parsed.expires_at;
     if (exp && exp * 1000 < Date.now()) return;
-    // User is logged in - update nav links
     var labels = { fr: 'Mon compte', en: 'My Account', de: 'Mein Konto' };
     var lang = document.documentElement.lang || 'fr';
     var label = labels[lang] || labels.fr;

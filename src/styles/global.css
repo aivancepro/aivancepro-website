@@ -137,7 +137,8 @@ nav {
     transition: transform 0.2s;
 }
 
-.dropdown:hover .dropdown-toggle svg {
+.dropdown:hover .dropdown-toggle svg,
+.dropdown.touch-open .dropdown-toggle svg {
     transform: rotate(180deg);
 }
 
@@ -158,7 +159,8 @@ nav {
     transform: translateX(-50%) translateY(4px);
 }
 
-.dropdown:hover .dropdown-menu {
+.dropdown:hover .dropdown-menu,
+.dropdown.touch-open .dropdown-menu {
     opacity: 1;
     visibility: visible;
     transform: translateX(-50%) translateY(0);
@@ -223,7 +225,8 @@ nav {
     transition: transform 0.2s;
 }
 
-.lang-dropdown:hover .lang-dropdown-toggle svg {
+.lang-dropdown:hover .lang-dropdown-toggle svg,
+.lang-dropdown.touch-open .lang-dropdown-toggle svg {
     transform: rotate(180deg);
 }
 
@@ -244,7 +247,8 @@ nav {
     z-index: 101;
 }
 
-.lang-dropdown:hover .lang-dropdown-menu {
+.lang-dropdown:hover .lang-dropdown-menu,
+.lang-dropdown.touch-open .lang-dropdown-menu {
     opacity: 1;
     visibility: visible;
     transform: translateY(0);
@@ -639,12 +643,16 @@ footer {
 
 /* ===== RESPONSIVE ===== */
 @media (max-width: 768px) {
-    .nav-center, .nav-right .nav-login, .nav-right .nav-cta {
+    .nav-center, .nav-right .nav-login, .nav-right .nav-cta, .lang-dropdown {
         display: none;
     }
 
     .mobile-menu-btn {
         display: block;
+    }
+
+    nav {
+        padding: 0.875rem 1.25rem;
     }
 
     .section-title {
@@ -655,10 +663,69 @@ footer {
         grid-template-columns: 1fr 1fr;
         gap: 2rem;
     }
+
+    footer {
+        padding: 3rem 1.25rem 2rem;
+    }
+
+    .mobile-menu {
+        padding: 5rem 1.5rem 2rem;
+        padding-top: calc(5rem + env(safe-area-inset-top, 0px));
+        padding-bottom: calc(2rem + env(safe-area-inset-bottom, 0px));
+    }
+
+    .btn-primary, .btn-secondary {
+        padding: 0.875rem 1.5rem;
+        font-size: 0.95rem;
+    }
 }
 
 @media (max-width: 480px) {
+    nav {
+        padding: 0.75rem 1rem;
+    }
+
+    .section-title {
+        font-size: 1.75rem;
+    }
+
+    .section-subtitle {
+        font-size: 1rem;
+    }
+
+    .section-header {
+        margin-bottom: 2.5rem;
+    }
+
     .footer-grid {
         grid-template-columns: 1fr;
     }
+
+    footer {
+        padding: 2.5rem 1rem 1.5rem;
+    }
+
+    .cta {
+        padding: 2rem 1.25rem;
+    }
+
+    .btn-primary, .btn-secondary {
+        padding: 0.875rem 1.25rem;
+        width: 100%;
+        justify-content: center;
+    }
+}
+
+/* ===== SAFE AREAS (notch, Dynamic Island) ===== */
+@supports (padding: env(safe-area-inset-top)) {
+    nav {
+        padding-left: max(env(safe-area-inset-left, 0px), 1.25rem);
+        padding-right: max(env(safe-area-inset-right, 0px), 1.25rem);
+    }
+}
+
+/* ===== TEXT OVERFLOW PROTECTION ===== */
+body {
+    overflow-wrap: break-word;
+    word-break: break-word;
 }

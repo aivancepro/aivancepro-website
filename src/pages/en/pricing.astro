@@ -106,10 +106,28 @@ import BaseLayout from '../../layouts/BaseLayout.astro';
       .faq-answer-inner { padding: 0 0 1.5rem; font-size: 0.95rem; color: var(--gray-500); line-height: 1.7; }
       .faq-item.open .faq-answer { max-height: 300px; }
       @media (max-width: 768px) {
+          .pricing-hero { padding: 7rem 1.25rem 3rem; }
           .pricing-hero h1 { font-size: 2.2rem; }
-          .pricing-grid { grid-template-columns: 1fr; }
-          .comparison-table { font-size: 0.8rem; }
+          .pricing-hero p { font-size: 1rem; }
+          .pricing-section { padding: 2rem 1.25rem 4rem; }
+          .pricing-grid { grid-template-columns: 1fr; max-width: 420px; }
+          .pricing-card { padding: 2rem; }
+          .comparison-section { padding: 3rem 1.25rem; }
+          .comparison-section h2 { font-size: 1.7rem; margin-bottom: 2rem; }
+          .comparison-table-wrapper { overflow-x: auto; -webkit-overflow-scrolling: touch; border-radius: 16px; }
+          .comparison-table { font-size: 0.8rem; min-width: 500px; }
           .comparison-table th, .comparison-table td { padding: 0.75rem 0.5rem; }
+          .faq-section { padding: 3rem 1.25rem; }
+          .faq-section h2 { font-size: 1.7rem; margin-bottom: 2rem; }
+          .faq-question { font-size: 0.95rem; padding: 1.25rem 0; }
+      }
+      @media (max-width: 480px) {
+          .pricing-hero { padding: 6.5rem 1rem 2.5rem; }
+          .pricing-hero h1 { font-size: 1.8rem; }
+          .pricing-section { padding: 1.5rem 1rem 3rem; }
+          .pricing-card { padding: 1.5rem; }
+          .comparison-section { padding: 2.5rem 1rem; }
+          .faq-section { padding: 2.5rem 1rem; }
       }
     </style>
   </Fragment>
@@ -170,6 +188,7 @@ import BaseLayout from '../../layouts/BaseLayout.astro';
     <!-- Comparison Table -->
     <section class="comparison-section">
         <h2>Detailed Comparison</h2>
+        <div class="comparison-table-wrapper">
         <table class="comparison-table">
             <thead><tr><th>Feature</th><th>Free</th><th>Pro</th><th>Elite</th></tr></thead>
             <tbody>
@@ -185,6 +204,7 @@ import BaseLayout from '../../layouts/BaseLayout.astro';
                 <tr><td>Priority support</td><td class="cross">&mdash;</td><td class="cross">&mdash;</td><td class="check">&#10003;</td></tr>
             </tbody>
         </table>
+        </div>
     </section>
 
     <!-- FAQ Pricing -->
