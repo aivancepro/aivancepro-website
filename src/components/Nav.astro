@@ -24,12 +24,12 @@ const currentLang = languages[lang];
                 <div class="dropdown-menu">
                     <a href={i.links.blog}>{i.nav.blog}</a>
                     <a href={i.links.guides}>{i.nav.guides}</a>
-                    <a href={i.links.exercises}>{i.nav.exercises}</a>
                     <a href={i.links.personalTraining}>{i.nav.personalTraining}</a>
                     <a href={i.links.workoutSplits}>{i.nav.workoutSplits}</a>
                     <a href={i.links.compoundIsolation}>{i.nav.compoundIsolation}</a>
                 </div>
             </li>
+            <li><a href={i.links.exercises}>{i.nav.exercises}</a></li>
             <li><a href={i.links.pricing}>{i.nav.pricing}</a></li>
             <li><a href={i.links.faq}>{i.nav.faq}</a></li>
         </ul>
@@ -64,11 +64,11 @@ const currentLang = languages[lang];
     <a href={i.links.blog}>{i.nav.blog}</a>
     <div class="mobile-sub">
         <a href={i.links.guides}>{i.nav.guides}</a>
-        <a href={i.links.exercises}>{i.nav.exercises}</a>
         <a href={i.links.personalTraining}>{i.nav.personalTraining}</a>
         <a href={i.links.workoutSplits}>{i.nav.workoutSplits}</a>
         <a href={i.links.compoundIsolation}>{i.nav.compoundIsolation}</a>
     </div>
+    <a href={i.links.exercises}>{i.nav.exercises}</a>
     <a href={i.links.pricing} onclick="document.getElementById('mobileMenu').classList.remove('open')">{i.nav.pricing}</a>
     <a href={i.links.faq} onclick="document.getElementById('mobileMenu').classList.remove('open')">{i.nav.faq}</a>
     <a href={i.links.login} id="mobile-login-link" data-account-url={i.links.account}>{i.nav.login}</a>
