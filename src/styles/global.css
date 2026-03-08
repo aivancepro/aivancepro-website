@@ -188,6 +188,12 @@ nav {
     gap: 1rem;
 }
 
+.nav-divider {
+    width: 1px;
+    height: 20px;
+    background: var(--border-light);
+}
+
 /* Language dropdown */
 .lang-dropdown {
     position: relative;
@@ -643,7 +649,7 @@ footer {
 
 /* ===== RESPONSIVE ===== */
 @media (max-width: 768px) {
-    .nav-center, .nav-right .nav-login, .nav-right .nav-cta, .lang-dropdown {
+    .nav-center, .nav-right .nav-login, .nav-right .nav-cta, .lang-dropdown, .nav-divider {
         display: none;
     }
 
