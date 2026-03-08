@@ -344,7 +344,7 @@ nav {
     height: 100%;
     background: var(--bg);
     z-index: 200;
-    padding: 5rem 2rem 2rem;
+    padding: 5rem 2rem calc(2rem + env(safe-area-inset-bottom, 0px));
     flex-direction: column;
     overflow-y: auto;
     -webkit-overflow-scrolling: touch;
