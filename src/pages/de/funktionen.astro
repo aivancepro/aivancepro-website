@@ -192,7 +192,7 @@ import BaseLayout from '../../layouts/BaseLayout.astro';
       .review-card { background: var(--bg-card); border: 1px solid var(--border); border-radius: 16px; padding: 1.75rem; text-align: left; transition: transform 0.2s, box-shadow 0.2s; }
       .review-card:hover { transform: translateY(-4px); box-shadow: 0 8px 30px rgba(0,0,0,0.12); }
       .review-stars { display: flex; gap: 2px; margin-bottom: 1rem; }
-      .review-stars svg { width: 18px; height: 18px; color: #FBBF24; }
+      .review-stars :global(svg) { width: 18px; height: 18px; color: #FBBF24; }
       .review-text { font-size: 0.95rem; color: var(--gray-700); line-height: 1.7; margin-bottom: 1.25rem; }
       .review-author { font-size: 0.85rem; font-weight: 600; color: var(--gray-900); }
       .review-source { font-size: 0.75rem; color: var(--gray-400); margin-top: 0.15rem; }
