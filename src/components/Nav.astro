@@ -15,6 +15,7 @@ const currentLang = languages[lang];
         </a>
 
         <ul class="nav-center">
+            <li><a href={i.links.home}>{i.nav.home}</a></li>
             <li class="dropdown">
                 <button class="dropdown-toggle">
                     {i.nav.product}
@@ -25,6 +26,7 @@ const currentLang = languages[lang];
                     <a href={i.links.changelog}>{i.nav.changelog}</a>
                 </div>
             </li>
+            <li><a href={i.links.pricing}>{i.nav.pricing}</a></li>
             <li class="dropdown">
                 <button class="dropdown-toggle">
                     {i.nav.articles}
@@ -39,7 +41,6 @@ const currentLang = languages[lang];
                 </div>
             </li>
             <li><a href={i.links.exercises}>{i.nav.exercises}</a></li>
-            <li><a href={i.links.pricing}>{i.nav.pricing}</a></li>
             <li><a href={i.links.faq}>{i.nav.faq}</a></li>
             <li><a href={i.links.support}>{i.nav.support}</a></li>
         </ul>
