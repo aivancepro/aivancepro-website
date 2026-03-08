@@ -146,39 +146,7 @@ const currentLang = languages[lang];
     });
   }
 
-  // Search modal
-  var searchOverlay = document.getElementById('searchOverlay');
-  var searchInput = document.getElementById('searchInput');
-  if (searchOverlay) {
-    document.addEventListener('keydown', function(e) {
-      if ((e.metaKey || e.ctrlKey) && e.key === 'k') {
-        e.preventDefault();
-        searchOverlay.classList.toggle('open');
-        if (searchOverlay.classList.contains('open') && searchInput) searchInput.focus();
-      }
-      if (e.key === 'Escape') searchOverlay.classList.remove('open');
-    });
-    searchOverlay.addEventListener('click', function(e) {
-      if (e.target === searchOverlay) searchOverlay.classList.remove('open');
-    });
-    if (searchInput) {
-      searchInput.addEventListener('input', function() {
-        var q = this.value.toLowerCase().trim();
-        var results = document.getElementById('searchResults');
-        if (!results) return;
-        var items = results.querySelectorAll('a');
-        var noRes = results.querySelector('.no-results');
-        var visible = 0;
-        items.forEach(function(a) {
-          var text = (a.dataset.title + ' ' + a.dataset.desc).toLowerCase();
-          var show = !q || text.indexOf(q) !== -1;
-          a.style.display = show ? '' : 'none';
-          if (show) visible++;
-        });
-        if (noRes) noRes.style.display = (q && visible === 0) ? '' : 'none';
-      });
-    }
-  }
+  // Search modal JS is in BaseLayout.astro (runs after overlay is in DOM)
 
   // Auth state check
   var storageKey = 'sb-vzmtvhcvyqzkmestdbko-auth-token';

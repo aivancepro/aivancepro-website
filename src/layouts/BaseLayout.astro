@@ -2,6 +2,7 @@
 import Nav from '../components/Nav.astro';
 import Footer from '../components/Footer.astro';
 import { t } from '../i18n.js';
+import { getCollection } from 'astro:content';
 import '../styles/global.css';
 
 const {
@@ -18,6 +19,14 @@ const {
 
 const i = t[lang];
 const localeMap = { fr: 'fr_FR', en: 'en_GB', de: 'de_DE' };
+
+// Build search index from blog + guides
+const blogPrefixes = { fr: '/blog/', en: '/en/blog/', de: '/de/blog/' };
+const guidePrefixes = { fr: '/guides/', en: '/en/guides/', de: '/de/ratgeber/' };
+const blogPosts = (await getCollection('blog', ({ data }) => data.lang === lang))
+  .map(p => ({ title: p.data.title, desc: p.data.description, tag: p.data.tag, url: blogPrefixes[lang] + p.data.slug + '/' }));
+const guidePosts = (await getCollection('guides', ({ data }) => data.lang === lang))
+  .map(p => ({ title: p.data.title, desc: p.data.description, tag: p.data.tag, url: guidePrefixes[lang] + p.data.slug + '/' }));
 ---
 
 <!DOCTYPE html>
@@ -82,6 +91,12 @@ const localeMap = { fr: 'fr_FR', en: 'en_GB', de: 'de_DE' };
                 <a href={i.links.compoundIsolation} data-title={i.nav.compoundIsolation} data-desc={i.nav.articles}><div class="result-title">{i.nav.compoundIsolation}</div><div class="result-desc">{i.nav.articles}</div></a>
                 <a href={i.links.faq} data-title={i.nav.faq} data-desc={i.nav.help}><div class="result-title">{i.nav.faq}</div><div class="result-desc">{i.nav.help}</div></a>
                 <a href={i.links.support} data-title={i.nav.support} data-desc={i.nav.help}><div class="result-title">{i.nav.support}</div><div class="result-desc">{i.nav.help}</div></a>
+                {blogPosts.map(p => (
+                  <a href={p.url} data-title={p.title} data-desc={p.desc + (p.tag ? ' ' + p.tag : '')}><div class="result-title">{p.title}</div><div class="result-desc">{p.desc}</div></a>
+                ))}
+                {guidePosts.map(p => (
+                  <a href={p.url} data-title={p.title} data-desc={p.desc + (p.tag ? ' ' + p.tag : '')}><div class="result-title">{p.title}</div><div class="result-desc">{p.desc}</div></a>
+                ))}
                 <div class="no-results" style="display:none">{i.search.noResults}</div>
             </div>
         </div>
@@ -116,6 +131,40 @@ const localeMap = { fr: 'fr_FR', en: 'en_GB', de: 'de_DE' };
 
     <script is:inline>
     (function(){
+      // Search modal
+      var searchOverlay = document.getElementById('searchOverlay');
+      var searchInput = document.getElementById('searchInput');
+      if (searchOverlay) {
+        document.addEventListener('keydown', function(e) {
+          if ((e.metaKey || e.ctrlKey) && e.key === 'k') {
+            e.preventDefault();
+            searchOverlay.classList.toggle('open');
+            if (searchOverlay.classList.contains('open') && searchInput) searchInput.focus();
+          }
+          if (e.key === 'Escape') searchOverlay.classList.remove('open');
+        });
+        searchOverlay.addEventListener('click', function(e) {
+          if (e.target === searchOverlay) searchOverlay.classList.remove('open');
+        });
+        if (searchInput) {
+          searchInput.addEventListener('input', function() {
+            var q = this.value.toLowerCase().trim();
+            var results = document.getElementById('searchResults');
+            if (!results) return;
+            var items = results.querySelectorAll('a');
+            var noRes = results.querySelector('.no-results');
+            var visible = 0;
+            items.forEach(function(a) {
+              var text = ((a.dataset.title || '') + ' ' + (a.dataset.desc || '')).toLowerCase();
+              var show = !q || text.indexOf(q) !== -1;
+              a.style.display = show ? '' : 'none';
+              if (show) visible++;
+            });
+            if (noRes) noRes.style.display = (q && visible === 0) ? '' : 'none';
+          });
+        }
+      }
+
       // Reveal animations
       var els = document.querySelectorAll('.reveal');
       if (els.length) {

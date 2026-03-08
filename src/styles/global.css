@@ -422,7 +422,8 @@ nav {
 
 /* ===== BUTTONS ===== */
 .btn-primary {
-    display: inline-flex;
+    display: flex;
+    justify-content: center;
     align-items: center;
     gap: 0.5rem;
     background: linear-gradient(135deg, var(--blue), var(--purple));
@@ -443,7 +444,8 @@ nav {
 }
 
 .btn-secondary {
-    display: inline-flex;
+    display: flex;
+    justify-content: center;
     align-items: center;
     gap: 0.5rem;
     background: var(--bg-card);
@@ -470,7 +472,8 @@ nav {
 }
 
 .section-label {
-    display: inline-flex;
+    display: flex;
+    justify-content: center;
     align-items: center;
     gap: 0.4rem;
     font-size: 0.8rem;
@@ -1166,7 +1169,8 @@ body {
 
 /* ===== BREADCRUMBS ===== */
 .breadcrumb-nav {
-    display: inline-flex;
+    display: flex;
+    justify-content: center;
     align-items: center;
     gap: 0.4rem;
     font-size: 0.85rem;
