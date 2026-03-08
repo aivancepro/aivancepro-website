@@ -1,0 +1,121 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import { t, getLangFromUrl } from '../i18n.js';
+
+const lang = 'fr';
+const i = t[lang];
+---
+
+<BaseLayout
+  lang={lang}
+  title="404 - Page non trouvée | AIVancePro"
+  description="La page que vous recherchez n'existe pas."
+  noFooter={false}
+>
+  <Fragment slot="head">
+    <style>
+        .error-page {
+            min-height: 70vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            padding: 4rem 2rem;
+        }
+
+        .error-content {
+            max-width: 500px;
+        }
+
+        .error-code {
+            font-size: 8rem;
+            font-weight: 900;
+            letter-spacing: -0.05em;
+            line-height: 1;
+            background: linear-gradient(135deg, var(--blue), var(--purple));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            margin-bottom: 1rem;
+        }
+
+        .error-title {
+            font-size: 1.8rem;
+            font-weight: 800;
+            color: var(--gray-900);
+            margin-bottom: 0.75rem;
+        }
+
+        .error-description {
+            font-size: 1.05rem;
+            color: var(--gray-500);
+            line-height: 1.7;
+            margin-bottom: 2.5rem;
+        }
+
+        .error-btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            background: linear-gradient(135deg, var(--blue), var(--purple));
+            color: white;
+            text-decoration: none;
+            font-size: 1rem;
+            font-weight: 600;
+            padding: 0.875rem 2rem;
+            border-radius: 12px;
+            transition: opacity 0.2s, transform 0.2s;
+            box-shadow: 0 4px 15px rgba(37, 99, 235, 0.3);
+        }
+
+        .error-btn:hover {
+            opacity: 0.92;
+            transform: translateY(-2px);
+            box-shadow: 0 8px 25px rgba(37, 99, 235, 0.35);
+        }
+
+        .error-btn svg {
+            width: 18px;
+            height: 18px;
+        }
+    </style>
+  </Fragment>
+
+  <section class="error-page">
+      <div class="error-content">
+          <div class="error-code">404</div>
+          <h1 class="error-title" id="error-title">{i.notFound.title}</h1>
+          <p class="error-description" id="error-desc">{i.notFound.description}</p>
+          <a href="/" class="error-btn" id="error-btn">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m3 9 9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>
+              <span id="error-btn-text">{i.notFound.back}</span>
+          </a>
+      </div>
+  </section>
+
+  <script is:inline>
+  // Auto-detect language from URL and update 404 content
+  (function() {
+    var path = window.location.pathname;
+    var lang = 'fr';
+    if (path.startsWith('/en/') || path === '/en') lang = 'en';
+    else if (path.startsWith('/de/') || path === '/de') lang = 'de';
+    if (lang === 'fr') return;
+
+    var texts = {
+      en: { title: 'Page not found', desc: 'The page you are looking for does not exist or has been moved.', btn: 'Back to home', home: '/en/' },
+      de: { title: 'Seite nicht gefunden', desc: 'Die gesuchte Seite existiert nicht oder wurde verschoben.', btn: 'Zurück zur Startseite', home: '/de/' }
+    };
+    var t = texts[lang];
+    var title = document.getElementById('error-title');
+    var desc = document.getElementById('error-desc');
+    var btn = document.getElementById('error-btn');
+    var btnText = document.getElementById('error-btn-text');
+    if (title) title.textContent = t.title;
+    if (desc) desc.textContent = t.desc;
+    if (btn) btn.href = t.home;
+    if (btnText) btnText.textContent = t.btn;
+    document.documentElement.lang = lang;
+  })();
+  </script>
+</BaseLayout>

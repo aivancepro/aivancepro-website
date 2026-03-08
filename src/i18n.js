@@ -43,6 +43,11 @@ export const t = {
       accept: 'Accepter',
       reject: 'Refuser',
     },
+    notFound: {
+      title: 'Page non trouvée',
+      description: 'La page que vous recherchez n\'existe pas ou a été déplacée.',
+      back: 'Retour à l\'accueil',
+    },
     links: {
       home: '/',
       features: '/fonctionnalites/',
@@ -103,6 +108,11 @@ export const t = {
       accept: 'Accept',
       reject: 'Reject',
     },
+    notFound: {
+      title: 'Page not found',
+      description: 'The page you are looking for does not exist or has been moved.',
+      back: 'Back to home',
+    },
     links: {
       home: '/en/',
       features: '/en/features/',
@@ -162,6 +172,11 @@ export const t = {
       text: 'Diese Website verwendet Cookies, um Ihre Erfahrung zu verbessern.',
       accept: 'Akzeptieren',
       reject: 'Ablehnen',
+    },
+    notFound: {
+      title: 'Seite nicht gefunden',
+      description: 'Die gesuchte Seite existiert nicht oder wurde verschoben.',
+      back: 'Zurück zur Startseite',
     },
     links: {
       home: '/de/',
