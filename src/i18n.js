@@ -19,6 +19,7 @@ export const t = {
       compoundIsolation: 'Compound vs Isolation',
       changelog: 'Nouveautés',
       more: 'Plus',
+      reviews: 'Avis',
       help: 'Aide',
       support: 'Support',
       pricing: 'Tarifs',
@@ -40,6 +41,7 @@ export const t = {
     links: {
       home: '/',
       features: '/fonctionnalites/',
+      reviews: '/fonctionnalites/#avis',
       pricing: '/pricing/',
       faq: '/faq/',
       changelog: '/nouveautes/',
@@ -72,6 +74,7 @@ export const t = {
       compoundIsolation: 'Compound vs Isolation',
       changelog: 'Changelog',
       more: 'More',
+      reviews: 'Reviews',
       help: 'Help',
       support: 'Support',
       pricing: 'Pricing',
@@ -93,6 +96,7 @@ export const t = {
     links: {
       home: '/en/',
       features: '/en/features/',
+      reviews: '/en/features/#reviews',
       pricing: '/en/pricing/',
       faq: '/en/faq/',
       changelog: '/en/changelog/',
@@ -125,6 +129,7 @@ export const t = {
       compoundIsolation: 'Compound vs Isolation',
       changelog: 'Neuigkeiten',
       more: 'Mehr',
+      reviews: 'Bewertungen',
       help: 'Hilfe',
       support: 'Support',
       pricing: 'Preise',
@@ -146,6 +151,7 @@ export const t = {
     links: {
       home: '/de/',
       features: '/de/funktionen/',
+      reviews: '/de/funktionen/#bewertungen',
       pricing: '/de/preise/',
       faq: '/de/faq/',
       changelog: '/de/neuigkeiten/',
