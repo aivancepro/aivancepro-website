@@ -81,19 +81,28 @@ const currentLang = languages[lang];
 <!-- Mobile Menu -->
 <div id="mobileMenu" class="mobile-menu">
     <button class="mobile-menu-close" onclick="document.getElementById('mobileMenu').classList.remove('open')" aria-label={i.nav.close}>&times;</button>
-    <a href={i.links.features}>{i.nav.features}</a>
-    <a href={i.links.exercises}>{i.nav.exercises}</a>
-    <a href={i.links.changelog}>{i.nav.changelog}</a>
-    <a href={i.links.pricing}>{i.nav.pricing}</a>
-    <a href={i.links.blog}>{i.nav.blog}</a>
+    <a href={i.links.home}>{i.nav.home}</a>
+    <span class="mobile-section-label">{i.nav.product}</span>
     <div class="mobile-sub">
+        <a href={i.links.features}>{i.nav.features}</a>
+        <a href={i.links.exercises}>{i.nav.exercises}</a>
+        <a href={i.links.reviews}>{i.nav.reviews}</a>
+        <a href={i.links.changelog}>{i.nav.changelog}</a>
+    </div>
+    <a href={i.links.pricing}>{i.nav.pricing}</a>
+    <span class="mobile-section-label">{i.nav.articles}</span>
+    <div class="mobile-sub">
+        <a href={i.links.blog}>{i.nav.blog}</a>
         <a href={i.links.guides}>{i.nav.guides}</a>
         <a href={i.links.personalTraining}>{i.nav.personalTraining}</a>
         <a href={i.links.workoutSplits}>{i.nav.workoutSplits}</a>
         <a href={i.links.compoundIsolation}>{i.nav.compoundIsolation}</a>
     </div>
-    <a href={i.links.faq}>{i.nav.faq}</a>
-    <a href={i.links.support}>{i.nav.support}</a>
+    <span class="mobile-section-label">{i.nav.help}</span>
+    <div class="mobile-sub">
+        <a href={i.links.faq}>{i.nav.faq}</a>
+        <a href={i.links.support}>{i.nav.support}</a>
+    </div>
     <a href={i.links.login} id="mobile-login-link" data-account-url={i.links.account}>{i.nav.login}</a>
     {Object.entries(languages).filter(([code]) => code !== lang).map(([code, l]) => (
         <a href={t[code].links.home}>{l.flag} {l.label}</a>
