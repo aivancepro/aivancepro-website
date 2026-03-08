@@ -3,9 +3,9 @@ import BaseLayout from '../../../layouts/BaseLayout.astro';
 import { exercises, toSlug } from '../../../data/exercises-de.js';
 
 const difficultyColors = {
-  "Beginner": { bg: "rgba(16, 185, 129, 0.1)", color: "#10B981" },
-  "Intermediate": { bg: "rgba(245, 158, 11, 0.1)", color: "#F59E0B" },
-  "Advanced": { bg: "rgba(239, 68, 68, 0.1)", color: "#EF4444" },
+  "Anfänger": { bg: "rgba(16, 185, 129, 0.1)", color: "#10B981" },
+  "Fortgeschritten": { bg: "rgba(245, 158, 11, 0.1)", color: "#F59E0B" },
+  "Experte": { bg: "rgba(239, 68, 68, 0.1)", color: "#EF4444" },
 };
 
 const totalCount = exercises.length;
@@ -24,19 +24,19 @@ const muscleGroups = [
 ];
 
 const equipmentList = [
-  { id: "Barbell", label: "Langhantel", icon: "🏋️" },
-  { id: "Dumbbells", label: "Kurzhanteln", icon: "🏋️" },
-  { id: "Machine", label: "Maschine", icon: "⚙️" },
-  { id: "Cable", label: "Kabelzug", icon: "🔗" },
-  { id: "Bodyweight", label: "Eigengewicht", icon: "🧍" },
-  { id: "Bodyweight + load", label: "Gewichtet", icon: "🎒" },
-  { id: "Smith machine", label: "Multipresse", icon: "🏗️" },
+  { id: "Langhantel", label: "Langhantel", icon: "🏋️" },
+  { id: "Kurzhanteln", label: "Kurzhanteln", icon: "🏋️" },
+  { id: "Maschine", label: "Maschine", icon: "⚙️" },
+  { id: "Kabelzug", label: "Kabelzug", icon: "🔗" },
+  { id: "Eigengewicht", label: "Eigengewicht", icon: "🧍" },
+  { id: "Gewichtet", label: "Gewichtet", icon: "🎒" },
+  { id: "Multipresse", label: "Multipresse", icon: "🏗️" },
   { id: "Kettlebell", label: "Kettlebell", icon: "🔔" },
-  { id: "EZ Bar", label: "SZ-Stange", icon: "〰️" },
-  { id: "Resistance band", label: "Widerstandsband", icon: "🪢" },
+  { id: "SZ-Stange", label: "SZ-Stange", icon: "〰️" },
+  { id: "Widerstandsband", label: "Widerstandsband", icon: "🪢" },
   { id: "TRX", label: "TRX", icon: "🪢" },
   { id: "Landmine", label: "Landmine", icon: "💣" },
-  { id: "Medicine ball", label: "Medizinball", icon: "⚽" },
+  { id: "Medizinball", label: "Medizinball", icon: "⚽" },
 ];
 
 const muscleGroupCounts = {};

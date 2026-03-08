@@ -6,33 +6,9 @@ import { enExerciseImages } from '../../../data/exercise-images.js';
 
 // --- Helper: difficulty colors ---
 const difficultyColors: Record<string, { bg: string; color: string }> = {
-  "Beginner": { bg: "rgba(16, 185, 129, 0.1)", color: "#10B981" },
-  "Intermediate": { bg: "rgba(245, 158, 11, 0.1)", color: "#F59E0B" },
-  "Advanced": { bg: "rgba(239, 68, 68, 0.1)", color: "#EF4444" },
-};
-
-// --- Helper: difficulty labels DE ---
-const difficultyLabels: Record<string, string> = {
-  "Beginner": "Anfänger",
-  "Intermediate": "Fortgeschritten",
-  "Advanced": "Experte",
-};
-
-// --- Helper: equipment labels DE ---
-const equipmentLabels: Record<string, string> = {
-  "Barbell": "Langhantel",
-  "Dumbbells": "Kurzhanteln",
-  "Machine": "Maschine",
-  "Cable": "Kabelzug",
-  "Bodyweight": "Körpergewicht",
-  "Kettlebell": "Kettlebell",
-  "EZ Bar": "SZ-Stange",
-  "Resistance Band": "Widerstandsband",
-  "Pull-up Bar": "Klimmzugstange",
-  "Bench": "Bank",
-  "Smith Machine": "Smith-Maschine",
-  "Dip Station": "Dipstation",
-  "Foam Roller": "Faszienrolle",
+  "Anfänger": { bg: "rgba(16, 185, 129, 0.1)", color: "#10B981" },
+  "Fortgeschritten": { bg: "rgba(245, 158, 11, 0.1)", color: "#F59E0B" },
+  "Experte": { bg: "rgba(239, 68, 68, 0.1)", color: "#EF4444" },
 };
 
 // --- Helper: category labels ---
@@ -435,8 +411,8 @@ export function getStaticPaths() {
 const { exercise } = Astro.props;
 const slug = toSlug(exercise.name);
 const dc = difficultyColors[exercise.difficulty] || { bg: "rgba(100,100,100,0.1)", color: "#888" };
-const difficultyLabel = difficultyLabels[exercise.difficulty] || exercise.difficulty;
-const equipmentLabel = equipmentLabels[exercise.equipment] || exercise.equipment;
+const difficultyLabel = exercise.difficulty;
+const equipmentLabel = exercise.equipment;
 const muscles = secondaryMuscles[exercise.category] || secondaryMuscles.fonctionnel;
 const steps = getSteps(exercise);
 const mistakes = getMistakes(exercise);
@@ -624,7 +600,7 @@ const catLabel = categoryLabels[exercise.category] || exercise.category;
               <h4>{v.name}</h4>
               <div class="tags">
                 <span class="tag tag-muscle">{v.muscle}</span>
-                <span class="tag tag-equipment">{equipmentLabels[v.equipment] || v.equipment}</span>
+                <span class="tag tag-equipment">{v.equipment}</span>
               </div>
             </a>
           ))}
