@@ -979,6 +979,29 @@ const jsonLd = {
             gap: 2rem;
         }
 
+        .testimonials-actions {
+            text-align: center;
+            margin-top: 2.5rem;
+        }
+
+        .testimonials-actions a {
+            display: inline-block;
+            color: var(--blue);
+            font-size: 0.95rem;
+            font-weight: 600;
+            text-decoration: none;
+            transition: opacity 0.2s;
+        }
+
+        .testimonials-actions a:hover {
+            opacity: 0.8;
+        }
+
+        .testimonials-actions .sep {
+            color: var(--gray-500);
+            margin: 0 0.75rem;
+        }
+
         .testimonial-card {
             background: var(--bg-card);
             border: 1px solid var(--border);
@@ -1581,6 +1604,11 @@ const jsonLd = {
                         </div>
                     </div>
                 </div>
+            </div>
+            <div class="testimonials-actions reveal">
+                <a href="/avis/">Voir tous les avis</a>
+                <span class="sep">&middot;</span>
+                <a href="https://apps.apple.com/fr/app/aivancepro/id6756116760?action=write-review" target="_blank" rel="noopener">Laisser un avis &rarr;</a>
             </div>
         </div>
     </section>

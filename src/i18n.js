@@ -41,7 +41,7 @@ export const t = {
     links: {
       home: '/',
       features: '/fonctionnalites/',
-      reviews: '/fonctionnalites/#avis',
+      reviews: '/avis/',
       pricing: '/pricing/',
       faq: '/faq/',
       changelog: '/nouveautes/',
@@ -96,7 +96,7 @@ export const t = {
     links: {
       home: '/en/',
       features: '/en/features/',
-      reviews: '/en/features/#reviews',
+      reviews: '/en/reviews/',
       pricing: '/en/pricing/',
       faq: '/en/faq/',
       changelog: '/en/changelog/',
@@ -151,7 +151,7 @@ export const t = {
     links: {
       home: '/de/',
       features: '/de/funktionen/',
-      reviews: '/de/funktionen/#bewertungen',
+      reviews: '/de/bewertungen/',
       pricing: '/de/preise/',
       faq: '/de/faq/',
       changelog: '/de/neuigkeiten/',
