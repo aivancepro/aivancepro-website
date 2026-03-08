@@ -71,7 +71,7 @@ const currentLang = languages[lang];
             </div>
             <a href={i.links.login} class="nav-login" id="nav-login-link" data-account-url={i.links.account}>{i.nav.login}</a>
             <a href={i.links.appStore} class="nav-cta" target="_blank" rel="noopener">{i.nav.download}</a>
-            <button class="mobile-menu-btn" onclick="document.getElementById('mobileMenu').classList.add('open')" aria-label={i.nav.menu}>
+            <button class="mobile-menu-btn" onclick="document.getElementById('mobileMenu').classList.add('open');document.body.style.overflow='hidden'" aria-label={i.nav.menu}>
                 <span></span><span></span><span></span>
             </button>
         </div>
@@ -80,7 +80,7 @@ const currentLang = languages[lang];
 
 <!-- Mobile Menu -->
 <div id="mobileMenu" class="mobile-menu">
-    <button class="mobile-menu-close" onclick="document.getElementById('mobileMenu').classList.remove('open')" aria-label={i.nav.close}>&times;</button>
+    <button class="mobile-menu-close" onclick="document.getElementById('mobileMenu').classList.remove('open');document.body.style.overflow=''" aria-label={i.nav.close}>&times;</button>
     <a href={i.links.home}>{i.nav.home}</a>
     <span class="mobile-section-label">{i.nav.product}</span>
     <div class="mobile-sub">
