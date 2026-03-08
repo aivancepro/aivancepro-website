@@ -734,6 +734,117 @@ footer {
     }
 }
 
+/* ===== COOKIE BANNER ===== */
+.cookie-banner {
+    display: none;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    z-index: 300;
+    background: var(--bg-card);
+    border-top: 1px solid var(--border);
+    padding: 1.25rem 2rem;
+    box-shadow: 0 -4px 20px rgba(0, 0, 0, 0.3);
+}
+
+.cookie-banner.show {
+    display: block;
+}
+
+.cookie-inner {
+    max-width: 1100px;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    gap: 1.5rem;
+    flex-wrap: wrap;
+}
+
+.cookie-inner p {
+    flex: 1;
+    min-width: 250px;
+    font-size: 0.85rem;
+    color: var(--text-secondary);
+    line-height: 1.5;
+}
+
+.cookie-inner a {
+    color: var(--blue);
+    text-decoration: underline;
+}
+
+.cookie-buttons {
+    display: flex;
+    gap: 0.75rem;
+    flex-shrink: 0;
+}
+
+.cookie-btn {
+    padding: 0.5rem 1.25rem;
+    border-radius: 8px;
+    font-size: 0.85rem;
+    font-weight: 600;
+    cursor: pointer;
+    border: none;
+    font-family: inherit;
+    transition: opacity 0.2s;
+}
+
+.cookie-btn:hover {
+    opacity: 0.85;
+}
+
+.cookie-btn.accept {
+    background: linear-gradient(135deg, var(--blue), var(--purple));
+    color: var(--white);
+}
+
+.cookie-btn.reject {
+    background: var(--bg-elevated);
+    color: var(--text-secondary);
+    border: 1px solid var(--border);
+}
+
+/* ===== BACK TO TOP ===== */
+.back-to-top {
+    position: fixed;
+    bottom: 2rem;
+    right: 2rem;
+    width: 44px;
+    height: 44px;
+    border-radius: 50%;
+    background: linear-gradient(135deg, var(--blue), var(--purple));
+    color: white;
+    border: none;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(10px);
+    transition: opacity 0.3s, visibility 0.3s, transform 0.3s;
+    z-index: 100;
+    box-shadow: 0 4px 15px rgba(37, 99, 235, 0.4);
+}
+
+.back-to-top.visible {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
+}
+
+.back-to-top:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(37, 99, 235, 0.5);
+}
+
+.back-to-top svg {
+    width: 20px;
+    height: 20px;
+}
+
 /* ===== SAFE AREAS (notch, Dynamic Island) ===== */
 @supports (padding: env(safe-area-inset-top)) {
     nav {

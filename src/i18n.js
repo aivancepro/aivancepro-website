@@ -38,6 +38,11 @@ export const t = {
       terms: 'CGU',
       copyright: '\u00a9 2026 AS Corporation. Tous droits r\u00e9serv\u00e9s.',
     },
+    cookie: {
+      text: 'Ce site utilise des cookies pour améliorer votre expérience.',
+      accept: 'Accepter',
+      reject: 'Refuser',
+    },
     links: {
       home: '/',
       features: '/fonctionnalites/',
@@ -93,6 +98,11 @@ export const t = {
       terms: 'Terms',
       copyright: '\u00a9 2026 AS Corporation. All rights reserved.',
     },
+    cookie: {
+      text: 'This site uses cookies to improve your experience.',
+      accept: 'Accept',
+      reject: 'Reject',
+    },
     links: {
       home: '/en/',
       features: '/en/features/',
@@ -147,6 +157,11 @@ export const t = {
       privacy: 'Datenschutz',
       terms: 'AGB',
       copyright: '\u00a9 2026 AS Corporation. Alle Rechte vorbehalten.',
+    },
+    cookie: {
+      text: 'Diese Website verwendet Cookies, um Ihre Erfahrung zu verbessern.',
+      accept: 'Akzeptieren',
+      reject: 'Ablehnen',
     },
     links: {
       home: '/de/',
