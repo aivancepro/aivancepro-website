@@ -1,0 +1,594 @@
+---
+import BaseLayout from '../../../layouts/BaseLayout.astro';
+import { exercises, toSlug } from '../../../data/exercises-en.js';
+
+// --- Helper: difficulty colors ---
+const difficultyColors: Record<string, { bg: string; color: string }> = {
+  "Beginner": { bg: "rgba(16, 185, 129, 0.1)", color: "#10B981" },
+  "Intermediate": { bg: "rgba(245, 158, 11, 0.1)", color: "#F59E0B" },
+  "Advanced": { bg: "rgba(239, 68, 68, 0.1)", color: "#EF4444" },
+};
+
+// --- Helper: category labels ---
+const categoryLabels: Record<string, string> = {
+  pectoraux: "Chest",
+  dos: "Back",
+  epaules: "Shoulders",
+  biceps: "Biceps",
+  triceps: "Triceps",
+  jambes: "Legs",
+  fessiers: "Glutes",
+  abdos: "Abs",
+  "avant-bras": "Forearms",
+  fonctionnel: "Functional",
+};
+
+// --- Helper: secondary muscles by category ---
+const secondaryMuscles: Record<string, { primary: string[]; secondary: string[] }> = {
+  pectoraux: { primary: ["Pectoralis major", "Pectoralis minor"], secondary: ["Anterior deltoids", "Triceps", "Serratus anterior"] },
+  dos: { primary: ["Latissimus dorsi", "Trapezius", "Rhomboids"], secondary: ["Biceps", "Erector spinae", "Rear deltoids"] },
+  epaules: { primary: ["Anterior deltoid", "Lateral deltoid", "Posterior deltoid"], secondary: ["Trapezius", "Triceps", "Serratus anterior"] },
+  biceps: { primary: ["Biceps brachii", "Brachialis"], secondary: ["Brachioradialis", "Forearms", "Anterior deltoid"] },
+  triceps: { primary: ["Triceps brachii (3 heads)"], secondary: ["Anterior deltoids", "Chest", "Anconeus"] },
+  jambes: { primary: ["Quadriceps", "Hamstrings", "Glutes"], secondary: ["Adductors", "Calves", "Core"] },
+  fessiers: { primary: ["Gluteus maximus", "Gluteus medius", "Gluteus minimus"], secondary: ["Hamstrings", "Quadriceps", "Core"] },
+  abdos: { primary: ["Rectus abdominis", "Obliques"], secondary: ["Transverse abdominis", "Hip flexors", "Erector spinae"] },
+  "avant-bras": { primary: ["Wrist flexors", "Wrist extensors"], secondary: ["Brachioradialis", "Pronator", "Supinator"] },
+  fonctionnel: { primary: ["Multiple muscle groups"], secondary: ["Core", "Stabilizers", "Postural muscles"] },
+};
+
+// --- Helper: generate steps ---
+function getSteps(ex: typeof exercises[0]): string[] {
+  const n = ex.name.toLowerCase();
+  const eq = ex.equipment.toLowerCase();
+  const cat = ex.category;
+
+  if (n.includes('press') && !n.includes('pallof') && !n.includes('pull-apart') || n.includes('bench press')) {
+    if (n.includes('incline')) {
+      return [
+        "Set the bench to a 30-45 degree angle and sit firmly with feet flat on the floor.",
+        `Grasp ${eq.includes('dumbbell') ? 'the dumbbells' : eq.includes('barbell') ? 'the bar' : 'the handles'} with an appropriate grip, arms extended above your chest.`,
+        "Lower slowly while controlling the movement, elbows at about 45 degrees from your torso.",
+        "Push upward while contracting the upper chest until arms are fully extended.",
+        "Repeat while keeping shoulder blades squeezed and back slightly arched throughout."
+      ];
+    }
+    if (n.includes('decline')) {
+      return [
+        "Position yourself on a decline bench with feet secured under the supports.",
+        `Grasp ${eq.includes('dumbbell') ? 'the dumbbells' : 'the bar'} with an appropriate grip, arms extended.`,
+        "Lower the weight toward the lower chest while controlling the descent.",
+        "Push upward while strongly contracting the lower chest muscles.",
+        "Keep shoulder blades squeezed and avoid bouncing at the bottom of the movement."
+      ];
+    }
+    if (n.includes('overhead') || n.includes('shoulder') || n.includes('arnold') || n.includes('military')) {
+      return [
+        `Sit or stand, ${eq.includes('dumbbell') ? 'dumbbells at shoulder height' : eq.includes('barbell') ? 'bar at collarbone level' : 'hands on the handles'}.`,
+        "Brace your core and keep your back straight throughout the movement.",
+        "Push the weight overhead while exhaling, to near-full arm extension.",
+        "Lower slowly back to shoulder height while controlling the eccentric phase.",
+        "Avoid excessively arching your back and maintain steady breathing."
+      ];
+    }
+    return [
+      "Lie on a flat bench, feet flat on the floor, shoulder blades squeezed against the bench.",
+      `Grasp ${eq.includes('dumbbell') ? 'the dumbbells' : eq.includes('barbell') ? 'the bar' : 'the handles'} with a shoulder-width or slightly wider grip.`,
+      "Unlock the weight and bring it above your chest, arms extended.",
+      "Lower slowly toward the mid-chest while keeping elbows at 45 degrees.",
+      "Push explosively upward while contracting the chest until lockout."
+    ];
+  }
+
+  if (n.includes('fly') || n.includes('crossover') || n.includes('pec deck')) {
+    return [
+      `Position yourself on ${eq.includes('machine') ? 'the machine' : 'a flat or incline bench'}, back firmly pressed.`,
+      `Grasp ${eq.includes('dumbbell') ? 'the dumbbells with arms extended above your chest' : eq.includes('cable') ? 'the handles on each side' : 'the machine handles'}.`,
+      "Open your arms in an arc, elbows slightly bent, stretching the chest.",
+      "Bring your arms back together while strongly contracting the chest.",
+      "Control each rep without jerking to protect the shoulder joint."
+    ];
+  }
+
+  if (n.includes('push-up')) {
+    return [
+      `Place yourself in plank position, hands ${n.includes('close') ? 'close together under your chest' : n.includes('wide') ? 'wider than shoulder-width' : 'shoulder-width apart'}${n.includes('decline') ? ', feet elevated on a surface' : n.includes('incline') ? ', hands elevated on a surface' : ''}.`,
+      "Keep your body aligned from head to feet, core engaged.",
+      "Bend your arms to lower your chest toward the floor with control.",
+      "Push back up to full extension while exhaling.",
+      "Maintain core engagement throughout and avoid sagging your hips."
+    ];
+  }
+
+  if (n.includes('pull-up') || n.includes('chin-up')) {
+    const grip = n.includes('underhand') || n.includes('chin') ? 'palms facing you (underhand)' : n.includes('neutral') ? 'palms facing each other (neutral)' : 'palms facing away (overhand)';
+    const width = n.includes('close') ? 'hands close together' : n.includes('wide') ? 'hands wider than shoulder-width' : 'hands shoulder-width apart';
+    return [
+      `Grasp the bar with a ${grip} grip, ${width}.`,
+      "Start from a dead hang, shoulders engaged (shoulder blades down and squeezed).",
+      "Pull your body upward, bringing your chin above the bar.",
+      "Contract your lats at the top then lower slowly.",
+      "Avoid swinging and control the descent to maximize the work."
+    ];
+  }
+
+  if (n.includes('row') && !n.includes('upright')) {
+    return [
+      `Position yourself ${eq.includes('machine') ? 'on the machine, chest against the support' : eq.includes('cable') ? 'seated facing the low pulley, feet on the foot pads' : 'bent at 45 degrees, back flat, knees slightly bent'}.`,
+      `Grasp ${eq.includes('dumbbell') ? 'the dumbbell with one hand, other hand on the bench' : eq.includes('cable') ? 'the handle or bar' : 'the bar with the appropriate grip'}.`,
+      "Pull the weight toward your navel while squeezing your shoulder blades together.",
+      "Hold the contraction for a second then release slowly with control.",
+      "Keep your back neutral and avoid using body momentum to cheat."
+    ];
+  }
+
+  if (n.includes('pulldown') || n.includes('lat pull')) {
+    return [
+      "Sit at the machine with thighs secured under the pads.",
+      "Grasp the bar or handle with the indicated grip, arms extended overhead.",
+      "Pull the bar to the top of your chest while squeezing your shoulder blades.",
+      "Hold the contraction at the bottom then return slowly with control.",
+      "Avoid leaning excessively backward to cheat."
+    ];
+  }
+
+  if (n.includes('deadlift') || n.includes('stiff-leg')) {
+    return [
+      `Stand in front of ${eq.includes('barbell') ? 'the barbell' : 'the dumbbells'}, feet ${n.includes('sumo') ? 'wide apart, toes pointed outward' : 'shoulder-width apart'}.`,
+      "Hinge at the hips and bend knees to grasp the weight, back flat and chest up.",
+      "Brace your core and push the floor away with your feet to initiate the lift.",
+      "Rise by extending hips and knees simultaneously, keeping the bar close to your body.",
+      "At the top, squeeze your glutes then lower by pushing hips back."
+    ];
+  }
+
+  if (n.includes('squat') && !n.includes('pistol') && !n.includes('sissy')) {
+    return [
+      `Position yourself ${eq.includes('barbell') ? 'with the bar on your traps' : eq.includes('dumbbell') ? 'dumbbells at your sides or against your chest' : eq.includes('machine') ? 'in the machine, shoulders under the pads' : 'feet shoulder-width apart'}${n.includes('sumo') ? ', feet wide apart, toes pointed outward' : n.includes('bulgarian') ? ', rear foot elevated on a bench' : ''}.`,
+      "Keep your torso upright, gaze forward and core braced.",
+      "Descend by pushing your hips back as if sitting down, knees tracking over toes.",
+      "Go down at least until thighs are parallel to the floor.",
+      "Push through your heels to rise while contracting quads and glutes."
+    ];
+  }
+
+  if (n.includes('lunge') && !n.includes('bulgarian')) {
+    return [
+      `Stand upright, ${eq.includes('barbell') ? 'bar on your shoulders' : eq.includes('dumbbell') ? 'dumbbells at your sides' : 'arms at your sides'}.`,
+      "Take a large step forward (or backward) while keeping your torso upright.",
+      "Bend both knees to 90 degrees, rear knee hovering just above the floor.",
+      "Push through your front heel to return to the starting position.",
+      "Alternate legs or work one side at a time depending on the variation."
+    ];
+  }
+
+  if (n.includes('curl') && !n.includes('leg curl') && !n.includes('hamstring') && !n.includes('nordic') && !n.includes('wrist')) {
+    return [
+      `Stand or sit, ${eq.includes('barbell') ? 'bar in hand' : eq.includes('dumbbell') ? 'dumbbells in hand' : eq.includes('cable') ? 'facing the pulley' : 'arms at your sides'}${n.includes('preacher') ? ', arms on the preacher pad' : n.includes('incline') ? ', back against the incline bench' : n.includes('concentration') ? ', elbow braced on thigh' : ''}.`,
+      "Keep your elbows fixed at your sides (except for specific variations).",
+      "Curl your arms by contracting the biceps to raise the weight.",
+      "Squeeze hard at the top of the movement for one second.",
+      "Lower slowly while controlling the eccentric phase without dropping the weight."
+    ];
+  }
+
+  if (n.includes('extension') || n.includes('pushdown') || n.includes('kickback')) {
+    return [
+      `Position yourself ${eq.includes('cable') ? 'facing the high pulley' : eq.includes('dumbbell') ? 'seated or standing' : 'on the machine'}${n.includes('overhead') ? ', arms above your head' : n.includes('kickback') ? ', torso bent forward, arms at your sides' : ''}.`,
+      `Grasp ${eq.includes('cable') ? 'the rope or bar' : eq.includes('dumbbell') ? 'the dumbbell' : 'the handles'} with a firm grip.`,
+      "Keep elbows fixed and close to your body (except overhead).",
+      "Extend your arms while contracting the triceps to lockout.",
+      "Return slowly to the starting position while resisting the weight."
+    ];
+  }
+
+  if (n.includes('dip')) {
+    return [
+      `Grasp the parallel bars ${n.includes('bench') ? '(or place your hands on a bench with feet in front)' : ''} and push up to arm extension.`,
+      "Lean your torso slightly forward to target the chest, or stay upright for triceps.",
+      "Lower by bending your elbows to a 90-degree angle.",
+      "Push upward while contracting the triceps and chest.",
+      "Control the descent and avoid going too deep to protect the shoulders."
+    ];
+  }
+
+  if (n.includes('raise') || n.includes('reverse fly')) {
+    const direction = n.includes('front') ? 'in front of you' : n.includes('bent') || n.includes('reverse') ? 'to the sides while bent over' : 'to the sides';
+    return [
+      `Stand${n.includes('bent') || n.includes('reverse') ? ' with torso bent at 45 degrees' : ''}, ${eq.includes('dumbbell') ? 'dumbbells in hand' : eq.includes('cable') ? 'pulley handle in hand' : eq.includes('machine') ? 'arms against the machine pads' : 'band under feet'}.`,
+      `Raise your arms ${direction} to shoulder height, elbows slightly bent.`,
+      "Hold the contraction at the top for one second.",
+      "Lower slowly while controlling the movement.",
+      "Avoid using momentum and keep the movement smooth and controlled."
+    ];
+  }
+
+  if (n.includes('shrug')) {
+    return [
+      `Stand upright, ${eq.includes('barbell') ? 'barbell in front of you' : eq.includes('dumbbell') ? 'dumbbells at your sides' : 'hands on machine handles'}.`,
+      "With arms straight, shrug your shoulders as high as possible toward your ears.",
+      "Hold the contraction at the top for 1-2 seconds.",
+      "Lower shoulders slowly back to the starting position.",
+      "Keep arms straight throughout; only the shoulders should move."
+    ];
+  }
+
+  if (n.includes('hip thrust') || n.includes('glute bridge')) {
+    return [
+      `${n.includes('bridge') ? 'Lie on the floor' : 'Sit on the floor with upper back against a bench'}, knees bent, feet flat.`,
+      `${eq.includes('barbell') ? 'Place the barbell on your hips with a pad for protection.' : eq.includes('machine') ? 'Adjust the machine and hip pad.' : 'Optionally place a weight on your hips.'}`,
+      "Push through your heels to lift your hips to full extension.",
+      "Squeeze your glutes hard at the top for 1-2 seconds.",
+      "Lower hips slowly without completely touching the floor between reps."
+    ];
+  }
+
+  if (n.includes('leg extension') || n.includes('leg curl')) {
+    return [
+      "Sit on the machine and adjust the seat and pad to your body.",
+      "Place your legs against the pad, hands on the side handles.",
+      `${n.includes('extension') ? 'Extend your legs while contracting the quadriceps.' : 'Curl your legs while contracting the hamstrings.'}`,
+      "Hold the contraction at end range for one second.",
+      "Return slowly to the starting position while resisting the weight."
+    ];
+  }
+
+  if (n.includes('crunch') || n.includes('sit-up') || n.includes('leg raise')) {
+    return [
+      `${n.includes('leg raise') || n.includes('hanging') ? 'Lie on the floor (or hang from the bar)' : 'Lie on your back, knees bent, feet flat on the floor'}${n.includes('decline') ? ' on a decline bench' : ''}.`,
+      `${n.includes('weighted') || n.includes('plate') ? 'Hold the weight against your chest or with arms extended.' : 'Place your hands behind your head or crossed on your chest.'}`,
+      `${n.includes('leg raise') || n.includes('hanging') ? 'Raise your legs by contracting the lower abs.' : 'Lift your shoulders off the floor by contracting the abs.'}`,
+      "Exhale during the contraction and hold the position for one second.",
+      "Lower slowly without completely releasing the tension on the abs."
+    ];
+  }
+
+  if (n.includes('plank') && !n.includes('planche')) {
+    return [
+      "Support yourself on your forearms and toes (or on your side for the lateral version).",
+      "Align your body from head to feet, abs and glutes contracted.",
+      "Hold the position without letting your hips sag or rise.",
+      "Breathe steadily and in a controlled manner throughout.",
+      "Hold for the desired duration (30 seconds to 2 minutes)."
+    ];
+  }
+
+  if (n.includes('russian twist')) {
+    return [
+      "Sit on the floor, knees bent, feet slightly off the ground.",
+      `${eq.includes('bodyweight') && !n.includes('weighted') ? 'Join your hands in front of you.' : 'Hold the weight in front of your chest.'}`,
+      "Lean your torso slightly back to engage the abs.",
+      "Rotate your torso to one side then the other, touching the floor each rotation.",
+      "Keep feet stable and control the movement without rushing."
+    ];
+  }
+
+  if (n.includes('kettlebell')) {
+    if (n.includes('swing')) {
+      return [
+        "Stand with feet wider than shoulder-width, kettlebell on the floor in front of you.",
+        "Grasp the kettlebell with both hands, back flat, hips pushed back.",
+        "Swing the kettlebell between your legs then drive your hips forward.",
+        "Let the kettlebell rise to shoulder height using hip momentum.",
+        "Control the return and chain reps in a fluid, continuous motion."
+      ];
+    }
+    return [
+      "Grasp the kettlebell with a firm grip, feet shoulder-width apart.",
+      "Brace your core and keep a neutral back throughout the exercise.",
+      "Execute the movement in a controlled manner following the specific technique.",
+      "Hold the contraction at the peak of the movement.",
+      "Return to the starting position while controlling the descent."
+    ];
+  }
+
+  if (n.includes('calf')) {
+    return [
+      `Position yourself ${n.includes('seated') ? 'seated on the machine, knees under the pads' : 'standing with balls of feet on the edge of a step or machine'}.`,
+      `${eq.includes('barbell') ? 'Bar on your shoulders.' : eq.includes('dumbbell') ? 'Dumbbells at your sides or on your knees.' : 'Shoulders under the machine pads.'}`,
+      "Lower your heels as far as possible to stretch the calves.",
+      "Rise onto your toes as high as possible while contracting hard.",
+      "Hold the contraction at the top for 1-2 seconds then lower slowly."
+    ];
+  }
+
+  if (n.includes('leg press') || n.includes('hack squat')) {
+    return [
+      "Sit on the machine with your back firmly against the backrest.",
+      `Place your feet on the platform ${n.includes('high') ? 'in a high position to target the glutes' : 'shoulder-width apart'}.`,
+      "Unlock the machine and lower the platform by bending your knees.",
+      "Go down to a 90-degree knee angle (or deeper if mobility allows).",
+      "Push through your heels to rise without fully locking the knees."
+    ];
+  }
+
+  if (n.includes('trx')) {
+    return [
+      "Adjust the TRX straps to the appropriate length for the exercise.",
+      "Grasp the handles or place your feet in the straps as needed.",
+      "Brace your core and maintain proper body alignment.",
+      "Execute the movement in a controlled manner using your bodyweight as resistance.",
+      "Adjust your body angle to increase or decrease difficulty."
+    ];
+  }
+
+  if (eq.includes('resistance band') || eq.includes('band')) {
+    return [
+      "Anchor the band to an appropriate point or under your feet as needed.",
+      "Grasp the band with a firm grip while maintaining baseline tension.",
+      "Execute the movement while controlling the increasing band resistance.",
+      "Hold the contraction at the point of maximum tension.",
+      "Return slowly to the starting position while resisting the band."
+    ];
+  }
+
+  if (n.includes('medicine ball')) {
+    return [
+      "Grasp the medicine ball with both hands, feet shoulder-width apart.",
+      "Brace your core and prepare for the explosive movement.",
+      "Execute the throw or movement with power using your whole body.",
+      "Control the catch and return to the starting position.",
+      "Chain repetitions while maintaining good form and consistent intensity."
+    ];
+  }
+
+  return [
+    "Position yourself in the appropriate starting position for this exercise.",
+    "Brace your core and ensure proper body alignment.",
+    "Execute the movement in a controlled manner following correct technique.",
+    "Hold the contraction at the peak of the movement for one second.",
+    "Return slowly to the starting position and repeat for the desired number of reps."
+  ];
+}
+
+// --- Helper: generate common mistakes ---
+function getMistakes(ex: typeof exercises[0]): string[] {
+  const mistakesByCategory: Record<string, string[]> = {
+    pectoraux: [
+      "Bouncing the weight off your chest instead of controlling the descent.",
+      "Lifting your hips off the bench or arching your back excessively.",
+      "Flaring elbows to 90 degrees, which overloads the shoulders."
+    ],
+    dos: [
+      "Rounding your back during the movement, risking lower back injury.",
+      "Using body momentum to cheat instead of pulling with the back.",
+      "Not squeezing the shoulder blades at the end of contraction, reducing effectiveness."
+    ],
+    epaules: [
+      "Raising the weight too high or too fast using body momentum.",
+      "Arching the back excessively during overhead presses.",
+      "Using weights that are too heavy, compromising form and risking injury."
+    ],
+    biceps: [
+      "Swinging the torso to generate momentum instead of isolating the biceps.",
+      "Not fully extending the arms, limiting the range of motion.",
+      "Lifting the elbows forward, shifting the work to the deltoids."
+    ],
+    triceps: [
+      "Flaring the elbows during the movement, reducing triceps isolation.",
+      "Using body momentum to push the weight instead of controlling it.",
+      "Not reaching full extension, missing the maximum contraction."
+    ],
+    jambes: [
+      "Letting the knees cave inward during the movement.",
+      "Not going deep enough, limiting muscle recruitment.",
+      "Rounding the back instead of maintaining an upright and braced posture."
+    ],
+    fessiers: [
+      "Not raising the hips high enough for a complete contraction.",
+      "Arching the lower back instead of keeping the pelvis in posterior tilt.",
+      "Pushing through the toes instead of the heels, reducing glute engagement."
+    ],
+    abdos: [
+      "Pulling on the neck with your hands, risking cervical pain.",
+      "Using momentum instead of controlling the movement with the abs.",
+      "Not maintaining tension on the abs during the lowering phase."
+    ],
+    "avant-bras": [
+      "Moving the entire arm instead of isolating movement at the wrist.",
+      "Using too much weight, compromising range of motion.",
+      "Neglecting the eccentric phase by letting the weight drop too quickly."
+    ],
+    fonctionnel: [
+      "Sacrificing technique to go faster or lift heavier.",
+      "Not bracing the core, reducing stability and movement efficiency.",
+      "Skipping warm-up before explosive movements, increasing injury risk."
+    ],
+  };
+  return mistakesByCategory[ex.category] || mistakesByCategory.fonctionnel;
+}
+
+// --- Static paths ---
+export function getStaticPaths() {
+  return exercises.map(ex => ({
+    params: { slug: toSlug(ex.name) },
+    props: { exercise: ex },
+  }));
+}
+
+const { exercise } = Astro.props;
+const slug = toSlug(exercise.name);
+const dc = difficultyColors[exercise.difficulty] || { bg: "rgba(100,100,100,0.1)", color: "#888" };
+const muscles = secondaryMuscles[exercise.category] || secondaryMuscles.fonctionnel;
+const steps = getSteps(exercise);
+const mistakes = getMistakes(exercise);
+const variations = exercises
+  .filter(e => e.category === exercise.category && e.name !== exercise.name)
+  .sort(() => 0.5 - Math.random())
+  .slice(0, 3);
+
+const canonical = `https://aivancepro.fr/en/exercises/${slug}/`;
+const catLabel = categoryLabels[exercise.category] || exercise.category;
+---
+
+<BaseLayout
+  lang="en"
+  title={`${exercise.name} - Complete Guide | AIVancePro`}
+  description={`Discover how to perform ${exercise.name} correctly. Complete guide with technique, mistakes to avoid and muscles worked.`}
+  canonical={canonical}
+  alternates={{ fr: `https://aivancepro.fr/exercices/${exercise.frSlug}/`, en: canonical, de: `https://aivancepro.fr/de/uebungen/${slug}/` }}
+>
+  <Fragment slot="head">
+    <style>
+      .exercise-hero { padding: 8rem 2rem 3rem; text-align: center; background: linear-gradient(180deg, var(--bg-card) 0%, var(--bg) 100%); }
+      .exercise-hero h1 { font-size: 2.8rem; font-weight: 900; letter-spacing: -0.03em; color: var(--gray-900); margin-bottom: 1rem; }
+      .exercise-hero h1 .gradient { background: linear-gradient(135deg, var(--blue), var(--purple)); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; }
+      .breadcrumb { max-width: 900px; margin: 0 auto 2rem; padding: 0 2rem; display: flex; align-items: center; gap: 0.5rem; font-size: 0.85rem; color: var(--gray-500); flex-wrap: wrap; }
+      .breadcrumb a { color: var(--blue); text-decoration: none; }
+      .breadcrumb a:hover { text-decoration: underline; }
+      .breadcrumb .sep { color: var(--gray-400); }
+      .exercise-content { max-width: 900px; margin: 0 auto; padding: 0 2rem 4rem; }
+      .info-card { background: var(--bg-card); border: 1px solid var(--border); border-radius: 16px; padding: 2rem; margin-bottom: 2.5rem; display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.5rem; }
+      .info-item { text-align: center; }
+      .info-label { font-size: 0.75rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.08em; color: var(--gray-500); margin-bottom: 0.5rem; }
+      .info-value { font-size: 1.05rem; font-weight: 700; color: var(--gray-900); }
+      .difficulty-badge { display: inline-block; padding: 0.25rem 0.75rem; border-radius: 50px; font-size: 0.85rem; font-weight: 700; }
+      .desc-card { background: var(--bg-card); border: 1px solid var(--border); border-radius: 16px; padding: 2rem; margin-bottom: 2.5rem; }
+      .desc-card p { color: var(--gray-700); font-size: 1.05rem; line-height: 1.8; }
+      .section-title { font-size: 1.5rem; font-weight: 800; color: var(--gray-900); margin-bottom: 1.25rem; display: flex; align-items: center; gap: 0.5rem; }
+      .section-title svg { width: 24px; height: 24px; color: var(--blue); }
+      .steps-list { list-style: none; counter-reset: step; margin-bottom: 2.5rem; }
+      .steps-list li { counter-increment: step; display: flex; gap: 1rem; align-items: flex-start; padding: 1rem 0; border-bottom: 1px solid var(--gray-100); }
+      .steps-list li:last-child { border-bottom: none; }
+      .step-num { flex-shrink: 0; width: 36px; height: 36px; background: linear-gradient(135deg, var(--blue), var(--purple)); color: var(--white); border-radius: 50%; display: flex; align-items: center; justify-content: center; font-weight: 800; font-size: 0.9rem; }
+      .step-text { color: var(--gray-700); font-size: 0.95rem; line-height: 1.6; padding-top: 0.4rem; }
+      .mistakes-list { list-style: none; margin-bottom: 2.5rem; }
+      .mistakes-list li { display: flex; gap: 0.75rem; align-items: flex-start; padding: 0.75rem 0; color: var(--gray-700); font-size: 0.95rem; line-height: 1.6; }
+      .mistakes-list li svg { width: 20px; height: 20px; color: #EF4444; flex-shrink: 0; margin-top: 0.15rem; }
+      .muscles-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 1.5rem; margin-bottom: 2.5rem; }
+      .muscles-card { background: var(--bg-card); border: 1px solid var(--border); border-radius: 14px; padding: 1.5rem; }
+      .muscles-card h4 { font-size: 0.8rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.08em; margin-bottom: 0.75rem; }
+      .muscles-card.primary h4 { color: var(--blue); }
+      .muscles-card.secondary h4 { color: var(--purple); }
+      .muscles-card ul { list-style: none; }
+      .muscles-card li { padding: 0.35rem 0; color: var(--gray-700); font-size: 0.9rem; display: flex; align-items: center; gap: 0.5rem; }
+      .muscles-card li::before { content: ''; width: 6px; height: 6px; border-radius: 50%; flex-shrink: 0; }
+      .muscles-card.primary li::before { background: var(--blue); }
+      .muscles-card.secondary li::before { background: var(--purple); }
+      .variations-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1rem; margin-bottom: 3rem; }
+      .variation-card { background: var(--bg-card); border: 1px solid var(--border); border-radius: 14px; padding: 1.25rem; text-decoration: none; color: inherit; transition: border-color 0.2s, transform 0.2s, box-shadow 0.2s; }
+      .variation-card:hover { border-color: rgba(37,99,235,0.3); transform: translateY(-3px); box-shadow: 0 6px 20px rgba(0,0,0,0.05); }
+      .variation-card h4 { font-size: 0.9rem; font-weight: 700; color: var(--gray-900); margin-bottom: 0.5rem; line-height: 1.3; }
+      .variation-card .tags { display: flex; gap: 0.35rem; flex-wrap: wrap; }
+      .variation-card .tag { padding: 0.15rem 0.5rem; border-radius: 50px; font-size: 0.6rem; font-weight: 600; }
+      .tag-muscle { background: rgba(37,99,235,0.1); color: var(--blue); }
+      .tag-equipment { background: rgba(147,51,234,0.1); color: var(--purple); }
+      .cta-box { background: linear-gradient(135deg, rgba(37,99,235,0.05), rgba(147,51,234,0.05)); border: 1px solid rgba(37,99,235,0.15); border-radius: 20px; padding: 3rem 2rem; text-align: center; }
+      .cta-box h3 { font-size: 1.5rem; font-weight: 800; color: var(--gray-900); margin-bottom: 0.75rem; }
+      .cta-box p { color: var(--gray-500); font-size: 1rem; max-width: 450px; margin: 0 auto 1.5rem; }
+      .btn-primary { display: inline-flex; align-items: center; gap: 0.5rem; background: linear-gradient(135deg, var(--blue), var(--purple)); color: var(--white); text-decoration: none; font-size: 1rem; font-weight: 600; padding: 0.875rem 2rem; border-radius: 12px; transition: opacity 0.2s, transform 0.2s; box-shadow: 0 4px 15px rgba(37,99,235,0.3); }
+      .btn-primary:hover { opacity: 0.92; transform: translateY(-2px); }
+      @media (max-width: 768px) {
+        .exercise-hero h1 { font-size: 2rem; }
+        .info-card { grid-template-columns: 1fr; }
+        .muscles-grid { grid-template-columns: 1fr; }
+        .variations-grid { grid-template-columns: 1fr; }
+      }
+    </style>
+  </Fragment>
+
+  <section class="exercise-hero">
+    <div class="breadcrumb">
+      <a href="/en/">Home</a>
+      <span class="sep">&rsaquo;</span>
+      <a href="/en/exercises/">Exercises</a>
+      <span class="sep">&rsaquo;</span>
+      <span>{exercise.name}</span>
+    </div>
+    <h1><span class="gradient">{exercise.name}</span></h1>
+  </section>
+
+  <div class="exercise-content">
+    <div class="info-card">
+      <div class="info-item">
+        <div class="info-label">Muscle Group</div>
+        <div class="info-value">{exercise.muscle}</div>
+      </div>
+      <div class="info-item">
+        <div class="info-label">Equipment</div>
+        <div class="info-value">{exercise.equipment}</div>
+      </div>
+      <div class="info-item">
+        <div class="info-label">Difficulty</div>
+        <div class="info-value">
+          <span class="difficulty-badge" style={`background:${dc.bg};color:${dc.color}`}>{exercise.difficulty}</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="desc-card">
+      <p>{exercise.desc}</p>
+    </div>
+
+    <h2 class="section-title">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2m-6 9l2 2 4-4"/></svg>
+      How to Perform This Exercise
+    </h2>
+    <ol class="steps-list">
+      {steps.map((step, i) => (
+        <li>
+          <span class="step-num">{i + 1}</span>
+          <span class="step-text">{step}</span>
+        </li>
+      ))}
+    </ol>
+
+    <h2 class="section-title">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-2.5L13.732 4.5c-.77-.833-2.694-.833-3.464 0L3.34 16.5c-.77.833.192 2.5 1.732 2.5z"/></svg>
+      Common Mistakes to Avoid
+    </h2>
+    <ul class="mistakes-list">
+      {mistakes.map(m => (
+        <li>
+          <svg viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M4.293 4.293a1 1 0 011.414 0L10 8.586l4.293-4.293a1 1 0 111.414 1.414L11.414 10l4.293 4.293a1 1 0 01-1.414 1.414L10 11.414l-4.293 4.293a1 1 0 01-1.414-1.414L8.586 10 4.293 5.707a1 1 0 010-1.414z" clip-rule="evenodd"/></svg>
+          {m}
+        </li>
+      ))}
+    </ul>
+
+    <h2 class="section-title">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z"/></svg>
+      Muscles Worked
+    </h2>
+    <div class="muscles-grid">
+      <div class="muscles-card primary">
+        <h4>Primary Muscles</h4>
+        <ul>
+          {muscles.primary.map(m => <li>{m}</li>)}
+        </ul>
+      </div>
+      <div class="muscles-card secondary">
+        <h4>Secondary Muscles</h4>
+        <ul>
+          {muscles.secondary.map(m => <li>{m}</li>)}
+        </ul>
+      </div>
+    </div>
+
+    {variations.length > 0 && (
+      <>
+        <h2 class="section-title">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 6h16M4 12h16m-7 6h7"/></svg>
+          Similar Exercises
+        </h2>
+        <div class="variations-grid">
+          {variations.map(v => (
+            <a href={`/en/exercises/${toSlug(v.name)}/`} class="variation-card">
+              <h4>{v.name}</h4>
+              <div class="tags">
+                <span class="tag tag-muscle">{v.muscle}</span>
+                <span class="tag tag-equipment">{v.equipment}</span>
+              </div>
+            </a>
+          ))}
+        </div>
+      </>
+    )}
+
+    <div class="cta-box">
+      <h3>Add this exercise to your workouts</h3>
+      <p>Download AIVancePro to track your performance, get personalized AI coaching and progress faster.</p>
+      <a href="https://apps.apple.com/app/aivancepro/id6756116760" class="btn-primary" target="_blank" rel="noopener">Download for free</a>
+    </div>
+  </div>
+</BaseLayout>

@@ -1,0 +1,684 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+
+const lang = 'en';
+const faqItems = [
+  { q: "What is AIVancePro?", a: "AIVancePro is an AI-powered fitness coaching app. It generates personalized training programs, tracks your progress, and supports you with a conversational AI coach available 24/7." },
+  { q: "Who is AIVancePro for?", a: "AIVancePro is for everyone: complete beginners, intermediate athletes, and advanced practitioners. The AI automatically adjusts exercises, loads, and volume to your level and goals." },
+  { q: "Is AIVancePro suitable for beginners?", a: "Yes, the app is ideal for beginners. The AI coach explains each exercise, adjusts difficulty, and an onboarding guide walks you through your first steps." },
+  { q: "What platforms is AIVancePro available on?", a: "AIVancePro is available on iOS (App Store) and Android (Google Play). Download the app for free on your device." },
+  { q: "How is AIVancePro different from other fitness apps?", a: "AIVancePro combines a true conversational AI coach, detailed progress tracking, and an active community. Unlike apps with generic programs, our AI analyzes your performance, adapts to your equipment, and generates fully personalized sessions." },
+  { q: "Can I use AIVancePro at home without equipment?", a: "Yes, AIVancePro offers many bodyweight exercises. Simply indicate your equipment (or none) and the AI coach will generate sessions adapted to your situation." },
+  { q: "Does AIVancePro only offer weight training?", a: "No, AIVancePro also covers cardio, HIIT, circuit training, and bodyweight exercises. You can create dedicated cardio sessions or mix weight training and cardio based on your goals." },
+  { q: "Can I use AIVancePro while traveling?", a: "Yes, simply change your available equipment and the AI coach adapts immediately. Traveling with limited equipment? It will generate an adapted session." },
+  { q: "How does the AI coach work?", a: "The AI coach uses artificial intelligence to analyze your profile, history, and goals. Talk to it naturally: 'Create a chest/shoulders session', 'How can I improve my bench press?'. It generates custom programs." },
+  { q: "How are sessions personalized?", a: "The AI considers your level, goals (muscle gain, weight loss, strength...), available equipment, exercise preferences, and history. Each session is generated specifically for you." },
+  { q: "Can the AI coach create a complete training plan?", a: "Yes, the AI coach generates complete multi-week plans with periodization. Ask it: 'Create a 4-week program' and it takes care of the rest." },
+  { q: "Can I track my personal records and progress?", a: "Absolutely. AIVancePro automatically records your personal records, generates volume, strength, and muscle distribution charts, and offers an activity calendar to visualize your consistency." },
+  { q: "How many exercises are available?", a: "Over 240 exercises covering all muscle groups, with videos and detailed instructions. The database includes exercises for dumbbells, barbells, machines, cables, resistance bands, and bodyweight." },
+  { q: "Is there a built-in rest timer?", a: "Yes, a floating timer is built in with automatic rest times adapted to each exercise. It stays visible throughout your entire session." },
+  { q: "Can I save session templates?", a: "Yes, save any session as a template to reuse it quickly. Ideal for your regular routines." },
+  { q: "Does the AI coach help correct technique?", a: "Yes, ask it for advice on exercise form and it will explain proper technique, common mistakes to avoid, and variations suited to your level." },
+  { q: "How does the community work?", a: "With the Elite plan, create or join groups, launch challenges with friends, check leaderboards, and chat via built-in messaging. A great way to stay motivated." },
+  { q: "Does the app offer exercise videos?", a: "Yes, each exercise has demonstration videos and detailed instructions to ensure correct and safe execution." },
+  { q: "Can I modify an AI-generated session?", a: "Of course. You can add, remove, or replace exercises, adjust sets, reps, and weights at any time during or before the session." },
+  { q: "What is weight training and how is it different from cardio?", a: "Weight training aims to strengthen muscles using resistance (weights, bands, bodyweight). Cardio targets cardiovascular endurance. Both are complementary and AIVancePro helps you combine them based on your goals." },
+  { q: "Why is weight training important for health?", a: "Weight training strengthens bones, improves metabolism, reduces injury risk, improves posture, and contributes to mental health. It is recommended at all ages." },
+  { q: "What's the difference between hypertrophy, strength, and endurance?", a: "Hypertrophy targets muscle volume (8-12 reps), maximal strength works with heavy loads (1-5 reps), and muscular endurance uses light loads with many reps (15+). AIVancePro adjusts parameters based on your goal." },
+  { q: "How many times per week should I train?", a: "Generally 3 to 5 times per week for optimal results. The AI coach adjusts frequency and volume based on your availability and recovery." },
+  { q: "What is progressive overload and why is it important?", a: "Progressive overload means gradually increasing load, reps, or volume to keep progressing. It's the fundamental principle of progression in weight training. AIVancePro tracks your progress and helps you apply this principle." },
+  { q: "Can you lose fat with weight training?", a: "Yes, weight training increases your basal metabolism and burns calories during and after training. Combined with proper nutrition, it's one of the most effective ways to lose fat." },
+  { q: "Do I need to lift heavy to get results?", a: "Not necessarily. Consistency, proper technique, and progressive overload matter more than absolute load. Even with moderate weights, you can achieve excellent results." },
+  { q: "What equipment do I need to get started?", a: "No equipment is required! You can start with bodyweight. To progress faster, a pair of adjustable dumbbells is a great investment. AIVancePro adapts to your equipment." },
+  { q: "What are the most important muscle groups to work?", a: "A balanced program should cover all major groups: chest, back, shoulders, arms, legs, and abs. The AI coach ensures balanced muscle distribution in your sessions." },
+  { q: "Why is recovery as important as training?", a: "Muscles repair and strengthen during rest. Without sufficient recovery, you risk overtraining and injuries. AIVancePro analyzes your load and alerts you if your volume is too high." },
+  { q: "Is weight training safe for beginners?", a: "Yes, as long as you follow proper technique and progress gradually. AIVancePro offers beginner-friendly exercises with detailed instructions to minimize risks." },
+  { q: "What type of training is best for cutting?", a: "A mix of weight training (to preserve muscle mass) and cardio/HIIT (to increase caloric expenditure) is ideal. The AI coach creates balanced programs for this goal." },
+  { q: "Do I need cardio to cut?", a: "Cardio helps create a caloric deficit, but it's not mandatory. Nutrition plays a more important role. Cardio is an additional tool the AI coach can integrate into your program." },
+  { q: "What role do reps and sets play in cutting?", a: "During a cut, maintaining heavy loads with moderate reps (6-12) helps preserve muscle mass. Increasing reps with light loads can add a caloric effect, but shouldn't replace heavy work." },
+  { q: "Can you cut with bodyweight exercises?", a: "Yes, high-intensity bodyweight exercises (burpees, push-ups, jump squats...) are very effective for burning calories. AIVancePro can generate HIIT circuits with no equipment." },
+  { q: "How does AIVancePro help build muscle?", a: "The AI generates hypertrophy programs with the right volume, intensity, and frequency. It tracks your progress and adjusts loads to ensure optimal progressive overload." },
+  { q: "What split is best for building muscle?", a: "It depends on your availability. Push/Pull/Legs, Upper/Lower, or Full Body are all effective. The AI coach recommends the optimal split based on your training days." },
+  { q: "How long does it take to see results?", a: "Initial strength gains are felt within 2-3 weeks. Visible physical changes typically appear after 6 to 8 weeks of regular training. AIVancePro helps you visualize this progress." },
+  { q: "Do I need supplements to build muscle?", a: "No, supplements are not necessary. A balanced diet rich in protein is sufficient. Creatine and whey can be convenient but are not essential." },
+  { q: "What routine is best for general health?", a: "2 to 3 weight training sessions per week combined with some cardio are enough to maintain good health. The AI coach creates balanced programs adapted to this goal." },
+  { q: "I'm over 40, is weight training still effective?", a: "Absolutely! Weight training is even recommended after 40 to combat age-related muscle loss. The AI coach adapts intensity and volume to your profile." },
+  { q: "Do I need to train every day?", a: "No, rest is essential for progress. 3 to 5 sessions per week with rest days is enough. AIVancePro integrates recovery into the planning." },
+  { q: "Can AIVancePro help improve functional strength?", a: "Yes, the AI coach can generate programs focused on functional strength with compound exercises and movements that improve everyday activities." },
+  { q: "Is weight training effective for losing weight?", a: "Yes, weight training increases basal metabolism, meaning you burn more calories even at rest. Combined with a caloric deficit, it's very effective." },
+  { q: "How many calories does a weight training session burn?", a: "A 45 to 60-minute weight training session burns an average of 200 to 400 calories, depending on intensity. The 'afterburn' effect means you continue burning calories for hours after the session." },
+  { q: "Do I need a caloric deficit to lose weight?", a: "Yes, a caloric deficit is necessary for weight loss. Weight training helps maintain muscle mass during weight loss to avoid the 'skinny fat' effect." },
+  { q: "Weight training or cardio: which is better for losing weight?", a: "Both are complementary. Weight training preserves muscle and increases metabolism, cardio burns extra calories. AIVancePro can combine both in your programs." },
+  { q: "How much does AIVancePro cost?", a: "AIVancePro is free with basic features. The Pro plan at 4.99/month unlocks unlimited AI coaching and advanced analytics. The Elite plan at 7.99/month adds community features, challenges, and messaging." },
+  { q: "What is the difference between Pro and Elite?", a: "The Pro plan includes unlimited AI coaching, advanced analytics, periodization, and templates. The Elite plan adds community features: groups, challenges, messaging, leaderboards, and badges." },
+  { q: "Can I cancel my subscription at any time?", a: "Yes, cancel at any time from the app settings or your App Store/Google Play account. No commitment, no hidden fees." },
+  { q: "How do I change plans?", a: "You can switch plans directly from the app settings. The change takes effect immediately." },
+  { q: "Is my data secure?", a: "Your data is securely hosted and encrypted. We never sell your data." },
+  { q: "Can I delete my account?", a: "Yes, delete your account at any time from the app settings. All your personal data will be permanently deleted." },
+];
+
+const jsonLd = {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": faqItems.map(item => ({
+    "@type": "Question",
+    "name": item.q,
+    "acceptedAnswer": {
+      "@type": "Answer",
+      "text": item.a
+    }
+  }))
+};
+---
+
+<BaseLayout
+  lang={lang}
+  title="FAQ - AIVancePro | Frequently Asked Questions"
+  description="All answers to your questions about AIVancePro: features, AI coach, subscriptions, weight training, weight loss, and more."
+  canonical="https://aivancepro.fr/en/faq/"
+  alternates={{ fr: 'https://aivancepro.fr/faq/', en: 'https://aivancepro.fr/en/faq/', de: 'https://aivancepro.fr/de/faq/' }}
+  jsonLd={jsonLd}
+>
+  <Fragment slot="head">
+    <style>
+      .faq-hero {
+          padding: 8rem 2rem 4rem;
+          text-align: center;
+          background: linear-gradient(180deg, var(--bg-card) 0%, var(--bg) 100%);
+      }
+      .faq-hero h1 {
+          font-size: 3rem;
+          font-weight: 900;
+          letter-spacing: -0.03em;
+          color: var(--gray-900);
+          margin-bottom: 1rem;
+      }
+      .faq-hero h1 .gradient {
+          background: linear-gradient(135deg, var(--blue), var(--purple));
+          -webkit-background-clip: text;
+          -webkit-text-fill-color: transparent;
+          background-clip: text;
+      }
+      .faq-hero p {
+          font-size: 1.15rem;
+          color: var(--gray-500);
+          max-width: 600px;
+          margin: 0 auto;
+      }
+      .faq-page { padding: 3rem 2rem 5rem; }
+      .faq-category {
+          max-width: 800px;
+          margin: 0 auto 4rem;
+      }
+      .faq-category:last-child { margin-bottom: 0; }
+      .faq-category-title {
+          font-size: 1.6rem;
+          font-weight: 800;
+          text-transform: uppercase;
+          letter-spacing: 0.02em;
+          color: var(--gray-900);
+          text-align: center;
+          margin-bottom: 2rem;
+      }
+      .faq-subcategory-title {
+          font-size: 1.1rem;
+          font-weight: 700;
+          color: var(--blue);
+          text-align: center;
+          margin: 2.5rem 0 1.25rem;
+      }
+      .faq-list {
+          max-width: 800px;
+          margin: 0 auto;
+          display: flex;
+          flex-direction: column;
+          gap: 0;
+      }
+      .faq-item { border-bottom: 1px solid var(--border); }
+      .faq-question {
+          width: 100%;
+          background: none;
+          border: none;
+          text-align: left;
+          padding: 1.25rem 0;
+          font-size: 1rem;
+          font-weight: 500;
+          color: var(--gray-500);
+          cursor: pointer;
+          display: flex;
+          justify-content: space-between;
+          align-items: center;
+          font-family: inherit;
+          transition: color 0.2s;
+          gap: 1rem;
+      }
+      .faq-question:hover { color: var(--gray-900); }
+      .faq-question .faq-icon {
+          width: 24px;
+          height: 24px;
+          flex-shrink: 0;
+          position: relative;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+      }
+      .faq-question .faq-icon::before,
+      .faq-question .faq-icon::after {
+          content: '';
+          position: absolute;
+          background: var(--gray-400);
+          transition: transform 0.3s, opacity 0.3s;
+      }
+      .faq-question .faq-icon::before { width: 16px; height: 2px; }
+      .faq-question .faq-icon::after { width: 2px; height: 16px; }
+      .faq-item.open .faq-question .faq-icon::after {
+          transform: rotate(90deg);
+          opacity: 0;
+      }
+      .faq-item.open .faq-question {
+          color: var(--gray-900);
+          font-weight: 600;
+      }
+      .faq-answer {
+          max-height: 0;
+          overflow: hidden;
+          transition: max-height 0.3s ease;
+      }
+      .faq-answer-inner {
+          padding: 0 0 1.5rem;
+          font-size: 0.95rem;
+          color: var(--gray-500);
+          line-height: 1.7;
+      }
+      .faq-answer-inner a { color: var(--blue); }
+      .faq-item.open .faq-answer { max-height: 500px; }
+      .faq-cta {
+          padding: 5rem 2rem;
+          text-align: center;
+          background: var(--bg-card);
+      }
+      .faq-cta h2 {
+          font-size: 2rem;
+          font-weight: 800;
+          color: var(--gray-900);
+          margin-bottom: 1rem;
+      }
+      .faq-cta p {
+          color: var(--gray-500);
+          font-size: 1.05rem;
+          margin-bottom: 2rem;
+      }
+      .faq-cta .btn-primary {
+          display: inline-block;
+          background: linear-gradient(135deg, var(--blue), var(--purple));
+          color: var(--white);
+          font-weight: 600;
+          font-size: 0.95rem;
+          padding: 0.875rem 2rem;
+          border-radius: 12px;
+          text-decoration: none;
+          transition: all 0.2s;
+          box-shadow: 0 4px 15px rgba(37, 99, 235, 0.25);
+      }
+      .faq-cta .btn-primary:hover {
+          opacity: 0.92;
+          transform: translateY(-2px);
+      }
+      .faq-cta .btn-secondary {
+          display: inline-block;
+          background: var(--bg-elevated);
+          color: var(--text);
+          border: 1px solid var(--border-light);
+          font-weight: 600;
+          font-size: 0.95rem;
+          padding: 0.875rem 2rem;
+          border-radius: 12px;
+          text-decoration: none;
+          transition: all 0.2s;
+          margin-left: 1rem;
+      }
+      .faq-cta .btn-secondary:hover {
+          border-color: var(--blue);
+          color: var(--blue);
+      }
+      @media (max-width: 768px) {
+          .faq-hero h1 { font-size: 2.2rem; }
+          .faq-cta .btn-secondary { margin-left: 0; margin-top: 1rem; display: block; }
+          .faq-cta .btn-primary { display: block; }
+      }
+    </style>
+  </Fragment>
+
+    <!-- Hero -->
+    <section class="faq-hero">
+        <h1>Frequently Asked <span class="gradient">Questions</span></h1>
+        <p>Find answers to all your questions about AIVancePro, AI fitness coaching, weight training, and our subscriptions.</p>
+    </section>
+
+    <!-- FAQ Content -->
+    <section class="faq-page">
+
+        <!-- Category 1: General -->
+        <div class="faq-category">
+            <h2 class="faq-category-title">General questions about AIVancePro</h2>
+            <div class="faq-list">
+                <div class="faq-item">
+                    <button class="faq-question" onclick="this.parentElement.classList.toggle('open')">
+                        What is AIVancePro?
+                        <span class="faq-icon"></span>
+                    </button>
+                    <div class="faq-answer"><div class="faq-answer-inner">AIVancePro is an AI-powered fitness coaching app. It generates personalized training programs, tracks your progress, and supports you with a conversational AI coach available 24/7.</div></div>
+                </div>
+                <div class="faq-item">
+                    <button class="faq-question" onclick="this.parentElement.classList.toggle('open')">
+                        Who is AIVancePro for?
+                        <span class="faq-icon"></span>
+                    </button>
+                    <div class="faq-answer"><div class="faq-answer-inner">AIVancePro is for everyone: complete beginners, intermediate athletes, and advanced practitioners. The AI automatically adjusts exercises, loads, and volume to your level and goals.</div></div>
+                </div>
+                <div class="faq-item">
+                    <button class="faq-question" onclick="this.parentElement.classList.toggle('open')">
+                        Is AIVancePro suitable for beginners?
+                        <span class="faq-icon"></span>
+                    </button>
+                    <div class="faq-answer"><div class="faq-answer-inner">Yes, the app is ideal for beginners. The AI coach explains each exercise, adjusts difficulty, and an onboarding guide walks you through your first steps.</div></div>
+                </div>
+                <div class="faq-item">
+                    <button class="faq-question" onclick="this.parentElement.classList.toggle('open')">
+                        What platforms is AIVancePro available on?
+                        <span class="faq-icon"></span>
+                    </button>
+                    <div class="faq-answer"><div class="faq-answer-inner">AIVancePro is available on iOS (App Store) and Android (Google Play). Download the app for free on your device.</div></div>
+                </div>
+                <div class="faq-item">
+                    <button class="faq-question" onclick="this.parentElement.classList.toggle('open')">
+                        How is AIVancePro different from other fitness apps?
+                        <span class="faq-icon"></span>
+                    </button>
+                    <div class="faq-answer"><div class="faq-answer-inner">AIVancePro combines a true conversational AI coach, detailed progress tracking, and an active community. Unlike apps with generic programs, our AI analyzes your performance, adapts to your equipment, and generates fully personalized sessions.</div></div>
+                </div>
+                <div class="faq-item">
+                    <button class="faq-question" onclick="this.parentElement.classList.toggle('open')">
+                        Can I use AIVancePro at home without equipment?
+                        <span class="faq-icon"></span>
+                    </button>
+                    <div class="faq-answer"><div class="faq-answer-inner">Yes, AIVancePro offers many bodyweight exercises. Simply indicate your equipment (or none) and the AI coach will generate sessions adapted to your situation.</div></div>
+                </div>
+                <div class="faq-item">
+                    <button class="faq-question" onclick="this.parentElement.classList.toggle('open')">
+                        Does AIVancePro only offer weight training?
+                        <span class="faq-icon"></span>
+                    </button>
+                    <div class="faq-answer"><div class="faq-answer-inner">No, AIVancePro also covers cardio, HIIT, circuit training, and bodyweight exercises. You can create dedicated cardio sessions or mix weight training and cardio based on your goals.</div></div>
+                </div>
+                <div class="faq-item">
+                    <button class="faq-question" onclick="this.parentElement.classList.toggle('open')">
+                        Can I use AIVancePro while traveling?
+                        <span class="faq-icon"></span>
+                    </button>
+                    <div class="faq-answer"><div class="faq-answer-inner">Yes, simply change your available equipment and the AI coach adapts immediately. Traveling with limited equipment? It will generate an adapted session.</div></div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Category 2: Features -->
+        <div class="faq-category">
+            <h2 class="faq-category-title">Features &amp; user experience</h2>
+            <div class="faq-list">
+                <div class="faq-item">
+                    <button class="faq-question" onclick="this.parentElement.classList.toggle('open')">
+                        How does the AI coach work?
+                        <span class="faq-icon"></span>
+                    </button>
+                    <div class="faq-answer"><div class="faq-answer-inner">The AI coach uses artificial intelligence to analyze your profile, history, and goals. Talk to it naturally: &quot;Create a chest/shoulders session&quot;, &quot;How can I improve my bench press?&quot;. It generates custom programs.</div></div>
+                </div>
+                <div class="faq-item">
+                    <button class="faq-question" onclick="this.parentElement.classList.toggle('open')">
+                        How are sessions personalized?
+                        <span class="faq-icon"></span>
+                    </button>
+                    <div class="faq-answer"><div class="faq-answer-inner">The AI considers your level, goals (muscle gain, weight loss, strength...), available equipment, exercise preferences, and history. Each session is generated specifically for you.</div></div>
+                </div>
+                <div class="faq-item">
+                    <button class="faq-question" onclick="this.parentElement.classList.toggle('open')">
+                        Can the AI coach create a complete training plan?
+                        <span class="faq-icon"></span>
+                    </button>
+                    <div class="faq-answer"><div class="faq-answer-inner">Yes, the AI coach generates complete multi-week plans with periodization. Ask it: &quot;Create a 4-week program&quot; and it takes care of the rest.</div></div>
+                </div>
+                <div class="faq-item">
+                    <button class="faq-question" onclick="this.parentElement.classList.toggle('open')">
+                        Can I track my personal records and progress?
+                        <span class="faq-icon"></span>
+                    </button>
+                    <div class="faq-answer"><div class="faq-answer-inner">Absolutely. AIVancePro automatically records your personal records, generates volume, strength, and muscle distribution charts, and offers an activity calendar to visualize your consistency.</div></div>
+                </div>
+                <div class="faq-item">
+                    <button class="faq-question" onclick="this.parentElement.classList.toggle('open')">
+                        How many exercises are available?
+                        <span class="faq-icon"></span>
+                    </button>
+                    <div class="faq-answer"><div class="faq-answer-inner">Over 240 exercises covering all muscle groups, with videos and detailed instructions. The database includes exercises for dumbbells, barbells, machines, cables, resistance bands, and bodyweight.</div></div>
+                </div>
+                <div class="faq-item">
+                    <button class="faq-question" onclick="this.parentElement.classList.toggle('open')">
+                        Is there a built-in rest timer?
+                        <span class="faq-icon"></span>
+                    </button>
+                    <div class="faq-answer"><div class="faq-answer-inner">Yes, a floating timer is built in with automatic rest times adapted to each exercise. It stays visible throughout your entire session.</div></div>
+                </div>
+                <div class="faq-item">
+                    <button class="faq-question" onclick="this.parentElement.classList.toggle('open')">
+                        Can I save session templates?
+                        <span class="faq-icon"></span>
+                    </button>
+                    <div class="faq-answer"><div class="faq-answer-inner">Yes, save any session as a template to reuse it quickly. Ideal for your regular routines.</div></div>
+                </div>
+                <div class="faq-item">
+                    <button class="faq-question" onclick="this.parentElement.classList.toggle('open')">
+                        Does the AI coach help correct technique?
+                        <span class="faq-icon"></span>
+                    </button>
+                    <div class="faq-answer"><div class="faq-answer-inner">Yes, ask it for advice on exercise form and it will explain proper technique, common mistakes to avoid, and variations suited to your level.</div></div>
+                </div>
+                <div class="faq-item">
+                    <button class="faq-question" onclick="this.parentElement.classList.toggle('open')">
+                        How does the community work?
+                        <span class="faq-icon"></span>
+                    </button>
+                    <div class="faq-answer"><div class="faq-answer-inner">With the Elite plan, create or join groups, launch challenges with friends, check leaderboards, and chat via built-in messaging. A great way to stay motivated.</div></div>
+                </div>
+                <div class="faq-item">
+                    <button class="faq-question" onclick="this.parentElement.classList.toggle('open')">
+                        Does the app offer exercise videos?
+                        <span class="faq-icon"></span>
+                    </button>
+                    <div class="faq-answer"><div class="faq-answer-inner">Yes, each exercise has demonstration videos and detailed instructions to ensure correct and safe execution.</div></div>
+                </div>
+                <div class="faq-item">
+                    <button class="faq-question" onclick="this.parentElement.classList.toggle('open')">
+                        Can I modify an AI-generated session?
+                        <span class="faq-icon"></span>
+                    </button>
+                    <div class="faq-answer"><div class="faq-answer-inner">Of course. You can add, remove, or replace exercises, adjust sets, reps, and weights at any time during or before the session.</div></div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Category 3: Fundamentals -->
+        <div class="faq-category">
+            <h2 class="faq-category-title">Fundamentals: understanding weight training</h2>
+            <div class="faq-list">
+                <div class="faq-item">
+                    <button class="faq-question" onclick="this.parentElement.classList.toggle('open')">
+                        What is weight training and how is it different from cardio?
+                        <span class="faq-icon"></span>
+                    </button>
+                    <div class="faq-answer"><div class="faq-answer-inner">Weight training aims to strengthen muscles using resistance (weights, bands, bodyweight). Cardio targets cardiovascular endurance. Both are complementary and AIVancePro helps you combine them based on your goals.</div></div>
+                </div>
+                <div class="faq-item">
+                    <button class="faq-question" onclick="this.parentElement.classList.toggle('open')">
+                        Why is weight training important for health?
+                        <span class="faq-icon"></span>
+                    </button>
+                    <div class="faq-answer"><div class="faq-answer-inner">Weight training strengthens bones, improves metabolism, reduces injury risk, improves posture, and contributes to mental health. It is recommended at all ages.</div></div>
+                </div>
+                <div class="faq-item">
+                    <button class="faq-question" onclick="this.parentElement.classList.toggle('open')">
+                        What's the difference between hypertrophy, strength, and endurance?
+                        <span class="faq-icon"></span>
+                    </button>
+                    <div class="faq-answer"><div class="faq-answer-inner">Hypertrophy targets muscle volume (8-12 reps), maximal strength works with heavy loads (1-5 reps), and muscular endurance uses light loads with many reps (15+). AIVancePro adjusts parameters based on your goal.</div></div>
+                </div>
+                <div class="faq-item">
+                    <button class="faq-question" onclick="this.parentElement.classList.toggle('open')">
+                        How many times per week should I train?
+                        <span class="faq-icon"></span>
+                    </button>
+                    <div class="faq-answer"><div class="faq-answer-inner">Generally 3 to 5 times per week for optimal results. The AI coach adjusts frequency and volume based on your availability and recovery.</div></div>
+                </div>
+                <div class="faq-item">
+                    <button class="faq-question" onclick="this.parentElement.classList.toggle('open')">
+                        What is progressive overload and why is it important?
+                        <span class="faq-icon"></span>
+                    </button>
+                    <div class="faq-answer"><div class="faq-answer-inner">Progressive overload means gradually increasing load, reps, or volume to keep progressing. It's the fundamental principle of progression in weight training. AIVancePro tracks your progress and helps you apply this principle.</div></div>
+                </div>
+                <div class="faq-item">
+                    <button class="faq-question" onclick="this.parentElement.classList.toggle('open')">
+                        Can you lose fat with weight training?
+                        <span class="faq-icon"></span>
+                    </button>
+                    <div class="faq-answer"><div class="faq-answer-inner">Yes, weight training increases your basal metabolism and burns calories during and after training. Combined with proper nutrition, it's one of the most effective ways to lose fat.</div></div>
+                </div>
+                <div class="faq-item">
+                    <button class="faq-question" onclick="this.parentElement.classList.toggle('open')">
+                        Do I need to lift heavy to get results?
+                        <span class="faq-icon"></span>
+                    </button>
+                    <div class="faq-answer"><div class="faq-answer-inner">Not necessarily. Consistency, proper technique, and progressive overload matter more than absolute load. Even with moderate weights, you can achieve excellent results.</div></div>
+                </div>
+                <div class="faq-item">
+                    <button class="faq-question" onclick="this.parentElement.classList.toggle('open')">
+                        What equipment do I need to get started?
+                        <span class="faq-icon"></span>
+                    </button>
+                    <div class="faq-answer"><div class="faq-answer-inner">No equipment is required! You can start with bodyweight. To progress faster, a pair of adjustable dumbbells is a great investment. AIVancePro adapts to your equipment.</div></div>
+                </div>
+                <div class="faq-item">
+                    <button class="faq-question" onclick="this.parentElement.classList.toggle('open')">
+                        What are the most important muscle groups to work?
+                        <span class="faq-icon"></span>
+                    </button>
+                    <div class="faq-answer"><div class="faq-answer-inner">A balanced program should cover all major groups: chest, back, shoulders, arms, legs, and abs. The AI coach ensures balanced muscle distribution in your sessions.</div></div>
+                </div>
+                <div class="faq-item">
+                    <button class="faq-question" onclick="this.parentElement.classList.toggle('open')">
+                        Why is recovery as important as training?
+                        <span class="faq-icon"></span>
+                    </button>
+                    <div class="faq-answer"><div class="faq-answer-inner">Muscles repair and strengthen during rest. Without sufficient recovery, you risk overtraining and injuries. AIVancePro analyzes your load and alerts you if your volume is too high.</div></div>
+                </div>
+                <div class="faq-item">
+                    <button class="faq-question" onclick="this.parentElement.classList.toggle('open')">
+                        Is weight training safe for beginners?
+                        <span class="faq-icon"></span>
+                    </button>
+                    <div class="faq-answer"><div class="faq-answer-inner">Yes, as long as you follow proper technique and progress gradually. AIVancePro offers beginner-friendly exercises with detailed instructions to minimize risks.</div></div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Category 4: By goals -->
+        <div class="faq-category">
+            <h2 class="faq-category-title">Fundamentals by goal</h2>
+
+            <h3 class="faq-subcategory-title">Cutting &amp; getting lean</h3>
+            <div class="faq-list">
+                <div class="faq-item">
+                    <button class="faq-question" onclick="this.parentElement.classList.toggle('open')">
+                        What type of training is best for cutting?
+                        <span class="faq-icon"></span>
+                    </button>
+                    <div class="faq-answer"><div class="faq-answer-inner">A mix of weight training (to preserve muscle mass) and cardio/HIIT (to increase caloric expenditure) is ideal. The AI coach creates balanced programs for this goal.</div></div>
+                </div>
+                <div class="faq-item">
+                    <button class="faq-question" onclick="this.parentElement.classList.toggle('open')">
+                        Do I need cardio to cut?
+                        <span class="faq-icon"></span>
+                    </button>
+                    <div class="faq-answer"><div class="faq-answer-inner">Cardio helps create a caloric deficit, but it's not mandatory. Nutrition plays a more important role. Cardio is an additional tool the AI coach can integrate into your program.</div></div>
+                </div>
+                <div class="faq-item">
+                    <button class="faq-question" onclick="this.parentElement.classList.toggle('open')">
+                        What role do reps and sets play in cutting?
+                        <span class="faq-icon"></span>
+                    </button>
+                    <div class="faq-answer"><div class="faq-answer-inner">During a cut, maintaining heavy loads with moderate reps (6-12) helps preserve muscle mass. Increasing reps with light loads can add a caloric effect, but shouldn't replace heavy work.</div></div>
+                </div>
+                <div class="faq-item">
+                    <button class="faq-question" onclick="this.parentElement.classList.toggle('open')">
+                        Can you cut with bodyweight exercises?
+                        <span class="faq-icon"></span>
+                    </button>
+                    <div class="faq-answer"><div class="faq-answer-inner">Yes, high-intensity bodyweight exercises (burpees, push-ups, jump squats...) are very effective for burning calories. AIVancePro can generate HIIT circuits with no equipment.</div></div>
+                </div>
+            </div>
+
+            <h3 class="faq-subcategory-title">Building muscle &amp; getting stronger</h3>
+            <div class="faq-list">
+                <div class="faq-item">
+                    <button class="faq-question" onclick="this.parentElement.classList.toggle('open')">
+                        How does AIVancePro help build muscle?
+                        <span class="faq-icon"></span>
+                    </button>
+                    <div class="faq-answer"><div class="faq-answer-inner">The AI generates hypertrophy programs with the right volume, intensity, and frequency. It tracks your progress and adjusts loads to ensure optimal progressive overload.</div></div>
+                </div>
+                <div class="faq-item">
+                    <button class="faq-question" onclick="this.parentElement.classList.toggle('open')">
+                        What split is best for building muscle?
+                        <span class="faq-icon"></span>
+                    </button>
+                    <div class="faq-answer"><div class="faq-answer-inner">It depends on your availability. Push/Pull/Legs, Upper/Lower, or Full Body are all effective. The AI coach recommends the optimal split based on your training days.</div></div>
+                </div>
+                <div class="faq-item">
+                    <button class="faq-question" onclick="this.parentElement.classList.toggle('open')">
+                        How long does it take to see results?
+                        <span class="faq-icon"></span>
+                    </button>
+                    <div class="faq-answer"><div class="faq-answer-inner">Initial strength gains are felt within 2-3 weeks. Visible physical changes typically appear after 6 to 8 weeks of regular training. AIVancePro helps you visualize this progress.</div></div>
+                </div>
+                <div class="faq-item">
+                    <button class="faq-question" onclick="this.parentElement.classList.toggle('open')">
+                        Do I need supplements to build muscle?
+                        <span class="faq-icon"></span>
+                    </button>
+                    <div class="faq-answer"><div class="faq-answer-inner">No, supplements are not necessary. A balanced diet rich in protein is sufficient. Creatine and whey can be convenient but are not essential.</div></div>
+                </div>
+            </div>
+
+            <h3 class="faq-subcategory-title">Staying fit &amp; healthy</h3>
+            <div class="faq-list">
+                <div class="faq-item">
+                    <button class="faq-question" onclick="this.parentElement.classList.toggle('open')">
+                        What routine is best for general health?
+                        <span class="faq-icon"></span>
+                    </button>
+                    <div class="faq-answer"><div class="faq-answer-inner">2 to 3 weight training sessions per week combined with some cardio are enough to maintain good health. The AI coach creates balanced programs adapted to this goal.</div></div>
+                </div>
+                <div class="faq-item">
+                    <button class="faq-question" onclick="this.parentElement.classList.toggle('open')">
+                        I'm over 40, is weight training still effective?
+                        <span class="faq-icon"></span>
+                    </button>
+                    <div class="faq-answer"><div class="faq-answer-inner">Absolutely! Weight training is even recommended after 40 to combat age-related muscle loss. The AI coach adapts intensity and volume to your profile.</div></div>
+                </div>
+                <div class="faq-item">
+                    <button class="faq-question" onclick="this.parentElement.classList.toggle('open')">
+                        Do I need to train every day?
+                        <span class="faq-icon"></span>
+                    </button>
+                    <div class="faq-answer"><div class="faq-answer-inner">No, rest is essential for progress. 3 to 5 sessions per week with rest days is enough. AIVancePro integrates recovery into the planning.</div></div>
+                </div>
+                <div class="faq-item">
+                    <button class="faq-question" onclick="this.parentElement.classList.toggle('open')">
+                        Can AIVancePro help improve functional strength?
+                        <span class="faq-icon"></span>
+                    </button>
+                    <div class="faq-answer"><div class="faq-answer-inner">Yes, the AI coach can generate programs focused on functional strength with compound exercises and movements that improve everyday activities.</div></div>
+                </div>
+            </div>
+
+            <h3 class="faq-subcategory-title">Losing weight</h3>
+            <div class="faq-list">
+                <div class="faq-item">
+                    <button class="faq-question" onclick="this.parentElement.classList.toggle('open')">
+                        Is weight training effective for losing weight?
+                        <span class="faq-icon"></span>
+                    </button>
+                    <div class="faq-answer"><div class="faq-answer-inner">Yes, weight training increases basal metabolism, meaning you burn more calories even at rest. Combined with a caloric deficit, it's very effective.</div></div>
+                </div>
+                <div class="faq-item">
+                    <button class="faq-question" onclick="this.parentElement.classList.toggle('open')">
+                        How many calories does a weight training session burn?
+                        <span class="faq-icon"></span>
+                    </button>
+                    <div class="faq-answer"><div class="faq-answer-inner">A 45 to 60-minute weight training session burns an average of 200 to 400 calories, depending on intensity. The &quot;afterburn&quot; effect means you continue burning calories for hours after the session.</div></div>
+                </div>
+                <div class="faq-item">
+                    <button class="faq-question" onclick="this.parentElement.classList.toggle('open')">
+                        Do I need a caloric deficit to lose weight?
+                        <span class="faq-icon"></span>
+                    </button>
+                    <div class="faq-answer"><div class="faq-answer-inner">Yes, a caloric deficit is necessary for weight loss. Weight training helps maintain muscle mass during weight loss to avoid the &quot;skinny fat&quot; effect.</div></div>
+                </div>
+                <div class="faq-item">
+                    <button class="faq-question" onclick="this.parentElement.classList.toggle('open')">
+                        Weight training or cardio: which is better for losing weight?
+                        <span class="faq-icon"></span>
+                    </button>
+                    <div class="faq-answer"><div class="faq-answer-inner">Both are complementary. Weight training preserves muscle and increases metabolism, cardio burns extra calories. AIVancePro can combine both in your programs.</div></div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Category 5: Subscription -->
+        <div class="faq-category">
+            <h2 class="faq-category-title">Subscription &amp; account</h2>
+            <div class="faq-list">
+                <div class="faq-item">
+                    <button class="faq-question" onclick="this.parentElement.classList.toggle('open')">
+                        How much does AIVancePro cost?
+                        <span class="faq-icon"></span>
+                    </button>
+                    <div class="faq-answer"><div class="faq-answer-inner">AIVancePro is free with basic features. The Pro plan at &euro;4.99/month unlocks unlimited AI coaching and advanced analytics. The Elite plan at &euro;7.99/month adds community features, challenges, and messaging. <a href="/en/pricing/">See the full comparison</a>.</div></div>
+                </div>
+                <div class="faq-item">
+                    <button class="faq-question" onclick="this.parentElement.classList.toggle('open')">
+                        What is the difference between Pro and Elite?
+                        <span class="faq-icon"></span>
+                    </button>
+                    <div class="faq-answer"><div class="faq-answer-inner">The Pro plan includes unlimited AI coaching, advanced analytics, periodization, and templates. The Elite plan adds community features: groups, challenges, messaging, leaderboards, and badges.</div></div>
+                </div>
+                <div class="faq-item">
+                    <button class="faq-question" onclick="this.parentElement.classList.toggle('open')">
+                        Can I cancel my subscription at any time?
+                        <span class="faq-icon"></span>
+                    </button>
+                    <div class="faq-answer"><div class="faq-answer-inner">Yes, cancel at any time from the app settings or your App Store/Google Play account. No commitment, no hidden fees.</div></div>
+                </div>
+                <div class="faq-item">
+                    <button class="faq-question" onclick="this.parentElement.classList.toggle('open')">
+                        How do I change plans?
+                        <span class="faq-icon"></span>
+                    </button>
+                    <div class="faq-answer"><div class="faq-answer-inner">You can switch plans directly from the app settings. The change takes effect immediately.</div></div>
+                </div>
+                <div class="faq-item">
+                    <button class="faq-question" onclick="this.parentElement.classList.toggle('open')">
+                        Is my data secure?
+                        <span class="faq-icon"></span>
+                    </button>
+                    <div class="faq-answer"><div class="faq-answer-inner">Your data is securely hosted and encrypted. We never sell your data. Check our <a href="/en/privacy/">privacy policy</a>.</div></div>
+                </div>
+                <div class="faq-item">
+                    <button class="faq-question" onclick="this.parentElement.classList.toggle('open')">
+                        Can I delete my account?
+                        <span class="faq-icon"></span>
+                    </button>
+                    <div class="faq-answer"><div class="faq-answer-inner">Yes, delete your account at any time from the app settings. All your personal data will be permanently deleted.</div></div>
+                </div>
+            </div>
+        </div>
+
+    </section>
+
+    <!-- CTA -->
+    <section class="faq-cta">
+        <h2>Still have questions?</h2>
+        <p>Our team is here to help. Contact us or download the app to discover AIVancePro for yourself.</p>
+        <a href="https://apps.apple.com/app/aivancepro/id6756116760" class="btn-primary" target="_blank" rel="noopener">Download for free</a>
+        <a href="/en/support/" class="btn-secondary">Contact us</a>
+    </section>
+
+</BaseLayout>

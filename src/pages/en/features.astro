@@ -1,0 +1,534 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+---
+
+<BaseLayout
+  lang="en"
+  title="Features - AIVancePro | All Features of Your AI Coach"
+  description="Discover all AIVancePro features: conversational AI coach, 240+ exercises, progress tracking, personalized programs, community, templates, timer and more."
+  canonical="https://aivancepro.fr/en/features/"
+  alternates={{ fr: 'https://aivancepro.fr/fonctionnalites/', en: 'https://aivancepro.fr/en/features/', de: 'https://aivancepro.fr/de/funktionen/' }}
+>
+  <Fragment slot="head">
+    <style>
+      .features-hero {
+          padding: 8rem 2rem 4rem;
+          text-align: center;
+          background: linear-gradient(180deg, var(--bg-card) 0%, var(--bg) 100%);
+      }
+      .features-hero h1 {
+          font-size: 3rem;
+          font-weight: 900;
+          letter-spacing: -0.03em;
+          color: var(--gray-900);
+          margin-bottom: 1rem;
+      }
+      .features-hero h1 .gradient {
+          background: linear-gradient(135deg, var(--blue), var(--purple));
+          -webkit-background-clip: text;
+          -webkit-text-fill-color: transparent;
+          background-clip: text;
+      }
+      .features-hero p {
+          font-size: 1.15rem;
+          color: var(--gray-500);
+          max-width: 600px;
+          margin: 0 auto;
+          line-height: 1.7;
+      }
+
+      /* ===== SHOWCASE SECTIONS ===== */
+      .showcase {
+          padding: 6rem 2rem;
+      }
+      .showcase:nth-child(even) {
+          background: var(--bg-alt);
+      }
+      .showcase-inner {
+          max-width: 1100px;
+          margin: 0 auto;
+          display: grid;
+          grid-template-columns: 1fr 1fr;
+          gap: 4rem;
+          align-items: center;
+      }
+      .showcase-inner.reverse {
+          direction: rtl;
+      }
+      .showcase-inner.reverse > * {
+          direction: ltr;
+      }
+      .section-label {
+          display: inline-flex;
+          align-items: center;
+          gap: 0.4rem;
+          font-size: 0.8rem;
+          font-weight: 700;
+          text-transform: uppercase;
+          letter-spacing: 0.08em;
+          color: var(--blue);
+          margin-bottom: 0.75rem;
+      }
+      .showcase .section-label::before {
+          content: '';
+          display: inline-block;
+          width: 18px;
+          height: 18px;
+          background: var(--blue);
+          border-radius: 50%;
+          background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 20 20' fill='white'%3E%3Cpath fill-rule='evenodd' d='M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z' clip-rule='evenodd'/%3E%3C/svg%3E");
+          background-size: 12px 12px;
+          background-repeat: no-repeat;
+          background-position: center;
+          flex-shrink: 0;
+      }
+      .showcase-text h2 {
+          font-size: 2.4rem;
+          font-weight: 900;
+          letter-spacing: -0.02em;
+          color: var(--gray-900);
+          margin-bottom: 1rem;
+          line-height: 1.15;
+      }
+      .showcase-text p {
+          font-size: 1.05rem;
+          color: var(--gray-500);
+          line-height: 1.7;
+          margin-bottom: 1.75rem;
+          max-width: 480px;
+      }
+      .showcase-list {
+          list-style: none;
+          display: flex;
+          flex-direction: column;
+          gap: 0.75rem;
+      }
+      .showcase-list li {
+          display: flex;
+          align-items: flex-start;
+          gap: 0.75rem;
+          font-size: 0.95rem;
+          font-weight: 500;
+          color: var(--gray-700);
+      }
+      .showcase-list li svg {
+          width: 18px;
+          height: 18px;
+          flex-shrink: 0;
+          margin-top: 2px;
+          color: var(--white);
+          background: var(--blue);
+          border-radius: 50%;
+          padding: 3px;
+          box-sizing: content-box;
+      }
+      .showcase-visual {
+          display: flex;
+          justify-content: center;
+          align-items: center;
+      }
+      .visual-placeholder {
+          width: 300px;
+          height: 540px;
+          border-radius: 32px;
+          background: linear-gradient(135deg, rgba(37, 99, 235, 0.08), rgba(147, 51, 234, 0.08));
+          border: 1px solid var(--border);
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          position: relative;
+          overflow: hidden;
+      }
+      .visual-placeholder .visual-icon {
+          width: 64px;
+          height: 64px;
+          color: var(--blue);
+          opacity: 0.3;
+      }
+      .visual-placeholder.purple {
+          background: linear-gradient(135deg, rgba(147, 51, 234, 0.08), rgba(109, 40, 217, 0.08));
+      }
+      .visual-placeholder.purple .visual-icon { color: var(--purple); }
+      .visual-placeholder.green {
+          background: linear-gradient(135deg, rgba(16, 185, 129, 0.08), rgba(5, 150, 105, 0.08));
+      }
+      .visual-placeholder.green .visual-icon { color: #10B981; }
+      .visual-placeholder.orange {
+          background: linear-gradient(135deg, rgba(245, 158, 11, 0.08), rgba(217, 119, 6, 0.08));
+      }
+      .visual-placeholder.orange .visual-icon { color: #F59E0B; }
+      .visual-placeholder.red {
+          background: linear-gradient(135deg, rgba(239, 68, 68, 0.08), rgba(220, 38, 38, 0.08));
+      }
+      .visual-placeholder.red .visual-icon { color: #EF4444; }
+      .visual-placeholder.cyan {
+          background: linear-gradient(135deg, rgba(6, 182, 212, 0.08), rgba(8, 145, 178, 0.08));
+      }
+      .visual-placeholder.cyan .visual-icon { color: #06B6D4; }
+      .visual-placeholder.pink {
+          background: linear-gradient(135deg, rgba(236, 72, 153, 0.08), rgba(219, 39, 119, 0.08));
+      }
+      .visual-placeholder.pink .visual-icon { color: #EC4899; }
+      .visual-placeholder.amber {
+          background: linear-gradient(135deg, rgba(245, 158, 11, 0.08), rgba(180, 83, 9, 0.08));
+      }
+      .visual-placeholder.amber .visual-icon { color: #D97706; }
+      .showcase-image {
+          display: flex;
+          justify-content: center;
+      }
+      .showcase-image .phone-mockup {
+          width: 300px;
+          transition: transform 0.4s ease;
+      }
+      .showcase-image .phone-mockup:hover {
+          transform: translateY(-12px) scale(1.03);
+      }
+
+      /* ===== FINAL CTA ===== */
+      .final-cta {
+          padding: 7rem 2rem;
+          text-align: center;
+          background: var(--bg);
+          color: var(--white);
+      }
+      .final-cta h2 {
+          font-size: 2.8rem;
+          font-weight: 900;
+          letter-spacing: -0.02em;
+          margin-bottom: 1rem;
+      }
+      .final-cta p {
+          font-size: 1.1rem;
+          color: rgba(255, 255, 255, 0.6);
+          max-width: 500px;
+          margin: 0 auto 2.5rem;
+      }
+      .final-cta .btn-primary {
+          box-shadow: 0 4px 20px rgba(37, 99, 235, 0.4);
+      }
+
+      @media (max-width: 768px) {
+          .features-hero h1 { font-size: 2.2rem; }
+          .showcase-inner, .showcase-inner.reverse {
+              grid-template-columns: 1fr;
+              gap: 2.5rem;
+              direction: ltr;
+          }
+          .showcase-text h2 { font-size: 1.8rem; }
+          .final-cta h2 { font-size: 2rem; }
+          .visual-placeholder { width: 240px; height: 430px; }
+      }
+    </style>
+  </Fragment>
+
+    <!-- Hero -->
+    <section class="features-hero">
+        <h1>All <span class="gradient">features</span></h1>
+        <p>Discover everything AIVancePro offers to transform your training. A complete AI coach, right in your pocket.</p>
+    </section>
+
+    <!-- 1. AI Coach -->
+    <section class="showcase">
+        <div class="showcase-inner">
+            <div class="showcase-text reveal">
+                <div class="section-label">AI Coach</div>
+                <h2>Your personal coach, available 24/7</h2>
+                <p>Chat with your AI coach just like you would with a real coach. It generates sessions, analyzes your performance, answers your questions and adapts to your progress. It knows your complete history and personalizes every piece of advice.</p>
+                <ul class="showcase-list">
+                    <li>
+                        <svg viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/></svg>
+                        Natural conversation in your language
+                    </li>
+                    <li>
+                        <svg viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/></svg>
+                        Personalized session and plan generation
+                    </li>
+                    <li>
+                        <svg viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/></svg>
+                        Progress analysis and real-time advice
+                    </li>
+                    <li>
+                        <svg viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/></svg>
+                        Saved conversation history and favorites
+                    </li>
+                </ul>
+            </div>
+            <div class="showcase-visual reveal reveal-delay-2">
+                <div class="visual-placeholder">
+                    <svg class="visual-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 2. Personalized Programs -->
+    <section class="showcase">
+        <div class="showcase-inner reverse">
+            <div class="showcase-text reveal">
+                <div class="section-label">Personalized Programs</div>
+                <h2>Programs tailored to you</h2>
+                <p>The AI generates sessions and training plans fully adapted to your level, goals and equipment. Create programs up to 12 weeks long with built-in periodization for optimal progression.</p>
+                <ul class="showcase-list">
+                    <li>
+                        <svg viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/></svg>
+                        Adapted to your level: beginner, intermediate or advanced
+                    </li>
+                    <li>
+                        <svg viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/></svg>
+                        Training plans up to 12 weeks
+                    </li>
+                    <li>
+                        <svg viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/></svg>
+                        Automatic periodization for optimized progression
+                    </li>
+                    <li>
+                        <svg viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/></svg>
+                        Takes your available equipment into account
+                    </li>
+                </ul>
+            </div>
+            <div class="showcase-visual reveal reveal-delay-2">
+                <div class="visual-placeholder purple">
+                    <svg class="visual-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 20h9"/><path d="M16.5 3.5a2.12 2.12 0 0 1 3 3L7 19l-4 1 1-4L16.5 3.5z"/></svg>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 3. 240+ Exercises -->
+    <section class="showcase">
+        <div class="showcase-inner">
+            <div class="showcase-text reveal">
+                <div class="section-label">240+ Exercises</div>
+                <h2>A complete exercise database</h2>
+                <p>Over 240 exercises with demonstration videos and detailed instructions. All muscle groups are covered, with a wide range of equipment: dumbbells, barbells, machines, cables, resistance bands and bodyweight.</p>
+                <ul class="showcase-list">
+                    <li>
+                        <svg viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/></svg>
+                        Videos and instructions for every exercise
+                    </li>
+                    <li>
+                        <svg viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/></svg>
+                        All muscle groups covered
+                    </li>
+                    <li>
+                        <svg viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/></svg>
+                        Dumbbells, barbells, machines, cables, bands, bodyweight
+                    </li>
+                    <li>
+                        <svg viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/></svg>
+                        Search and filter by muscle or equipment
+                    </li>
+                </ul>
+            </div>
+            <div class="showcase-visual reveal reveal-delay-2">
+                <div class="visual-placeholder green">
+                    <svg class="visual-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z"/></svg>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 4. Progress Tracking -->
+    <section class="showcase">
+        <div class="showcase-inner reverse">
+            <div class="showcase-text reveal">
+                <div class="section-label">Progress Tracking</div>
+                <h2>Visualize every progress</h2>
+                <p>Track your performance with volume charts, automatic personal records, muscle distribution and an activity calendar. The AI analyzes your evolution and detects signs of overtraining to protect you.</p>
+                <ul class="showcase-list">
+                    <li>
+                        <svg viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/></svg>
+                        Detailed volume and progression charts
+                    </li>
+                    <li>
+                        <svg viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/></svg>
+                        Automatically detected personal records
+                    </li>
+                    <li>
+                        <svg viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/></svg>
+                        Muscle distribution and activity calendar
+                    </li>
+                    <li>
+                        <svg viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/></svg>
+                        AI-powered overtraining detection
+                    </li>
+                </ul>
+            </div>
+            <div class="showcase-visual reveal reveal-delay-2">
+                <div class="visual-placeholder orange">
+                    <svg class="visual-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/></svg>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 5. Templates -->
+    <section class="showcase">
+        <div class="showcase-inner">
+            <div class="showcase-text reveal">
+                <div class="section-label">Templates</div>
+                <h2>Save and reuse your sessions</h2>
+                <p>Save any session as a template to reuse it with one click. No need to recreate your workouts every time. Share your templates with the community to inspire other athletes.</p>
+                <ul class="showcase-list">
+                    <li>
+                        <svg viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/></svg>
+                        One-click save from any session
+                    </li>
+                    <li>
+                        <svg viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/></svg>
+                        Quick launch your favorite workouts
+                    </li>
+                    <li>
+                        <svg viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/></svg>
+                        Share templates with the community
+                    </li>
+                </ul>
+            </div>
+            <div class="showcase-visual reveal reveal-delay-2">
+                <div class="visual-placeholder cyan">
+                    <svg class="visual-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="2" ry="2"/><line x1="3" y1="9" x2="21" y2="9"/><line x1="9" y1="21" x2="9" y2="9"/></svg>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 6. Rest Timer -->
+    <section class="showcase">
+        <div class="showcase-inner reverse">
+            <div class="showcase-text reveal">
+                <div class="section-label">Rest Timer</div>
+                <h2>Optimized rest times</h2>
+                <p>The floating timer stays visible throughout your entire session. It triggers automatically with rest times adapted to each exercise. Focus on your training, the timer handles the timing for you.</p>
+                <ul class="showcase-list">
+                    <li>
+                        <svg viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/></svg>
+                        Always-visible floating timer
+                    </li>
+                    <li>
+                        <svg viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/></svg>
+                        Automatic rest times per exercise
+                    </li>
+                    <li>
+                        <svg viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/></svg>
+                        Sound notification when rest is over
+                    </li>
+                </ul>
+            </div>
+            <div class="showcase-visual reveal reveal-delay-2">
+                <div class="visual-placeholder amber">
+                    <svg class="visual-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 7. Community -->
+    <section class="showcase">
+        <div class="showcase-inner">
+            <div class="showcase-text reveal">
+                <div class="section-label">Community</div>
+                <h2>Train together</h2>
+                <p>Create groups, challenge your friends, climb the leaderboards and share your performance. The built-in messaging lets you stay connected with your fitness community directly in the app.</p>
+                <ul class="showcase-list">
+                    <li>
+                        <svg viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/></svg>
+                        Groups and challenges with friends
+                    </li>
+                    <li>
+                        <svg viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/></svg>
+                        Rankings and leaderboards
+                    </li>
+                    <li>
+                        <svg viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/></svg>
+                        Built-in real-time messaging
+                    </li>
+                    <li>
+                        <svg viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/></svg>
+                        Share performances and results
+                    </li>
+                </ul>
+            </div>
+            <div class="showcase-visual reveal reveal-delay-2">
+                <div class="visual-placeholder red">
+                    <svg class="visual-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 8. Cardio -->
+    <section class="showcase">
+        <div class="showcase-inner reverse">
+            <div class="showcase-text reveal">
+                <div class="section-label">Cardio</div>
+                <h2>Dedicated cardio sessions</h2>
+                <p>Record your cardio sessions with dedicated tracking: running, cycling, rowing and more. Combine cardio and strength training in your programs for a complete and balanced workout.</p>
+                <ul class="showcase-list">
+                    <li>
+                        <svg viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/></svg>
+                        Running, cycling, rowing, elliptical and more
+                    </li>
+                    <li>
+                        <svg viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/></svg>
+                        Duration, distance and calorie tracking
+                    </li>
+                    <li>
+                        <svg viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/></svg>
+                        Mix cardio and strength in the same program
+                    </li>
+                </ul>
+            </div>
+            <div class="showcase-visual reveal reveal-delay-2">
+                <div class="visual-placeholder pink">
+                    <svg class="visual-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 9. Points & Badges -->
+    <section class="showcase">
+        <div class="showcase-inner">
+            <div class="showcase-text reveal">
+                <div class="section-label">Points &amp; Badges</div>
+                <h2>Gamification to stay motivated</h2>
+                <p>Earn points with every session, level up and unlock badges by reaching your goals. The gamification system keeps you motivated long-term and makes every workout rewarding.</p>
+                <ul class="showcase-list">
+                    <li>
+                        <svg viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/></svg>
+                        Points and leveling system
+                    </li>
+                    <li>
+                        <svg viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/></svg>
+                        Badges and achievements to unlock
+                    </li>
+                    <li>
+                        <svg viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/></svg>
+                        Training streaks for consistency
+                    </li>
+                    <li>
+                        <svg viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/></svg>
+                        Long-term motivation
+                    </li>
+                </ul>
+            </div>
+            <div class="showcase-visual reveal reveal-delay-2">
+                <div class="visual-placeholder">
+                    <svg class="visual-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Final CTA -->
+    <section class="final-cta reveal">
+        <h2>Ready to transform your training?</h2>
+        <p>Download AIVancePro for free and enjoy all these features today.</p>
+        <a href="https://apps.apple.com/app/aivancepro/id6756116760" class="btn-primary" target="_blank" rel="noopener">
+            Download on the App Store
+        </a>
+    </section>
+
+</BaseLayout>

@@ -1,0 +1,534 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+---
+
+<BaseLayout
+  lang="fr"
+  title="Fonctionnalites - AIVancePro | Toutes les fonctionnalites de votre coach IA"
+  description="Decouvrez toutes les fonctionnalites d'AIVancePro : coach IA conversationnel, +240 exercices, suivi de progression, programmes personnalises, communaute, templates, timer et plus."
+  canonical="https://aivancepro.fr/fonctionnalites/"
+  alternates={{ fr: 'https://aivancepro.fr/fonctionnalites/', en: 'https://aivancepro.fr/en/features/', de: 'https://aivancepro.fr/de/funktionen/' }}
+>
+  <Fragment slot="head">
+    <style>
+      .features-hero {
+          padding: 8rem 2rem 4rem;
+          text-align: center;
+          background: linear-gradient(180deg, var(--bg-card) 0%, var(--bg) 100%);
+      }
+      .features-hero h1 {
+          font-size: 3rem;
+          font-weight: 900;
+          letter-spacing: -0.03em;
+          color: var(--gray-900);
+          margin-bottom: 1rem;
+      }
+      .features-hero h1 .gradient {
+          background: linear-gradient(135deg, var(--blue), var(--purple));
+          -webkit-background-clip: text;
+          -webkit-text-fill-color: transparent;
+          background-clip: text;
+      }
+      .features-hero p {
+          font-size: 1.15rem;
+          color: var(--gray-500);
+          max-width: 600px;
+          margin: 0 auto;
+          line-height: 1.7;
+      }
+
+      /* ===== SHOWCASE SECTIONS ===== */
+      .showcase {
+          padding: 6rem 2rem;
+      }
+      .showcase:nth-child(even) {
+          background: var(--bg-alt);
+      }
+      .showcase-inner {
+          max-width: 1100px;
+          margin: 0 auto;
+          display: grid;
+          grid-template-columns: 1fr 1fr;
+          gap: 4rem;
+          align-items: center;
+      }
+      .showcase-inner.reverse {
+          direction: rtl;
+      }
+      .showcase-inner.reverse > * {
+          direction: ltr;
+      }
+      .section-label {
+          display: inline-flex;
+          align-items: center;
+          gap: 0.4rem;
+          font-size: 0.8rem;
+          font-weight: 700;
+          text-transform: uppercase;
+          letter-spacing: 0.08em;
+          color: var(--blue);
+          margin-bottom: 0.75rem;
+      }
+      .showcase .section-label::before {
+          content: '';
+          display: inline-block;
+          width: 18px;
+          height: 18px;
+          background: var(--blue);
+          border-radius: 50%;
+          background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 20 20' fill='white'%3E%3Cpath fill-rule='evenodd' d='M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z' clip-rule='evenodd'/%3E%3C/svg%3E");
+          background-size: 12px 12px;
+          background-repeat: no-repeat;
+          background-position: center;
+          flex-shrink: 0;
+      }
+      .showcase-text h2 {
+          font-size: 2.4rem;
+          font-weight: 900;
+          letter-spacing: -0.02em;
+          color: var(--gray-900);
+          margin-bottom: 1rem;
+          line-height: 1.15;
+      }
+      .showcase-text p {
+          font-size: 1.05rem;
+          color: var(--gray-500);
+          line-height: 1.7;
+          margin-bottom: 1.75rem;
+          max-width: 480px;
+      }
+      .showcase-list {
+          list-style: none;
+          display: flex;
+          flex-direction: column;
+          gap: 0.75rem;
+      }
+      .showcase-list li {
+          display: flex;
+          align-items: flex-start;
+          gap: 0.75rem;
+          font-size: 0.95rem;
+          font-weight: 500;
+          color: var(--gray-700);
+      }
+      .showcase-list li svg {
+          width: 18px;
+          height: 18px;
+          flex-shrink: 0;
+          margin-top: 2px;
+          color: var(--white);
+          background: var(--blue);
+          border-radius: 50%;
+          padding: 3px;
+          box-sizing: content-box;
+      }
+      .showcase-visual {
+          display: flex;
+          justify-content: center;
+          align-items: center;
+      }
+      .visual-placeholder {
+          width: 300px;
+          height: 540px;
+          border-radius: 32px;
+          background: linear-gradient(135deg, rgba(37, 99, 235, 0.08), rgba(147, 51, 234, 0.08));
+          border: 1px solid var(--border);
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          position: relative;
+          overflow: hidden;
+      }
+      .visual-placeholder .visual-icon {
+          width: 64px;
+          height: 64px;
+          color: var(--blue);
+          opacity: 0.3;
+      }
+      .visual-placeholder.purple {
+          background: linear-gradient(135deg, rgba(147, 51, 234, 0.08), rgba(109, 40, 217, 0.08));
+      }
+      .visual-placeholder.purple .visual-icon { color: var(--purple); }
+      .visual-placeholder.green {
+          background: linear-gradient(135deg, rgba(16, 185, 129, 0.08), rgba(5, 150, 105, 0.08));
+      }
+      .visual-placeholder.green .visual-icon { color: #10B981; }
+      .visual-placeholder.orange {
+          background: linear-gradient(135deg, rgba(245, 158, 11, 0.08), rgba(217, 119, 6, 0.08));
+      }
+      .visual-placeholder.orange .visual-icon { color: #F59E0B; }
+      .visual-placeholder.red {
+          background: linear-gradient(135deg, rgba(239, 68, 68, 0.08), rgba(220, 38, 38, 0.08));
+      }
+      .visual-placeholder.red .visual-icon { color: #EF4444; }
+      .visual-placeholder.cyan {
+          background: linear-gradient(135deg, rgba(6, 182, 212, 0.08), rgba(8, 145, 178, 0.08));
+      }
+      .visual-placeholder.cyan .visual-icon { color: #06B6D4; }
+      .visual-placeholder.pink {
+          background: linear-gradient(135deg, rgba(236, 72, 153, 0.08), rgba(219, 39, 119, 0.08));
+      }
+      .visual-placeholder.pink .visual-icon { color: #EC4899; }
+      .visual-placeholder.amber {
+          background: linear-gradient(135deg, rgba(245, 158, 11, 0.08), rgba(180, 83, 9, 0.08));
+      }
+      .visual-placeholder.amber .visual-icon { color: #D97706; }
+      .showcase-image {
+          display: flex;
+          justify-content: center;
+      }
+      .showcase-image .phone-mockup {
+          width: 300px;
+          transition: transform 0.4s ease;
+      }
+      .showcase-image .phone-mockup:hover {
+          transform: translateY(-12px) scale(1.03);
+      }
+
+      /* ===== FINAL CTA ===== */
+      .final-cta {
+          padding: 7rem 2rem;
+          text-align: center;
+          background: var(--bg);
+          color: var(--white);
+      }
+      .final-cta h2 {
+          font-size: 2.8rem;
+          font-weight: 900;
+          letter-spacing: -0.02em;
+          margin-bottom: 1rem;
+      }
+      .final-cta p {
+          font-size: 1.1rem;
+          color: rgba(255, 255, 255, 0.6);
+          max-width: 500px;
+          margin: 0 auto 2.5rem;
+      }
+      .final-cta .btn-primary {
+          box-shadow: 0 4px 20px rgba(37, 99, 235, 0.4);
+      }
+
+      @media (max-width: 768px) {
+          .features-hero h1 { font-size: 2.2rem; }
+          .showcase-inner, .showcase-inner.reverse {
+              grid-template-columns: 1fr;
+              gap: 2.5rem;
+              direction: ltr;
+          }
+          .showcase-text h2 { font-size: 1.8rem; }
+          .final-cta h2 { font-size: 2rem; }
+          .visual-placeholder { width: 240px; height: 430px; }
+      }
+    </style>
+  </Fragment>
+
+    <!-- Hero -->
+    <section class="features-hero">
+        <h1>Toutes les <span class="gradient">fonctionnalit&eacute;s</span></h1>
+        <p>D&eacute;couvrez tout ce qu'AIVancePro met &agrave; votre disposition pour transformer votre entra&icirc;nement. Un coach IA complet, directement dans votre poche.</p>
+    </section>
+
+    <!-- 1. Coach IA -->
+    <section class="showcase">
+        <div class="showcase-inner">
+            <div class="showcase-text reveal">
+                <div class="section-label">Coach IA</div>
+                <h2>Votre coach personnel, disponible 24h/24</h2>
+                <p>Discutez avec votre coach IA comme vous le feriez avec un vrai coach. Il g&eacute;n&egrave;re des s&eacute;ances, analyse vos performances, r&eacute;pond &agrave; vos questions et s'adapte &agrave; votre &eacute;volution. Il conna&icirc;t votre historique complet et personnalise chaque conseil.</p>
+                <ul class="showcase-list">
+                    <li>
+                        <svg viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/></svg>
+                        Conversation naturelle en fran&ccedil;ais
+                    </li>
+                    <li>
+                        <svg viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/></svg>
+                        G&eacute;n&eacute;ration de s&eacute;ances et de plans personnalis&eacute;s
+                    </li>
+                    <li>
+                        <svg viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/></svg>
+                        Analyse de votre progression et conseils en temps r&eacute;el
+                    </li>
+                    <li>
+                        <svg viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/></svg>
+                        Historique de conversations sauvegard&eacute; et favoris
+                    </li>
+                </ul>
+            </div>
+            <div class="showcase-visual reveal reveal-delay-2">
+                <div class="visual-placeholder">
+                    <svg class="visual-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 2. Programmes personnalises -->
+    <section class="showcase">
+        <div class="showcase-inner reverse">
+            <div class="showcase-text reveal">
+                <div class="section-label">Programmes personnalis&eacute;s</div>
+                <h2>Des programmes adapt&eacute;s &agrave; vous</h2>
+                <p>L'IA g&eacute;n&egrave;re des s&eacute;ances et des plans d'entra&icirc;nement enti&egrave;rement adapt&eacute;s &agrave; votre niveau, vos objectifs et votre &eacute;quipement. Cr&eacute;ez des programmes allant jusqu'&agrave; 12 semaines avec p&eacute;riodisation int&eacute;gr&eacute;e pour une progression optimale.</p>
+                <ul class="showcase-list">
+                    <li>
+                        <svg viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/></svg>
+                        Adapt&eacute; &agrave; votre niveau : d&eacute;butant, interm&eacute;diaire ou avanc&eacute;
+                    </li>
+                    <li>
+                        <svg viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/></svg>
+                        Plans d'entra&icirc;nement jusqu'&agrave; 12 semaines
+                    </li>
+                    <li>
+                        <svg viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/></svg>
+                        P&eacute;riodisation automatique pour optimiser la progression
+                    </li>
+                    <li>
+                        <svg viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/></svg>
+                        Prise en compte de l'&eacute;quipement disponible
+                    </li>
+                </ul>
+            </div>
+            <div class="showcase-visual reveal reveal-delay-2">
+                <div class="visual-placeholder purple">
+                    <svg class="visual-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 20h9"/><path d="M16.5 3.5a2.12 2.12 0 0 1 3 3L7 19l-4 1 1-4L16.5 3.5z"/></svg>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 3. +240 Exercices -->
+    <section class="showcase">
+        <div class="showcase-inner">
+            <div class="showcase-text reveal">
+                <div class="section-label">+240 Exercices</div>
+                <h2>Une base de donn&eacute;es compl&egrave;te</h2>
+                <p>Plus de 240 exercices avec vid&eacute;os d&eacute;monstratives et instructions d&eacute;taill&eacute;es. Tous les groupes musculaires sont couverts, avec un large choix d'&eacute;quipements : halt&egrave;res, barres, machines, c&acirc;bles, &eacute;lastiques et poids du corps.</p>
+                <ul class="showcase-list">
+                    <li>
+                        <svg viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/></svg>
+                        Vid&eacute;os et instructions pour chaque exercice
+                    </li>
+                    <li>
+                        <svg viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/></svg>
+                        Tous les groupes musculaires couverts
+                    </li>
+                    <li>
+                        <svg viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/></svg>
+                        Halt&egrave;res, barres, machines, c&acirc;bles, &eacute;lastiques, poids du corps
+                    </li>
+                    <li>
+                        <svg viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/></svg>
+                        Recherche et filtrage par muscle ou &eacute;quipement
+                    </li>
+                </ul>
+            </div>
+            <div class="showcase-visual reveal reveal-delay-2">
+                <div class="visual-placeholder green">
+                    <svg class="visual-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z"/></svg>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 4. Suivi de progression -->
+    <section class="showcase">
+        <div class="showcase-inner reverse">
+            <div class="showcase-text reveal">
+                <div class="section-label">Suivi de progression</div>
+                <h2>Visualisez chaque progr&egrave;s</h2>
+                <p>Suivez vos performances avec des graphiques de volume, des records personnels automatiques, la distribution musculaire et un calendrier d'activit&eacute;. L'IA analyse votre &eacute;volution et d&eacute;tecte les signes de surentra&icirc;nement pour vous prot&eacute;ger.</p>
+                <ul class="showcase-list">
+                    <li>
+                        <svg viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/></svg>
+                        Graphiques de volume et de progression d&eacute;taill&eacute;s
+                    </li>
+                    <li>
+                        <svg viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/></svg>
+                        Records personnels d&eacute;tect&eacute;s automatiquement
+                    </li>
+                    <li>
+                        <svg viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/></svg>
+                        Distribution musculaire et calendrier d'activit&eacute;
+                    </li>
+                    <li>
+                        <svg viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/></svg>
+                        D&eacute;tection de surentra&icirc;nement par l'IA
+                    </li>
+                </ul>
+            </div>
+            <div class="showcase-visual reveal reveal-delay-2">
+                <div class="visual-placeholder orange">
+                    <svg class="visual-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/></svg>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 5. Templates -->
+    <section class="showcase">
+        <div class="showcase-inner">
+            <div class="showcase-text reveal">
+                <div class="section-label">Templates</div>
+                <h2>Sauvegardez et r&eacute;utilisez vos s&eacute;ances</h2>
+                <p>Enregistrez n'importe quelle s&eacute;ance comme template pour la r&eacute;utiliser en un clic. Plus besoin de recr&eacute;er vos entra&icirc;nements &agrave; chaque fois. Partagez vos templates avec la communaut&eacute; pour inspirer d'autres sportifs.</p>
+                <ul class="showcase-list">
+                    <li>
+                        <svg viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/></svg>
+                        Sauvegarde en un clic depuis n'importe quelle s&eacute;ance
+                    </li>
+                    <li>
+                        <svg viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/></svg>
+                        Lancement rapide d'un entra&icirc;nement favori
+                    </li>
+                    <li>
+                        <svg viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/></svg>
+                        Partage de templates avec la communaut&eacute;
+                    </li>
+                </ul>
+            </div>
+            <div class="showcase-visual reveal reveal-delay-2">
+                <div class="visual-placeholder cyan">
+                    <svg class="visual-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="2" ry="2"/><line x1="3" y1="9" x2="21" y2="9"/><line x1="9" y1="21" x2="9" y2="9"/></svg>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 6. Timer de repos -->
+    <section class="showcase">
+        <div class="showcase-inner reverse">
+            <div class="showcase-text reveal">
+                <div class="section-label">Timer de repos</div>
+                <h2>Temps de repos optimis&eacute;s</h2>
+                <p>Le timer flottant reste visible pendant toute votre s&eacute;ance. Il se d&eacute;clenche automatiquement avec des temps de repos adapt&eacute;s &agrave; chaque exercice. Concentrez-vous sur votre entra&icirc;nement, le timer g&egrave;re le timing pour vous.</p>
+                <ul class="showcase-list">
+                    <li>
+                        <svg viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/></svg>
+                        Timer flottant toujours visible
+                    </li>
+                    <li>
+                        <svg viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/></svg>
+                        Temps de repos automatiques par exercice
+                    </li>
+                    <li>
+                        <svg viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/></svg>
+                        Notification sonore en fin de repos
+                    </li>
+                </ul>
+            </div>
+            <div class="showcase-visual reveal reveal-delay-2">
+                <div class="visual-placeholder amber">
+                    <svg class="visual-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 7. Communaute -->
+    <section class="showcase">
+        <div class="showcase-inner">
+            <div class="showcase-text reveal">
+                <div class="section-label">Communaut&eacute;</div>
+                <h2>Entra&icirc;nez-vous ensemble</h2>
+                <p>Cr&eacute;ez des groupes, d&eacute;fiez vos amis, grimpez dans les classements et partagez vos performances. La messagerie int&eacute;gr&eacute;e vous permet de rester connect&eacute; avec votre communaut&eacute; sportive directement dans l'app.</p>
+                <ul class="showcase-list">
+                    <li>
+                        <svg viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/></svg>
+                        Groupes et d&eacute;fis entre amis
+                    </li>
+                    <li>
+                        <svg viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/></svg>
+                        Classements et leaderboards
+                    </li>
+                    <li>
+                        <svg viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/></svg>
+                        Messagerie int&eacute;gr&eacute;e en temps r&eacute;el
+                    </li>
+                    <li>
+                        <svg viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/></svg>
+                        Partage de performances et r&eacute;sultats
+                    </li>
+                </ul>
+            </div>
+            <div class="showcase-visual reveal reveal-delay-2">
+                <div class="visual-placeholder red">
+                    <svg class="visual-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 8. Cardio -->
+    <section class="showcase">
+        <div class="showcase-inner reverse">
+            <div class="showcase-text reveal">
+                <div class="section-label">Cardio</div>
+                <h2>S&eacute;ances cardio d&eacute;di&eacute;es</h2>
+                <p>Enregistrez vos s&eacute;ances de cardio avec un suivi d&eacute;di&eacute; : course &agrave; pied, v&eacute;lo, rameur et bien plus. Combinez cardio et musculation dans vos programmes pour un entra&icirc;nement complet et &eacute;quilibr&eacute;.</p>
+                <ul class="showcase-list">
+                    <li>
+                        <svg viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/></svg>
+                        Course, v&eacute;lo, rameur, elliptique et plus
+                    </li>
+                    <li>
+                        <svg viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/></svg>
+                        Suivi de dur&eacute;e, distance et calories
+                    </li>
+                    <li>
+                        <svg viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/></svg>
+                        Mixez cardio et musculation dans un m&ecirc;me programme
+                    </li>
+                </ul>
+            </div>
+            <div class="showcase-visual reveal reveal-delay-2">
+                <div class="visual-placeholder pink">
+                    <svg class="visual-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 9. Points & Badges -->
+    <section class="showcase">
+        <div class="showcase-inner">
+            <div class="showcase-text reveal">
+                <div class="section-label">Points &amp; Badges</div>
+                <h2>Gamification pour rester motiv&eacute;</h2>
+                <p>Gagnez des points &agrave; chaque s&eacute;ance, montez de niveau et d&eacute;bloquez des badges en atteignant vos objectifs. Le syst&egrave;me de gamification vous garde motiv&eacute; sur le long terme et rend chaque entra&icirc;nement gratifiant.</p>
+                <ul class="showcase-list">
+                    <li>
+                        <svg viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/></svg>
+                        Syst&egrave;me de points et de niveaux
+                    </li>
+                    <li>
+                        <svg viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/></svg>
+                        Badges et succ&egrave;s &agrave; d&eacute;bloquer
+                    </li>
+                    <li>
+                        <svg viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/></svg>
+                        S&eacute;ries d'entra&icirc;nement (streaks) pour la r&eacute;gularit&eacute;
+                    </li>
+                    <li>
+                        <svg viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/></svg>
+                        Motivation sur le long terme
+                    </li>
+                </ul>
+            </div>
+            <div class="showcase-visual reveal reveal-delay-2">
+                <div class="visual-placeholder">
+                    <svg class="visual-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Final CTA -->
+    <section class="final-cta reveal">
+        <h2>Pr&ecirc;t &agrave; transformer votre entra&icirc;nement ?</h2>
+        <p>T&eacute;l&eacute;chargez AIVancePro gratuitement et profitez de toutes ces fonctionnalit&eacute;s d&egrave;s aujourd'hui.</p>
+        <a href="https://apps.apple.com/fr/app/aivancepro/id6756116760" class="btn-primary" target="_blank" rel="noopener">
+            T&eacute;l&eacute;charger sur l'App Store
+        </a>
+    </section>
+
+</BaseLayout>
