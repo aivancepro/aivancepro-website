@@ -1,6 +1,7 @@
 ---
 import BaseLayout from '../../../layouts/BaseLayout.astro';
 import { exercises, toSlug } from '../../../data/exercises-de.js';
+import { enExerciseImages } from '../../../data/exercise-images.js';
 
 // --- Helper: difficulty colors ---
 const difficultyColors: Record<string, { bg: string; color: string }> = {
@@ -418,6 +419,7 @@ const variations = exercises
   .slice(0, 3);
 
 const canonical = `https://aivancepro.fr/de/uebungen/${slug}/`;
+const hasImages = !!enExerciseImages[slug];
 const catLabel = categoryLabels[exercise.category] || exercise.category;
 ---
 
@@ -430,6 +432,9 @@ const catLabel = categoryLabels[exercise.category] || exercise.category;
 >
   <Fragment slot="head">
     <style>
+      .exercise-images { max-width: 900px; margin: 0 auto; padding: 0 2rem 2rem; display: flex; justify-content: center; gap: 1.5rem; }
+      .exercise-images img { width: 280px; height: auto; border-radius: 14px; border: 1px solid var(--border); background: var(--bg-card); }
+
       .exercise-hero { padding: 8rem 2rem 3rem; text-align: center; background: linear-gradient(180deg, var(--bg-card) 0%, var(--bg) 100%); }
       .exercise-hero h1 { font-size: 2.8rem; font-weight: 900; letter-spacing: -0.03em; color: var(--gray-900); margin-bottom: 1rem; }
       .exercise-hero h1 .gradient { background: linear-gradient(135deg, var(--blue), var(--purple)); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; }
@@ -480,6 +485,8 @@ const catLabel = categoryLabels[exercise.category] || exercise.category;
       .btn-primary:hover { opacity: 0.92; transform: translateY(-2px); }
       @media (max-width: 768px) {
         .exercise-hero h1 { font-size: 2rem; }
+        .exercise-images { flex-direction: column; align-items: center; gap: 1rem; }
+        .exercise-images img { width: 220px; }
         .info-card { grid-template-columns: 1fr; }
         .muscles-grid { grid-template-columns: 1fr; }
         .variations-grid { grid-template-columns: 1fr; }
@@ -497,6 +504,13 @@ const catLabel = categoryLabels[exercise.category] || exercise.category;
     </div>
     <h1><span class="gradient">{exercise.name}</span></h1>
   </section>
+
+  {hasImages && (
+    <div class="exercise-images">
+      <img src={`/assets/exercises/${slug}-0.jpg`} alt={`${exercise.name} - Ausgangsposition`} />
+      <img src={`/assets/exercises/${slug}-1.jpg`} alt={`${exercise.name} - Endposition`} />
+    </div>
+  )}
 
   <div class="exercise-content">
     <div class="info-card">
