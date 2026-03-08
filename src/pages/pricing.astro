@@ -8,6 +8,16 @@ import BaseLayout from '../layouts/BaseLayout.astro';
   description="Découvrez les tarifs AIVancePro. Plan Gratuit, Pro à 4,99€/mois et Elite à 7,99€/mois. Comparez les fonctionnalités et choisissez votre plan."
   canonical="https://aivancepro.fr/pricing/"
   alternates={{ fr: 'https://aivancepro.fr/pricing/', en: 'https://aivancepro.fr/en/pricing/', de: 'https://aivancepro.fr/de/preise/' }}
+  jsonLd={{
+    '@context': 'https://schema.org',
+    '@type': 'FAQPage',
+    mainEntity: [
+      { '@type': 'Question', name: 'Puis-je changer de plan à tout moment ?', acceptedAnswer: { '@type': 'Answer', text: 'Oui, vous pouvez passer de Pro à Elite ou rétrograder à tout moment. Le changement prend effet immédiatement.' } },
+      { '@type': 'Question', name: 'Y a-t-il un engagement ?', acceptedAnswer: { '@type': 'Answer', text: "Aucun engagement. Vous pouvez annuler votre abonnement à tout moment depuis l'App Store ou Google Play." } },
+      { '@type': 'Question', name: 'Le plan Gratuit est-il vraiment gratuit ?', acceptedAnswer: { '@type': 'Answer', text: 'Absolument. Le plan Gratuit vous donne accès au suivi de séances, aux +240 exercices et aux statistiques de base, sans limite de temps et sans carte bancaire.' } },
+      { '@type': 'Question', name: 'Comment fonctionne le paiement ?', acceptedAnswer: { '@type': 'Answer', text: "Le paiement est géré directement par l'App Store (iOS) ou Google Play (Android). Votre abonnement se renouvelle automatiquement chaque mois sauf annulation." } },
+    ]
+  }}
 >
   <Fragment slot="head">
     <style>

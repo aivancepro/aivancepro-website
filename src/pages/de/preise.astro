@@ -4,10 +4,20 @@ import BaseLayout from '../../layouts/BaseLayout.astro';
 
 <BaseLayout
   lang="de"
-  title="Preise - AIVancePro | Kostenlos, Pro und Elite Pl&auml;ne"
-  description="Entdecken Sie die AIVancePro Preise. Kostenloser Plan, Pro f&uuml;r 4,99&euro;/Monat und Elite f&uuml;r 7,99&euro;/Monat. Vergleichen Sie die Funktionen und w&auml;hlen Sie Ihren Plan."
+  title="Preise - AIVancePro | Kostenlos, Pro und Elite Pläne"
+  description="Entdecken Sie die AIVancePro Preise. Kostenloser Plan, Pro für 4,99€/Monat und Elite für 7,99€/Monat. Vergleichen Sie die Funktionen und wählen Sie Ihren Plan."
   canonical="https://aivancepro.fr/de/preise/"
   alternates={{ fr: 'https://aivancepro.fr/pricing/', en: 'https://aivancepro.fr/en/pricing/', de: 'https://aivancepro.fr/de/preise/' }}
+  jsonLd={{
+    '@context': 'https://schema.org',
+    '@type': 'FAQPage',
+    mainEntity: [
+      { '@type': 'Question', name: 'Kann ich jederzeit den Plan wechseln?', acceptedAnswer: { '@type': 'Answer', text: 'Ja, Sie können jederzeit von Pro zu Elite wechseln oder herabstufen. Die Änderung wird sofort wirksam.' } },
+      { '@type': 'Question', name: 'Gibt es eine Vertragsbindung?', acceptedAnswer: { '@type': 'Answer', text: 'Keine Vertragsbindung. Sie können Ihr Abonnement jederzeit über den App Store oder Google Play kündigen.' } },
+      { '@type': 'Question', name: 'Ist der kostenlose Plan wirklich kostenlos?', acceptedAnswer: { '@type': 'Answer', text: 'Absolut. Der kostenlose Plan gibt Ihnen Zugang zum Trainings-Tracking, zu über 240 Übungen und zu Basis-Statistiken, ohne Zeitlimit und ohne Kreditkarte.' } },
+      { '@type': 'Question', name: 'Wie funktioniert die Zahlung?', acceptedAnswer: { '@type': 'Answer', text: 'Die Zahlung wird direkt über den App Store (iOS) oder Google Play (Android) abgewickelt. Ihr Abonnement verlängert sich automatisch jeden Monat, sofern Sie es nicht kündigen.' } },
+    ]
+  }}
 >
   <Fragment slot="head">
     <style>

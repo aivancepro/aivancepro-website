@@ -8,6 +8,16 @@ import BaseLayout from '../../layouts/BaseLayout.astro';
   description="Discover AIVancePro pricing. Free plan, Pro at 4.99&euro;/month and Elite at 7.99&euro;/month. Compare features and choose your plan."
   canonical="https://aivancepro.fr/en/pricing/"
   alternates={{ fr: 'https://aivancepro.fr/pricing/', en: 'https://aivancepro.fr/en/pricing/', de: 'https://aivancepro.fr/de/preise/' }}
+  jsonLd={{
+    '@context': 'https://schema.org',
+    '@type': 'FAQPage',
+    mainEntity: [
+      { '@type': 'Question', name: 'Can I change plans at any time?', acceptedAnswer: { '@type': 'Answer', text: 'Yes, you can upgrade from Pro to Elite or downgrade at any time. The change takes effect immediately.' } },
+      { '@type': 'Question', name: 'Is there a commitment?', acceptedAnswer: { '@type': 'Answer', text: 'No commitment. You can cancel your subscription at any time from the App Store or Google Play.' } },
+      { '@type': 'Question', name: 'Is the Free plan really free?', acceptedAnswer: { '@type': 'Answer', text: 'Absolutely. The Free plan gives you access to session tracking, 240+ exercises and basic statistics, with no time limit and no credit card required.' } },
+      { '@type': 'Question', name: 'How does payment work?', acceptedAnswer: { '@type': 'Answer', text: 'Payment is handled directly by the App Store (iOS) or Google Play (Android). Your subscription renews automatically each month unless cancelled.' } },
+    ]
+  }}
 >
   <Fragment slot="head">
     <style>
