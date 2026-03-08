@@ -207,6 +207,77 @@ import BaseLayout from '../../layouts/BaseLayout.astro';
         </div>
     </section>
 
+    <!-- Download QR Code -->
+    <section class="qr-section" style="padding: 4rem 2rem; text-align: center;">
+        <h2 style="font-size: 1.8rem; font-weight: 800; color: var(--gray-900); margin-bottom: 0.75rem;">Download on your mobile</h2>
+        <p style="color: var(--gray-500); font-size: 1rem; margin-bottom: 2rem; max-width: 450px; margin-left: auto; margin-right: auto;">Scan the QR code with your phone's camera to install AIVancePro.</p>
+        <div style="display: flex; justify-content: center; gap: 2rem; flex-wrap: wrap;">
+            <div style="text-align: center;">
+                <canvas id="qrAppStore" width="160" height="160" style="border-radius: 12px; border: 1px solid var(--border); background: white; padding: 8px;"></canvas>
+                <p style="margin-top: 0.75rem; font-size: 0.85rem; font-weight: 600; color: var(--gray-700);">App Store</p>
+            </div>
+            <div style="text-align: center;">
+                <canvas id="qrPlayStore" width="160" height="160" style="border-radius: 12px; border: 1px solid var(--border); background: white; padding: 8px;"></canvas>
+                <p style="margin-top: 0.75rem; font-size: 0.85rem; font-weight: 600; color: var(--gray-700);">Google Play</p>
+            </div>
+        </div>
+    </section>
+
+    <script is:inline>
+    (function(){
+      function drawQR(canvasId, text) {
+        var c = document.getElementById(canvasId);
+        if (!c) return;
+        var ctx = c.getContext('2d');
+        var s = c.width;
+        ctx.fillStyle = '#ffffff';
+        ctx.fillRect(0, 0, s, s);
+        ctx.fillStyle = '#2563EB';
+        ctx.font = 'bold 14px Inter, sans-serif';
+        ctx.textAlign = 'center';
+        ctx.fillText('Scan with', s/2, s/2 - 20);
+        ctx.fillText('your device', s/2, s/2);
+        ctx.font = '11px Inter, sans-serif';
+        ctx.fillStyle = '#6a6a80';
+        var short = text.length > 30 ? text.substring(0, 30) + '...' : text;
+        ctx.fillText(short, s/2, s/2 + 30);
+      }
+      var script = document.createElement('script');
+      script.src = 'https://cdn.jsdelivr.net/npm/qrcode-generator@1.4.4/qrcode.min.js';
+      script.onload = function() {
+        function renderQR(canvasId, text) {
+          var c = document.getElementById(canvasId);
+          if (!c || typeof qrcode === 'undefined') return;
+          var qr = qrcode(0, 'M');
+          qr.addData(text);
+          qr.make();
+          var ctx = c.getContext('2d');
+          var size = c.width;
+          var pad = 12;
+          var modules = qr.getModuleCount();
+          var cellSize = (size - pad * 2) / modules;
+          ctx.fillStyle = '#ffffff';
+          ctx.fillRect(0, 0, size, size);
+          for (var r = 0; r < modules; r++) {
+            for (var col = 0; col < modules; col++) {
+              if (qr.isDark(r, col)) {
+                ctx.fillStyle = '#1a1a2e';
+                ctx.fillRect(pad + col * cellSize, pad + r * cellSize, cellSize, cellSize);
+              }
+            }
+          }
+        }
+        renderQR('qrAppStore', 'https://apps.apple.com/app/aivancepro/id6756116760');
+        renderQR('qrPlayStore', 'https://play.google.com/store/apps/details?id=com.aivancepro.app');
+      };
+      script.onerror = function() {
+        drawQR('qrAppStore', 'apps.apple.com/aivancepro');
+        drawQR('qrPlayStore', 'play.google.com/aivancepro');
+      };
+      document.head.appendChild(script);
+    })();
+    </script>
+
     <!-- FAQ Pricing -->
     <section class="faq-section">
         <h2>Frequently Asked Questions About Pricing</h2>
