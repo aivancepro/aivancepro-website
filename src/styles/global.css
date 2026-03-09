@@ -749,7 +749,7 @@ footer {
 
 .final-cta p {
     font-size: 1.1rem;
-    color: rgba(255, 255, 255, 0.6);
+    color: var(--text-secondary);
     max-width: 500px;
     margin: 0 auto 2.5rem;
 }
