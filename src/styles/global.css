@@ -664,6 +664,7 @@ footer {
 .footer-social {
     display: flex;
     gap: 1rem;
+    padding-right: 3.5rem;
 }
 
 .footer-social a {
@@ -1169,13 +1170,13 @@ body {
 
 /* ===== BREADCRUMBS ===== */
 .breadcrumb-nav {
-    display: flex;
-    justify-content: center;
+    display: inline-flex;
     align-items: center;
     gap: 0.4rem;
     font-size: 0.85rem;
     color: var(--text-muted);
     margin-bottom: 1rem;
+    white-space: nowrap;
 }
 
 .breadcrumb-nav a {
