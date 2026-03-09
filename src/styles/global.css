@@ -58,7 +58,7 @@
     --gray-100: #f0f1f5;
     --gray-50: #f5f5f8;
     --white: #FFFFFF;
-    --hover-bg: rgba(37, 99, 235, 0.08);
+    --hover-bg: rgba(0, 0, 0, 0.04);
 }
 
 body {
