@@ -444,8 +444,7 @@ body > nav {
 }
 
 .btn-secondary {
-    display: flex;
-    justify-content: center;
+    display: inline-flex;
     align-items: center;
     gap: 0.5rem;
     background: var(--bg-card);
