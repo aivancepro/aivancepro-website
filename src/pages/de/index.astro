@@ -83,17 +83,20 @@ const jsonLd = {
             font-weight: 900;
             line-height: 1.08;
             letter-spacing: -0.03em;
-            color: #ffffff;
+            color: var(--gray-900);
             margin-bottom: 1.5rem;
         }
 
         .hero h1 .gradient {
-            color: #fff;
+            background: linear-gradient(135deg, var(--blue), var(--purple));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
         }
 
         .hero p {
             font-size: 1.2rem;
-            color: rgba(255, 255, 255, 0.6);
+            color: var(--gray-500);
             max-width: 480px;
             margin: 0 0 2rem;
             line-height: 1.7;
@@ -228,7 +231,10 @@ const jsonLd = {
         }
 
         .proof-item .number .gradient {
-            color: #fff;
+            background: linear-gradient(135deg, var(--blue), var(--purple));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
         }
 
         .proof-item .label {
@@ -1001,7 +1007,7 @@ const jsonLd = {
         .store-rating {
             margin-top: 1rem;
             font-size: 0.85rem;
-            color: rgba(255, 255, 255, 0.5);
+            color: var(--gray-500);
         }
 
         .store-rating .stars {
