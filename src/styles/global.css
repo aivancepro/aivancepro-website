@@ -422,8 +422,7 @@ body > nav {
 
 /* ===== BUTTONS ===== */
 .btn-primary {
-    display: flex;
-    justify-content: center;
+    display: inline-flex;
     align-items: center;
     gap: 0.5rem;
     background: linear-gradient(135deg, var(--blue), var(--purple));
