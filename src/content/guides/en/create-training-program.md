@@ -37,7 +37,7 @@ Intensity can refer to two things in strength training:
 - **Load intensity** -- The percentage of your one-rep max (%1RM) you are lifting. Heavier loads (80-90% 1RM) build more strength; moderate loads (65-80% 1RM) are optimal for hypertrophy.
 - **Effort intensity** -- How close to muscular failure you push each set, often measured by RPE (Rate of Perceived Exertion) or RIR (Reps in Reserve).
 
-For most training goals, working at **RPE 7-9** (1-3 reps from failure) provides the best stimulus-to-fatigue ratio. Going to absolute failure on every set increases fatigue dramatically without proportionally increasing growth.
+For most training goals, working at **RPE 7-9** (1-3 reps from failure) provides the best stimulus-to-fatigue ratio. If you are unfamiliar with RPE, our guide on [understanding RPE and training intensity](/en/guides/understanding-rpe/) covers the scale and how to apply it. Going to absolute failure on every set increases fatigue dramatically without proportionally increasing growth.
 
 ### Frequency: how often you train each muscle
 
@@ -49,7 +49,7 @@ Training frequency refers to how many times per week you hit each muscle group. 
 
 ## Exercise selection by muscle group
 
-Choosing the right exercises means balancing compound movements (which should form the backbone of your program) with isolation work that targets specific muscles. Here is a practical selection guide:
+Choosing the right exercises means balancing compound movements (which should form the backbone of your program) with isolation work that targets specific muscles. For a goal-oriented approach to exercise selection, see our article on choosing exercises based on your goals. Here is a practical selection guide:
 
 ### Chest
 
@@ -154,7 +154,7 @@ A flexible method for intermediate lifters. Work within a rep range and add weig
 
 ### Periodized progression
 
-Plan volume and intensity changes across 4-8 week blocks (mesocycles). Gradually increase volume or intensity each week, then deload before starting a new block. This prevents burnout and allows sustained long-term progress.
+Plan volume and intensity changes across 4-8 week blocks (mesocycles). Gradually increase volume or intensity each week, then deload before starting a new block. This prevents burnout and allows sustained long-term progress. Our guide on [periodization basics](/en/guides/periodization-basics/) explains how to structure mesocycles and macrocycles in detail.
 
 ## Adapting to your schedule
 

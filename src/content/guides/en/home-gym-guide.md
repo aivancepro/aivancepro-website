@@ -14,7 +14,7 @@ alternates:
   de: "https://aivancepro.fr/de/ratgeber/home-gym-ratgeber/"
 ---
 
-Training at home eliminates commute time, waiting for equipment and monthly gym fees. With the right setup, a home gym can be just as effective as any commercial facility for building strength and muscle. This guide covers everything from choosing your first piece of equipment on a tight budget to designing a complete garage gym and programming effective home workouts.
+Training at home eliminates commute time, waiting for equipment and monthly gym fees. With the right setup, a home gym can be just as effective as any commercial facility for building strength and muscle. For a broader look at what it takes to get started, see our complete home gym setup guide. This guide covers everything from choosing your first piece of equipment on a tight budget to designing a complete garage gym and programming effective home workouts.
 
 ## Essential equipment: what you actually need
 
@@ -55,7 +55,7 @@ Building a home gym does not have to happen all at once. Here is how to phase yo
 > - Resistance band set: ~20-30 euros
 > - Yoga mat: ~15 euros
 >
-> This setup lets you train every muscle group effectively. You can run a full body program 3-4 times per week.
+> This setup lets you train every muscle group effectively. You can run a full body program 3-4 times per week. If you are new to lifting, our [beginner's guide to strength training](/en/guides/beginner-strength-training/) will help you choose the right exercises and structure your sessions.
 
 > **Mid-range tier: 500-1,000 euros**
 >
@@ -109,7 +109,7 @@ Proper flooring protects your equipment, your floor and your joints:
 
 ## Home gym workout programs
 
-Here are two effective programs designed for home gym equipment:
+Here are two effective programs designed for home gym equipment. For a deeper dive into sets, reps and progression, check out our guide on [creating an effective training program](/en/guides/create-training-program/).
 
 > **Minimalist program (dumbbells + pull-up bar, 3x/week)**
 >

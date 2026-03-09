@@ -27,11 +27,11 @@ The greatest advantage of an AI coach is its ability to process vast amounts of 
 - Your **training history** and past performance
 - Your **personal constraints** (injuries, time availability, preferences)
 
-The result? A program that evolves alongside you, rather than a static plan you follow for months with no adjustments.
+The result? A program that evolves alongside you, rather than a static plan you follow for months with no adjustments. If you are just getting started, check out our beginner workout program to see what a solid foundation looks like.
 
 ## Real-time adaptation
 
-One of the most powerful aspects of AI coaching is continuous adaptation. After every session, the algorithm analyzes your performance: the weights you lifted, the number of reps you completed, your perceived exertion (RPE), and your rest times between sets.
+One of the most powerful aspects of AI coaching is continuous adaptation. After every session, the algorithm analyzes your performance: the weights you lifted, the number of reps you completed, your perceived exertion (RPE), and your rest times between sets. This is why tracking your fitness progress is so critical -- it provides the raw data that powers intelligent adaptation.
 
 If you are progressing faster than expected on a given exercise, the AI ramps up the intensity. If you hit a plateau, it adjusts training variables -- volume, intensity, frequency -- to break through the stall. It is like having a coach watching every single session and fine-tuning your program accordingly.
 
@@ -51,4 +51,4 @@ However, AI excels where humans have limitations: processing large volumes of da
 
 AIVancePro places artificial intelligence at the heart of the training experience. The app analyzes your profile, generates programs adapted to your equipment and goals, and continuously adjusts its recommendations as you progress.
 
-Whether you train at the gym, at home, or outdoors, the AI adapts to your environment. With over 240 exercises in its database and a comprehensive tracking system, AIVancePro makes intelligent coaching accessible to everyone.
+Whether you train at the gym, at home, or outdoors, the AI adapts to your environment. With over 240 exercises in its database and a comprehensive tracking system, AIVancePro makes intelligent coaching accessible to everyone. To learn more about setting up your own plan, read our guide on [how to create a training program](/en/guides/create-training-program/).

@@ -27,11 +27,11 @@ Le principal avantage d'un coach IA est sa capacité à analyser une grande quan
 - Votre **historique d'entraînement** et vos performances passées
 - Vos **contraintes** (blessures, temps disponible, préférences)
 
-Le résultat ? Un programme qui évolue avec vous, pas un plan figé que vous suivez pendant des mois sans adaptation.
+Le résultat ? Un programme qui évolue avec vous, pas un plan figé que vous suivez pendant des mois sans adaptation. Que vous soyez en train de débuter en musculation ou déjà expérimenté, l'IA s'ajuste à votre niveau.
 
 ## L'adaptation en temps réel
 
-L'un des aspects les plus puissants du coaching par IA est l'adaptation continue. Après chaque séance, l'algorithme analyse vos performances : charges utilisées, nombre de répétitions réalisées, ressenti (RPE), temps de repos.
+L'un des aspects les plus puissants du coaching par IA est l'adaptation continue. Après chaque séance, l'algorithme analyse vos performances : charges utilisées, nombre de répétitions réalisées, ressenti (RPE), temps de repos. C'est pourquoi le suivi de progression sportive est au coeur du fonctionnement d'un coach IA.
 
 Si vous progressez plus vite que prévu sur un exercice, l'IA augmente l'intensité. Si vous stagnez, elle modifie les variables d'entraînement (volume, intensité, fréquence) pour relancer la progression. C'est comme avoir un coach qui vous observe à chaque séance et ajuste votre programme en conséquence.
 
@@ -49,6 +49,6 @@ Cependant, l'IA excelle là où l'humain a ses limites : le traitement de grande
 
 ## Comment AIVancePro utilise l'IA
 
-AIVancePro intègre l'intelligence artificielle au coeur de son expérience. L'application analyse votre profil, génère des programmes adaptés à votre équipement et vos objectifs, et ajuste les recommandations au fil de votre progression.
+AIVancePro intègre l'intelligence artificielle au coeur de son expérience. L'application analyse votre profil, génère des programmes adaptés à votre équipement et vos objectifs, et ajuste les recommandations au fil de votre progression. Pour comprendre comment construire un programme efficace, consultez notre guide pour [créer un programme d'entraînement personnalisé](/guides/creer-programme-entrainement/).
 
 Que vous vous entraîniez en salle, à la maison ou en extérieur, l'IA s'adapte à votre contexte. Avec plus de 240 exercices dans sa base de données et un système de suivi complet, AIVancePro rend le coaching intelligent accessible à tous.

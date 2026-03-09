@@ -14,7 +14,7 @@ alternates:
   de: "https://aivancepro.fr/de/ratgeber/home-gym-ratgeber/"
 ---
 
-Ein Home Gym bietet Unabhängigkeit, Zeitersparnis und langfristig oft günstigeres Training als ein Fitnessstudio-Abo. Doch wie richtet man einen effektiven Trainingsraum ein, ohne Tausende von Euro auszugeben? Welche Ausrüstung ist wirklich nötig? Dieser Ratgeber führt Sie Schritt für Schritt durch die Planung und Einrichtung Ihres eigenen Home Gyms.
+Ein Home Gym bietet Unabhängigkeit, Zeitersparnis und langfristig oft günstigeres Training als ein Fitnessstudio-Abo. Doch wie richtet man einen effektiven Trainingsraum ein, ohne Tausende von Euro auszugeben? Welche Ausrüstung ist wirklich nötig? Wenn Sie noch unschlüssig sind, ob sich ein Home Gym für Sie lohnt, lesen Sie auch unseren Artikel zum Thema effektiv zuhause trainieren mit dem Home Gym. Dieser Ratgeber führt Sie Schritt für Schritt durch die Planung und Einrichtung Ihres eigenen Home Gyms.
 
 ## Die Grundausstattung
 
@@ -95,7 +95,7 @@ Schützen Sie Ihren Boden mit **Gummistallmatten** (2--3 cm dick). Sie sind gün
 
 ## Home-Gym-Programme
 
-Mit Langhantel, Kurzhanteln, Rack und Bank können Sie nahezu jedes Programm durchführen. Hier zwei bewährte Varianten:
+Mit Langhantel, Kurzhanteln, Rack und Bank können Sie nahezu jedes Programm durchführen. Falls Sie Hilfe bei der Zusammenstellung brauchen, zeigt Ihnen unser Ratgeber zum Thema [einen effektiven Trainingsplan erstellen](/de/ratgeber/trainingsplan-erstellen/), worauf es ankommt. Hier zwei bewährte Varianten:
 
 > **Ganzkörper 3x/Woche (Anfänger/Fortgeschrittene)**
 >
@@ -132,7 +132,7 @@ Mit Langhantel, Kurzhanteln, Rack und Bank können Sie nahezu jedes Programm dur
 - **Hohe Anfangsinvestition**: 500--2.000 EUR für ein solides Setup
 - **Begrenzte Ausrüstung**: Keine Kabelzüge, Maschinen und spezielle Geräte (außer Sie investieren viel)
 - **Platzbedarf**: Mindestens 8--10 m² für ein komfortables Setup
-- **Motivation**: Ohne Trainingspartner oder Gym-Atmosphäre kann die Motivation leiden
+- **Motivation**: Ohne Trainingspartner oder Gym-Atmosphäre kann die Motivation leiden -- ein strukturierter [Einstieg ins Krafttraining](/de/ratgeber/anfaenger-krafttraining/) hilft, dranzubleiben
 - **Sicherheit**: Alleine trainieren erfordert besondere Vorsicht (Safety Bars nutzen!)
 - **Lärm**: Kreuzheben und abgelegte Gewichte können in Mehrfamilienhäusern problematisch sein
 

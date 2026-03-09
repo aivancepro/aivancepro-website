@@ -51,7 +51,7 @@ Protein is the most critical macronutrient for lifters. It provides the amino ac
 - **During a cut**: aim for the higher end (2.0-2.4 g/kg) to minimize muscle loss
 - **Minimum effective dose**: 1.6 g/kg is where most of the benefit occurs
 
-Best protein sources include chicken breast, turkey, lean beef, fish, eggs, Greek yogurt, cottage cheese, tofu, tempeh, lentils and whey protein powder.
+Best protein sources include chicken breast, turkey, lean beef, fish, eggs, Greek yogurt, cottage cheese, tofu, tempeh, lentils and whey protein powder. If you are just getting started, our article on nutrition and workout basics provides a simplified overview of the essentials.
 
 ### Carbohydrates: the fuel
 
@@ -90,7 +90,7 @@ Eating 3-5 meals per day is a practical approach. Research shows that spreading 
 
 ### Before bed
 
-A protein-rich snack before bed can support overnight recovery. Casein protein (found in cottage cheese and casein powder) digests slowly, providing a steady supply of amino acids while you sleep.
+A protein-rich snack before bed can support overnight recovery. Casein protein (found in cottage cheese and casein powder) digests slowly, providing a steady supply of amino acids while you sleep. For a deeper look at how sleep, nutrition and rest days work together, see our guide on [recovery and injury prevention](/en/guides/recovery-injury-prevention/).
 
 ## Hydration
 
@@ -181,4 +181,4 @@ Nutrition is not set-and-forget. Track your weight weekly (same conditions each 
 - **Losing weight too quickly during a cut?** Increase calories by 100-200 to slow the rate.
 - **Plateaued on a cut?** Reduce calories by another 100-200 or add 1-2 cardio sessions per week.
 
-Patience is key. Give each adjustment 2-3 weeks before making another change. Your body needs time to respond.
+Patience is key. Give each adjustment 2-3 weeks before making another change. Your body needs time to respond. If you are new to lifting and want to pair your nutrition plan with a solid workout routine, check out our [beginner's guide to strength training](/en/guides/beginner-strength-training/).

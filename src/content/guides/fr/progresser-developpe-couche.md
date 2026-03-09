@@ -75,13 +75,13 @@ Les triceps sont responsables du verrouillage final du mouvement. Si votre bench
 
 - **Développé militaire** : renforce les épaules, qui contribuent significativement au décrochage et à la poussée initiale. 3 x 6-10.
 - **Rowing barre ou haltères** : un dos fort est essentiel pour maintenir la rétraction scapulaire et stabiliser le mouvement. 3-4 x 8-12.
-- **Face pulls** : renforcent les rotateurs externes et le deltoïde postérieur, prévenant les déséquilibres causés par un excès de poussée. 3 x 15-20.
+- **Face pulls** : renforcent les rotateurs externes et le deltoïde postérieur, prévenant les déséquilibres causés par un excès de poussée. 3 x 15-20. Ce type de travail préventif est détaillé dans notre guide sur la [récupération et la prévention des blessures](/guides/recuperation-prevention-blessures/).
 
 ## Programmation spécifique pour le bench
 
 ### Fréquence idéale
 
-Pour progresser au développé couché, une fréquence de **2 à 3 fois par semaine** est optimale. Cela peut sembler élevé, mais le développé couché est un mouvement qui bénéficie grandement de la répétition technique.
+Pour progresser au développé couché, une fréquence de **2 à 3 fois par semaine** est optimale. Cela peut sembler élevé, mais le développé couché est un mouvement qui bénéficie grandement de la répétition technique. Pour organiser ces séances dans un plan à long terme, les principes de [périodisation de l'entraînement](/guides/periodisation/) sont essentiels.
 
 > **Exemple de répartition sur 3 séances**
 >
@@ -99,6 +99,8 @@ Chaque séance a un objectif différent : la première développe la force avec 
 > - Semaine 2 : 4 x 5 @ 80% - RPE 7,5
 > - Semaine 3 : 4 x 5 @ 82,5% - RPE 8
 > - Semaine 4 : 3 x 3 @ 70% (deload)
+
+Pour bien calibrer ces niveaux d'effort, consultez notre guide complet sur [le RPE et la gestion de l'intensité en musculation](/guides/comprendre-rpe-intensite/).
 
 ## Identifier et corriger les points faibles
 

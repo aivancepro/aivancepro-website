@@ -79,7 +79,7 @@ L'avantage du RPE sur le %1RM est l'adaptabilité. Votre 1RM fluctue quotidienne
 
 ### Prescrire l'intensité avec le RPE
 
-Plutôt que d'écrire « squat 4 x 5 @ 80% », un programme basé sur le RPE prescrit « squat 4 x 5 @ RPE 8 ». Cela signifie : trouvez le poids qui vous permet de faire 5 répétitions avec 2 répétitions en réserve.
+Plutôt que d'écrire « squat 4 x 5 @ 80% », un programme basé sur le RPE prescrit « squat 4 x 5 @ RPE 8 ». Cela signifie : trouvez le poids qui vous permet de faire 5 répétitions avec 2 répétitions en réserve. Pour intégrer le RPE dans un plan complet, consultez notre guide sur [la création d'un programme d'entraînement efficace](/guides/creer-programme-entrainement/).
 
 En pratique, cela se traduit ainsi :
 
@@ -100,7 +100,7 @@ Le RPE permet une progression naturelle. Exemple sur un bloc de 4 semaines :
 > - Semaine 3 : 4 x 5 @ RPE 8 (2 répétitions en réserve)
 > - Semaine 4 : 3 x 5 @ RPE 6 (deload)
 
-Chaque semaine, le RPE cible augmente légèrement, ce qui vous pousse à utiliser des charges plus lourdes ou à vous rapprocher de l'échec. La semaine de deload permet de dissiper la fatigue avant de recommencer un nouveau bloc, idéalement avec des charges de base plus élevées.
+Chaque semaine, le RPE cible augmente légèrement, ce qui vous pousse à utiliser des charges plus lourdes ou à vous rapprocher de l'échec. La semaine de deload permet de dissiper la fatigue avant de recommencer un nouveau bloc, idéalement avec des charges de base plus élevées. Ce type de progression par blocs est au coeur de la [périodisation de l'entraînement](/guides/periodisation/).
 
 ## Autoréguler ses séances
 
@@ -122,7 +122,7 @@ Ne vous inquiétez pas des fluctuations quotidiennes. Ce qui compte, c'est la te
 
 ### Exercices composés (squat, bench, deadlift)
 
-Le RPE est très fiable pour les mouvements composés, car l'échec est clairement identifiable : vous ne pouvez pas terminer la répétition. La plupart des programmes prescrivent un RPE de 7 à 9 pour les séries de travail des mouvements principaux.
+Le RPE est très fiable pour les mouvements composés, car l'échec est clairement identifiable : vous ne pouvez pas terminer la répétition. Par exemple, nous utilisons le RPE dans notre guide pour [progresser au développé couché](/guides/progresser-developpe-couche/). La plupart des programmes prescrivent un RPE de 7 à 9 pour les séries de travail des mouvements principaux.
 
 - **RPE 7-8** : idéal pour l'accumulation de volume et la progression régulière
 - **RPE 8-9** : pour les phases de force et les séances intenses

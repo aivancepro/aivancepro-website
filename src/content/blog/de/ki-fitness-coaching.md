@@ -27,17 +27,17 @@ Der größte Vorteil eines KI-Coaches ist seine Fähigkeit, große Datenmengen z
 - Ihre **Trainingshistorie** und bisherige Leistungen
 - Ihre **persönlichen Einschränkungen** (Verletzungen, zeitliche Verfügbarkeit, Vorlieben)
 
-Das Ergebnis? Ein Programm, das sich gemeinsam mit Ihnen weiterentwickelt -- statt eines statischen Plans, dem Sie monatelang ohne Anpassungen folgen.
+Das Ergebnis? Ein Programm, das sich gemeinsam mit Ihnen weiterentwickelt -- statt eines statischen Plans, dem Sie monatelang ohne Anpassungen folgen. Wenn Sie noch keinen strukturierten Plan haben, erfahren Sie in unserem Ratgeber, wie Sie [einen individuellen Trainingsplan erstellen](/de/ratgeber/trainingsplan-erstellen/).
 
 ## Anpassung in Echtzeit
 
 Einer der leistungsstärksten Aspekte des KI-Coachings ist die kontinuierliche Anpassung. Nach jeder Trainingseinheit analysiert der Algorithmus Ihre Leistung: die gehobenen Gewichte, die geschafften Wiederholungen, Ihre subjektive Belastungseinschätzung (RPE) und die Pausenzeiten zwischen den Sätzen.
 
-Wenn Sie bei einer bestimmten Übung schneller Fortschritte machen als erwartet, erhöht die KI die Intensität. Wenn Sie auf einem Plateau stecken, passt sie die Trainingsvariablen an -- Volumen, Intensität, Frequenz -- um die Stagnation zu durchbrechen. Es ist, als hätten Sie einen Coach, der jede einzelne Trainingseinheit beobachtet und Ihr Programm entsprechend optimiert.
+Wenn Sie bei einer bestimmten Übung schneller Fortschritte machen als erwartet, erhöht die KI die Intensität. Wenn Sie auf einem Plateau stecken, passt sie die Trainingsvariablen an -- Volumen, Intensität, Frequenz -- um die Stagnation zu durchbrechen. Es ist, als hätten Sie einen Coach, der jede einzelne Trainingseinheit beobachtet und Ihr Programm entsprechend optimiert. Erfahren Sie mehr darüber, warum die Verfolgung Ihres Trainingsfortschritts so entscheidend für nachhaltige Ergebnisse ist.
 
 ## Prävention von Übertraining
 
-Übertraining ist eine der häufigsten Fallen im Fitnessbereich, insbesondere bei motivierten Anfängern, die zu schnell zu viel wollen. KI kann die Warnsignale einer angesammelten Ermüdung erkennen, indem sie nachlassende Leistung, steigende RPE-Werte und unregelmäßige Trainingsmuster analysiert.
+Übertraining ist eine der häufigsten Fallen im Fitnessbereich, insbesondere bei motivierten Anfängern, die zu schnell zu viel wollen -- gerade wenn man noch keinen soliden Trainingsplan für den Einstieg hat. KI kann die Warnsignale einer angesammelten Ermüdung erkennen, indem sie nachlassende Leistung, steigende RPE-Werte und unregelmäßige Trainingsmuster analysiert.
 
 Wenn diese Warnsignale auftreten, kann der KI-Coach eine Deload-Woche empfehlen -- eine geplante Reduzierung des Trainingsvolumens -- oder die Übungsauswahl anpassen, um das Verletzungsrisiko zu minimieren. Dieser präventive Ansatz ist entscheidend für langfristige, nachhaltige Fortschritte.
 

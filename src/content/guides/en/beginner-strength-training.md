@@ -98,7 +98,7 @@ Add one or two isolation movements at the end of each session to target lagging 
 
 ## Beginner program structure: full body 3 days per week
 
-A full-body routine performed three times per week is the gold standard for beginners. It hits every muscle group with enough frequency to learn the movements quickly while allowing ample recovery between sessions.
+A full-body routine performed three times per week is the gold standard for beginners. It hits every muscle group with enough frequency to learn the movements quickly while allowing ample recovery between sessions. For a ready-made template you can follow from day one, see our beginner workout program.
 
 > **Day A -- Full Body**
 >
@@ -152,7 +152,7 @@ Avoiding these pitfalls will save you months of frustration and potential setbac
 - **Lifting too heavy too soon** -- Your muscles grow faster than your tendons and ligaments. Start lighter than you think you need to and build up gradually.
 - **Program hopping** -- Switching routines every week prevents you from tracking real progress. Stick with one program for at least 8-12 weeks.
 - **Neglecting legs** -- Squats and deadlifts are not optional. Lower body training triggers systemic growth hormones that benefit your entire physique.
-- **Ignoring recovery** -- Muscles grow during rest, not during training. Sleep 7-9 hours per night and eat enough protein (1.6-2.2 g per kg of bodyweight).
+- **Ignoring recovery** -- Muscles grow during rest, not during training. Sleep 7-9 hours per night and eat enough protein (1.6-2.2 g per kg of bodyweight). Our [nutrition and training guide](/en/guides/nutrition-training/) breaks down exactly how much to eat and what to prioritize.
 - **Chasing the pump over progression** -- Feeling a burn during the workout feels good but means nothing without progressive overload over time.
 - **Skipping warm-ups** -- Cold muscles and joints are injury-prone. Five minutes of preparation can save months of rehabilitation.
 - **Overcomplicating things** -- You do not need ten exercises per session, fancy techniques or expensive supplements. Master the basics first.
@@ -174,7 +174,7 @@ Intermediate programs typically introduce higher weekly volume and split routine
 - **Push/Pull/Legs (5-6 days)** -- Dedicated sessions for pushing muscles, pulling muscles and legs.
 - **Periodization** -- Planned variation in volume and intensity across weeks and months.
 
-The transition should be gradual. Add one training day before restructuring everything at once.
+The transition should be gradual. Add one training day before restructuring everything at once. When you are ready, our guide on [creating an effective training program](/en/guides/create-training-program/) walks you through selecting a split, setting volume and planning progression.
 
 ## Final advice for the road ahead
 

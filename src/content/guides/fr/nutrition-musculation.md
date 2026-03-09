@@ -14,7 +14,7 @@ alternates:
   de: "https://aivancepro.fr/de/ratgeber/ernaehrung-krafttraining/"
 ---
 
-L'entraînement ne représente qu'une partie de l'équation. Sans une alimentation adaptée, même le meilleur programme ne donnera pas de résultats optimaux. Ce guide détaille les principes nutritionnels essentiels pour soutenir votre progression en musculation, que votre objectif soit la prise de masse, la sèche ou la recomposition corporelle.
+L'entraînement ne représente qu'une partie de l'équation. Sans une alimentation adaptée, même le meilleur programme ne donnera pas de résultats optimaux. Pour un résumé des fondamentaux, consultez aussi notre article sur les bases de la nutrition en musculation. Ce guide détaille les principes nutritionnels essentiels pour soutenir votre progression en musculation, que votre objectif soit la prise de masse, la sèche ou la recomposition corporelle.
 
 ## Comprendre les besoins caloriques
 
@@ -91,7 +91,7 @@ Le timing nutritionnel est moins important que la quantité totale de macronutri
 - **Avant (1-2h)** : un repas contenant glucides et protéines pour assurer un bon niveau d'énergie. Exemple : 80 g de flocons d'avoine + 1 banane + 30 g de whey.
 - **Après (dans les 2h)** : un repas riche en protéines et glucides pour lancer la récupération. Exemple : 150 g de poulet + 200 g de riz + légumes.
 
-La fenêtre anabolique de 30 minutes après l'entraînement est un mythe. Tant que vous consommez un repas protéiné dans les 2 à 3 heures suivant votre séance, vous optimisez la récupération.
+La fenêtre anabolique de 30 minutes après l'entraînement est un mythe. Tant que vous consommez un repas protéiné dans les 2 à 3 heures suivant votre séance, vous optimisez la récupération. Pour aller plus loin sur ce sujet, notre guide sur la [récupération et la prévention des blessures](/guides/recuperation-prevention-blessures/) couvre tous les aspects du repos et de la régénération.
 
 ### Avant le coucher
 
@@ -148,4 +148,4 @@ Indicateurs d'une bonne hydratation : urines claires à jaune pâle tout au long
 > - Salade verte avec avocat
 > - Vinaigrette au citron
 
-Adaptez les quantités à vos besoins caloriques individuels. L'important est de respecter vos objectifs en macronutriments sur la journée, pas d'atteindre la perfection à chaque repas.
+Adaptez les quantités à vos besoins caloriques individuels. L'important est de respecter vos objectifs en macronutriments sur la journée, pas d'atteindre la perfection à chaque repas. Pour associer ces principes nutritionnels à un entraînement adapté, découvrez comment [créer un programme d'entraînement efficace](/guides/creer-programme-entrainement/).

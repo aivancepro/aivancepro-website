@@ -14,7 +14,7 @@ alternates:
   de: "https://aivancepro.fr/de/ratgeber/anfaenger-krafttraining/"
 ---
 
-Se lancer en musculation peut sembler intimidant. Entre les machines inconnues, les conseils contradictoires sur les réseaux sociaux et la peur de mal faire, beaucoup abandonnent avant même d'avoir commencé. Ce guide a pour objectif de vous donner toutes les clés pour démarrer sereinement, avec des fondations solides qui vous accompagneront tout au long de votre parcours.
+Se lancer en musculation peut sembler intimidant, que ce soit en salle ou dans votre propre [home gym](/guides/home-gym/). Entre les machines inconnues, les conseils contradictoires sur les réseaux sociaux et la peur de mal faire, beaucoup abandonnent avant même d'avoir commencé. Ce guide a pour objectif de vous donner toutes les clés pour démarrer sereinement, avec des fondations solides qui vous accompagneront tout au long de votre parcours.
 
 ## Les fondamentaux à maîtriser avant tout
 
@@ -68,7 +68,7 @@ En tant que débutant, concentrez-vous sur les mouvements poly-articulaires (ou 
 
 ## Structure d'un programme débutant : le full body 3 fois par semaine
 
-Le programme full body (corps entier) est idéal pour les débutants pour plusieurs raisons :
+Le programme full body (corps entier) est idéal pour les débutants pour plusieurs raisons (voir aussi notre article détaillé sur le programme de musculation pour débutant) :
 
 - Chaque groupe musculaire est travaillé 3 fois par semaine, ce qui maximise l'apprentissage moteur.
 - La fréquence élevée permet de pratiquer régulièrement les mouvements fondamentaux.

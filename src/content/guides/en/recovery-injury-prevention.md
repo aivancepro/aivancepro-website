@@ -72,7 +72,7 @@ Spend **5-10 minutes before training** on dynamic mobility targeting the joints 
 
 ## Deload weeks
 
-A deload is a planned reduction in training volume and/or intensity, typically lasting one week. It allows your body to dissipate accumulated fatigue, repair micro-damage and come back stronger for the next training block.
+A deload is a planned reduction in training volume and/or intensity, typically lasting one week. It allows your body to dissipate accumulated fatigue, repair micro-damage and come back stronger for the next training block. Deloads are a core component of [training periodization](/en/guides/periodization-basics/), which structures these recovery phases into your long-term plan.
 
 ### When to deload
 
@@ -115,7 +115,7 @@ True overtraining syndrome is rare, but **overreaching** -- its milder precursor
 
 ### What to do about it
 
-If you recognize multiple warning signs, take action immediately:
+Many of these issues stem from common workout mistakes that are easy to fix once you know what to look for. If you recognize multiple warning signs, take action immediately:
 
 1. Take a full deload week (or even a week completely off if symptoms are severe).
 2. Assess your sleep, nutrition and stress levels. Often, overreaching results from life stress compounding training stress.
@@ -180,4 +180,4 @@ Recovery should not be an afterthought. Build it into your program from the star
 - Plan **deload weeks** every 4-6 weeks.
 - Prioritize **sleep** with the same discipline you bring to your workouts.
 - Include **mobility work** in every warm-up.
-- Track your **energy and motivation levels** alongside your training metrics to spot fatigue trends early.
+- Track your **energy and motivation levels** alongside your training metrics to spot fatigue trends early. Using [RPE to gauge your daily readiness](/en/guides/understanding-rpe/) provides an objective signal for when to push and when to back off.

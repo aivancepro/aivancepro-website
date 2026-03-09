@@ -14,11 +14,11 @@ alternates:
   de: "https://aivancepro.fr/de/ratgeber/ernaehrung-training/"
 ---
 
-Training allein ist nur die halbe Miete. Ohne die richtige Ernährung werden Ihre Fortschritte im Krafttraining stark eingeschränkt -- egal, wie hart Sie trainieren. Dieser umfassende Ratgeber erklärt Ihnen alles, was Sie über Ernährung im Kontext des Krafttrainings wissen müssen: von der Kalorienberechnung über Makronährstoffe bis hin zu praktischen Mahlzeitenbeispielen.
+Training allein ist nur die halbe Miete. Ohne die richtige Ernährung werden Ihre Fortschritte im Krafttraining stark eingeschränkt -- egal, wie hart Sie trainieren. Wenn Sie tiefer in das Zusammenspiel von Ernährung und Training einsteigen möchten, lesen Sie auch unsere Grundlagen zu Ernährung und Training. Dieser umfassende Ratgeber erklärt Ihnen alles, was Sie über Ernährung im Kontext des Krafttrainings wissen müssen: von der Kalorienberechnung über Makronährstoffe bis hin zu praktischen Mahlzeitenbeispielen.
 
 ## Kalorienbedarf verstehen
 
-Ihr Kalorienbedarf bestimmt, ob Sie Muskeln aufbauen, Fett verlieren oder Ihr Gewicht halten. Der erste Schritt ist die Berechnung Ihres **Gesamtenergieumsatzes** (TDEE -- Total Daily Energy Expenditure).
+Ihr Kalorienbedarf bestimmt, ob Sie Muskeln aufbauen, Fett verlieren oder Ihr Gewicht halten. Um Ihre Fortschritte sichtbar zu machen, empfehlen wir zudem ein systematisches Tracking des Trainingsfortschritts. Der erste Schritt ist die Berechnung Ihres **Gesamtenergieumsatzes** (TDEE -- Total Daily Energy Expenditure).
 
 ### So berechnen Sie Ihren TDEE
 
@@ -164,4 +164,4 @@ Hier ist ein Beispieltag für einen 80 kg schweren Mann im Aufbau (ca. 2.800--3.
 - Reduzieren Sie Fette nicht unter 20 % der Gesamtkalorien
 - Trinken Sie mindestens 2,5--3 Liter Wasser täglich
 - Kreatin und Whey sind die einzigen wirklich nützlichen Supplements
-- Konsistenz ist wichtiger als Perfektion: Die 80/20-Regel gilt auch für die Ernährung
+- Konsistenz ist wichtiger als Perfektion: Die 80/20-Regel gilt auch für die Ernährung -- vermeiden Sie dabei die häufigsten Trainingsfehler, die auch die Ernährung betreffen

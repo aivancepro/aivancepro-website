@@ -63,7 +63,7 @@ Zones à travailler en priorité :
 
 ## Les semaines de deload
 
-Le deload est une semaine planifiée de réduction du volume et/ou de l'intensité d'entraînement. Son objectif est de permettre au corps de récupérer complètement de la fatigue accumulée, pour repartir plus fort.
+Le deload est une semaine planifiée de réduction du volume et/ou de l'intensité d'entraînement. Son objectif est de permettre au corps de récupérer complètement de la fatigue accumulée, pour repartir plus fort. Il s'intègre naturellement dans un plan de [périodisation de l'entraînement](/guides/periodisation/).
 
 ### Quand faire un deload ?
 
@@ -75,7 +75,7 @@ Le deload est une semaine planifiée de réduction du volume et/ou de l'intensit
 Deux approches courantes :
 
 - **Réduction du volume** : gardez les mêmes charges mais divisez le nombre de séries par deux. Vous maintenez le stimulus de force sans accumuler de fatigue.
-- **Réduction de l'intensité** : réduisez les charges de 40 à 50% et gardez le même volume. Cette approche permet de travailler la technique tout en récupérant.
+- **Réduction de l'intensité** : réduisez les charges de 40 à 50% et gardez le même volume. Savoir [doser l'intensité avec le RPE](/guides/comprendre-rpe-intensite/) est particulièrement utile pour calibrer ces semaines de décharge.
 
 Ne sautez pas le deload par impatience. C'est un investissement qui rapporte des dividendes la semaine suivante, quand vous reprenez l'entraînement intensif avec un corps complètement reposé.
 
@@ -98,7 +98,7 @@ Le surentraînement survient quand le stress d'entraînement dépasse chroniquem
 - Difficultés de concentration au quotidien
 - Appréhension avant les séances
 
-Si vous identifiez plusieurs de ces signes, prenez une semaine de repos complet ou un deload prolongé (10 jours). Réévaluez votre volume d'entraînement, votre sommeil et votre alimentation avant de reprendre.
+Si vous identifiez plusieurs de ces signes, prenez une semaine de repos complet ou un deload prolongé (10 jours). Réévaluez votre volume d'entraînement, votre sommeil et votre alimentation avant de reprendre. Notre article sur les erreurs courantes en musculation aborde notamment le surentraînement et les pièges à éviter.
 
 ## Gérer les courbatures (DOMS)
 

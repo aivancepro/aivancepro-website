@@ -63,7 +63,7 @@ So integrieren Sie RPE in Ihren Trainingsplan:
 
 ### Methode 1: RPE als Intensitätsvorgabe
 
-Statt ein festes Gewicht vorzugeben, geben Sie RPE und Wiederholungszahl vor. Beispiel: "Kniebeuge: 3x5 bei RPE 8". Das bedeutet: Wählen Sie ein Gewicht, bei dem Sie nach 5 Wiederholungen noch 2 weitere hätten schaffen können.
+Statt ein festes Gewicht vorzugeben, geben Sie RPE und Wiederholungszahl vor. In unserem Ratgeber zum [Erstellen eines Trainingsplans](/de/ratgeber/trainingsplan-erstellen/) zeigen wir, wie Sie RPE-Vorgaben in Ihren Plan integrieren. Beispiel: "Kniebeuge: 3x5 bei RPE 8". Das bedeutet: Wählen Sie ein Gewicht, bei dem Sie nach 5 Wiederholungen noch 2 weitere hätten schaffen können.
 
 ### Methode 2: RPE als Obergrenze
 
@@ -71,7 +71,7 @@ Steigern Sie das Gewicht über mehrere Sätze, bis Sie die Ziel-RPE erreichen. D
 
 ### Methode 3: RPE-Bereiche pro Trainingsblock
 
-Verwenden Sie RPE-Bereiche, die sich über einen Mesozyklus hinweg steigern:
+Verwenden Sie RPE-Bereiche, die sich über einen Mesozyklus hinweg steigern. Wie Sie solche Zyklen systematisch planen, erfahren Sie in unserem Ratgeber zu den [Grundlagen der Periodisierung](/de/ratgeber/periodisierung-grundlagen/):
 
 > **Beispiel: 4-Wochen Mesozyklus mit RPE-Steigerung**
 >
@@ -94,7 +94,7 @@ Ihre Leistungsfähigkeit schwankt täglich aufgrund von:
 - Akkumulierte Ermüdung aus vorherigen Einheiten
 - Allgemeiner Gesundheitszustand
 
-An einem guten Tag können Sie etwas schwerer trainieren als geplant. An einem schlechten Tag reduzieren Sie das Gewicht, um die Ziel-RPE einzuhalten. So vermeiden Sie sowohl Untertraining als auch Überlastung.
+An einem guten Tag können Sie etwas schwerer trainieren als geplant. An einem schlechten Tag reduzieren Sie das Gewicht, um die Ziel-RPE einzuhalten. So vermeiden Sie sowohl Untertraining als auch Überlastung. Um diese Anpassungen langfristig zu dokumentieren, lohnt sich ein systematisches Tracking des Trainingsfortschritts.
 
 ### Autoregulation in der Praxis
 

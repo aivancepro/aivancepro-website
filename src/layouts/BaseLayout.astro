@@ -15,6 +15,11 @@ const {
   alternates = {},
   jsonLd,
   noFooter = false,
+  articleDate,
+  articleModified,
+  articleAuthor,
+  articleSection,
+  articleTag,
 } = Astro.props;
 
 const i = t[lang];
@@ -56,6 +61,11 @@ const guidePosts = (await getCollection('guides', ({ data }) => data.lang === la
     <meta name="twitter:title" content={title}>
     {description && <meta name="twitter:description" content={description} />}
     <meta name="twitter:image" content={ogImage}>
+    {ogType === 'article' && articleDate && <meta property="article:published_time" content={articleDate} />}
+    {ogType === 'article' && articleModified && <meta property="article:modified_time" content={articleModified} />}
+    {ogType === 'article' && articleAuthor && <meta property="article:author" content={articleAuthor} />}
+    {ogType === 'article' && articleSection && <meta property="article:section" content={articleSection} />}
+    {ogType === 'article' && articleTag && <meta property="article:tag" content={articleTag} />}
     {jsonLd && (Array.isArray(jsonLd)
       ? jsonLd.map(block => <script type="application/ld+json" set:html={JSON.stringify(block)} />)
       : <script type="application/ld+json" set:html={JSON.stringify(jsonLd)} />

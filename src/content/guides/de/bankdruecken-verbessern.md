@@ -104,7 +104,7 @@ Ein starker Rücken ist das Fundament für ein stabiles Bankdrücken-Setup:
 
 ### Ideale Häufigkeit
 
-Für maximale Fortschritte im Bankdrücken trainieren die meisten Fortgeschrittenen die Bewegung **2--3x pro Woche**:
+Für maximale Fortschritte im Bankdrücken trainieren die meisten Fortgeschrittenen die Bewegung **2--3x pro Woche**. Wie Sie das Bankdrücken sinnvoll in einen Gesamtplan einbetten, erfahren Sie in unserem Ratgeber zum [Erstellen eines effektiven Trainingsplans](/de/ratgeber/trainingsplan-erstellen/):
 
 - **2x/Woche**: Ein schwerer Tag (3--5 Wiederholungen) und ein leichter Tag (8--12 Wiederholungen oder eine Variante)
 - **3x/Woche**: Schwer, mittel, leicht -- oder verschiedene Varianten an verschiedenen Tagen
@@ -154,7 +154,7 @@ Schulterschmerzen beim Bankdrücken sind oft ein Zeichen für **schlechte Techni
 ## Zusammenfassung: 5 Schlüssel zum stärkeren Bankdrücken
 
 1. **Perfektionieren Sie Ihr Setup**: Schulterblätter, Bogen, Beinantrieb
-2. **Trainieren Sie das Bankdrücken 2--3x pro Woche** mit verschiedenen Intensitäten
+2. **Trainieren Sie das Bankdrücken 2--3x pro Woche** mit verschiedenen Intensitäten -- nutzen Sie die [RPE-Skala](/de/ratgeber/rpe-intensitaet-verstehen/), um die Belastung präzise zu steuern
 3. **Stärken Sie Ihre Schwachstellen** mit gezielten Hilfsübungen
-4. **Programmieren Sie progressiv** und planen Sie Deloads ein
+4. **Programmieren Sie progressiv** und planen Sie Deloads ein -- beachten Sie dazu unseren Ratgeber zur [Erholung und Verletzungsprävention](/de/ratgeber/erholung-verletzungspraevention/)
 5. **Vernachlässigen Sie nicht den Rücken** -- er ist das Fundament

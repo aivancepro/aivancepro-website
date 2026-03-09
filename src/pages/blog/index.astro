@@ -28,6 +28,24 @@ function formatDate(dateStr: string) {
   description="Conseils fitness, musculation et entraînement. Découvrez nos articles pour optimiser vos performances sportives avec l'aide de l'IA."
   canonical="https://aivancepro.fr/blog/"
   alternates={{ fr: 'https://aivancepro.fr/blog/', en: 'https://aivancepro.fr/en/blog/', de: 'https://aivancepro.fr/de/blog/' }}
+  jsonLd={[
+    {
+      "@context": "https://schema.org",
+      "@type": "CollectionPage",
+      "name": "Blog Fitness & Musculation - AIVancePro",
+      "url": "https://aivancepro.fr/blog/",
+      "description": "Conseils fitness, musculation et entraînement. Découvrez nos articles pour optimiser vos performances sportives avec l'aide de l'IA.",
+      "numberOfItems": posts.length,
+    },
+    {
+      "@context": "https://schema.org",
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        { "@type": "ListItem", "position": 1, "name": "Accueil", "item": "https://aivancepro.fr/" },
+        { "@type": "ListItem", "position": 2, "name": "Blog", "item": "https://aivancepro.fr/blog/" },
+      ],
+    },
+  ]}
 >
   <Fragment slot="head">
     <style>

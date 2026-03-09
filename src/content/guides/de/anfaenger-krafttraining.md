@@ -14,7 +14,7 @@ alternates:
   de: "https://aivancepro.fr/de/ratgeber/anfaenger-krafttraining/"
 ---
 
-Das Krafttraining ist eine der effektivsten Möglichkeiten, Ihren Körper zu stärken, Ihre Gesundheit zu verbessern und Ihr Selbstvertrauen aufzubauen. Doch der Einstieg kann überwältigend wirken: Welche Übungen soll ich machen? Wie oft trainieren? Wie schwer sollte das Gewicht sein? Dieser umfassende Ratgeber beantwortet alle Fragen, die sich Einsteiger stellen, und gibt Ihnen einen klaren Fahrplan für die ersten Monate im Krafttraining.
+Das Krafttraining ist eine der effektivsten Möglichkeiten, Ihren Körper zu stärken, Ihre Gesundheit zu verbessern und Ihr Selbstvertrauen aufzubauen. Doch der Einstieg kann überwältigend wirken: Welche Übungen soll ich machen? Wie oft trainieren? Wie schwer sollte das Gewicht sein? Dieser umfassende Ratgeber beantwortet alle Fragen, die sich Einsteiger stellen, und gibt Ihnen einen klaren Fahrplan für die ersten Monate im Krafttraining. Wenn Sie nach einem konkreten Beispielprogramm suchen, werfen Sie auch einen Blick auf unseren Anfänger-Trainingsplan.
 
 ## Warum Krafttraining? Die Vorteile im Überblick
 
@@ -107,7 +107,7 @@ Für Einsteiger ist ein **Ganzkörperprogramm** mit drei Trainingstagen pro Woch
 
 ## Progressive Überlastung: Der Schlüssel zum Fortschritt
 
-Progressive Überlastung ist das wichtigste Prinzip im Krafttraining. Es bedeutet, dass Sie den Trainingsreiz systematisch steigern müssen, damit der Körper sich anpasst und stärker wird. Es gibt verschiedene Wege, dies zu erreichen:
+Progressive Überlastung ist das wichtigste Prinzip im Krafttraining. Es bedeutet, dass Sie den Trainingsreiz systematisch steigern müssen, damit der Körper sich anpasst und stärker wird. Um die Belastung richtig zu dosieren, kann Ihnen das Konzept der [RPE-Skala zur Steuerung der Trainingsintensität](/de/ratgeber/rpe-intensitaet-verstehen/) helfen. Es gibt verschiedene Wege, progressive Überlastung zu erreichen:
 
 1. **Gewicht erhöhen**: Wenn Sie alle vorgegebenen Wiederholungen in allen Sätzen schaffen, erhöhen Sie das Gewicht um 1--2,5 kg beim nächsten Training.
 2. **Wiederholungen steigern**: Erhöhen Sie schrittweise die Wiederholungen innerhalb des vorgegebenen Bereichs (z.B. von 8 auf 10).
@@ -142,7 +142,7 @@ Nach 3--6 Monaten konsequenten Trainings werden Sie feststellen, dass die linear
 - Sie spüren, dass 3 Ganzkörpereinheiten nicht mehr ausreichen
 - Sie haben konkretere Trainingsziele entwickelt (z.B. maximale Kraft, Hypertrophie)
 
-Der nächste logische Schritt wäre ein **Ober-/Unterkörper-Split** (4 Tage/Woche) oder ein **Push/Pull/Legs-Programm**. Beide ermöglichen mehr Trainingsvolumen pro Muskelgruppe und mehr Flexibilität bei der Übungsauswahl.
+Der nächste logische Schritt wäre ein **Ober-/Unterkörper-Split** (4 Tage/Woche) oder ein **Push/Pull/Legs-Programm**. Beide ermöglichen mehr Trainingsvolumen pro Muskelgruppe und mehr Flexibilität bei der Übungsauswahl. Unser Ratgeber zum Thema [einen effektiven Trainingsplan erstellen](/de/ratgeber/trainingsplan-erstellen/) zeigt Ihnen, wie Sie den passenden Split für Ihr Level wählen.
 
 ### Die wichtigsten Kraftstandards als Orientierung
 

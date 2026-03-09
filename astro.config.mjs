@@ -1,5 +1,9 @@
 import { defineConfig } from 'astro/config';
 import sitemap from '@astrojs/sitemap';
+import remarkToc from 'remark-toc';
+import rehypeSlug from 'rehype-slug';
+import rehypeAutolinkHeadings from 'rehype-autolink-headings';
+import { rehypeSanitizeRawHtml } from './plugins/rehype-sanitize-html.mjs';
 
 export default defineConfig({
   site: 'https://aivancepro.fr',
@@ -7,5 +11,24 @@ export default defineConfig({
     format: 'directory'
   },
   trailingSlash: 'always',
-  integrations: [sitemap()]
+  integrations: [
+    sitemap({
+      serialize(item) {
+        if (item.url.includes('/blog/') || item.url.includes('/guides/') || item.url.includes('/ratgeber/')) {
+          item.lastmod = new Date().toISOString();
+        }
+        return item;
+      }
+    })
+  ],
+  markdown: {
+    remarkPlugins: [
+      [remarkToc, { heading: 'sommaire|contents|inhalt', maxDepth: 3 }],
+    ],
+    rehypePlugins: [
+      rehypeSlug,
+      [rehypeAutolinkHeadings, { behavior: 'wrap' }],
+      rehypeSanitizeRawHtml,
+    ],
+  },
 });

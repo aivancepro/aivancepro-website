@@ -28,6 +28,24 @@ function formatDate(dateStr: string) {
   description="Fitness-Tipps, Trainingsratschläge und Anleitungen. Optimieren Sie Ihre Leistung mit KI-Coaching."
   canonical="https://aivancepro.fr/de/blog/"
   alternates={{ fr: 'https://aivancepro.fr/blog/', en: 'https://aivancepro.fr/en/blog/', de: 'https://aivancepro.fr/de/blog/' }}
+  jsonLd={[
+    {
+      "@context": "https://schema.org",
+      "@type": "CollectionPage",
+      "name": "Fitness & Krafttraining Blog - AIVancePro",
+      "url": "https://aivancepro.fr/de/blog/",
+      "description": "Fitness-Tipps, Trainingsratschläge und Anleitungen. Optimieren Sie Ihre Leistung mit KI-Coaching.",
+      "numberOfItems": posts.length,
+    },
+    {
+      "@context": "https://schema.org",
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        { "@type": "ListItem", "position": 1, "name": "Startseite", "item": "https://aivancepro.fr/de/" },
+        { "@type": "ListItem", "position": 2, "name": "Blog", "item": "https://aivancepro.fr/de/blog/" },
+      ],
+    },
+  ]}
 >
   <Fragment slot="head">
     <style>

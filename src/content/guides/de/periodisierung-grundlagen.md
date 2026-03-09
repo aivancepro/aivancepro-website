@@ -22,7 +22,7 @@ Periodisierung ist die **strategische Organisation des Trainings in Phasen**, di
 
 ### Warum ist Periodisierung wichtig?
 
-- **Vermeidung von Plateaus**: Systematische Variation verhindert, dass der Körper sich an einen gleichbleibenden Reiz gewöhnt
+- **Vermeidung von Plateaus**: Systematische Variation verhindert, dass der Körper sich an einen gleichbleibenden Reiz gewöhnt -- mehr dazu in unserem Artikel zur Periodisierung im Trainingsplan
 - **Ermüdungsmanagement**: Geplante Be- und Entlastungsphasen halten die Ermüdung im kontrollierbaren Bereich
 - **Langfristige Planung**: Ermöglicht gezieltes Hinarbeiten auf Leistungshöhepunkte (z.B. Wettkämpfe)
 - **Verletzungsprophylaxe**: Vermeidung von monotoner Überlastung durch systematische Variation
@@ -150,9 +150,11 @@ Ein Deload ist ein unverzichtbarer Bestandteil jedes periodisierten Trainingspla
 - **Nach Kraft-Block**: Intensität um 10--15 % reduzieren, Volumen moderat senken. Dauer: 4--5 Tage.
 - **Nach Peaking**: Komplett leichtes Training oder vollständige Pause für 5--7 Tage.
 
+Ausführlichere Strategien für Deloads und die richtige Regeneration finden Sie in unserem Ratgeber zur [Erholung und Verletzungsprävention](/de/ratgeber/erholung-verletzungspraevention/).
+
 ## Welches Modell passt zu Ihnen?
 
-- **Anfänger (0--1 Jahr)**: Lineare Progression innerhalb eines Ganzkörperprogramms. Formale Periodisierung ist noch nicht nötig.
+- **Anfänger (0--1 Jahr)**: Lineare Progression innerhalb eines Ganzkörperprogramms. Formale Periodisierung ist noch nicht nötig -- starten Sie stattdessen mit unserem Ratgeber zum [Erstellen eines Trainingsplans](/de/ratgeber/trainingsplan-erstellen/).
 - **Leicht Fortgeschrittene (1--3 Jahre)**: Undulierende Periodisierung oder einfache lineare Blöcke. DUP ist besonders empfehlenswert.
 - **Fortgeschrittene (3+ Jahre)**: Block-Periodisierung oder hybride Modelle. Individuelle Anpassung wird immer wichtiger.
 - **Wettkampfathlethen**: Block-Periodisierung mit klarem Peaking-Zeitpunkt.

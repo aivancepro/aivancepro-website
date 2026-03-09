@@ -46,7 +46,7 @@ Exemple concret : plutôt que de faire 16 séries de pectoraux le lundi (fréque
 
 ## Choisir les exercices par groupe musculaire
 
-Pour chaque groupe musculaire, sélectionnez un équilibre entre mouvements composés et mouvements d'isolation. Voici une sélection optimale :
+Pour chaque groupe musculaire, sélectionnez un équilibre entre mouvements composés et mouvements d'isolation. Pour vous aider dans cette sélection, consultez notre article sur comment choisir ses exercices en fonction de ses objectifs. Voici une sélection optimale :
 
 ### Pectoraux
 
@@ -141,7 +141,7 @@ Ajoutez une série chaque semaine ou chaque deux semaines sur les exercices prin
 
 ### Progression ondulée
 
-Variez les charges et répétitions au sein de la semaine. Par exemple, lundi (4x6 à 80%), mercredi (3x10 à 70%), vendredi (5x3 à 85%). Cette approche est efficace pour les pratiquants avancés qui ne progressent plus de manière linéaire.
+Variez les charges et répétitions au sein de la semaine. Par exemple, lundi (4x6 à 80%), mercredi (3x10 à 70%), vendredi (5x3 à 85%). Cette approche est efficace pour les pratiquants avancés qui ne progressent plus de manière linéaire. Notre guide sur [les bases de la périodisation](/guides/periodisation/) détaille ces différents modèles de progression.
 
 ## Adapter le programme à son emploi du temps
 

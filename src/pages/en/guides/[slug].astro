@@ -12,6 +12,13 @@ export async function getStaticPaths() {
 
 const { guide } = Astro.props;
 const { Content } = await render(guide);
+
+const wordCount = guide.body ? guide.body.split(/\s+/).length : 0;
+
+const related = (await getCollection('guides', ({ data }) =>
+  data.lang === 'en' &&
+  data.slug !== guide.data.slug
+)).sort((a, b) => new Date(b.data.date).getTime() - new Date(a.data.date).getTime()).slice(0, 3);
 ---
 
 <ArticleLayout
@@ -21,17 +28,58 @@ const { Content } = await render(guide);
   canonical={guide.data.canonical}
   alternates={guide.data.alternates}
   tag={guide.data.tag}
+  category={guide.data.category}
   date={guide.data.date}
+  dateModified={guide.data.dateModified}
   readTime={guide.data.readTime}
   backLink="/en/guides/"
   backLabel="Back to guides"
-  jsonLd={{
-    "@context": "https://schema.org",
-    "@type": "Article",
-    "headline": guide.data.title,
-    "datePublished": guide.data.date,
-    "author": { "@type": "Organization", "name": "AS Corporation" },
-  }}
+  image={guide.data.image}
+  author={guide.data.author}
+  relatedArticles={related}
+  jsonLd={[
+    {
+      "@context": "https://schema.org",
+      "@type": "BlogPosting",
+      "headline": guide.data.title,
+      "description": guide.data.description,
+      "datePublished": guide.data.date,
+      "dateModified": guide.data.dateModified || guide.data.date,
+      "keywords": guide.data.keywords,
+      "inLanguage": "en",
+      "wordCount": wordCount,
+      "articleSection": guide.data.tag,
+      "mainEntityOfPage": {
+        "@type": "WebPage",
+        "@id": guide.data.canonical,
+      },
+      "image": guide.data.image || "https://aivancepro.fr/assets/og-image.png",
+      "thumbnailUrl": guide.data.image || "https://aivancepro.fr/assets/og-image.png",
+      "author": {
+        "@type": "Person",
+        "name": guide.data.author || "Theo Stanmore",
+        "url": "https://aivancepro.fr/",
+      },
+      "publisher": {
+        "@type": "Organization",
+        "name": "AIVancePro",
+        "url": "https://aivancepro.fr",
+        "logo": {
+          "@type": "ImageObject",
+          "url": "https://aivancepro.fr/logo.png",
+        },
+      },
+    },
+    {
+      "@context": "https://schema.org",
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://aivancepro.fr/en/" },
+        { "@type": "ListItem", "position": 2, "name": "Guides", "item": "https://aivancepro.fr/en/guides/" },
+        { "@type": "ListItem", "position": 3, "name": guide.data.title, "item": guide.data.canonical },
+      ],
+    },
+  ]}
 >
   <Content />
 </ArticleLayout>

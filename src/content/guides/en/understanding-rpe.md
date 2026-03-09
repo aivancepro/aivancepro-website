@@ -74,7 +74,7 @@ These numbers vary between individuals. A trained lifter with excellent muscular
 
 - **Use percentages** when you have a recent, accurate 1RM and want precise loading prescriptions. Good for structured peaking programs.
 - **Use RPE** when your 1RM is unknown or outdated, when your day-to-day performance varies, or when you want the flexibility to adjust based on how you feel.
-- **Combine both** for the best results: prescribe a target percentage and an RPE cap. For example, "work up to 3 x 5 at 80% 1RM, but do not exceed RPE 8."
+- **Combine both** for the best results: prescribe a target percentage and an RPE cap. For example, "work up to 3 x 5 at 80% 1RM, but do not exceed RPE 8." This hybrid approach works especially well when [creating a structured training program](/en/guides/create-training-program/) that balances consistency with daily flexibility.
 
 ## Using RPE in your programming
 
@@ -95,7 +95,7 @@ On a great day, your top set at RPE 8 might be 120 kg. On a bad day, it might be
 
 - **Hypertrophy training**: RPE 7-9. Most sets should leave 1-3 reps in the tank. Occasional sets to failure are acceptable for isolation exercises.
 - **Strength training**: RPE 8-9.5. Working closer to maximal loads requires higher RPE, but avoid RPE 10 on compound lifts regularly.
-- **Deload sessions**: RPE 5-7. The work should feel easy and leave you feeling refreshed, not challenged.
+- **Deload sessions**: RPE 5-7. The work should feel easy and leave you feeling refreshed, not challenged. Deloads are a key element of [training periodization](/en/guides/periodization-basics/), where planned lighter weeks allow accumulated fatigue to dissipate.
 - **Technique practice**: RPE 6-7. Light enough to focus on form, heavy enough to feel the movement pattern.
 
 ## Autoregulating your sessions
@@ -144,7 +144,7 @@ For isolation work, a practical approach is to train in the RPE 8-10 range. Goin
 Accurate RPE assessment is a skill that improves with practice. Here is how to develop it:
 
 - **Record your sets** -- Video allows you to see bar speed objectively. Compare sets you rated RPE 7 versus RPE 9 and notice the visual difference.
-- **Rate every working set** -- Make RPE logging a habit, not an occasional thing. Over weeks and months, your self-assessment accuracy improves dramatically.
+- **Rate every working set** -- Make RPE logging a habit, not an occasional thing. Over weeks and months, your self-assessment accuracy improves dramatically. Consistent logging also helps when tracking your fitness progress and identifying long-term trends.
 - **Calibrate with AMRAP sets** -- Occasionally, perform a set to true failure (AMRAP -- As Many Reps As Possible) at a known weight. Compare the result with what you predicted. If you expected 2 more reps but only got 1, you are overestimating your reserves.
 - **Accept imprecision** -- RPE is subjective by nature. Being accurate within half a point (e.g., RPE 8 vs 8.5) is excellent. Do not stress about perfect precision.
 - **Use bar speed as a guide** -- If the concentric phase (lifting portion) takes more than 3-4 seconds on a compound lift, you are likely at RPE 9 or above.

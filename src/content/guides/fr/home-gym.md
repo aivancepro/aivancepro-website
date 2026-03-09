@@ -14,7 +14,7 @@ alternates:
   de: "https://aivancepro.fr/de/ratgeber/home-gym-einrichten/"
 ---
 
-S'entraîner chez soi élimine les deux obstacles principaux de la régularité : le temps de trajet et les heures de pointe en salle. Avec le bon équipement et un espace bien aménagé, un home gym peut offrir des résultats équivalents à une salle de sport commerciale. Ce guide vous aide à planifier votre installation selon votre budget et votre espace disponible.
+S'entraîner chez soi élimine les deux obstacles principaux de la régularité : le temps de trajet et les heures de pointe en salle. Avec le bon équipement et un espace bien aménagé, un home gym peut offrir des résultats équivalents à une salle de sport commerciale, comme nous l'expliquons dans notre article sur l'entraînement efficace à la maison. Ce guide vous aide à planifier votre installation selon votre budget et votre espace disponible.
 
 ## L'équipement essentiel
 
@@ -109,7 +109,7 @@ Un garage ou un sous-sol peut devenir rapidement suffocant pendant l'effort. Ass
 
 ### Avec barre et rack uniquement
 
-Même avec un équipement minimal, vous pouvez construire un programme complet :
+Même avec un équipement minimal, vous pouvez [construire un programme d'entraînement complet](/guides/creer-programme-entrainement/) :
 
 > **Full Body A**
 >
@@ -129,7 +129,7 @@ Même avec un équipement minimal, vous pouvez construire un programme complet :
 
 ### Avec haltères en complément
 
-Les haltères permettent d'ajouter des exercices d'isolation et du travail unilatéral : élévations latérales, curl haltères, rowing unilatéral, fentes, développé haltères. Cela permet de passer à un split Upper/Lower ou PPL complet.
+Les haltères permettent d'ajouter des exercices d'isolation et du travail unilatéral : élévations latérales, curl haltères, rowing unilatéral, fentes, développé haltères. Cela permet de passer à un split Upper/Lower ou PPL complet. Pour savoir comment bien choisir vos exercices en fonction de vos objectifs, consultez notre article dédié.
 
 ## Avantages et inconvénients du home gym
 

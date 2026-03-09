@@ -32,7 +32,7 @@ Wichtig: Mehr ist nicht immer besser. Es gibt einen Punkt, an dem zusätzliches 
 
 ### 2. Trainingsintensität
 
-Die Intensität bezieht sich darauf, **wie schwer** Sie trainieren, typischerweise gemessen als Prozentsatz Ihres Einermaximums (1RM) oder als RPE (Rate of Perceived Exertion). Je nach Ziel variiert die ideale Intensität:
+Die Intensität bezieht sich darauf, **wie schwer** Sie trainieren, typischerweise gemessen als Prozentsatz Ihres Einermaximums (1RM) oder als [RPE (Rate of Perceived Exertion)](/de/ratgeber/rpe-intensitaet-verstehen/). Je nach Ziel variiert die ideale Intensität:
 
 - **Maximalkraft**: 85--95 % des 1RM, 1--5 Wiederholungen
 - **Hypertrophie**: 65--85 % des 1RM, 6--12 Wiederholungen
@@ -86,7 +86,7 @@ Der Split bestimmt, wie Sie Ihre Trainingseinheiten über die Woche verteilen. H
 
 > **Ganzkörper (3 Tage/Woche)**
 >
-> Jede Einheit trainiert den gesamten Körper. Ideal für Anfänger und Personen mit wenig Zeit.
+> Jede Einheit trainiert den gesamten Körper. Ideal für Anfänger und Personen mit wenig Zeit. Ein konkretes Beispiel finden Sie in unserem Anfänger-Trainingsplan.
 >
 > - **Vorteile**: Hohe Frequenz pro Muskelgruppe, flexibel planbar, gutes Erholungsverhältnis
 > - **Nachteile**: Lange Einheiten, begrenztes Volumen pro Muskelgruppe
@@ -122,7 +122,7 @@ Arbeiten Sie innerhalb eines Wiederholungsbereichs (z.B. 8--12). Wenn Sie 12 Wie
 
 ### Wellenförmige Progression
 
-Variieren Sie Intensität und Volumen über die Woche (z.B. schwerer Tag, leichter Tag, mittlerer Tag). Diese Methode ist für Fortgeschrittene effektiv, die von linearer Progression nicht mehr profitieren.
+Variieren Sie Intensität und Volumen über die Woche (z.B. schwerer Tag, leichter Tag, mittlerer Tag). Diese Methode ist für Fortgeschrittene effektiv, die von linearer Progression nicht mehr profitieren. Wie Sie solche Modelle langfristig strukturieren, erfahren Sie in unserem Ratgeber zu den [Grundlagen der Periodisierung](/de/ratgeber/periodisierung-grundlagen/).
 
 ## Den Plan an Ihren Zeitplan anpassen
 

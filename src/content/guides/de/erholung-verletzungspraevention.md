@@ -14,7 +14,7 @@ alternates:
   de: "https://aivancepro.fr/de/ratgeber/erholung-verletzungspraevention/"
 ---
 
-Viele Kraftsportler konzentrieren sich ausschließlich auf das Training selbst und vergessen dabei den wichtigsten Teil: die Erholung. Muskeln wachsen nicht während des Trainings, sondern in der Ruhephase danach. Wer die Erholung vernachlässigt, riskiert nicht nur stagnierenden Fortschritt, sondern auch ernsthafte Verletzungen. Dieser Ratgeber zeigt Ihnen, wie Sie optimal regenerieren und Verletzungen effektiv vorbeugen.
+Viele Kraftsportler konzentrieren sich ausschließlich auf das Training selbst und vergessen dabei den wichtigsten Teil: die Erholung. Muskeln wachsen nicht während des Trainings, sondern in der Ruhephase danach. Wer die Erholung vernachlässigt, riskiert nicht nur stagnierenden Fortschritt, sondern auch ernsthafte Verletzungen -- viele davon zählen zu den häufigsten Trainingsfehlern, die sich leicht vermeiden lassen. Dieser Ratgeber zeigt Ihnen, wie Sie optimal regenerieren und Verletzungen effektiv vorbeugen.
 
 ## Die Bedeutung des Schlafs
 
@@ -65,7 +65,7 @@ Eine regelmäßige Mobilitätsroutine (10--15 Minuten, 3--5x pro Woche) kann Ihr
 
 ## Deload-Wochen
 
-Ein **Deload** ist eine geplante Phase reduzierter Trainingsbelastung, die dem Körper ermöglicht, sich vollständig zu erholen und Anpassungen abzuschließen. Ohne regelmäßige Deloads akkumuliert sich Ermüdung, was zu Leistungsplateaus und Verletzungen führt.
+Ein **Deload** ist eine geplante Phase reduzierter Trainingsbelastung, die dem Körper ermöglicht, sich vollständig zu erholen und Anpassungen abzuschließen. Ohne regelmäßige Deloads akkumuliert sich Ermüdung, was zu Leistungsplateaus und Verletzungen führt. Wie Sie Deloads systematisch in Ihre Trainingszyklen einbauen, erfahren Sie in unserem Ratgeber zu den [Grundlagen der Periodisierung](/de/ratgeber/periodisierung-grundlagen/).
 
 ### Wann deloaden?
 
@@ -103,7 +103,7 @@ Echtes Übertraining ist selten, aber **funktionelles Überreichen** (Overreachi
 - Schlafstörungen trotz körperlicher Erschöpfung
 - Konzentrationsschwierigkeiten im Alltag
 
-Wenn Sie mehrere dieser Symptome über mehr als zwei Wochen bemerken, ist ein **vollständiger Ruheblock** von 5--7 Tagen ratsam, gefolgt von einem sanften Wiedereinstieg.
+Wenn Sie mehrere dieser Symptome über mehr als zwei Wochen bemerken, ist ein **vollständiger Ruheblock** von 5--7 Tagen ratsam, gefolgt von einem sanften Wiedereinstieg. Nutzen Sie dabei die [RPE-Skala zur Steuerung der Intensität](/de/ratgeber/rpe-intensitaet-verstehen/), um den Wiedereinstieg richtig zu dosieren.
 
 ## DOMS-Management
 

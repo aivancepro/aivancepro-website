@@ -98,7 +98,7 @@ The triceps are responsible for the lockout portion of the bench press. If you f
 
 ## Bench press programming
 
-How you program the bench press matters as much as how you perform it. Here are evidence-based programming principles:
+How you program the bench press matters as much as how you perform it. If you need help structuring a complete program around your bench press work, our guide on [creating an effective training program](/en/guides/create-training-program/) covers splits, volume and progression planning. Here are evidence-based programming principles:
 
 ### Ideal frequency
 
@@ -116,7 +116,7 @@ Research and practical experience suggest that benching **2-3 times per week** p
 > - **Wednesday -- Moderate day**: Bench press 3 x 8 at 72-77% 1RM, Incline dumbbell press 3 x 10-12
 > - **Friday -- Volume day**: Bench press 4 x 10 at 65-70% 1RM, Dips 3 x 8-12, Flyes 3 x 12-15
 >
-> Add 1-2.5 kg to each session's working weight each week. Deload on week 5.
+> Add 1-2.5 kg to each session's working weight each week. Deload on week 5. Using [RPE to regulate your intensity](/en/guides/understanding-rpe/) on each session lets you auto-adjust these loads based on daily readiness.
 
 ### Volume recommendations
 
@@ -162,7 +162,7 @@ If your bar path varies from rep to rep, it is a technique issue, not a strength
 
 The bench press demands a lot from your shoulders. Keeping them healthy is essential for long-term progress:
 
-- **Always warm up thoroughly** -- Band pull-aparts, external rotations and light pressing sets before your working sets.
+- **Always warm up thoroughly** -- Band pull-aparts, external rotations and light pressing sets before your working sets. For a comprehensive approach to staying healthy long-term, see our guide on [recovery and injury prevention](/en/guides/recovery-injury-prevention/).
 - **Balance pressing with pulling** -- For every set of bench press, do at least one set of horizontal pulling (rows). A 1:1 or even 2:1 pull-to-push ratio keeps shoulders balanced.
 - **Do not neglect rear delts** -- Face pulls and reverse flyes 3-4 times per week, 15-20 reps per set.
 - **Manage your elbow tuck** -- Elbows at roughly 45-75 degrees from your torso. Excessively flared elbows (90 degrees) put dangerous stress on the shoulder joint.

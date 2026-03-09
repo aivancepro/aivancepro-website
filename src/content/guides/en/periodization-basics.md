@@ -1,6 +1,6 @@
 ---
 title: "Periodization Basics"
-description: "Complete guide to training periodization. Linear vs undulating periodization, microcycles, mesocycles, macrocycles, and how to plan phases for long-term progress."
+description: "Guide to training periodization. Linear vs undulating periodization, microcycles, mesocycles, macrocycles and how to plan phases for long-term progress."
 date: "2026-03-07"
 readTime: "14 min read"
 tag: "Advanced"
@@ -24,7 +24,7 @@ The concept originated in Eastern Bloc sport science during the 1950s and has si
 
 ### Why periodization works
 
-- **Manages fatigue** -- Hard training accumulates fatigue. Periodization builds in recovery before fatigue becomes excessive.
+- **Manages fatigue** -- Hard training accumulates fatigue. Periodization builds in recovery before fatigue becomes excessive. For a deeper look at deloads, sleep and fatigue management, see our guide on [recovery and injury prevention](/en/guides/recovery-injury-prevention/).
 - **Prevents plateaus** -- Varying the training stimulus keeps your body adapting instead of stagnating.
 - **Reduces injury risk** -- Planned variation prevents repetitive stress injuries from doing the exact same movements at the same intensity indefinitely.
 - **Allows peak performance** -- You can time your best performance for competitions, tests or personal goals.
@@ -147,7 +147,7 @@ The deload is a critical component of any periodized plan. Without it, fatigue a
 ### When to schedule a deload
 
 - **Planned approach**: Schedule a deload every 4-6 weeks. This is the simplest and most reliable method.
-- **Reactive approach**: Deload when you notice consistent performance drops, motivation loss or accumulated aches. This requires good self-awareness and honest self-assessment.
+- **Reactive approach**: Deload when you notice consistent performance drops, motivation loss or accumulated aches. This requires good self-awareness and honest self-assessment -- [using RPE to track your effort levels](/en/guides/understanding-rpe/) makes it easier to spot when fatigue is building up.
 - **After a peaking phase**: Always deload after testing maxes or competing.
 
 ### Deload strategies
@@ -161,7 +161,7 @@ The deload is a critical component of any periodized plan. Without it, fatigue a
 The best periodization model depends on your training experience and goals:
 
 - **Beginners (less than 1 year)**: You do not need formal periodization yet. Simple linear progression (adding weight each week) works until it stops working.
-- **Intermediates (1-3 years)**: Start with linear periodization or weekly undulating. Plan in 4-6 week blocks with deloads.
+- **Intermediates (1-3 years)**: Start with linear periodization or weekly undulating. Plan in 4-6 week blocks with deloads. Our guide on [creating an effective training program](/en/guides/create-training-program/) covers splits and volume planning that pair well with these models.
 - **Advanced (3+ years)**: Use daily undulating periodization or block periodization. Work with longer macrocycles and more precise programming.
 - **Competitive athletes**: Periodize your training around competition dates, peaking for events.
 - **General fitness**: A simple repeating mesocycle with progressive overload and planned deloads is all you need.

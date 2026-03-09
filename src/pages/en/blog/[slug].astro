@@ -12,6 +12,14 @@ export async function getStaticPaths() {
 
 const { post } = Astro.props;
 const { Content } = await render(post);
+
+const wordCount = post.body ? post.body.split(/\s+/).length : 0;
+
+const related = (await getCollection('blog', ({ data }) =>
+  data.lang === 'en' &&
+  data.category === post.data.category &&
+  data.slug !== post.data.slug
+)).sort((a, b) => new Date(b.data.date).getTime() - new Date(a.data.date).getTime()).slice(0, 3);
 ---
 
 <ArticleLayout
@@ -21,26 +29,38 @@ const { Content } = await render(post);
   canonical={post.data.canonical}
   alternates={post.data.alternates}
   tag={post.data.tag}
+  category={post.data.category}
   date={post.data.date}
+  dateModified={post.data.dateModified}
   readTime={post.data.readTime}
   backLink="/en/blog/"
   backLabel="Back to blog"
+  image={post.data.image}
+  author={post.data.author}
+  relatedArticles={related}
   jsonLd={[
     {
       "@context": "https://schema.org",
-      "@type": "Article",
+      "@type": "BlogPosting",
       "headline": post.data.title,
       "description": post.data.description,
       "datePublished": post.data.date,
-      "dateModified": post.data.date,
+      "dateModified": post.data.dateModified || post.data.date,
       "keywords": post.data.keywords,
       "inLanguage": "en",
+      "wordCount": wordCount,
+      "articleSection": post.data.tag,
       "mainEntityOfPage": {
         "@type": "WebPage",
         "@id": post.data.canonical,
       },
-      "image": "https://aivancepro.fr/assets/og-image.png",
-      "author": { "@type": "Organization", "name": "AS Corporation" },
+      "image": post.data.image || "https://aivancepro.fr/assets/og-image.png",
+      "thumbnailUrl": post.data.image || "https://aivancepro.fr/assets/og-image.png",
+      "author": {
+        "@type": "Person",
+        "name": post.data.author || "Theo Stanmore",
+        "url": "https://aivancepro.fr/",
+      },
       "publisher": {
         "@type": "Organization",
         "name": "AIVancePro",
