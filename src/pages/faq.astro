@@ -189,69 +189,16 @@ const jsonLd = {
       }
       .faq-answer-inner a { color: var(--blue); }
       .faq-item.open .faq-answer { max-height: 500px; }
-      .faq-cta {
-          padding: 5rem 2rem;
-          text-align: center;
-          background: var(--bg-card);
-      }
-      .faq-cta h2 {
-          font-size: 2rem;
-          font-weight: 800;
-          color: var(--gray-900);
-          margin-bottom: 1rem;
-      }
-      .faq-cta p {
-          color: var(--gray-500);
-          font-size: 1.05rem;
-          margin-bottom: 2rem;
-      }
-      .faq-cta .btn-primary {
-          display: inline-block;
-          background: linear-gradient(135deg, var(--blue), var(--purple));
-          color: var(--white);
-          font-weight: 600;
-          font-size: 0.95rem;
-          padding: 0.875rem 2rem;
-          border-radius: 12px;
-          text-decoration: none;
-          transition: all 0.2s;
-          box-shadow: 0 4px 15px rgba(37, 99, 235, 0.25);
-      }
-      .faq-cta .btn-primary:hover {
-          opacity: 0.92;
-          transform: translateY(-2px);
-      }
-      .faq-cta .btn-secondary {
-          display: inline-block;
-          background: var(--bg-elevated);
-          color: var(--text);
-          border: 1px solid var(--border-light);
-          font-weight: 600;
-          font-size: 0.95rem;
-          padding: 0.875rem 2rem;
-          border-radius: 12px;
-          text-decoration: none;
-          transition: all 0.2s;
-          margin-left: 1rem;
-      }
-      .faq-cta .btn-secondary:hover {
-          border-color: var(--blue);
-          color: var(--blue);
-      }
       @media (max-width: 768px) {
           .faq-hero { padding: 7rem 1.25rem 3rem; }
           .faq-hero h1 { font-size: 2.2rem; }
           .faq-hero p { font-size: 1rem; }
           .faq-page { padding: 2rem 1.25rem 4rem; }
-          .faq-cta { padding: 3rem 1.25rem; }
-          .faq-cta .btn-secondary { margin-left: 0; margin-top: 1rem; display: block; }
-          .faq-cta .btn-primary { display: block; }
       }
       @media (max-width: 480px) {
           .faq-hero { padding: 6.5rem 1rem 2.5rem; }
           .faq-hero h1 { font-size: 1.8rem; }
           .faq-page { padding: 1.5rem 1rem 3rem; }
-          .faq-cta { padding: 2.5rem 1rem; }
       }
     </style>
   </Fragment>
@@ -681,7 +628,7 @@ const jsonLd = {
     </section>
 
     <!-- CTA -->
-    <section class="faq-cta">
+    <section class="final-cta">
         <h2>Vous avez d'autres questions ?</h2>
         <p>Notre &eacute;quipe est l&agrave; pour vous aider. Contactez-nous ou t&eacute;l&eacute;chargez l'application pour d&eacute;couvrir AIVancePro par vous-m&ecirc;me.</p>
         <a href="https://apps.apple.com/fr/app/aivancepro/id6756116760" class="btn-primary" target="_blank" rel="noopener">T&eacute;l&eacute;charger gratuitement</a>

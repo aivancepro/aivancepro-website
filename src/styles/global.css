@@ -735,6 +735,52 @@ footer {
     color: var(--text);
 }
 
+/* ===== FINAL CTA ===== */
+.final-cta {
+    padding: 7rem 2rem;
+    text-align: center;
+    background: var(--bg);
+}
+
+.final-cta h2 {
+    font-size: 2.8rem;
+    font-weight: 900;
+    letter-spacing: -0.02em;
+    margin-bottom: 1rem;
+}
+
+.final-cta p {
+    font-size: 1.1rem;
+    color: rgba(255, 255, 255, 0.6);
+    max-width: 500px;
+    margin: 0 auto 2.5rem;
+}
+
+.final-cta .btn-primary {
+    box-shadow: 0 4px 20px rgba(37, 99, 235, 0.4);
+}
+
+.final-cta .btn-secondary {
+    margin-left: 1rem;
+}
+
+@media (max-width: 768px) {
+    .final-cta {
+        padding: 5rem 1.5rem;
+    }
+    .final-cta h2 {
+        font-size: 2rem;
+    }
+    .final-cta .btn-secondary {
+        margin-left: 0;
+        margin-top: 1rem;
+        display: block;
+    }
+    .final-cta .btn-primary {
+        display: block;
+    }
+}
+
 /* ===== SCROLL REVEAL ===== */
 .reveal {
     opacity: 0;
