@@ -228,7 +228,7 @@ body > nav {
     align-items: center;
     gap: 0.4rem;
     background: none;
-    border: 1px solid var(--border-light);
+    border: none;
     border-radius: 8px;
     padding: 0.4rem 0.7rem;
     cursor: pointer;
@@ -236,11 +236,10 @@ body > nav {
     font-size: 0.8rem;
     font-weight: 600;
     color: var(--text-secondary);
-    transition: all 0.2s;
+    transition: color 0.2s;
 }
 
 .lang-dropdown-toggle:hover {
-    border-color: var(--gray-400);
     color: var(--white);
 }
 
@@ -1009,7 +1008,7 @@ body {
 /* ===== THEME TOGGLE ===== */
 .theme-toggle {
     background: none;
-    border: 1px solid var(--border);
+    border: none;
     border-radius: 8px;
     width: 36px;
     height: 36px;
@@ -1018,12 +1017,11 @@ body {
     justify-content: center;
     cursor: pointer;
     color: var(--text-muted);
-    transition: color 0.2s, border-color 0.2s;
+    transition: color 0.2s;
 }
 
 .theme-toggle:hover {
     color: var(--text);
-    border-color: var(--border-light);
 }
 
 .theme-toggle svg {
