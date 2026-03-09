@@ -130,7 +130,7 @@ body > nav {
 }
 
 .nav-center a:hover {
-    color: var(--white);
+    color: var(--text);
 }
 
 /* Dropdown Articles */
