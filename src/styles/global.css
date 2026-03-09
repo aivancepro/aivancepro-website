@@ -68,7 +68,7 @@ body {
 }
 
 /* ===== NAVIGATION ===== */
-nav {
+body > nav {
     position: fixed;
     top: 0;
     width: 100%;
@@ -1170,12 +1170,14 @@ body {
 
 /* ===== BREADCRUMBS ===== */
 .breadcrumb-nav {
-    display: inline-flex;
+    display: flex;
+    justify-content: center;
     align-items: center;
     gap: 0.4rem;
     font-size: 0.85rem;
     color: var(--text-muted);
-    margin-bottom: 1rem;
+    margin: 0 auto 1rem;
+    max-width: fit-content;
     white-space: nowrap;
 }
 
