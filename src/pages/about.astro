@@ -1,0 +1,220 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+
+const jsonLd = [
+  {
+    "@context": "https://schema.org",
+    "@type": "Person",
+    "@id": "https://aivancepro.fr/about/#theo-stanmore",
+    "name": "Theo Stanmore",
+    "jobTitle": "Fondateur & Coach Fitness IA",
+    "url": "https://aivancepro.fr/about/",
+    "image": "https://aivancepro.fr/assets/og-image.png",
+    "description": "Fondateur d'AIVancePro, passionn\u00e9 de musculation et d'intelligence artificielle. Cr\u00e9ateur d'une application de coaching fitness propuls\u00e9e par l'IA.",
+    "sameAs": [
+      "https://www.instagram.com/aivancepro/",
+      "https://www.tiktok.com/@aivancepro",
+      "https://x.com/AIVancePro",
+      "https://www.youtube.com/channel/UC8MGuOS22H-jXfe8Haqw8LA",
+      "https://www.linkedin.com/company/aivancepro",
+      "https://www.reddit.com/user/AIVancePro"
+    ],
+    "knowsAbout": [
+      "musculation",
+      "coaching fitness",
+      "intelligence artificielle",
+      "nutrition sportive",
+      "programmation d'entra\u00eenement",
+      "hypertrophie musculaire"
+    ],
+    "worksFor": {
+      "@type": "Organization",
+      "name": "AS Corporation"
+    },
+    "founder": {
+      "@type": "Organization",
+      "name": "AIVancePro",
+      "url": "https://aivancepro.fr"
+    }
+  },
+  {
+    "@context": "https://schema.org",
+    "@type": "Organization",
+    "@id": "https://aivancepro.fr/#organization",
+    "name": "AIVancePro",
+    "url": "https://aivancepro.fr",
+    "logo": "https://aivancepro.fr/assets/logo-512.png",
+    "description": "Application de coaching fitness propuls\u00e9e par l'intelligence artificielle. Programmes personnalis\u00e9s, suivi de progression et conseils nutritionnels.",
+    "founder": {
+      "@type": "Person",
+      "name": "Theo Stanmore",
+      "@id": "https://aivancepro.fr/about/#theo-stanmore"
+    },
+    "sameAs": [
+      "https://www.instagram.com/aivancepro/",
+      "https://www.tiktok.com/@aivancepro",
+      "https://x.com/AIVancePro",
+      "https://www.youtube.com/channel/UC8MGuOS22H-jXfe8Haqw8LA",
+      "https://www.linkedin.com/company/aivancepro",
+      "https://www.reddit.com/user/AIVancePro"
+    ]
+  },
+  {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      { "@type": "ListItem", "position": 1, "name": "Accueil", "item": "https://aivancepro.fr/" },
+      { "@type": "ListItem", "position": 2, "name": "\u00c0 propos", "item": "https://aivancepro.fr/about/" }
+    ]
+  }
+];
+---
+
+<BaseLayout
+  lang="fr"
+  title="\u00c0 propos de Theo Stanmore - Fondateur AIVancePro"
+  description="D\u00e9couvrez Theo Stanmore, fondateur d'AIVancePro. Passionn\u00e9 de musculation et d'IA, il cr\u00e9e des outils de coaching fitness intelligents et personnalis\u00e9s."
+  canonical="https://aivancepro.fr/about/"
+  alternates={{ fr: 'https://aivancepro.fr/about/', en: 'https://aivancepro.fr/en/about/', de: 'https://aivancepro.fr/de/about/' }}
+  jsonLd={jsonLd}
+>
+  <Fragment slot="head">
+    <style>
+      .page-header { padding: 9rem 2rem 3rem; text-align: center; background: linear-gradient(180deg, var(--bg-card), var(--bg)); }
+      .section-label { display: inline-block; font-size: 0.8rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.08em; color: var(--blue); margin-bottom: 0.75rem; }
+      .page-header h1 { font-size: 2.8rem; font-weight: 800; letter-spacing: -0.02em; margin-bottom: 1rem; color: var(--gray-900); }
+      .page-header p { color: var(--gray-500); font-size: 1.1rem; max-width: 600px; margin: 0 auto; line-height: 1.7; }
+
+      .about-content { max-width: 800px; margin: 0 auto; padding: 3rem 2rem 4rem; }
+
+      .author-card { display: flex; gap: 2rem; align-items: flex-start; background: var(--gray-50); border: 1px solid var(--gray-200); border-radius: 20px; padding: 2.5rem; margin-bottom: 3rem; }
+      .author-avatar { width: 120px; height: 120px; border-radius: 50%; background: linear-gradient(135deg, var(--blue), var(--purple)); display: flex; align-items: center; justify-content: center; flex-shrink: 0; color: #fff; font-size: 2.5rem; font-weight: 800; }
+      .author-info h2 { font-size: 1.5rem; font-weight: 800; color: var(--gray-900); margin-bottom: 0.25rem; }
+      .author-role { color: var(--blue); font-weight: 600; font-size: 0.95rem; margin-bottom: 0.75rem; }
+      .author-bio { color: var(--gray-600); font-size: 0.95rem; line-height: 1.7; }
+      .author-socials { display: flex; gap: 0.75rem; margin-top: 1rem; }
+      .author-socials a { color: var(--gray-400); transition: color 0.2s; }
+      .author-socials a:hover { color: var(--blue); }
+      .author-socials svg { width: 20px; height: 20px; }
+
+      .about-section { margin-bottom: 2.5rem; }
+      .about-section h2 { font-size: 1.4rem; font-weight: 700; color: var(--gray-900); margin-bottom: 1rem; }
+      .about-section p { color: var(--gray-600); font-size: 0.95rem; line-height: 1.8; margin-bottom: 1rem; }
+      .about-section ul { padding-left: 1.5rem; margin-bottom: 1rem; }
+      .about-section li { color: var(--gray-600); font-size: 0.95rem; line-height: 1.8; margin-bottom: 0.5rem; }
+      .about-section strong { color: var(--gray-900); }
+
+      .expertise-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 1rem; margin: 1.5rem 0; }
+      .expertise-item { background: var(--bg-card); border: 1px solid var(--gray-200); border-radius: 12px; padding: 1.25rem; text-align: center; }
+      .expertise-item .icon { font-size: 1.5rem; margin-bottom: 0.5rem; }
+      .expertise-item h3 { font-size: 0.95rem; font-weight: 700; color: var(--gray-900); margin-bottom: 0.25rem; }
+      .expertise-item p { font-size: 0.85rem; color: var(--gray-500); margin: 0; }
+
+      .cta-box { background: linear-gradient(135deg, var(--blue), var(--purple)); border-radius: 20px; padding: 2.5rem; text-align: center; color: #fff; margin-top: 3rem; }
+      .cta-box h2 { font-size: 1.5rem; font-weight: 800; margin-bottom: 0.75rem; color: #fff; }
+      .cta-box p { opacity: 0.9; margin-bottom: 1.5rem; font-size: 0.95rem; }
+      .cta-box .btn { display: inline-block; background: #fff; color: var(--blue); font-weight: 700; padding: 0.75rem 2rem; border-radius: 12px; text-decoration: none; font-size: 0.95rem; transition: transform 0.2s; }
+      .cta-box .btn:hover { transform: translateY(-2px); }
+
+      .back { display: inline-block; margin-top: 2rem; color: var(--gray-500); text-decoration: none; font-size: 0.9rem; }
+      .back:hover { color: var(--gray-900); }
+
+      @media (max-width: 768px) {
+        .page-header { padding: 7rem 1.5rem 2rem; }
+        .page-header h1 { font-size: 2rem; }
+        .author-card { flex-direction: column; align-items: center; text-align: center; }
+        .author-socials { justify-content: center; }
+      }
+    </style>
+  </Fragment>
+
+  <header class="page-header">
+    <div class="section-label">&Agrave; propos</div>
+    <h1>L'histoire derri&egrave;re AIVancePro</h1>
+    <p>Une application de coaching fitness n&eacute;e de la passion pour la musculation et l'intelligence artificielle.</p>
+  </header>
+
+  <div class="about-content">
+    <div class="author-card">
+      <div class="author-avatar">TS</div>
+      <div class="author-info">
+        <h2>Theo Stanmore</h2>
+        <div class="author-role">Fondateur &amp; Coach Fitness IA</div>
+        <p class="author-bio">
+          Pratiquant de musculation depuis plus de 10 ans et passionn&eacute; de technologie, j'ai cr&eacute;&eacute; AIVancePro pour r&eacute;soudre un probl&egrave;me que je vivais au quotidien : trouver un programme d'entra&icirc;nement vraiment adapt&eacute; &agrave; ses objectifs, son niveau et son emploi du temps &mdash; sans payer un coach personnel &agrave; 60&euro;/s&eacute;ance.
+        </p>
+        <div class="author-socials">
+          <a href="https://www.instagram.com/aivancepro/" target="_blank" rel="noopener" aria-label="Instagram"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z"/></svg></a>
+          <a href="https://x.com/AIVancePro" target="_blank" rel="noopener" aria-label="X"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg></a>
+          <a href="https://www.linkedin.com/company/aivancepro" target="_blank" rel="noopener" aria-label="LinkedIn"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 01-2.063-2.065 2.064 2.064 0 112.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg></a>
+          <a href="https://www.youtube.com/channel/UC8MGuOS22H-jXfe8Haqw8LA" target="_blank" rel="noopener" aria-label="YouTube"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M23.498 6.186a3.016 3.016 0 00-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 00.502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 002.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 002.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/></svg></a>
+        </div>
+      </div>
+    </div>
+
+    <div class="about-section">
+      <h2>Mon parcours</h2>
+      <p>
+        Tout a commenc&eacute; en salle de sport. Apr&egrave;s des ann&eacute;es &agrave; tester diff&eacute;rents programmes, &agrave; lire des &eacute;tudes scientifiques sur l'hypertrophie et &agrave; ajuster mes entra&icirc;nements en fonction de ma progression, j'ai r&eacute;alis&eacute; que <strong>la personnalisation &eacute;tait la cl&eacute;</strong> &mdash; mais qu'elle restait inaccessible &agrave; la majorit&eacute; des pratiquants.
+      </p>
+      <p>
+        En parall&egrave;le, je me suis form&eacute; en d&eacute;veloppement logiciel et en intelligence artificielle. La convergence &eacute;tait &eacute;vidente : <strong>utiliser l'IA pour d&eacute;mocratiser le coaching fitness de qualit&eacute;</strong>. C'est ainsi qu'AIVancePro est n&eacute; en 2024.
+      </p>
+    </div>
+
+    <div class="about-section">
+      <h2>Domaines d'expertise</h2>
+      <div class="expertise-grid">
+        <div class="expertise-item">
+          <div class="icon">&#x1F4AA;</div>
+          <h3>Musculation</h3>
+          <p>Hypertrophie, force, programmation</p>
+        </div>
+        <div class="expertise-item">
+          <div class="icon">&#x1F916;</div>
+          <h3>Intelligence artificielle</h3>
+          <p>IA appliqu&eacute;e au fitness</p>
+        </div>
+        <div class="expertise-item">
+          <div class="icon">&#x1F34E;</div>
+          <h3>Nutrition sportive</h3>
+          <p>Macros, timing, suppl&eacute;mentation</p>
+        </div>
+        <div class="expertise-item">
+          <div class="icon">&#x1F4CA;</div>
+          <h3>Suivi de progression</h3>
+          <p>RPE, volume, p&eacute;riodisation</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="about-section">
+      <h2>La mission AIVancePro</h2>
+      <p>
+        Notre objectif est simple : <strong>rendre le coaching fitness intelligent accessible &agrave; tous</strong>. Que tu sois d&eacute;butant ou avanc&eacute;, AIVancePro s'adapte &agrave; ton niveau, tes objectifs et ton &eacute;quipement pour cr&eacute;er des programmes qui &eacute;voluent avec toi.
+      </p>
+      <p>
+        Chaque fonctionnalit&eacute; est construite &agrave; partir de donn&eacute;es scientifiques r&eacute;centes et de retours utilisateurs r&eacute;els. L'app int&egrave;gre les principes de surcharge progressive, d'autor&eacute;gulation par RPE et de p&eacute;riodisation &mdash; les m&ecirc;mes m&eacute;thodes utilis&eacute;es par les coachs professionnels.
+      </p>
+    </div>
+
+    <div class="about-section">
+      <h2>Pourquoi me faire confiance ?</h2>
+      <ul>
+        <li><strong>+10 ans de pratique</strong> en musculation et fitness</li>
+        <li><strong>Fond&eacute; sur la science</strong> &mdash; chaque article et fonctionnalit&eacute; s'appuie sur des &eacute;tudes publi&eacute;es</li>
+        <li><strong>Utilisateur actif</strong> &mdash; je m'entra&icirc;ne avec AIVancePro au quotidien</li>
+        <li><strong>Communaut&eacute; active</strong> &mdash; des milliers d'utilisateurs sur iOS et Android</li>
+        <li><strong>Transparent</strong> &mdash; nos <a href="/guides/">guides gratuits</a> et notre <a href="/blog/">blog</a> partagent nos connaissances sans barri&egrave;re</li>
+      </ul>
+    </div>
+
+    <div class="cta-box">
+      <h2>Pr&ecirc;t &agrave; t'entra&icirc;ner intelligemment ?</h2>
+      <p>Rejoins des milliers d'utilisateurs qui progressent avec AIVancePro.</p>
+      <a href="https://apps.apple.com/fr/app/aivancepro/id6756116760" class="btn" target="_blank" rel="noopener">T&eacute;l&eacute;charger gratuitement</a>
+    </div>
+
+    <a href="/" class="back">&larr; Retour &agrave; l'accueil</a>
+  </div>
+</BaseLayout>

@@ -101,6 +101,7 @@ const guidePosts = (await getCollection('guides', ({ data }) => data.lang === la
                 <a href={i.links.compoundIsolation} data-title={i.nav.compoundIsolation} data-desc={i.nav.articles}><div class="result-title">{i.nav.compoundIsolation}</div><div class="result-desc">{i.nav.articles}</div></a>
                 <a href={i.links.faq} data-title={i.nav.faq} data-desc={i.nav.help}><div class="result-title">{i.nav.faq}</div><div class="result-desc">{i.nav.help}</div></a>
                 <a href={i.links.support} data-title={i.nav.support} data-desc={i.nav.help}><div class="result-title">{i.nav.support}</div><div class="result-desc">{i.nav.help}</div></a>
+                <a href={i.links.about} data-title={i.nav.about} data-desc={i.nav.help}><div class="result-title">{i.nav.about}</div><div class="result-desc">{i.nav.help}</div></a>
                 {blogPosts.map(p => (
                   <a href={p.url} data-title={p.title} data-desc={p.desc + (p.tag ? ' ' + p.tag : '')}><div class="result-title">{p.title}</div><div class="result-desc">{p.desc}</div></a>
                 ))}
