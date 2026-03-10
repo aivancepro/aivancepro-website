@@ -62,7 +62,7 @@ const guidePrefixes = { fr: '/guides/', en: '/en/guides/', de: '/de/ratgeber/' }
 >
   <Fragment slot="head">
     <style>
-      .reading-progress { position: fixed; top: 0; left: 0; width: 0%; height: 3px; background: var(--blue); z-index: 9999; transition: width 0.1s linear; }
+      .reading-progress { position: fixed; top: 0; left: 0; height: 3px; background: var(--blue); z-index: 9999; width: 100%; transform-origin: left; transform: scaleX(0); will-change: transform; }
       .article-header { padding: 9rem 2rem 2rem; text-align: center; background: linear-gradient(180deg, var(--bg-card), var(--bg)); }
       .tag { display: inline-block; padding: 0.25rem 0.75rem; background: rgba(37,99,235,0.06); border-radius: 50px; font-size: 0.75rem; color: var(--blue); font-weight: 600; margin-bottom: 1rem; }
       .article-header h1 { font-size: 2.5rem; font-weight: 800; margin-bottom: 0.5rem; line-height: 1.2; color: var(--gray-900); letter-spacing: -0.02em; }
@@ -197,12 +197,20 @@ const guidePrefixes = { fr: '/guides/', en: '/en/guides/', de: '/de/ratgeber/' }
       });
     }
 
-    // Reading progress bar
+    // Reading progress bar (GPU-accelerated with scaleX)
     var bar = document.getElementById('readingProgress');
     if (bar) {
+      var ticking = false;
       window.addEventListener('scroll', function() {
-        var h = document.documentElement.scrollHeight - window.innerHeight;
-        bar.style.width = (h > 0 ? (window.scrollY / h * 100) : 0) + '%';
+        if (!ticking) {
+          requestAnimationFrame(function() {
+            var h = document.documentElement.scrollHeight - window.innerHeight;
+            var progress = h > 0 ? window.scrollY / h : 0;
+            bar.style.transform = 'scaleX(' + Math.min(progress, 1) + ')';
+            ticking = false;
+          });
+          ticking = true;
+        }
       }, { passive: true });
     }
 
