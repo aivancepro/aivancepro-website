@@ -44,7 +44,7 @@ import BaseLayout from '../../layouts/BaseLayout.astro';
           top: 3rem;
           bottom: 5rem;
           width: 2px;
-          background: linear-gradient(180deg, var(--blue), var(--purple), var(--gray-200));
+          background: linear-gradient(180deg, var(--blue), var(--blue), var(--gray-200));
           border-radius: 2px;
       }
       .timeline-item {
@@ -59,7 +59,7 @@ import BaseLayout from '../../layouts/BaseLayout.astro';
           width: 18px;
           height: 18px;
           border-radius: 50%;
-          background: linear-gradient(135deg, var(--blue), var(--purple));
+          background: var(--blue);
           border: 3px solid var(--bg);
           box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.2);
           z-index: 1;
@@ -84,7 +84,7 @@ import BaseLayout from '../../layouts/BaseLayout.astro';
           flex-wrap: wrap;
       }
       .version-badge {
-          background: linear-gradient(135deg, var(--blue), var(--purple));
+          background: var(--blue);
           color: var(--white);
           font-size: 0.8rem;
           font-weight: 700;

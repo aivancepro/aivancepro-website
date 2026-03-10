@@ -325,7 +325,7 @@ body > nav {
 }
 
 .nav-cta {
-    background: linear-gradient(135deg, var(--blue), var(--purple));
+    background: var(--blue);
     color: var(--white);
     text-decoration: none;
     font-size: 0.875rem;
@@ -426,7 +426,7 @@ body > nav {
     display: inline-flex;
     align-items: center;
     gap: 0.5rem;
-    background: linear-gradient(135deg, var(--blue), var(--purple));
+    background: var(--blue);
     color: var(--white);
     text-decoration: none;
     font-size: 1rem;
@@ -590,7 +590,7 @@ footer {
 
 .newsletter-input-wrap button {
     padding: 0.6rem 1rem;
-    background: linear-gradient(135deg, var(--blue), var(--purple));
+    background: var(--blue);
     color: white;
     border: none;
     font-size: 0.8rem;
@@ -724,7 +724,7 @@ footer {
 }
 
 .cta-btn.primary {
-    background: linear-gradient(135deg, var(--blue), var(--purple));
+    background: var(--blue);
     color: var(--white);
 }
 
@@ -943,7 +943,7 @@ footer {
 }
 
 .cookie-btn.accept {
-    background: linear-gradient(135deg, var(--blue), var(--purple));
+    background: var(--blue);
     color: var(--white);
 }
 
@@ -961,7 +961,7 @@ footer {
     width: 44px;
     height: 44px;
     border-radius: 50%;
-    background: linear-gradient(135deg, var(--blue), var(--purple));
+    background: var(--blue);
     color: white;
     border: none;
     cursor: pointer;

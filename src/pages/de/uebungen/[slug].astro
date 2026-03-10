@@ -458,7 +458,7 @@ const catLabel = categoryLabels[exercise.category] || exercise.category;
       .steps-list { list-style: none; counter-reset: step; margin-bottom: 2.5rem; }
       .steps-list li { counter-increment: step; display: flex; gap: 1rem; align-items: flex-start; padding: 1rem 0; border-bottom: 1px solid var(--gray-100); }
       .steps-list li:last-child { border-bottom: none; }
-      .step-num { flex-shrink: 0; width: 36px; height: 36px; background: linear-gradient(135deg, var(--blue), var(--purple)); color: var(--white); border-radius: 50%; display: flex; align-items: center; justify-content: center; font-weight: 800; font-size: 0.9rem; }
+      .step-num { flex-shrink: 0; width: 36px; height: 36px; background: var(--blue); color: var(--white); border-radius: 50%; display: flex; align-items: center; justify-content: center; font-weight: 800; font-size: 0.9rem; }
       .step-text { color: var(--gray-700); font-size: 0.95rem; line-height: 1.6; padding-top: 0.4rem; }
       .mistakes-list { list-style: none; margin-bottom: 2.5rem; }
       .mistakes-list li { display: flex; gap: 0.75rem; align-items: flex-start; padding: 0.75rem 0; color: var(--gray-700); font-size: 0.95rem; line-height: 1.6; }
@@ -468,12 +468,12 @@ const catLabel = categoryLabels[exercise.category] || exercise.category;
       .muscles-card { background: var(--bg-card); border: 1px solid var(--border); border-radius: 14px; padding: 1.5rem; }
       .muscles-card h4 { font-size: 0.8rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.08em; margin-bottom: 0.75rem; }
       .muscles-card.primary h4 { color: var(--blue); }
-      .muscles-card.secondary h4 { color: var(--purple); }
+      .muscles-card.secondary h4 { color: var(--blue); }
       .muscles-card ul { list-style: none; }
       .muscles-card li { padding: 0.35rem 0; color: var(--gray-700); font-size: 0.9rem; display: flex; align-items: center; gap: 0.5rem; }
       .muscles-card li::before { content: ''; width: 6px; height: 6px; border-radius: 50%; flex-shrink: 0; }
       .muscles-card.primary li::before { background: var(--blue); }
-      .muscles-card.secondary li::before { background: var(--purple); }
+      .muscles-card.secondary li::before { background: var(--blue); }
       .variations-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1rem; margin-bottom: 3rem; }
       .variation-card { background: var(--bg-card); border: 1px solid var(--border); border-radius: 14px; padding: 1.25rem; text-decoration: none; color: inherit; transition: border-color 0.2s, transform 0.2s, box-shadow 0.2s; }
       .variation-card:hover { border-color: rgba(37,99,235,0.3); transform: translateY(-3px); box-shadow: 0 6px 20px rgba(0,0,0,0.05); }
@@ -481,11 +481,11 @@ const catLabel = categoryLabels[exercise.category] || exercise.category;
       .variation-card .tags { display: flex; gap: 0.35rem; flex-wrap: wrap; }
       .variation-card .tag { padding: 0.15rem 0.5rem; border-radius: 50px; font-size: 0.6rem; font-weight: 600; }
       .tag-muscle { background: rgba(37,99,235,0.1); color: var(--blue); }
-      .tag-equipment { background: rgba(147,51,234,0.1); color: var(--purple); }
+      .tag-equipment { background: rgba(147,51,234,0.1); color: var(--blue); }
       .cta-box { background: linear-gradient(135deg, rgba(37,99,235,0.05), rgba(147,51,234,0.05)); border: 1px solid rgba(37,99,235,0.15); border-radius: 20px; padding: 3rem 2rem; text-align: center; }
       .cta-box h3 { font-size: 1.5rem; font-weight: 800; color: var(--gray-900); margin-bottom: 0.75rem; }
       .cta-box p { color: var(--gray-500); font-size: 1rem; max-width: 450px; margin: 0 auto 1.5rem; }
-      .btn-primary { display: inline-flex; align-items: center; gap: 0.5rem; background: linear-gradient(135deg, var(--blue), var(--purple)); color: var(--white); text-decoration: none; font-size: 1rem; font-weight: 600; padding: 0.875rem 2rem; border-radius: 12px; transition: opacity 0.2s, transform 0.2s; box-shadow: 0 4px 15px rgba(37,99,235,0.3); }
+      .btn-primary { display: inline-flex; align-items: center; gap: 0.5rem; background: var(--blue); color: var(--white); text-decoration: none; font-size: 1rem; font-weight: 600; padding: 0.875rem 2rem; border-radius: 12px; transition: opacity 0.2s, transform 0.2s; box-shadow: 0 4px 15px rgba(37,99,235,0.3); }
       .btn-primary:hover { opacity: 0.92; transform: translateY(-2px); }
       @media (max-width: 768px) {
         .exercise-hero h1 { font-size: 2rem; }
