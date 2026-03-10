@@ -28,6 +28,7 @@ export const t = {
       download: 'T\u00e9l\u00e9charger',
       close: 'Fermer',
       menu: 'Menu',
+      about: '\u00c0 propos',
     },
     footer: {
       tagline: 'Votre coach fitness personnel propuls\u00e9 par l\'intelligence artificielle.',
@@ -91,6 +92,7 @@ export const t = {
       privacy: '/privacy/',
       terms: '/terms/',
       support: '/support/',
+      about: '/about/',
       account: '/compte/',
       appStore: 'https://apps.apple.com/fr/app/aivancepro/id6756116760',
       playStore: 'https://play.google.com/store/apps/details?id=com.aivancepro.app',
@@ -119,6 +121,7 @@ export const t = {
       download: 'Download',
       close: 'Close',
       menu: 'Menu',
+      about: 'About',
     },
     footer: {
       tagline: 'Your personal AI-powered fitness coach.',
@@ -182,6 +185,7 @@ export const t = {
       privacy: '/en/privacy/',
       terms: '/en/terms/',
       support: '/en/support/',
+      about: '/en/about/',
       account: '/en/account/',
       appStore: 'https://apps.apple.com/app/aivancepro/id6756116760',
       playStore: 'https://play.google.com/store/apps/details?id=com.aivancepro.app',
@@ -210,6 +214,7 @@ export const t = {
       download: 'Herunterladen',
       close: 'Schlie\u00dfen',
       menu: 'Men\u00fc',
+      about: '\u00dcber uns',
     },
     footer: {
       tagline: 'Ihr pers\u00f6nlicher KI-gest\u00fctzter Fitness-Coach.',
@@ -273,6 +278,7 @@ export const t = {
       privacy: '/de/datenschutz/',
       terms: '/de/agb/',
       support: '/de/support/',
+      about: '/de/about/',
       account: '/de/konto/',
       appStore: 'https://apps.apple.com/de/app/aivancepro/id6756116760',
       playStore: 'https://play.google.com/store/apps/details?id=com.aivancepro.app',
