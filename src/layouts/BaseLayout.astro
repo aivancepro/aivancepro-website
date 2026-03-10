@@ -72,7 +72,7 @@ const guidePosts = (await getCollection('guides', ({ data }) => data.lang === la
     )}
     <slot name="head" />
     <script is:inline>
-      (function(){var t=localStorage.getItem('theme');if(t)document.documentElement.setAttribute('data-theme',t);})();
+      (function(){var t=localStorage.getItem('theme');if(!t&&window.matchMedia&&window.matchMedia('(prefers-color-scheme: light)').matches)t='light';if(t)document.documentElement.setAttribute('data-theme',t);})();
     </script>
 </head>
 <body>
