@@ -32,27 +32,27 @@ function buildGroupSvg(primarySlugs, view = 'front', theme = 'dark') {
   return `data:image/svg+xml,${encodeURIComponent(`<svg xmlns="http://www.w3.org/2000/svg" viewBox="${vb}">${body}</svg>`)}`;
 }
 
-// ── Equipment photos (Unsplash CDN, free license) ──────────
-const EQUIP_PHOTO_IDS: Record<string, string> = {
-  'Barre':                   'gP9rAnGJBRo',  // close-up barbell on gym floor
-  'Haltères':                '7ltjONcH_mI',  // black dumbbells on rack
-  'Machine':                 'JNPvv1u8yRg',  // woman on leg press machine
-  'Câble':                   'oZhrfhCvbqY',  // cable pull-down machine
-  'Poids du corps':          '-7Gd6up6SHA',  // man push-ups on gym floor
-  'Poids du corps + charge': '_ROB8FnnpA0',  // athletic man push-ups
-  'Smith machine':           'Dueawl5Q75s',  // bench press with barbell
-  'Kettlebell':              'SMaujCcYGHo',  // kettlebell swings
-  'Barre EZ':                '4fH_sMlbKz8',  // close-up barbell on wood floor
-  'Élastique':               'Dcmhj3_xcyA',  // woman with resistance band
-  'TRX':                     'uU5Jz-b-0yI',  // TRX straps
-  'Landmine':                'Btl6ZNdIfdQ',  // weight plate on gym floor
-  'Médecine ball':           'Z7JbhHlnoak',  // woman holding exercise ball
+// ── Equipment photos (Pexels CDN, free license, hotlink OK) ─
+const EQUIP_PHOTO_IDS: Record<string, number> = {
+  'Barre':                   841130,   // person holding barbell
+  'Haltères':                4164763,  // silver dumbbells on rack
+  'Machine':                 3838937,  // sportsman on exercise machine
+  'Câble':                   1480520,  // woman on cable & pulley machine
+  'Poids du corps':          4162491,  // man doing push-ups
+  'Poids du corps + charge': 6975783,  // closed-fist push-up on floor
+  'Smith machine':           3837757,  // sportsman on bench in modern gym
+  'Kettlebell':              2836961,  // kettlebell object shot
+  'Barre EZ':                4793228,  // metal barbell on stand close-up
+  'Élastique':               6339598,  // man with resistance band
+  'TRX':                     4162489,  // man doing push-ups at the gym
+  'Landmine':                31616776, // green weight plate on barbell
+  'Médecine ball':           4720521,  // man with exercise ball
 };
 
 function equipPhoto(id: string): string {
   const photoId = EQUIP_PHOTO_IDS[id];
   if (!photoId) return '';
-  return `https://images.unsplash.com/photo-${photoId}?w=400&h=280&fit=crop&q=80`;
+  return `https://images.pexels.com/photos/${photoId}/pexels-photo-${photoId}.jpeg?auto=compress&cs=tinysrgb&w=400&h=280&dpr=1`;
 }
 
 // ── Difficulty colors ──────────────────────────────────────
