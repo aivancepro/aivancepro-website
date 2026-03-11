@@ -13,6 +13,11 @@ export default defineConfig({
   trailingSlash: 'always',
   integrations: [
     sitemap({
+      filter(page) {
+        // Exclure les pages noindex (login, compte) — ne pas les soumettre à Google
+        const noindexPaths = ['/login/', '/compte/', '/account/', '/konto/'];
+        return !noindexPaths.some(p => page.includes(p));
+      },
       serialize(item) {
         if (item.url.includes('/blog/') || item.url.includes('/guides/') || item.url.includes('/ratgeber/')) {
           item.lastmod = new Date().toISOString();
