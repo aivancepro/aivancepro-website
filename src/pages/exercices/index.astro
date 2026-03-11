@@ -4,19 +4,25 @@ import { exercises, toSlug } from '../../data/exercises-fr.js';
 import { frontParts, backParts } from '../../data/musclePathsData.js';
 
 // ── Build-time SVG generation ──────────────────────────────
-const PRIMARY_COLOR  = '#4A90D9';
-const INACTIVE_COLOR = '#252535';
-const STRUCT_COLOR   = '#1c1c28';
-const STROKE_COLOR   = '#0d0d14';
-const STRUCTURAL     = new Set(['head','hair','hands','feet','ankles','knees','neck','tibialis']);
+const PRIMARY_COLOR        = '#4A90D9';
+const INACTIVE_DARK_MODE   = '#c8c8e0'; // light body → visible on dark cards
+const INACTIVE_LIGHT_MODE  = '#252535'; // dark body  → visible on light cards
+const STRUCT_DARK_MODE     = '#9090b0';
+const STRUCT_LIGHT_MODE    = '#1c1c28';
+const STROKE_DARK_MODE     = '#0d0d14';
+const STROKE_LIGHT_MODE    = '#0d0d14';
+const STRUCTURAL           = new Set(['head','hair','hands','feet','ankles','knees','neck','tibialis']);
 
-function buildGroupSvg(primarySlugs, view = 'front') {
+function buildGroupSvg(primarySlugs, view = 'front', theme = 'dark') {
+  const inactiveColor = theme === 'light' ? INACTIVE_LIGHT_MODE : INACTIVE_DARK_MODE;
+  const structColor   = theme === 'light' ? STRUCT_LIGHT_MODE   : STRUCT_DARK_MODE;
+  const strokeColor   = theme === 'light' ? STROKE_LIGHT_MODE   : STROKE_DARK_MODE;
   const primary = new Set(primarySlugs);
-  const fill = (slug) => STRUCTURAL.has(slug) ? STRUCT_COLOR : primary.has(slug) ? PRIMARY_COLOR : INACTIVE_COLOR;
+  const fill = (slug) => STRUCTURAL.has(slug) ? structColor : primary.has(slug) ? PRIMARY_COLOR : inactiveColor;
   let body = '';
   const render = (parts) => parts.forEach(p => {
     const paths = [...(p.paths?.left||[]), ...(p.paths?.right||[]), ...(p.paths?.common||[])];
-    body += `<g fill="${fill(p.slug)}" stroke="${STROKE_COLOR}" stroke-width="0.5">`;
+    body += `<g fill="${fill(p.slug)}" stroke="${strokeColor}" stroke-width="0.5">`;
     paths.forEach(d => { body += `<path d="${d}"/>`; });
     body += '</g>';
   });
@@ -155,7 +161,11 @@ const muscleGroups = [
   { id: "abdos",       label: "Abdos",       slugs: ['abs','obliques'],                      view: 'front' },
   { id: "avant-bras",  label: "Avant-bras",  slugs: ['forearm'],                             view: 'front' },
   { id: "fonctionnel", label: "Fonctionnel", slugs: ['chest','abs','deltoids','quadriceps'], view: 'front' },
-].map(m => ({ ...m, svgUri: buildGroupSvg(m.slugs, m.view) }));
+].map(m => ({
+  ...m,
+  svgDark:  buildGroupSvg(m.slugs, m.view, 'dark'),
+  svgLight: buildGroupSvg(m.slugs, m.view, 'light'),
+}));
 
 // ── Equipment list ─────────────────────────────────────────
 const equipmentList = [
@@ -208,6 +218,12 @@ equipmentList.forEach(eq => {
         .muscle-card:hover { border-color: var(--blue); transform: translateY(-3px); box-shadow: 0 6px 20px rgba(74,144,217,0.12); }
         .muscle-card.active { border-color: var(--blue); background: rgba(74,144,217,0.08); }
         .muscle-card img { height: 80px; width: auto; max-width: 100%; display: block; }
+        /* Dark mode (default): show light-body SVG, hide dark-body SVG */
+        .muscle-svg-light { display: none; }
+        .muscle-svg-dark  { display: block; }
+        /* Light mode: reverse */
+        [data-theme="light"] .muscle-svg-dark  { display: none; }
+        [data-theme="light"] .muscle-svg-light { display: block; }
         .muscle-card .browse-label { font-size: 0.82rem; font-weight: 700; }
         .muscle-card .browse-count { font-size: 0.68rem; color: var(--text-muted); }
 
@@ -279,7 +295,8 @@ equipmentList.forEach(eq => {
         <div class="muscle-grid">
             {muscleGroups.map(m => (
                 <button class="muscle-card" data-browse="muscle" data-value={m.id}>
-                    <img src={m.svgUri} alt={m.label} loading="lazy" />
+                    <img src={m.svgDark}  class="muscle-svg-dark"  alt={m.label} loading="lazy" />
+                    <img src={m.svgLight} class="muscle-svg-light" alt={m.label} loading="lazy" />
                     <span class="browse-label">{m.label}</span>
                     <span class="browse-count">{muscleGroupCounts[m.id]} exercices</span>
                 </button>
