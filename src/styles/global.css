@@ -421,6 +421,57 @@ body > nav {
     color: var(--text-secondary);
 }
 
+/* ===== STORE BADGES ===== */
+.store-badges {
+    display: flex;
+    gap: 1rem;
+    align-items: center;
+    flex-wrap: wrap;
+    margin-top: 0.5rem;
+}
+
+.store-badge-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.6rem;
+    background: var(--blue);
+    color: var(--white);
+    text-decoration: none;
+    padding: 0.75rem 1.5rem;
+    border-radius: 12px;
+    transition: transform 0.2s, box-shadow 0.2s, opacity 0.2s;
+    box-shadow: 0 4px 15px rgba(74, 144, 217, 0.3);
+}
+
+.store-badge-link:hover {
+    transform: translateY(-2px);
+    opacity: 0.92;
+    box-shadow: 0 8px 25px rgba(74, 144, 217, 0.35);
+}
+
+.store-badge-link svg {
+    width: 24px;
+    height: 24px;
+    flex-shrink: 0;
+}
+
+.store-badge-text {
+    display: flex;
+    flex-direction: column;
+    line-height: 1.2;
+}
+
+.store-badge-text .small {
+    font-size: 0.6rem;
+    font-weight: 400;
+    opacity: 0.8;
+}
+
+.store-badge-text .big {
+    font-size: 1rem;
+    font-weight: 700;
+}
+
 /* ===== BUTTONS ===== */
 .btn-primary {
     display: inline-flex;
