@@ -129,7 +129,9 @@ function equipSvg(id) {
         <line x1="18" y1="2" x2="18" y2="34" stroke="rgba(0,0,0,0.35)" stroke-width="1.5"/>
       </svg>`,
   };
-  return icons[id] || `<svg viewBox="0 0 24 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg"><circle cx="12" cy="12" r="10"/></svg>`;
+  const raw = icons[id] || `<svg viewBox="0 0 24 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg"><circle cx="12" cy="12" r="10"/></svg>`;
+  // Inject fixed height so the SVG is visible regardless of Astro CSS scoping
+  return raw.replace('<svg ', '<svg height="40" style="display:block;color:#8888a0" ');
 }
 
 // ── Difficulty colors ──────────────────────────────────────
