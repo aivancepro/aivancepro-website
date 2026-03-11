@@ -218,12 +218,12 @@ equipmentList.forEach(eq => {
         .muscle-card:hover { border-color: var(--blue); transform: translateY(-3px); box-shadow: 0 6px 20px rgba(74,144,217,0.12); }
         .muscle-card.active { border-color: var(--blue); background: rgba(74,144,217,0.08); }
         .muscle-card img { height: 80px; width: auto; max-width: 100%; display: block; }
-        /* Dark mode (default): show light-body SVG, hide dark-body SVG */
-        .muscle-svg-light { display: none; }
-        .muscle-svg-dark  { display: block; }
+        /* Dark mode (default): show dark variant, hide light variant */
+        .muscle-card .muscle-svg-light { display: none; }
+        .muscle-card .muscle-svg-dark  { display: block; }
         /* Light mode: reverse */
-        [data-theme="light"] .muscle-svg-dark  { display: none; }
-        [data-theme="light"] .muscle-svg-light { display: block; }
+        [data-theme="light"] .muscle-card .muscle-svg-dark  { display: none; }
+        [data-theme="light"] .muscle-card .muscle-svg-light { display: block; }
         .muscle-card .browse-label { font-size: 0.82rem; font-weight: 700; }
         .muscle-card .browse-count { font-size: 0.68rem; color: var(--text-muted); }
 
