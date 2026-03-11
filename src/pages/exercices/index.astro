@@ -32,112 +32,27 @@ function buildGroupSvg(primarySlugs, view = 'front', theme = 'dark') {
   return `data:image/svg+xml,${encodeURIComponent(`<svg xmlns="http://www.w3.org/2000/svg" viewBox="${vb}">${body}</svg>`)}`;
 }
 
-// ── Equipment SVG icons ────────────────────────────────────
-function equipSvg(id) {
-  const icons = {
-    'Barre':
-      `<svg viewBox="0 0 52 20" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
-        <rect x="9" y="8" width="34" height="4" rx="2"/>
-        <rect x="0" y="2" width="10" height="16" rx="3"/>
-        <rect x="42" y="2" width="10" height="16" rx="3"/>
-      </svg>`,
-    'Haltères':
-      `<svg viewBox="0 0 42 16" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
-        <rect x="10" y="6" width="22" height="4" rx="2"/>
-        <rect x="0" y="0" width="10" height="16" rx="3"/>
-        <rect x="32" y="0" width="10" height="16" rx="3"/>
-      </svg>`,
-    'Kettlebell':
-      `<svg viewBox="0 0 34 38" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
-        <path d="M12 14Q9 2 17 2Q25 2 22 14" fill="none" stroke="currentColor" stroke-width="3.5" stroke-linecap="round"/>
-        <ellipse cx="17" cy="26" rx="13" ry="11"/>
-        <rect x="11" y="12" width="12" height="5" rx="2.5"/>
-      </svg>`,
-    'Machine':
-      `<svg viewBox="0 0 30 42" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
-        <rect x="1" y="0" width="8" height="42" rx="3"/>
-        <rect x="13" y="5"  width="11" height="5" rx="2" opacity="0.45"/>
-        <rect x="13" y="12" width="11" height="5" rx="2" opacity="0.6"/>
-        <rect x="13" y="19" width="11" height="5" rx="2" opacity="0.75"/>
-        <rect x="13" y="26" width="11" height="5" rx="2"/>
-        <line x1="5" y1="3" x2="19" y2="3" stroke="currentColor" stroke-width="1.5"/>
-        <circle cx="19" cy="3" r="2.5"/>
-      </svg>`,
-    'Câble':
-      `<svg viewBox="0 0 32 42" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
-        <rect x="1" y="0" width="8" height="42" rx="3"/>
-        <circle cx="5" cy="6" r="4.5"/>
-        <line x1="5" y1="6" x2="28" y2="34" stroke="currentColor" stroke-width="1.5"/>
-        <rect x="22" y="32" width="10" height="4" rx="2"/>
-      </svg>`,
-    'Poids du corps':
-      `<svg viewBox="0 0 26 40" fill="none" stroke="currentColor" stroke-linecap="round" xmlns="http://www.w3.org/2000/svg">
-        <circle cx="13" cy="5" r="4.5" fill="currentColor" stroke="none"/>
-        <line x1="13" y1="10" x2="13" y2="25" stroke-width="2.5"/>
-        <line x1="13" y1="15" x2="5" y2="21"  stroke-width="2"/>
-        <line x1="13" y1="15" x2="21" y2="21" stroke-width="2"/>
-        <line x1="13" y1="25" x2="9"  y2="38" stroke-width="2.5"/>
-        <line x1="13" y1="25" x2="17" y2="38" stroke-width="2.5"/>
-      </svg>`,
-    'Poids du corps + charge':
-      `<svg viewBox="0 0 34 40" fill="none" stroke="currentColor" stroke-linecap="round" xmlns="http://www.w3.org/2000/svg">
-        <circle cx="17" cy="5" r="4.5" fill="currentColor" stroke="none"/>
-        <line x1="17" y1="10" x2="17" y2="25" stroke-width="2.5"/>
-        <line x1="17" y1="15" x2="9"  y2="21" stroke-width="2"/>
-        <line x1="17" y1="15" x2="25" y2="21" stroke-width="2"/>
-        <line x1="17" y1="25" x2="13" y2="38" stroke-width="2.5"/>
-        <line x1="17" y1="25" x2="21" y2="38" stroke-width="2.5"/>
-        <rect x="0"  y="10" width="8"  height="12" rx="2.5" fill="currentColor" stroke="none" opacity="0.7"/>
-        <rect x="26" y="10" width="8"  height="12" rx="2.5" fill="currentColor" stroke="none" opacity="0.7"/>
-      </svg>`,
-    'Smith machine':
-      `<svg viewBox="0 0 52 30" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
-        <rect x="0"  y="0" width="5" height="30" rx="2"/>
-        <rect x="47" y="0" width="5" height="30" rx="2"/>
-        <rect x="5"  y="2" width="42" height="4" rx="2"/>
-        <rect x="5"  y="22" width="42" height="4" rx="2"/>
-        <rect x="5"  y="10" width="42" height="4" rx="2"/>
-        <rect x="0"  y="9" width="9"  height="18" rx="2" opacity="0.35"/>
-        <rect x="43" y="9" width="9"  height="18" rx="2" opacity="0.35"/>
-      </svg>`,
-    'Barre EZ':
-      `<svg viewBox="0 0 52 22" fill="none" stroke="currentColor" xmlns="http://www.w3.org/2000/svg">
-        <path d="M9 11Q18 4 26 11Q34 18 43 11" stroke-width="4" stroke-linecap="round"/>
-        <rect x="0"  y="3" width="10" height="16" rx="3" fill="currentColor" stroke="none"/>
-        <rect x="42" y="3" width="10" height="16" rx="3" fill="currentColor" stroke="none"/>
-      </svg>`,
-    'Élastique':
-      `<svg viewBox="0 0 44 24" fill="none" stroke="currentColor" xmlns="http://www.w3.org/2000/svg">
-        <path d="M8 6 Q22 17 36 6"  stroke-width="2.5" stroke-linecap="round"/>
-        <path d="M8 18 Q22 7 36 18" stroke-width="2.5" stroke-linecap="round"/>
-        <circle cx="4"  cy="12" r="3.5" fill="currentColor"/>
-        <circle cx="40" cy="12" r="3.5" fill="currentColor"/>
-      </svg>`,
-    'TRX':
-      `<svg viewBox="0 0 30 40" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
-        <rect x="0" y="0" width="30" height="5" rx="2.5"/>
-        <line x1="10" y1="5" x2="10" y2="24" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
-        <line x1="20" y1="5" x2="20" y2="24" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
-        <rect x="5"  y="22" width="9" height="9" rx="3"/>
-        <rect x="16" y="22" width="9" height="9" rx="3"/>
-      </svg>`,
-    'Landmine':
-      `<svg viewBox="0 0 50 30" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
-        <rect x="0" y="22" width="20" height="7" rx="3"/>
-        <rect transform="rotate(-33 8 22)" x="8" y="18" width="42" height="4.5" rx="2.2"/>
-        <rect transform="rotate(-33 35 2)"  x="35" y="-2" width="12" height="12" rx="3"/>
-      </svg>`,
-    'Médecine ball':
-      `<svg viewBox="0 0 36 36" fill="none" xmlns="http://www.w3.org/2000/svg">
-        <circle cx="18" cy="18" r="16" fill="currentColor" opacity="0.85"/>
-        <path d="M4 18 Q18 9 32 18"  stroke="rgba(0,0,0,0.35)" stroke-width="1.5"/>
-        <path d="M4 18 Q18 27 32 18" stroke="rgba(0,0,0,0.35)" stroke-width="1.5"/>
-        <line x1="18" y1="2" x2="18" y2="34" stroke="rgba(0,0,0,0.35)" stroke-width="1.5"/>
-      </svg>`,
-  };
-  const raw = icons[id] || `<svg viewBox="0 0 24 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg"><circle cx="12" cy="12" r="10"/></svg>`;
-  // Inject fixed height so the SVG is visible regardless of Astro CSS scoping
-  return raw.replace('<svg ', '<svg height="40" style="display:block;color:#8888a0" ');
+// ── Equipment photos (Unsplash CDN, free license) ──────────
+const EQUIP_PHOTO_IDS: Record<string, string> = {
+  'Barre':                   'gP9rAnGJBRo',  // close-up barbell on gym floor
+  'Haltères':                '7ltjONcH_mI',  // black dumbbells on rack
+  'Machine':                 'JNPvv1u8yRg',  // woman on leg press machine
+  'Câble':                   'oZhrfhCvbqY',  // cable pull-down machine
+  'Poids du corps':          '-7Gd6up6SHA',  // man push-ups on gym floor
+  'Poids du corps + charge': '_ROB8FnnpA0',  // athletic man push-ups
+  'Smith machine':           'Dueawl5Q75s',  // bench press with barbell
+  'Kettlebell':              'SMaujCcYGHo',  // kettlebell swings
+  'Barre EZ':                '4fH_sMlbKz8',  // close-up barbell on wood floor
+  'Élastique':               'Dcmhj3_xcyA',  // woman with resistance band
+  'TRX':                     'uU5Jz-b-0yI',  // TRX straps
+  'Landmine':                'Btl6ZNdIfdQ',  // weight plate on gym floor
+  'Médecine ball':           'Z7JbhHlnoak',  // woman holding exercise ball
+};
+
+function equipPhoto(id: string): string {
+  const photoId = EQUIP_PHOTO_IDS[id];
+  if (!photoId) return '';
+  return `https://images.unsplash.com/photo-${photoId}?w=400&h=280&fit=crop&q=80`;
 }
 
 // ── Difficulty colors ──────────────────────────────────────
@@ -227,13 +142,13 @@ equipmentList.forEach(eq => {
         .muscle-card .browse-label { font-size: 0.82rem; font-weight: 700; }
         .muscle-card .browse-count { font-size: 0.68rem; color: var(--text-muted); }
 
-        /* Equipment cards — icon style */
+        /* Equipment cards — photo style */
         .equip-grid { display: grid; grid-template-columns: repeat(5, 1fr); gap: 0.75rem; }
-        .equip-card { background: var(--bg-card); border: 1px solid var(--border); border-radius: 14px; padding: 1rem 0.75rem; text-align: center; cursor: pointer; transition: border-color 0.2s, transform 0.2s, box-shadow 0.2s; text-decoration: none; color: inherit; display: flex; flex-direction: column; align-items: center; gap: 0.4rem; }
+        .equip-card { background: var(--bg-card); border: 1px solid var(--border); border-radius: 14px; padding: 0; text-align: center; cursor: pointer; transition: border-color 0.2s, transform 0.2s, box-shadow 0.2s; text-decoration: none; color: inherit; display: flex; flex-direction: column; align-items: stretch; overflow: hidden; }
         .equip-card:hover { border-color: var(--blue); transform: translateY(-3px); box-shadow: 0 6px 20px rgba(74,144,217,0.12); }
-        .equip-card.active { border-color: var(--blue); background: rgba(74,144,217,0.08); }
-        .equip-card .equip-icon { height: 40px; width: auto; max-width: 80px; color: var(--text-secondary); display: flex; align-items: center; justify-content: center; }
-        .equip-card .equip-icon svg { height: 100%; width: auto; }
+        .equip-card.active { border-color: var(--blue); }
+        .equip-card img { width: 100%; height: 100px; object-fit: cover; display: block; flex-shrink: 0; }
+        .equip-card .equip-text { padding: 0.65rem 0.5rem 0.75rem; display: flex; flex-direction: column; gap: 0.15rem; }
         .equip-card .browse-label { font-size: 0.82rem; font-weight: 700; }
         .equip-card .browse-count { font-size: 0.68rem; color: var(--text-muted); }
 
@@ -309,9 +224,11 @@ equipmentList.forEach(eq => {
         <div class="equip-grid">
             {equipmentList.map(eq => (
                 <button class="equip-card" data-browse="equipment" data-value={eq.id}>
-                    <span class="equip-icon" set:html={equipSvg(eq.id)} />
-                    <span class="browse-label">{eq.label}</span>
-                    <span class="browse-count">{equipmentCounts[eq.id]} exercices</span>
+                    <img src={equipPhoto(eq.id)} alt={eq.label} loading="lazy" />
+                    <span class="equip-text">
+                        <span class="browse-label">{eq.label}</span>
+                        <span class="browse-count">{equipmentCounts[eq.id]} exercices</span>
+                    </span>
                 </button>
             ))}
         </div>
