@@ -39,10 +39,10 @@ const EQUIP_PHOTO_IDS: Record<string, number> = {
   'Machine':                 3838937,  // sportsman on exercise machine
   'Câble':                   1480520,  // woman on cable & pulley machine
   'Poids du corps':          4162491,  // man doing push-ups
-  'Poids du corps + charge': 6975783,  // closed-fist push-up on floor
+  'Poids du corps + charge': 1865131,  // man doing pull-ups (weighted bodyweight)
   'Smith machine':           3837757,  // sportsman on bench in modern gym
   'Kettlebell':              2836961,  // kettlebell object shot
-  'Barre EZ':                4793228,  // metal barbell on stand close-up
+  'Barre EZ':                9073246,  // bodybuilder doing barbell bicep curl (EZ bar movement)
   'Élastique':               6339598,  // man with resistance band
   'TRX':                     4162489,  // man doing push-ups at the gym
   'Landmine':                31616776, // green weight plate on barbell
@@ -219,7 +219,7 @@ equipmentList.forEach(eq => {
         </div>
     </section>
 
-    <section class="browse-section">
+    <section class="browse-section" id="equipSection">
         <h2>Explorer par équipement</h2>
         <div class="equip-grid">
             {equipmentList.map(eq => (
@@ -356,14 +356,17 @@ equipmentList.forEach(eq => {
                     if (isActive) {
                         currentMuscle = 'all';
                         document.querySelector('[data-filter="muscle"][data-value="all"]').classList.add('active');
+                        update();
+                        document.getElementById('filterBar').scrollIntoView({ behavior: 'smooth', block: 'start' });
                     } else {
                         currentMuscle = val;
                         card.classList.add('active');
                         var fb = document.querySelector('[data-filter="muscle"][data-value="' + val + '"]');
                         if (fb) fb.classList.add('active');
+                        update();
+                        // Guide user to pick equipment before seeing results
+                        document.getElementById('equipSection').scrollIntoView({ behavior: 'smooth', block: 'start' });
                     }
-                    update();
-                    document.getElementById('filterBar').scrollIntoView({ behavior: 'smooth', block: 'start' });
                 });
             });
 
