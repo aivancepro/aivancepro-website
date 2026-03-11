@@ -61,7 +61,7 @@ const guidePrefixes = { fr: '/guides/', en: '/en/guides/', de: '/de/ratgeber/' }
   articleTag={category}
 >
   <Fragment slot="head">
-    <style>
+    <style is:global>
       .reading-progress { position: fixed; top: 0; left: 0; height: 3px; background: var(--blue); z-index: 9999; width: 100%; transform-origin: left; transform: scaleX(0); will-change: transform; }
       .article-header { padding: 9rem 2rem 2rem; text-align: center; background: linear-gradient(180deg, var(--bg-card) 0%, var(--bg) 100%); border-bottom: 1px solid var(--border); }
       .tag { display: inline-block; padding: 0.25rem 0.75rem; background: rgba(74,144,217,0.1); border-radius: 50px; font-size: 0.75rem; color: var(--blue); font-weight: 600; margin-bottom: 1rem; }
