@@ -53,6 +53,7 @@ function formatDate(dateStr: string) {
         padding: 9rem 2rem 3rem;
         text-align: center;
         background: linear-gradient(180deg, var(--bg-card) 0%, var(--bg) 100%);
+        border-bottom: 1px solid var(--border);
       }
       .blog-header .section-label {
         display: inline-block;
@@ -70,7 +71,7 @@ function formatDate(dateStr: string) {
         margin-bottom: 1rem;
       }
       .blog-header p {
-        color: var(--gray-500);
+        color: var(--text-secondary);
         font-size: 1.1rem;
         max-width: 550px;
         margin: 0 auto;
@@ -87,9 +88,9 @@ function formatDate(dateStr: string) {
       .filter-btn {
         padding: 0.4rem 1rem;
         border-radius: 50px;
-        border: 1px solid var(--gray-200);
+        border: 1px solid var(--border);
         background: var(--bg-card);
-        color: var(--gray-500);
+        color: var(--text-secondary);
         font-size: 0.8rem;
         font-weight: 600;
         font-family: inherit;
@@ -111,28 +112,28 @@ function formatDate(dateStr: string) {
       }
       .article-card {
         background: var(--bg-card);
-        border: 1px solid var(--gray-200);
+        border: 1px solid var(--border);
         border-radius: 16px;
         overflow: hidden;
         transition: border-color 0.2s, transform 0.2s, box-shadow 0.2s;
         text-decoration: none;
-        color: var(--gray-900);
+        color: var(--text);
         display: flex;
         flex-direction: column;
       }
       .article-card:hover {
-        border-color: rgba(74, 144, 217, 0.3);
+        border-color: var(--blue);
         transform: translateY(-4px);
-        box-shadow: 0 8px 30px rgba(0, 0, 0, 0.06);
+        box-shadow: 0 8px 30px rgba(74, 144, 217, 0.1);
       }
       .article-card .card-image {
         width: 100%;
         height: 180px;
-        background: linear-gradient(135deg, var(--gray-100), var(--gray-200));
+        background: linear-gradient(135deg, var(--bg-elevated), var(--border));
         display: flex;
         align-items: center;
         justify-content: center;
-        color: var(--gray-400);
+        color: var(--text-muted);
         font-size: 0.8rem;
         font-weight: 500;
       }
@@ -145,7 +146,7 @@ function formatDate(dateStr: string) {
       .article-card .tag {
         display: inline-block;
         padding: 0.2rem 0.6rem;
-        background: rgba(74, 144, 217, 0.06);
+        background: rgba(74, 144, 217, 0.1);
         border-radius: 50px;
         font-size: 0.7rem;
         color: var(--blue);
@@ -160,7 +161,7 @@ function formatDate(dateStr: string) {
         line-height: 1.35;
       }
       .article-card p {
-        color: var(--gray-500);
+        color: var(--text-secondary);
         font-size: 0.85rem;
         line-height: 1.6;
         flex: 1;
@@ -168,7 +169,7 @@ function formatDate(dateStr: string) {
       .article-card .meta {
         margin-top: 1rem;
         font-size: 0.75rem;
-        color: var(--gray-400);
+        color: var(--text-muted);
         font-weight: 500;
       }
       .article-card.featured {
