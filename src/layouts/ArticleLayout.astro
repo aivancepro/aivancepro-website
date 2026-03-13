@@ -70,6 +70,8 @@ const guidePrefixes = { fr: '/guides/', en: '/en/guides/', de: '/de/ratgeber/' }
       .breadcrumb { font-size: 0.85rem; color: var(--text-secondary); margin-bottom: 1rem; }
       .breadcrumb a { color: var(--text-secondary); text-decoration: none; }
       .breadcrumb a:hover { color: var(--blue); }
+      .article-hero-image { max-width: 750px; margin: 2rem auto 0; padding: 0 2rem; }
+      .article-hero-image img { width: 100%; height: auto; border-radius: 12px; display: block; }
       .article-content { max-width: 750px; margin: 0 auto; padding: 3rem 2rem 4rem; }
       .article-content h2 { font-size: 1.5rem; font-weight: 700; margin-top: 2.5rem; margin-bottom: 1rem; color: var(--text); }
       .article-content h3 { font-size: 1.15rem; font-weight: 600; margin-top: 1.5rem; margin-bottom: 0.5rem; color: var(--text); }
@@ -126,6 +128,12 @@ const guidePrefixes = { fr: '/guides/', en: '/en/guides/', de: '/de/ratgeber/' }
     <h1>{title}</h1>
     {date && <p class="meta">{date}{readTime ? ` · ${readTime}` : ''}</p>}
   </header>
+
+  {image && image !== '/og-image.png' && (
+    <div class="article-hero-image">
+      <img src={image} alt={title} loading="eager" width="750" height="422" />
+    </div>
+  )}
 
   <article class="article-content" id="articleContent">
     <div class="client-toc" id="clientToc" style="display:none">
