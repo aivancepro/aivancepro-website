@@ -22,6 +22,8 @@ const {
   articleTag,
 } = Astro.props;
 
+const absoluteOgImage = ogImage?.startsWith('/') ? 'https://aivancepro.fr' + ogImage : ogImage;
+
 const i = t[lang];
 const localeMap = { fr: 'fr_FR', en: 'en_GB', de: 'de_DE' };
 
@@ -55,12 +57,12 @@ const guidePosts = (await getCollection('guides', ({ data }) => data.lang === la
     <meta property="og:title" content={title}>
     {description && <meta property="og:description" content={description} />}
     <meta property="og:site_name" content="AIVancePro">
-    <meta property="og:image" content={ogImage}>
+    <meta property="og:image" content={absoluteOgImage}>
     <meta property="og:locale" content={localeMap[lang] || 'fr_FR'}>
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:title" content={title}>
     {description && <meta name="twitter:description" content={description} />}
-    <meta name="twitter:image" content={ogImage}>
+    <meta name="twitter:image" content={absoluteOgImage}>
     {ogType === 'article' && articleDate && <meta property="article:published_time" content={articleDate} />}
     {ogType === 'article' && articleModified && <meta property="article:modified_time" content={articleModified} />}
     {ogType === 'article' && articleAuthor && <meta property="article:author" content={articleAuthor} />}

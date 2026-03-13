@@ -14,6 +14,8 @@ const { guide } = Astro.props;
 const { Content } = await render(guide);
 
 const wordCount = guide.body ? guide.body.split(/\s+/).length : 0;
+const siteBase = 'https://aivancepro.fr';
+const resolveImage = (img?: string) => img ? (img.startsWith('/') ? siteBase + img : img) : siteBase + '/assets/og-image.png';
 
 const related = (await getCollection('guides', ({ data }) =>
   data.lang === 'fr' &&
@@ -53,8 +55,8 @@ const related = (await getCollection('guides', ({ data }) =>
         "@type": "WebPage",
         "@id": guide.data.canonical,
       },
-      "image": guide.data.image || "https://aivancepro.fr/assets/og-image.png",
-      "thumbnailUrl": guide.data.image || "https://aivancepro.fr/assets/og-image.png",
+      "image": resolveImage(guide.data.image),
+      "thumbnailUrl": resolveImage(guide.data.image),
       "author": {
         "@type": "Person",
         "name": guide.data.author || "Theo Stanmore",
