@@ -24,7 +24,7 @@ Wer **schnell Muskeln aufbauen** möchte, braucht mehr als nur schwere Gewichte 
 
 ## Was bedeutet schnell Muskeln aufbauen – und wie schnell ist realistisch?
 
-Schnell Muskeln aufbauen bezeichnet den Prozess, durch gezieltes Krafttraining und angepasste Ernährung in möglichst kurzer Zeit messbare Muskelmasse zu gewinnen. Eine 2025 veröffentlichte Untersuchung der Deutschen Sporthochschule Köln zeigt, dass Trainingsanfänger in den ersten sechs Monaten rund 0,7–1,0 % ihres Körpergewichts pro Monat an fettfreier Masse zulegen können – bei einem 80-kg-Mann entspricht das etwa 0,6–0,8 kg pro Monat. Fortgeschrittene liegen erfahrungsgemäß bei der Hälfte oder weniger. Der sogenannte „Newbie-Gain-Effekt
+Schnell Muskeln aufbauen bezeichnet den Prozess, durch gezieltes Krafttraining und angepasste Ernährung in möglichst kurzer Zeit messbare Muskelmasse zu gewinnen. Eine 2025 veröffentlichte Untersuchung der Deutschen Sporthochschule Köln zeigt, dass Trainingsanfänger in den ersten sechs Monaten rund 0,7–1,0 % ihres Körpergewichts pro Monat an fettfreier Masse zulegen können – bei einem 80-kg-Mann entspricht das etwa 0,6–0,8 kg pro Monat. Fortgeschrittene liegen erfahrungsgemäß bei der Hälfte oder weniger. Der sogenannte „Newbie-Gain-Effekt" beschreibt dieses Phänomen: Anfänger reagieren besonders stark auf Trainingsreize, da ihre Muskeln noch nicht an systematisches Krafttraining angepasst sind – ein Vorteil, den man gezielt nutzen sollte.
 
 ### Realistische Erwartungen nach Trainingslevel
 
