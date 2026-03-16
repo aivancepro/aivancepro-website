@@ -292,13 +292,13 @@ const guidePosts = (await getCollection('guides', ({ data }) => data.lang === la
         }
       }
 
-      // Newsletter form
-      var nlForm = document.getElementById('newsletterForm');
-      if (nlForm) {
+      // Newsletter forms (footer + article)
+      document.querySelectorAll('#newsletterForm, .newsletter-form-el').forEach(function(nlForm) {
         nlForm.addEventListener('submit', function(e) {
           e.preventDefault();
-          var email = document.getElementById('newsletterEmail').value.trim();
-          var msg = document.getElementById('newsletterMsg');
+          var emailInput = nlForm.querySelector('input[type="email"]');
+          var email = emailInput.value.trim();
+          var msg = nlForm.querySelector('.newsletter-msg');
           var btn = nlForm.querySelector('button[type="submit"]');
           var lang = nlForm.dataset.lang || 'fr';
           if (!email) return;
@@ -319,7 +319,7 @@ const guidePosts = (await getCollection('guides', ({ data }) => data.lang === la
             if (res.ok) {
               msg.textContent = nlForm.dataset.success;
               msg.className = 'newsletter-msg success';
-              document.getElementById('newsletterEmail').value = '';
+              emailInput.value = '';
             } else if (res.status === 409) {
               msg.textContent = nlForm.dataset.duplicate;
               msg.className = 'newsletter-msg error';
@@ -334,7 +334,7 @@ const guidePosts = (await getCollection('guides', ({ data }) => data.lang === la
             btn.disabled = false;
           });
         });
-      }
+      });
     })();
     </script>
 </body>

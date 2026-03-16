@@ -606,7 +606,14 @@ footer {
     font-weight: 700;
     text-transform: uppercase;
     letter-spacing: 0.05em;
+    margin-bottom: 0.25rem;
+}
+
+.newsletter-subtitle {
+    color: var(--text-secondary);
+    font-size: 0.78rem;
     margin-bottom: 0.75rem;
+    line-height: 1.4;
 }
 
 .newsletter-input-wrap {
