@@ -93,7 +93,7 @@ Chaque pattern de mouvement peut être travaillé par plusieurs exercices. Si un
 | **Hip hinge (dominance hanche)** | Soulevé de terre conventionnel | Soulevé de terre roumain | Hip thrust barre | Good morning |
 | **Fente / unilatéral jambes** | Fentes marchées | Fentes bulgares (split squat surélevé) | Step-ups | Fentes inversées |
 
-**Règle de substitution** : remplacez toujours un exercice par un autre du même pattern. Ne remplacez jamais un mouvement de tirage par un mouvement de poussée, ou un exercice de quadriceps par un exercice d'ischio-jambiers. L'équilibre des patterns est essentiel pour la santé articulaire et le développement harmonieux.
+**Règle de substitution** : remplacez toujours un exercice par un autre du même pattern. Ne remplacez jamais un mouvement de tirage par un mouvement de poussée, ou un exercice de quadriceps par un exercice d'ischio-jambiers. L'équilibre des patterns est essentiel pour la santé articulaire et le développement harmonieux. Le coach IA d'[AIVancePro](https://apps.apple.com/fr/app/aivancepro/id6756116760) gère ces substitutions automatiquement : indiquez vos contraintes ou votre équipement disponible, et il sélectionne les meilleures alternatives dans chaque pattern.
 
 ## Structurer sa semaine d'entraînement
 
@@ -333,6 +333,8 @@ S'entraîner dur 52 semaines par an sans jamais décharger est une voie directe 
 Chaque programme a besoin de temps pour produire des résultats mesurables. En changeant toutes les 2 à 3 semaines, vous ne laissez jamais le stimulus agir suffisamment longtemps. Vous ne pouvez pas non plus mesurer ce qui fonctionne et ce qui ne fonctionne pas.
 
 **Solution** : engagez-vous sur un programme pour 8 à 12 semaines. Évaluez objectivement les résultats (voir section « Évaluer et ajuster »). Si les charges progressent et que vous n'avez pas de douleur, le programme fonctionne — continuez. Les ajustements mineurs (changer un exercice secondaire, ajouter une série) sont acceptables. Les changements de structure (passer de PPL à Full Body) ne devraient survenir qu'après une évaluation complète.
+
+**Envie de créer votre programme sans vous perdre dans les détails ?** [AIVancePro](https://apps.apple.com/fr/app/aivancepro/id6756116760) génère un programme personnalisé en quelques secondes, adapté à votre niveau, vos objectifs, votre équipement et votre emploi du temps. Téléchargez l'application gratuitement et commencez dès aujourd'hui.
 
 ## FAQ
 

@@ -55,7 +55,7 @@ Le mésocycle est un bloc d'entraînement composé de plusieurs microcycles, par
 > - Semaine 4 : 18 séries/muscle, RPE 8-9 (pic de volume)
 > - Semaine 5 : 8 séries/muscle, RPE 6 (deload)
 
-Remarquez la progression graduelle du volume suivie d'une semaine de décharge. Ce pattern « accumulation puis dissipation » est au coeur de toute périodisation efficace.
+Remarquez la progression graduelle du volume suivie d'une semaine de décharge. Ce pattern « accumulation puis dissipation » est au coeur de toute périodisation efficace. [AIVancePro](https://apps.apple.com/fr/app/aivancepro/id6756116760) applique automatiquement ce type de périodisation en ajustant volume et intensité semaine après semaine en fonction de votre progression réelle.
 
 ### Le macrocycle (3 à 12 mois)
 
@@ -209,7 +209,7 @@ Plutôt que de planifier vos deloads uniquement sur un calendrier fixe, apprenez
 | **Performance en salle** | RPE réel vs RPE attendu sur vos séries de travail | RPE réel > RPE prévu de 1+ point sur 2 séances consécutives | La fatigue masque votre force réelle ; temps de décharger |
 | **Fréquence cardiaque au repos** | Mesure le matin avant de se lever | Hausse de >5 bpm par rapport à votre baseline pendant 3+ jours | Signe de stress systémique ; réduire l'intensité |
 
-**Conseil pratique** : notez ces marqueurs dans un carnet ou une application de suivi. Au bout de quelques mésocycles, vous reconnaîtrez vos propres patterns de fatigue. Certains pratiquants « craquent » au grip en premier, d'autres au sommeil. Connaître votre signal précoce vous permet d'agir avant que la fatigue ne devienne un vrai problème. Pour approfondir la gestion de la fatigue et la [prévention des blessures](/guides/recuperation-prevention-blessures/), consultez notre guide dédié.
+**Conseil pratique** : notez ces marqueurs dans un carnet ou une application comme [AIVancePro](https://apps.apple.com/fr/app/aivancepro/id6756116760), qui analyse votre fatigue accumulée et vous recommande un deload au bon moment. Au bout de quelques mésocycles, vous reconnaîtrez vos propres patterns de fatigue. Certains pratiquants « craquent » au grip en premier, d'autres au sommeil. Connaître votre signal précoce vous permet d'agir avant que la fatigue ne devienne un vrai problème. Pour approfondir la gestion de la fatigue et la [prévention des blessures](/guides/recuperation-prevention-blessures/), consultez notre guide dédié.
 
 ## Périodisation pour objectifs spécifiques
 
@@ -253,6 +253,8 @@ Oui, et c'est même courant chez les pratiquants avancés. Par exemple, vous pou
 
 **Comment ajuster la périodisation si je manque une semaine d'entraînement (vacances, maladie) ?**
 Si l'arrêt dure moins d'une semaine, reprenez simplement là où vous en étiez en réduisant légèrement les charges (~5 %). Si l'arrêt dure 2 semaines ou plus, ajoutez une semaine de réintroduction à volume et intensité réduits (RPE 6-7) avant de reprendre le programme normal. Ne tentez pas de « rattraper » les séances manquées en compressant le programme : cela ne ferait qu'accumuler de la fatigue inutile.
+
+**Envie de mettre ces principes en pratique sans vous perdre dans la planification ?** [AIVancePro](https://apps.apple.com/fr/app/aivancepro/id6756116760) applique une périodisation intelligente qui s'adapte à votre progression réelle, gère automatiquement vos phases d'accumulation et de deload, et ajuste votre programme en temps réel. Téléchargez l'application gratuitement et commencez dès aujourd'hui.
 
 ---
 

@@ -149,7 +149,7 @@ La fameuse "règle du 80/20" est un bon point de départ, mais le ratio optimal 
 | **Débutant** | 80/20 | Apprendre les mouvements fondamentaux avant de se disperser sur l'isolation |
 | **Senior / santé générale** | 60/40 | Mouvements fonctionnels compound + isolation ciblée pour les articulations fragiles |
 
-Pour structurer votre programme selon ces ratios, suivez notre guide étape par étape : [Comment créer un programme d'entraînement efficace](/guides/creer-programme-entrainement/).
+Pour structurer votre programme selon ces ratios, suivez notre guide étape par étape : [Comment créer un programme d'entraînement efficace](/guides/creer-programme-entrainement/). Le coach IA d'[AIVancePro](https://apps.apple.com/fr/app/aivancepro/id6756116760) ajuste automatiquement ce ratio en fonction de votre objectif et de votre niveau, pour un équilibre optimal sans prise de tête.
 
 ## Machines et exercices guidés
 
@@ -188,7 +188,7 @@ Les pratiquants avancés qui stagnent sur un compound peuvent utiliser la pré-f
 
 ### Volume additionnel sans fatigue centrale
 
-Les exercices d'isolation permettent d'accumuler du **volume hebdomadaire** (nombre total de séries par muscle) sans surcharger le système nerveux central. Un pratiquant peut supporter 20-25 séries hebdomadaires par muscle si une partie provient d'isolation, contre seulement 12-16 séries si tout est fait en compound lourd (Schoenfeld et al., 2017).
+Les exercices d'isolation permettent d'accumuler du **volume hebdomadaire** (nombre total de séries par muscle) sans surcharger le système nerveux central. Un pratiquant peut supporter 20-25 séries hebdomadaires par muscle si une partie provient d'isolation, contre seulement 12-16 séries si tout est fait en compound lourd (Schoenfeld et al., 2017). [AIVancePro](https://apps.apple.com/fr/app/aivancepro/id6756116760) suit votre volume par groupe musculaire et vous alerte quand vous approchez de votre seuil de récupération.
 
 ## FAQ
 
@@ -207,6 +207,8 @@ Pour la plupart des pratiquants, **2 à 4 exercices d'isolation par séance** su
 ### La presse à cuisses peut-elle remplacer le squat ?
 
 La presse est un excellent exercice compound guidé, mais elle ne remplace pas entièrement le squat. Le squat recrute davantage les stabilisateurs du tronc, les érecteurs du rachis et les muscles profonds du bassin. Si vous ne pouvez pas squatter (blessure, mobilité limitée), la combinaison presse à cuisses + exercices de core est une alternative raisonnable.
+
+**Envie de mettre ces principes en pratique ?** [AIVancePro](https://apps.apple.com/fr/app/aivancepro/id6756116760) sélectionne automatiquement le bon ratio compound/isolation adapté à votre objectif et à votre niveau. Téléchargez l'application gratuitement et commencez dès aujourd'hui.
 
 ## AIVancePro équilibre pour vous
 

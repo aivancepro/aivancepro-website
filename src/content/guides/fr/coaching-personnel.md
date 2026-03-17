@@ -26,7 +26,7 @@ Qu'il soit humain ou alimenté par l'intelligence artificielle, un accompagnemen
 - **Programmes personnalisés** — adaptés à votre niveau, vos objectifs et vos contraintes physiques. Plus besoin de suivre un programme générique trouvé sur Internet.
 - **Correction technique** — prévention des blessures et optimisation du mouvement. Une méta-analyse de l'ACSM (2024) montre que l'encadrement technique réduit le risque de blessure de 65 % chez les pratiquants de musculation.
 - **Motivation constante** — responsabilisation et soutien dans les moments difficiles. Le simple fait de devoir rendre des comptes augmente l'adhérence de 78 % (étude Behavioral Medicine, 2022).
-- **Progression accélérée** — ajustements en temps réel selon vos performances et votre [gestion de l'intensité (RPE)](/guides/comprendre-rpe-intensite/).
+- **Progression accélérée** — ajustements en temps réel selon vos performances et votre [gestion de l'intensité (RPE)](/guides/comprendre-rpe-intensite/). Des outils comme [AIVancePro](https://apps.apple.com/fr/app/aivancepro/id6756116760) automatisent ces ajustements grâce à l'analyse de votre historique d'entraînement.
 - **Gain de temps** — plus besoin de chercher quoi faire en salle. Chaque minute est optimisée.
 - **Éducation progressive** — un bon coach vous apprend à devenir autonome, pas dépendant.
 
@@ -75,7 +75,7 @@ Méfiez-vous d'un coach qui :
 - **Propose le même programme à tous ses clients** — la personnalisation est la base du coaching.
 - **Ne pose aucune question sur votre santé** — un bon coach évalue vos antécédents médicaux, blessures et contre-indications avant la première séance.
 - **Pousse à l'achat de suppléments** — surtout s'il touche une commission.
-- **Ne documente pas votre progression** — sans suivi, pas d'ajustement possible.
+- **Ne documente pas votre progression** — sans suivi, pas d'ajustement possible. C'est d'ailleurs l'un des points forts du coaching IA : [AIVancePro](https://apps.apple.com/fr/app/aivancepro/id6756116760) enregistre automatiquement chaque séance et utilise ces données pour optimiser votre programme.
 - **Utilise un langage pseudo-scientifique** — « détox musculaire », « activer le métabolisme dormant »…
 
 ### Questions à poser avant de s'engager
@@ -220,6 +220,8 @@ Le meilleur coaching est celui qui correspond à votre situation réelle. Voici 
 - **Préparation compétition** → Coach humain spécialisé indispensable. Peaking, water cut, posing (bodybuilding) nécessitent une expertise spécifique.
 - **Remise en forme générale** → Coach IA idéal. Flexibilité, coût minimal, programmes adaptés à votre emploi du temps.
 - **Réhabilitation post-blessure** → Commencer avec un kiné, puis transition vers coach IA une fois la phase aiguë passée.
+
+**Envie de découvrir le coaching IA par vous-même ?** [AIVancePro](https://apps.apple.com/fr/app/aivancepro/id6756116760) vous offre un coach personnel disponible 24h/24, des programmes personnalisés et un suivi complet de votre progression — le tout pour une fraction du coût d'un coach traditionnel. Téléchargez l'application gratuitement et commencez dès aujourd'hui.
 
 ## Questions fréquentes
 

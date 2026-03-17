@@ -70,7 +70,7 @@ Les meilleures sources de protéines sont :
 - **Produits laitiers** : fromage blanc, yaourt grec, skyr (8-12 g pour 100 g)
 - **Légumineuses** : lentilles, pois chiches, haricots (7-9 g pour 100 g cuit)
 
-Répartissez vos protéines sur 3 à 5 prises par jour, avec au moins 25 à 40 g par repas pour maximiser la synthèse protéique musculaire.
+Répartissez vos protéines sur 3 à 5 prises par jour, avec au moins 25 à 40 g par repas pour maximiser la synthèse protéique musculaire. Le coach IA d'[AIVancePro](https://apps.apple.com/fr/app/aivancepro/id6756116760) calcule automatiquement vos besoins en protéines en fonction de votre poids, votre objectif et votre volume d'entraînement.
 
 ### Sources de protéines : densité et rapport qualité/prix
 
@@ -264,7 +264,7 @@ Signes qu'un ajustement est nécessaire :
 
 Procédez par paliers de **±200 kcal** (environ 50 g de glucides, ou 25 g de glucides + 10 g de lipides). Évitez les changements brutaux de 500+ kcal qui perturbent l'adhérence et rendent l'analyse plus difficile.
 
-Après chaque ajustement, attendez à nouveau 2 à 3 semaines avant de réévaluer. La patience est la compétence la plus sous-estimée en nutrition sportive. Pour structurer vos phases de progression dans le temps, consultez notre guide sur la [périodisation de l'entraînement](/guides/periodisation/).
+Après chaque ajustement, attendez à nouveau 2 à 3 semaines avant de réévaluer. La patience est la compétence la plus sous-estimée en nutrition sportive. [AIVancePro](https://apps.apple.com/fr/app/aivancepro/id6756116760) facilite ce suivi en corrélant votre poids, vos performances en salle et votre volume d'entraînement pour vous indiquer quand un ajustement nutritionnel est pertinent. Pour structurer vos phases de progression dans le temps, consultez notre guide sur la [périodisation de l'entraînement](/guides/periodisation/).
 
 ### Outils de suivi
 
@@ -272,6 +272,8 @@ Vous n'avez pas besoin de peser chaque aliment indéfiniment. Deux approches fon
 
 - **Phase d'apprentissage (4-8 semaines)** : pesez et tracez tout pour calibrer votre oeil. Utilisez une application de suivi calorique.
 - **Phase autonome** : une fois que vous connaissez les portions, vous pouvez estimer visuellement. Revenez au suivi précis si les résultats stagnent.
+
+**Envie d'optimiser votre nutrition en lien avec votre entraînement ?** [AIVancePro](https://apps.apple.com/fr/app/aivancepro/id6756116760) adapte vos recommandations nutritionnelles en fonction de votre programme et de vos objectifs, pour que chaque repas soutienne votre progression. Téléchargez l'application gratuitement et commencez dès aujourd'hui.
 
 ## FAQ
 

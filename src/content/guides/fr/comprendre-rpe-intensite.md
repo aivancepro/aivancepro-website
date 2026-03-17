@@ -84,7 +84,7 @@ Le pourcentage de 1RM (répétition maximale) est la méthode traditionnelle pou
 
 Ces valeurs sont des approximations basées sur des moyennes. Votre profil de force individuel peut varier. Un pratiquant endurant fera plus de répétitions à 80% qu'un pratiquant explosif. Utilisez ce tableau comme point de départ, puis ajustez en fonction de votre expérience.
 
-L'avantage du RPE sur le %1RM est l'adaptabilité. Votre 1RM fluctue quotidiennement en fonction du sommeil, du stress, de l'alimentation et de la fatigue accumulée. Un programme basé uniquement sur des pourcentages ignore ces fluctuations. Le RPE les intègre automatiquement.
+L'avantage du RPE sur le %1RM est l'adaptabilité. Votre 1RM fluctue quotidiennement en fonction du sommeil, du stress, de l'alimentation et de la fatigue accumulée. Un programme basé uniquement sur des pourcentages ignore ces fluctuations. Le RPE les intègre automatiquement. [AIVancePro](https://apps.apple.com/fr/app/aivancepro/id6756116760) utilise le RPE que vous enregistrez à chaque série pour ajuster vos charges et votre volume en temps réel, séance après séance.
 
 ### Quand utiliser le %1RM
 
@@ -151,7 +151,7 @@ L'un des grands avantages du RPE est sa capacité à intégrer votre état globa
 | **Courbatures résiduelles** (DOMS de la séance précédente) | Aucun ajustement | Les DOMS ne réduisent pas la capacité de production de force. Échauffez-vous bien et commencez normalement. |
 | **Douleur articulaire légère** | Réduire la charge, adapter l'exercice | Ne forcez jamais à travers une douleur articulaire. Passez à une variante sans douleur et consultez si ça persiste. Voir notre guide [récupération et prévention des blessures](/guides/recuperation-prevention-blessures/). |
 
-**Règle clé** : quand le doute persiste, optez toujours pour le RPE inférieur. Une séance à RPE 7 au lieu de 8 est toujours productive. Une séance à RPE 10 quand vous étiez fatigué peut vous coûter plusieurs jours de récupération supplémentaires.
+**Règle clé** : quand le doute persiste, optez toujours pour le RPE inférieur. Une séance à RPE 7 au lieu de 8 est toujours productive. Une séance à RPE 10 quand vous étiez fatigué peut vous coûter plusieurs jours de récupération supplémentaires. Le coach IA d'[AIVancePro](https://apps.apple.com/fr/app/aivancepro/id6756116760) prend en compte ces ajustements contextuels pour vous recommander l'intensité optimale à chaque séance.
 
 ## Autoréguler ses séances
 
@@ -207,6 +207,8 @@ La précision du RPE s'améliore avec l'expérience. Voici comment développer c
 4. **Soyez honnête** : la tendance naturelle est de sous-estimer le RPE (dire RPE 7 alors que c'était RPE 9). L'honnêteté avec soi-même est essentielle pour que l'outil fonctionne.
 
 En règle générale, si la forme technique commence à se dégrader, vous êtes au minimum à RPE 9. La forme devrait rester propre jusqu'à RPE 8.
+
+**Envie d'intégrer le RPE dans votre entraînement sans prise de tête ?** [AIVancePro](https://apps.apple.com/fr/app/aivancepro/id6756116760) intègre le RPE dans son algorithme pour ajuster automatiquement vos charges séance après séance et optimiser votre progression. Téléchargez l'application gratuitement et commencez dès aujourd'hui.
 
 ## FAQ
 

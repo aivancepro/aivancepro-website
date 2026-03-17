@@ -276,7 +276,7 @@ Changer de programme toutes les 2-3 semaines est l'une des erreurs les plus cour
 
 ### Métriques à suivre
 
-Suivez ces indicateurs chaque semaine pour évaluer votre progression :
+Suivez ces indicateurs chaque semaine pour évaluer votre progression. Une application comme [AIVancePro](https://apps.apple.com/fr/app/aivancepro/id6756116760) automatise ce suivi et génère des graphiques de tendance pour chaque métrique :
 
 1. **Charge soulevée** — La charge augmente-t-elle sur vos exercices principaux ? Visez +2,5% toutes les 1-2 semaines sur les composés.
 2. **Volume total** (séries x reps x charge) — Le tonnage hebdomadaire doit montrer une tendance à la hausse.
@@ -353,7 +353,7 @@ Le PPL classique en rotation 2x. Assurez-vous que votre récupération (sommeil,
 
 ## Comment choisir son split ?
 
-Le meilleur split est celui que vous pouvez suivre **régulièrement sur plusieurs mois**. La consistance bat toujours l'optimisation théorique. Posez-vous ces questions :
+Le meilleur split est celui que vous pouvez suivre **régulièrement sur plusieurs mois**. La consistance bat toujours l'optimisation théorique. Si vous hésitez, le coach IA d'[AIVancePro](https://apps.apple.com/fr/app/aivancepro/id6756116760) analyse votre profil et votre disponibilité pour vous recommander le split le plus adapté. Posez-vous ces questions :
 
 - **Combien de jours par semaine** pouvez-vous réellement vous entraîner, en comptant les imprévus ?
 - **Depuis combien de temps** pratiquez-vous la musculation avec une technique correcte ?
@@ -363,6 +363,8 @@ Le meilleur split est celui que vous pouvez suivre **régulièrement sur plusieu
 Si vous hésitez, commencez par le split le plus simple compatible avec votre emploi du temps. Un Full Body bien exécuté 3 fois par semaine surpassera toujours un PPL 6 jours que vous ne pouvez tenir que 3 semaines sur 4.
 
 Pour construire votre programme exercice par exercice, consultez notre guide complet pour [créer un programme d'entraînement efficace](/guides/creer-programme-entrainement/). Apprenez à doser l'intensité avec notre article sur [le RPE et l'intensité](/guides/comprendre-rpe-intensite/). Et n'oubliez pas d'intégrer une [périodisation](/guides/periodisation/) intelligente pour progresser sur le long terme.
+
+**Envie de mettre ces principes en pratique ?** [AIVancePro](https://apps.apple.com/fr/app/aivancepro/id6756116760) génère automatiquement le split optimal selon votre niveau, vos objectifs et votre emploi du temps, puis ajuste le programme au fil de votre progression. Téléchargez l'application gratuitement et commencez dès aujourd'hui.
 
 ## FAQ
 

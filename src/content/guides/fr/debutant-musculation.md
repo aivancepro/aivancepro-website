@@ -180,6 +180,8 @@ C'est la méthode la plus simple et la plus efficace pour un débutant :
 3. Chaque séance, essayez d'ajouter une répétition à chaque série.
 4. Quand vous atteignez 12 répétitions sur toutes les séries, augmentez le poids de 2 à 2,5 kg et recommencez à 8 répétitions.
 
+Le coach IA d'[AIVancePro](https://apps.apple.com/fr/app/aivancepro/id6756116760) applique automatiquement cette méthode de double progression : il vous indique quand augmenter les répétitions et quand passer au poids supérieur, en s'adaptant à votre rythme.
+
 En tant que débutant, vous bénéficiez de ce qu'on appelle les « gains du débutant ». Votre système nerveux apprend à recruter les fibres musculaires plus efficacement, ce qui permet des progrès rapides sans que la masse musculaire n'ait encore beaucoup augmenté. Profitez de cette période : vous ne progresserez plus jamais aussi vite.
 
 ### Tenir un carnet d'entraînement
@@ -256,6 +258,8 @@ Vous n'êtes plus débutant quand vous remplissez ces critères :
 - **Habitudes établies** : l'entraînement fait partie de votre routine depuis au moins 6 mois de pratique régulière.
 
 À ce stade, vous pouvez envisager des programmes plus complexes comme le Push/Pull/Legs (PPL), le Upper/Lower ou des programmes de spécialisation. La [création d'un programme d'entraînement efficace](/guides/creer-programme-entrainement/) est abordée dans notre guide dédié. Vous voudrez également apprendre à [doser votre intensité avec le RPE](/guides/comprendre-rpe-intensite/) et à comprendre les bases de la [périodisation](/guides/periodisation/).
+
+**Envie de démarrer sur de bonnes bases ?** [AIVancePro](https://apps.apple.com/fr/app/aivancepro/id6756116760) génère un programme débutant personnalisé, vous guide sur chaque exercice avec des vidéos de démonstration et suit automatiquement votre progression. Téléchargez l'application gratuitement et commencez dès aujourd'hui.
 
 ## FAQ
 

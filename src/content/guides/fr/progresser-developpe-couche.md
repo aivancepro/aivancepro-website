@@ -112,7 +112,7 @@ Pour progresser efficacement, vous devez savoir exactement **où** votre bench p
 | La barre passe le milieu mais bloque avant le verrouillage | Haut du mouvement | Triceps (surtout chef latéral et médial) | Board press, floor press, close grip bench, skull crushers |
 | La barre dévie latéralement ou les coudes partent en arrière | Instabilité technique | Stabilisateurs d'épaule, dos | Face pulls, rowing, bench avec tempo lent, bench haltères |
 
-Répétez ce test toutes les 6-8 semaines. Votre point faible évoluera à mesure que vous le corrigerez.
+Répétez ce test toutes les 6-8 semaines. Votre point faible évoluera à mesure que vous le corrigerez. [AIVancePro](https://apps.apple.com/fr/app/aivancepro/id6756116760) analyse votre progression au développé couché et ajuste automatiquement les exercices accessoires pour cibler vos points faibles identifiés.
 
 ## Erreurs techniques les plus courantes
 
@@ -265,11 +265,13 @@ Consacrez régulièrement des séances à 50-65% de votre max pour perfectionner
 
 ### Soyez patient
 
-Le développé couché est un exercice à progression lente comparé au squat ou au soulevé de terre. Un gain de 2,5 kg par mois est déjà excellent pour un intermédiaire. C'est la constance qui fait la différence sur le long terme.
+Le développé couché est un exercice à progression lente comparé au squat ou au soulevé de terre. Un gain de 2,5 kg par mois est déjà excellent pour un intermédiaire. C'est la constance qui fait la différence sur le long terme. Suivre votre progression avec un outil comme [AIVancePro](https://apps.apple.com/fr/app/aivancepro/id6756116760) vous permet de visualiser cette tendance à la hausse et de rester motivé, même quand les gains semblent lents au quotidien.
 
 ### Protégez vos épaules
 
 Le développé couché est l'un des exercices les plus stressants pour l'articulation de l'épaule. Intégrez des face pulls, des rotations externes et du travail de mobilité thoracique à chaque séance. Notre guide sur la [récupération et la prévention des blessures](/guides/recuperation-prevention-blessures/) détaille les routines de prévention adaptées.
+
+**Envie de progresser plus vite au développé couché ?** [AIVancePro](https://apps.apple.com/fr/app/aivancepro/id6756116760) génère un programme de bench press personnalisé avec les bonnes variantes, le bon volume et une périodisation adaptée à votre niveau. Téléchargez l'application gratuitement et commencez dès aujourd'hui.
 
 ## FAQ — Développé couché
 

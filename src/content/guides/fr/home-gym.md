@@ -194,7 +194,7 @@ L'équipement de musculation d'occasion est souvent en excellent état car la fo
 
 ### Avec barre et rack uniquement
 
-Même avec un équipement minimal, vous pouvez [construire un programme d'entraînement complet](/guides/creer-programme-entrainement/) :
+Même avec un équipement minimal, vous pouvez [construire un programme d'entraînement complet](/guides/creer-programme-entrainement/). Le coach IA d'[AIVancePro](https://apps.apple.com/fr/app/aivancepro/id6756116760) génère des programmes adaptés à l'équipement dont vous disposez, que ce soit une barre et un rack, ou un simple set d'haltères :
 
 > **Full Body A**
 >
@@ -239,6 +239,8 @@ Si vous êtes [débutant](/guides/debutant-musculation/), le programme Full Body
 - **Motivation** : certains pratiquants ont besoin de l'ambiance d'une salle pour se motiver.
 - **Sécurité** : s'entraîner seul avec des charges lourdes demande un rack avec sécurités bien réglées et du bon sens.
 
+**Envie de tirer le maximum de votre home gym ?** [AIVancePro](https://apps.apple.com/fr/app/aivancepro/id6756116760) crée des programmes personnalisés adaptés à votre équipement disponible et suit votre progression séance après séance. Téléchargez l'application gratuitement et commencez dès aujourd'hui.
+
 Le home gym n'a pas à remplacer complètement la salle de sport. Beaucoup de pratiquants combinent les deux : home gym pour les séances principales (barre, haltères) et salle de sport 1-2 fois par semaine pour les machines spécifiques.
 
 ## FAQ — Home gym
@@ -247,7 +249,7 @@ Le home gym n'a pas à remplacer complètement la salle de sport. Beaucoup de pr
 Oui, pour la force et l'hypertrophie, un home gym bien équipé (rack, barre, banc, haltères) couvre 90 % des besoins. Les exercices [polyarticulaires](/guides/polyarticulaire-vs-isolation/) (squat, [bench](/guides/progresser-developpe-couche/), deadlift, rowing, OHP) sont les piliers de tout programme efficace et ne nécessitent que du matériel de base. Les machines guidées en salle offrent un confort supplémentaire pour l'isolation mais ne sont pas indispensables pour progresser. La clé est d'appliquer une [surcharge progressive](/guides/comprendre-rpe-intensite/) et une [périodisation](/guides/periodisation/) adaptée.
 
 **Comment se motiver quand on s'entraîne seul chez soi ?**
-L'absence d'ambiance de salle est le frein principal pour beaucoup. Quelques stratégies : (1) établissez un horaire fixe et traitez-le comme un rendez-vous non négociable, (2) préparez une playlist dédiée, (3) utilisez une application de suivi pour suivre vos progrès et maintenir la motivation, (4) filmez vos séries lourdes pour les revoir et mesurer vos progrès techniques, (5) rejoignez une communauté en ligne de pratiquants en home gym pour partager vos performances. L'avantage du home gym est que la barrière à l'entrée est quasi nulle : pas de trajet, pas d'excuses.
+L'absence d'ambiance de salle est le frein principal pour beaucoup. Quelques stratégies : (1) établissez un horaire fixe et traitez-le comme un rendez-vous non négociable, (2) préparez une playlist dédiée, (3) utilisez [AIVancePro](https://apps.apple.com/fr/app/aivancepro/id6756116760) pour suivre vos progrès, visualiser votre progression et maintenir la motivation grâce à la gamification, (4) filmez vos séries lourdes pour les revoir et mesurer vos progrès techniques, (5) rejoignez une communauté en ligne de pratiquants en home gym pour partager vos performances. L'avantage du home gym est que la barrière à l'entrée est quasi nulle : pas de trajet, pas d'excuses.
 
 **Le sol de mon garage/appartement peut-il supporter le poids d'un home gym ?**
 Un home gym typique (rack + barre + 200 kg de disques + banc + utilisateur) pèse environ 350-450 kg au total, répartis sur 6-10 m². Les dalles en béton de garage supportent largement cette charge. En appartement, les normes de construction imposent généralement 200-250 kg/m² de charge d'exploitation, ce qui est suffisant si le poids est bien réparti (plateforme de levage, dalles). Le seul risque réel est de laisser tomber une barre chargée d'un point haut, ce qui crée un impact ponctuel important. Les bumper plates et une bonne plateforme éliminent ce risque. En cas de doute sur un plancher ancien en bois, consultez un professionnel.

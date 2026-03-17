@@ -88,7 +88,7 @@ Deux approches courantes :
 - **Réduction du volume** : gardez les mêmes charges mais divisez le nombre de séries par deux. Vous maintenez le stimulus de force sans accumuler de fatigue.
 - **Réduction de l'intensité** : réduisez les charges de 40 à 50% et gardez le même volume. Savoir [doser l'intensité avec le RPE](/guides/comprendre-rpe-intensite/) est particulièrement utile pour calibrer ces semaines de décharge.
 
-Ne sautez pas le deload par impatience. C'est un investissement qui rapporte des dividendes la semaine suivante, quand vous reprenez l'entraînement intensif avec un corps complètement reposé.
+Ne sautez pas le deload par impatience. C'est un investissement qui rapporte des dividendes la semaine suivante, quand vous reprenez l'entraînement intensif avec un corps complètement reposé. Le coach IA d'[AIVancePro](https://apps.apple.com/fr/app/aivancepro/id6756116760) intègre automatiquement des semaines de deload dans votre programmation, au moment optimal pour votre récupération.
 
 ## Douleur vs courbature : comment faire la différence
 
@@ -126,7 +126,7 @@ Le surentraînement survient quand le stress d'entraînement dépasse chroniquem
 - Difficultés de concentration au quotidien
 - Appréhension avant les séances
 
-Si vous identifiez plusieurs de ces signes, prenez une semaine de repos complet ou un deload prolongé (10 jours). Réévaluez votre volume d'entraînement, votre sommeil et votre [alimentation](/guides/nutrition-musculation/) avant de reprendre. La [périodisation](/guides/periodisation/) bien planifiée est la meilleure prévention du surentraînement.
+Si vous identifiez plusieurs de ces signes, prenez une semaine de repos complet ou un deload prolongé (10 jours). Réévaluez votre volume d'entraînement, votre sommeil et votre [alimentation](/guides/nutrition-musculation/) avant de reprendre. La [périodisation](/guides/periodisation/) bien planifiée est la meilleure prévention du surentraînement. [AIVancePro](https://apps.apple.com/fr/app/aivancepro/id6756116760) analyse votre fatigue accumulée et ajuste automatiquement le volume de vos séances pour éviter de franchir ce seuil critique.
 
 ## Gérer les courbatures (DOMS)
 
@@ -220,6 +220,8 @@ Certaines douleurs ne doivent pas être ignorées. Consultez un kinésithérapeu
 - **Perte de force soudaine** dans un mouvement habituellement maîtrisé
 
 Mieux vaut consulter trop tôt que trop tard. Une blessure légère traitée rapidement guérit en quelques jours. La même blessure ignorée et aggravée peut vous arrêter pendant des mois.
+
+**Envie d'optimiser votre récupération sans y penser ?** [AIVancePro](https://apps.apple.com/fr/app/aivancepro/id6756116760) surveille votre fatigue accumulée, programme vos deloads au bon moment et ajuste automatiquement le volume pour prévenir le surentraînement. Téléchargez l'application gratuitement et commencez dès aujourd'hui.
 
 ## FAQ — Récupération et prévention
 
