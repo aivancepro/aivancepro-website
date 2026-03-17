@@ -88,7 +88,7 @@ Two common approaches:
 - **Volume reduction**: keep the same loads but cut the number of sets in half. You maintain the strength stimulus without accumulating fatigue.
 - **Intensity reduction**: reduce loads by 40-50% while keeping the same volume. Knowing how to [calibrate intensity with RPE](/en/guides/understanding-rpe/) is particularly useful for fine-tuning deload weeks.
 
-Do not skip the deload out of impatience. It is an investment that pays dividends the following week, when you resume intense training with a fully recovered body.
+Do not skip the deload out of impatience. It is an investment that pays dividends the following week, when you resume intense training with a fully recovered body. [AIVancePro](https://apps.apple.com/app/aivancepro/id6756116760)'s AI coach automatically integrates deload weeks into your programming, at the optimal time for your recovery.
 
 ## Pain vs. soreness: how to tell the difference
 
@@ -126,7 +126,7 @@ Overtraining occurs when training stress chronically exceeds the body's recovery
 - Difficulty concentrating in daily life
 - Anxiety before sessions
 
-If you identify several of these signs, take a full week of rest or an extended deload (10 days). Reassess your training volume, sleep and [nutrition](/en/guides/nutrition-for-muscle-building/) before resuming. Well-planned [periodization](/en/guides/periodization-basics/) is the best prevention against overtraining.
+If you identify several of these signs, take a full week of rest or an extended deload (10 days). Reassess your training volume, sleep and [nutrition](/en/guides/nutrition-for-muscle-building/) before resuming. Well-planned [periodization](/en/guides/periodization-basics/) is the best prevention against overtraining. [AIVancePro](https://apps.apple.com/app/aivancepro/id6756116760) analyzes your accumulated fatigue and automatically adjusts session volume to prevent you from crossing that critical threshold.
 
 ## Managing DOMS (soreness)
 
@@ -220,6 +220,8 @@ Certain types of pain should not be ignored. See a physiotherapist or sports med
 - **Sudden loss of strength** in a movement you normally handle well
 
 It is better to consult too early than too late. A minor injury treated promptly heals in days. The same injury ignored and aggravated can sideline you for months.
+
+**Want to optimize your recovery without overthinking it?** [AIVancePro](https://apps.apple.com/app/aivancepro/id6756116760) automatically monitors your accumulated fatigue, schedules your deloads at the right time and adjusts volume to prevent overtraining. Download the app for free and get started today.
 
 ## FAQ -- Recovery and prevention
 

@@ -194,7 +194,7 @@ Second-hand strength training equipment is often in excellent condition because 
 
 ### Barbell and rack only
 
-Even with minimal equipment, you can [build a complete training program](/en/guides/create-training-program/):
+Even with minimal equipment, you can [build a complete training program](/en/guides/create-training-program/). [AIVancePro](https://apps.apple.com/app/aivancepro/id6756116760)'s AI coach generates programs adapted to the equipment you have available, whether that is a barbell and rack or just a set of dumbbells:
 
 > **Full Body A**
 >
@@ -239,6 +239,8 @@ If you are a [beginner](/en/guides/beginner-strength-training/), the Full Body p
 - **Motivation**: some lifters need the gym atmosphere to stay motivated.
 - **Safety**: training alone with heavy loads requires a rack with properly set safeties and common sense.
 
+**Want to get the most out of your home gym?** [AIVancePro](https://apps.apple.com/app/aivancepro/id6756116760) automatically creates personalized programs adapted to your available equipment and tracks your progression session after session. Download the app for free and get started today.
+
 A home gym does not have to completely replace the commercial gym. Many lifters combine both: home gym for main sessions (barbell, dumbbells) and commercial gym 1-2 times per week for specialized machines.
 
 ## FAQ -- Home gym
@@ -247,7 +249,7 @@ A home gym does not have to completely replace the commercial gym. Many lifters 
 Yes, for strength and hypertrophy, a well-equipped home gym (rack, barbell, bench, dumbbells) covers 90% of your needs. [Compound exercises](/en/guides/compound-vs-isolation/) (squat, [bench](/en/guides/improve-bench-press/), deadlift, row, OHP) are the pillars of any effective program and require only basic equipment. Guided machines in a gym offer additional comfort for isolation but are not essential for progress. The key is to apply [progressive overload](/en/guides/understanding-rpe/) and adapted [periodization](/en/guides/periodization-basics/).
 
 **How to stay motivated when training alone at home?**
-The lack of gym atmosphere is the main barrier for many. A few strategies: (1) set a fixed schedule and treat it as a non-negotiable appointment, (2) prepare a dedicated playlist, (3) use a tracking app to follow your progress and maintain motivation, (4) film your heavy sets to review and measure your technical progress, (5) join an online community of home gym lifters to share your performances. The advantage of a home gym is that the barrier to entry is nearly zero: no commute, no excuses.
+The lack of gym atmosphere is the main barrier for many. A few strategies: (1) set a fixed schedule and treat it as a non-negotiable appointment, (2) prepare a dedicated playlist, (3) use [AIVancePro](https://apps.apple.com/app/aivancepro/id6756116760) to track your progress, visualize your progression and stay motivated through gamification, (4) film your heavy sets to review and measure your technical progress, (5) join an online community of home gym lifters to share your performances. The advantage of a home gym is that the barrier to entry is nearly zero: no commute, no excuses.
 
 **Can my garage/apartment floor handle the weight of a home gym?**
 A typical home gym (rack + bar + 200 kg of plates + bench + user) weighs about 350-450 kg total, spread over 6-10 m2. Concrete garage floors easily support this load. In apartments, building codes generally require 200-250 kg/m2 of live load capacity, which is sufficient if the weight is well distributed (lifting platform, mats). The only real risk is dropping a loaded bar from height, which creates a significant point impact. Bumper plates and a good platform eliminate this risk. If in doubt about an older wooden floor, consult a professional.

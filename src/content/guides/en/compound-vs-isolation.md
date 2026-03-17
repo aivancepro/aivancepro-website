@@ -149,7 +149,7 @@ The famous "80/20 rule" is a good starting point, but the optimal compound/isola
 | **Beginner** | 80/20 | Learn fundamental movements before branching out to isolation |
 | **Senior / general health** | 60/40 | Functional compound movements + targeted isolation for fragile joints |
 
-To structure your program according to these ratios, follow our step-by-step guide: [How to create an effective training program](/en/guides/create-training-program/).
+To structure your program according to these ratios, follow our step-by-step guide: [How to create an effective training program](/en/guides/create-training-program/). [AIVancePro](https://apps.apple.com/app/aivancepro/id6756116760)'s AI coach automatically adjusts this ratio based on your goal and level, for an optimal balance without the guesswork.
 
 ## Machines and guided exercises
 
@@ -188,7 +188,9 @@ Advanced lifters who have plateaued on a compound can use pre-exhaustion to rest
 
 ### Additional volume without central fatigue
 
-Isolation exercises allow you to accumulate **weekly volume** (total number of sets per muscle) without overloading the central nervous system. A lifter can handle 20-25 weekly sets per muscle if some come from isolation, compared to only 12-16 sets if everything is done with heavy compounds (Schoenfeld et al., 2017).
+Isolation exercises allow you to accumulate **weekly volume** (total number of sets per muscle) without overloading the central nervous system. A lifter can handle 20-25 weekly sets per muscle if some come from isolation, compared to only 12-16 sets if everything is done with heavy compounds (Schoenfeld et al., 2017). [AIVancePro](https://apps.apple.com/app/aivancepro/id6756116760) tracks your volume per muscle group and alerts you when you are approaching your recovery threshold.
+
+**Want to put these principles into practice?** [AIVancePro](https://apps.apple.com/app/aivancepro/id6756116760) automatically selects the right compound/isolation ratio adapted to your goal and level. Download the app for free and get started today.
 
 ## FAQ
 

@@ -276,7 +276,7 @@ Changing programs every 2-3 weeks is one of the most common mistakes. You never 
 
 ### Metrics to track
 
-Track these indicators each week to evaluate your progress:
+Track these indicators each week to evaluate your progress. An app like [AIVancePro](https://apps.apple.com/app/aivancepro/id6756116760) automates this tracking and generates trend charts for each metric:
 
 1. **Weight lifted** -- Are your loads increasing on main exercises? Aim for +2.5% every 1-2 weeks on compounds.
 2. **Total volume** (sets x reps x load) -- Weekly tonnage should show an upward trend.
@@ -353,7 +353,7 @@ The classic PPL in 2x rotation. Make sure your recovery (sleep, [nutrition](/en/
 
 ## How to choose your split?
 
-The best split is the one you can follow **consistently over several months**. Consistency always beats theoretical optimization. Ask yourself these questions:
+The best split is the one you can follow **consistently over several months**. Consistency always beats theoretical optimization. If you are unsure, [AIVancePro](https://apps.apple.com/app/aivancepro/id6756116760)'s AI coach analyzes your profile and availability to recommend the most suitable split. Ask yourself these questions:
 
 - **How many days per week** can you realistically train, accounting for unexpected events?
 - **How long** have you been strength training with proper technique?
@@ -363,6 +363,8 @@ The best split is the one you can follow **consistently over several months**. C
 If you are unsure, start with the simplest split compatible with your schedule. A well-executed Full Body 3 times per week will always outperform a PPL 6 days that you can only sustain 3 weeks out of 4.
 
 To build your program exercise by exercise, check out our complete guide to [creating an effective training program](/en/guides/create-training-program/). Learn to dose intensity with our article on [RPE and intensity](/en/guides/understanding-rpe/). And do not forget to integrate smart [periodization](/en/guides/periodization-basics/) for long-term progression.
+
+**Want to put these principles into practice?** [AIVancePro](https://apps.apple.com/app/aivancepro/id6756116760) automatically generates the optimal split based on your level, goals and schedule, then adjusts the program as you progress. Download the app for free and get started today.
 
 ## FAQ
 

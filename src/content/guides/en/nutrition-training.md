@@ -70,7 +70,7 @@ The best protein sources are:
 - **Dairy**: cottage cheese, Greek yogurt, skyr (8-12 g per 100 g)
 - **Legumes**: lentils, chickpeas, beans (7-9 g per 100 g cooked)
 
-Spread your protein across 3 to 5 meals per day, with at least 25 to 40 g per meal to maximize muscle protein synthesis.
+Spread your protein across 3 to 5 meals per day, with at least 25 to 40 g per meal to maximize muscle protein synthesis. [AIVancePro](https://apps.apple.com/app/aivancepro/id6756116760)'s AI coach automatically calculates your protein needs based on your weight, goal and training volume.
 
 ### Protein sources: density and value
 
@@ -264,7 +264,7 @@ Signs that an adjustment is needed:
 
 Proceed in increments of **+/-200 kcal** (approximately 50 g of carbs, or 25 g of carbs + 10 g of fats). Avoid sudden changes of 500+ kcal that disrupt adherence and make analysis harder.
 
-After each adjustment, wait another 2 to 3 weeks before re-evaluating. Patience is the most underrated skill in sports nutrition. To structure your progression phases over time, see our guide on [training periodization](/en/guides/periodization-basics/).
+After each adjustment, wait another 2 to 3 weeks before re-evaluating. Patience is the most underrated skill in sports nutrition. [AIVancePro](https://apps.apple.com/app/aivancepro/id6756116760) makes this tracking easier by correlating your weight, gym performance and training volume to indicate when a nutritional adjustment is relevant. To structure your progression phases over time, see our guide on [training periodization](/en/guides/periodization-basics/).
 
 ### Tracking tools
 
@@ -272,6 +272,8 @@ You do not need to weigh every food indefinitely. Two approaches work:
 
 - **Learning phase (4-8 weeks)**: weigh and track everything to calibrate your eye. Use a calorie tracking app.
 - **Autonomous phase**: once you know portion sizes, you can estimate visually. Return to precise tracking if results stall.
+
+**Want to optimize your nutrition alongside your training?** [AIVancePro](https://apps.apple.com/app/aivancepro/id6756116760) automatically adapts your nutritional recommendations based on your program and goals, so every meal supports your progression. Download the app for free and get started today.
 
 ## FAQ
 

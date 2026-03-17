@@ -84,7 +84,7 @@ The 1RM (one-rep max) percentage is the traditional method for prescribing inten
 
 These values are approximations based on averages. Your individual strength profile may vary. An endurance-oriented lifter will complete more reps at 80% than an explosive lifter. Use this table as a starting point, then adjust based on your experience.
 
-The advantage of RPE over %1RM is adaptability. Your 1RM fluctuates daily depending on sleep, stress, nutrition and accumulated fatigue. A program based solely on percentages ignores these fluctuations. RPE integrates them automatically.
+The advantage of RPE over %1RM is adaptability. Your 1RM fluctuates daily depending on sleep, stress, nutrition and accumulated fatigue. A program based solely on percentages ignores these fluctuations. RPE integrates them automatically. [AIVancePro](https://apps.apple.com/app/aivancepro/id6756116760) uses the RPE you log for each set to adjust your loads and volume in real time, session after session.
 
 ### When to use %1RM
 
@@ -151,7 +151,7 @@ One of the great advantages of RPE is its ability to account for your overall st
 | **Residual soreness** (DOMS from the previous session) | No adjustment | DOMS do not reduce force production capacity. Warm up thoroughly and start normally. |
 | **Mild joint pain** | Reduce load, modify the exercise | Never push through joint pain. Switch to a pain-free variation and consult a professional if it persists. See our guide on [recovery and injury prevention](/en/guides/recovery-injury-prevention/). |
 
-**Key rule**: when in doubt, always go with the lower RPE. A session at RPE 7 instead of 8 is still productive. A session at RPE 10 when you were fatigued can cost you several extra recovery days.
+**Key rule**: when in doubt, always go with the lower RPE. A session at RPE 7 instead of 8 is still productive. A session at RPE 10 when you were fatigued can cost you several extra recovery days. [AIVancePro](https://apps.apple.com/app/aivancepro/id6756116760)'s AI coach takes these contextual adjustments into account to recommend the optimal intensity for each session.
 
 ## Autoregulating your sessions
 
@@ -207,6 +207,8 @@ RPE accuracy improves with experience. Here is how to develop this skill:
 4. **Be honest**: the natural tendency is to underestimate RPE (calling it RPE 7 when it was really RPE 9). Honesty with yourself is essential for the tool to work.
 
 As a general rule, if your technique starts to break down, you are at RPE 9 at minimum. Form should stay clean up to RPE 8.
+
+**Want to integrate RPE into your training without the hassle?** [AIVancePro](https://apps.apple.com/app/aivancepro/id6756116760) automatically incorporates RPE into its algorithm to adjust your loads session after session and optimize your progression. Download the app for free and get started today.
 
 ## FAQ
 

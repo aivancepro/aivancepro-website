@@ -180,6 +180,8 @@ This is the simplest and most effective method for a beginner:
 3. Each session, try to add one rep to each set.
 4. When you reach 12 reps on all sets, increase the weight by 2 to 2.5 kg and start back at 8 reps.
 
+[AIVancePro](https://apps.apple.com/app/aivancepro/id6756116760)'s AI coach automatically applies this double progression method: it tells you when to increase reps and when to move up in weight, adapting to your pace.
+
 As a beginner, you benefit from what are known as "beginner gains." Your nervous system learns to recruit muscle fibers more efficiently, enabling rapid progress before muscle mass has actually increased much. Make the most of this period: you will never progress this fast again.
 
 ### Keeping a training log
@@ -204,7 +206,7 @@ Many beginners want to "save time" by jumping straight into working sets. A cold
 
 Without a training log, you have no idea whether you are progressing. You risk lifting the same weights for months without realizing it, or not knowing what weight to use from one session to the next.
 
-**Solution**: use an app like AIVancePro to record every set (exercise, weight, reps, [RPE](/en/guides/understanding-rpe/)). Before each session, review your previous performance and set a concrete goal: one more rep, or 1 kg more.
+**Solution**: use an app like [AIVancePro](https://apps.apple.com/app/aivancepro/id6756116760) to record every set (exercise, weight, reps, [RPE](/en/guides/understanding-rpe/)). Before each session, review your previous performance and set a concrete goal: one more rep, or 1 kg more.
 
 ### 4. Constantly switching programs (program hopping)
 
@@ -256,6 +258,8 @@ You are no longer a beginner when you meet these criteria:
 - **Established habits**: training has been part of your routine for at least 6 months of consistent practice.
 
 At this point, you can consider more advanced programs like Push/Pull/Legs (PPL), Upper/Lower or specialization programs. [Creating an effective training program](/en/guides/create-training-program/) is covered in our dedicated guide. You will also want to learn how to [manage your intensity with RPE](/en/guides/understanding-rpe/) and understand the basics of [periodization](/en/guides/periodization-basics/).
+
+**Want to get started on the right foot?** [AIVancePro](https://apps.apple.com/app/aivancepro/id6756116760) automatically generates a personalized beginner program, guides you through each exercise with demo videos and tracks your progression automatically. Download the app for free and get started today.
 
 ## FAQ
 

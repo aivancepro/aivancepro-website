@@ -26,7 +26,7 @@ Whether human or powered by artificial intelligence, personalized guidance trans
 - **Personalized programs** -- adapted to your level, goals and physical constraints. No more following generic programs found on the internet.
 - **Technique correction** -- injury prevention and movement optimization. A meta-analysis by the ACSM (2024) shows that technical supervision reduces injury risk by 65% among strength training practitioners.
 - **Constant motivation** -- accountability and support during tough moments. Simply having someone to report to increases adherence by 78% (Behavioral Medicine study, 2022).
-- **Accelerated progress** -- real-time adjustments based on your performance and [intensity management (RPE)](/en/guides/understanding-rpe/).
+- **Accelerated progress** -- real-time adjustments based on your performance and [intensity management (RPE)](/en/guides/understanding-rpe/). Tools like [AIVancePro](https://apps.apple.com/app/aivancepro/id6756116760) automate these adjustments by analyzing your training history.
 - **Time savings** -- no more wondering what to do at the gym. Every minute is optimized.
 - **Progressive education** -- a good coach teaches you to become autonomous, not dependent.
 
@@ -75,7 +75,7 @@ Be wary of a coach who:
 - **Gives the same program to every client** -- personalization is the foundation of coaching.
 - **Asks no questions about your health** -- a good coach assesses your medical history, injuries and contraindications before the first session.
 - **Pushes supplement purchases** -- especially if they earn a commission.
-- **Does not document your progress** -- without tracking, no adjustment is possible.
+- **Does not document your progress** -- without tracking, no adjustment is possible. This is actually one of the strengths of AI coaching: [AIVancePro](https://apps.apple.com/app/aivancepro/id6756116760) automatically records every session and uses that data to optimize your program.
 - **Uses pseudo-scientific language** -- "muscle detox," "activating your dormant metabolism"...
 
 ### Questions to ask before committing
@@ -220,6 +220,8 @@ The best coaching is the one that fits your actual situation. Here is a decision
 - **Competition prep** -- A specialized human coach is essential. Peaking, water cuts, posing (bodybuilding) require specific expertise.
 - **General fitness** -- AI coach is ideal. Flexibility, minimal cost, programs adapted to your schedule.
 - **Post-injury rehabilitation** -- Start with a physical therapist, then transition to AI coaching once the acute phase has passed.
+
+**Want to experience AI coaching for yourself?** [AIVancePro](https://apps.apple.com/app/aivancepro/id6756116760) automatically gives you a personal coach available 24/7, personalized programs and complete progress tracking -- all for a fraction of the cost of a traditional coach. Download the app for free and get started today.
 
 ## Frequently asked questions
 

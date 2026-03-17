@@ -55,7 +55,7 @@ The mesocycle is a training block composed of several microcycles sharing a comm
 > - Week 4: 18 sets/muscle, RPE 8-9 (peak volume)
 > - Week 5: 8 sets/muscle, RPE 6 (deload)
 
-Notice the gradual volume progression followed by a deload week. This "accumulation then dissipation" pattern is at the heart of all effective periodization.
+Notice the gradual volume progression followed by a deload week. This "accumulation then dissipation" pattern is at the heart of all effective periodization. [AIVancePro](https://apps.apple.com/app/aivancepro/id6756116760) automatically applies this type of periodization by adjusting volume and intensity week after week based on your actual progression.
 
 ### The macrocycle (3 to 12 months)
 
@@ -209,7 +209,7 @@ Rather than scheduling deloads solely on a fixed calendar, learn to read the obj
 | **Gym performance** | Actual RPE vs expected RPE on your working sets | Actual RPE > planned RPE by 1+ point for 2 consecutive sessions | Fatigue is masking your true strength; time to deload |
 | **Resting heart rate** | Measured in the morning before getting up | Increase of >5 bpm compared to your baseline for 3+ days | Sign of systemic stress; reduce intensity |
 
-**Practical tip**: log these markers in a notebook or tracking app. After a few mesocycles, you will recognize your own fatigue patterns. Some lifters "break" at grip first, others at sleep. Knowing your early warning signal lets you act before fatigue becomes a real problem. For more on fatigue management and [injury prevention](/en/guides/recovery-injury-prevention/), see our dedicated guide.
+**Practical tip**: log these markers in a notebook or an app like [AIVancePro](https://apps.apple.com/app/aivancepro/id6756116760), which analyzes your accumulated fatigue and recommends a deload at the right time. After a few mesocycles, you will recognize your own fatigue patterns. Some lifters "break" at grip first, others at sleep. Knowing your early warning signal lets you act before fatigue becomes a real problem. For more on fatigue management and [injury prevention](/en/guides/recovery-injury-prevention/), see our dedicated guide.
 
 ## Periodization for specific goals
 
@@ -250,6 +250,8 @@ Not in a complex way. A [beginner](/en/guides/beginner-strength-training/) progr
 
 **Can you combine multiple periodization models?**
 Yes, and it is actually common among advanced lifters. For example, you can use block periodization at the macrocycle level (hypertrophy block, strength block, peaking block) while applying daily undulation (DUP) within each block to vary stimuli from session to session. The key is to keep a clear primary objective for each block.
+
+**Want to put these principles into practice without getting lost in the planning?** [AIVancePro](https://apps.apple.com/app/aivancepro/id6756116760) automatically applies intelligent periodization that adapts to your actual progression, manages your accumulation and deload phases, and adjusts your program in real time. Download the app for free and get started today.
 
 **How do you adjust periodization if you miss a week of training (vacation, illness)?**
 If the break lasts less than a week, simply pick up where you left off with a slight load reduction (~5%). If the break lasts 2 weeks or more, add a reintroduction week at reduced volume and intensity (RPE 6-7) before resuming your normal program. Do not try to "make up" missed sessions by compressing the program -- that would only accumulate unnecessary fatigue.

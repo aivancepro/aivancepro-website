@@ -93,7 +93,7 @@ Each movement pattern can be trained by several exercises. If an exercise does n
 | **Hip hinge (hip dominant)** | Conventional deadlift | Romanian deadlift | Barbell hip thrust | Good morning |
 | **Lunge / unilateral legs** | Walking lunges | Bulgarian split squat | Step-ups | Reverse lunges |
 
-**Substitution rule**: always replace an exercise with another from the same pattern. Never swap a pulling movement for a pushing movement, or a quad exercise for a hamstring exercise. Maintaining pattern balance is essential for joint health and well-rounded development.
+**Substitution rule**: always replace an exercise with another from the same pattern. Never swap a pulling movement for a pushing movement, or a quad exercise for a hamstring exercise. Maintaining pattern balance is essential for joint health and well-rounded development. [AIVancePro](https://apps.apple.com/app/aivancepro/id6756116760)'s AI coach handles these substitutions automatically: tell it your constraints or available equipment, and it selects the best alternatives within each pattern.
 
 ## Structuring your training week
 
@@ -290,7 +290,7 @@ A program should be followed for **6 to 8 weeks minimum** before being evaluated
 
 To know if your program is working, track these indicators objectively:
 
-- **Strength**: are the loads increasing on your main exercises? Compare your performance on the same exercise, at the same rep count, from one month to the next. AIVancePro automatically generates progression charts for every exercise.
+- **Strength**: are the loads increasing on your main exercises? Compare your performance on the same exercise, at the same rep count, from one month to the next. [AIVancePro](https://apps.apple.com/app/aivancepro/id6756116760) automatically generates progression charts for every exercise.
 - **Total volume**: is the tonnage (weight x reps x sets) increasing progressively over the weeks? A growing total volume is a reliable indicator of progress.
 - **Consistency**: how many sessions did you actually complete vs how many were planned? A program with an adherence rate below 80% (fewer than 4 out of 5 sessions) needs to be simplified or reorganized.
 - **Subjective recovery**: are you systematically exhausted, with recurring joint pain? Or do you feel fresh and motivated at the start of each session? If fatigue dominates, volume or intensity is likely too high.
@@ -333,6 +333,8 @@ Training hard 52 weeks a year without ever deloading is a direct path to stagnat
 Every program needs time to produce measurable results. Changing every 2 to 3 weeks means you never let the stimulus work long enough. You also cannot measure what works and what does not.
 
 **Solution**: commit to a program for 8 to 12 weeks. Evaluate results objectively (see "Evaluating and adjusting" section). If loads are going up and you have no pain, the program is working -- keep going. Minor adjustments (swapping a secondary exercise, adding a set) are fine. Structural changes (switching from PPL to Full Body) should only happen after a thorough evaluation.
+
+**Want to create your program without getting lost in the details?** [AIVancePro](https://apps.apple.com/app/aivancepro/id6756116760) automatically generates a personalized program in seconds, adapted to your level, goals, equipment and schedule. Download the app for free and get started today.
 
 ## FAQ
 

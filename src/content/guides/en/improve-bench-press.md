@@ -112,7 +112,7 @@ To progress effectively, you need to know exactly **where** your bench press fai
 | Bar passes the midpoint but stalls before lockout | Top of the movement | Triceps (especially lateral and medial heads) | Board press, floor press, close grip bench, skull crushers |
 | Bar drifts laterally or elbows flare back | Technical instability | Shoulder stabilizers, back | Face pulls, rows, slow tempo bench, dumbbell bench |
 
-Repeat this test every 6-8 weeks. Your weak point will evolve as you correct it.
+Repeat this test every 6-8 weeks. Your weak point will evolve as you correct it. [AIVancePro](https://apps.apple.com/app/aivancepro/id6756116760) analyzes your bench press progression and automatically adjusts accessory exercises to target your identified weak points.
 
 ## Most common technique errors
 
@@ -265,11 +265,13 @@ Regularly dedicate sessions at 50-65% of your max to perfecting every technical 
 
 ### Be patient
 
-The bench press progresses more slowly than the squat or deadlift. A gain of 2.5 kg per month is already excellent for an intermediate lifter. Consistency is what makes the difference over the long term.
+The bench press progresses more slowly than the squat or deadlift. A gain of 2.5 kg per month is already excellent for an intermediate lifter. Consistency is what makes the difference over the long term. Tracking your progression with a tool like [AIVancePro](https://apps.apple.com/app/aivancepro/id6756116760) lets you visualize that upward trend and stay motivated, even when gains feel slow day to day.
 
 ### Protect your shoulders
 
 The bench press is one of the most stressful exercises for the shoulder joint. Include face pulls, external rotations and thoracic mobility work in every session. Our guide on [recovery and injury prevention](/en/guides/recovery-injury-prevention/) details the prevention routines you need.
+
+**Want to progress faster on the bench press?** [AIVancePro](https://apps.apple.com/app/aivancepro/id6756116760) automatically generates a personalized bench press program with the right variations, the right volume and periodization adapted to your level. Download the app for free and get started today.
 
 ## FAQ -- Bench press
 
