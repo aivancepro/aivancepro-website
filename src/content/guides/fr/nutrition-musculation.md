@@ -76,7 +76,7 @@ Répartissez vos protéines sur 3 à 5 prises par jour, avec au moins 25 à 40 g
 
 Toutes les sources de protéines ne se valent pas. Le score **DIAAS** (Digestible Indispensable Amino Acid Score) mesure la qualité d'une protéine en fonction de sa digestibilité et de son profil en acides aminés essentiels. Un score supérieur à 100 indique une protéine de très haute qualité.
 
-| Aliment | Protéines / 100 g | Prix moyen / 100 g de protéines | Score DIAAS |
+| Aliment | Protéines / 100 g | Prix / 100g prot. | Score DIAAS |
 |---|---|---|---|
 | Blanc de poulet | 23 g | ~1,30 € | 108 |
 | Oeufs entiers | 13 g | ~0,90 € | 116 |

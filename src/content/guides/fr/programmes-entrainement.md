@@ -225,7 +225,7 @@ Chaque programme utilise l'échelle [RPE](/guides/comprendre-rpe-intensite/) pou
 
 Votre objectif principal doit guider le choix du split, pas uniquement votre niveau. Voici les recommandations par objectif :
 
-| Objectif | Split recommandé | Fréquence | Plage de reps dominante | Repos entre séries |
+| Objectif | Split recommandé | Fréquence | Reps | Repos entre séries |
 |---|---|---|---|---|
 | **Force maximale** | Upper/Lower ou Full Body | 3-4 jours | 3-6 reps @ RPE 8-9 | 3-5 min |
 | **Hypertrophie** | PPL ou Upper/Lower | 4-6 jours | 8-12 reps @ RPE 7-9 | 60-120s |

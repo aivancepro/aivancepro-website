@@ -73,11 +73,11 @@ Le macrocycle est le plan global qui enchaîne plusieurs mésocycles pour attein
 
 Le tableau ci-dessous présente un macrocycle complet de 24 semaines découpé en 6 mésocycles. Ce plan convient à un pratiquant intermédiaire ou avancé souhaitant développer force et masse musculaire avant un pic de performance.
 
-| Mésocycle | Semaines | Objectif | Volume (séries/muscle/sem.) | Intensité (% 1RM) | Répétitions | RPE cible |
+| Mésocycle | Semaines | Objectif | Volume/sem. | Intensité (% 1RM) | Répétitions | RPE cible |
 |---|---|---|---|---|---|---|
 | 1 — Hypertrophie A | 1-4 | Construction musculaire | 14-18 | 62-72 % | 10-15 | 7-8 |
 | 2 — Hypertrophie B | 5-8 | Volume accru + force de base | 16-22 | 65-75 % | 8-12 | 7,5-8,5 |
-| 3 — Force/Hypertrophie | 9-12 | Transition vers la force | 12-16 | 72-82 % | 6-10 | 8-8,5 |
+| 3 — Force/Hyper. | 9-12 | Transition vers la force | 12-16 | 72-82 % | 6-10 | 8-8,5 |
 | 4 — Force | 13-17 | Force maximale | 10-14 | 80-90 % | 3-6 | 8,5-9 |
 | 5 — Peaking | 18-20 | Pic de performance | 6-10 | 88-97 % | 1-3 | 9-9,5 |
 | 6 — Transition | 21-24 | Récupération active + relance hypertrophie | 10-14 | 58-68 % | 10-15 | 6-7 |
@@ -202,12 +202,12 @@ Plutôt que de planifier vos deloads uniquement sur un calendrier fixe, apprenez
 
 | Marqueur | Comment mesurer | Seuil d'alerte | Quoi faire |
 |---|---|---|---|
-| **Variabilité de la fréquence cardiaque (HRV)** | Application + ceinture thoracique ou montre connectée, mesure le matin au réveil | Baisse de >10 % par rapport à votre moyenne sur 7 jours, pendant 3+ jours consécutifs | Réduire le volume de 30-50 % ou prendre un jour off |
-| **Force de préhension (grip strength)** | Dynamomètre à main, mesure le matin avant l'entraînement | Baisse de >5 % par rapport à votre baseline | Signe de fatigue du système nerveux central ; envisager un deload |
+| **HRV** | Application + ceinture thoracique ou montre connectée, mesure le matin au réveil | Baisse de >10 % par rapport à votre moyenne sur 7 jours, pendant 3+ jours consécutifs | Réduire le volume de 30-50 % ou prendre un jour off |
+| **Force de préhension** | Dynamomètre à main, mesure le matin avant l'entraînement | Baisse de >5 % par rapport à votre baseline | Signe de fatigue du système nerveux central ; envisager un deload |
 | **Qualité du sommeil** | Tracker de sommeil ou journal subjectif (note /10 chaque matin) | Score moyen < 6/10 sur 5+ jours, ou sommeil profond < 15 % du total | Priorité absolue : corriger le sommeil avant d'augmenter le volume |
 | **Motivation et humeur** | Auto-évaluation quotidienne (note /10 avant la séance) | Score < 5/10 pendant 4+ jours sans cause externe identifiable | Probable accumulation de fatigue ; deload volume ou repos actif |
 | **Performance en salle** | RPE réel vs RPE attendu sur vos séries de travail | RPE réel > RPE prévu de 1+ point sur 2 séances consécutives | La fatigue masque votre force réelle ; temps de décharger |
-| **Fréquence cardiaque au repos** | Mesure le matin avant de se lever | Hausse de >5 bpm par rapport à votre baseline pendant 3+ jours | Signe de stress systémique ; réduire l'intensité |
+| **FC au repos** | Mesure le matin avant de se lever | Hausse de >5 bpm par rapport à votre baseline pendant 3+ jours | Signe de stress systémique ; réduire l'intensité |
 
 **Conseil pratique** : notez ces marqueurs dans un carnet ou une application comme [AIVancePro](https://apps.apple.com/fr/app/aivancepro/id6756116760), qui analyse votre fatigue accumulée et vous recommande un deload au bon moment. Au bout de quelques mésocycles, vous reconnaîtrez vos propres patterns de fatigue. Certains pratiquants « craquent » au grip en premier, d'autres au sommeil. Connaître votre signal précoce vous permet d'agir avant que la fatigue ne devienne un vrai problème. Pour approfondir la gestion de la fatigue et la [prévention des blessures](/guides/recuperation-prevention-blessures/), consultez notre guide dédié.
 

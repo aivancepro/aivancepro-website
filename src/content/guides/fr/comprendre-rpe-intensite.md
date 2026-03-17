@@ -102,10 +102,10 @@ L'avantage du RPE sur le %1RM est l'adaptabilité. Votre 1RM fluctue quotidienne
 
 Tous les exercices ne se prêtent pas au même niveau de RPE. Le coût en récupération, le risque de blessure et la fiabilité de l'évaluation varient selon le type de mouvement.
 
-| Type d'exercice | Exemples | RPE recommandé (séries de travail) | Justification |
+| Type d'exercice | Exemples | RPE recommandé | Justification |
 |---|---|---|---|
 | **Composés lourds** | Squat, soulevé de terre, développé couché barre | RPE 7 à 8,5 | Très coûteux en récupération. Le risque de blessure augmente fortement au-delà de RPE 9. La technique doit rester impeccable. |
-| **Composés légers / secondaires** | Rowing haltères, développé militaire haltères, fentes, hip thrust | RPE 7,5 à 9 | Moins exigeants techniquement que les composés lourds. Vous pouvez pousser un peu plus près de l'échec sans risque majeur. |
+| **Composés légers** | Rowing haltères, développé militaire haltères, fentes, hip thrust | RPE 7,5 à 9 | Moins exigeants techniquement que les composés lourds. Vous pouvez pousser un peu plus près de l'échec sans risque majeur. |
 | **Isolation** | Curls, élévations latérales, leg extension, leg curl, écartés | RPE 8 à 10 | L'échec musculaire est peu coûteux en récupération et ne présente quasiment pas de risque de blessure. Pousser à RPE 9-10 est pertinent, surtout en fin de cycle. |
 | **Machines** | Presse à cuisses, chest press, rowing machine, smith machine | RPE 8 à 10 | Le mouvement guidé élimine le besoin de stabilisation. L'échec est sécuritaire. Idéal pour pousser les séries à haut RPE sans pareur. |
 
@@ -144,11 +144,11 @@ L'un des grands avantages du RPE est sa capacité à intégrer votre état globa
 
 | Circonstance | Ajustement RPE cible | Exemple concret |
 |---|---|---|
-| **Mauvaise nuit de sommeil** (< 6h ou sommeil très fragmenté) | -1 RPE | RPE cible 8 → travailler à RPE 7. Réduire la charge de 5 à 7%. |
-| **Stress élevé** (examens, deadline professionnelle, conflit) | -0,5 à -1 RPE | RPE cible 8 → travailler à RPE 7 ou 7,5. Le stress chronique augmente le cortisol et réduit la capacité de récupération. |
-| **Alimentation insuffisante** (journée hypocalorique, repas sauté) | -0,5 RPE | RPE cible 8 → travailler à RPE 7,5. L'énergie disponible est réduite. |
-| **Journée exceptionnelle** (bien dormi, bien mangé, motivé, pas de stress) | +0,5 RPE maximum | RPE cible 8 → travailler à RPE 8,5. Ne dépassez jamais +0,5 par rapport au plan, même les meilleurs jours. Gardez de la marge pour la suite du cycle. |
-| **Courbatures résiduelles** (DOMS de la séance précédente) | Aucun ajustement | Les DOMS ne réduisent pas la capacité de production de force. Échauffez-vous bien et commencez normalement. |
+| **Mauvaise nuit de sommeil** | -1 RPE | RPE cible 8 → travailler à RPE 7. Réduire la charge de 5 à 7%. |
+| **Stress élevé** | -0,5 à -1 RPE | RPE cible 8 → travailler à RPE 7 ou 7,5. Le stress chronique augmente le cortisol et réduit la capacité de récupération. |
+| **Alimentation insuffisante** | -0,5 RPE | RPE cible 8 → travailler à RPE 7,5. L'énergie disponible est réduite. |
+| **Journée exceptionnelle** | +0,5 RPE maximum | RPE cible 8 → travailler à RPE 8,5. Ne dépassez jamais +0,5 par rapport au plan, même les meilleurs jours. Gardez de la marge pour la suite du cycle. |
+| **Courbatures résiduelles** | Aucun ajustement | Les DOMS ne réduisent pas la capacité de production de force. Échauffez-vous bien et commencez normalement. |
 | **Douleur articulaire légère** | Réduire la charge, adapter l'exercice | Ne forcez jamais à travers une douleur articulaire. Passez à une variante sans douleur et consultez si ça persiste. Voir notre guide [récupération et prévention des blessures](/guides/recuperation-prevention-blessures/). |
 
 **Règle clé** : quand le doute persiste, optez toujours pour le RPE inférieur. Une séance à RPE 7 au lieu de 8 est toujours productive. Une séance à RPE 10 quand vous étiez fatigué peut vous coûter plusieurs jours de récupération supplémentaires. Le coach IA d'[AIVancePro](https://apps.apple.com/fr/app/aivancepro/id6756116760) prend en compte ces ajustements contextuels pour vous recommander l'intensité optimale à chaque séance.

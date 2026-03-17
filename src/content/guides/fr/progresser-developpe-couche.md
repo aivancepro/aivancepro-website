@@ -67,7 +67,7 @@ Chaque variante cible un aspect spécifique du mouvement. Intégrez-les dans vot
 | **Board press** (planche sur le torse, amplitude réduite) | Triceps, verrouillage | 8-9 | Si la barre bloque dans le dernier tiers ; pour surcharger le lockout |
 | **Floor press** (allongé au sol, amplitude réduite) | Triceps, épaules, contrôle | 7,5-8,5 | Si le verrouillage est faible ; idéal en [home gym](/guides/home-gym/) sans banc |
 | **Close grip bench** (prise largeur d'épaules) | Triceps, épaules antérieures | 7-8 | Accessoire universel ; excellent pour le volume triceps sans fatigue excessive |
-| **Bench avec bandes élastiques** | Accélération, puissance | 8-9 | Pour travailler la vitesse à travers le sticking point ; pratiquants intermédiaires+ |
+| **Bench + bandes** | Accélération, puissance | 8-9 | Pour travailler la vitesse à travers le sticking point ; pratiquants intermédiaires+ |
 | **Bench avec tempo** (3-4 sec. descente) | Contrôle excentrique, technique | 6,5-7,5 | Échauffement technique, travail de connexion musculaire, correction de défauts |
 
 ## Les exercices accessoires clés
@@ -107,10 +107,10 @@ Pour progresser efficacement, vous devez savoir exactement **où** votre bench p
 
 | Observation | Point faible | Muscles déficients | Solution prioritaire |
 |---|---|---|---|
-| La barre colle au torse, difficulté à initier la poussée | Bas du mouvement | Pectoraux (surtout portion sternale) | Pause bench, écartés, développé incliné |
-| La barre ralentit à 10-15 cm du torse puis bloque | Milieu du mouvement (sticking point) | Transition pecs/triceps, deltoïdes antérieurs | Spoto press, bench avec bandes, développé militaire |
-| La barre passe le milieu mais bloque avant le verrouillage | Haut du mouvement | Triceps (surtout chef latéral et médial) | Board press, floor press, close grip bench, skull crushers |
-| La barre dévie latéralement ou les coudes partent en arrière | Instabilité technique | Stabilisateurs d'épaule, dos | Face pulls, rowing, bench avec tempo lent, bench haltères |
+| Blocage au départ | Bas du mouvement | Pectoraux (surtout portion sternale) | Pause bench, écartés, développé incliné |
+| Blocage à mi-course | Milieu du mouvement (sticking point) | Transition pecs/triceps, deltoïdes antérieurs | Spoto press, bench avec bandes, développé militaire |
+| Blocage au lockout | Haut du mouvement | Triceps (surtout chef latéral et médial) | Board press, floor press, close grip bench, skull crushers |
+| Déviation latérale | Instabilité technique | Stabilisateurs d'épaule, dos | Face pulls, rowing, bench avec tempo lent, bench haltères |
 
 Répétez ce test toutes les 6-8 semaines. Votre point faible évoluera à mesure que vous le corrigerez. [AIVancePro](https://apps.apple.com/fr/app/aivancepro/id6756116760) analyse votre progression au développé couché et ajuste automatiquement les exercices accessoires pour cibler vos points faibles identifiés.
 

@@ -47,7 +47,7 @@ Le coaching personnel évolue. L'intelligence artificielle offre désormais une 
 | **Aspect nutritionnel** | Conseils personnalisés (si formé) | Recommandations basées sur les données |
 | **Scalabilité** | 1 coach = 1 client à la fois | Illimité, même qualité pour chaque utilisateur |
 | **Objectivité** | Peut avoir des biais personnels | Analyse purement basée sur les données |
-| **Évolution des connaissances** | Formation continue nécessaire | Mis à jour en continu avec les dernières recherches |
+| **Mise à jour** | Formation continue nécessaire | Mis à jour en continu avec les dernières recherches |
 | **Engagement minimum** | Souvent 10 séances ou abonnement mensuel | Sans engagement, annulation libre |
 
 ## Vérifier les qualifications d'un coach
@@ -58,8 +58,8 @@ Choisir un coach personnel est un investissement important. En France, l'encadre
 
 | Certification | Niveau | Durée de formation | Ce qu'elle garantit |
 |---|---|---|---|
-| **CQP Animateur de Loisir Sportif** | Entrée | ~300 heures | Bases de l'animation sportive |
-| **BPJEPS Activités de la Forme** | Intermédiaire | 12-18 mois | Encadrement en salle, cours collectifs, haltérophilie |
+| **CQP ALS** | Entrée | ~300 heures | Bases de l'animation sportive |
+| **BPJEPS AF** | Intermédiaire | 12-18 mois | Encadrement en salle, cours collectifs, haltérophilie |
 | **DEJEPS** | Avancé | 18-24 mois | Perfectionnement sportif, coaching de haut niveau |
 | **DESJEPS** | Expert | 24+ mois | Direction de structures, formation de formateurs |
 | **Licence/Master STAPS** | Universitaire | 3-5 ans | Bases scientifiques approfondies |
@@ -200,7 +200,7 @@ Le meilleur coaching est celui qui correspond à votre situation réelle. Voici 
 | Votre niveau | Modèle recommandé | Pourquoi |
 |---|---|---|
 | **Débutant (0-6 mois)** | Coach humain (5-10 séances) + IA ensuite | Apprendre les mouvements de base avec correction en personne, puis l'IA prend le relais |
-| **Intermédiaire (6 mois-2 ans)** | Coach IA seul ou coaching hybride mensuel | Vous maîtrisez la technique, l'IA optimise votre [programmation](/guides/creer-programme-entrainement/) |
+| **Intermédiaire (6m-2a)** | Coach IA seul ou coaching hybride mensuel | Vous maîtrisez la technique, l'IA optimise votre [programmation](/guides/creer-programme-entrainement/) |
 | **Avancé (2+ ans)** | Coaching hybride ou coach spécialisé | Optimisations fines, préparation compétition, points faibles spécifiques |
 | **Compétiteur** | Coach humain spécialisé + IA en support | La spécificité de la préparation nécessite une expertise pointue |
 

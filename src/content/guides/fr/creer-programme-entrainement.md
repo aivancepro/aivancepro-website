@@ -89,9 +89,9 @@ Chaque pattern de mouvement peut être travaillé par plusieurs exercices. Si un
 | **Poussée verticale** | Développé militaire barre | Développé haltères assis | Overhead press machine | Développé Arnold |
 | **Tirage horizontal** | Rowing barre | Rowing haltère unilatéral | Rowing poulie basse | Rowing machine T-bar |
 | **Tirage vertical** | Tractions | Tirage poulie haute prise large | Tirage poulie haute prise neutre | Tractions assistées (machine ou élastique) |
-| **Squat (dominance genou)** | Squat barre arrière | Squat barre avant | Squat goblet | Presse à cuisses |
-| **Hip hinge (dominance hanche)** | Soulevé de terre conventionnel | Soulevé de terre roumain | Hip thrust barre | Good morning |
-| **Fente / unilatéral jambes** | Fentes marchées | Fentes bulgares (split squat surélevé) | Step-ups | Fentes inversées |
+| **Squat** | Squat barre arrière | Squat barre avant | Squat goblet | Presse à cuisses |
+| **Hip hinge** | Soulevé de terre conv. | Soulevé de terre roumain | Hip thrust barre | Good morning |
+| **Fente / unilatéral** | Fentes marchées | Fentes bulgares (split squat surélevé) | Step-ups | Fentes inversées |
 
 **Règle de substitution** : remplacez toujours un exercice par un autre du même pattern. Ne remplacez jamais un mouvement de tirage par un mouvement de poussée, ou un exercice de quadriceps par un exercice d'ischio-jambiers. L'équilibre des patterns est essentiel pour la santé articulaire et le développement harmonieux. Le coach IA d'[AIVancePro](https://apps.apple.com/fr/app/aivancepro/id6756116760) gère ces substitutions automatiquement : indiquez vos contraintes ou votre équipement disponible, et il sélectionne les meilleures alternatives dans chaque pattern.
 
@@ -217,7 +217,7 @@ Les douleurs articulaires ou les blessures passées ne doivent pas vous empêche
 
 ### Contraintes d'épaule
 
-| Exercice douloureux | Modification / Alternative | Pourquoi ça aide |
+| Exercice douloureux | Alternative | Pourquoi ça aide |
 |---|---|---|
 | Développé couché barre | Développé couché haltères, prise neutre (paumes face à face) | Permet une rotation externe de l'épaule plus naturelle. Réduit le stress sur la coiffe des rotateurs. |
 | Développé militaire barre | Développé haltères, landmine press | Moins de compression de l'articulation acromio-claviculaire. La landmine press travaille dans un arc naturel. |
@@ -226,15 +226,15 @@ Les douleurs articulaires ou les blessures passées ne doivent pas vous empêche
 
 ### Contraintes de genou
 
-| Exercice douloureux | Modification / Alternative | Pourquoi ça aide |
+| Exercice douloureux | Alternative | Pourquoi ça aide |
 |---|---|---|
 | Squat barre profond | Squat en boîte (box squat), squat partiel contrôlé, presse à cuisses | Le box squat limite l'amplitude dans une zone sans douleur. La presse réduit la charge sur les genoux. |
 | Fentes | Fentes inversées (en reculant), step-ups sur un banc bas | Les fentes inversées réduisent le cisaillement sur le genou. Le step-up permet de contrôler la descente. |
-| Leg extension (amplitude complète) | Leg extension en amplitude partielle (45° à 90°), ou leg extension isométrique en haut | Réduit la force de cisaillement sur le tendon rotulien dans l'amplitude problématique. |
+| Leg extension | Leg extension en amplitude partielle (45° à 90°), ou leg extension isométrique en haut | Réduit la force de cisaillement sur le tendon rotulien dans l'amplitude problématique. |
 
 ### Contraintes de dos (lombaires)
 
-| Exercice douloureux | Modification / Alternative | Pourquoi ça aide |
+| Exercice douloureux | Alternative | Pourquoi ça aide |
 |---|---|---|
 | Squat barre arrière | Squat barre avant, squat goblet, squat ceinture (belt squat) | Le squat avant et goblet maintiennent un tronc plus vertical. Le belt squat supprime totalement la charge sur la colonne. |
 | Soulevé de terre conventionnel | Soulevé de terre trap bar (hex bar), hip thrust, tirage rack (rack pull) | La trap bar centre la charge, réduisant le moment de levier sur les lombaires. Le hip thrust élimine la flexion du tronc. |
