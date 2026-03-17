@@ -4,6 +4,7 @@ description: "Complete guide to RPE (Rate of Perceived Exertion) in strength tra
 date: "2026-03-07"
 readTime: "9 min read"
 tag: "Technique"
+image: "/assets/guides/comprendre-rpe-intensite.png"
 lang: "en"
 slug: "understanding-rpe"
 canonical: "https://aivancepro.fr/en/guides/understanding-rpe/"

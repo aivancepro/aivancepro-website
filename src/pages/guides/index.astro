@@ -128,7 +128,11 @@ const guides = (await getCollection('guides', ({ data }) => data.lang === 'fr'))
   <section class="guides-grid">
     {guides.map(guide => (
       <a href={`/guides/${guide.data.slug}/`} class="guide-card">
-        <div class="card-image img-placeholder">{guide.data.tag}</div>
+        {guide.data.image ? (
+          <div class="card-image" style={`background-image:url(${guide.data.image});background-size:cover;background-position:center;`}></div>
+        ) : (
+          <div class="card-image img-placeholder">{guide.data.tag}</div>
+        )}
         <div class="card-content">
           <span class="tag">{guide.data.tag}</span>
           <h2>{guide.data.title}</h2>

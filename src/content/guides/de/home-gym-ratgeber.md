@@ -4,6 +4,7 @@ description: "Der vollständige Home Gym Ratgeber: Grundausstattung, Budget-Prio
 date: "2026-03-07"
 readTime: "13 Min. Lesezeit"
 tag: "Home Gym"
+image: "/assets/guides/home-gym.png"
 lang: "de"
 slug: "home-gym-ratgeber"
 canonical: "https://aivancepro.fr/de/ratgeber/home-gym-ratgeber/"

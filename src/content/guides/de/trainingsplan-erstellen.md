@@ -4,6 +4,7 @@ description: "Lernen Sie, einen effektiven Trainingsplan zu erstellen: Volumen, 
 date: "2026-03-07"
 readTime: "12 Min. Lesezeit"
 tag: "Programmierung"
+image: "/assets/guides/creer-programme-entrainement.png"
 lang: "de"
 slug: "trainingsplan-erstellen"
 canonical: "https://aivancepro.fr/de/ratgeber/trainingsplan-erstellen/"

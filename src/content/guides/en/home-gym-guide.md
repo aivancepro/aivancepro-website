@@ -4,6 +4,7 @@ description: "Complete guide to building a home gym. Essential equipment, budget
 date: "2026-03-07"
 readTime: "13 min read"
 tag: "Home Gym"
+image: "/assets/guides/home-gym.png"
 lang: "en"
 slug: "home-gym-guide"
 canonical: "https://aivancepro.fr/en/guides/home-gym-guide/"

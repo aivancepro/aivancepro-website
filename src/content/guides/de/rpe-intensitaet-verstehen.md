@@ -4,6 +4,7 @@ description: "RPE-Skala, RIR, 1RM-Prozent und Autoregulation: Verstehen Sie Trai
 date: "2026-03-07"
 readTime: "9 Min. Lesezeit"
 tag: "Technik"
+image: "/assets/guides/comprendre-rpe-intensite.png"
 lang: "de"
 slug: "rpe-intensitaet-verstehen"
 canonical: "https://aivancepro.fr/de/ratgeber/rpe-intensitaet-verstehen/"

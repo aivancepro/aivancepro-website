@@ -4,6 +4,7 @@ description: "Learn how to build a training program that works. Training variabl
 date: "2026-03-07"
 readTime: "12 min read"
 tag: "Programming"
+image: "/assets/guides/creer-programme-entrainement.png"
 lang: "en"
 slug: "create-training-program"
 canonical: "https://aivancepro.fr/en/guides/create-training-program/"

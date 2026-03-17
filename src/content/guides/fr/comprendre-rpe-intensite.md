@@ -4,6 +4,7 @@ description: "Échelle RPE, RIR et pourcentage de 1RM expliqués. Apprenez à do
 date: "2026-03-07"
 readTime: "9 min de lecture"
 tag: "Technique"
+image: "/assets/guides/comprendre-rpe-intensite.png"
 lang: "fr"
 slug: "comprendre-rpe-intensite"
 canonical: "https://aivancepro.fr/guides/comprendre-rpe-intensite/"

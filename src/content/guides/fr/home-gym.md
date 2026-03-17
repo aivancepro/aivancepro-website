@@ -4,6 +4,7 @@ description: "Équipement essentiel, budget, aménagement et programmes adaptés
 date: "2026-03-07"
 readTime: "13 min de lecture"
 tag: "Home Gym"
+image: "/assets/guides/home-gym.png"
 lang: "fr"
 slug: "home-gym"
 canonical: "https://aivancepro.fr/guides/home-gym/"
