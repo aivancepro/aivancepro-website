@@ -4,6 +4,7 @@ description: "Full Body, Upper/Lower, Push/Pull/Legs ou Bro Split ? Découvrez q
 date: "2026-03-07"
 readTime: "8 min de lecture"
 tag: "Programmation"
+image: "/assets/guides/programmes-entrainement.png"
 lang: "fr"
 slug: "programmes-entrainement"
 canonical: "https://aivancepro.fr/guides/programmes-entrainement/"
