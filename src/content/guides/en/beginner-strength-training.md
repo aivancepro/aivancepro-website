@@ -15,170 +15,264 @@ alternates:
   de: "https://aivancepro.fr/de/ratgeber/anfaenger-krafttraining/"
 ---
 
-Strength training is one of the most transformative activities you can take up, regardless of your age or fitness background. Whether your goal is to build muscle, lose fat, improve your health or simply feel stronger in everyday life, lifting weights delivers results like nothing else. This guide covers everything a complete beginner needs to know to walk into the gym with confidence and start progressing from day one.
+Getting started with strength training can feel intimidating, whether at a gym or in your own [home gym](/en/guides/home-gym/). Between unfamiliar machines, contradictory advice on social media and the fear of doing something wrong, many people give up before they even begin. This guide aims to give you everything you need to start with confidence, building solid foundations that will carry you throughout your entire fitness journey.
 
-## Why strength training matters
+## Progression timeline: what to expect
 
-Before diving into technique and programming, it helps to understand why strength training deserves a place in your routine. The benefits extend well beyond aesthetics:
+Before you begin, it helps to set realistic expectations. Here is what you can anticipate over the coming weeks:
 
-- **Increased muscle mass** -- More muscle means a higher resting metabolic rate and a more resilient body.
-- **Stronger bones** -- Resistance training stimulates bone density, reducing the risk of osteoporosis as you age.
-- **Better posture and joint health** -- Balanced muscle development corrects imbalances that cause chronic pain.
-- **Improved mental health** -- Studies consistently link resistance exercise to reduced anxiety and depression symptoms.
-- **Functional strength** -- Carrying groceries, climbing stairs, picking up your kids -- everything becomes easier.
+| Period | Physical | Performance | Mental |
+|---|---|---|---|
+| **Weeks 1-2** | Few visible changes. Frequent soreness (DOMS). | Learning the movements. Weights are light but increase quickly. | High motivation, sometimes intimidation at the gym. Unusual fatigue. |
+| **Weeks 3-4** | Slight toning. Soreness decreases. | Weights go up fast thanks to neural adaptations. Coordination improves noticeably. | Training starts becoming a habit. Confidence grows. |
+| **Weeks 6-8** | First visible changes: firmer muscles, improved posture. Clothes start fitting differently. | Significant strength gains (often +30 to 50% on main lifts). Technique becomes more fluid. | Sense of competence. Training is part of the routine. |
+| **Weeks 12+** | Clearly visible physical changes. Measurable muscle gain (1 to 3 kg of muscle in 3 months for men, roughly half for women). | Linear progression starts to slow down. You are lifting weights you never imagined at the start. | Training identity is established. You understand your body and its responses. |
 
-## The warm-up: preparing your body
+These benchmarks are averages. Your progression will depend on your genetics, [nutrition](/en/guides/nutrition-training/) (protein 1.6 to 2.2 g/kg, surplus of 300 to 500 kcal for muscle gain), sleep (7 to 9 hours) and consistency.
 
-Never skip the warm-up. Ten to fifteen minutes of low-intensity activity prepares your muscles, joints and nervous system for the work ahead. A proper warm-up reduces injury risk and actually improves performance during the session.
+## Self-assessment before you start
 
-### General warm-up (5 minutes)
+Before your first session, evaluate your baseline mobility. These three simple tests will help you identify any limitations to address right away.
 
-Start with light cardio to raise your heart rate and body temperature:
+### Test 1: squat depth
 
-- Brisk walking or light jogging on the treadmill
-- Cycling at low resistance
-- Rowing machine at an easy pace
-- Jumping jacks or skipping rope
+Stand with feet shoulder-width apart, toes slightly turned out. Lower into a squat as deep as possible with arms extended in front of you.
 
-### Dynamic stretching (5 minutes)
+- **Pass**: you descend below parallel (hip crease below the knee), heels on the floor, without your back rounding.
+- **Fail**: heels lift off the ground, back rounds or you cannot reach parallel.
+- **What to do**: work on ankle mobility (calf stretches, wall-facing squats), hip mobility (90/90, frog stretch) and start with goblet squats with a heel wedge if needed.
 
-Follow up with dynamic movements that take your joints through their full range of motion:
+### Test 2: shoulder reach
 
-- **Arm circles** -- Forward and backward, small to large.
-- **Leg swings** -- Front to back and side to side while holding a wall.
-- **Hip circles** -- Loosen up the hips with controlled rotations.
-- **Bodyweight squats** -- 10-15 reps focusing on depth and control.
-- **Cat-cow stretches** -- Mobilize the spine on all fours.
+Reach one arm over the shoulder (elbow pointing up) and the other under (elbow pointing down). Try to touch your fingers behind your back.
 
-### Specific warm-up
+- **Pass**: your fingers touch or overlap on both sides.
+- **Fail**: a gap of more than 5 cm between fingers, or a strong asymmetry between left and right.
+- **What to do**: stretch the pecs (in a doorway), perform external rotations with a resistance band, and stretch the rotator cuff. Favor dumbbells over barbells for the bench press until your mobility improves.
 
-Before each exercise, perform 1-2 light sets with an empty bar or very light weight. This lets your body rehearse the movement pattern and prepares the target muscles.
+### Test 3: hip hinge
 
-## Proper form: the foundation of everything
+Stand with your back against a wall, then take one step forward. Push your hips back while keeping a slight knee bend, until your glutes touch the wall. Your back should stay straight.
 
-Form is the single most important thing for a beginner to focus on. Lifting with poor technique at best limits your progress and at worst causes injury. Follow these universal principles:
+- **Pass**: you feel a stretch in the hamstrings, your back stays neutral, you control the movement.
+- **Fail**: your back rounds, no sensation in the hamstrings, loss of balance.
+- **What to do**: practice the hip hinge with a stick along your back (contact at the head, upper back and sacrum). Start the Romanian deadlift with very light dumbbells, focusing on pushing the hips back.
 
-- **Neutral spine** -- Maintain the natural curve of your spine during every lift. Avoid rounding your lower back or excessively arching.
-- **Controlled tempo** -- Lower the weight slowly (2-3 seconds) and lift with purpose. Never let momentum do the work.
-- **Full range of motion** -- Go through the complete movement arc. Partial reps build partial muscles.
-- **Stable base** -- Feet should be firmly planted, core engaged. Avoid shifting or leaning during the lift.
-- **Ego at the door** -- The weight on the bar matters far less than how well you move it.
+If you fail one or more tests, do not panic. Incorporate the corrective work into your warm-up and begin your program normally with appropriate weights. Mobility will improve gradually with practice.
 
-### Breathing technique
+## The fundamentals to master first
 
-Proper breathing stabilizes your core and supports the spine under load. The standard approach is called the **Valsalva maneuver**:
+### The warm-up: a non-negotiable step
 
-1. Take a deep breath into your belly before the rep begins.
-2. Brace your core as if someone were about to punch you in the stomach.
-3. Hold that breath during the hardest portion of the lift (the concentric phase).
-4. Exhale as you complete the rep or at the top of the movement.
+Before every session, spend 10 to 15 minutes warming up. The goal is to raise your body temperature, improve joint mobility and prepare your nervous system for the effort ahead.
 
-For lighter isolation work, simply exhale during the effort and inhale during the return. The key is never holding your breath for multiple reps in a row.
+#### Complete warm-up protocol (13 minutes)
+
+**Phase 1 -- Light cardio (5 minutes)**
+
+The objective is to raise body temperature and blood flow. Choose one of these options:
+- Brisk walking on an inclined treadmill (5-8% incline)
+- Stationary bike (light resistance, moderate cadence)
+- Rowing machine (moderate pace, 18-22 strokes/minute)
+- Jump rope (steady rhythm, no need to go fast)
+
+You should feel a light warmth and a slightly elevated heart rate, without being out of breath.
+
+**Phase 2 -- Joint mobility (3 minutes)**
+
+Perform 10 reps of each movement, slowly and smoothly:
+- Arm circles forward then backward
+- Trunk rotations (arms extended, pivot left to right)
+- Hip circles (as if spinning a hula hoop)
+- Deep squats holding a support (lower slowly, hold 2 seconds at the bottom)
+- Leg swings front to back (10 per leg, holding a support)
+- Cat/cow (on all fours, alternate rounding and arching the back) if you have a mat
+
+**Phase 3 -- Specific warm-up (5 minutes)**
+
+Progressive sets of the main exercise in your session. Example for a goblet squat with a working weight of 20 kg:
+- 10 reps with no weight (bodyweight squat)
+- 8 reps with 8 kg
+- 5 reps with 14 kg
+- 3 reps with 18 kg
+- Ready for working sets at 20 kg
+
+Rest 30 to 60 seconds between warm-up sets. The specific warm-up prepares your joints, tendons and nervous system for the loads you are about to use.
+
+Do not confuse warming up with static stretching. Static stretches before training can actually reduce your performance. Save them for after the session or rest days. For more on injury prevention, see our guide on [recovery and injury prevention](/en/guides/recovery-injury-prevention/).
+
+### Proper form: your top priority
+
+Execution technique is the cornerstone of strength training. Correct form ensures the target muscle works effectively and significantly reduces the risk of injury. Here are the universal principles to follow:
+
+- **Full range of motion**: perform each rep through the entire range your mobility allows. A half squat stimulates less muscle than a full squat.
+- **Control the weight**: if you cannot control the lowering phase (eccentric) of a movement, the weight is too heavy. Aim for a 2-second descent, a 1-second pause at the bottom, then a controlled lift.
+- **Neutral spine**: keep your spine in a neutral position on most exercises. This means no excessive rounding or exaggerated arching of the back.
+- **Core engagement**: brace your abs as if someone were about to punch you in the stomach. This bracing protects your back and stabilizes your body.
+
+### Breathing: a performance tool
+
+Breathing plays a crucial role in strength training. The go-to technique is the Valsalva maneuver:
+
+1. Take a deep breath before starting the rep.
+2. Hold your breath and brace your abs during the hardest phase of the movement (the ascent of a squat, the push of a bench press).
+3. Exhale once the concentric phase is complete, or at the lockout point.
+
+This technique creates intra-abdominal pressure that stabilizes the spine and allows you to produce more force. For light isolation exercises, continuous breathing (exhale while pushing, inhale while lowering) is sufficient.
 
 ## Choosing your first exercises
 
-As a beginner, you should build your program around **compound movements** -- exercises that work multiple joints and muscle groups simultaneously. These give you the most bang for your buck and build a strong foundation.
+As a beginner, focus on compound (multi-joint) movements. These exercises recruit multiple muscle groups simultaneously, allowing you to build a solid foundation with a limited number of exercises. To understand the difference between compound and isolation exercises, see our [dedicated guide](/en/guides/compound-vs-isolation/).
 
-### Essential compound exercises
+### Pushing movements
 
-- **Squat** -- Targets quads, glutes, hamstrings and core. Start with goblet squats if the barbell feels intimidating.
-- **Bench press** -- Works chest, shoulders and triceps. Use dumbbells if you lack a spotter.
-- **Deadlift** -- Builds the entire posterior chain: back, glutes, hamstrings. Romanian deadlifts are a great variation to learn first.
-- **Overhead press** -- Develops shoulders and triceps while demanding core stability.
-- **Barbell or dumbbell row** -- Strengthens the lats, rhomboids and biceps for a balanced upper body.
+- **Bench press**: chest, front delts, triceps. Start with dumbbells if the barbell is too heavy.
+- **Overhead press**: shoulders, triceps, upper chest. The dumbbell version is often more accessible at the beginning.
 
-### Supportive isolation exercises
+### Pulling movements
 
-Add one or two isolation movements at the end of each session to target lagging areas:
+- **Dumbbell row**: lats, rhomboids, biceps. Excellent for balancing out pushing movements and preserving shoulder health.
+- **Lat pulldown (or assisted pull-ups)**: lats, biceps. If you cannot do pull-ups, the lat pulldown is a perfect alternative.
 
-- **Bicep curls** -- Dumbbell or barbell for arm development.
-- **Tricep pushdowns** -- Cable-based movement for the back of the arms.
-- **Lateral raises** -- Builds the side delts for wider-looking shoulders.
-- **Leg curls or extensions** -- Isolate the hamstrings or quads if needed.
-- **Face pulls** -- Excellent for rear delt and rotator cuff health.
+### Lower body movements
 
-## Beginner program structure: full body 3 days per week
+- **Goblet squat**: quads, glutes. Hold a dumbbell against your chest. This is the best way to learn the squat pattern before moving to the barbell.
+- **Romanian deadlift**: hamstrings, glutes, lower back. Start with dumbbells to learn the hip hinge.
+- **Lunges**: quads, glutes, stabilizers. Excellent for working each leg independently and correcting imbalances.
 
-A full-body routine performed three times per week is the gold standard for beginners. It hits every muscle group with enough frequency to learn the movements quickly while allowing ample recovery between sessions. For a ready-made template you can follow from day one, see our beginner workout program.
+## Beginner program structure: full body 3 times per week
 
-> **Day A -- Full Body**
+The full body program is ideal for beginners for several reasons (also see our detailed article on [beginner strength training programs](/en/guides/workout-programs/)):
+
+- Every muscle group is trained 3 times per week, maximizing motor learning.
+- High frequency allows regular practice of the fundamental movements.
+- 3 sessions per week are enough to progress while leaving sufficient recovery time.
+
+> **Session A**
 >
-> - Squat: 3 sets x 8-10 reps
-> - Bench press: 3 x 8-10
-> - Barbell row: 3 x 8-10
-> - Overhead press: 2 x 10-12
-> - Face pulls: 2 x 15
-> - Plank: 3 x 30-45 seconds
+> - Goblet squat: 3 sets x 10 reps
+> - Dumbbell bench press: 3 x 10
+> - Single-arm dumbbell row: 3 x 10 per arm
+> - Dumbbell shoulder press: 3 x 10
+> - Plank: 3 x 30 seconds
 
-> **Day B -- Full Body**
+> **Session B**
 >
-> - Romanian deadlift: 3 sets x 8-10 reps
-> - Incline dumbbell press: 3 x 10-12
-> - Lat pulldown (or pull-ups): 3 x 8-10
-> - Lateral raises: 2 x 12-15
-> - Bicep curls: 2 x 10-12
-> - Tricep pushdowns: 2 x 10-12
+> - Dumbbell Romanian deadlift: 3 x 10
+> - Incline dumbbell press: 3 x 10
+> - Lat pulldown: 3 x 10
+> - Dumbbell lunges: 3 x 10 per leg
+> - Bicep curls: 2 x 12
+> - Tricep extensions: 2 x 12
 
-Alternate Day A and Day B across the week, for example: Monday -- Day A, Wednesday -- Day B, Friday -- Day A. The following week, start with Day B. Rest at least one full day between sessions.
+Alternate sessions A and B with at least one rest day between each session. Example: Monday (A), Wednesday (B), Friday (A), following Monday (B), and so on.
 
-### Sets, reps and rest periods
+## Progressive overload: the engine of your results
 
-As a beginner, keep your programming simple:
+The most important concept in strength training is **progressive overload**. Your body adapts to the stimuli you impose on it. If the stimulus stays the same, progress stops. Here is how to progress in practice:
 
-- **Sets**: 2-3 per exercise is sufficient. Total weekly volume per muscle group should be around 10-15 sets.
-- **Reps**: 8-12 reps for most exercises. This range builds both strength and muscle.
-- **Rest**: 2-3 minutes between sets of compound lifts, 60-90 seconds for isolation exercises.
+### The double progression method
 
-## Progressive overload: the engine of progress
+This is the simplest and most effective method for a beginner:
 
-Progressive overload is the principle that your body adapts to the demands placed on it, so you must gradually increase those demands to keep progressing. Without it, you plateau. With it, you build muscle and strength week after week.
+1. Choose a rep range (for example, 8-12).
+2. Start with a weight that allows you to do 8 clean reps.
+3. Each session, try to add one rep to each set.
+4. When you reach 12 reps on all sets, increase the weight by 2 to 2.5 kg and start back at 8 reps.
 
-### How to apply progressive overload
+As a beginner, you benefit from what are known as "beginner gains." Your nervous system learns to recruit muscle fibers more efficiently, enabling rapid progress before muscle mass has actually increased much. Make the most of this period: you will never progress this fast again.
 
-There are several ways to progressively overload. As a beginner, the simplest methods work best:
+### Keeping a training log
 
-1. **Add reps** -- If the program calls for 3 x 8, try to hit 3 x 9 next week, then 3 x 10.
-2. **Add weight** -- Once you can complete all prescribed reps with good form, increase the weight by 1-2.5 kg (upper body) or 2.5-5 kg (lower body).
-3. **Add sets** -- Gradually increase from 2 sets to 3 as your work capacity grows.
-4. **Improve technique** -- A deeper squat or longer pause at the bottom counts as overload even at the same weight.
-
-### Tracking your progress
-
-You cannot improve what you do not measure. Log every session: exercises, sets, reps and weights used. This allows you to see progress over time and make informed decisions about when to increase the load. An app like AIVancePro makes this effortless with automatic tracking and progression suggestions.
+Systematically record your performance: exercise, weight used, number of sets and reps. Without tracking, it is impossible to know whether you are progressing. AIVancePro lets you automatically track every session and visualize your progress over time.
 
 ## Common beginner mistakes
 
-Avoiding these pitfalls will save you months of frustration and potential setbacks:
+### 1. Going too heavy, too fast
 
-- **Lifting too heavy too soon** -- Your muscles grow faster than your tendons and ligaments. Start lighter than you think you need to and build up gradually.
-- **Program hopping** -- Switching routines every week prevents you from tracking real progress. Stick with one program for at least 8-12 weeks.
-- **Neglecting legs** -- Squats and deadlifts are not optional. Lower body training triggers systemic growth hormones that benefit your entire physique.
-- **Ignoring recovery** -- Muscles grow during rest, not during training. Sleep 7-9 hours per night and eat enough protein (1.6-2.2 g per kg of bodyweight). Our [nutrition and training guide](/en/guides/nutrition-training/) breaks down exactly how much to eat and what to prioritize.
-- **Chasing the pump over progression** -- Feeling a burn during the workout feels good but means nothing without progressive overload over time.
-- **Skipping warm-ups** -- Cold muscles and joints are injury-prone. Five minutes of preparation can save months of rehabilitation.
-- **Overcomplicating things** -- You do not need ten exercises per session, fancy techniques or expensive supplements. Master the basics first.
+This is the number one mistake. Ego pushes people to load the bar to impress, but the result is degraded technique, compensations and, often, injury. The weight should always serve the technique, never the other way around.
 
-## When to switch to an intermediate program
+**Solution**: start with weights you can handle perfectly for 10-12 reps. Film yourself regularly to check your form. If your technique breaks down before the end of the set, reduce the weight. The first 4 to 8 weeks are for learning the movements, not for lifting heavy.
 
-The beginner phase does not last forever. Eventually, a full-body 3x/week program will stop delivering consistent progress. Here are signs that you are ready to move on:
+### 2. Skipping the warm-up
 
-- **Stalled linear progression** -- You can no longer add weight to the bar every week or two despite good sleep, nutrition and recovery.
-- **6-12 months of consistent training** -- Most people exhaust beginner gains within this timeframe.
-- **Solid technique on all main lifts** -- You can perform squats, bench, deadlift and overhead press with consistent, safe form.
-- **Desire for more volume or specialization** -- You want to train a specific muscle group more frequently or focus on strength versus hypertrophy.
+Many beginners want to "save time" by jumping straight into working sets. A cold muscle is a vulnerable muscle. Joint and tendon injuries often happen during the first sets, when the body is not prepared.
 
-### What comes next
+**Solution**: follow the 3-phase warm-up protocol described above. Those 13 minutes are an investment, not a waste of time. If you are truly short on time, shorten the session itself, never the warm-up.
 
-Intermediate programs typically introduce higher weekly volume and split routines:
+### 3. Not logging sessions
 
-- **Upper/Lower split (4 days)** -- Two upper-body and two lower-body sessions per week.
-- **Push/Pull/Legs (5-6 days)** -- Dedicated sessions for pushing muscles, pulling muscles and legs.
-- **Periodization** -- Planned variation in volume and intensity across weeks and months.
+Without a training log, you have no idea whether you are progressing. You risk lifting the same weights for months without realizing it, or not knowing what weight to use from one session to the next.
 
-The transition should be gradual. Add one training day before restructuring everything at once. When you are ready, our guide on [creating an effective training program](/en/guides/create-training-program/) walks you through selecting a split, setting volume and planning progression.
+**Solution**: use an app like AIVancePro to record every set (exercise, weight, reps, [RPE](/en/guides/understanding-rpe/)). Before each session, review your previous performance and set a concrete goal: one more rep, or 1 kg more.
 
-## Final advice for the road ahead
+### 4. Constantly switching programs (program hopping)
 
-Strength training is a long game. The results you build in the first year -- learning proper form, establishing the habit, building a foundation of strength -- will serve you for decades. Be patient, be consistent, and trust the process. Every rep you perform with good form is an investment in your future self.
+A new program every week means zero measurable progress. The body needs time to adapt to a stimulus. Constant changes prevent that adaptation and keep you stuck at the beginner stage forever.
 
-Start with the basics, track your progress, eat well, sleep enough, and increase the weight when you are ready. That is the entire formula. Everything else is a bonus.
+**Solution**: pick a program suited to your level (like the full body program in this guide) and follow it for a minimum of 8 to 12 weeks. Judge the results based on objective data: are the weights going up? Are the reps increasing? See our guide on [creating an effective training program](/en/guides/create-training-program/) to structure your approach.
+
+### 5. Neglecting nutrition
+
+You can train perfectly, but if your diet does not follow, results will be disappointing. Muscles need protein to rebuild and calories to fuel growth.
+
+**Solution**: aim for 1.6 to 2.2 g of protein per kg of body weight, spread across 3 to 4 meals. If your goal is muscle gain, maintain a moderate caloric surplus of 300 to 500 kcal per day. If your goal is body recomposition (fat loss + muscle gain, common in beginners), eat at maintenance or a slight deficit with high protein intake. Our [nutrition and training guide](/en/guides/nutrition-training/) covers all these recommendations in detail.
+
+## First session checklist
+
+You have your program and your warm-up is dialed in: it is time to hit the gym. Here is everything you need to know to make that first session go smoothly.
+
+### What to bring
+
+- **Water bottle** (500 ml minimum): drink regularly between sets.
+- **Towel**: to wipe down machines and benches after use (mandatory in most gyms).
+- **Notebook or phone**: to log your sets and weights (or use AIVancePro).
+- **Padlock** if the gym has lockers (check in advance).
+- **Headphones** (optional): music helps you stay focused.
+
+### What to wear
+
+- **Flat, stable shoes**: running shoes with thick, soft soles are not recommended for squats and deadlifts (instability). Choose flat shoes like Converse, futsal shoes or weightlifting shoes. As a last resort, train in socks for leg exercises.
+- **Comfortable clothing**: a t-shirt or tank top and shorts or leggings that do not restrict your movement. Avoid jeans.
+- **No bulky jewelry**: rings, large watches and long necklaces can get in the way or caught in machines.
+
+### Gym etiquette
+
+- **Re-rack your weights** after every exercise. This is the golden rule.
+- **Wipe down equipment** with your towel after use.
+- **Do not monopolize equipment**: if someone is waiting, offer to share (alternate sets).
+- **Do not leave your belongings on benches** you are not using.
+- **Ask before taking plates** from a station that looks occupied.
+- **Avoid giving unsolicited advice** to other gym-goers.
+- **Film yourself discreetly**: it is useful for checking your form, but do not film others without their consent.
+
+## When to move to an intermediate program
+
+You are no longer a beginner when you meet these criteria:
+
+- **Technique mastered**: you execute the fundamental movements with correct and consistent form, even under fatigue.
+- **Linear progression stalled**: you can no longer add weight or reps each session despite good recovery.
+- **Mind-muscle connection**: you can clearly feel which muscles are working on each exercise.
+- **Established habits**: training has been part of your routine for at least 6 months of consistent practice.
+
+At this point, you can consider more advanced programs like Push/Pull/Legs (PPL), Upper/Lower or specialization programs. [Creating an effective training program](/en/guides/create-training-program/) is covered in our dedicated guide. You will also want to learn how to [manage your intensity with RPE](/en/guides/understanding-rpe/) and understand the basics of [periodization](/en/guides/periodization-basics/).
+
+## FAQ
+
+### Can I start strength training with zero athletic experience?
+
+Absolutely. Strength training is one of the most accessible physical activities. Unlike team sports or running, you have complete control over the load and the pace. Start with very light weights (or even just bodyweight) to learn the movements, then progress gradually. "Beginner gains" are all the more dramatic when you start from scratch.
+
+### How long before I see visible results?
+
+Performance results (strength, endurance) appear within the first 2 to 3 weeks. Visible physical changes typically take 6 to 12 weeks with regular training (3 times per week) and [proper nutrition](/en/guides/nutrition-training/). Patience is essential: take monthly photos under the same conditions to objectively track your progress.
+
+### Should I take supplements as a beginner?
+
+No. Supplements are not necessary for making progress, especially at the beginning. Focus on the fundamentals first: adequate protein (1.6 to 2.2 g/kg from whole foods), quality sleep (7 to 9 hours in a room at 18-20 degrees Celsius), and training consistency. If your diet is on point and you struggle to meet your protein needs, a whey protein shake can be convenient, but it is never mandatory.
+
+### Am I at risk of injury from strength training?
+
+Strength training is statistically one of the least traumatic sports, provided you respect proper technique and progress gradually. The vast majority of gym injuries come from loads that are too heavy, poor form or insufficient warm-up -- three mistakes this guide teaches you to avoid. If you experience joint pain (different from muscle soreness), reduce the load or modify the exercise, and consult a professional if the pain persists. Our guide on [recovery and injury prevention](/en/guides/recovery-injury-prevention/) goes deeper into this topic.
+
+The key takeaway: strength training is a marathon, not a sprint. The foundations you lay now will determine the quality of your future progress. Master the basics, be patient and stay consistent.

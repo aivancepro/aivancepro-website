@@ -15,144 +15,209 @@ alternates:
   de: "https://aivancepro.fr/de/ratgeber/rpe-intensitaet-verstehen/"
 ---
 
-How hard should you train? This is one of the most important questions in strength training, and RPE (Rate of Perceived Exertion) is one of the best tools for answering it. Instead of blindly following fixed percentages that may not reflect how you feel on any given day, RPE lets you adjust your training intensity in real time based on your actual performance capacity. This guide explains the RPE scale, how it relates to other intensity measures, and how to use it effectively in your programming.
+Intensity is one of the most important training variables, but also one of the most misunderstood. Many lifters train either too close to failure on every set (risking overtraining) or too far from it (insufficient stimulus). The RPE scale offers a simple yet powerful tool for precisely dosing effort and optimizing every session.
 
 ## The RPE scale explained
 
-The RPE scale used in strength training is a 1-10 rating that describes how difficult a set was based on how many more reps you could have performed. It was adapted from Borg's original RPE scale by powerlifting coach Mike Tuchscherer and has since become standard in evidence-based training.
+RPE (Rate of Perceived Exertion) is a subjective scale that measures how difficult a set was. Adapted to strength training by powerlifter Mike Tuchscherer, it ranges from 1 to 10:
 
-> **The RPE scale for resistance training**
+> **The RPE scale for strength training**
 >
-> - **RPE 10** -- Maximum effort. Could not have done one more rep. Absolute failure.
-> - **RPE 9.5** -- Could not have done more reps, but could have added a tiny bit more weight.
-> - **RPE 9** -- Could have done 1 more rep.
-> - **RPE 8.5** -- Could definitely have done 1 more rep, possibly 2.
-> - **RPE 8** -- Could have done 2 more reps.
-> - **RPE 7.5** -- Could have done 2-3 more reps.
-> - **RPE 7** -- Could have done 3 more reps. Speed starts to slow slightly.
-> - **RPE 6** -- Could have done 4 more reps. Moderate effort, good speed.
-> - **RPE 5 and below** -- Light effort, warm-up weight.
+> - **RPE 10**: maximum effort. Could not do one more rep, no matter what. Complete muscular failure.
+> - **RPE 9.5**: could perhaps have done half a rep more, but not a full one.
+> - **RPE 9**: could have done 1 more rep.
+> - **RPE 8.5**: could have done 1 to 2 more reps.
+> - **RPE 8**: could have done 2 more reps.
+> - **RPE 7**: could have done 3 more reps. Moderate effort.
+> - **RPE 6**: could have done 4 more reps. Heavy warm-up or technique work.
+> - **RPE 5 and below**: warm-up, active recovery.
 
-In practice, most of your training should fall between RPE 6 and RPE 9. Sets below RPE 6 are typically warm-ups, and sets at RPE 10 (true failure) should be rare in a well-designed program.
+RPE is subjective, and that is precisely its strength. It automatically adapts to how you feel on any given day: if you slept poorly, your RPE 8 will be reached at a lighter load than usual, and that is perfectly normal.
 
-## RPE vs RIR: two sides of the same coin
+## RPE vs RIR: what is the difference?
 
-**RIR (Reps in Reserve)** is an alternative way to express the same concept. While RPE rates the difficulty of the set, RIR counts how many reps you could have done before failure:
+RIR (Reps In Reserve) is a complementary scale that measures the number of reps you could have done beyond the set before reaching failure.
 
-- RPE 10 = 0 RIR (no reps left)
-- RPE 9 = 1 RIR (one rep left)
+The relationship between RPE and RIR is direct:
+
+- RPE 10 = 0 RIR (zero reps in reserve)
+- RPE 9 = 1 RIR
 - RPE 8 = 2 RIR
 - RPE 7 = 3 RIR
 - RPE 6 = 4 RIR
 
-Both systems communicate the same information. Some people find it easier to think in terms of "how many reps could I still do?" (RIR) while others prefer the rating scale (RPE). Use whichever feels more intuitive to you.
+RIR is often considered more intuitive for [beginners](/en/guides/beginner-strength-training/) because the question "how many more reps could I have done?" is more concrete than "what was my effort level out of 10?" In practice, both scales are interchangeable.
 
-## RPE and 1RM percentage: the relationship
+## Calibrating RPE with bar speed
 
-RPE and percentage of one-rep max (%1RM) are related but not interchangeable. The same percentage can feel like a different RPE depending on how many reps you perform and how you feel that day.
+Bar speed is an objective indicator that complements the subjective RPE assessment. Learning to read bar speed is one of the most reliable ways to calibrate your perception of effort, especially on compound movements.
 
-### Approximate RPE-to-percentage chart
+| RPE | Bar speed | Description |
+|---|---|---|
+| **RPE 6** | Normal, smooth speed | The bar moves at a constant speed. No perceptible slowdown. You could easily accelerate. |
+| **RPE 7** | Slight slowdown on the last rep | The bar stays smooth but you notice the last rep is a bit slower than the first. |
+| **RPE 8** | Noticeable slowdown on the last 2 reps | Speed visibly decreases. You have to push intentionally harder to finish the set. Technique stays clean. |
+| **RPE 8.5** | Marked slowdown, 1 to 2 reps left | The last rep is noticeably slower. You can tell the next one would be a grind. |
+| **RPE 9** | Grind on the last rep | The last rep is a fight. The bar slows down considerably or even briefly stalls before completing the movement. You know one more would mean failure. |
+| **RPE 9.5** | Severe grind, bar nearly motionless | The last rep takes 3 to 5 seconds. The bar barely moves. Half a rep more might be possible, but not a full one. |
+| **RPE 10** | The bar stops or comes back down | Complete muscular failure. The bar does not clear the sticking point despite maximum effort, or you can only complete the rep with severely degraded form. |
 
-Here is a general guideline for a given RPE at different rep counts (assuming average conditions):
+For lifters equipped with a velocity tracker (GymAware, Vitruve, etc.), RPE can be correlated with precise m/s figures. But for the majority of lifters, visual observation is sufficient. Film your sets from the side and compare the speed of the first and last rep.
 
-> **RPE / %1RM reference (approximate)**
->
-> - **1 rep at RPE 10** = 100% 1RM
-> - **1 rep at RPE 9** = ~96% 1RM
-> - **1 rep at RPE 8** = ~92% 1RM
-> - **3 reps at RPE 9** = ~89% 1RM
-> - **3 reps at RPE 8** = ~86% 1RM
-> - **5 reps at RPE 9** = ~84% 1RM
-> - **5 reps at RPE 8** = ~80% 1RM
-> - **8 reps at RPE 9** = ~77% 1RM
-> - **8 reps at RPE 8** = ~74% 1RM
-> - **10 reps at RPE 9** = ~73% 1RM
-> - **10 reps at RPE 8** = ~68% 1RM
+## The relationship between RPE and 1RM percentage
 
-These numbers vary between individuals. A trained lifter with excellent muscular endurance might do more reps at a given percentage than someone with a more neural/strength profile. Use the chart as a starting point and refine it based on your own experience.
+The 1RM (one-rep max) percentage is the traditional method for prescribing intensity. RPE and %1RM are not opposing concepts but complementary ones. Here is a detailed correspondence:
 
-### When to use percentages vs RPE
+| Reps | RPE 6 | RPE 7 | RPE 8 | RPE 9 | RPE 10 |
+|---|---|---|---|---|---|
+| **1** | ~85% | ~89% | ~92% | ~96% | 100% |
+| **2** | ~82% | ~86% | ~89% | ~93% | ~97% |
+| **3** | ~79% | ~84% | ~86% | ~90% | ~93% |
+| **4** | ~76% | ~81% | ~84% | ~87% | ~90% |
+| **5** | ~74% | ~78% | ~81% | ~85% | ~87% |
+| **6** | ~71% | ~75% | ~78% | ~82% | ~85% |
+| **7** | ~68% | ~73% | ~76% | ~79% | ~82% |
+| **8** | ~66% | ~70% | ~73% | ~76% | ~79% |
+| **10** | ~62% | ~66% | ~69% | ~72% | ~75% |
+| **12** | ~58% | ~62% | ~65% | ~68% | ~71% |
+| **15** | ~53% | ~57% | ~60% | ~63% | ~66% |
 
-- **Use percentages** when you have a recent, accurate 1RM and want precise loading prescriptions. Good for structured peaking programs.
-- **Use RPE** when your 1RM is unknown or outdated, when your day-to-day performance varies, or when you want the flexibility to adjust based on how you feel.
-- **Combine both** for the best results: prescribe a target percentage and an RPE cap. For example, "work up to 3 x 5 at 80% 1RM, but do not exceed RPE 8." This hybrid approach works especially well when [creating a structured training program](/en/guides/create-training-program/) that balances consistency with daily flexibility.
+These values are approximations based on averages. Your individual strength profile may vary. An endurance-oriented lifter will complete more reps at 80% than an explosive lifter. Use this table as a starting point, then adjust based on your experience.
+
+The advantage of RPE over %1RM is adaptability. Your 1RM fluctuates daily depending on sleep, stress, nutrition and accumulated fatigue. A program based solely on percentages ignores these fluctuations. RPE integrates them automatically.
+
+### When to use %1RM
+
+- To structure a program over several weeks (plan progression) -- see our guide on [periodization](/en/guides/periodization-basics/)
+- For beginners who have not yet developed effort perception
+- As a starting point, then adjusted by RPE
+
+### When to use RPE
+
+- To adjust loads in real time during a session
+- For intermediate and advanced lifters who know their body well
+- To manage fatigue and avoid overtraining
+
+## RPE by exercise type
+
+Not all exercises lend themselves to the same RPE level. Recovery cost, injury risk and assessment reliability vary depending on the type of movement.
+
+| Exercise type | Examples | Recommended RPE (working sets) | Rationale |
+|---|---|---|---|
+| **Heavy compounds** | Squat, deadlift, barbell bench press | RPE 7 to 8.5 | Very high recovery cost. Injury risk increases sharply beyond RPE 9. Technique must remain impeccable. |
+| **Light / secondary compounds** | Dumbbell rows, dumbbell overhead press, lunges, hip thrust | RPE 7.5 to 9 | Less technically demanding than heavy compounds. You can push a bit closer to failure without major risk. |
+| **Isolation** | Curls, lateral raises, leg extension, leg curl, flyes | RPE 8 to 10 | Muscular failure is low-cost in terms of recovery and carries almost no injury risk. Pushing to RPE 9-10 is worthwhile, especially toward the end of a training block. |
+| **Machines** | Leg press, chest press, rowing machine, Smith machine | RPE 8 to 10 | The guided movement eliminates the need for stabilization. Failure is safe. Ideal for pushing sets to high RPE without a spotter. |
+
+As a general rule: the more technically demanding an exercise is and the heavier the load on the spine, the more conservative you should be with RPE. The simpler and more isolated an exercise is, the closer you can push to failure.
 
 ## Using RPE in your programming
 
-RPE-based programming prescribes sets based on effort level rather than fixed weights. This automatically adjusts the training stimulus to your daily readiness.
+### Prescribing intensity with RPE
 
-### How to prescribe RPE
+Rather than writing "squat 4 x 5 @ 80%", an RPE-based program prescribes "squat 4 x 5 @ RPE 8." This means: find the weight that allows you to do 5 reps with 2 reps in reserve. To integrate RPE into a full plan, see our guide on [creating an effective training program](/en/guides/create-training-program/).
 
-A typical RPE-based prescription looks like this:
+In practice, this works as follows:
 
-> **Example: RPE-based squat session**
+1. Warm up progressively, increasing the load.
+2. Perform your first working set and assess the RPE.
+3. If it was too easy (RPE 6-7 instead of 8), add 2.5 to 5 kg.
+4. If it was too hard (RPE 9-10 instead of 8), remove 2.5 to 5 kg.
+5. Record the weight used for your next session.
+
+### Week-to-week progression
+
+RPE allows for natural progression. Example over a 4-week block:
+
+> **RPE progression block**
 >
-> - Squat: Work up to a top set of 5 at RPE 8
-> - Back-off sets: 3 x 5 at RPE 7 (drop ~5-8% from the top set)
+> - Week 1: 4 x 5 @ RPE 7 (3 reps in reserve)
+> - Week 2: 4 x 5 @ RPE 7.5
+> - Week 3: 4 x 5 @ RPE 8 (2 reps in reserve)
+> - Week 4: 3 x 5 @ RPE 6 (deload)
 
-On a great day, your top set at RPE 8 might be 120 kg. On a bad day, it might be 110 kg. Either way, you are training at the right intensity for that session. This is the core advantage of RPE: automatic adjustment.
+Each week, the target RPE increases slightly, pushing you to use heavier loads or move closer to failure. The deload week allows accumulated fatigue to dissipate before starting a new block, ideally with higher baseline weights. This type of block-based progression is at the heart of [training periodization](/en/guides/periodization-basics/).
 
-### RPE targets for different training goals
+## Adjusting RPE based on circumstances
 
-- **Hypertrophy training**: RPE 7-9. Most sets should leave 1-3 reps in the tank. Occasional sets to failure are acceptable for isolation exercises.
-- **Strength training**: RPE 8-9.5. Working closer to maximal loads requires higher RPE, but avoid RPE 10 on compound lifts regularly.
-- **Deload sessions**: RPE 5-7. The work should feel easy and leave you feeling refreshed, not challenged. Deloads are a key element of [training periodization](/en/guides/periodization-basics/), where planned lighter weeks allow accumulated fatigue to dissipate.
-- **Technique practice**: RPE 6-7. Light enough to focus on form, heavy enough to feel the movement pattern.
+One of the great advantages of RPE is its ability to account for your overall state. However, you need a clear decision framework to avoid consistently under- or over-dosing your sessions. Here is an adjustment guide based on common factors:
+
+| Circumstance | Target RPE adjustment | Practical example |
+|---|---|---|
+| **Poor night of sleep** (< 6h or very disrupted sleep) | -1 RPE | Target RPE 8 → work at RPE 7. Reduce load by 5 to 7%. |
+| **High stress** (exams, work deadline, conflict) | -0.5 to -1 RPE | Target RPE 8 → work at RPE 7 or 7.5. Chronic stress raises cortisol and reduces recovery capacity. |
+| **Insufficient nutrition** (low-calorie day, missed meal) | -0.5 RPE | Target RPE 8 → work at RPE 7.5. Available energy is reduced. |
+| **Exceptional day** (slept well, ate well, motivated, no stress) | +0.5 RPE maximum | Target RPE 8 → work at RPE 8.5. Never exceed +0.5 above the plan, even on the best days. Keep margin for the rest of the cycle. |
+| **Residual soreness** (DOMS from the previous session) | No adjustment | DOMS do not reduce force production capacity. Warm up thoroughly and start normally. |
+| **Mild joint pain** | Reduce load, modify the exercise | Never push through joint pain. Switch to a pain-free variation and consult a professional if it persists. See our guide on [recovery and injury prevention](/en/guides/recovery-injury-prevention/). |
+
+**Key rule**: when in doubt, always go with the lower RPE. A session at RPE 7 instead of 8 is still productive. A session at RPE 10 when you were fatigued can cost you several extra recovery days.
 
 ## Autoregulating your sessions
 
-Autoregulation means adjusting your training in real time based on performance feedback. RPE is the primary tool for autoregulation. Here is how it works in practice:
+Autoregulation is the primary advantage of RPE. Instead of blindly following a predetermined percentage, you adjust the load to match your daily state.
 
-### Step-by-step autoregulated session
+### On days when everything clicks
 
-1. **Warm up progressively** -- Start with the empty bar and work up in increments. Pay attention to how each weight feels.
-2. **Assess your readiness** -- Your warm-up sets reveal your daily capacity. If weights that normally feel like RPE 5 feel like RPE 7, it is not a great day.
-3. **Hit your target RPE** -- Rather than chasing a fixed number on the bar, load the weight that produces the prescribed RPE for your target reps.
-4. **Adjust back-off work accordingly** -- If your top set was lower than expected, reduce your back-off sets proportionally.
-5. **Log everything** -- Record the weight, reps, sets and RPE for every working set. This data drives future programming decisions.
+If a weight that normally corresponds to RPE 8 feels like RPE 7, go ahead and add a little weight. These days are valuable: take advantage of them to push slightly beyond your plan, without exceeding the target RPE by more than 0.5 points.
 
-### When to push and when to pull back
+### On bad days
 
-- **Push forward** when weights feel light, bar speed is fast and your warm-ups exceed expectations. These are the days to chase a PR or add an extra set.
-- **Pull back** when everything feels heavy, you are fatigued from poor sleep, or you notice persistent aches. Reduce the load to hit the target RPE rather than forcing the prescribed weight.
-- **Never force a bad day** -- Training at RPE 9-10 when your body is at 70% capacity is a recipe for injury and excessive fatigue. It is always better to have a productive session at a lower weight than to grind through a dangerous one at the planned load.
+If the usual load feels like RPE 9 or 10 from the first set, reduce the weight to respect the prescribed RPE. This is the smart decision: forcing through with degraded technique does not produce a better stimulus and increases injury risk.
 
-## RPE for compound vs isolation exercises
+### What matters: the overall trend
 
-RPE works differently for big compound lifts and small isolation exercises. Understanding this distinction is important for accurate self-assessment.
+Do not worry about daily fluctuations. What counts is the trend over several weeks. If the weight you lift at RPE 8 gradually increases over the months, you are progressing, even if some sessions feel weaker than others.
 
-### Compound exercises (squat, bench, deadlift, rows)
+## Common RPE assessment mistakes
 
-RPE is most accurate and most useful for compound movements because:
+Even experienced lifters make assessment errors. Here are the four most frequent traps and how to avoid them.
 
-- You can clearly feel the difference between 1, 2 and 3 reps in reserve.
-- Bar speed provides an objective feedback signal (a slow rep = higher RPE).
-- The fatigue from these exercises is systemic, so RPE captures overall readiness well.
-- Stopping 1-2 reps short of failure on compounds is critical for managing joint stress and CNS fatigue.
+### 1. Incomplete range of motion (truncated ROM)
 
-### Isolation exercises (curls, lateral raises, leg extensions)
+A quarter squat always feels easier than a full squat. If you shorten the range of motion to "handle the weight," your real RPE is much higher than you think. An RPE 7 at half depth often corresponds to an RPE 9 or 10 at full depth.
 
-RPE is less reliable for isolation exercises because:
+**Solution**: always assess your RPE based on a full, standardized range of motion. Film your sets to verify that depth stays consistent from week to week.
 
-- The burning sensation from metabolic stress makes it hard to judge how many reps you truly have left.
-- Isolation exercises produce less systemic fatigue, so training closer to or at failure is both safer and more productive.
-- Small muscles fatigue quickly, and the difference between 1 and 2 reps in reserve is harder to perceive.
+### 2. Using momentum (cheating)
 
-For isolation work, a practical approach is to train in the RPE 8-10 range. Going to failure on curls or lateral raises is perfectly fine and often desirable. Reserve the careful RPE management for your big compound lifts.
+On curls, lateral raises or rows, it is easy to compensate for fatigue with body momentum. You think you are at RPE 8 because you completed your 10 reps, but the last 3 were done with a trunk swing.
 
-## Getting better at rating RPE
+**Solution**: RPE only counts reps performed with strict form. If you have to cheat to finish the set, you are already beyond the prescribed RPE. Reduce the weight.
 
-Accurate RPE assessment is a skill that improves with practice. Here is how to develop it:
+### 3. Comparing RPE across different exercises
 
-- **Record your sets** -- Video allows you to see bar speed objectively. Compare sets you rated RPE 7 versus RPE 9 and notice the visual difference.
-- **Rate every working set** -- Make RPE logging a habit, not an occasional thing. Over weeks and months, your self-assessment accuracy improves dramatically. Consistent logging also helps when tracking your fitness progress and identifying long-term trends.
-- **Calibrate with AMRAP sets** -- Occasionally, perform a set to true failure (AMRAP -- As Many Reps As Possible) at a known weight. Compare the result with what you predicted. If you expected 2 more reps but only got 1, you are overestimating your reserves.
-- **Accept imprecision** -- RPE is subjective by nature. Being accurate within half a point (e.g., RPE 8 vs 8.5) is excellent. Do not stress about perfect precision.
-- **Use bar speed as a guide** -- If the concentric phase (lifting portion) takes more than 3-4 seconds on a compound lift, you are likely at RPE 9 or above.
+An RPE 8 on the squat and an RPE 8 on the bicep curl are not the same experience. The squat recruits hundreds of muscles and generates massive systemic fatigue. The curl is localized to one small muscle. Many lifters underestimate RPE on big compounds ("it felt fine, I was okay") and overestimate it on isolation ("I couldn't lift my arm anymore").
 
-## Common RPE mistakes
+**Solution**: calibrate your RPE separately for each exercise. With experience, you will develop an internal scale for each movement. Occasionally pushing to failure (RPE 10) safely allows you to recalibrate your perception.
 
-- **Always training at RPE 10** -- Going to failure on every set maximizes fatigue without proportionally increasing growth. Most sets should be RPE 7-9.
-- **Sandbagging (rating RPE too high)** -- If you rate every set RPE 9 but your bar speed is fast and you look comfortable, you are underestimating your capacity. Push yourself honestly.
-- **Ignoring RPE on bad days** -- The entire point of RPE is to adjust on bad days. If you ignore your RPE rating and load the bar based on what you "should" lift, you lose the benefit of autoregulation.
-- **Not tracking RPE data** -- RPE without logging is just guessing. Write it down so you can analyze trends over time.
+### 4. Confusing alertness with actual capacity
+
+After a coffee or a pre-workout, you feel alert and energetic. But that state of alertness does not necessarily reflect your muscular capacity. Conversely, a session started in a state of fatigue can turn out to be surprisingly productive once the warm-up is done.
+
+**Solution**: do not judge your RPE before completing at least 2 specific warm-up sets. RPE assessment happens set by set, not when you walk into the gym. Trust bar speed (see the section above), not your mood.
+
+## Learning to calibrate your RPE
+
+RPE accuracy improves with experience. Here is how to develop this skill:
+
+1. **Log your RPE after every set**: make it a habit to assess immediately after racking the bar. AIVancePro lets you record RPE for each set to track your calibration over time.
+2. **Compare against actual failure**: occasionally, push a set to failure (safely, with a spotter) to calibrate your perception. If you thought you were at RPE 8 but then did 4 more reps, your actual RPE was closer to 6.
+3. **Bar speed**: learn to observe bar speed. The slower it gets, the higher the RPE. On compound exercises, the last rep at RPE 8 should be noticeably slower than the first.
+4. **Be honest**: the natural tendency is to underestimate RPE (calling it RPE 7 when it was really RPE 9). Honesty with yourself is essential for the tool to work.
+
+As a general rule, if your technique starts to break down, you are at RPE 9 at minimum. Form should stay clean up to RPE 8.
+
+## FAQ
+
+### Is RPE suitable for beginners?
+
+RPE is harder to use for beginners because they have not yet developed the proprioceptive awareness needed to accurately gauge their reps in reserve. Generally, beginners underestimate their capacity (they say RPE 9 when it is really RPE 7). For the first 3 to 6 months, it is recommended to combine RPE with %1RM: use percentages as a baseline, and log the perceived RPE after each set to gradually develop your calibration. See our [beginner's guide](/en/guides/beginner-strength-training/) for a complete starting point.
+
+### Should I always train at the same RPE?
+
+No. The target RPE varies depending on the phase of your program. During an accumulation phase (high volume), work at RPE 7-8. During an intensification phase, go up to RPE 8-9. During a deload week, drop to RPE 5-6. A well-designed [training program](/en/guides/create-training-program/) with proper [periodization](/en/guides/periodization-basics/) incorporates these variations in a planned manner.
+
+### How do I manage RPE when training alone, without a spotter?
+
+Without a spotter, caution is key on heavy compound exercises (barbell bench press, squat). Stay at RPE 8 maximum on these movements to maintain a safety margin. Use the safety pins on the rack for squats and bench, and favor dumbbells or machines if you want to push to RPE 9-10. Isolation exercises and machines are the best environments for exploring failure when training solo.
