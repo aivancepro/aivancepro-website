@@ -4,6 +4,7 @@ description: "Guide complet pour débuter en musculation : échauffement, forme 
 date: "2026-03-07"
 readTime: "15 min de lecture"
 tag: "Débutant"
+image: "/assets/guides/debutant-musculation.png"
 lang: "fr"
 slug: "debutant-musculation"
 canonical: "https://aivancepro.fr/guides/debutant-musculation/"
