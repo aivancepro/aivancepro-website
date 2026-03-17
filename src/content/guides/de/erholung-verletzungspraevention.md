@@ -4,6 +4,7 @@ description: "Alles über Erholung und Verletzungsprävention im Krafttraining: 
 date: "2026-03-07"
 readTime: "10 Min. Lesezeit"
 tag: "Erholung"
+image: "/assets/guides/recuperation-prevention-blessures.png"
 lang: "de"
 slug: "erholung-verletzungspraevention"
 canonical: "https://aivancepro.fr/de/ratgeber/erholung-verletzungspraevention/"

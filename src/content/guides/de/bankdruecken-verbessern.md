@@ -4,6 +4,7 @@ description: "Verbessern Sie Ihr Bankdrücken: optimale Technik, Hilfsübungen, 
 date: "2026-03-07"
 readTime: "11 Min. Lesezeit"
 tag: "Kraft"
+image: "/assets/guides/progresser-developpe-couche.png"
 lang: "de"
 slug: "bankdruecken-verbessern"
 canonical: "https://aivancepro.fr/de/ratgeber/bankdruecken-verbessern/"

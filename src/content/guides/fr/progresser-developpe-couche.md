@@ -4,6 +4,7 @@ description: "Technique optimale, exercices accessoires et programmation spécif
 date: "2026-03-07"
 readTime: "11 min de lecture"
 tag: "Force"
+image: "/assets/guides/progresser-developpe-couche.png"
 lang: "fr"
 slug: "progresser-developpe-couche"
 canonical: "https://aivancepro.fr/guides/progresser-developpe-couche/"
