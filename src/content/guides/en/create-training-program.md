@@ -25,8 +25,8 @@ Every effective program is built on three pillars: volume, intensity and frequen
 Training volume is typically measured as the total number of hard sets per muscle group per week. Research consistently shows that **10-20 sets per muscle group per week** is the optimal range for most people:
 
 - **Beginners**: 10-12 sets per muscle group per week is sufficient for rapid gains.
-- **Intermediates**: 12-16 sets hits the sweet spot for continued progress.
-- **Advanced lifters**: 16-20+ sets may be needed, though more is not always better.
+- **Intermediates**: 14-18 sets hits the sweet spot for continued progress.
+- **Advanced lifters**: 18-22+ sets may be needed, though more is not always better.
 
 Not all sets are equal. Only sets taken close to failure (within 1-3 reps of failure) count as truly stimulating sets. Easy warm-up sets do not contribute meaningfully to your weekly volume.
 
@@ -34,7 +34,7 @@ Not all sets are equal. Only sets taken close to failure (within 1-3 reps of fai
 
 Intensity can refer to two things in strength training:
 
-- **Load intensity** -- The percentage of your one-rep max (%1RM) you are lifting. Heavier loads (80-90% 1RM) build more strength; moderate loads (65-80% 1RM) are optimal for hypertrophy.
+- **Load intensity** -- The percentage of your one-rep max (%1RM) you are lifting. Heavier loads (80-90% 1RM) build more strength; moderate loads (60-80% 1RM) are optimal for hypertrophy.
 - **Effort intensity** -- How close to muscular failure you push each set, often measured by RPE (Rate of Perceived Exertion) or RIR (Reps in Reserve).
 
 For most training goals, working at **RPE 7-9** (1-3 reps from failure) provides the best stimulus-to-fatigue ratio. If you are unfamiliar with RPE, our guide on [understanding RPE and training intensity](/en/guides/understanding-rpe/) covers the scale and how to apply it. Going to absolute failure on every set increases fatigue dramatically without proportionally increasing growth.
@@ -191,7 +191,7 @@ To create your program, follow these steps:
 1. Determine how many days per week you can realistically train.
 2. Choose a split that matches that schedule.
 3. Select 3-5 exercises per session, prioritizing compound movements.
-4. Set your volume at 10-16 sets per muscle group per week.
+4. Set your volume at 10-18 sets per muscle group per week.
 5. Define a progression method (linear for beginners, double progression for intermediates).
 6. Plan deload weeks every 4-6 weeks.
 7. Track everything and adjust based on results.

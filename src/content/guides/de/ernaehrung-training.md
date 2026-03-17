@@ -30,7 +30,7 @@ Der TDEE setzt sich zusammen aus:
 
 ### Kalorienüberschuss für Muskelaufbau
 
-Um Muskeln aufzubauen, benötigen Sie einen **moderaten Kalorienüberschuss** von 200--400 kcal über Ihrem TDEE. Ein zu hoher Überschuss führt zu unnötiger Fetteinlagerung. Ziel ist eine Gewichtszunahme von etwa 0,25--0,5 kg pro Woche.
+Um Muskeln aufzubauen, benötigen Sie einen **moderaten Kalorienüberschuss** von 300--500 kcal über Ihrem TDEE. Ein zu hoher Überschuss führt zu unnötiger Fetteinlagerung. Ziel ist eine Gewichtszunahme von etwa 0,25--0,5 kg pro Woche.
 
 ### Kaloriendefizit für Fettabbau
 
@@ -52,7 +52,7 @@ Protein ist der Baustein für Muskelwachstum und -reparatur. Die wissenschaftlic
 
 Kohlenhydrate sind die primäre Energiequelle für intensives Krafttraining. Sie füllen die Glykogenspeicher in den Muskeln und unterstützen die Leistungsfähigkeit:
 
-- **Empfehlung**: 3--6 g pro kg Körpergewicht, abhängig vom Trainingsvolumen
+- **Empfehlung**: 3--7 g pro kg Körpergewicht, abhängig vom Trainingsvolumen
 - **Timing**: Besonders wichtig vor und nach dem Training
 - **Quellen**: Haferflocken, Reis, Kartoffeln, Vollkornbrot, Obst, Nudeln
 

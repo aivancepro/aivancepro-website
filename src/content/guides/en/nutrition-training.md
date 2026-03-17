@@ -33,7 +33,7 @@ For example, an 80 kg person training four times per week would need approximate
 
 ### Caloric surplus for muscle gain
 
-To build muscle efficiently, eat **200-400 calories above maintenance**. A larger surplus speeds up gains but also increases fat accumulation. Aim for 0.25-0.5 kg of weight gain per week. If you are gaining faster, you are likely adding unnecessary fat.
+To build muscle efficiently, eat **300-500 calories above maintenance**. A larger surplus speeds up gains but also increases fat accumulation. Aim for 0.25-0.5 kg of weight gain per week. If you are gaining faster, you are likely adding unnecessary fat.
 
 ### Caloric deficit for fat loss
 

@@ -25,8 +25,8 @@ Jeder Trainingsplan basiert auf drei fundamentalen Variablen. Wer diese versteht
 Das Trainingsvolumen beschreibt die **Gesamtarbeit**, die Sie in einer Trainingseinheit oder pro Woche leisten. Es wird häufig als Anzahl der Arbeitssätze pro Muskelgruppe pro Woche gemessen. Die aktuelle Forschung zeigt klare Richtlinien:
 
 - **Anfänger**: 10--12 Sätze pro Muskelgruppe pro Woche sind ausreichend
-- **Fortgeschrittene**: 12--20 Sätze pro Muskelgruppe pro Woche für optimales Wachstum
-- **Erfahrene**: Bis zu 20--25 Sätze, verteilt auf mehrere Einheiten
+- **Fortgeschrittene**: 14--18 Sätze pro Muskelgruppe pro Woche für optimales Wachstum
+- **Erfahrene**: Bis zu 18--22+ Sätze, verteilt auf mehrere Einheiten
 
 Wichtig: Mehr ist nicht immer besser. Es gibt einen Punkt, an dem zusätzliches Volumen mehr schadet als nützt -- das sogenannte **Junk Volume**. Wenn die Qualität der Sätze nachlässt, ist es Zeit aufzuhören.
 
@@ -35,7 +35,7 @@ Wichtig: Mehr ist nicht immer besser. Es gibt einen Punkt, an dem zusätzliches 
 Die Intensität bezieht sich darauf, **wie schwer** Sie trainieren, typischerweise gemessen als Prozentsatz Ihres Einermaximums (1RM) oder als [RPE (Rate of Perceived Exertion)](/de/ratgeber/rpe-intensitaet-verstehen/). Je nach Ziel variiert die ideale Intensität:
 
 - **Maximalkraft**: 85--95 % des 1RM, 1--5 Wiederholungen
-- **Hypertrophie**: 65--85 % des 1RM, 6--12 Wiederholungen
+- **Hypertrophie**: 60--80 % des 1RM, 6--12 Wiederholungen
 - **Kraftausdauer**: 50--65 % des 1RM, 12--20+ Wiederholungen
 
 Für den Muskelaufbau zeigt die Forschung, dass ein breiter Wiederholungsbereich (6--30) effektiv ist, solange die Sätze nah am Muskelversagen ausgeführt werden. Dennoch ist der Bereich von 6--12 Wiederholungen aus praktischen Gründen am effizientesten.

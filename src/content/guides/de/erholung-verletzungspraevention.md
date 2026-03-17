@@ -30,7 +30,7 @@ Schlaf ist der mächtigste Erholungsfaktor überhaupt. Während des Schlafs sch�
 - Streben Sie **7--9 Stunden** Schlaf pro Nacht an
 - Halten Sie einen **regelmäßigen Schlaf-Wach-Rhythmus** ein, auch am Wochenende
 - Vermeiden Sie **Bildschirme** mindestens 30 Minuten vor dem Schlafengehen
-- Halten Sie das Schlafzimmer **kühl (16--19 °C)** und dunkel
+- Halten Sie das Schlafzimmer **kühl (18--20 °C)** und dunkel
 - Vermeiden Sie **Koffein** nach 14 Uhr
 - Trainieren Sie nicht unmittelbar vor dem Schlafengehen (mindestens 2--3 Stunden Abstand)
 
