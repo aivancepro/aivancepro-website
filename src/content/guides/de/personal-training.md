@@ -4,7 +4,7 @@ description: "Entdecken Sie die Vorteile von Personal Training und wie KI das pe
 date: "2026-03-07"
 readTime: "6 min Lesezeit"
 tag: "Coaching"
-image: "/assets/guides/coaching-personnel.png"
+image: "/assets/guides/coaching-personnel.webp"
 lang: "de"
 slug: "personal-training"
 canonical: "https://aivancepro.fr/de/ratgeber/personal-training/"

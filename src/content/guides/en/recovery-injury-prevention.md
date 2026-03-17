@@ -4,7 +4,7 @@ description: "Complete guide to recovery and injury prevention for strength trai
 date: "2026-03-07"
 readTime: "10 min read"
 tag: "Recovery"
-image: "/assets/guides/recuperation-prevention-blessures.png"
+image: "/assets/guides/recuperation-prevention-blessures.webp"
 lang: "en"
 slug: "recovery-injury-prevention"
 canonical: "https://aivancepro.fr/en/guides/recovery-injury-prevention/"

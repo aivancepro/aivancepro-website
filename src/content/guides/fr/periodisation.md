@@ -4,7 +4,7 @@ description: "Comprendre la périodisation en musculation : linéaire, ondulée,
 date: "2026-03-07"
 readTime: "14 min de lecture"
 tag: "Avancé"
-image: "/assets/guides/periodisation.png"
+image: "/assets/guides/periodisation.webp"
 lang: "fr"
 slug: "periodisation"
 canonical: "https://aivancepro.fr/guides/periodisation/"

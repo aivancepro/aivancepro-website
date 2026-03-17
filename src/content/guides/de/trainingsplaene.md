@@ -4,7 +4,7 @@ description: "Full Body, Oberkörper/Unterkörper, Push/Pull/Legs oder Bro Split
 date: "2026-03-07"
 readTime: "8 min Lesezeit"
 tag: "Programmierung"
-image: "/assets/guides/programmes-entrainement.png"
+image: "/assets/guides/programmes-entrainement.webp"
 lang: "de"
 slug: "trainingsplaene"
 canonical: "https://aivancepro.fr/de/ratgeber/trainingsplaene/"

@@ -4,7 +4,7 @@ description: "Découvrez les avantages du personal training et comment l'IA rév
 date: "2026-03-07"
 readTime: "6 min de lecture"
 tag: "Coaching"
-image: "/assets/guides/coaching-personnel.png"
+image: "/assets/guides/coaching-personnel.webp"
 lang: "fr"
 slug: "coaching-personnel"
 canonical: "https://aivancepro.fr/guides/coaching-personnel/"

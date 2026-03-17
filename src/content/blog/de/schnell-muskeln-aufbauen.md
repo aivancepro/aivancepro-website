@@ -10,7 +10,7 @@ lang: "de"
 slug: "schnell-muskeln-aufbauen"
 canonical: "https://aivancepro.fr/de/blog/schnell-muskeln-aufbauen/"
 keywords: "schnell Muskeln aufbauen, Muskelaufbau Tipps, Muskelmasse aufbauen, Hypertrophie Training, Muskelaufbau Ernährung, Krafttraining Anfänger, Muskeln aufbauen 2026"
-image: "/assets/blog/comment-prendre-du-muscle-rapidement.png"
+image: "/assets/blog/comment-prendre-du-muscle-rapidement.webp"
 author: "Theo Stanmore"
 alternates:
   fr: "https://aivancepro.fr/blog/comment-prendre-du-muscle-rapidement/"

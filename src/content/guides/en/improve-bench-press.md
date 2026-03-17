@@ -4,7 +4,7 @@ description: "Complete guide to improving your bench press. Optimal technique, a
 date: "2026-03-07"
 readTime: "11 min read"
 tag: "Strength"
-image: "/assets/guides/progresser-developpe-couche.png"
+image: "/assets/guides/progresser-developpe-couche.webp"
 lang: "en"
 slug: "improve-bench-press"
 canonical: "https://aivancepro.fr/en/guides/improve-bench-press/"

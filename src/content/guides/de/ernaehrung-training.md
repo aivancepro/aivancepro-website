@@ -4,7 +4,7 @@ description: "Der vollständige Ratgeber zu Ernährung und Training: Kalorienbed
 date: "2026-03-07"
 readTime: "18 Min. Lesezeit"
 tag: "Ernährung"
-image: "/assets/guides/nutrition-musculation.png"
+image: "/assets/guides/nutrition-musculation.webp"
 lang: "de"
 slug: "ernaehrung-training"
 canonical: "https://aivancepro.fr/de/ratgeber/ernaehrung-training/"

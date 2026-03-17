@@ -4,7 +4,7 @@ description: "Was ist der Unterschied zwischen Compound- (Mehrgelenk-) und Isola
 date: "2026-03-07"
 readTime: "7 min Lesezeit"
 tag: "Training"
-image: "/assets/guides/polyarticulaire-vs-isolation.png"
+image: "/assets/guides/polyarticulaire-vs-isolation.webp"
 lang: "de"
 slug: "grunduebungen-vs-isolation"
 canonical: "https://aivancepro.fr/de/ratgeber/grunduebungen-vs-isolation/"

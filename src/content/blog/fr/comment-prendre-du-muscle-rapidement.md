@@ -10,7 +10,7 @@ lang: "fr"
 slug: "comment-prendre-du-muscle-rapidement"
 canonical: "https://aivancepro.fr/blog/comment-prendre-du-muscle-rapidement/"
 keywords: "comment prendre du muscle rapidement, prise de masse, musculation débutant, gagner du muscle, programme musculation, nutrition musculation, hypertrophie"
-image: "/assets/blog/comment-prendre-du-muscle-rapidement.png"
+image: "/assets/blog/comment-prendre-du-muscle-rapidement.webp"
 author: "Theo Stanmore"
 alternates:
   fr: "https://aivancepro.fr/blog/comment-prendre-du-muscle-rapidement/"

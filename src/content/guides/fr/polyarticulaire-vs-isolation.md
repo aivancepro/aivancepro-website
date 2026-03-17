@@ -4,7 +4,7 @@ description: "Quelle différence entre exercices compound (polyarticulaires) et 
 date: "2026-03-07"
 readTime: "7 min de lecture"
 tag: "Entraînement"
-image: "/assets/guides/polyarticulaire-vs-isolation.png"
+image: "/assets/guides/polyarticulaire-vs-isolation.webp"
 lang: "fr"
 slug: "polyarticulaire-vs-isolation"
 canonical: "https://aivancepro.fr/guides/polyarticulaire-vs-isolation/"

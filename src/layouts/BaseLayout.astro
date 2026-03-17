@@ -236,11 +236,18 @@ const guidePosts = (await getCollection('guides', ({ data }) => data.lang === la
         numbers.forEach(function(el) { counterObs.observe(el); });
       }
 
-      // Back to top
+      // Back to top (throttled)
       var btn = document.getElementById('backToTop');
       if (btn) {
+        var btTicking = false;
         window.addEventListener('scroll', function() {
-          btn.classList.toggle('visible', window.scrollY > 500);
+          if (!btTicking) {
+            requestAnimationFrame(function() {
+              btn.classList.toggle('visible', window.scrollY > 500);
+              btTicking = false;
+            });
+            btTicking = true;
+          }
         }, { passive: true });
         btn.addEventListener('click', function() {
           window.scrollTo({ top: 0, behavior: 'smooth' });

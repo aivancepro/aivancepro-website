@@ -10,7 +10,7 @@ lang: "en"
 slug: "how-to-build-muscle-fast"
 canonical: "https://aivancepro.fr/en/blog/how-to-build-muscle-fast/"
 keywords: "how to build muscle fast, muscle building tips, gain muscle quickly, hypertrophy training, muscle growth diet, workout for muscle, beginner muscle building"
-image: "/assets/blog/comment-prendre-du-muscle-rapidement.png"
+image: "/assets/blog/comment-prendre-du-muscle-rapidement.webp"
 author: "Theo Stanmore"
 alternates:
   fr: "https://aivancepro.fr/blog/comment-prendre-du-muscle-rapidement/"

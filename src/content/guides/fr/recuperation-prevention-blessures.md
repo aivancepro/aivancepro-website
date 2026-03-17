@@ -4,7 +4,7 @@ description: "Sommeil, stretching, mobilité, deload et signes de surentraîneme
 date: "2026-03-07"
 readTime: "10 min de lecture"
 tag: "Récupération"
-image: "/assets/guides/recuperation-prevention-blessures.png"
+image: "/assets/guides/recuperation-prevention-blessures.webp"
 lang: "fr"
 slug: "recuperation-prevention-blessures"
 canonical: "https://aivancepro.fr/guides/recuperation-prevention-blessures/"

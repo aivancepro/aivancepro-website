@@ -4,7 +4,7 @@ description: "Calories, protéines, glucides, lipides et timing des repas : le g
 date: "2026-03-07"
 readTime: "18 min de lecture"
 tag: "Nutrition"
-image: "/assets/guides/nutrition-musculation.png"
+image: "/assets/guides/nutrition-musculation.webp"
 lang: "fr"
 slug: "nutrition-musculation"
 canonical: "https://aivancepro.fr/guides/nutrition-musculation/"

@@ -4,7 +4,7 @@ description: "Complete guide to nutrition for strength training. Calories, macro
 date: "2026-03-07"
 readTime: "18 min read"
 tag: "Nutrition"
-image: "/assets/guides/nutrition-musculation.png"
+image: "/assets/guides/nutrition-musculation.webp"
 lang: "en"
 slug: "nutrition-training"
 canonical: "https://aivancepro.fr/en/guides/nutrition-training/"
