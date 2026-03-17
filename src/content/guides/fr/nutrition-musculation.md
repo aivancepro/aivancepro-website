@@ -22,9 +22,9 @@ Votre corps dépense de l'énergie en permanence. Cette dépense totale, appelé
 
 ### Le surplus calorique : pour prendre du muscle
 
-Pour construire du muscle, votre corps a besoin de plus d'énergie qu'il n'en dépense. Un surplus de **200 à 400 calories par jour** est généralement suffisant pour maximiser la synthèse protéique musculaire sans accumuler trop de graisse.
+Pour construire du muscle, votre corps a besoin de plus d'énergie qu'il n'en dépense. Un surplus de **300 à 500 calories par jour** est généralement suffisant pour maximiser la synthèse protéique musculaire sans accumuler trop de graisse.
 
-Un surplus trop important (500+ calories) ne vous fera pas prendre du muscle plus vite, mais augmentera significativement le stockage de graisse. Le corps a une capacité limitée de synthèse protéique quotidienne, et l'excédent calorique au-delà de cette limite est stocké sous forme de tissu adipeux.
+Un surplus trop important (700+ calories) ne vous fera pas prendre du muscle plus vite, mais augmentera significativement le stockage de graisse. Le corps a une capacité limitée de synthèse protéique quotidienne, et l'excédent calorique au-delà de cette limite est stocké sous forme de tissu adipeux.
 
 ### Le déficit calorique : pour perdre du gras
 
@@ -38,7 +38,7 @@ Une méthode simple pour estimer votre TDEE :
 
 1. Calculez votre métabolisme de base : poids (kg) x 22 pour les hommes, poids (kg) x 20 pour les femmes.
 2. Multipliez par un facteur d'activité : 1,4 (sédentaire), 1,6 (modérément actif), 1,8 (très actif).
-3. Ajustez en fonction de votre objectif : +300 kcal pour la prise de masse, -400 kcal pour la sèche.
+3. Ajustez en fonction de votre objectif : +400 kcal pour la prise de masse, -400 kcal pour la sèche.
 
 Ces formules ne sont que des estimations. Pesez-vous chaque matin à jeun et calculez la moyenne hebdomadaire. Si votre poids ne bouge pas après 2 semaines, ajustez de 200 calories dans la direction souhaitée.
 
@@ -64,7 +64,7 @@ Les glucides sont la source d'énergie principale pour les efforts intenses comm
 
 L'apport recommandé varie selon l'objectif :
 
-- **Prise de masse** : 4 à 6 g/kg/jour
+- **Prise de masse** : 4 à 7 g/kg/jour
 - **Maintien** : 3 à 5 g/kg/jour
 - **Sèche** : 2 à 4 g/kg/jour (réduits progressivement)
 

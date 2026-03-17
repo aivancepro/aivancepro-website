@@ -28,7 +28,7 @@ Pour un pratiquant de musculation, **7 à 9 heures de sommeil de qualité** sont
 
 - **Régularité** : couchez-vous et levez-vous à heures fixes, y compris le week-end. Le corps fonctionne sur un rythme circadien qui favorise un sommeil réparateur quand il est régulier.
 - **Écrans** : arrêtez les écrans 30 à 60 minutes avant le coucher. La lumière bleue inhibe la production de mélatonine.
-- **Température** : maintenez votre chambre entre 16 et 19 °C. Le corps a besoin de se refroidir pour entrer en sommeil profond.
+- **Température** : maintenez votre chambre entre 18 et 20 °C. Le corps a besoin de se refroidir pour entrer en sommeil profond.
 - **Caféine** : évitez la caféine après 14h. Sa demi-vie est de 5 à 6 heures, ce qui signifie que la moitié de la caféine d'un café bu à 16h est encore dans votre système à 22h.
 - **Obscurité** : utilisez des rideaux occultants ou un masque de sommeil. La moindre source lumineuse peut perturber la qualité du sommeil.
 

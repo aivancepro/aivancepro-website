@@ -23,8 +23,8 @@ Un programme d'entraînement bien construit fait la différence entre des progr�
 Le volume représente la quantité totale de travail effectué. On le mesure généralement en nombre de **séries effectives par groupe musculaire par semaine**. Les recommandations actuelles de la littérature scientifique sont :
 
 - **Débutant** : 10 à 12 séries par groupe musculaire par semaine
-- **Intermédiaire** : 12 à 18 séries par groupe musculaire par semaine
-- **Avancé** : 18 à 25+ séries par groupe musculaire par semaine
+- **Intermédiaire** : 14 à 18 séries par groupe musculaire par semaine
+- **Avancé** : 18 à 22+ séries par groupe musculaire par semaine
 
 Le volume optimal est individuel. Commencez par le bas de la fourchette et augmentez progressivement. Si vous récupérez bien et progressez, le volume est adapté. Si vous vous sentez constamment fatigué ou que vos performances baissent, vous êtes probablement au-dessus de votre capacité de récupération.
 
@@ -33,7 +33,7 @@ Le volume optimal est individuel. Commencez par le bas de la fourchette et augme
 L'intensité désigne le pourcentage de votre charge maximale (1RM) utilisé sur un exercice, ou de manière plus pratique, la proximité de l'échec musculaire ([RPE](/guides/comprendre-rpe-intensite/)). Différentes plages d'intensité produisent différents résultats :
 
 - **1-5 répétitions (85-100% 1RM)** : développement de la force maximale
-- **6-12 répétitions (65-85% 1RM)** : hypertrophie musculaire optimale
+- **6-12 répétitions (60-80% 1RM)** : hypertrophie musculaire optimale
 - **12-20+ répétitions (50-65% 1RM)** : endurance musculaire et hypertrophie complémentaire
 
 Un programme équilibré combine généralement plusieurs plages de répétitions. Les exercices composés se prêtent mieux aux charges lourdes (6-10 répétitions), tandis que les exercices d'isolation fonctionnent bien en répétitions plus élevées (12-20).
