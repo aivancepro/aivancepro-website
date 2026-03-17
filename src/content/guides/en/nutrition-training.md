@@ -15,171 +15,278 @@ alternates:
   de: "https://aivancepro.fr/de/ratgeber/ernaehrung-training/"
 ---
 
-You can train with perfect form, follow the best program in the world and sleep eight hours every night, but if your nutrition is not dialed in, you will never reach your full potential. Nutrition is the fuel that powers muscle growth, recovery and performance. This guide covers everything you need to know, from calculating your caloric needs to choosing the right supplements, with practical meal examples you can start using today.
+Training is only part of the equation. Without proper nutrition, even the best program will not deliver optimal results. For a summary of the fundamentals, also check out our article on the basics of nutrition for training. This guide covers the essential nutritional principles to support your strength training progression, whether your goal is muscle gain, fat loss or body recomposition.
 
-## Caloric needs: the foundation
+## Understanding caloric needs
 
-Before worrying about macros or meal timing, you need to understand the basic energy equation. Your body needs a certain number of calories to maintain its current weight, known as your **Total Daily Energy Expenditure (TDEE)**. What you do relative to that number determines whether you gain, lose or maintain weight.
+Your body expends energy constantly. This total expenditure, called **TDEE** (Total Daily Energy Expenditure), depends on several factors: your basal metabolic rate, your physical activity level, the thermic effect of food and your non-exercise activity (NEAT).
 
-### Calculating your TDEE
+### Caloric surplus: for building muscle
 
-A simple method is to multiply your bodyweight in kilograms by an activity factor:
+To build muscle, your body needs more energy than it expends. A surplus of **300 to 500 calories per day** is generally sufficient to maximize muscle protein synthesis without accumulating too much fat.
 
-- **Sedentary (desk job, no exercise)**: bodyweight x 28-30
-- **Lightly active (training 3x/week)**: bodyweight x 32-34
-- **Moderately active (training 4-5x/week)**: bodyweight x 34-37
-- **Very active (training 6x/week + physical job)**: bodyweight x 38-42
+An excessively large surplus (700+ calories) will not make you gain muscle faster, but will significantly increase fat storage. The body has a limited daily capacity for protein synthesis, and caloric excess beyond that limit is stored as adipose tissue.
 
-For example, an 80 kg person training four times per week would need approximately 80 x 35 = 2,800 calories per day to maintain weight. This is an estimate; adjust based on real results over 2-3 weeks.
+### Caloric deficit: for losing fat
 
-### Caloric surplus for muscle gain
+To lose fat while preserving muscle, aim for a moderate deficit of **300 to 500 calories per day**. An overly aggressive deficit increases the risk of muscle loss, decreases training performance and can disrupt your hormonal system.
 
-To build muscle efficiently, eat **300-500 calories above maintenance**. A larger surplus speeds up gains but also increases fat accumulation. Aim for 0.25-0.5 kg of weight gain per week. If you are gaining faster, you are likely adding unnecessary fat.
+During a deficit, keep your protein intake high (2.0 to 2.4 g/kg) and continue training with heavy loads. These two factors are the most important for preserving muscle mass during caloric restriction.
 
-### Caloric deficit for fat loss
+### Calculating your needs
 
-To lose fat while preserving muscle, eat **300-500 calories below maintenance**. A deficit larger than 500 calories risks muscle loss and tanked energy levels. Aim for 0.5-0.75 kg of weight loss per week. Keep protein high (see below) and maintain your training intensity.
+A simple method to estimate your TDEE:
 
-## Macronutrients: protein, carbs and fats
+1. Calculate your basal metabolic rate: bodyweight (kg) x 22 for men, bodyweight (kg) x 20 for women.
+2. Multiply by an activity factor: 1.4 (sedentary), 1.6 (moderately active), 1.8 (very active).
+3. Adjust based on your goal: +400 kcal for muscle gain, -400 kcal for fat loss.
 
-Once your caloric target is set, divide those calories among the three macronutrients. Each serves a distinct role in supporting your training.
+These formulas are only estimates. Weigh yourself every morning on an empty stomach and calculate the weekly average. If your weight does not change after 2 weeks, adjust by 200 calories in the desired direction.
+
+## Macro summary table by goal
+
+For an 80 kg man training 4 times per week, here are the recommended ranges:
+
+| Goal | Calories (kcal/day) | Protein (g/kg) | Carbs (g/kg) | Fats (g/kg) |
+|---|---|---|---|---|
+| **Muscle gain** | TDEE + 300 to 500 | 1.6 - 2.2 | 4 - 7 | 0.8 - 1.2 |
+| **Maintenance** | TDEE | 1.6 - 2.0 | 3 - 5 | 0.8 - 1.2 |
+| **Fat loss** | TDEE - 300 to 500 | 2.0 - 2.4 | 2 - 4 | 0.8 - 1.0 |
+| **Recomposition** | TDEE - 100 to + 100 | 2.0 - 2.4 | 3 - 5 | 0.8 - 1.0 |
+
+**Notes:** During a cut, protein is increased to compensate for the reduced anti-catabolic effect of the caloric surplus. For recomposition, the goal is to stay very close to maintenance, which requires high protein intake and well-[periodized](/en/guides/periodization-basics/) training to simultaneously stimulate fat loss and muscle gain.
+
+## Macronutrients in detail
 
 ### Protein: the building block
 
-Protein is the most critical macronutrient for lifters. It provides the amino acids your body uses to repair and build muscle tissue. The research is clear on optimal intake:
+Protein provides the amino acids necessary for repairing and building muscle fibers. The recommended intake for a strength training practitioner is **1.6 to 2.2 g per kg of bodyweight per day**.
 
-- **For muscle growth**: 1.6-2.2 g per kg of bodyweight per day
-- **During a cut**: aim for the higher end (2.0-2.4 g/kg) to minimize muscle loss
-- **Minimum effective dose**: 1.6 g/kg is where most of the benefit occurs
+The best protein sources are:
 
-Best protein sources include chicken breast, turkey, lean beef, fish, eggs, Greek yogurt, cottage cheese, tofu, tempeh, lentils and whey protein powder. If you are just getting started, our article on nutrition and workout basics provides a simplified overview of the essentials.
+- **Lean meats**: chicken, turkey, lean beef (20-25 g of protein per 100 g)
+- **Fish**: salmon, tuna, cod (18-25 g per 100 g)
+- **Eggs**: 6 g of protein per egg, complete amino acid profile
+- **Dairy**: cottage cheese, Greek yogurt, skyr (8-12 g per 100 g)
+- **Legumes**: lentils, chickpeas, beans (7-9 g per 100 g cooked)
 
-### Carbohydrates: the fuel
+Spread your protein across 3 to 5 meals per day, with at least 25 to 40 g per meal to maximize muscle protein synthesis.
 
-Carbs are your body's preferred energy source during intense exercise. They replenish muscle glycogen stores, which directly affect your training performance. Recommended intake:
+### Protein sources: density and value
 
-- **Moderate training (3-4x/week)**: 3-5 g per kg of bodyweight
-- **High training volume (5-6x/week)**: 5-7 g per kg of bodyweight
-- **During a cut**: reduce carbs first (before fats) but never go below 2-3 g/kg
+Not all protein sources are created equal. The **DIAAS** (Digestible Indispensable Amino Acid Score) measures a protein's quality based on its digestibility and essential amino acid profile. A score above 100 indicates a very high quality protein.
 
-Prioritize complex carb sources: oats, rice, potatoes, sweet potatoes, whole grain bread, pasta, fruits and vegetables.
+| Food | Protein / 100 g | Average cost / 100 g protein | DIAAS score |
+|---|---|---|---|
+| Chicken breast | 23 g | ~$1.50 | 108 |
+| Whole eggs | 13 g | ~$1.00 | 116 |
+| Canned tuna | 26 g | ~$1.20 | 107 |
+| Fat-free cottage cheese | 8 g | ~$1.10 | 114 |
+| Whey protein | 80 g | ~$0.70 | 109 |
+| Cooked lentils | 9 g | ~$0.60 | 64 |
+| Firm tofu | 12 g | ~$1.50 | 78 |
+| 95% lean ground beef | 21 g | ~$2.00 | 111 |
+| Salmon | 20 g | ~$2.80 | 107 |
+| Plain skyr | 11 g | ~$1.30 | 114 |
 
-### Fats: the essential nutrient
+**How to read this table:** Whey offers the best cost-to-protein ratio in terms of pure protein, but should not replace whole foods. Lentils are economical but their lower DIAAS score means they need to be combined with other sources (grains, for example) to achieve a complete amino acid profile.
 
-Dietary fat is essential for hormone production (including testosterone), vitamin absorption and overall health. Do not cut fats too low, especially during a caloric deficit:
+### Carbohydrates: the fuel for effort
 
-- **Minimum intake**: 0.8-1.0 g per kg of bodyweight
-- **Recommended range**: 0.8-1.2 g per kg, or about 25-35% of total calories
+Carbohydrates are the primary energy source for intense efforts like strength training. They replenish muscle glycogen stores, which allows you to maintain high performance during training.
 
-Focus on healthy fat sources: olive oil, avocados, nuts, seeds, fatty fish (salmon, sardines, mackerel), eggs and dark chocolate.
+Recommended intake varies by goal:
 
-## Meal timing: does it matter?
+- **Muscle gain**: 4 to 7 g/kg/day
+- **Maintenance**: 3 to 5 g/kg/day
+- **Fat loss**: 2 to 4 g/kg/day (reduced progressively)
 
-Meal timing is far less important than total daily intake, but there are a few practical guidelines worth following:
+Prioritize complex sources: rice, whole grain pasta, sweet potatoes, oats, quinoa. These foods provide stable energy and are rich in fiber and micronutrients.
 
-### Pre-workout nutrition
+### Fats: essential but often neglected
 
-Eat a meal containing protein and carbs **1.5-3 hours before training**. This ensures you have energy for the session and amino acids circulating for muscle protection. A good pre-workout meal might be chicken breast with rice, or oatmeal with a protein shake.
+Fats play a crucial role in hormone production (testosterone, growth hormones), fat-soluble vitamin absorption and cellular health. Never go below **0.8 g/kg/day**.
 
-### Post-workout nutrition
+An intake of **0.8 to 1.2 g/kg/day** is ideal. Recommended sources:
 
-The so-called "anabolic window" is not as narrow as supplement companies claim. You do not need to chug a shake within 30 minutes. However, eating a protein-rich meal **within 1-2 hours after training** is a good practice. Include carbs to replenish glycogen and protein to kickstart recovery.
+- **Olive oil**: monounsaturated fatty acids, anti-inflammatory
+- **Nuts and almonds**: healthy fats, fiber, minerals
+- **Avocado**: rich in potassium and monounsaturated fats
+- **Fatty fish**: salmon, sardines (omega-3 EPA and DHA)
+- **Egg yolks**: cholesterol necessary for hormonal synthesis
 
-### Meal frequency
+## Meal timing
 
-Eating 3-5 meals per day is a practical approach. Research shows that spreading your protein intake across at least 3-4 meals optimizes muscle protein synthesis compared to eating all your protein in one or two sittings. Each meal should contain **25-40 g of protein**.
+Nutrient timing is less important than total daily macronutrient intake. However, a few principles can optimize your results:
+
+### Around training
+
+- **Before (1-2h)**: a meal containing carbs and protein to ensure good energy levels. Example: 80 g of oats + 1 banana + 30 g whey.
+- **After (within 2h)**: a protein and carb-rich meal to kickstart recovery. Example: 150 g of chicken + 200 g of rice + vegetables.
+
+The 30-minute anabolic window after training is a myth. As long as you consume a protein-rich meal within 2 to 3 hours after your session, you optimize recovery. For more on this topic, our guide on [recovery and injury prevention](/en/guides/recovery-injury-prevention/) covers all aspects of rest and regeneration.
 
 ### Before bed
 
-A protein-rich snack before bed can support overnight recovery. Casein protein (found in cottage cheese and casein powder) digests slowly, providing a steady supply of amino acids while you sleep. For a deeper look at how sleep, nutrition and rest days work together, see our guide on [recovery and injury prevention](/en/guides/recovery-injury-prevention/).
+A slow-digesting protein source (casein, cottage cheese) before sleep can maintain protein synthesis during the night. 200 g of cottage cheese provides approximately 16 g of protein, primarily in the form of casein.
 
 ## Hydration
 
-Water is often overlooked but is critical for performance and recovery. Even mild dehydration (1-2% bodyweight loss) can reduce strength and endurance. Follow these guidelines:
+Water makes up approximately 75% of muscle tissue. Even mild dehydration (2% of bodyweight) can reduce your performance by 10 to 20%. Aim for **35 to 45 ml of water per kg of bodyweight per day**, plus an additional 500 ml to 1 liter during training.
 
-- Drink at least **35-45 ml per kg of bodyweight** daily (e.g., 2.8-3.2 liters for an 80 kg person)
-- Drink an additional **500-750 ml per hour of exercise**
-- Monitor urine color: pale yellow indicates good hydration, dark yellow means you need more water
-- Add electrolytes (sodium, potassium, magnesium) during intense or long sessions, especially in hot conditions
+Indicators of good hydration: clear to pale yellow urine throughout the day. If it is dark, you are not drinking enough.
 
-## Supplements: what works vs marketing
+## Vegetarian diet and strength training
 
-The supplement industry is worth billions, but only a handful of products are backed by solid evidence. Save your money on the rest.
+It is entirely possible to reach the recommended 1.6 to 2.2 g/kg of protein per day without meat or fish. It does, however, require more careful planning.
 
-### Supplements with strong evidence
+### The leucine challenge
 
-- **Creatine monohydrate** -- The most studied supplement in sports science. Take 3-5 g daily. It increases strength, power and muscle mass. No loading phase needed.
-- **Whey protein** -- A convenient way to hit your protein target. Not magic -- real food works just as well. Useful when you need a quick, portable protein source.
-- **Caffeine** -- 3-6 mg per kg of bodyweight 30-60 minutes before training improves performance, focus and endurance. Coffee counts.
-- **Vitamin D** -- If you live in a northern climate or spend little time outdoors, supplementing 2,000-4,000 IU daily supports bone health, immune function and potentially muscle function.
+**Leucine** is the most important amino acid for triggering muscle protein synthesis. The optimal threshold is approximately **2.5 to 3 g of leucine per meal**. Plant-based sources generally contain less leucine than animal sources: you need about 40 g of plant protein per meal to reach this threshold, compared to 25 to 30 g of animal protein.
 
-### Supplements with limited evidence
+### Combinations for a complete profile
 
-- **Beta-alanine** -- May improve endurance in high-rep sets (15+ reps). The tingling side effect is harmless but annoying.
-- **Citrulline malate** -- May slightly reduce fatigue and improve pumps. Take 6-8 g pre-workout.
-- **Omega-3 fish oil** -- Good for general health and inflammation, but its direct impact on muscle growth is modest.
+Plant proteins taken individually often have a limiting amino acid. The solution is to **combine sources** throughout the day (not necessarily in the same meal):
 
-### Supplements to skip
+- **Grains + legumes**: rice + lentils, bread + hummus, pasta + kidney beans
+- **Legumes + seeds**: chickpea salad + sunflower seeds
+- **Soy + grains**: tofu + rice, edamame + quinoa
 
-- **BCAAs** -- Unnecessary if you eat enough protein. You already get plenty of branched-chain amino acids from whole food sources.
-- **Testosterone boosters** -- None of them work. Save your money.
-- **Fat burners** -- Glorified caffeine pills with dubious additional ingredients. A caloric deficit is the only proven fat burner.
-- **Mass gainers** -- Overpriced sugar and protein. Make a smoothie with oats, banana, peanut butter and whey instead.
+### Best vegetarian sources
 
-## Practical meal examples
+- **Eggs**: complete profile, DIAAS 116 (the best vegetarian option)
+- **Dairy**: cottage cheese, whey, Greek yogurt
+- **Soy and derivatives**: tofu (12 g/100 g), tempeh (19 g/100 g), edamame (11 g/100 g)
+- **Seitan**: 25 g protein/100 g (note: low in lysine, combine with legumes)
+- **Legumes**: lentils, chickpeas, black beans
+- **Plant-based protein powders**: pea + rice blend for a complete profile
 
-Here are sample meal plans for an 80 kg lifter training 4 times per week, targeting approximately 2,800-3,000 calories (lean bulk).
+For **vegan** practitioners (no eggs or dairy), creatine and vitamin B12 supplementation is essential. A blend of plant-based protein powders (pea + rice) is a practical tool to round out intake.
 
-> **Meal 1 -- Breakfast (7:00 AM)**
+## Alcohol and strength training
+
+Alcohol is often underestimated in its impact on strength training progression. Here is what the science tells us.
+
+### Impact on protein synthesis
+
+The study by Parr et al. (2014, PLOS ONE) demonstrated that alcohol consumption after training **reduces muscle protein synthesis by approximately 24%**, even when protein intake is adequate. In practical terms, your training session produces fewer results if you consume alcohol in the hours that follow.
+
+### Hormonal impact
+
+Alcohol disrupts the hormonal environment in several ways:
+
+- **Testosterone**: heavy consumption (>5 drinks) can reduce testosterone levels by 20 to 25% for 12 to 24 hours.
+- **Cortisol**: alcohol increases cortisol secretion, a catabolic hormone that promotes muscle breakdown.
+- **Growth hormone**: nocturnal GH secretion is reduced by up to 70% after alcohol consumption.
+
+### Impact on sleep and recovery
+
+Alcohol reduces the duration of deep sleep and REM sleep, the two phases most important for muscle recovery and training adaptation consolidation. Even 2 drinks in the evening are enough to impair sleep quality. Our guide on [recovery and injury prevention](/en/guides/recovery-injury-prevention/) details the importance of sleep for progression.
+
+### Practical recommendations
+
+Total abstinence is not necessary, but a few rules help limit the impact:
+
+- **Avoid alcohol on training days**, especially within 6 hours after your session.
+- **Limit yourself to 1-2 drinks maximum** during social occasions.
+- **Stay hydrated**: alternate one glass of water for each alcoholic drink.
+- **Eat enough protein** on days when you consume alcohol -- this partially mitigates the anti-anabolic effect.
+- **Don't forget the calories**: alcohol provides 7 kcal/g, and sugary mixers easily add 200-300 kcal per drink.
+
+## Supplements: useful vs marketing
+
+### Science-backed supplements
+
+- **Creatine monohydrate**: the most studied and most effective supplement. Improves strength, power and muscle volume. Dose: 3 to 5 g per day, every day. No loading phase needed.
+- **Whey protein**: not a magic supplement, simply a practical protein source when diet falls short. 25 to 40 g per serving.
+- **Caffeine**: improves performance, focus and reduces perceived effort. 3 to 6 mg/kg, 30 to 60 minutes before training.
+- **Vitamin D**: essential if you have limited sun exposure (the majority of the population in winter). 2,000 to 4,000 IU per day.
+
+### Useless or overhyped supplements
+
+- **BCAAs**: unnecessary if your protein intake is sufficient. Whey already contains all the BCAAs you need.
+- **Fat burners**: marginally effective at best, often just overpriced caffeine.
+- **Testosterone boosters**: no over-the-counter supplement significantly increases testosterone in a healthy individual.
+- **Glutamine**: no demonstrated benefit for muscle recovery in healthy individuals.
+
+## Meal examples
+
+> **Muscle gain breakfast (~700 kcal)**
 >
 > - 100 g oats with milk
 > - 1 banana
-> - 1 scoop whey protein mixed into the oats
-> - 10 g honey
->
-> **~600 kcal | 35 g protein | 85 g carbs | 12 g fat**
+> - 3 whole scrambled eggs
+> - 10 g peanut butter
 
-> **Meal 2 -- Lunch (12:30 PM)**
+> **Balanced lunch (~600 kcal)**
 >
-> - 180 g chicken breast
-> - 200 g cooked rice
-> - Mixed vegetables (broccoli, peppers, carrots)
-> - 1 tbsp olive oil for cooking
+> - 150 g grilled chicken
+> - 200 g basmati rice
+> - Green vegetables (broccoli, green beans)
+> - 1 tablespoon olive oil
+
+> **Post-workout snack (~400 kcal)**
 >
-> **~700 kcal | 50 g protein | 70 g carbs | 18 g fat**
+> - 30 g whey in 300 ml water
+> - 1 banana
+> - 30 g mixed nuts
 
-> **Meal 3 -- Pre-workout snack (3:30 PM)**
+> **Fat loss dinner (~450 kcal)**
 >
-> - 2 rice cakes with 30 g peanut butter
-> - 1 apple
->
-> **~350 kcal | 10 g protein | 40 g carbs | 16 g fat**
+> - 200 g salmon
+> - 150 g sweet potato
+> - Green salad with avocado
+> - Lemon vinaigrette
 
-> **Meal 4 -- Post-workout dinner (7:00 PM)**
->
-> - 200 g salmon fillet
-> - 250 g sweet potatoes
-> - Large mixed salad with olive oil dressing
->
-> **~800 kcal | 45 g protein | 65 g carbs | 30 g fat**
+Adjust quantities to your individual caloric needs. The important thing is to hit your daily macronutrient targets, not to achieve perfection at every meal. To pair these nutritional principles with an adapted training plan, discover how to [create an effective training program](/en/guides/create-training-program/).
 
-> **Meal 5 -- Evening snack (9:30 PM)**
->
-> - 200 g cottage cheese
-> - 30 g almonds
-> - A handful of berries
->
-> **~350 kcal | 30 g protein | 15 g carbs | 18 g fat**
+## Tracking and adjustments
 
-**Daily total: ~2,800 kcal | 170 g protein | 275 g carbs | 94 g fat**
+Nutrition is not an exact science applied to the individual body. Calculation formulas are only starting points -- the real work lies in regular tracking and progressive adjustments.
 
-## Adjusting your nutrition over time
+### How to weigh yourself correctly
 
-Nutrition is not set-and-forget. Track your weight weekly (same conditions each time -- morning, fasted, after using the bathroom) and adjust accordingly:
+Weigh yourself **every morning, on an empty stomach, after using the bathroom**. Record the number without placing too much importance on it day to day: weight naturally fluctuates by 0.5 to 2 kg from one day to the next depending on hydration, digestion and the previous day's carb intake (1 g of stored glycogen holds approximately 3 g of water).
 
-- **Gaining too fast?** Reduce calories by 100-200 per day (cut carbs first).
-- **Not gaining at all?** Add 100-200 calories per day (add carbs around training).
-- **Losing weight too quickly during a cut?** Increase calories by 100-200 to slow the rate.
-- **Plateaued on a cut?** Reduce calories by another 100-200 or add 1-2 cardio sessions per week.
+Calculate your **weekly average** and compare averages from week to week. That is the only trend that matters.
 
-Patience is key. Give each adjustment 2-3 weeks before making another change. Your body needs time to respond. If you are new to lifting and want to pair your nutrition plan with a solid workout routine, check out our [beginner's guide to strength training](/en/guides/beginner-strength-training/).
+### When to adjust calories
+
+Do not change anything before you have **2 to 3 weeks of stable data** on the same caloric intake. The body needs time to adapt and initial fluctuations (especially at the start of a diet) do not always reflect reality.
+
+Signs that an adjustment is needed:
+
+- **Muscle gain**: if you are not gaining 0.2 to 0.5 kg per week on average, increase calories.
+- **Fat loss**: if you are not losing 0.3 to 0.7 kg per week on average, reduce calories.
+- **Maintenance**: if your weekly average drifts by more than 0.5 kg over 3 weeks, adjust.
+
+### How to adjust
+
+Proceed in increments of **+/-200 kcal** (approximately 50 g of carbs, or 25 g of carbs + 10 g of fats). Avoid sudden changes of 500+ kcal that disrupt adherence and make analysis harder.
+
+After each adjustment, wait another 2 to 3 weeks before re-evaluating. Patience is the most underrated skill in sports nutrition. To structure your progression phases over time, see our guide on [training periodization](/en/guides/periodization-basics/).
+
+### Tracking tools
+
+You do not need to weigh every food indefinitely. Two approaches work:
+
+- **Learning phase (4-8 weeks)**: weigh and track everything to calibrate your eye. Use a calorie tracking app.
+- **Autonomous phase**: once you know portion sizes, you can estimate visually. Return to precise tracking if results stall.
+
+## FAQ
+
+### Do I need to count calories?
+
+Not necessarily for life, but it is a powerful tool for understanding what you actually eat. Most people underestimate their caloric intake by 20 to 40%. Count your calories for 4 to 8 weeks to calibrate your perception of portions, then switch to visual estimation. If you plateau, return to precise tracking for a few weeks to identify the problem.
+
+### How many meals per day?
+
+The number of meals has **very little impact** on body composition as long as total macronutrient intake is met. However, to optimize protein synthesis, spreading protein across **3 to 5 meals of 25 to 40 g** is preferable to concentrating everything in 1 or 2 meals. In practice, 3 meals + 1 or 2 snacks works well for most lifters. Intermittent fasting is compatible with strength training, but makes optimal protein distribution more difficult.
+
+### Whey or casein?
+
+Both have their place. **Whey** is digested quickly (amino acid peak in 30-60 minutes), making it a good choice around training or when you need a quick intake. **Casein** digests slowly (gradual release over 6-8 hours), ideal before bed to maintain protein synthesis overnight. If you can only choose one, go with whey -- it is more versatile. Cottage cheese (rich in casein) can easily replace a casein shake before bed.
+
+### Is meal prep essential?
+
+No, but it is a considerable advantage. Preparing meals in advance (on Sunday for the week, for example) reduces mental load, improves adherence to the nutritional plan and decreases the temptation to order an unsuitable meal. Start simple: prepare 2 to 3 protein and carb sources in large batches, and assemble your meals daily. You do not need 7 identical containers to be organized.
