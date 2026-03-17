@@ -4,6 +4,7 @@ description: "Verstehen Sie die Grundlagen der Periodisierung: lineare und undul
 date: "2026-03-07"
 readTime: "14 Min. Lesezeit"
 tag: "Fortgeschritten"
+image: "/assets/guides/periodisation.png"
 lang: "de"
 slug: "periodisierung-grundlagen"
 canonical: "https://aivancepro.fr/de/ratgeber/periodisierung-grundlagen/"

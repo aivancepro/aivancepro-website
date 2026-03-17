@@ -4,6 +4,7 @@ description: "Guide to training periodization. Linear vs undulating periodizatio
 date: "2026-03-07"
 readTime: "14 min read"
 tag: "Advanced"
+image: "/assets/guides/periodisation.png"
 lang: "en"
 slug: "periodization-basics"
 canonical: "https://aivancepro.fr/en/guides/periodization-basics/"
