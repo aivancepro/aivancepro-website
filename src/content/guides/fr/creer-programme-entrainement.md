@@ -4,7 +4,7 @@ description: "Apprenez à construire un programme d'entraînement sur mesure : v
 date: "2026-03-07"
 readTime: "12 min de lecture"
 tag: "Programmation"
-image: "/assets/guides/creer-programme-entrainement.png"
+image: "/assets/guides/creer-programme-v2.png"
 lang: "fr"
 slug: "creer-programme-entrainement"
 canonical: "https://aivancepro.fr/guides/creer-programme-entrainement/"
