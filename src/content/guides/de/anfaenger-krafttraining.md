@@ -4,7 +4,6 @@ description: "Der vollständige Einsteiger-Ratgeber für Krafttraining: Aufwärm
 date: "2026-03-07"
 readTime: "15 Min. Lesezeit"
 tag: "Anfänger"
-image: "/assets/guides/debutant-musculation.png"
 lang: "de"
 slug: "anfaenger-krafttraining"
 canonical: "https://aivancepro.fr/de/ratgeber/anfaenger-krafttraining/"
