@@ -62,11 +62,11 @@ Here is a general guideline for a given RPE at different rep counts (assuming av
 > - **3 reps at RPE 9** = ~89% 1RM
 > - **3 reps at RPE 8** = ~86% 1RM
 > - **5 reps at RPE 9** = ~84% 1RM
-> - **5 reps at RPE 8** = ~81% 1RM
+> - **5 reps at RPE 8** = ~80% 1RM
 > - **8 reps at RPE 9** = ~77% 1RM
 > - **8 reps at RPE 8** = ~74% 1RM
 > - **10 reps at RPE 9** = ~73% 1RM
-> - **10 reps at RPE 8** = ~70% 1RM
+> - **10 reps at RPE 8** = ~68% 1RM
 
 These numbers vary between individuals. A trained lifter with excellent muscular endurance might do more reps at a given percentage than someone with a more neural/strength profile. Use the chart as a starting point and refine it based on your own experience.
 

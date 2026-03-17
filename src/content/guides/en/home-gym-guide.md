@@ -88,9 +88,9 @@ Building a home gym does not have to happen all at once. Here is how to phase yo
 
 You need less space than you might think. Here are the minimum requirements:
 
-- **Minimum area**: 2.5 m x 2.5 m (6.25 m2) for a barbell and bench setup. This allows enough room for a rack, a bench and space to deadlift.
-- **Ceiling height**: At least 2.3 m for overhead pressing inside a rack. If you have lower ceilings, press outside the rack or use a shorter half-rack.
-- **Ideal area**: 3 m x 4 m (12 m2) gives comfortable room for a full power cage, bench, storage and movement space.
+- **Minimum area**: 3 m x 2 m (6 m2) for a barbell and bench setup. This allows enough room for a rack, a bench and space to deadlift.
+- **Ceiling height**: At least 2.4 m for overhead pressing inside a rack. If you have lower ceilings, press outside the rack or use a shorter half-rack.
+- **Ideal area**: 3 m x 3.5 m (10 m2) gives comfortable room for a full power cage, bench, storage and movement space.
 
 ### Location options
 

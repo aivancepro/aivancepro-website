@@ -52,7 +52,9 @@ Protein ist der Baustein für Muskelwachstum und -reparatur. Die wissenschaftlic
 
 Kohlenhydrate sind die primäre Energiequelle für intensives Krafttraining. Sie füllen die Glykogenspeicher in den Muskeln und unterstützen die Leistungsfähigkeit:
 
-- **Empfehlung**: 3--7 g pro kg Körpergewicht, abhängig vom Trainingsvolumen
+- **Muskelaufbau**: 4--7 g/kg/Tag
+- **Erhaltung**: 3--5 g/kg/Tag
+- **Definitionsphase**: 2--4 g/kg/Tag (schrittweise reduzieren)
 - **Timing**: Besonders wichtig vor und nach dem Training
 - **Quellen**: Haferflocken, Reis, Kartoffeln, Vollkornbrot, Obst, Nudeln
 
@@ -99,7 +101,7 @@ Ein langsam verdauliches Protein wie Casein (z.B. Magerquark oder Skyr) kann die
 
 Ausreichende Flüssigkeitszufuhr ist für die Trainingsleistung entscheidend. Bereits ein Flüssigkeitsverlust von 2 % des Körpergewichts kann die Leistung deutlich beeinträchtigen:
 
-- **Täglicher Bedarf**: Mindestens 35 ml pro kg Körpergewicht (bei 80 kg = 2,8 Liter)
+- **Täglicher Bedarf**: 35--45 ml pro kg Körpergewicht (bei 80 kg = 2,8--3,6 Liter)
 - **Während des Trainings**: 400--800 ml pro Stunde, je nach Schwitzrate
 - **Elektrolyte**: Bei intensiven oder langen Trainingseinheiten können Elektrolyte (Natrium, Kalium, Magnesium) sinnvoll sein
 

@@ -28,7 +28,7 @@ Before diving into technique and programming, it helps to understand why strengt
 
 ## The warm-up: preparing your body
 
-Never skip the warm-up. Five to ten minutes of low-intensity activity prepares your muscles, joints and nervous system for the work ahead. A proper warm-up reduces injury risk and actually improves performance during the session.
+Never skip the warm-up. Ten to fifteen minutes of low-intensity activity prepares your muscles, joints and nervous system for the work ahead. A proper warm-up reduces injury risk and actually improves performance during the session.
 
 ### General warm-up (5 minutes)
 

@@ -68,7 +68,7 @@ Prioritize complex carb sources: oats, rice, potatoes, sweet potatoes, whole gra
 Dietary fat is essential for hormone production (including testosterone), vitamin absorption and overall health. Do not cut fats too low, especially during a caloric deficit:
 
 - **Minimum intake**: 0.8-1.0 g per kg of bodyweight
-- **Recommended range**: 1.0-1.5 g per kg, or about 25-35% of total calories
+- **Recommended range**: 0.8-1.2 g per kg, or about 25-35% of total calories
 
 Focus on healthy fat sources: olive oil, avocados, nuts, seeds, fatty fish (salmon, sardines, mackerel), eggs and dark chocolate.
 
@@ -96,7 +96,7 @@ A protein-rich snack before bed can support overnight recovery. Casein protein (
 
 Water is often overlooked but is critical for performance and recovery. Even mild dehydration (1-2% bodyweight loss) can reduce strength and endurance. Follow these guidelines:
 
-- Drink at least **35-40 ml per kg of bodyweight** daily (e.g., 2.8-3.2 liters for an 80 kg person)
+- Drink at least **35-45 ml per kg of bodyweight** daily (e.g., 2.8-3.2 liters for an 80 kg person)
 - Drink an additional **500-750 ml per hour of exercise**
 - Monitor urine color: pale yellow indicates good hydration, dark yellow means you need more water
 - Add electrolytes (sodium, potassium, magnesium) during intense or long sessions, especially in hot conditions

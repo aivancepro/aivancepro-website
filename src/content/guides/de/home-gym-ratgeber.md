@@ -79,8 +79,8 @@ Sie müssen nicht alles auf einmal kaufen. Hier ist eine sinnvolle Reihenfolge:
 
 ### Platzbedarf
 
-- **Minimum**: 2,5 x 3 m für Rack, Bank und Langhantel
-- **Ideal**: 3,5 x 4 m für komfortables Training mit Bewegungsfreiheit
+- **Minimum**: 3 x 2 m (6 m²) für Rack, Bank und Langhantel
+- **Ideal**: 6--10 m² für komfortables Training mit Bewegungsfreiheit
 - **Deckenhöhe**: Mindestens 2,4 m für Schulterdrücken und Klimmzüge
 
 ### Bodenbelag
