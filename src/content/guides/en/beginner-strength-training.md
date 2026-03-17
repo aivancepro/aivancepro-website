@@ -4,7 +4,6 @@ description: "Complete beginner's guide to strength training. Learn proper form,
 date: "2026-03-07"
 readTime: "15 min read"
 tag: "Beginner"
-image: "/assets/guides/debutant-musculation.png"
 lang: "en"
 slug: "beginner-strength-training"
 canonical: "https://aivancepro.fr/en/guides/beginner-strength-training/"
