@@ -180,6 +180,8 @@ Dies ist die einfachste und effektivste Methode für Anfänger:
 3. Versuchen Sie bei jeder Einheit, eine Wiederholung pro Satz hinzuzufügen.
 4. Wenn Sie 12 Wiederholungen in allen Sätzen schaffen, erhöhen Sie das Gewicht um 2 bis 2,5 kg und starten wieder bei 8 Wiederholungen.
 
+Der KI-Coach von [AIVancePro](https://apps.apple.com/de/app/aivancepro/id6756116760) wendet diese Methode der doppelten Progression automatisch an: Er zeigt Ihnen, wann Sie die Wiederholungen steigern und wann Sie zum nächsthöheren Gewicht wechseln sollten, angepasst an Ihr individuelles Tempo.
+
 Als Anfänger profitieren Sie von den sogenannten „Anfänger-Gains". Ihr Nervensystem lernt, Muskelfasern effizienter zu rekrutieren, was schnelle Fortschritte ermöglicht, noch bevor die Muskelmasse wesentlich zugenommen hat. Nutzen Sie diese Phase: So schnell werden Sie nie wieder Fortschritte machen.
 
 ### Ein Trainingstagebuch führen
@@ -204,7 +206,7 @@ Viele Anfänger wollen „Zeit sparen", indem sie direkt zu den Arbeitssätzen g
 
 Ohne Trainingstagebuch wissen Sie nicht, ob Sie Fortschritte machen. Sie riskieren, monatelang die gleichen Gewichte zu heben, ohne es zu merken, oder nicht zu wissen, welches Gewicht Sie von einer Einheit zur nächsten verwenden sollen.
 
-**Lösung**: Verwenden Sie eine App wie AIVancePro, um jeden Satz zu erfassen (Übung, Gewicht, Wiederholungen, [RPE](/de/ratgeber/rpe-intensitaet-verstehen/)). Schauen Sie vor jeder Einheit auf Ihre vorherigen Leistungen und setzen Sie sich ein konkretes Ziel: eine Wiederholung mehr oder 1 kg mehr.
+**Lösung**: Verwenden Sie eine App wie [AIVancePro](https://apps.apple.com/de/app/aivancepro/id6756116760), um jeden Satz zu erfassen (Übung, Gewicht, Wiederholungen, [RPE](/de/ratgeber/rpe-intensitaet-verstehen/)). Schauen Sie vor jeder Einheit auf Ihre vorherigen Leistungen und setzen Sie sich ein konkretes Ziel: eine Wiederholung mehr oder 1 kg mehr.
 
 ### 4. Ständig das Programm wechseln (Program Hopping)
 
@@ -256,6 +258,8 @@ Sie sind kein Anfänger mehr, wenn Sie diese Kriterien erfüllen:
 - **Gefestigte Gewohnheiten**: Das Training ist seit mindestens 6 Monaten regelmäßiger Praxis Teil Ihrer Routine.
 
 An diesem Punkt können Sie komplexere Programme in Betracht ziehen, wie Push/Pull/Legs (PPL), Oberkörper/Unterkörper-Split oder Spezialisierungsprogramme. Das [Erstellen eines effektiven Trainingsplans](/de/ratgeber/trainingsplan-erstellen/) wird in unserem eigenen Ratgeber behandelt. Sie sollten auch lernen, [Ihre Intensität mit RPE zu dosieren](/de/ratgeber/rpe-intensitaet-verstehen/) und die Grundlagen der [Periodisierung](/de/ratgeber/periodisierung-grundlagen/) zu verstehen.
+
+**Möchten Sie auf einer soliden Grundlage starten?** [AIVancePro](https://apps.apple.com/de/app/aivancepro/id6756116760) erstellt ein personalisiertes Anfängerprogramm, leitet Sie bei jeder Übung mit Demonstrationsvideos an und verfolgt automatisch Ihren Fortschritt. Laden Sie die App kostenlos herunter und starten Sie noch heute.
 
 ## FAQ
 

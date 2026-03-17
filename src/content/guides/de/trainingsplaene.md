@@ -276,7 +276,7 @@ Alle 2–3 Wochen das Programm zu wechseln ist einer der häufigsten Fehler. Sie
 
 ### Zu verfolgende Metriken
 
-Verfolgen Sie diese Indikatoren wöchentlich, um Ihre Progression zu bewerten:
+Verfolgen Sie diese Indikatoren wöchentlich, um Ihre Progression zu bewerten. Eine App wie [AIVancePro](https://apps.apple.com/de/app/aivancepro/id6756116760) automatisiert dieses Tracking und erstellt Trenddiagramme für jede Metrik:
 
 1. **Gehobenes Gewicht** — Steigt das Gewicht bei Ihren Hauptübungen? Streben Sie +2,5 % alle 1–2 Wochen bei Compound-Übungen an.
 2. **Gesamtvolumen** (Sätze x Wdh. x Gewicht) — Die wöchentliche Tonnage sollte einen Aufwärtstrend zeigen.
@@ -353,7 +353,7 @@ Der klassische PPL in 2x-Rotation. Stellen Sie sicher, dass Ihre Erholung (Schla
 
 ## Wie wählen Sie Ihren Split?
 
-Der beste Split ist derjenige, den Sie **regelmäßig über mehrere Monate** einhalten können. Konstanz schlägt immer theoretische Optimierung. Stellen Sie sich diese Fragen:
+Der beste Split ist derjenige, den Sie **regelmäßig über mehrere Monate** einhalten können. Konstanz schlägt immer theoretische Optimierung. Wenn Sie unsicher sind, analysiert der KI-Coach von [AIVancePro](https://apps.apple.com/de/app/aivancepro/id6756116760) Ihr Profil und Ihre Verfügbarkeit, um Ihnen den am besten geeigneten Split zu empfehlen. Stellen Sie sich diese Fragen:
 
 - **Wie viele Tage pro Woche** können Sie tatsächlich trainieren, unvorhergesehene Ereignisse eingerechnet?
 - **Seit wann** betreiben Sie Krafttraining mit korrekter Technik?
@@ -363,6 +363,8 @@ Der beste Split ist derjenige, den Sie **regelmäßig über mehrere Monate** ein
 Wenn Sie unsicher sind, beginnen Sie mit dem einfachsten Split, der mit Ihrem Zeitplan kompatibel ist. Ein gut ausgeführter Full Body 3-mal pro Woche wird immer einen PPL an 6 Tagen übertreffen, den Sie nur 3 von 4 Wochen durchhalten können.
 
 Um Ihr Programm Übung für Übung aufzubauen, lesen Sie unseren vollständigen Ratgeber zum [Erstellen eines effektiven Trainingsplans](/de/ratgeber/trainingsplan-erstellen/). Lernen Sie die Intensitätssteuerung mit unserem Artikel zu [RPE und Intensität](/de/ratgeber/rpe-intensitaet-verstehen/). Und vergessen Sie nicht, eine intelligente [Periodisierung](/de/ratgeber/periodisierung/) zu integrieren, um langfristig Fortschritte zu machen.
+
+**Möchten Sie diese Prinzipien in die Praxis umsetzen?** [AIVancePro](https://apps.apple.com/de/app/aivancepro/id6756116760) erstellt automatisch den optimalen Split basierend auf Ihrem Niveau, Ihren Zielen und Ihrem Zeitplan und passt das Programm im Laufe Ihrer Progression an. Laden Sie die App kostenlos herunter und starten Sie noch heute.
 
 ## FAQ
 

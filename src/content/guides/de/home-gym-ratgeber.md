@@ -194,7 +194,7 @@ Gebrauchte Fitnessausrüstung ist oft in ausgezeichnetem Zustand, da Gusseisen u
 
 ### Nur mit Langhantel und Rack
 
-Selbst mit minimaler Ausrüstung können Sie einen [vollständigen Trainingsplan aufbauen](/de/ratgeber/trainingsplan-erstellen/):
+Selbst mit minimaler Ausrüstung können Sie einen [vollständigen Trainingsplan aufbauen](/de/ratgeber/trainingsplan-erstellen/). Der KI-Coach von [AIVancePro](https://apps.apple.com/de/app/aivancepro/id6756116760) erstellt Programme, die an Ihre verfügbare Ausrüstung angepasst sind, ob Langhantel und Rack oder ein einfaches Kurzhantel-Set:
 
 > **Ganzkörper A**
 >
@@ -239,6 +239,8 @@ Wenn Sie [Anfänger](/de/ratgeber/anfaenger-krafttraining/) sind, ist das obige 
 - **Motivation**: Manche Trainierende brauchen die Atmosphäre eines Studios zur Motivation.
 - **Sicherheit**: Allein mit schweren Gewichten trainieren erfordert ein Rack mit korrekt eingestellten Sicherheitsablagen und gesunden Menschenverstand.
 
+**Möchten Sie das Maximum aus Ihrem Home Gym herausholen?** [AIVancePro](https://apps.apple.com/de/app/aivancepro/id6756116760) erstellt personalisierte Programme, die an Ihre verfügbare Ausrüstung angepasst sind, und verfolgt Ihren Fortschritt Einheit für Einheit. Laden Sie die App kostenlos herunter und starten Sie noch heute.
+
 Das Home Gym muss das Fitnessstudio nicht vollständig ersetzen. Viele Trainierende kombinieren beides: Home Gym für die Haupteinheiten (Langhantel, Kurzhanteln) und Fitnessstudio 1-2 Mal pro Woche für spezifische Maschinen.
 
 ## FAQ — Home Gym
@@ -247,7 +249,7 @@ Das Home Gym muss das Fitnessstudio nicht vollständig ersetzen. Viele Trainiere
 Ja, für Kraft und Hypertrophie deckt ein gut ausgestattetes Home Gym (Rack, Langhantel, Bank, Kurzhanteln) 90 % der Bedürfnisse ab. [Verbundübungen](/de/ratgeber/grunduebungen-vs-isolation/) (Kniebeuge, [Bankdrücken](/de/ratgeber/bankdruecken-verbessern/), Kreuzheben, Rudern, Schulterdrücken) sind die Grundpfeiler jedes effektiven Programms und erfordern nur Grundausstattung. Die geführten Maschinen im Studio bieten zusätzlichen Komfort für die Isolation, sind aber zum Fortschritt nicht unerlässlich. Der Schlüssel ist die Anwendung [progressiver Überlastung](/de/ratgeber/rpe-intensitaet-verstehen/) und einer angepassten [Periodisierung](/de/ratgeber/periodisierung-grundlagen/).
 
 **Wie motiviert man sich, wenn man allein zu Hause trainiert?**
-Das Fehlen der Studio-Atmosphäre ist für viele die größte Hürde. Einige Strategien: (1) Legen Sie einen festen Zeitplan fest und behandeln Sie ihn als nicht verhandelbaren Termin, (2) bereiten Sie eine eigene Playlist vor, (3) nutzen Sie eine Tracking-App, um Ihre Fortschritte zu verfolgen und die Motivation aufrechtzuerhalten, (4) filmen Sie Ihre schweren Sätze, um sie zu analysieren und Ihre technischen Fortschritte zu messen, (5) treten Sie einer Online-Community von Home-Gym-Trainierenden bei, um Ihre Leistungen zu teilen. Der Vorteil des Home Gyms ist, dass die Einstiegshürde quasi null ist: kein Anfahrtsweg, keine Ausreden.
+Das Fehlen der Studio-Atmosphäre ist für viele die größte Hürde. Einige Strategien: (1) Legen Sie einen festen Zeitplan fest und behandeln Sie ihn als nicht verhandelbaren Termin, (2) bereiten Sie eine eigene Playlist vor, (3) nutzen Sie [AIVancePro](https://apps.apple.com/de/app/aivancepro/id6756116760), um Ihre Fortschritte zu verfolgen, Ihre Progression zu visualisieren und die Motivation durch Gamification aufrechtzuerhalten, (4) filmen Sie Ihre schweren Sätze, um sie zu analysieren und Ihre technischen Fortschritte zu messen, (5) treten Sie einer Online-Community von Home-Gym-Trainierenden bei, um Ihre Leistungen zu teilen. Der Vorteil des Home Gyms ist, dass die Einstiegshürde quasi null ist: kein Anfahrtsweg, keine Ausreden.
 
 **Hält der Boden meiner Garage/Wohnung das Gewicht eines Home Gyms aus?**
 Ein typisches Home Gym (Rack + Stange + 200 kg Scheiben + Bank + Nutzer) wiegt insgesamt etwa 350-450 kg, verteilt auf 6-10 m². Garagenbetonböden tragen diese Last problemlos. In Wohnungen schreiben die Baunormen in der Regel 200-250 kg/m² Nutzlast vor, was bei guter Gewichtsverteilung (Hebeplattform, Matten) ausreicht. Das einzige reale Risiko besteht darin, eine beladene Stange aus der Höhe fallen zu lassen, was einen starken punktuellen Aufprall erzeugt. Bumper Plates und eine gute Plattform beseitigen dieses Risiko. Bei Zweifeln an einem alten Holzboden konsultieren Sie einen Fachmann.

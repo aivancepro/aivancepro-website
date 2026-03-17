@@ -84,7 +84,7 @@ Der Prozentsatz des 1RM (Einermaximum) ist die traditionelle Methode zur Vorgabe
 
 Diese Werte sind Annäherungen auf Basis von Durchschnittswerten. Ihr individuelles Kraftprofil kann abweichen. Ein ausdauerorientierter Trainierender schafft bei 80 % mehr Wiederholungen als ein explosiver Typ. Nutzen Sie diese Tabelle als Ausgangspunkt und passen Sie dann anhand Ihrer Erfahrung an.
 
-Der Vorteil von RPE gegenüber %1RM ist die Anpassungsfähigkeit. Ihr 1RM schwankt täglich je nach Schlaf, Stress, Ernährung und angesammelter Müdigkeit. Ein Programm, das ausschließlich auf Prozenten basiert, ignoriert diese Schwankungen. RPE integriert sie automatisch.
+Der Vorteil von RPE gegenüber %1RM ist die Anpassungsfähigkeit. Ihr 1RM schwankt täglich je nach Schlaf, Stress, Ernährung und angesammelter Müdigkeit. Ein Programm, das ausschließlich auf Prozenten basiert, ignoriert diese Schwankungen. RPE integriert sie automatisch. [AIVancePro](https://apps.apple.com/de/app/aivancepro/id6756116760) nutzt den RPE, den Sie bei jedem Satz erfassen, um Ihre Gewichte und Ihr Volumen in Echtzeit anzupassen, Einheit für Einheit.
 
 ### Wann %1RM verwenden
 
@@ -151,7 +151,7 @@ Einer der großen Vorteile von RPE ist die Fähigkeit, Ihren Gesamtzustand einzu
 | **Restmuskelkater** (DOMS von der vorherigen Einheit) | Keine Anpassung | DOMS reduzieren die Fähigkeit zur Krafterzeugung nicht. Wärmen Sie sich gut auf und beginnen Sie normal. |
 | **Leichte Gelenkschmerzen** | Gewicht reduzieren, Übung anpassen | Trainieren Sie niemals durch Gelenkschmerzen hindurch. Wechseln Sie zu einer schmerzfreien Variante und konsultieren Sie einen Fachmann, wenn es anhält. Siehe unseren Ratgeber zur [Erholung und Verletzungsprävention](/de/ratgeber/erholung-verletzungspraevention/). |
 
-**Schlüsselregel**: Im Zweifel entscheiden Sie sich immer für den niedrigeren RPE. Eine Einheit bei RPE 7 statt 8 ist immer produktiv. Eine Einheit bei RPE 10, wenn Sie müde waren, kann Sie mehrere zusätzliche Erholungstage kosten.
+**Schlüsselregel**: Im Zweifel entscheiden Sie sich immer für den niedrigeren RPE. Eine Einheit bei RPE 7 statt 8 ist immer produktiv. Eine Einheit bei RPE 10, wenn Sie müde waren, kann Sie mehrere zusätzliche Erholungstage kosten. Der KI-Coach von [AIVancePro](https://apps.apple.com/de/app/aivancepro/id6756116760) berücksichtigt diese kontextuellen Anpassungen, um Ihnen die optimale Intensität für jede Einheit zu empfehlen.
 
 ## Einheiten autoregulieren
 
@@ -207,6 +207,8 @@ Die RPE-Genauigkeit verbessert sich mit der Erfahrung. So entwickeln Sie diese F
 4. **Seien Sie ehrlich**: Die natürliche Tendenz ist, den RPE zu unterschätzen (RPE 7 zu sagen, obwohl es RPE 9 war). Ehrlichkeit sich selbst gegenüber ist entscheidend, damit das Werkzeug funktioniert.
 
 Als Faustregel gilt: Wenn die Technik anfängt nachzulassen, sind Sie mindestens bei RPE 9. Die Form sollte bis RPE 8 sauber bleiben.
+
+**Möchten Sie RPE ohne Kopfzerbrechen in Ihr Training integrieren?** [AIVancePro](https://apps.apple.com/de/app/aivancepro/id6756116760) integriert den RPE in seinen Algorithmus, um Ihre Gewichte Einheit für Einheit automatisch anzupassen und Ihre Progression zu optimieren. Laden Sie die App kostenlos herunter und starten Sie noch heute.
 
 ## FAQ
 

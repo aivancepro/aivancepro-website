@@ -88,7 +88,7 @@ Zwei gängige Ansätze:
 - **Volumenreduktion**: Behalten Sie die gleichen Gewichte bei, halbieren Sie aber die Anzahl der Sätze. Sie erhalten den Kraftreiz, ohne Ermüdung anzusammeln.
 - **Intensitätsreduktion**: Reduzieren Sie die Gewichte um 40 bis 50 % und behalten Sie das gleiche Volumen bei. Zu wissen, wie man [die Intensität mit dem RPE dosiert](/de/ratgeber/rpe-intensitaet-verstehen/), ist besonders nützlich, um diese Entlastungswochen zu kalibrieren.
 
-Überspringen Sie den Deload nicht aus Ungeduld. Es ist eine Investition, die sich in der Folgewoche auszahlt, wenn Sie das intensive Training mit einem vollständig erholten Körper wieder aufnehmen.
+Überspringen Sie den Deload nicht aus Ungeduld. Es ist eine Investition, die sich in der Folgewoche auszahlt, wenn Sie das intensive Training mit einem vollständig erholten Körper wieder aufnehmen. Der KI-Coach von [AIVancePro](https://apps.apple.com/de/app/aivancepro/id6756116760) integriert automatisch Deload-Wochen in Ihre Programmierung, zum optimalen Zeitpunkt für Ihre Erholung.
 
 ## Schmerz vs. Muskelkater: Wie man den Unterschied erkennt
 
@@ -126,7 +126,7 @@ Normalen Muskelkater von pathologischem Schmerz unterscheiden zu können, ist ei
 - Konzentrationsschwierigkeiten im Alltag
 - Angst vor den Trainingseinheiten
 
-Wenn Sie mehrere dieser Anzeichen feststellen, nehmen Sie sich eine komplette Ruhewoche oder einen verlängerten Deload (10 Tage). Evaluieren Sie Ihr Trainingsvolumen, Ihren Schlaf und Ihre [Ernährung](/de/ratgeber/ernaehrung-muskelaufbau/) neu, bevor Sie wieder einsteigen. Eine gut geplante [Periodisierung](/de/ratgeber/periodisierung-grundlagen/) ist die beste Prävention gegen Übertraining.
+Wenn Sie mehrere dieser Anzeichen feststellen, nehmen Sie sich eine komplette Ruhewoche oder einen verlängerten Deload (10 Tage). Evaluieren Sie Ihr Trainingsvolumen, Ihren Schlaf und Ihre [Ernährung](/de/ratgeber/ernaehrung-muskelaufbau/) neu, bevor Sie wieder einsteigen. Eine gut geplante [Periodisierung](/de/ratgeber/periodisierung-grundlagen/) ist die beste Prävention gegen Übertraining. [AIVancePro](https://apps.apple.com/de/app/aivancepro/id6756116760) analysiert Ihre akkumulierte Ermüdung und passt automatisch das Volumen Ihrer Einheiten an, um zu verhindern, dass Sie diese kritische Schwelle überschreiten.
 
 ## Muskelkater (DOMS) managen
 
@@ -220,6 +220,8 @@ Bestimmte Schmerzen sollten nicht ignoriert werden. Konsultieren Sie einen Physi
 - **Plötzlicher Kraftverlust** bei einer normalerweise beherrschten Bewegung
 
 Lieber zu früh konsultieren als zu spät. Eine leichte Verletzung, die schnell behandelt wird, heilt in wenigen Tagen. Dieselbe Verletzung, ignoriert und verschlimmert, kann Sie monatelang außer Gefecht setzen.
+
+**Möchten Sie Ihre Erholung optimieren, ohne darüber nachzudenken?** [AIVancePro](https://apps.apple.com/de/app/aivancepro/id6756116760) überwacht Ihre akkumulierte Ermüdung, plant Ihre Deloads zum richtigen Zeitpunkt und passt das Volumen automatisch an, um Übertraining vorzubeugen. Laden Sie die App kostenlos herunter und starten Sie noch heute.
 
 ## FAQ — Erholung und Prävention
 

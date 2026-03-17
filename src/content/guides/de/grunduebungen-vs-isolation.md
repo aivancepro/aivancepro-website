@@ -149,7 +149,7 @@ Die berühmte „80/20-Regel" ist ein guter Ausgangspunkt, aber das optimale Com
 | **Anfänger** | 80/20 | Grundbewegungen erlernen, bevor man sich mit Isolation verzettelt |
 | **Senioren / allgemeine Gesundheit** | 60/40 | Funktionelle Compound-Bewegungen + gezielte Isolation für empfindliche Gelenke |
 
-Um Ihr Programm nach diesen Verhältnissen zu strukturieren, folgen Sie unserer Schritt-für-Schritt-Anleitung: [Einen effektiven Trainingsplan erstellen](/de/ratgeber/trainingsplan-erstellen/).
+Um Ihr Programm nach diesen Verhältnissen zu strukturieren, folgen Sie unserer Schritt-für-Schritt-Anleitung: [Einen effektiven Trainingsplan erstellen](/de/ratgeber/trainingsplan-erstellen/). Der KI-Coach von [AIVancePro](https://apps.apple.com/de/app/aivancepro/id6756116760) passt dieses Verhältnis automatisch an Ihr Ziel und Ihr Niveau an, für eine optimale Balance ohne Kopfzerbrechen.
 
 ## Maschinen und geführte Übungen
 
@@ -188,7 +188,7 @@ Fortgeschrittene Trainierende, die bei einem Compound stagnieren, können Vorerm
 
 ### Zusätzliches Volumen ohne zentrale Ermüdung
 
-Isolationsübungen ermöglichen es, **Wochenvolumen** (Gesamtzahl der Sätze pro Muskel) anzusammeln, ohne das zentrale Nervensystem zu überlasten. Ein Trainierender kann 20–25 Sätze pro Woche und Muskel verkraften, wenn ein Teil davon aus Isolation stammt, gegenüber nur 12–16 Sätzen, wenn alles in schweren Compound-Übungen absolviert wird (Schoenfeld et al., 2017).
+Isolationsübungen ermöglichen es, **Wochenvolumen** (Gesamtzahl der Sätze pro Muskel) anzusammeln, ohne das zentrale Nervensystem zu überlasten. Ein Trainierender kann 20–25 Sätze pro Woche und Muskel verkraften, wenn ein Teil davon aus Isolation stammt, gegenüber nur 12–16 Sätzen, wenn alles in schweren Compound-Übungen absolviert wird (Schoenfeld et al., 2017). [AIVancePro](https://apps.apple.com/de/app/aivancepro/id6756116760) verfolgt Ihr Volumen pro Muskelgruppe und warnt Sie, wenn Sie sich Ihrer Erholungsschwelle nähern.
 
 ## FAQ
 
@@ -207,6 +207,8 @@ Für die meisten Trainierenden reichen **2 bis 4 Isolationsübungen pro Einheit*
 ### Kann die Beinpresse die Kniebeuge ersetzen?
 
 Die Beinpresse ist eine ausgezeichnete geführte Compound-Übung, ersetzt aber die Kniebeuge nicht vollständig. Die Kniebeuge rekrutiert mehr Rumpfstabilisatoren, Rückenstrecker und tiefe Beckenmuskeln. Wenn Sie nicht knien können (Verletzung, eingeschränkte Mobilität), ist die Kombination aus Beinpresse + Core-Übungen eine vernünftige Alternative.
+
+**Möchten Sie diese Prinzipien in die Praxis umsetzen?** [AIVancePro](https://apps.apple.com/de/app/aivancepro/id6756116760) wählt automatisch das richtige Compound/Isolation-Verhältnis passend zu Ihrem Ziel und Ihrem Niveau. Laden Sie die App kostenlos herunter und starten Sie noch heute.
 
 ## AIVancePro sorgt für die richtige Balance
 

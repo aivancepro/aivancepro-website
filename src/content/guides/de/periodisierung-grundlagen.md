@@ -55,7 +55,7 @@ Der Mesozyklus ist ein Trainingsblock, der aus mehreren Mikrozyklen besteht und 
 > - Woche 4: 18 Sätze/Muskel, RPE 8-9 (Volumenpeak)
 > - Woche 5: 8 Sätze/Muskel, RPE 6 (Deload)
 
-Beachten Sie die schrittweise Steigerung des Volumens, gefolgt von einer Entlastungswoche. Dieses Muster aus „Akkumulation und anschließender Dissipation" bildet den Kern jeder effektiven Periodisierung.
+Beachten Sie die schrittweise Steigerung des Volumens, gefolgt von einer Entlastungswoche. Dieses Muster aus „Akkumulation und anschließender Dissipation" bildet den Kern jeder effektiven Periodisierung. [AIVancePro](https://apps.apple.com/de/app/aivancepro/id6756116760) wendet diese Art der Periodisierung automatisch an, indem es Volumen und Intensität Woche für Woche an Ihren tatsächlichen Fortschritt anpasst.
 
 ### Der Makrozyklus (3 bis 12 Monate)
 
@@ -209,7 +209,7 @@ Anstatt Ihre Deloads ausschließlich nach einem festen Kalender zu planen, lerne
 | **Leistung im Training** | Tatsächlicher RPE vs. erwarteter RPE bei Arbeitssätzen | Tatsächlicher RPE > geplanter RPE um 1+ Punkt bei 2 aufeinanderfolgenden Einheiten | Die Ermüdung verdeckt Ihre wahre Kraft; Zeit zum Entlasten |
 | **Ruheherzfrequenz** | Morgens vor dem Aufstehen messen | Anstieg von >5 Schlägen/Min. gegenüber Ihrem Baseline-Wert über 3+ Tage | Zeichen für systemischen Stress; Intensität reduzieren |
 
-**Praxistipp**: Notieren Sie diese Marker in einem Tagebuch oder einer Tracking-App. Nach einigen Mesozyklen werden Sie Ihre eigenen Ermüdungsmuster erkennen. Manche Trainierende „schwächeln" zuerst bei der Griffkraft, andere beim Schlaf. Ihren eigenen Frühindikator zu kennen, ermöglicht es Ihnen zu handeln, bevor die Ermüdung zum echten Problem wird. Um die Ermüdungssteuerung und [Verletzungsprävention](/de/ratgeber/erholung-verletzungspraevention/) zu vertiefen, lesen Sie unseren speziellen Ratgeber.
+**Praxistipp**: Notieren Sie diese Marker in einem Tagebuch oder einer App wie [AIVancePro](https://apps.apple.com/de/app/aivancepro/id6756116760), die Ihre akkumulierte Ermüdung analysiert und Ihnen zum richtigen Zeitpunkt einen Deload empfiehlt. Nach einigen Mesozyklen werden Sie Ihre eigenen Ermüdungsmuster erkennen. Manche Trainierende „schwächeln" zuerst bei der Griffkraft, andere beim Schlaf. Ihren eigenen Frühindikator zu kennen, ermöglicht es Ihnen zu handeln, bevor die Ermüdung zum echten Problem wird. Um die Ermüdungssteuerung und [Verletzungsprävention](/de/ratgeber/erholung-verletzungspraevention/) zu vertiefen, lesen Sie unseren speziellen Ratgeber.
 
 ## Periodisierung für spezifische Ziele
 
@@ -250,6 +250,8 @@ Nicht in komplexer Form. Ein [Anfänger](/de/ratgeber/anfaenger-krafttraining/) 
 
 **Kann man mehrere Periodisierungsmodelle kombinieren?**
 Ja, und das ist bei erfahrenen Trainierenden sogar üblich. Sie können beispielsweise eine Block-Periodisierung auf Makrozyklus-Ebene verwenden (Hypertrophie-Block, Kraft-Block, Peaking-Block) und gleichzeitig innerhalb jedes Blocks eine tägliche Undulation (DUP) anwenden, um die Reize von Einheit zu Einheit zu variieren. Der Schlüssel ist, ein klares Hauptziel für jeden Block beizubehalten.
+
+**Möchten Sie diese Prinzipien in die Praxis umsetzen, ohne sich in der Planung zu verlieren?** [AIVancePro](https://apps.apple.com/de/app/aivancepro/id6756116760) wendet eine intelligente Periodisierung an, die sich an Ihren tatsächlichen Fortschritt anpasst, Ihre Akkumulations- und Deload-Phasen automatisch verwaltet und Ihr Programm in Echtzeit justiert. Laden Sie die App kostenlos herunter und starten Sie noch heute.
 
 **Wie passt man die Periodisierung an, wenn eine Trainingswoche ausfällt (Urlaub, Krankheit)?**
 Wenn die Pause weniger als eine Woche dauert, setzen Sie einfach dort fort, wo Sie aufgehört haben, mit leicht reduzierten Gewichten (~5 %). Dauert die Pause 2 Wochen oder länger, fügen Sie eine Wiedereinführungswoche mit reduziertem Volumen und reduzierter Intensität (RPE 6-7) ein, bevor Sie das normale Programm wieder aufnehmen. Versuchen Sie nicht, verpasste Einheiten nachzuholen, indem Sie das Programm komprimieren: Das würde nur unnötige Ermüdung ansammeln.

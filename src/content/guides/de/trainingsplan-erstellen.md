@@ -93,7 +93,7 @@ Jedes Bewegungsmuster kann durch mehrere Übungen abgedeckt werden. Wenn eine Ü
 | **Hip Hinge (Hüft-dominant)** | Konventionelles Kreuzheben | Rumänisches Kreuzheben | Hip Thrust mit Langhantel | Good Morning |
 | **Ausfallschritt / einbeinig** | Ausfallschritte vorwärts | Bulgarische Split Squats | Step-Ups | Ausfallschritte rückwärts |
 
-**Substitutionsregel**: Ersetzen Sie eine Übung immer durch eine andere desselben Musters. Ersetzen Sie nie eine Zugbewegung durch eine Druckbewegung oder eine Quadrizeps-Übung durch eine Übung für die hinteren Oberschenkel. Das Gleichgewicht der Bewegungsmuster ist entscheidend für die Gelenkgesundheit und eine harmonische Entwicklung.
+**Substitutionsregel**: Ersetzen Sie eine Übung immer durch eine andere desselben Musters. Ersetzen Sie nie eine Zugbewegung durch eine Druckbewegung oder eine Quadrizeps-Übung durch eine Übung für die hinteren Oberschenkel. Das Gleichgewicht der Bewegungsmuster ist entscheidend für die Gelenkgesundheit und eine harmonische Entwicklung. Der KI-Coach von [AIVancePro](https://apps.apple.com/de/app/aivancepro/id6756116760) verwaltet diese Substitutionen automatisch: Geben Sie Ihre Einschränkungen oder verfügbare Ausrüstung an, und er wählt die besten Alternativen in jedem Muster aus.
 
 ## Die Trainingswoche strukturieren
 
@@ -290,7 +290,7 @@ Ein Plan sollte mindestens **6 bis 8 Wochen** befolgt werden, bevor er bewertet 
 
 Um zu wissen, ob Ihr Plan funktioniert, verfolgen Sie diese Indikatoren objektiv:
 
-- **Kraft**: Steigen die Gewichte bei Ihren Hauptübungen? Vergleichen Sie Ihre Leistung bei derselben Übung, mit der gleichen Wiederholungszahl, von Monat zu Monat. AIVancePro generiert automatisch Fortschrittsgrafiken für jede Übung.
+- **Kraft**: Steigen die Gewichte bei Ihren Hauptübungen? Vergleichen Sie Ihre Leistung bei derselben Übung, mit der gleichen Wiederholungszahl, von Monat zu Monat. [AIVancePro](https://apps.apple.com/de/app/aivancepro/id6756116760) generiert automatisch Fortschrittsgrafiken für jede Übung.
 - **Gesamtvolumen**: Steigt die Tonnage (Gewicht x Wiederholungen x Sätze) progressiv über die Wochen? Ein steigendes Gesamtvolumen ist ein zuverlässiger Fortschrittsindikator.
 - **Regelmäßigkeit**: Wie viele Einheiten haben Sie tatsächlich absolviert im Vergleich zu den geplanten? Ein Plan mit einer Adhärenzrate unter 80 % (weniger als 4 von 5 Einheiten) muss vereinfacht oder umstrukturiert werden.
 - **Subjektive Erholung**: Sind Sie systematisch erschöpft, mit wiederkehrenden Gelenkschmerzen? Oder fühlen Sie sich frisch und motiviert zu Beginn der Einheit? Wenn Müdigkeit dominiert, sind Volumen oder Intensität wahrscheinlich zu hoch.
@@ -333,6 +333,8 @@ Es ist natürlich, die Übungen zu bevorzugen, die man mag (oft die, in denen ma
 Jeder Plan braucht Zeit, um messbare Ergebnisse zu liefern. Alle 2 bis 3 Wochen zu wechseln bedeutet, den Reiz nie lange genug wirken zu lassen. Sie können auch nicht messen, was funktioniert und was nicht.
 
 **Lösung**: Halten Sie sich mindestens 8 bis 12 Wochen an einen Plan. Bewerten Sie die Ergebnisse objektiv (siehe Abschnitt „Bewerten und anpassen"). Wenn die Gewichte steigen und Sie keine Schmerzen haben, funktioniert der Plan — machen Sie weiter. Kleinere Anpassungen (eine sekundäre Übung wechseln, einen Satz hinzufügen) sind akzeptabel. Strukturelle Änderungen (von PPL zu Ganzkörper wechseln) sollten erst nach einer vollständigen Bewertung erfolgen.
+
+**Möchten Sie Ihren Trainingsplan erstellen, ohne sich in den Details zu verlieren?** [AIVancePro](https://apps.apple.com/de/app/aivancepro/id6756116760) erstellt in Sekunden einen personalisierten Plan, angepasst an Ihr Niveau, Ihre Ziele, Ihre Ausrüstung und Ihren Zeitplan automatisch. Laden Sie die App kostenlos herunter und starten Sie noch heute.
 
 ## FAQ
 

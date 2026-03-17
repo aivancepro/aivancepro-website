@@ -70,7 +70,7 @@ Die besten Proteinquellen sind:
 - **Milchprodukte**: Magerquark, griechischer Joghurt, Skyr (8–12 g pro 100 g)
 - **Hülsenfrüchte**: Linsen, Kichererbsen, Bohnen (7–9 g pro 100 g gekocht)
 
-Verteilen Sie Ihre Proteine auf 3 bis 5 Mahlzeiten pro Tag, mit mindestens 25 bis 40 g pro Mahlzeit, um die Muskelproteinsynthese zu maximieren.
+Verteilen Sie Ihre Proteine auf 3 bis 5 Mahlzeiten pro Tag, mit mindestens 25 bis 40 g pro Mahlzeit, um die Muskelproteinsynthese zu maximieren. Der KI-Coach von [AIVancePro](https://apps.apple.com/de/app/aivancepro/id6756116760) berechnet automatisch Ihren Proteinbedarf basierend auf Ihrem Gewicht, Ihrem Ziel und Ihrem Trainingsvolumen.
 
 ### Proteinquellen: Dichte und Preis-Leistungs-Verhältnis
 
@@ -264,7 +264,7 @@ Zeichen, dass eine Anpassung nötig ist:
 
 Gehen Sie in Schritten von **±200 kcal** vor (etwa 50 g Kohlenhydrate oder 25 g Kohlenhydrate + 10 g Fett). Vermeiden Sie abrupte Änderungen von 500+ kcal, die die Adhärenz stören und die Analyse erschweren.
 
-Warten Sie nach jeder Anpassung wieder 2 bis 3 Wochen, bevor Sie erneut bewerten. Geduld ist die am meisten unterschätzte Kompetenz in der Sporternährung. Zur Strukturierung Ihrer Progressionsphasen über die Zeit lesen Sie unseren Ratgeber zur [Trainingsperiodisierung](/de/ratgeber/periodisierung/).
+Warten Sie nach jeder Anpassung wieder 2 bis 3 Wochen, bevor Sie erneut bewerten. Geduld ist die am meisten unterschätzte Kompetenz in der Sporternährung. [AIVancePro](https://apps.apple.com/de/app/aivancepro/id6756116760) erleichtert dieses Tracking, indem es Ihr Gewicht, Ihre Trainingsleistung und Ihr Trainingsvolumen korreliert, um Ihnen anzuzeigen, wann eine Ernährungsanpassung sinnvoll ist. Zur Strukturierung Ihrer Progressionsphasen über die Zeit lesen Sie unseren Ratgeber zur [Trainingsperiodisierung](/de/ratgeber/periodisierung/).
 
 ### Tracking-Tools
 
@@ -272,6 +272,8 @@ Sie müssen nicht jedes Lebensmittel für immer abwiegen. Zwei Ansätze funktion
 
 - **Lernphase (4–8 Wochen)**: Wiegen und tracken Sie alles, um Ihr Augenmaß zu schulen. Verwenden Sie eine Kalorien-Tracking-App.
 - **Autonome Phase**: Sobald Sie die Portionen kennen, können Sie visuell schätzen. Kehren Sie zum genauen Tracking zurück, wenn die Ergebnisse stagnieren.
+
+**Möchten Sie Ihre Ernährung optimal auf Ihr Training abstimmen?** [AIVancePro](https://apps.apple.com/de/app/aivancepro/id6756116760) passt Ihre Ernährungsempfehlungen an Ihr Programm und Ihre Ziele an, damit jede Mahlzeit Ihren Fortschritt unterstützt. Laden Sie die App kostenlos herunter und starten Sie noch heute.
 
 ## FAQ
 
