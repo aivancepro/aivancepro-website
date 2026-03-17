@@ -53,12 +53,12 @@ Un groupe musculaire par jour. Volume élevé par muscle (20-25 séries par séa
 
 ## Comparatif détaillé des splits
 
-| Split | Jours | Fréquence/muscle | Niveau | Récupération requise | Équipement minimum | Idéal pour |
+| Split | Jours | Fréq./muscle | Niveau | Récup. | Équipement | Idéal pour |
 |---|---|---|---|---|---|---|
-| **Full Body** | 3 | 3x/sem | Débutant | 48h entre séances | Barres + haltères | Base solide, perte de gras |
-| **Upper/Lower** | 4 | 2x/sem | Intermédiaire | 48-72h par zone | Salle complète | Force et hypertrophie |
-| **PPL** | 6 | 2x/sem | Intermédiaire+ | 48h par pattern | Salle complète | Hypertrophie maximale |
-| **Bro Split** | 5 | 1x/sem | Avancé | 7 jours par muscle | Salle complète + machines | Volume spécialisé |
+| **Full Body** | 3 | 3x/sem | Débutant | 48h | Barres + haltères | Base, perte de gras |
+| **Upper/Lower** | 4 | 2x/sem | Intermédiaire | 48-72h/zone | Salle complète | Force, hypertrophie |
+| **PPL** | 6 | 2x/sem | Inter.+ | 48h/pattern | Salle complète | Hypertrophie max |
+| **Bro Split** | 5 | 1x/sem | Avancé | 7j/muscle | Salle + machines | Volume spécialisé |
 
 ## Programmes complets sur 1 semaine
 

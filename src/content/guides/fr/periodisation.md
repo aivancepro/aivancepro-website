@@ -73,14 +73,14 @@ Le macrocycle est le plan global qui enchaîne plusieurs mésocycles pour attein
 
 Le tableau ci-dessous présente un macrocycle complet de 24 semaines découpé en 6 mésocycles. Ce plan convient à un pratiquant intermédiaire ou avancé souhaitant développer force et masse musculaire avant un pic de performance.
 
-| Mésocycle | Semaines | Objectif | Volume/sem. | Intensité (% 1RM) | Répétitions | RPE cible |
+| Méso. | Sem. | Objectif | Vol. | % 1RM | Reps | RPE |
 |---|---|---|---|---|---|---|
-| 1 — Hypertrophie A | 1-4 | Construction musculaire | 14-18 | 62-72 % | 10-15 | 7-8 |
-| 2 — Hypertrophie B | 5-8 | Volume accru + force de base | 16-22 | 65-75 % | 8-12 | 7,5-8,5 |
-| 3 — Force/Hyper. | 9-12 | Transition vers la force | 12-16 | 72-82 % | 6-10 | 8-8,5 |
-| 4 — Force | 13-17 | Force maximale | 10-14 | 80-90 % | 3-6 | 8,5-9 |
-| 5 — Peaking | 18-20 | Pic de performance | 6-10 | 88-97 % | 1-3 | 9-9,5 |
-| 6 — Transition | 21-24 | Récupération active + relance hypertrophie | 10-14 | 58-68 % | 10-15 | 6-7 |
+| 1 — Hyper. A | 1-4 | Construction musculaire | 14-18 | 62-72 | 10-15 | 7-8 |
+| 2 — Hyper. B | 5-8 | Volume + force de base | 16-22 | 65-75 | 8-12 | 7,5-8,5 |
+| 3 — Force/Hyper. | 9-12 | Transition force | 12-16 | 72-82 | 6-10 | 8-8,5 |
+| 4 — Force | 13-17 | Force maximale | 10-14 | 80-90 | 3-6 | 8,5-9 |
+| 5 — Peaking | 18-20 | Pic de performance | 6-10 | 88-97 | 1-3 | 9-9,5 |
+| 6 — Transition | 21-24 | Récup. + relance hyper. | 10-14 | 58-68 | 10-15 | 6-7 |
 
 **Notes importantes** :
 - Chaque mésocycle se termine par une semaine de deload (la dernière semaine du bloc) où le volume est réduit de ~50 %.
