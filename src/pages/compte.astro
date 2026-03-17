@@ -22,11 +22,15 @@ import BaseLayout from '../layouts/BaseLayout.astro';
       .sub-card { background: var(--bg-card); border: 1px solid var(--border); border-radius: 16px; padding: 2rem; margin-bottom: 1.5rem; }
       .sub-card.pro { border-color: rgba(37,99,235,0.3); background: linear-gradient(135deg, rgba(37,99,235,0.03), rgba(74,144,217,0.03)); }
       .sub-card.elite { border-color: rgba(74,144,217,0.3); background: linear-gradient(135deg, rgba(74,144,217,0.03), rgba(234,179,8,0.03)); }
+      .sub-card.trial { border-color: rgba(234,179,8,0.3); background: linear-gradient(135deg, rgba(234,179,8,0.03), rgba(37,99,235,0.03)); }
+      .trial-info { background: rgba(234,179,8,0.08); border: 1px solid rgba(234,179,8,0.2); border-radius: 10px; padding: 0.75rem 1rem; margin-top: 0.75rem; font-size: 0.85rem; color: var(--text-secondary); }
+      .trial-info strong { color: #CA8A04; }
       .sub-top { display: flex; align-items: center; gap: 1rem; margin-bottom: 1rem; }
       .sub-icon { width: 48px; height: 48px; border-radius: 12px; display: flex; align-items: center; justify-content: center; }
       .sub-icon.free { background: var(--gray-100); color: var(--gray-500); }
       .sub-icon.pro { background: var(--blue); color: white; }
       .sub-icon.elite { background: linear-gradient(135deg, #4A90D9, #EAB308); color: white; }
+      .sub-icon.trial { background: linear-gradient(135deg, #EAB308, var(--blue)); color: white; }
       .sub-icon svg { width: 24px; height: 24px; }
       .sub-info h2 { font-size: 1.2rem; font-weight: 700; color: var(--gray-900); margin: 0; }
       .sub-badge { display: inline-block; padding: 0.2rem 0.6rem; border-radius: 50px; font-size: 0.7rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.05em; margin-top: 0.25rem; }
@@ -171,18 +175,34 @@ import BaseLayout from '../layouts/BaseLayout.astro';
 
       // Set subscription info
       document.getElementById('sub-email').textContent = email;
-      var planNames = { free: 'Gratuit', pro: 'Pro', elite: 'Elite', trial: 'Essai Pro' };
+      var planNames = { free: 'Gratuit', pro: 'Pro', elite: 'Elite', trial: 'Essai gratuit' };
       var planBadges = { free: 'Gratuit', pro: 'Pro', elite: 'Elite', trial: 'Essai' };
       document.getElementById('sub-plan-name').textContent = planNames[plan] || 'Gratuit';
 
       var badge = document.getElementById('sub-badge');
       badge.textContent = planBadges[plan] || 'Gratuit';
-      badge.className = 'sub-badge ' + (plan === 'trial' ? 'trial' : plan);
+      badge.className = 'sub-badge ' + plan;
 
       var subCard = document.getElementById('sub-card');
       var subIcon = document.getElementById('sub-icon');
-      subCard.className = 'sub-card ' + (plan === 'trial' ? 'pro' : plan);
-      subIcon.className = 'sub-icon ' + (plan === 'trial' ? 'pro' : plan);
+      subCard.className = 'sub-card ' + plan;
+      subIcon.className = 'sub-icon ' + plan;
+
+      // Trial info
+      if (plan === 'trial') {
+        var trialEnd = profile.trial_end_date;
+        var trialMsg = 'Vous profitez actuellement de l\'essai gratuit avec accès à toutes les fonctionnalités Pro.';
+        if (trialEnd) {
+          var endDate = new Date(trialEnd);
+          var now = new Date();
+          var daysLeft = Math.max(0, Math.ceil((endDate - now) / (1000 * 60 * 60 * 24)));
+          trialMsg += ' <strong>' + daysLeft + ' jour' + (daysLeft > 1 ? 's' : '') + ' restant' + (daysLeft > 1 ? 's' : '') + '</strong>.';
+        }
+        var trialDiv = document.createElement('div');
+        trialDiv.className = 'trial-info';
+        trialDiv.innerHTML = trialMsg;
+        document.getElementById('sub-card').appendChild(trialDiv);
+      }
 
       // Icons
       document.getElementById('icon-zap').style.display = plan === 'free' ? 'block' : 'none';
@@ -193,10 +213,13 @@ import BaseLayout from '../layouts/BaseLayout.astro';
       var upgradeCard = document.getElementById('upgrade-card');
       if (plan === 'elite') {
         upgradeCard.innerHTML = '<h3>Vous &ecirc;tes Elite !</h3><p>Vous b&eacute;n&eacute;ficiez de toutes les fonctionnalit&eacute;s AIVancePro.</p>';
-      } else if (plan === 'pro' || plan === 'trial') {
+      } else if (plan === 'pro') {
         document.getElementById('plan-pro').classList.add('current');
         document.getElementById('upgrade-title').textContent = 'Passez à Elite';
         document.getElementById('upgrade-desc').textContent = 'Débloquez l\'IA illimitée et l\'analyse de surentraînement.';
+      } else if (plan === 'trial') {
+        document.getElementById('upgrade-title').textContent = 'Continuez après l\'essai';
+        document.getElementById('upgrade-desc').textContent = 'Choisissez votre abonnement pour ne pas perdre vos avantages à la fin de l\'essai.';
       }
 
       // Fetch stats
