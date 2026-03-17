@@ -14,144 +14,240 @@ alternates:
   de: "https://aivancepro.fr/de/ratgeber/home-gym-ratgeber/"
 ---
 
-Training at home eliminates commute time, waiting for equipment and monthly gym fees. With the right setup, a home gym can be just as effective as any commercial facility for building strength and muscle. For a broader look at what it takes to get started, see our complete home gym setup guide. This guide covers everything from choosing your first piece of equipment on a tight budget to designing a complete garage gym and programming effective home workouts.
+Training at home eliminates the two main obstacles to consistency: commute time and peak-hour crowds. With the right equipment and a well-set-up space, a home gym can deliver results on par with a commercial gym. This guide helps you plan your setup based on your budget and available space.
 
-## Essential equipment: what you actually need
+## Essential equipment
 
-You do not need a room full of machines to train effectively at home. The most productive exercises require surprisingly little equipment. Here is a prioritized list, from absolute essentials to nice-to-have additions.
+There is no need to replicate a full commercial gym. With a few well-chosen pieces of equipment, you can perform the vast majority of strength training exercises.
 
-### Tier 1: The absolute essentials
+### 1. The squat rack (or cage)
 
-With just these items, you can perform 90% of the exercises you need:
+This is the centerpiece of any serious home gym. A squat rack with safeties allows you to safely perform squats, [bench press](/en/guides/improve-bench-press/), overhead press, pull-ups (if equipped with a pull-up bar) and many other exercises.
 
-- **Adjustable dumbbells or a dumbbell set** -- The single most versatile piece of equipment. Adjustable models (like spinlock or selectorized) save space and money. A range of 5-30 kg covers most needs for beginners and intermediates.
-- **Adjustable bench (flat and incline)** -- Unlocks dozens of exercises: bench press, rows, shoulder press, step-ups, Bulgarian split squats. An adjustable bench with incline settings is far more versatile than a flat-only bench.
-- **Pull-up bar** -- A doorframe-mounted or wall-mounted pull-up bar covers your vertical pulling needs. Pull-ups and chin-ups are among the most effective back exercises that exist.
+- **Full cage (power rack)**: the safest option, with 4 uprights and adjustable safeties. Ideal if you train alone. Budget: 300-800 EUR.
+- **Half rack**: less bulky, 2 uprights with safeties. A good space/safety compromise. Budget: 200-500 EUR.
+- **Squat stand**: the most compact, but without built-in safeties. Not recommended for training alone with heavy loads. Budget: 100-300 EUR.
 
-### Tier 2: The serious upgrade
+### 2. The Olympic barbell
 
-Adding these turns your home gym into a complete training facility:
+A 20 kg bar with Olympic dimensions (220 cm, 50 mm sleeve diameter) is the standard. Do not skimp on the barbell: it is the piece of equipment you will use the most, and a quality bar will last decades.
 
-- **Olympic barbell (20 kg) and weight plates** -- The barbell allows you to load exercises far heavier than dumbbells permit. Start with 100-120 kg total (barbell + plates) and add more over time. Bumper plates are ideal if you plan to deadlift on hard floors.
-- **Squat rack or power cage** -- Essential for safe barbell squats and bench pressing without a spotter. A power cage with safety pins is the gold standard. A squat stand is a more affordable and space-efficient alternative.
-- **Resistance bands** -- Incredibly versatile for warm-ups, face pulls, banded push-ups, assisted pull-ups and adding accommodating resistance to barbell exercises. A set of 3-5 different resistance levels covers all needs.
+- **Features to check**: weight capacity (minimum 200 kg), knurling (not too aggressive for comfort), sleeve rotation (important for deadlifts).
+- **Budget**: 150-400 EUR for a good quality bar.
 
-### Tier 3: Nice-to-have additions
+### 3. Weight plates
 
-- **Dip station or rings** -- Dips are excellent for chest and tricep development. Gymnastics rings add instability training and enable rows, dips, push-ups and more.
-- **Cable machine or pulley system** -- A wall-mounted pulley attachment opens up cable flyes, tricep pushdowns, lat pulldowns and face pulls. Affordable options exist for under 100 euros.
-- **Kettlebells** -- Great for swings, goblet squats, Turkish get-ups and conditioning work. One or two kettlebells (16 kg and 24 kg for men, 8 kg and 16 kg for women) cover most needs.
-- **Foam roller and resistance bands** -- For warm-ups, mobility work and recovery.
-- **Rubber flooring** -- Protects your floor from dropped weights, reduces noise and provides a stable surface. Horse stall mats from agricultural suppliers are a cheap and durable option.
+Plan for enough weight to progress over the long term. A reasonable starter kit:
 
-## Budget and purchase priorities
+- 2 x 20 kg
+- 2 x 10 kg
+- 2 x 5 kg
+- 2 x 2.5 kg
+- 2 x 1.25 kg (for micro-progression)
 
-Building a home gym does not have to happen all at once. Here is how to phase your purchases based on budget:
+That totals 97.5 kg including the bar, which is enough to get started. You can add plates as you progress. Cast iron plates are the most economical; bumper plates (rubber) are more expensive but protect the floor.
 
-> **Budget tier: under 200 euros**
->
-> - Adjustable dumbbells (spinlock set with 30 kg total): ~80-120 euros
-> - Pull-up bar (doorframe): ~20-30 euros
-> - Resistance band set: ~20-30 euros
-> - Yoga mat: ~15 euros
->
-> This setup lets you train every muscle group effectively. You can run a full body program 3-4 times per week. If you are new to lifting, our [beginner's guide to strength training](/en/guides/beginner-strength-training/) will help you choose the right exercises and structure your sessions.
+### 4. The weight bench
 
-> **Mid-range tier: 500-1,000 euros**
->
-> - Everything from budget tier
-> - Adjustable bench: ~150-250 euros
-> - Olympic barbell + 100 kg plates: ~250-400 euros
-> - Squat stands: ~100-200 euros
->
-> Now you have a barbell setup for squats, deadlifts, bench press, rows and overhead press. This covers all compound movements.
+An adjustable bench (flat and incline) offers maximum versatility: flat bench press, incline press, decline press, and many dumbbell exercises.
 
-> **Complete setup: 1,500-2,500 euros**
->
-> - Everything from mid-range tier
-> - Power cage with safeties: ~300-600 euros
-> - Additional weight plates (to 150-200 kg total): ~200-400 euros
-> - Cable pulley attachment: ~80-150 euros
-> - Rubber flooring: ~100-200 euros
-> - Dip attachment: ~50-100 euros
->
-> This rivals a commercial gym for strength training. The only things you are missing are machines and cardio equipment, neither of which are essential.
+- **Stability**: the bench should not move under load. Check the maximum weight capacity (minimum 250 kg user + weight).
+- **Adjustments**: at least 4-5 incline positions. A decline position is a bonus but not essential.
+- **Budget**: 150-400 EUR for a solid, adjustable bench.
 
-### Buying tips
+### 5. Dumbbells (optional but recommended)
 
-- **Buy used** -- Second-hand barbells, plates and racks are significantly cheaper and iron does not wear out. Check local classifieds, marketplace listings and specialized resale sites.
-- **Invest in the barbell** -- This is the one item worth spending more on. A good Olympic barbell with proper knurling and spin will last decades. Budget barbells often bend or have poor grip.
-- **Buy plates gradually** -- Start with what you need now and add plates as you get stronger. Bumper plates cost more but are quieter and safer for deadlifts.
-- **Skip machines** -- Machines take up enormous space and are extremely expensive. Free weights and cables cover everything you need.
+Dumbbells add an extra dimension to your training: unilateral work, increased range of motion, and isolation exercises.
+
+- **Adjustable dumbbells**: the most space- and budget-efficient choice. An adjustable set from 2 to 32 kg replaces 12 pairs of fixed dumbbells. Budget: 200-500 EUR.
+- **Fixed dumbbells**: more practical (quick changes) but require a storage rack and a larger budget.
+
+## Budget by phase: detailed investment plan
+
+Here is a detailed table to plan your investment in order of priority. Each phase is self-contained: you can stop at any phase and still have a functional home gym.
+
+| Phase | Equipment | Price range | Priority | Why |
+|---|---|---|---|---|
+| **Phase 1 -- The essentials** | Squat rack (full cage) | 300-800 EUR | 1 | Enables safe squats, bench, OHP, pull-ups |
+| | Olympic barbell 20 kg | 150-400 EUR | 1 | The central tool of any strength program |
+| | Plates 100 kg (2x20, 2x10, 2x5, 2x2.5, 2x1.25) | 150-350 EUR | 1 | Enough to start and progress for 6-12 months |
+| | Floor protection mats (6-10 m2) | 50-150 EUR | 1 | Protects floor, reduces noise, stabilizes rack |
+| | **Phase 1 subtotal** | **650-1,700 EUR** | | **Covers 80% of basic exercises** |
+| **Phase 2 -- Versatility** | Adjustable bench (flat + incline) | 150-400 EUR | 2 | Bench press, incline press, dumbbell exercises |
+| | Adjustable dumbbells (2-32 kg) | 200-500 EUR | 2 | Isolation, unilateral work, variety |
+| | Additional plates (40-60 kg) | 80-180 EUR | 2 | Medium-term progression headroom |
+| | **Phase 2 subtotal** | **430-1,080 EUR** | | **Complete Upper/Lower or PPL program** |
+| **Phase 3 -- Optimization** | Cable pulley system (rack-mounted or standalone) | 100-400 EUR | 3 | Triceps, back, face pulls, cable crossover |
+| | Resistance bands (set of 4-5) | 30-60 EUR | 3 | Warm-ups, variable resistance, pull-up assistance |
+| | EZ curl bar | 30-80 EUR | 4 | Comfort for curls and skull crushers |
+| | Trap bar (hex bar) | 80-200 EUR | 4 | More accessible deadlift, farmer walks |
+| | **Phase 3 subtotal** | **240-740 EUR** | | **Near-equivalent of a commercial gym** |
+| **Phase 4 -- Comfort** | Mirror (150 x 50 cm minimum) | 30-100 EUR | 5 | Technique monitoring |
+| | Fan / portable AC unit | 30-200 EUR | 5 | Summer comfort |
+| | Bluetooth speaker | 20-80 EUR | 5 | Motivation |
+| | Wall timer or display | 20-50 EUR | 5 | Rest period management |
+| | **Phase 4 subtotal** | **100-430 EUR** | | **Optimal training environment** |
+
+**Total budget all phases**: 1,420 - 3,950 EUR. Compare this with a gym membership at 40-60 EUR/month, or 480-720 EUR/year. The home gym pays for itself in 2-5 years depending on your initial investment.
 
 ## Space setup
 
-You need less space than you might think. Here are the minimum requirements:
+### Minimum floor space
 
-- **Minimum area**: 3 m x 2 m (6 m2) for a barbell and bench setup. This allows enough room for a rack, a bench and space to deadlift.
-- **Ceiling height**: At least 2.4 m for overhead pressing inside a rack. If you have lower ceilings, press outside the rack or use a shorter half-rack.
-- **Ideal area**: 3 m x 3.5 m (10 m2) gives comfortable room for a full power cage, bench, storage and movement space.
+A functional home gym requires approximately **6 to 10 m2** of space. The squat rack takes up about 1.2 x 1.2 m, but you need room around it to load the bar and perform movements safely.
 
-### Location options
+- **Minimum length**: 3 m (for the 220 cm bar + loading space)
+- **Minimum width**: 2 m (rack + circulation space)
+- **Height**: 2.4 m minimum for pull-ups and standing overhead press
 
-- **Garage** -- The most popular choice. Good ventilation, usually concrete floors (easy to add rubber mats), and you can make noise without disturbing anyone.
-- **Spare bedroom** -- Works well for dumbbells and lighter equipment. Flooring protection is essential. Not ideal for heavy deadlifts due to noise and floor load concerns.
-- **Basement** -- Excellent option if available. Check ceiling height and humidity levels. Add a dehumidifier if needed to prevent equipment rust.
-- **Garden shed** -- Works if properly insulated. Can be very cold in winter and hot in summer without climate control.
+### Floor protection
 
-### Flooring
+The floor is often the first thing to protect, especially in an apartment. Rubber mats 15 to 20 mm thick absorb impacts, protect the floor and reduce noise. For deadlifts, a lifting platform (plywood + rubber) is ideal.
 
-Proper flooring protects your equipment, your floor and your joints:
+### Ventilation and lighting
 
-- **Rubber stall mats** (20 mm thick) are the gold standard: durable, cheap, easy to clean and available at agricultural suppliers for a fraction of the price of branded gym flooring.
-- Place them under your rack and deadlift area at minimum.
-- For upstairs setups, use thicker mats (25-30 mm) and consider a deadlift platform to distribute the load.
+A garage or basement can quickly become stifling during exercise. Make sure you have adequate ventilation (window, fan) and sufficient lighting to perform movements safely.
+
+## Apartment home gym
+
+Setting up a home gym in an apartment is entirely possible, but requires some extra precautions compared to a garage or basement.
+
+### Noise and vibration management
+
+Noise is the primary constraint in an apartment. Your neighbors (especially those below) will feel vibrations if you do not take measures.
+
+- **Double-layer mats**: first lay a 20 mm rubber mat layer, then a 10-15 mm EVA foam layer on top. This combination absorbs the majority of impacts and vibrations.
+- **Lifting platform**: essential if you deadlift. Build a 2.4 x 1.2 m platform with 2 layers of plywood (18 mm each) between 2 layers of rubber. Total cost: 80-150 EUR.
+- **Bumper plates required**: in an apartment, clanging cast iron plates are not an option. Rubber bumper plates significantly reduce impact noise. Additional budget: +50-100% compared to cast iron.
+- **No dropped deadlifts**: control the descent on every rep. Deadlift pads (cushions under the plates) add an extra layer of absorption.
+- **Training hours**: respect reasonable hours (typically 8 AM to 10 PM, check your building rules). Avoid the noisiest movements (deadlifts, cleans) early in the morning or late at night.
+
+### Space constraints
+
+- **Compact rack or half rack** rather than a full cage to save 30-40 cm of depth.
+- **Adjustable dumbbells** rather than fixed pairs that take up a lot of space.
+- **Folding bench** if space is truly limited (quality is often lower but acceptable for moderate use).
+- **Vertical storage**: hang resistance bands, lifting belt and accessories on the wall or cage.
+
+### Floor load capacity
+
+Modern apartments generally support 200-250 kg/m2, which is more than sufficient for a standard home gym. The lifting platform distributes the load over a larger area. If in doubt (older building, wooden floors), consult your building management.
+
+## Equipment maintenance and longevity
+
+A well-maintained home gym lasts decades. Here are the essential steps to protect your investment.
+
+### Olympic barbell maintenance
+
+The barbell is the most used piece of equipment and the most susceptible to corrosion.
+
+- **After every session**: wipe the bar with a dry cloth to remove sweat and chalk. Sweat is acidic and accelerates corrosion.
+- **Every week**: clean the knurling with a nylon brush (not metal on chrome or cerakote finishes) to remove buildup.
+- **Every month**: apply a thin coat of 3-in-1 oil or sewing machine oil on the knurling and sleeves. Wipe off excess. Check that the sleeves spin freely.
+- **Never**: store the bar on the ground (moisture), leave weights on the bar between sessions (deformation), or use the bar as a lever for other tasks.
+
+### Rust prevention
+
+Rust is the main enemy in a garage or basement, especially in humid regions.
+
+- **Dehumidifier**: invest in a dehumidifier if relative humidity exceeds 60%. Budget: 50-150 EUR. This is the single most effective measure.
+- **Cast iron plates**: a light surface rust film is normal and does not affect functionality. Scrub with a wire brush and apply a coat of rust-resistant paint if needed.
+- **Rack**: check contact points between safeties and uprights. Apply anti-corrosion spray (such as WD-40) to adjustment mechanisms 2-3 times per year.
+
+### Floor mat replacement
+
+Rubber mats wear out over time, especially in high-traffic areas and under the deadlift zone.
+
+- **Typical lifespan**: 3-5 years for heavy use (5+ sessions/week), 5-8 years for moderate use.
+- **Signs of replacement**: compressed mats that no longer spring back to their original thickness, cracking, persistent odor (rubber degradation).
+- **Tip**: rotate mats between the deadlift zone (heavy wear) and walkway areas (light wear) once a year.
+
+## Buying second-hand: a smart approach
+
+Second-hand strength training equipment is often in excellent condition because iron and steel barely wear out. It is a great way to cut your budget by 30-50%.
+
+### Where to buy
+
+- **Facebook Marketplace / Craigslist / local classifieds**: the largest selection and best prices. Search for "power rack," "Olympic barbell," "weight plates."
+- **Specialized Facebook groups**: groups like "Home Gym Community" or "Garage Gym Marketplace" bring together enthusiasts selling quality equipment.
+- **Gym clearance sales**: gyms that close or re-equip often sell their equipment at steep discounts. Watch local listings.
+- **Yard sales and flea markets**: occasionally good finds (dumbbells, plates), but heavy equipment is rare.
+
+### Red flags: when not to buy
+
+- **Bent or warped bar**: place the bar on the floor and roll it. If it wobbles or does not roll straight, it is warped. A warped bar is dangerous and cannot be fixed.
+- **Sleeves that do not spin**: a sign of damaged bearings or internal rust. Deadlifting with seized sleeves damages your wrists.
+- **Cracked welds on the rack**: inspect all weld points, especially on the safeties. A safety that gives way under load is a deadly hazard.
+- **Collapsed bench padding**: a bench whose padding is compressed and no longer springs back will slide under load. Replacing the foam is possible but tedious.
+- **Deeply rusted plates**: surface rust is normal and cleans off easily. Rust that has eaten into the metal (holes, flaking) weakens the plate.
+- **Price too good to be true**: beware of listings with very low prices and generic photos. Scams exist, especially for brand-name adjustable dumbbells.
+
+### Test before buying
+
+- **Go in person**: always see and touch the equipment before paying. No remote bank transfers.
+- **Weigh the plates**: a 20 kg plate should weigh 20 kg (+/- 0.5 kg). Unmarked or no-name plates can be underweight.
+- **Test the rack**: shake it laterally. A stable rack should not move when bolted down or weighted.
+- **Check the sleeves**: load 2-3 plates per side and verify they load and unload smoothly.
+- **Bring a tape measure**: verify that the bar is 220 cm long and that the sleeve diameter is 50 mm (Olympic standard). Bars with 28 mm sleeves (standard) are not compatible with Olympic plates.
 
 ## Home gym workout programs
 
-Here are two effective programs designed for home gym equipment. For a deeper dive into sets, reps and progression, check out our guide on [creating an effective training program](/en/guides/create-training-program/).
+### Barbell and rack only
 
-> **Minimalist program (dumbbells + pull-up bar, 3x/week)**
+Even with minimal equipment, you can [build a complete training program](/en/guides/create-training-program/):
+
+> **Full Body A**
 >
-> - **Day A**: Goblet squats 3x12, Dumbbell bench press 3x10, Dumbbell rows 3x10, Overhead press 3x10, Plank 3x45s
-> - **Day B**: Romanian deadlift (dumbbells) 3x10, Incline press 3x10, Pull-ups 3xMax, Lateral raises 3x15, Bicep curls 2x12
-> - **Day C**: Bulgarian split squats 3x10/leg, Floor press 3x10, Dumbbell rows 3x10, Arnold press 3x10, Tricep kickbacks 2x12
+> - Squat: 4 x 6-8
+> - Bench press: 4 x 6-8
+> - Barbell row: 4 x 8-10
+> - Overhead press: 3 x 8-10
+> - Barbell curl: 3 x 10-12
 
-> **Full setup program (barbell + rack + dumbbells, 4x/week Upper/Lower)**
+> **Full Body B**
 >
-> - **Upper A**: Bench press 4x6, Barbell row 4x8, Overhead press 3x8, Pull-ups 3x8, Face pulls 3x15
-> - **Lower A**: Squat 4x6, Romanian deadlift 3x8, Bulgarian split squats 3x10, Calf raises 4x15, Plank 3x60s
-> - **Upper B**: Overhead press 4x6, Chin-ups 4x8, Incline dumbbell press 3x10, Dumbbell rows 3x10, Lateral raises 3x15
-> - **Lower B**: Deadlift 3x5, Front squat or goblet squat 3x10, Hip thrust 3x12, Leg curls (band) 3x15, Farmer walks 3x30m
+> - Deadlift: 4 x 5
+> - Incline barbell press: 4 x 8-10
+> - Pull-ups (weighted if needed): 4 x 6-10
+> - Barbell hip thrust: 3 x 10-12
+> - Barbell tricep extensions: 3 x 10-12
 
-## Home gym vs commercial gym
+These sessions target all major muscle groups. Alternate A and B over 3 sessions per week (e.g., Monday A, Wednesday B, Friday A, then the reverse the following week). Apply [progressive overload](/en/guides/understanding-rpe/) by adding weight or reps each week.
 
-Both options have clear advantages and disadvantages. The right choice depends on your priorities.
+### With dumbbells as a supplement
 
-### Advantages of a home gym
+Dumbbells allow you to add isolation exercises and unilateral work: lateral raises, dumbbell curls, single-arm rows, lunges, dumbbell press. This lets you progress to a full Upper/Lower or PPL split. To learn how to choose exercises based on your goals, see our guide on [compound vs. isolation exercises](/en/guides/compound-vs-isolation/).
 
-- **No commute** -- Walk to your garage and start training. This alone saves 30-60 minutes per session.
-- **No waiting** -- Every piece of equipment is always available. No more planning workouts around busy times.
-- **Train anytime** -- 5 AM or 11 PM, your gym is always open. Perfect for irregular schedules.
-- **Long-term savings** -- A 1,000 euro home gym pays for itself in 2-3 years compared to a 40 euro/month gym membership.
-- **Your music, your rules** -- Play whatever you want as loud as you want. No dress code, no judgment.
-- **Consistency boost** -- Removing travel friction dramatically increases training consistency.
+If you are a [beginner](/en/guides/beginner-strength-training/), the Full Body program above is an excellent starting point. Intermediates can progress to a 4-day Upper/Lower split with adapted [periodization](/en/guides/periodization-basics/).
 
-### Disadvantages of a home gym
+## Home gym advantages and disadvantages
 
-- **Upfront cost** -- The initial investment can be significant, even if it pays off long-term.
-- **Space requirements** -- Not everyone has a garage or spare room to dedicate.
-- **Limited equipment variety** -- You will not have access to every machine and cable station. This is rarely a real limitation for strength training but can be for bodybuilding specialization.
-- **No social environment** -- Some people train better with the energy of a gym. A home gym can feel isolating.
-- **No spotter** -- Safety pins in a power cage solve this problem, but you need to invest in the cage.
-- **Distractions** -- Family, pets, household tasks and the comfort of your couch are all nearby.
+### Advantages
 
-## Making it work long-term
+- **Time savings**: zero commute, zero waiting for equipment. A 60-minute session is truly 60 minutes of work.
+- **Availability**: train at any hour, 7 days a week. Ideal for busy or irregular schedules.
+- **Hygiene**: your equipment, your cleanliness. No one else's sweat to deal with.
+- **Focus**: no distractions, no obligatory conversations. Maximum concentration.
+- **Long-term value**: an initial investment of 1,000-1,500 EUR pays for itself in 2-3 years of saved gym memberships.
+- **Music as loud as you want**: play whatever motivates you, no headphones needed, at whatever volume you like.
 
-The biggest risk with a home gym is that the equipment ends up collecting dust. Here is how to stay consistent:
+### Disadvantages
 
-- **Dedicate the space** -- If possible, keep your gym set up and ready to go at all times. Having to rearrange furniture before every session kills motivation.
-- **Set a schedule** -- Treat your home gym sessions like appointments. Block the time in your calendar.
-- **Minimize distractions** -- Leave your phone in the house (or use airplane mode) and communicate to family that training time is off-limits.
-- **Track everything** -- An app like AIVancePro keeps you accountable with workout logs, progress tracking and programmed progression.
-- **Start small and expand** -- Begin with the essentials and add equipment as you prove your commitment. A 200 euro initial investment is low-risk.
+- **Upfront cost**: the initial investment is significant, even for a minimal setup.
+- **Space required**: not everyone has a garage or dedicated room.
+- **Limited equipment variety**: no guided machines, multiple cable stations or specialized equipment.
+- **Motivation**: some lifters need the gym atmosphere to stay motivated.
+- **Safety**: training alone with heavy loads requires a rack with properly set safeties and common sense.
+
+A home gym does not have to completely replace the commercial gym. Many lifters combine both: home gym for main sessions (barbell, dumbbells) and commercial gym 1-2 times per week for specialized machines.
+
+## FAQ -- Home gym
+
+**Is a home gym sufficient to progress as much as in a commercial gym?**
+Yes, for strength and hypertrophy, a well-equipped home gym (rack, barbell, bench, dumbbells) covers 90% of your needs. [Compound exercises](/en/guides/compound-vs-isolation/) (squat, [bench](/en/guides/improve-bench-press/), deadlift, row, OHP) are the pillars of any effective program and require only basic equipment. Guided machines in a gym offer additional comfort for isolation but are not essential for progress. The key is to apply [progressive overload](/en/guides/understanding-rpe/) and adapted [periodization](/en/guides/periodization-basics/).
+
+**How to stay motivated when training alone at home?**
+The lack of gym atmosphere is the main barrier for many. A few strategies: (1) set a fixed schedule and treat it as a non-negotiable appointment, (2) prepare a dedicated playlist, (3) use a tracking app to follow your progress and maintain motivation, (4) film your heavy sets to review and measure your technical progress, (5) join an online community of home gym lifters to share your performances. The advantage of a home gym is that the barrier to entry is nearly zero: no commute, no excuses.
+
+**Can my garage/apartment floor handle the weight of a home gym?**
+A typical home gym (rack + bar + 200 kg of plates + bench + user) weighs about 350-450 kg total, spread over 6-10 m2. Concrete garage floors easily support this load. In apartments, building codes generally require 200-250 kg/m2 of live load capacity, which is sufficient if the weight is well distributed (lifting platform, mats). The only real risk is dropping a loaded bar from height, which creates a significant point impact. Bumper plates and a good platform eliminate this risk. If in doubt about an older wooden floor, consult a professional.

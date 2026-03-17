@@ -15,155 +15,269 @@ alternates:
   de: "https://aivancepro.fr/de/ratgeber/bankdruecken-verbessern/"
 ---
 
-The bench press is arguably the most popular lift in the gym and the one people ask about most often. Whether you are chasing a new personal record, trying to break through a plateau or simply want to bench with better technique, this guide covers everything: the optimal setup, the best accessory work, how to program bench-specific training, and how to identify and fix your weak points.
+The bench press is probably the most popular exercise in the gym. It is also one where technique has the greatest impact on performance. This guide covers the key technical points, accessory exercises and specific programming to improve your bench press.
 
 ## Optimal bench press technique
 
-Before worrying about programming or accessories, make sure your technique is dialed in. Small setup improvements often unlock immediate strength gains with no additional training required.
+### Bench setup
 
-### The setup: your foundation
+Before even unracking the bar, your positioning on the bench determines the effectiveness of the entire movement:
 
-A strong bench press starts before you even unrack the bar. Here is how to set up properly:
-
-1. **Position on the bench** -- Lie back so your eyes are directly under the barbell. This ensures a clean unrack path without excessive shoulder strain.
-2. **Retract and depress your shoulder blades** -- Squeeze your shoulder blades together and pull them down toward your back pockets. This creates a stable base and shortens the range of motion slightly. Your upper back should feel locked into the bench.
-3. **Create a slight arch** -- A controlled thoracic arch is safe and mechanically advantageous. It puts your shoulders in a better position and allows your chest to do more of the work. Your glutes should remain on the bench at all times.
-4. **Plant your feet** -- Feet flat on the floor, pulled back slightly toward your hips. Your legs should feel engaged and ready to drive. Avoid having your feet too far forward or up on the bench.
+- **Eyes under the bar**: lie down so that your eyes are directly under the bar at rest. This ensures a clean unrack and a good bar path.
+- **Scapular retraction**: squeeze your shoulder blades together and drive them into the bench. Imagine trying to pinch a pencil between your shoulder blades. This position creates a stable base and protects the shoulders.
+- **Back arch**: create a natural arch in your lower back. Your glutes and upper back remain in contact with the bench, but your lower back lifts slightly. This arch is not dangerous: it reduces the range of motion (mechanical advantage) and places the shoulders in a safer position.
+- **Chest up**: keep your chest pushed up throughout the movement. If your chest collapses, you lose scapular retraction and force transfer.
 
 ### Grip width
 
-Grip width is individual and depends on your arm length, shoulder mobility and the muscle groups you want to emphasize:
+Grip width affects the muscles targeted and joint comfort:
 
-- **Competition grip (index finger on the ring mark)** -- Maximizes chest involvement and shortens range of motion. Best for most lifters seeking maximum weight.
-- **Medium grip (hands slightly outside shoulders)** -- Balanced between chest and tricep involvement. A good default for most lifters.
-- **Close grip (hands at shoulder width)** -- Shifts emphasis to the triceps. Useful as an accessory but not ideal for maximum weight.
+- **Medium grip** (1.5 to 1.8 times shoulder width): the best compromise for most lifters. Evenly targets chest and triceps.
+- **Wide grip** (more than 1.8 times): reduces range of motion and places greater emphasis on the chest. More stressful on the shoulders.
+- **Close grip** (shoulder width): emphasizes the triceps. Excellent accessory exercise.
 
-In all cases, your forearms should be roughly vertical when the bar touches your chest. If your elbows flare excessively outward or tuck too far inward, adjust your grip width.
-
-### The arch
-
-A thoracic arch (upper back extension) serves multiple purposes:
-
-- Reduces range of motion, allowing you to move more weight
-- Puts the shoulders in a safer, more retracted position
-- Increases chest engagement by stretching the pecs at the bottom
-- Creates a more stable base on the bench
-
-The arch should come from your upper back (thoracic spine), not your lower back. If you are new to arching, work on thoracic mobility first with foam rolling and extension stretches.
+Regardless of width, the bar should rest on the base of the palm, aligned with the forearms. Grip the bar as hard as you can: this activates stabilizer muscles and improves force transfer.
 
 ### Leg drive
 
-Leg drive is the secret weapon of strong bench pressers. By driving your feet into the floor and generating tension through your legs and glutes, you create a rigid kinetic chain that transfers force through your entire body into the bar.
+Leg drive is the pushing of the feet into the floor during the movement. Many lifters neglect this component, which can add 5 to 15 kg to your performance.
 
-To practice leg drive:
-
-1. Set your feet firmly, slightly behind your knees.
-2. As you press the bar up, push the floor away with your feet.
-3. Feel your glutes and quads engage. Your body should feel tight from feet to shoulders.
-4. The drive should go toward your head (pushing you up the bench), not lifting your hips off the bench.
+- Place your feet flat on the floor, slightly behind your knees.
+- Push firmly into the floor throughout the entire movement.
+- The force generated by the legs transfers through the torso to the bar.
+- Keep your glutes on the bench: if they lift off, you are pushing too much upward instead of backward.
 
 ### Bar path
 
-The bar should not travel in a straight vertical line. The optimal bench press bar path follows a slight arc:
+Contrary to what many believe, the bar does not travel vertically. The optimal bar path forms a **slight diagonal arc**:
 
-- **Unrack**: Arms straight, bar over your shoulders.
-- **Descent**: Lower the bar to your lower chest/upper abdomen area (the exact point depends on your arch and arm length).
-- **Press**: Drive the bar up and slightly back toward the lockout position over your shoulders.
+1. Unrack: the bar starts above the shoulders.
+2. Descent: the bar lowers to the lower chest (around nipple line or slightly below).
+3. Contact: touch the torso with control, no bounce.
+4. Press: the bar travels back up diagonally toward the shoulders, not straight up. This reverse arc path leverages shoulder and tricep strength at lockout.
 
-This diagonal bar path shortens the moment arm on the shoulder joint and allows you to leverage your strongest pressing muscles.
+## Bench press variations
 
-## Accessory exercises for bench press
+Each variation targets a specific aspect of the movement. Incorporate them into your program as accessory or main exercises depending on your weak point.
 
-Accessories strengthen the muscle groups involved in the bench press and address weak points. Here are the most effective ones:
+| Variation | Primary target | Recommended RPE | When to use |
+|---|---|---|---|
+| **Spoto press** (pause 2-3 cm above chest) | Chest and mid-range control | 7-8 | If the bar slows at mid-range; to improve stability without bounce |
+| **Pause bench** (2-3 sec. on chest) | Chest, explosiveness from the bottom | 7-8.5 | If the bar sticks on the chest; to eliminate momentum and strengthen the start |
+| **Board press** (board on chest, reduced ROM) | Triceps, lockout | 8-9 | If the bar stalls in the top third; to overload the lockout |
+| **Floor press** (lying on the floor, reduced ROM) | Triceps, shoulders, control | 7.5-8.5 | If lockout is weak; great for [home gym](/en/guides/home-gym-guide/) training without a bench |
+| **Close grip bench** (shoulder-width grip) | Triceps, front delts | 7-8 | Universal accessory; excellent tricep volume without excessive fatigue |
+| **Banded bench press** | Acceleration, power | 8-9 | To work speed through the sticking point; intermediate+ lifters |
+| **Tempo bench** (3-4 sec. descent) | Eccentric control, technique | 6.5-7.5 | Technical warm-up, mind-muscle connection, fixing flaws |
 
-### Chest accessories
+## Key accessory exercises
 
-- **Incline dumbbell press** -- Builds the upper chest and improves pressing strength from the bottom position. 3 x 8-12.
-- **Dips (weighted if possible)** -- Works the chest, shoulders and triceps in a similar pressing pattern. 3 x 8-12.
-- **Dumbbell flyes or cable flyes** -- Isolates the chest through a full stretch. 3 x 12-15.
+### For the chest
 
-### Tricep accessories
+- **Incline dumbbell press**: develops the upper chest, often a weak point. 3-4 x 8-12.
+- **Cable flyes**: isolate the chest without shoulder joint stress. 3 x 12-15. Excellent for mind-muscle connection.
+- **Dips**: work the lower chest and triceps. Add weight when bodyweight becomes too easy. 3-4 x 8-12.
 
-The triceps are responsible for the lockout portion of the bench press. If you fail at the top, your triceps are the weak link.
+### For the triceps
 
-- **Close-grip bench press** -- The single best tricep exercise for bench press carryover. 3 x 6-8.
-- **Overhead tricep extensions** -- Stretches the long head of the tricep under load. 3 x 10-12.
-- **Tricep pushdowns** -- Cable-based isolation for the lateral head. 3 x 12-15.
-- **Board press or pin press** -- Overloads the top portion of the bench press. 3 x 3-5 at supramaximal loads.
+The triceps are responsible for the final lockout of the movement. If your bench stalls in the top third, your triceps are likely the weak link.
 
-### Shoulder and upper back accessories
+- **Close-grip bench press**: the most bench-specific variation. 3-4 x 6-10.
+- **Cable tricep pushdowns**: isolate the triceps without systemic fatigue. 3 x 12-15.
+- **Skull crushers**: target the long head of the triceps, often underdeveloped. 3 x 8-12.
 
-- **Overhead press** -- Builds anterior delt strength essential for the pressing motion. 3 x 6-8.
-- **Face pulls** -- Strengthens rear delts and rotator cuff for shoulder health and bench stability. 3 x 15-20.
-- **Barbell rows** -- A strong upper back supports a stable bench setup. 3 x 8-10.
+### For the shoulders and back
 
-## Bench press programming
+- **Overhead press**: strengthens the shoulders, which contribute significantly to the unrack and initial push. 3 x 6-10.
+- **Barbell or dumbbell rows**: a strong back is essential for maintaining scapular retraction and stabilizing the movement. 3-4 x 8-12.
+- **Face pulls**: strengthen the external rotators and rear delts, preventing imbalances caused by excessive pressing. 3 x 15-20. This type of preventive work is detailed in our guide on [recovery and injury prevention](/en/guides/recovery-injury-prevention/).
 
-How you program the bench press matters as much as how you perform it. If you need help structuring a complete program around your bench press work, our guide on [creating an effective training program](/en/guides/create-training-program/) covers splits, volume and progression planning. Here are evidence-based programming principles:
+## Identifying your weak point: diagnostic protocol
+
+To progress effectively, you need to know exactly **where** your bench press fails. Here is a simple protocol to identify your weak point.
+
+### The test
+
+1. Warm up normally up to about 70% of your 1RM.
+2. Load the bar to about 85-90% of your estimated 1RM.
+3. Perform 1 to 3 reps, focusing on where the bar slows down or stalls.
+4. Film yourself from the side so you can analyze the bar path in slow motion.
+
+### Interpretation
+
+| Observation | Weak point | Deficient muscles | Priority fix |
+|---|---|---|---|
+| Bar sticks on chest, difficulty initiating the push | Bottom of the movement | Chest (especially sternal portion) | Pause bench, flyes, incline press |
+| Bar slows 10-15 cm off the chest then stalls | Mid-range (sticking point) | Chest/tricep transition, front delts | Spoto press, banded bench, overhead press |
+| Bar passes the midpoint but stalls before lockout | Top of the movement | Triceps (especially lateral and medial heads) | Board press, floor press, close grip bench, skull crushers |
+| Bar drifts laterally or elbows flare back | Technical instability | Shoulder stabilizers, back | Face pulls, rows, slow tempo bench, dumbbell bench |
+
+Repeat this test every 6-8 weeks. Your weak point will evolve as you correct it.
+
+## Most common technique errors
+
+### 1. Loss of scapular retraction
+
+**The problem**: the shoulder blades lift off the bench during the press, destabilizing the shoulders and reducing force transfer.
+
+**The fix**: before every set, actively drive your shoulder blades into the bench. Think about "pushing the bench with your back" rather than pushing the bar upward. Corrective exercise: isometric scapular retraction (hold the pinched position for 20 seconds, 3 sets).
+
+### 2. Bouncing off the chest
+
+**The problem**: the bar bounces off the chest instead of touching with control. This masks a weakness at the bottom of the movement, prevents development of starting strength and can cause rib injuries.
+
+**The fix**: regularly practice pause bench (2-second pause on the chest) during moderate-volume sessions. The goal is to develop the ability to produce force from a static position.
+
+### 3. Elbows flared too wide (angle > 75 degrees)
+
+**The problem**: the elbows flare too far from the body, overloading the shoulders and reducing tricep contribution.
+
+**The fix**: aim for a 45 to 60-degree elbow-torso angle. A simple cue: seen from above, your arms should form an arrow, not a T. Practice this at light loads (50-60% 1RM) until the pattern becomes automatic.
+
+### 4. Unstable or moving feet
+
+**The problem**: feet slide, lift or shift position during the set. Leg drive is lost, overall stability is compromised.
+
+**The fix**: plant your feet and push firmly into the floor *before* unracking the bar. Maintain this tension from start to finish. If your feet slide, try flat-soled shoes (lifting shoes or Converse) or place a non-slip mat on the floor.
+
+### 5. Bad bar path (straight vertical)
+
+**The problem**: the bar travels in a straight line from the chest to above the shoulders. This path is inefficient because it does not take advantage of optimal shoulder and tricep mechanics.
+
+**The fix**: think about pushing the bar "toward the rack" rather than toward the ceiling. The path should form a slight reverse J-curve: touch at lower chest level, then rise diagonally toward the shoulders. Film yourself from the side and compare with the expected bar path.
+
+## Bench-specific programming
 
 ### Ideal frequency
 
-Research and practical experience suggest that benching **2-3 times per week** produces better results than once per week. Higher frequency allows you to:
+To improve your bench press, a frequency of **2 to 3 times per week** is optimal. This may seem high, but the bench press greatly benefits from technical repetition. To organize these sessions into a long-term plan, the principles of [training periodization](/en/guides/periodization-basics/) are essential.
 
-- Accumulate more total volume with less fatigue per session
-- Practice the movement pattern more frequently (skill development)
-- Use different rep ranges across sessions (e.g., heavy day, moderate day, light/technique day)
-
-### Sample bench press program
-
-> **3x/week bench focus program (4-week block)**
+> **Example: 3-session split**
 >
-> - **Monday -- Heavy day**: Bench press 4 x 4 at 82-87% 1RM, Close-grip bench 3 x 6-8
-> - **Wednesday -- Moderate day**: Bench press 3 x 8 at 72-77% 1RM, Incline dumbbell press 3 x 10-12
-> - **Friday -- Volume day**: Bench press 4 x 10 at 65-70% 1RM, Dips 3 x 8-12, Flyes 3 x 12-15
->
-> Add 1-2.5 kg to each session's working weight each week. Deload on week 5. Using [RPE to regulate your intensity](/en/guides/understanding-rpe/) on each session lets you auto-adjust these loads based on daily readiness.
+> - Monday: Competition bench press -- 4 x 5 @ 80%
+> - Wednesday: Close-grip bench press -- 3 x 8 @ 70%
+> - Friday: Tempo bench press -- 3 x 6 @ 72% (3-second descent)
 
-### Volume recommendations
+Each session has a different objective: the first develops strength with heavy loads, the second targets the triceps, and the third improves control and the eccentric phase.
 
-For bench press specifically, aim for **10-20 total working sets per week** across all pressing movements (bench press + accessories). Start at the lower end and increase gradually as your work capacity grows.
+### Complete 8-week program
 
-## Common weak points and fixes
+This periodized program alternates an accumulation block (volume) and an intensification block (strength) to maximize your bench press gains. It assumes 3 bench sessions per week.
 
-Where you fail in the bench press reveals which muscles need work. Here is how to diagnose and fix the most common sticking points:
+#### Block 1 -- Accumulation (weeks 1-4)
 
-### Weak off the chest (bottom position)
+**Day 1 -- Main strength**
 
-If the bar gets stuck at or near your chest, your pecs are the weak link.
+| Week | Exercise | Sets x Reps | % 1RM | RPE |
+|---|---|---|---|---|
+| 1 | Competition bench press | 4 x 6 | 75% | 7 |
+| 2 | Competition bench press | 4 x 6 | 77.5% | 7.5 |
+| 3 | Competition bench press | 5 x 6 | 80% | 8 |
+| 4 (deload) | Competition bench press | 3 x 5 | 70% | 6 |
 
-- **Fix**: Add paused bench press (2-3 second pause on the chest) to develop starting strength.
-- **Fix**: Increase chest volume with dumbbell presses and flyes.
-- **Fix**: Work on your arch and leg drive to improve the initial push off the chest.
+**Day 2 -- Volume / Variation**
 
-### Weak at the midpoint (sticking point)
+| Week | Exercise | Sets x Reps | % 1RM | RPE |
+|---|---|---|---|---|
+| 1 | Close grip bench | 3 x 10 | 65% | 7 |
+| 2 | Close grip bench | 4 x 10 | 67.5% | 7.5 |
+| 3 | Close grip bench | 4 x 10 | 70% | 8 |
+| 4 (deload) | Close grip bench | 2 x 8 | 60% | 6 |
 
-The bar passes the chest but stalls halfway up. This is often a transition point between chest and tricep dominance.
+**Day 3 -- Technique / Tempo**
 
-- **Fix**: Spoto press (pause 2-3 cm above the chest) to build strength through the mid-range.
-- **Fix**: Tempo bench press (slow 3-4 second eccentrics) to develop strength throughout the range of motion.
-- **Fix**: Increase both chest and shoulder work.
+| Week | Exercise | Sets x Reps | % 1RM | RPE |
+|---|---|---|---|---|
+| 1 | Pause bench (2 sec.) | 3 x 8 | 67% | 7 |
+| 2 | Pause bench (2 sec.) | 3 x 8 | 70% | 7.5 |
+| 3 | Tempo bench (3-1-1) | 3 x 6 | 72% | 8 |
+| 4 (deload) | Tempo bench (3-1-1) | 2 x 6 | 62% | 6 |
 
-### Weak at lockout (top position)
+*Accessories each day*: Incline dumbbell press 3 x 10-12, Face pulls 3 x 15-20, Cable tricep pushdowns 3 x 12-15.
 
-You can press the bar past the midpoint but cannot lock out the elbows. This is a tricep problem.
+#### Block 2 -- Intensification (weeks 5-8)
 
-- **Fix**: Close-grip bench press as a primary accessory.
-- **Fix**: Board press or pin press from the weak position to overload the lockout.
-- **Fix**: Add 4-6 weekly sets of direct tricep isolation work.
+**Day 1 -- Main strength**
 
-### Bar path drifts or inconsistency
+| Week | Exercise | Sets x Reps | % 1RM | RPE |
+|---|---|---|---|---|
+| 5 | Competition bench press | 4 x 4 | 82.5% | 8 |
+| 6 | Competition bench press | 5 x 3 | 85% | 8.5 |
+| 7 | Competition bench press | 5 x 2 | 90% | 9 |
+| 8 (test) | Bench press -- 1RM or 3RM test | Progressive ramp-up | 95-100% | 10 |
 
-If your bar path varies from rep to rep, it is a technique issue, not a strength issue.
+**Day 2 -- Strength / Variation**
 
-- **Fix**: Record your sets and review the bar path.
-- **Fix**: Increase bench frequency with lighter loads (60-70% 1RM) focusing purely on consistent bar path.
-- **Fix**: Use paused reps to practice controlled positioning at the bottom.
+| Week | Exercise | Sets x Reps | % 1RM | RPE |
+|---|---|---|---|---|
+| 5 | Spoto press | 3 x 5 | 78% | 8 |
+| 6 | Board press / Floor press | 4 x 4 | 82% | 8.5 |
+| 7 | Close grip bench | 3 x 4 | 82% | 8.5 |
+| 8 (test) | Light: Close grip bench | 2 x 6 | 65% | 6 |
 
-## Shoulder health for bench pressers
+**Day 3 -- Technique / Speed**
 
-The bench press demands a lot from your shoulders. Keeping them healthy is essential for long-term progress:
+| Week | Exercise | Sets x Reps | % 1RM | RPE |
+|---|---|---|---|---|
+| 5 | Dynamic bench press | 6 x 3 | 60% + bands | 7 |
+| 6 | Pause bench (3 sec.) | 4 x 3 | 80% | 8 |
+| 7 | Dynamic bench press | 8 x 2 | 55% + bands | 7 |
+| 8 (test) | Rest or light mobility | -- | -- | -- |
 
-- **Always warm up thoroughly** -- Band pull-aparts, external rotations and light pressing sets before your working sets. For a comprehensive approach to staying healthy long-term, see our guide on [recovery and injury prevention](/en/guides/recovery-injury-prevention/).
-- **Balance pressing with pulling** -- For every set of bench press, do at least one set of horizontal pulling (rows). A 1:1 or even 2:1 pull-to-push ratio keeps shoulders balanced.
-- **Do not neglect rear delts** -- Face pulls and reverse flyes 3-4 times per week, 15-20 reps per set.
-- **Manage your elbow tuck** -- Elbows at roughly 45-75 degrees from your torso. Excessively flared elbows (90 degrees) put dangerous stress on the shoulder joint.
+*Accessories weeks 5-7*: Weighted dips 3 x 6-8, Barbell rows 3 x 8-10, Skull crushers 3 x 10-12. Week 8: accessories reduced or removed.
+
+To properly calibrate RPE throughout this program, consult our guide on [RPE and intensity management](/en/guides/understanding-rpe/).
+
+## Identifying and correcting weak points
+
+### Weakness at the bottom (off the chest)
+
+If the bar sticks on your chest and you struggle to initiate the push, your chest is likely the weak point.
+
+- Practice pause bench press (2-3 second pause on the chest) to eliminate momentum and strengthen this position.
+- Add flyes and incline pressing to develop chest mass.
+- Work on slight explosiveness from the bottom position: pin press (bar starts resting on the safeties).
+
+### Weakness at the mid-range (sticking point)
+
+The typical sticking point is about 10-15 cm above the chest. This is where the chest loses its mechanical advantage and the triceps take over.
+
+- Banded bench press adds resistance as the bar rises, forcing acceleration through the sticking point.
+- Spoto press (pause 2-3 cm above the chest) specifically targets this zone.
+
+### Weakness at lockout (top of the movement)
+
+If the bar slows in the final third of the movement, your triceps are the limiting factor.
+
+- Board press or floor press limits the range of motion and overloads the lockout phase.
+- Add direct tricep isolation work: skull crushers, cable pushdowns, JM press.
+- Chain bench press progressively overloads the top of the movement.
+
+## Practical tips
+
+### Film yourself
+
+Place your phone in video mode from the side to analyze your bar path, back arch and elbow placement. Technical flaws are often invisible from the inside but obvious on video.
+
+### Work technique at light loads
+
+Regularly dedicate sessions at 50-65% of your max to perfecting every technical aspect: scapular retraction, leg drive, bar path. Technical habits built at light loads transfer to heavy weights.
+
+### Be patient
+
+The bench press progresses more slowly than the squat or deadlift. A gain of 2.5 kg per month is already excellent for an intermediate lifter. Consistency is what makes the difference over the long term.
+
+### Protect your shoulders
+
+The bench press is one of the most stressful exercises for the shoulder joint. Include face pulls, external rotations and thoracic mobility work in every session. Our guide on [recovery and injury prevention](/en/guides/recovery-injury-prevention/) details the prevention routines you need.
+
+## FAQ -- Bench press
+
+**What is the best frequency for improving bench press?**
+For most intermediate lifters, 2 to 3 times per week is optimal. The key is to vary the stimuli: one heavy session (3-6 reps), one volume/variation session (8-12 reps) and optionally one technique session (tempo or pause). If you can only do 2 sessions, combine strength and technique on day 1 and volume on day 2. Beyond 3 bench sessions per week, [fatigue management](/en/guides/periodization-basics/) becomes critical.
+
+**Should you touch the chest on every rep?**
+Yes, unless you are deliberately working a reduced range of motion variation (board press, floor press, spoto press). Touching the chest with control (no bounce) ensures full range of motion, complete muscle development and technique transferable to competition. Bouncing must be avoided: it masks a weakness at the bottom of the movement and increases the risk of rib and sternum injury.
+
+**How to adapt the bench press if you have shoulder pain?**
+First, distinguish between pain and mere discomfort. If the pain is sharp, localized in the joint and present on every rep, stop the movement and see a professional. If it is mild discomfort, try: (1) checking your scapular retraction, (2) narrowing your grip by one finger width on each side, (3) using a more pronounced back arch, (4) temporarily replacing with floor press or dumbbell bench (greater rotational freedom). See our guide on [recovery and injury prevention](/en/guides/recovery-injury-prevention/) for a complete protocol.
