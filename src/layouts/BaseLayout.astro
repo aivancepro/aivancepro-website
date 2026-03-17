@@ -126,6 +126,25 @@ const guidePosts = (await getCollection('guides', ({ data }) => data.lang === la
         </div>
     </div>
 
+    <!-- Newsletter Popup (2 min timer) -->
+    <div class="nl-popup-overlay" id="nlPopup">
+        <div class="nl-popup">
+            <button class="nl-popup-close" id="nlPopupClose">&times;</button>
+            <div class="nl-popup-icon">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" width="40" height="40"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/></svg>
+            </div>
+            <h3>{i.newsletter.articleTitle}</h3>
+            <p>{i.newsletter.articleText}</p>
+            <form class="newsletter-form-el nl-popup-form" data-lang={lang} data-success={i.newsletter.success} data-error={i.newsletter.error} data-duplicate={i.newsletter.duplicate}>
+                <div class="newsletter-input-wrap">
+                    <input type="email" placeholder={i.newsletter.placeholder} required>
+                    <button type="submit">{i.newsletter.button}</button>
+                </div>
+                <p class="newsletter-msg"></p>
+            </form>
+        </div>
+    </div>
+
     <!-- Cookie Banner -->
     <div id="cookieBanner" class="cookie-banner">
         <div class="cookie-inner">
@@ -289,6 +308,43 @@ const guidePosts = (await getCollection('guides', ({ data }) => data.lang === la
             autoInterval = setInterval(function() { goToSlide((currentSlide + 1) % cards.length); }, 5000);
           }
           resetAuto();
+        }
+      }
+
+      // Newsletter popup (2 min timer on reading pages)
+      var nlPopup = document.getElementById('nlPopup');
+      if (nlPopup && !localStorage.getItem('nl_popup_subscribed')) {
+        var nlDismissed = localStorage.getItem('nl_popup_dismissed');
+        var canShow = !nlDismissed || (Date.now() - parseInt(nlDismissed)) > 7 * 24 * 60 * 60 * 1000;
+        if (canShow) {
+          var isReadingPage = document.querySelector('.article-content') || window.location.pathname.match(/\/(blog|guides|ratgeber|exercices|exercises|uebungen)\//);
+          if (isReadingPage) {
+            setTimeout(function() {
+              if (!localStorage.getItem('nl_popup_subscribed')) {
+                nlPopup.classList.add('show');
+              }
+            }, 120000);
+          }
+        }
+        var closeNlPopup = function() {
+          nlPopup.classList.remove('show');
+          localStorage.setItem('nl_popup_dismissed', Date.now().toString());
+        };
+        var nlClose = document.getElementById('nlPopupClose');
+        if (nlClose) nlClose.addEventListener('click', closeNlPopup);
+        nlPopup.addEventListener('click', function(e) { if (e.target === nlPopup) closeNlPopup(); });
+        // Mark as subscribed on successful submission
+        var nlPopupForm = nlPopup.querySelector('.nl-popup-form');
+        if (nlPopupForm) {
+          var origSubmit = nlPopupForm.addEventListener;
+          var observer = new MutationObserver(function() {
+            var msg = nlPopupForm.querySelector('.newsletter-msg');
+            if (msg && msg.classList.contains('success')) {
+              localStorage.setItem('nl_popup_subscribed', '1');
+              setTimeout(closeNlPopup, 2000);
+            }
+          });
+          observer.observe(nlPopupForm, { subtree: true, attributes: true, attributeFilter: ['class'] });
         }
       }
 
