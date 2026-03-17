@@ -131,7 +131,7 @@ Mit Langhantel, Kurzhanteln, Rack und Bank können Sie nahezu jedes Programm dur
 
 - **Hohe Anfangsinvestition**: 500--2.000 EUR für ein solides Setup
 - **Begrenzte Ausrüstung**: Keine Kabelzüge, Maschinen und spezielle Geräte (außer Sie investieren viel)
-- **Platzbedarf**: Mindestens 8--10 m² für ein komfortables Setup
+- **Platzbedarf**: Mindestens 6--10 m² für ein komfortables Setup
 - **Motivation**: Ohne Trainingspartner oder Gym-Atmosphäre kann die Motivation leiden -- ein strukturierter [Einstieg ins Krafttraining](/de/ratgeber/anfaenger-krafttraining/) hilft, dranzubleiben
 - **Sicherheit**: Alleine trainieren erfordert besondere Vorsicht (Safety Bars nutzen!)
 - **Lärm**: Kreuzheben und abgelegte Gewichte können in Mehrfamilienhäusern problematisch sein
