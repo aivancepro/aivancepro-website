@@ -4,6 +4,7 @@ description: "What's the difference between compound (multi-joint) and isolation
 date: "2026-03-07"
 readTime: "7 min read"
 tag: "Training"
+image: "/assets/guides/polyarticulaire-vs-isolation.png"
 lang: "en"
 slug: "compound-vs-isolation"
 canonical: "https://aivancepro.fr/en/guides/compound-vs-isolation/"

@@ -4,6 +4,7 @@ description: "Discover the benefits of personal training and how AI is revolutio
 date: "2026-03-07"
 readTime: "6 min read"
 tag: "Coaching"
+image: "/assets/guides/coaching-personnel.png"
 lang: "en"
 slug: "personal-training"
 canonical: "https://aivancepro.fr/en/guides/personal-training/"
