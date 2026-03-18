@@ -126,6 +126,20 @@ const guidePrefixes = { fr: '/guides/', en: '/en/guides/', de: '/de/ratgeber/' }
       .final-cta p { color: var(--text-secondary); font-size: 1.1rem; max-width: 500px; margin: 0 auto 2.5rem; }
       .back { display: inline-block; margin-top: 2rem; color: var(--text-secondary); text-decoration: none; font-size: 0.9rem; }
       .back:hover { color: var(--text); }
+      .article-faq { margin-top: 2.5rem; }
+      .article-faq h2 { font-size: 1.5rem; font-weight: 800; margin-bottom: 1rem; color: var(--text); text-transform: uppercase; letter-spacing: 0.02em; }
+      .faq-list { display: flex; flex-direction: column; gap: 0; }
+      .faq-item { border-bottom: 1px solid var(--border); }
+      .faq-question { display: flex; justify-content: space-between; align-items: center; width: 100%; padding: 1.25rem 0; background: none; border: none; cursor: pointer; font-size: 1rem; font-weight: 500; color: var(--text-secondary); text-align: left; gap: 1rem; font-family: inherit; transition: color 0.2s; }
+      .faq-question:hover { color: var(--text); }
+      .faq-icon { position: relative; width: 24px; height: 24px; flex-shrink: 0; }
+      .faq-icon::before, .faq-icon::after { content: ''; position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); background: var(--text-secondary); border-radius: 1px; transition: transform 0.3s, opacity 0.3s; }
+      .faq-icon::before { width: 16px; height: 2px; }
+      .faq-icon::after { width: 2px; height: 16px; }
+      .faq-item.open .faq-question { font-weight: 600; color: var(--text); }
+      .faq-item.open .faq-icon::after { transform: translate(-50%, -50%) rotate(90deg); opacity: 0; }
+      .faq-answer { max-height: 0; overflow: hidden; transition: max-height 0.3s ease; }
+      .faq-answer-inner { padding: 0 0 1.5rem; font-size: 0.95rem; color: var(--text-secondary); line-height: 1.8; }
       @media (max-width: 768px) {
         .article-header { padding: 7rem 1.5rem 2rem; }
         .article-header h1 { font-size: 1.8rem; }
@@ -270,6 +284,82 @@ const guidePrefixes = { fr: '/guides/', en: '/en/guides/', de: '/de/ratgeber/' }
         });
         tocWrap.style.display = '';
       }
+    }
+    // FAQ accordion
+    var faqH2 = null;
+    content && content.querySelectorAll('h2').forEach(function(h) {
+      if (h.textContent.trim().toUpperCase() === 'FAQ') faqH2 = h;
+    });
+    if (faqH2) {
+      var faqSection = document.createElement('div');
+      faqSection.className = 'article-faq';
+      var faqTitle = document.createElement('h2');
+      faqTitle.textContent = faqH2.textContent;
+      faqSection.appendChild(faqTitle);
+      var faqListEl = document.createElement('div');
+      faqListEl.className = 'faq-list';
+      faqSection.appendChild(faqListEl);
+
+      // Collect FAQ items: find siblings after h2 until next h2 or end
+      var siblings = [];
+      var next = faqH2.nextElementSibling;
+      while (next && next.tagName !== 'H2') {
+        siblings.push(next);
+        next = next.nextElementSibling;
+      }
+
+      // Parse questions & answers
+      var i = 0;
+      while (i < siblings.length) {
+        var el = siblings[i];
+        var questionText = null;
+        var answerEls = [];
+
+        // h3 question
+        if (el.tagName === 'H3') {
+          questionText = el.textContent;
+          i++;
+          while (i < siblings.length && siblings[i].tagName !== 'H3' && !(siblings[i].tagName === 'P' && siblings[i].querySelector('strong') && siblings[i].childNodes.length === 1)) {
+            answerEls.push(siblings[i]);
+            i++;
+          }
+        }
+        // p > strong question (bold only paragraph)
+        else if (el.tagName === 'P' && el.querySelector('strong') && el.textContent.trim() === el.querySelector('strong').textContent.trim()) {
+          questionText = el.querySelector('strong').textContent;
+          i++;
+          while (i < siblings.length && siblings[i].tagName !== 'H3' && !(siblings[i].tagName === 'P' && siblings[i].querySelector('strong') && siblings[i].textContent.trim() === (siblings[i].querySelector('strong') ? siblings[i].querySelector('strong').textContent.trim() : ''))) {
+            answerEls.push(siblings[i]);
+            i++;
+          }
+        }
+        else { i++; continue; }
+
+        if (questionText) {
+          var item = document.createElement('div');
+          item.className = 'faq-item';
+          var btn = document.createElement('button');
+          btn.className = 'faq-question';
+          btn.textContent = questionText;
+          var icon = document.createElement('span');
+          icon.className = 'faq-icon';
+          btn.appendChild(icon);
+          btn.addEventListener('click', function() { this.parentElement.classList.toggle('open'); var ans = this.nextElementSibling; if (this.parentElement.classList.contains('open')) { ans.style.maxHeight = ans.scrollHeight + 'px'; } else { ans.style.maxHeight = '0'; } });
+          item.appendChild(btn);
+          var answer = document.createElement('div');
+          answer.className = 'faq-answer';
+          var ansInner = document.createElement('div');
+          ansInner.className = 'faq-answer-inner';
+          answerEls.forEach(function(a) { ansInner.appendChild(a.cloneNode(true)); });
+          answer.appendChild(ansInner);
+          item.appendChild(answer);
+          faqListEl.appendChild(item);
+        }
+      }
+
+      // Replace original FAQ section
+      siblings.forEach(function(s) { s.remove(); });
+      faqH2.replaceWith(faqSection);
     }
   })();
   </script>
