@@ -108,6 +108,19 @@ CREATE TRIGGER on_reply_insert
   AFTER INSERT ON forum_replies
   FOR EACH ROW EXECUTE FUNCTION increment_reply_count();
 
+-- ── Function to decrement reply_count on delete ────────────────
+CREATE OR REPLACE FUNCTION decrement_reply_count()
+RETURNS TRIGGER AS $$
+BEGIN
+  UPDATE forum_posts SET reply_count = GREATEST(reply_count - 1, 0) WHERE id = OLD.post_id;
+  RETURN OLD;
+END;
+$$ LANGUAGE plpgsql SECURITY DEFINER;
+
+CREATE TRIGGER on_reply_delete
+  AFTER DELETE ON forum_replies
+  FOR EACH ROW EXECUTE FUNCTION decrement_reply_count();
+
 -- ── Function to update upvote counts ─────────────────────────
 CREATE OR REPLACE FUNCTION update_vote_count()
 RETURNS TRIGGER AS $$
