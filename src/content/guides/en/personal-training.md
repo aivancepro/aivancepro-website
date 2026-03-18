@@ -223,7 +223,7 @@ The best coaching is the one that fits your actual situation. Here is a decision
 
 **Want to experience AI coaching for yourself?** [AIVancePro](https://apps.apple.com/app/aivancepro/id6756116760) automatically gives you a personal coach available 24/7, personalized programs and complete progress tracking -- all for a fraction of the cost of a traditional coach. Download the app for free and get started today.
 
-## Frequently asked questions
+## FAQ
 
 ### Can an AI coach really replace a human coach?
 

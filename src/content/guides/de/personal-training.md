@@ -223,7 +223,7 @@ Das beste Coaching ist das, das zu Ihrer tatsächlichen Situation passt. Hier ei
 
 **Möchten Sie KI-Coaching selbst ausprobieren?** [AIVancePro](https://apps.apple.com/de/app/aivancepro/id6756116760) bietet Ihnen einen persönlichen Coach rund um die Uhr, individuelle Programme und ein vollständiges Fortschritts-Tracking — das alles für einen Bruchteil der Kosten eines traditionellen Coaches. Laden Sie die App kostenlos herunter und starten Sie noch heute.
 
-## Häufig gestellte Fragen
+## FAQ
 
 ### Kann ein KI-Coach wirklich einen menschlichen Coach ersetzen?
 

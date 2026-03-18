@@ -223,7 +223,7 @@ Le meilleur coaching est celui qui correspond à votre situation réelle. Voici 
 
 **Envie de découvrir le coaching IA par vous-même ?** [AIVancePro](https://apps.apple.com/fr/app/aivancepro/id6756116760) vous offre un coach personnel disponible 24h/24, des programmes personnalisés et un suivi complet de votre progression — le tout pour une fraction du coût d'un coach traditionnel. Téléchargez l'application gratuitement et commencez dès aujourd'hui.
 
-## Questions fréquentes
+## FAQ
 
 ### Un coach IA peut-il vraiment remplacer un coach humain ?
 
