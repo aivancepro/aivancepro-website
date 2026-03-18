@@ -147,7 +147,7 @@ Here's your step-by-step action plan:
 
 If you want a training and nutrition plan that adapts to your progress in real time, [AIVancePro's AI coaching](https://apps.apple.com/app/aivancepro/id1234567890) can set your protein targets based on your body weight, goals, and training phase—then adjust weekly as you progress. It takes the guesswork out of the equation so you can focus on what matters most: training hard, eating right, and recovering well.
 
-For more on how AI is transforming the fitness coaching landscape, check out our article on [AI fitness coaching](/en/blog/ai-fitness-coaching/).
+For more on how AI is transforming the fitness coaching landscape, discover [AIVancePro](https://aivancepro.fr/en/).
 
 **Disclaimer** : This article is for informational purposes only. Consult a healthcare professional before modifying your training program or diet.
 

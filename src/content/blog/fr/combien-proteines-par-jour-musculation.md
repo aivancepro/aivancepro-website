@@ -130,7 +130,7 @@ Voici le processus étape par étape :
 4. **Multiplie** — 68 kg × 2,2 = **~150 g de protéines/jour**
 5. **Ajuste selon ta progression** — Réévalue toutes les 4 à 6 semaines en fonction des résultats (poids, mensurations, force)
 
-Si tu veux automatiser ce calcul et recevoir un plan adapté chaque semaine, les outils de coaching IA comme AIVancePro intègrent ces paramètres pour ajuster dynamiquement tes recommandations nutritionnelles à ta progression. Découvre comment un [coach IA fitness](/blog/coach-ia-fitness/) peut simplifier ce suivi.
+Si tu veux automatiser ce calcul et recevoir un plan adapté chaque semaine, les outils de coaching IA comme AIVancePro intègrent ces paramètres pour ajuster dynamiquement tes recommandations nutritionnelles à ta progression. Découvre comment [AIVancePro](https://aivancepro.fr/) peut simplifier ce suivi.
 
 Pour structurer ton programme d'entraînement en parallèle, consulte notre [guide pour créer ton programme d'entraînement](/guides/creer-programme-entrainement/).
 

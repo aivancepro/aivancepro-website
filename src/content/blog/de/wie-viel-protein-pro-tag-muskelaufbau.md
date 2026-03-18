@@ -108,7 +108,7 @@ So könnte ein Tag aussehen, wenn du 160 g Protein anpeilst:
 3. **Post-Workout-Snack (30 g)**: Whey-Shake (30 g Pulver) mit 300 ml Milch
 4. **Abendessen (45 g)**: 200 g Lachs mit Kartoffeln und Salat
 
-Gesamtprotein: ~160 g bei etwa 2.200 kcal. Diesen Plan kannst du natürlich individuell anpassen – ein [KI-gestütztes Coaching](/de/blog/ki-fitness-coaching/) wie AIVancePro hilft dir, Mahlzeiten und Makros automatisch auf dein Training abzustimmen.
+Gesamtprotein: ~160 g bei etwa 2.200 kcal. Diesen Plan kannst du natürlich individuell anpassen – ein KI-gestütztes Coaching wie [AIVancePro](https://aivancepro.fr/de/) hilft dir, Mahlzeiten und Makros automatisch auf dein Training abzustimmen.
 
 ## Welche Fehler solltest du bei der Proteinzufuhr vermeiden?
 

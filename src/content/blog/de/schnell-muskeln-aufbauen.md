@@ -132,7 +132,7 @@ Moderne KI-Fitness-Apps analysieren mehrere Datenpunkte gleichzeitig:
 - **Erholungsempfehlungen** – Hinweise auf Deload-Phasen, wenn Leistungsparameter stagnieren
 - **Ernährungs-Tracking** – Verknüpfung von Kalorienaufnahme mit Trainingsleistung
 
-Das ersetzt keinen erfahrenen Personal Trainer, kann aber als **digitaler Assistent** dafür sorgen, dass du konsistent die richtigen Entscheidungen triffst. Mehr über die Möglichkeiten von [KI-Fitness-Coaching](/de/blog/ki-fitness-coaching/) erfährst du in unserem Blogartikel.
+Das ersetzt keinen erfahrenen Personal Trainer, kann aber als **digitaler Assistent** dafür sorgen, dass du konsistent die richtigen Entscheidungen triffst. Mehr über die Möglichkeiten von KI-Fitness-Coaching erfährst du auf [AIVancePro](https://aivancepro.fr/de/).
 
 ### Dein nächster Schritt: Muskelaufbau-Tipps in die Praxis umsetzen
 

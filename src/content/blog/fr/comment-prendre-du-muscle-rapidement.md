@@ -137,7 +137,7 @@ Beaucoup de pratiquants sabotent involontairement leurs résultats. Voici les 5 
 
 Un coach IA fitness désigne un système d'intelligence artificielle capable d'analyser tes données (mensurations, performances, sommeil, alimentation) pour ajuster ton programme en temps réel. Cette approche peut aider à accélérer ta **prise de masse** en supprimant le facteur « tâtonnement » qui fait perdre des semaines, voire des mois, à la plupart des pratiquants. Selon une étude pilote présentée à l'ACSM 2025, les utilisateurs de coaching IA adaptatif ont gagné en moyenne 14 % de masse maigre de plus sur 16 semaines par rapport à un groupe suivant un programme statique classique. La raison est simple : l'algorithme ajuste le volume, l'intensité et la fréquence en fonction de ta fatigue, de ta progression et de tes contraintes personnelles, exactement ce qu'un bon coach humain ferait, mais avec une réactivité quotidienne. C'est le principe derrière AIVancePro, qui combine ces données pour te proposer un programme de musculation personnalisé et évolutif.
 
-Concrètement, voici comment un [coach IA fitness](/blog/coach-ia-fitness/) optimise ta progression :
+Concrètement, voici comment un coach IA fitness optimise ta progression :
 
 - **Ajustement automatique du volume** — Si ta récupération baisse (sommeil insuffisant, stress élevé), l'algorithme réduit temporairement le nombre de séries pour éviter le surentraînement.
 - **Surcharge progressive intelligente** — Le programme augmente les charges uniquement quand tes performances réelles le justifient, pas selon un calendrier arbitraire.
