@@ -28,7 +28,7 @@ function buildGroupSvg(primarySlugs, view = 'front', theme = 'dark') {
   });
   if (view === 'front' || view === 'both') render(frontParts);
   if (view === 'back'  || view === 'both') render(backParts);
-  const vb = view === 'back' ? '860 80 600 1260' : view === 'both' ? '40 80 1380 1280' : '80 80 600 1260';
+  const vb = view === 'back' ? '780 80 600 1260' : view === 'both' ? '40 80 1380 1280' : '80 80 600 1260';
   return `data:image/svg+xml,${encodeURIComponent(`<svg xmlns="http://www.w3.org/2000/svg" viewBox="${vb}">${body}</svg>`)}`;
 }
 
