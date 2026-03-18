@@ -50,11 +50,16 @@ import BaseLayout from '../../layouts/BaseLayout.astro';
       .reply-body a { color: var(--blue); }
       .reply-actions { display: flex; align-items: center; gap: 0.1rem; margin-top: 0.3rem; }
 
-      /* Reply form — main (bottom) */
-      .reply-form { margin-top: 2rem; background: var(--bg-card); border: 1px solid var(--border); border-radius: 14px; padding: 1.25rem; }
-      .reply-form h3 { font-size: 1rem; font-weight: 700; color: var(--text); margin-bottom: 0.75rem; }
-      .reply-form textarea { width: 100%; padding: 0.75rem 1rem; border-radius: 10px; border: 1px solid var(--border); background: var(--bg); color: var(--text); font-size: 0.9rem; font-family: inherit; outline: none; resize: vertical; min-height: 100px; box-sizing: border-box; transition: border-color 0.2s; }
-      .reply-form textarea:focus { border-color: var(--blue); }
+      /* Main reply input — compact, right below the post */
+      .reply-form { margin-bottom: 1.75rem; }
+      .reply-form-compact { display: flex; align-items: center; gap: 0.75rem; padding: 0.7rem 1rem; background: var(--bg-card); border: 1px solid var(--border); border-radius: 24px; cursor: text; transition: border-color 0.2s; }
+      .reply-form-compact:hover, .reply-form-compact:focus-within { border-color: var(--blue); }
+      .reply-form-compact input { flex: 1; border: none; background: none; color: var(--text); font-size: 0.9rem; font-family: inherit; outline: none; }
+      .reply-form-compact input::placeholder { color: var(--text-muted); }
+      /* Expanded form */
+      .reply-form-expanded { background: var(--bg-card); border: 1px solid var(--border); border-radius: 14px; padding: 1.25rem; margin-bottom: 1.75rem; }
+      .reply-form-expanded textarea { width: 100%; padding: 0.75rem 1rem; border-radius: 10px; border: 1px solid var(--border); background: var(--bg); color: var(--text); font-size: 0.9rem; font-family: inherit; outline: none; resize: vertical; min-height: 100px; box-sizing: border-box; transition: border-color 0.2s; }
+      .reply-form-expanded textarea:focus { border-color: var(--blue); }
       .reply-form-actions { display: flex; justify-content: flex-end; gap: 0.5rem; margin-top: 0.75rem; }
       .btn-reply { padding: 0.5rem 1.1rem; border-radius: 20px; border: none; background: var(--blue); color: #fff; font-size: 0.85rem; font-weight: 600; font-family: inherit; cursor: pointer; transition: all 0.2s; box-shadow: 0 4px 15px rgba(74, 144, 217, 0.3); }
       .btn-reply:hover { opacity: 0.92; transform: translateY(-1px); box-shadow: 0 6px 20px rgba(74, 144, 217, 0.4); }
@@ -97,8 +102,8 @@ import BaseLayout from '../../layouts/BaseLayout.astro';
       Retour au forum
     </a>
     <div id="topicContent"><div class="topic-loading">Chargement...</div></div>
-    <div id="repliesSection"></div>
     <div id="replyFormSection"></div>
+    <div id="repliesSection"></div>
   </div>
 
   <div class="toast" id="toast"></div>
@@ -119,6 +124,7 @@ import BaseLayout from '../../layouts/BaseLayout.astro';
     var userVotes = {};
     var replyingToId = null;
     var replyingToName = null;
+    var formExpanded = false;
 
     var catLabels = { general: 'Général', entrainement: 'Entraînement', nutrition: 'Nutrition', progression: 'Progression' };
 
@@ -264,13 +270,12 @@ import BaseLayout from '../../layouts/BaseLayout.astro';
       }
       section.innerHTML = html;
 
-      // Reply form — bottom (for new top-level replies) or inline
+      // Reply form
       var formSection = document.getElementById('replyFormSection');
       if (currentUser) {
         if (replyingToId) {
-          // Inline form is already rendered inside the reply tree
+          // Inline form is rendered inside the reply tree — hide top form
           formSection.innerHTML = '';
-          // Bind inline form events
           setTimeout(function() {
             var submitBtn = document.getElementById('btnSubmitReply');
             if (submitBtn) submitBtn.addEventListener('click', submitReply);
@@ -279,13 +284,26 @@ import BaseLayout from '../../layouts/BaseLayout.astro';
             var ta = document.getElementById('replyBody');
             if (ta) { ta.focus(); ta.scrollIntoView({ behavior: 'smooth', block: 'center' }); }
           }, 50);
-        } else {
+        } else if (!formExpanded) {
+          // Compact input — "Participer à la conversation"
           formSection.innerHTML =
-            '<div class="reply-form"><h3>Votre réponse</h3>' +
+            '<div class="reply-form"><div class="reply-form-compact" id="replyCompact">' +
+              '<input type="text" placeholder="Participer à la conversation..." readonly>' +
+            '</div></div>';
+          document.getElementById('replyCompact').addEventListener('click', function() {
+            formExpanded = true;
+            loadReplies();
+          });
+        } else {
+          // Expanded form
+          formSection.innerHTML =
+            '<div class="reply-form-expanded">' +
               '<textarea id="replyBody" placeholder="Partagez votre avis ou répondez à la question..."></textarea>' +
               '<p class="reply-error" id="replyError" style="display:none"></p>' +
-              '<div class="reply-form-actions"><button class="btn-reply" id="btnSubmitReply">Répondre</button></div></div>';
+              '<div class="reply-form-actions"><button class="btn-cancel-reply" id="btnCancelMain">Annuler</button><button class="btn-reply" id="btnSubmitReply">Commenter</button></div></div>';
           document.getElementById('btnSubmitReply').addEventListener('click', submitReply);
+          document.getElementById('btnCancelMain').addEventListener('click', function() { formExpanded = false; loadReplies(); });
+          setTimeout(function() { var ta = document.getElementById('replyBody'); if (ta) ta.focus(); }, 50);
         }
       } else {
         formSection.innerHTML = '<div class="reply-auth"><p>Connectez-vous pour participer à la discussion.</p><a href="/login/?redirect=/forum/topic/?id=' + postId + '">Se connecter</a></div>';
