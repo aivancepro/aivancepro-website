@@ -93,13 +93,13 @@ Lange galt tierisches Protein als überlegen. Neuere Daten zeichnen ein differen
 
 ## Wie verteilst du Protein optimal über den Tag?
 
-Die optimale Proteinverteilung über den Tag sieht 3 bis 5 proteinreiche Mahlzeiten vor, die jeweils **25 bis 50 Gramm Eiweiß** enthalten. Eine 2025 im *Nutrients* publizierte Studie der Universität Graz untersuchte 96 trainierte Erwachsene und stellte fest, dass eine **gleichmäßige Verteilung auf 4 Mahlzeiten** die Muskelproteinsynthese über 24 Stunden um 18 % stärker stimulierte als die gleiche Gesamtmenge verteilt auf nur 2 große Mahlzeiten. Der Grund: Jede proteinreiche Mahlzeit löst eine eigenständige MPS-Spitze aus, die etwa 3–5 Stunden anhält. Wer nur ein- oder zweimal am Tag viel Eiweiß isst, verschenkt potenzielle Synthesefenster. Gleichzeitig gibt es eine Obergrenze pro Mahlzeit – bei den meisten Personen flacht die MPS-Antwort ab etwa 0,4–0,55 g/kg pro Mahlzeit ab. Der altbekannte Mythos „der Körper kann nur 30 g Protein auf einmal verarbeiten
+Die optimale Proteinverteilung über den Tag sieht 3 bis 5 proteinreiche Mahlzeiten vor, die jeweils **25 bis 50 Gramm Eiweiß** enthalten. Eine 2025 im *Nutrients* publizierte Studie der Universität Graz untersuchte 96 trainierte Erwachsene und stellte fest, dass eine **gleichmäßige Verteilung auf 4 Mahlzeiten** die Muskelproteinsynthese über 24 Stunden um 18 % stärker stimulierte als die gleiche Gesamtmenge verteilt auf nur 2 große Mahlzeiten. Der Grund: Jede proteinreiche Mahlzeit löst eine eigenständige MPS-Spitze aus, die etwa 3–5 Stunden anhält. Wer nur ein- oder zweimal am Tag viel Eiweiß isst, verschenkt potenzielle Synthesefenster. Gleichzeitig gibt es eine Obergrenze pro Mahlzeit – bei den meisten Personen flacht die MPS-Antwort ab etwa 0,4–0,55 g/kg pro Mahlzeit ab. Der altbekannte Mythos „der Körper kann nur 30 g Protein auf einmal verarbeiten" ist übrigens wissenschaftlich überholt – dein Körper kann deutlich mehr verdauen und verwerten, allerdings wird die MPS-Antwort pro Mahlzeit bei den meisten Personen ab 40–50 g nicht mehr wesentlich stärker stimuliert.
 
 ### Protein-Timing rund ums Training
 
-Die klassische Frage „Shake vor oder nach dem Training?
+Die klassische Frage „Shake vor oder nach dem Training?" lässt sich 2026 klar beantworten: Beides ist effektiv, solange du innerhalb eines Zeitfensters von etwa 4–6 Stunden rund um dein Training (2–3 Stunden davor und danach) eine proteinreiche Mahlzeit zu dir nimmst. Eine 2025 veröffentlichte Positionsaussage der ISSN bestätigt, dass die **Gesamtproteinzufuhr über den Tag** wichtiger ist als der exakte Zeitpunkt. Wenn dein letztes Essen mehr als 3 Stunden vor dem Training liegt, kann ein Whey-Shake direkt danach sinnvoll sein – ansonsten reicht dein reguläres Abendessen als Post-Workout-Mahlzeit aus.
 
-###  Beispiel-Tagesplan für 160 g Protein
+### Beispiel-Tagesplan für 160 g Protein
 
 So könnte ein Tag aussehen, wenn du 160 g Protein anpeilst:
 
