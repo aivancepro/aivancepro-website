@@ -15,7 +15,6 @@ import BaseLayout from '../../layouts/BaseLayout.astro';
       .forum-header h1 { font-size: 2rem; font-weight: 800; color: var(--text); margin-bottom: 0.25rem; }
       .forum-header p { color: var(--text-secondary); font-size: 0.95rem; }
 
-      /* Top bar */
       .forum-toolbar { display: flex; gap: 0.75rem; margin-bottom: 1.5rem; align-items: center; flex-wrap: wrap; }
       .forum-search { flex: 1; min-width: 200px; padding: 0.65rem 1rem; border-radius: 10px; border: 1px solid var(--border); background: var(--bg-card); color: var(--text); font-size: 0.9rem; font-family: inherit; outline: none; transition: border-color 0.2s; }
       .forum-search:focus { border-color: var(--blue); }
@@ -23,44 +22,36 @@ import BaseLayout from '../../layouts/BaseLayout.astro';
       .btn-new-post:hover { opacity: 0.92; transform: translateY(-2px); box-shadow: 0 6px 20px rgba(74, 144, 217, 0.4); }
       .btn-new-post svg { width: 18px; height: 18px; }
 
-      /* Categories */
       .forum-categories { display: flex; gap: 0.5rem; margin-bottom: 1.5rem; flex-wrap: wrap; }
       .cat-btn { padding: 0.4rem 0.9rem; border-radius: 50px; border: 1px solid var(--border); background: var(--bg-card); color: var(--text-secondary); font-size: 0.8rem; font-weight: 600; font-family: inherit; cursor: pointer; transition: all 0.2s; }
       .cat-btn:hover, .cat-btn.active { background: var(--blue); color: var(--white); border-color: var(--blue); }
 
-      /* Sort */
       .forum-sort { display: flex; gap: 0.5rem; margin-bottom: 1rem; }
       .sort-btn { padding: 0.3rem 0.7rem; border-radius: 8px; border: none; background: none; color: var(--text-muted); font-size: 0.8rem; font-weight: 600; font-family: inherit; cursor: pointer; transition: all 0.2s; }
       .sort-btn:hover, .sort-btn.active { color: var(--text); background: var(--bg-card); }
 
-      /* Post cards */
+      /* Post cards — Reddit style */
       .forum-posts { display: flex; flex-direction: column; gap: 0.75rem; }
-      .forum-post { display: flex; gap: 1rem; padding: 1.15rem 1.25rem; background: var(--bg-card); border: 1px solid var(--border); border-radius: 14px; text-decoration: none; color: inherit; cursor: pointer; transition: all 0.2s; }
-      .forum-post:hover { border-color: var(--blue); box-shadow: 0 2px 12px rgba(74,144,217,0.08); transform: translateY(-1px); }
+      .forum-post { background: var(--bg-card); border: 1px solid var(--border); border-radius: 14px; padding: 1rem 1.25rem; cursor: pointer; transition: all 0.2s; }
+      .forum-post:hover { border-color: var(--blue); box-shadow: 0 2px 12px rgba(74,144,217,0.08); }
+      .post-header { display: flex; align-items: center; gap: 0.5rem; margin-bottom: 0.5rem; font-size: 0.76rem; color: var(--text-muted); }
+      .post-header .post-tag { padding: 0.12rem 0.5rem; border-radius: 50px; background: rgba(74,144,217,0.08); color: var(--blue); font-size: 0.68rem; font-weight: 600; }
+      .post-header .post-tag.article { background: rgba(147,51,234,0.08); color: #9333EA; }
+      .post-author { font-weight: 600; color: var(--text-secondary); }
+      .post-title { font-size: 1.02rem; font-weight: 600; color: var(--text); line-height: 1.4; margin-bottom: 0.65rem; }
+      /* Action bar (votes, comments, share, admin) */
+      .post-actions { display: flex; align-items: center; gap: 0.15rem; }
+      .post-action { display: flex; align-items: center; gap: 0.3rem; padding: 0.3rem 0.6rem; border-radius: 20px; border: none; background: none; color: var(--text-muted); font-size: 0.78rem; font-weight: 600; font-family: inherit; cursor: pointer; transition: all 0.15s; }
+      .post-action:hover { background: rgba(74,144,217,0.06); color: var(--text-secondary); }
+      .post-action svg { width: 16px; height: 16px; }
+      .post-action.votes { background: rgba(74,144,217,0.05); border-radius: 20px; }
+      .post-action.votes:hover { background: rgba(74,144,217,0.1); }
+      .post-action .score { font-weight: 700; color: var(--text); }
+      .post-action.delete-action:hover { color: #ef4444; background: rgba(239,68,68,0.06); }
 
-      /* Vote column */
-      .post-votes { display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 0.1rem; min-width: 48px; padding: 0.25rem 0; background: rgba(74,144,217,0.04); border-radius: 10px; }
-      .post-votes .vote-count { font-size: 1.05rem; font-weight: 700; color: var(--text); line-height: 1; }
-      .post-votes .vote-label { font-size: 0.62rem; color: var(--text-muted); text-transform: uppercase; letter-spacing: 0.03em; }
-
-      /* Post body */
-      .post-main { flex: 1; min-width: 0; display: flex; flex-direction: column; justify-content: center; gap: 0.35rem; }
-      .post-title { font-size: 0.98rem; font-weight: 600; color: var(--text); line-height: 1.35; }
-      .post-meta { display: flex; gap: 0.6rem; align-items: center; flex-wrap: wrap; font-size: 0.76rem; color: var(--text-muted); }
-      .post-tag { padding: 0.15rem 0.55rem; border-radius: 50px; background: rgba(74,144,217,0.08); color: var(--blue); font-size: 0.68rem; font-weight: 600; }
-      .post-tag.article { background: rgba(147,51,234,0.08); color: #9333EA; }
-      .post-replies { display: flex; align-items: center; gap: 0.2rem; }
-      .post-replies svg { width: 13px; height: 13px; }
-      .post-delete { background: none; border: none; cursor: pointer; color: var(--text-muted); padding: 0.2rem; border-radius: 6px; transition: all 0.2s; display: flex; align-items: center; margin-left: auto; }
-      .post-delete:hover { color: #ef4444; background: rgba(239,68,68,0.08); }
-      .post-delete svg { width: 14px; height: 14px; }
-
-      /* Empty state */
       .forum-empty { text-align: center; padding: 4rem 2rem; color: var(--text-secondary); }
       .forum-empty h3 { font-size: 1.15rem; font-weight: 700; color: var(--text); margin-bottom: 0.4rem; }
       .forum-empty p { font-size: 0.9rem; }
-
-      /* Loading */
       .forum-loading { text-align: center; padding: 3rem; color: var(--text-muted); font-size: 0.9rem; }
 
       /* Modal */
@@ -79,8 +70,6 @@ import BaseLayout from '../../layouts/BaseLayout.astro';
       .btn-submit:hover { opacity: 0.92; transform: translateY(-2px); box-shadow: 0 6px 20px rgba(74, 144, 217, 0.4); }
       .btn-submit:disabled { opacity: 0.5; cursor: not-allowed; }
       .modal-error { color: #ef4444; font-size: 0.85rem; margin-top: 0.5rem; }
-
-      /* Auth prompt */
       .auth-prompt { text-align: center; padding: 2rem; }
       .auth-prompt p { color: var(--text-secondary); font-size: 0.95rem; margin-bottom: 1rem; }
       .btn-login-link { display: inline-block; padding: 0.65rem 1.5rem; border-radius: 12px; background: var(--blue); color: #fff; text-decoration: none; font-weight: 600; font-size: 0.9rem; box-shadow: 0 4px 15px rgba(74, 144, 217, 0.3); transition: all 0.2s; }
@@ -91,7 +80,6 @@ import BaseLayout from '../../layouts/BaseLayout.astro';
         .forum-header h1 { font-size: 1.5rem; }
         .forum-toolbar { flex-direction: column; }
         .forum-search { width: 100%; }
-        .post-votes { min-width: 40px; }
       }
     </style>
   </Fragment>
@@ -130,7 +118,6 @@ import BaseLayout from '../../layouts/BaseLayout.astro';
     </div>
   </div>
 
-  <!-- New post modal -->
   <div class="modal-overlay" id="newPostModal">
     <div class="modal-box">
       <div id="modalAuthPrompt" class="auth-prompt" style="display:none">
@@ -140,28 +127,11 @@ import BaseLayout from '../../layouts/BaseLayout.astro';
       </div>
       <div id="modalPostForm" style="display:none">
         <h2>Nouveau sujet</h2>
-        <div class="modal-field">
-          <label for="postTitle">Titre</label>
-          <input type="text" id="postTitle" placeholder="Votre question ou sujet..." maxlength="200">
-        </div>
-        <div class="modal-field">
-          <label for="postCategory">Catégorie</label>
-          <select id="postCategory">
-            <option value="general">Général</option>
-            <option value="entrainement">Entraînement</option>
-            <option value="nutrition">Nutrition</option>
-            <option value="progression">Progression</option>
-          </select>
-        </div>
-        <div class="modal-field">
-          <label for="postBody">Message</label>
-          <textarea id="postBody" placeholder="Décrivez votre question ou partagez vos conseils..."></textarea>
-        </div>
+        <div class="modal-field"><label for="postTitle">Titre</label><input type="text" id="postTitle" placeholder="Votre question ou sujet..." maxlength="200"></div>
+        <div class="modal-field"><label for="postCategory">Catégorie</label><select id="postCategory"><option value="general">Général</option><option value="entrainement">Entraînement</option><option value="nutrition">Nutrition</option><option value="progression">Progression</option></select></div>
+        <div class="modal-field"><label for="postBody">Message</label><textarea id="postBody" placeholder="Décrivez votre question ou partagez vos conseils..."></textarea></div>
         <p class="modal-error" id="postError" style="display:none"></p>
-        <div class="modal-actions">
-          <button class="btn-cancel" id="btnCancelPost">Annuler</button>
-          <button class="btn-submit" id="btnSubmitPost">Publier</button>
-        </div>
+        <div class="modal-actions"><button class="btn-cancel" id="btnCancelPost">Annuler</button><button class="btn-submit" id="btnSubmitPost">Publier</button></div>
       </div>
     </div>
   </div>
@@ -180,20 +150,18 @@ import BaseLayout from '../../layouts/BaseLayout.astro';
     var currentSort = 'recent';
     var searchTimeout = null;
 
-    var catLabels = {
-      general: 'Général',
-      entrainement: 'Entraînement',
-      nutrition: 'Nutrition',
-      progression: 'Progression',
-      article: 'Article'
-    };
+    var catLabels = { general: 'Général', entrainement: 'Entraînement', nutrition: 'Nutrition', progression: 'Progression', article: 'Article' };
 
-    // ── URL params (article link) ──
     var urlParams = new URLSearchParams(window.location.search);
     var articleSlug = urlParams.get('article');
     var articleType = urlParams.get('type');
 
-    // ── Auth check ──
+    var svgUp = '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="18 15 12 9 6 15"/></svg>';
+    var svgDown = '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>';
+    var svgComment = '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>';
+    var svgShare = '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 12v8a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2v-8"/><polyline points="16 6 12 2 8 6"/><line x1="12" y1="2" x2="12" y2="15"/></svg>';
+    var svgTrash = '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="3 6 5 6 21 6"/><path d="M19 6v14a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2V6m3 0V4a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2"/></svg>';
+
     sb.auth.getSession().then(function(res) {
       if (res.data.session) {
         currentUser = res.data.session.user;
@@ -206,79 +174,49 @@ import BaseLayout from '../../layouts/BaseLayout.astro';
       }
     });
 
-    // ── Load posts ──
     function loadPosts(search) {
       var container = document.getElementById('forumPosts');
       container.innerHTML = '<div class="forum-loading">Chargement...</div>';
-
       var query = sb.from('forum_posts').select('*');
-
       if (currentCat !== 'all') {
-        if (currentCat === 'article') {
-          query = query.not('article_slug', 'is', null);
-        } else {
-          query = query.eq('category', currentCat);
-        }
+        if (currentCat === 'article') query = query.not('article_slug', 'is', null);
+        else query = query.eq('category', currentCat);
       }
-
-      if (search) {
-        query = query.or('title.ilike.%' + search + '%,body.ilike.%' + search + '%');
-      }
-
-      if (currentSort === 'popular') {
-        query = query.order('upvotes', { ascending: false });
-      } else if (currentSort === 'unanswered') {
-        query = query.eq('reply_count', 0).order('created_at', { ascending: false });
-      } else {
-        query = query.order('created_at', { ascending: false });
-      }
-
+      if (search) query = query.or('title.ilike.%' + search + '%,body.ilike.%' + search + '%');
+      if (currentSort === 'popular') query = query.order('upvotes', { ascending: false });
+      else if (currentSort === 'unanswered') query = query.eq('reply_count', 0).order('created_at', { ascending: false });
+      else query = query.order('created_at', { ascending: false });
       query = query.limit(50);
 
       query.then(function(res) {
-        if (res.error) {
-          container.innerHTML = '<div class="forum-empty"><h3>Erreur de chargement</h3><p>' + res.error.message + '</p></div>';
-          return;
-        }
-
+        if (res.error) { container.innerHTML = '<div class="forum-empty"><h3>Erreur</h3><p>' + res.error.message + '</p></div>'; return; }
         var posts = res.data;
-        if (!posts || posts.length === 0) {
-          container.innerHTML = '<div class="forum-empty">' +
-            '<h3>Aucune discussion pour le moment</h3>' +
-            '<p>Soyez le premier à lancer un sujet !</p></div>';
-          return;
-        }
+        if (!posts || posts.length === 0) { container.innerHTML = '<div class="forum-empty"><h3>Aucune discussion pour le moment</h3><p>Soyez le premier à lancer un sujet !</p></div>'; return; }
 
         container.innerHTML = '';
         posts.forEach(function(post) {
           var timeAgo = formatTimeAgo(post.created_at);
           var catClass = post.article_slug ? 'article' : '';
           var catText = post.article_slug ? 'Article' : (catLabels[post.category] || post.category);
-
-          var deleteHtml = isAdmin ? '<button class="post-delete" data-delete-post="' + post.id + '" title="Supprimer"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="3 6 5 6 21 6"/><path d="M19 6v14a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2V6m3 0V4a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2"/></svg></button>' : '';
+          var deleteHtml = isAdmin ? '<button class="post-action delete-action" data-delete-post="' + post.id + '">' + svgTrash + '</button>' : '';
 
           var el = document.createElement('div');
           el.className = 'forum-post';
           el.innerHTML =
-            '<div class="post-votes">' +
-              '<span class="vote-count">' + (post.upvotes || 0) + '</span>' +
-              '<span class="vote-label">votes</span>' +
+            '<div class="post-header">' +
+              '<span class="post-tag ' + catClass + '">' + catText + '</span>' +
+              '<span class="post-author">' + escapeHtml(post.author_name) + '</span>' +
+              '<span>·</span><span>' + timeAgo + '</span>' +
             '</div>' +
-            '<div class="post-main">' +
-              '<div class="post-title">' + escapeHtml(post.title) + '</div>' +
-              '<div class="post-meta">' +
-                '<span class="post-tag ' + catClass + '">' + catText + '</span>' +
-                '<span>' + escapeHtml(post.author_name) + '</span>' +
-                '<span>' + timeAgo + '</span>' +
-                '<span class="post-replies">' +
-                  '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>' +
-                  (post.reply_count || 0) +
-                '</span>' +
-                deleteHtml +
-              '</div>' +
+            '<div class="post-title">' + escapeHtml(post.title) + '</div>' +
+            '<div class="post-actions">' +
+              '<span class="post-action votes">' + svgUp + '<span class="score">' + (post.upvotes || 0) + '</span>' + svgDown + '</span>' +
+              '<span class="post-action">' + svgComment + ' ' + (post.reply_count || 0) + '</span>' +
+              '<button class="post-action" data-share-url="/forum/topic/?id=' + post.id + '">' + svgShare + ' Partager</button>' +
+              deleteHtml +
             '</div>';
           el.addEventListener('click', function(e) {
-            if (e.target.closest('[data-delete-post]')) return;
+            if (e.target.closest('[data-delete-post]') || e.target.closest('[data-share-url]')) return;
             window.location.href = '/forum/topic/?id=' + post.id;
           });
           container.appendChild(el);
@@ -286,141 +224,71 @@ import BaseLayout from '../../layouts/BaseLayout.astro';
       });
     }
 
-    // ── Categories ──
     document.getElementById('forumCategories').addEventListener('click', function(e) {
-      var btn = e.target.closest('.cat-btn');
-      if (!btn) return;
+      var btn = e.target.closest('.cat-btn'); if (!btn) return;
       document.querySelectorAll('.cat-btn').forEach(function(b) { b.classList.remove('active'); });
-      btn.classList.add('active');
-      currentCat = btn.dataset.cat;
+      btn.classList.add('active'); currentCat = btn.dataset.cat;
       loadPosts(document.getElementById('forumSearch').value.trim());
     });
-
-    // ── Sort ──
     document.getElementById('forumSort').addEventListener('click', function(e) {
-      var btn = e.target.closest('.sort-btn');
-      if (!btn) return;
+      var btn = e.target.closest('.sort-btn'); if (!btn) return;
       document.querySelectorAll('.sort-btn').forEach(function(b) { b.classList.remove('active'); });
-      btn.classList.add('active');
-      currentSort = btn.dataset.sort;
+      btn.classList.add('active'); currentSort = btn.dataset.sort;
       loadPosts(document.getElementById('forumSearch').value.trim());
     });
-
-    // ── Search ──
     document.getElementById('forumSearch').addEventListener('input', function() {
-      clearTimeout(searchTimeout);
-      var val = this.value.trim();
+      clearTimeout(searchTimeout); var val = this.value.trim();
       searchTimeout = setTimeout(function() { loadPosts(val); }, 350);
     });
 
-    // ── New post modal ──
     var modal = document.getElementById('newPostModal');
-
     document.getElementById('btnNewPost').addEventListener('click', function() {
-      if (currentUser) {
-        document.getElementById('modalAuthPrompt').style.display = 'none';
-        document.getElementById('modalPostForm').style.display = '';
-      } else {
-        document.getElementById('modalAuthPrompt').style.display = '';
-        document.getElementById('modalPostForm').style.display = 'none';
-      }
+      document.getElementById('modalAuthPrompt').style.display = currentUser ? 'none' : '';
+      document.getElementById('modalPostForm').style.display = currentUser ? '' : 'none';
       modal.classList.add('open');
     });
+    document.getElementById('btnCancelPost').addEventListener('click', function() { modal.classList.remove('open'); });
+    modal.addEventListener('click', function(e) { if (e.target === modal) modal.classList.remove('open'); });
 
-    document.getElementById('btnCancelPost').addEventListener('click', function() {
-      modal.classList.remove('open');
-    });
-
-    modal.addEventListener('click', function(e) {
-      if (e.target === modal) modal.classList.remove('open');
-    });
-
-    // ── Submit post ──
     document.getElementById('btnSubmitPost').addEventListener('click', async function() {
       var title = document.getElementById('postTitle').value.trim();
       var body = document.getElementById('postBody').value.trim();
       var category = document.getElementById('postCategory').value;
-      var errEl = document.getElementById('postError');
-      var btn = this;
-
-      if (!title || title.length < 5) {
-        errEl.textContent = 'Le titre doit contenir au moins 5 caractères.';
-        errEl.style.display = '';
-        return;
-      }
-      if (!body || body.length < 10) {
-        errEl.textContent = 'Le message doit contenir au moins 10 caractères.';
-        errEl.style.display = '';
-        return;
-      }
-
-      errEl.style.display = 'none';
-      btn.disabled = true;
-      btn.textContent = 'Publication...';
-
+      var errEl = document.getElementById('postError'); var btn = this;
+      if (!title || title.length < 5) { errEl.textContent = 'Le titre doit contenir au moins 5 caractères.'; errEl.style.display = ''; return; }
+      if (!body || body.length < 10) { errEl.textContent = 'Le message doit contenir au moins 10 caractères.'; errEl.style.display = ''; return; }
+      errEl.style.display = 'none'; btn.disabled = true; btn.textContent = 'Publication...';
       var authorName = currentUser.user_metadata?.display_name || currentUser.user_metadata?.full_name || currentUser.email?.split('@')[0] || 'Utilisateur';
-
-      var postData = {
-        title: title,
-        body: body,
-        category: articleSlug ? 'general' : category,
-        author_id: currentUser.id,
-        author_name: authorName
-      };
-      if (articleSlug) {
-        postData.article_slug = articleSlug;
-        postData.article_type = articleType || 'blog';
-      }
-
+      var postData = { title: title, body: body, category: articleSlug ? 'general' : category, author_id: currentUser.id, author_name: authorName };
+      if (articleSlug) { postData.article_slug = articleSlug; postData.article_type = articleType || 'blog'; }
       var res = await sb.from('forum_posts').insert(postData).select().single();
-
-      btn.disabled = false;
-      btn.textContent = 'Publier';
-
-      if (res.error) {
-        errEl.textContent = 'Erreur : ' + res.error.message;
-        errEl.style.display = '';
-        return;
-      }
-
-      modal.classList.remove('open');
-      document.getElementById('postTitle').value = '';
-      document.getElementById('postBody').value = '';
+      btn.disabled = false; btn.textContent = 'Publier';
+      if (res.error) { errEl.textContent = 'Erreur : ' + res.error.message; errEl.style.display = ''; return; }
+      modal.classList.remove('open'); document.getElementById('postTitle').value = ''; document.getElementById('postBody').value = '';
       window.location.href = '/forum/topic/?id=' + res.data.id;
     });
 
-    // ── Helpers ──
-    function escapeHtml(str) {
-      var div = document.createElement('div');
-      div.textContent = str;
-      return div.innerHTML;
-    }
-
+    function escapeHtml(str) { var d = document.createElement('div'); d.textContent = str; return d.innerHTML; }
     function formatTimeAgo(dateStr) {
-      var now = Date.now();
-      var d = new Date(dateStr).getTime();
-      var diff = Math.floor((now - d) / 1000);
-      if (diff < 60) return "à l'instant";
-      if (diff < 3600) return Math.floor(diff / 60) + ' min';
-      if (diff < 86400) return Math.floor(diff / 3600) + ' h';
-      if (diff < 2592000) return Math.floor(diff / 86400) + ' j';
+      var diff = Math.floor((Date.now() - new Date(dateStr).getTime()) / 1000);
+      if (diff < 60) return "à l'instant"; if (diff < 3600) return Math.floor(diff / 60) + ' min';
+      if (diff < 86400) return Math.floor(diff / 3600) + ' h'; if (diff < 2592000) return Math.floor(diff / 86400) + ' j';
       return Math.floor(diff / 2592000) + ' mois';
     }
 
-    // ── Admin delete ──
+    // Share + Admin delete
     document.addEventListener('click', async function(e) {
+      var shareBtn = e.target.closest('[data-share-url]');
+      if (shareBtn) { e.stopPropagation(); navigator.clipboard.writeText(window.location.origin + shareBtn.dataset.shareUrl).then(function() { alert('Lien copié !'); }); return; }
       var delBtn = e.target.closest('[data-delete-post]');
-      if (!delBtn || !isAdmin) return;
-      e.preventDefault();
-      e.stopPropagation();
-      if (!confirm('Supprimer définitivement ce sujet et toutes ses réponses ?')) return;
-      var pid = delBtn.dataset.deletePost;
-      var res = await sb.from('forum_posts').delete().eq('id', pid);
-      if (res.error) { alert('Erreur : ' + res.error.message); return; }
-      loadPosts(document.getElementById('forumSearch').value.trim());
+      if (delBtn && isAdmin) { e.preventDefault(); e.stopPropagation();
+        if (!confirm('Supprimer définitivement ce sujet et toutes ses réponses ?')) return;
+        var res = await sb.from('forum_posts').delete().eq('id', delBtn.dataset.deletePost);
+        if (res.error) { alert('Erreur : ' + res.error.message); return; }
+        loadPosts(document.getElementById('forumSearch').value.trim());
+      }
     });
 
-    // ── Init ──
     loadPosts();
   })();
   </script>

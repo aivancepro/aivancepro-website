@@ -15,45 +15,40 @@ import BaseLayout from '../../layouts/BaseLayout.astro';
       .topic-back:hover { color: var(--blue); }
       .topic-back svg { width: 16px; height: 16px; }
 
-      /* Original post card */
+      /* Post card */
       .topic-post { background: var(--bg-card); border: 1px solid var(--border); border-radius: 16px; padding: 1.5rem; margin-bottom: 2rem; }
-      .topic-post-header { display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 1rem; }
-      .topic-title { font-size: 1.4rem; font-weight: 800; color: var(--text); line-height: 1.3; flex: 1; }
-      .topic-tag { padding: 0.2rem 0.6rem; border-radius: 50px; background: rgba(74,144,217,0.08); color: var(--blue); font-size: 0.72rem; font-weight: 600; white-space: nowrap; margin-left: 0.75rem; margin-top: 0.25rem; }
+      .topic-post-header { display: flex; align-items: center; gap: 0.5rem; margin-bottom: 0.75rem; font-size: 0.8rem; color: var(--text-muted); }
+      .topic-post-header .tp-author { font-weight: 600; color: var(--text-secondary); }
+      .topic-tag { padding: 0.15rem 0.55rem; border-radius: 50px; background: rgba(74,144,217,0.08); color: var(--blue); font-size: 0.68rem; font-weight: 600; }
       .topic-tag.article { background: rgba(147,51,234,0.08); color: #9333EA; }
+      .topic-title { font-size: 1.35rem; font-weight: 800; color: var(--text); line-height: 1.3; margin-bottom: 0.75rem; }
       .topic-body { color: var(--text-secondary); font-size: 0.95rem; line-height: 1.8; white-space: pre-wrap; word-break: break-word; }
       .topic-body a { color: var(--blue); }
-      .topic-footer { display: flex; align-items: center; gap: 1rem; margin-top: 1.25rem; padding-top: 1rem; border-top: 1px solid var(--border); flex-wrap: wrap; }
-      .topic-author { font-size: 0.82rem; color: var(--text-muted); }
-      .topic-author strong { color: var(--text-secondary); font-weight: 600; }
-      .topic-time { font-size: 0.82rem; color: var(--text-muted); }
 
-      /* Vote buttons */
-      .vote-actions { display: flex; align-items: center; gap: 0.3rem; }
-      .vote-btn { background: none; border: 1px solid var(--border); border-radius: 8px; padding: 0.3rem; cursor: pointer; color: var(--text-muted); transition: all 0.2s; display: flex; align-items: center; justify-content: center; }
-      .vote-btn:hover { border-color: var(--blue); color: var(--blue); }
-      .vote-btn.voted { border-color: var(--blue); color: var(--blue); background: rgba(74,144,217,0.08); }
-      .vote-btn.down.voted { border-color: #ef4444; color: #ef4444; background: rgba(239,68,68,0.08); }
-      .vote-btn svg { width: 16px; height: 16px; }
-      .vote-score { font-size: 0.9rem; font-weight: 700; color: var(--text); min-width: 20px; text-align: center; }
+      /* Action bar — Reddit style */
+      .action-bar { display: flex; align-items: center; gap: 0.15rem; margin-top: 1rem; padding-top: 0.85rem; border-top: 1px solid var(--border); }
+      .act { display: flex; align-items: center; gap: 0.3rem; padding: 0.3rem 0.55rem; border-radius: 20px; border: none; background: none; color: var(--text-muted); font-size: 0.78rem; font-weight: 600; font-family: inherit; cursor: pointer; transition: all 0.15s; }
+      .act:hover { background: rgba(74,144,217,0.06); color: var(--text-secondary); }
+      .act svg { width: 16px; height: 16px; }
+      .act.votes { background: rgba(74,144,217,0.05); }
+      .act.votes:hover { background: rgba(74,144,217,0.1); }
+      .act .score { font-weight: 700; color: var(--text); }
+      .act.voted-up svg:first-child { color: var(--blue); }
+      .act.voted-down svg:last-child { color: #ef4444; }
+      .act.delete-act:hover { color: #ef4444; background: rgba(239,68,68,0.06); }
+      .act-spacer { flex: 1; }
 
-      /* Action buttons */
-      .action-btn { background: none; border: none; cursor: pointer; color: var(--text-muted); font-size: 0.78rem; font-family: inherit; display: flex; align-items: center; gap: 0.25rem; transition: all 0.2s; padding: 0.25rem 0.5rem; border-radius: 6px; }
-      .action-btn:hover { color: var(--text-secondary); background: rgba(74,144,217,0.06); }
-      .action-btn.delete-btn:hover { color: #ef4444; background: rgba(239,68,68,0.08); }
-      .action-btn svg { width: 14px; height: 14px; }
-      .action-spacer { flex: 1; }
-
-      /* Replies */
+      /* Threaded replies */
       .replies-header { font-size: 1rem; font-weight: 700; color: var(--text); margin-bottom: 1rem; }
-      .replies-list { display: flex; flex-direction: column; gap: 0.75rem; }
-      .reply-item { background: var(--bg-card); border: 1px solid var(--border); border-radius: 12px; padding: 1rem 1.25rem; }
-      .reply-mention { display: inline-block; color: var(--blue); font-weight: 600; font-size: 0.82rem; margin-bottom: 0.25rem; }
-      .reply-body { color: var(--text-secondary); font-size: 0.92rem; line-height: 1.7; white-space: pre-wrap; word-break: break-word; margin-bottom: 0.6rem; }
+      .reply-thread { position: relative; }
+      .reply-item { position: relative; padding: 0.85rem 0 0.85rem 0; }
+      /* Thread branch line */
+      .reply-nested { margin-left: 1.5rem; padding-left: 1.25rem; border-left: 2px solid var(--border); }
+      .reply-header { display: flex; align-items: center; gap: 0.4rem; font-size: 0.78rem; color: var(--text-muted); margin-bottom: 0.3rem; }
+      .reply-header .r-author { font-weight: 600; color: var(--text-secondary); }
+      .reply-body { color: var(--text-secondary); font-size: 0.92rem; line-height: 1.65; white-space: pre-wrap; word-break: break-word; }
       .reply-body a { color: var(--blue); }
-      .reply-footer { display: flex; align-items: center; gap: 0.75rem; font-size: 0.78rem; color: var(--text-muted); flex-wrap: wrap; }
-      .reply-footer strong { color: var(--text-secondary); font-weight: 600; }
-      .action-btn.reply-to-btn:hover { color: var(--blue); background: rgba(74,144,217,0.08); }
+      .reply-actions { display: flex; align-items: center; gap: 0.1rem; margin-top: 0.3rem; }
 
       /* Reply form */
       .reply-form { margin-top: 2rem; background: var(--bg-card); border: 1px solid var(--border); border-radius: 14px; padding: 1.25rem; }
@@ -69,26 +64,23 @@ import BaseLayout from '../../layouts/BaseLayout.astro';
       .btn-reply:disabled { opacity: 0.5; cursor: not-allowed; }
       .reply-error { color: #ef4444; font-size: 0.85rem; margin-top: 0.5rem; }
 
-      /* Auth prompt */
       .reply-auth { text-align: center; padding: 1.5rem; background: var(--bg-card); border: 1px solid var(--border); border-radius: 12px; margin-top: 2rem; }
       .reply-auth p { color: var(--text-secondary); font-size: 0.9rem; margin-bottom: 0.75rem; }
       .reply-auth a { display: inline-block; padding: 0.55rem 1.25rem; border-radius: 12px; background: var(--blue); color: #fff; text-decoration: none; font-weight: 600; font-size: 0.88rem; box-shadow: 0 4px 15px rgba(74, 144, 217, 0.3); transition: all 0.2s; }
       .reply-auth a:hover { opacity: 0.92; transform: translateY(-2px); }
 
-      /* Article link */
       .article-link { display: inline-flex; align-items: center; gap: 0.35rem; padding: 0.5rem 0.85rem; border-radius: 10px; background: rgba(147,51,234,0.06); border: 1px solid rgba(147,51,234,0.15); color: #9333EA; text-decoration: none; font-size: 0.82rem; font-weight: 600; margin-bottom: 1rem; transition: background 0.2s; }
       .article-link:hover { background: rgba(147,51,234,0.12); }
       .article-link svg { width: 14px; height: 14px; }
 
-      /* Toast */
       .toast { position: fixed; bottom: 2rem; left: 50%; transform: translateX(-50%); padding: 0.75rem 1.5rem; border-radius: 10px; background: var(--bg-card); border: 1px solid var(--border); color: var(--text); font-size: 0.85rem; font-weight: 600; z-index: 9999; display: none; box-shadow: 0 4px 20px rgba(0,0,0,0.15); }
       .toast.show { display: block; }
-
       .topic-loading { text-align: center; padding: 4rem; color: var(--text-muted); }
 
       @media (max-width: 768px) {
         .topic-container { padding: 6rem 1rem 3rem; }
         .topic-title { font-size: 1.15rem; }
+        .reply-nested { margin-left: 0.75rem; padding-left: 0.75rem; }
       }
     </style>
   </Fragment>
@@ -98,11 +90,7 @@ import BaseLayout from '../../layouts/BaseLayout.astro';
       <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="15 18 9 12 15 6"/></svg>
       Retour au forum
     </a>
-
-    <div id="topicContent">
-      <div class="topic-loading">Chargement...</div>
-    </div>
-
+    <div id="topicContent"><div class="topic-loading">Chargement...</div></div>
     <div id="repliesSection"></div>
     <div id="replyFormSection"></div>
   </div>
@@ -117,10 +105,7 @@ import BaseLayout from '../../layouts/BaseLayout.astro';
     var sb = window.supabase.createClient(SUPABASE_URL, SUPABASE_KEY);
 
     var postId = new URLSearchParams(window.location.search).get('id');
-    if (!postId) {
-      document.getElementById('topicContent').innerHTML = '<div class="topic-loading">Discussion introuvable.</div>';
-      return;
-    }
+    if (!postId) { document.getElementById('topicContent').innerHTML = '<div class="topic-loading">Discussion introuvable.</div>'; return; }
 
     var ADMIN_EMAIL = 'aivancepro@gmail.com';
     var currentUser = null;
@@ -129,47 +114,32 @@ import BaseLayout from '../../layouts/BaseLayout.astro';
     var replyingToId = null;
     var replyingToName = null;
 
-    var catLabels = {
-      general: 'Général', entrainement: 'Entraînement',
-      nutrition: 'Nutrition', progression: 'Progression'
-    };
+    var catLabels = { general: 'Général', entrainement: 'Entraînement', nutrition: 'Nutrition', progression: 'Progression' };
 
-    function escapeHtml(str) {
-      var div = document.createElement('div');
-      div.textContent = str || '';
-      return div.innerHTML;
-    }
+    // SVG icons
+    var svgUp = '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="18 15 12 9 6 15"/></svg>';
+    var svgDown = '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>';
+    var svgComment = '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>';
+    var svgShare = '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 12v8a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2v-8"/><polyline points="16 6 12 2 8 6"/><line x1="12" y1="2" x2="12" y2="15"/></svg>';
+    var svgReply = '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 17 4 12 9 7"/><path d="M20 18v-2a4 4 0 0 0-4-4H4"/></svg>';
+    var svgTrash = '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="3 6 5 6 21 6"/><path d="M19 6v14a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2V6m3 0V4a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2"/></svg>';
+    var svgFlag = '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 15s1-1 4-1 5 2 8 2 4-1 4-1V3s-1 1-4 1-5-2-8-2-4 1-4 1z"/><line x1="4" y1="22" x2="4" y2="15"/></svg>';
 
-    function linkify(text) {
-      return escapeHtml(text).replace(/(https?:\/\/[^\s]+)/g, '<a href="$1" target="_blank" rel="noopener">$1</a>');
-    }
-
+    function escapeHtml(str) { var d = document.createElement('div'); d.textContent = str || ''; return d.innerHTML; }
+    function linkify(text) { return escapeHtml(text).replace(/(https?:\/\/[^\s]+)/g, '<a href="$1" target="_blank" rel="noopener">$1</a>'); }
     function formatTimeAgo(dateStr) {
       var diff = Math.floor((Date.now() - new Date(dateStr).getTime()) / 1000);
-      if (diff < 60) return "à l'instant";
-      if (diff < 3600) return Math.floor(diff / 60) + ' min';
-      if (diff < 86400) return Math.floor(diff / 3600) + ' h';
-      if (diff < 2592000) return Math.floor(diff / 86400) + ' j';
+      if (diff < 60) return "à l'instant"; if (diff < 3600) return Math.floor(diff / 60) + ' min';
+      if (diff < 86400) return Math.floor(diff / 3600) + ' h'; if (diff < 2592000) return Math.floor(diff / 86400) + ' j';
       return new Date(dateStr).toLocaleDateString('fr-FR');
     }
-
-    function formatDate(dateStr) {
-      return new Date(dateStr).toLocaleDateString('fr-FR', { day: 'numeric', month: 'long', year: 'numeric', hour: '2-digit', minute: '2-digit' });
-    }
-
-    function showToast(msg) {
-      var t = document.getElementById('toast');
-      t.textContent = msg;
-      t.classList.add('show');
-      setTimeout(function() { t.classList.remove('show'); }, 3000);
-    }
+    function formatDate(dateStr) { return new Date(dateStr).toLocaleDateString('fr-FR', { day: 'numeric', month: 'long', year: 'numeric', hour: '2-digit', minute: '2-digit' }); }
+    function showToast(msg) { var t = document.getElementById('toast'); t.textContent = msg; t.classList.add('show'); setTimeout(function() { t.classList.remove('show'); }, 3000); }
 
     async function loadUserVotes() {
       if (!currentUser) return;
       var res = await sb.from('forum_votes').select('*').eq('user_id', currentUser.id);
-      if (res.data) {
-        res.data.forEach(function(v) { userVotes[v.target_type + ':' + v.target_id] = v.value; });
-      }
+      if (res.data) res.data.forEach(function(v) { userVotes[v.target_type + ':' + v.target_id] = v.value; });
     }
 
     async function vote(targetId, targetType, value) {
@@ -180,9 +150,7 @@ import BaseLayout from '../../layouts/BaseLayout.astro';
         await sb.from('forum_votes').delete().match({ user_id: currentUser.id, target_id: targetId, target_type: targetType });
         delete userVotes[key];
       } else {
-        if (existing) {
-          await sb.from('forum_votes').delete().match({ user_id: currentUser.id, target_id: targetId, target_type: targetType });
-        }
+        if (existing) await sb.from('forum_votes').delete().match({ user_id: currentUser.id, target_id: targetId, target_type: targetType });
         await sb.from('forum_votes').insert({ user_id: currentUser.id, target_id: targetId, target_type: targetType, value: value });
         userVotes[key] = value;
       }
@@ -191,67 +159,40 @@ import BaseLayout from '../../layouts/BaseLayout.astro';
 
     async function report(targetId, targetType) {
       if (!currentUser) { showToast('Connectez-vous pour signaler'); return; }
-      var res = await sb.from('forum_reports').insert({
-        reporter_id: currentUser.id, target_id: targetId,
-        target_type: targetType, reason: 'inappropriate'
-      });
+      var res = await sb.from('forum_reports').insert({ reporter_id: currentUser.id, target_id: targetId, target_type: targetType, reason: 'inappropriate' });
       if (res.error && res.error.code === '23505') showToast('Vous avez déjà signalé ce contenu');
       else if (res.error) showToast('Erreur lors du signalement');
       else showToast('Contenu signalé — merci');
     }
 
-    function voteHtml(id, type, score) {
-      var upClass = userVotes[type + ':' + id] === 1 ? ' voted' : '';
-      var downClass = userVotes[type + ':' + id] === -1 ? ' voted' : '';
-      return '<div class="vote-actions">' +
-        '<button class="vote-btn up' + upClass + '" data-vote-id="' + id + '" data-vote-type="' + type + '" data-vote-val="1"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="18 15 12 9 6 15"/></svg></button>' +
-        '<span class="vote-score">' + (score || 0) + '</span>' +
-        '<button class="vote-btn down' + downClass + '" data-vote-id="' + id + '" data-vote-type="' + type + '" data-vote-val="-1"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg></button>' +
-      '</div>';
-    }
-
-    function reportBtn(id, type) {
-      return '<button class="action-btn" data-report-id="' + id + '" data-report-type="' + type + '">' +
-        '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 15s1-1 4-1 5 2 8 2 4-1 4-1V3s-1 1-4 1-5-2-8-2-4 1-4 1z"/><line x1="4" y1="22" x2="4" y2="15"/></svg>' +
-        'Signaler</button>';
-    }
-
-    function deleteBtn(id, type) {
-      if (!isAdmin) return '';
-      return '<button class="action-btn delete-btn" data-delete-id="' + id + '" data-delete-type="' + type + '">' +
-        '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="3 6 5 6 21 6"/><path d="M19 6v14a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2V6m3 0V4a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2"/></svg>' +
-        'Supprimer</button>';
-    }
-
-    function replyToBtn(replyId, authorName) {
-      return '<button class="action-btn reply-to-btn" data-replyto-id="' + replyId + '" data-replyto-name="' + escapeHtml(authorName) + '">' +
-        '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 17 4 12 9 7"/><path d="M20 18v-2a4 4 0 0 0-4-4H4"/></svg>' +
-        'Répondre</button>';
+    function actionBar(id, type, score, opts) {
+      var votedUp = userVotes[type + ':' + id] === 1;
+      var votedDown = userVotes[type + ':' + id] === -1;
+      var votedClass = votedUp ? ' voted-up' : (votedDown ? ' voted-down' : '');
+      var html = '<div class="' + (opts.barClass || 'reply-actions') + '">' +
+        '<button class="act votes' + votedClass + '" data-vote-id="' + id + '" data-vote-type="' + type + '">' + svgUp + '<span class="score">' + (score || 0) + '</span>' + svgDown + '</button>';
+      if (opts.showReply && currentUser) html += '<button class="act" data-replyto-id="' + id + '" data-replyto-name="' + escapeHtml(opts.authorName || '') + '">' + svgReply + ' Répondre</button>';
+      html += '<button class="act" data-share-url="/forum/topic/?id=' + postId + '">' + svgShare + ' Partager</button>';
+      if (isAdmin) html += '<button class="act delete-act" data-delete-id="' + id + '" data-delete-type="' + type + '">' + svgTrash + '</button>';
+      html += '<button class="act" data-report-id="' + id + '" data-report-type="' + type + '">' + svgFlag + '</button>';
+      html += '</div>';
+      return html;
     }
 
     async function deleteItem(id, type) {
       var table = type === 'post' ? 'forum_posts' : 'forum_replies';
       var res = await sb.from(table).delete().eq('id', id);
       if (res.error) { showToast('Erreur : ' + res.error.message); return; }
-      if (type === 'post') {
-        showToast('Sujet supprimé');
-        window.location.href = '/forum/';
-      } else {
-        showToast('Réponse supprimée');
-        loadTopic();
-      }
+      if (type === 'post') { showToast('Sujet supprimé'); window.location.href = '/forum/'; }
+      else { showToast('Réponse supprimée'); loadTopic(); }
     }
 
     async function loadTopic() {
       var container = document.getElementById('topicContent');
       var res = await sb.from('forum_posts').select('*').eq('id', postId).single();
-      if (res.error || !res.data) {
-        container.innerHTML = '<div class="topic-loading">Discussion introuvable.</div>';
-        return;
-      }
+      if (res.error || !res.data) { container.innerHTML = '<div class="topic-loading">Discussion introuvable.</div>'; return; }
       var post = res.data;
       document.title = post.title + ' - Forum AIVancePro';
-
       var catClass = post.article_slug ? 'article' : '';
       var catText = post.article_slug ? 'Article' : (catLabels[post.category] || post.category);
       var articleLink = '';
@@ -259,74 +200,69 @@ import BaseLayout from '../../layouts/BaseLayout.astro';
         var prefix = post.article_type === 'guide' ? '/guides/' : '/blog/';
         articleLink = '<a href="' + prefix + post.article_slug + '/" class="article-link"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>Lire l\'article</a>';
       }
-
       container.innerHTML =
         '<div class="topic-post">' + articleLink +
-          '<div class="topic-post-header"><div class="topic-title">' + escapeHtml(post.title) + '</div>' +
-            '<span class="topic-tag ' + catClass + '">' + catText + '</span></div>' +
+          '<div class="topic-post-header"><span class="topic-tag ' + catClass + '">' + catText + '</span>' +
+            '<span class="tp-author">' + escapeHtml(post.author_name) + '</span><span>·</span><span>' + formatDate(post.created_at) + '</span></div>' +
+          '<div class="topic-title">' + escapeHtml(post.title) + '</div>' +
           '<div class="topic-body">' + linkify(post.body) + '</div>' +
-          '<div class="topic-footer">' + voteHtml(post.id, 'post', post.upvotes) +
-            '<span class="topic-author">par <strong>' + escapeHtml(post.author_name) + '</strong></span>' +
-            '<span class="topic-time">' + formatDate(post.created_at) + '</span>' +
-            '<span class="action-spacer"></span>' + deleteBtn(post.id, 'post') + reportBtn(post.id, 'post') +
-          '</div></div>';
-
+          actionBar(post.id, 'post', post.upvotes, { barClass: 'action-bar', showReply: false }) +
+        '</div>';
       loadReplies();
     }
 
     async function loadReplies() {
       var section = document.getElementById('repliesSection');
       var res = await sb.from('forum_replies').select('*').eq('post_id', postId).order('created_at', { ascending: true });
-      if (res.error) {
-        section.innerHTML = '<p style="color:var(--text-muted)">Erreur de chargement des réponses.</p>';
-        return;
-      }
+      if (res.error) { section.innerHTML = '<p style="color:var(--text-muted)">Erreur.</p>'; return; }
       var replies = res.data || [];
-      // Build a map of reply id -> author_name for mentions
-      var replyAuthors = {};
-      replies.forEach(function(r) { replyAuthors[r.id] = r.author_name; });
+
+      // Build tree
+      var byId = {};
+      var roots = [];
+      replies.forEach(function(r) { byId[r.id] = r; r._children = []; });
+      replies.forEach(function(r) {
+        if (r.parent_reply_id && byId[r.parent_reply_id]) {
+          byId[r.parent_reply_id]._children.push(r);
+        } else {
+          roots.push(r);
+        }
+      });
+
+      function renderReply(r, depth) {
+        var wrapClass = depth > 0 ? 'reply-nested' : '';
+        var html = '<div class="' + wrapClass + '"><div class="reply-item">' +
+          '<div class="reply-header"><span class="r-author">' + escapeHtml(r.author_name) + '</span><span>·</span><span>' + formatTimeAgo(r.created_at) + '</span></div>' +
+          '<div class="reply-body">' + linkify(r.body) + '</div>' +
+          actionBar(r.id, 'reply', r.upvotes, { showReply: true, authorName: r.author_name }) +
+        '</div>';
+        r._children.forEach(function(child) { html += renderReply(child, depth + 1); });
+        html += '</div>';
+        return html;
+      }
 
       var html = '<h3 class="replies-header">' + replies.length + ' réponse' + (replies.length !== 1 ? 's' : '') + '</h3>';
-      if (replies.length > 0) {
-        html += '<div class="replies-list">';
-        replies.forEach(function(r) {
-          var mentionHtml = '';
-          if (r.parent_reply_id && replyAuthors[r.parent_reply_id]) {
-            mentionHtml = '<span class="reply-mention">@' + escapeHtml(replyAuthors[r.parent_reply_id]) + '</span>';
-          }
-          html += '<div class="reply-item">' + mentionHtml + '<div class="reply-body">' + linkify(r.body) + '</div>' +
-            '<div class="reply-footer">' + voteHtml(r.id, 'reply', r.upvotes) +
-              '<strong>' + escapeHtml(r.author_name) + '</strong>' +
-              '<span>' + formatTimeAgo(r.created_at) + '</span>' +
-              (currentUser ? replyToBtn(r.id, r.author_name) : '') +
-              '<span class="action-spacer"></span>' + deleteBtn(r.id, 'reply') + reportBtn(r.id, 'reply') +
-            '</div></div>';
-        });
+      if (roots.length > 0) {
+        html += '<div class="reply-thread">';
+        roots.forEach(function(r) { html += renderReply(r, 0); });
         html += '</div>';
       }
       section.innerHTML = html;
 
+      // Reply form
       var formSection = document.getElementById('replyFormSection');
       if (currentUser) {
-        var replyingLabel = replyingToName ? '<div class="reply-form-mention">En réponse à <strong>@' + escapeHtml(replyingToName) + '</strong> <button class="reply-form-cancel-mention" id="cancelMention">&times;</button></div>' : '';
+        var mentionLabel = replyingToName ? '<div class="reply-form-mention">En réponse à <strong>@' + escapeHtml(replyingToName) + '</strong> <button class="reply-form-cancel-mention" id="cancelMention">&times;</button></div>' : '';
         formSection.innerHTML =
-          '<div class="reply-form"><h3>Votre réponse</h3>' + replyingLabel +
+          '<div class="reply-form"><h3>Votre réponse</h3>' + mentionLabel +
             '<textarea id="replyBody" placeholder="Partagez votre avis ou répondez à la question..."></textarea>' +
             '<p class="reply-error" id="replyError" style="display:none"></p>' +
             '<div class="reply-form-actions"><button class="btn-reply" id="btnSubmitReply">Répondre</button></div></div>';
         document.getElementById('btnSubmitReply').addEventListener('click', submitReply);
         var cancelBtn = document.getElementById('cancelMention');
-        if (cancelBtn) {
-          cancelBtn.addEventListener('click', function() {
-            replyingToId = null;
-            replyingToName = null;
-            loadReplies();
-          });
-        }
+        if (cancelBtn) cancelBtn.addEventListener('click', function() { replyingToId = null; replyingToName = null; loadReplies(); });
       } else {
-        formSection.innerHTML =
-          '<div class="reply-auth"><p>Connectez-vous pour participer à la discussion.</p>' +
-            '<a href="/login/?redirect=/forum/topic/?id=' + postId + '">Se connecter</a></div>';
+        formSection.innerHTML = '<div class="reply-auth"><p>Connectez-vous pour participer à la discussion.</p><a href="/login/?redirect=/forum/topic/?id=' + postId + '">Se connecter</a></div>';
       }
     }
 
@@ -334,35 +270,30 @@ import BaseLayout from '../../layouts/BaseLayout.astro';
       var body = document.getElementById('replyBody').value.trim();
       var errEl = document.getElementById('replyError');
       var btn = document.getElementById('btnSubmitReply');
-      if (!body || body.length < 5) {
-        errEl.textContent = 'La réponse doit contenir au moins 5 caractères.';
-        errEl.style.display = ''; return;
-      }
-      errEl.style.display = 'none';
-      btn.disabled = true; btn.textContent = 'Envoi...';
+      if (!body || body.length < 5) { errEl.textContent = 'La réponse doit contenir au moins 5 caractères.'; errEl.style.display = ''; return; }
+      errEl.style.display = 'none'; btn.disabled = true; btn.textContent = 'Envoi...';
       var authorName = currentUser.user_metadata?.display_name || currentUser.user_metadata?.full_name || currentUser.email?.split('@')[0] || 'Utilisateur';
-      var insertData = {
-        post_id: postId, body: body,
-        author_id: currentUser.id, author_name: authorName
-      };
+      var insertData = { post_id: postId, body: body, author_id: currentUser.id, author_name: authorName };
       if (replyingToId) insertData.parent_reply_id = replyingToId;
       var res = await sb.from('forum_replies').insert(insertData);
       btn.disabled = false; btn.textContent = 'Répondre';
-      if (res.error) {
-        errEl.textContent = 'Erreur : ' + res.error.message;
-        errEl.style.display = ''; return;
-      }
+      if (res.error) { errEl.textContent = 'Erreur : ' + res.error.message; errEl.style.display = ''; return; }
       document.getElementById('replyBody').value = '';
-      replyingToId = null;
-      replyingToName = null;
-      loadReplies();
-      loadTopic();
+      replyingToId = null; replyingToName = null;
+      loadReplies(); loadTopic();
     }
 
+    // Vote click handler — detect up vs down within the votes button
     document.addEventListener('click', function(e) {
-      var voteBtn = e.target.closest('[data-vote-id]');
-      if (voteBtn) {
-        vote(voteBtn.dataset.voteId, voteBtn.dataset.voteType, parseInt(voteBtn.dataset.voteVal));
+      var votesBtn = e.target.closest('.act.votes');
+      if (votesBtn) {
+        var id = votesBtn.dataset.voteId;
+        var type = votesBtn.dataset.voteType;
+        // Determine if click was on up or down arrow
+        var svgs = votesBtn.querySelectorAll('svg');
+        var clickedSvg = e.target.closest('svg');
+        if (clickedSvg === svgs[0]) vote(id, type, 1);
+        else if (clickedSvg === svgs[1]) vote(id, type, -1);
         return;
       }
       var replyToEl = e.target.closest('[data-replyto-id]');
@@ -370,33 +301,19 @@ import BaseLayout from '../../layouts/BaseLayout.astro';
         replyingToId = replyToEl.dataset.replytoId;
         replyingToName = replyToEl.dataset.replytoName;
         loadReplies();
-        setTimeout(function() {
-          var ta = document.getElementById('replyBody');
-          if (ta) { ta.focus(); ta.scrollIntoView({ behavior: 'smooth', block: 'center' }); }
-        }, 100);
+        setTimeout(function() { var ta = document.getElementById('replyBody'); if (ta) { ta.focus(); ta.scrollIntoView({ behavior: 'smooth', block: 'center' }); } }, 100);
         return;
       }
-      var deleteBtnEl = e.target.closest('[data-delete-id]');
-      if (deleteBtnEl) {
-        if (confirm('Supprimer définitivement ce contenu ?')) {
-          deleteItem(deleteBtnEl.dataset.deleteId, deleteBtnEl.dataset.deleteType);
-        }
-        return;
-      }
-      var reportBtnEl = e.target.closest('[data-report-id]');
-      if (reportBtnEl) {
-        if (confirm('Voulez-vous signaler ce contenu comme inapproprié ?')) {
-          report(reportBtnEl.dataset.reportId, reportBtnEl.dataset.reportType);
-        }
-      }
+      var shareBtn = e.target.closest('[data-share-url]');
+      if (shareBtn) { navigator.clipboard.writeText(window.location.origin + shareBtn.dataset.shareUrl).then(function() { showToast('Lien copié !'); }); return; }
+      var deleteEl = e.target.closest('[data-delete-id]');
+      if (deleteEl) { if (confirm('Supprimer définitivement ce contenu ?')) deleteItem(deleteEl.dataset.deleteId, deleteEl.dataset.deleteType); return; }
+      var reportEl = e.target.closest('[data-report-id]');
+      if (reportEl) { if (confirm('Signaler ce contenu comme inapproprié ?')) report(reportEl.dataset.reportId, reportEl.dataset.reportType); }
     });
 
     sb.auth.getSession().then(async function(res) {
-      if (res.data.session) {
-        currentUser = res.data.session.user;
-        isAdmin = currentUser.email === ADMIN_EMAIL;
-        await loadUserVotes();
-      }
+      if (res.data.session) { currentUser = res.data.session.user; isAdmin = currentUser.email === ADMIN_EMAIL; await loadUserVotes(); }
       loadTopic();
     });
   })();
