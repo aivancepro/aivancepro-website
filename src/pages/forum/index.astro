@@ -1,0 +1,407 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+---
+
+<BaseLayout
+  lang="fr"
+  title="Forum communautaire - AIVancePro"
+  description="Posez vos questions, partagez vos conseils et échangez avec la communauté AIVancePro sur l'entraînement, la nutrition et la progression."
+  canonical="https://aivancepro.fr/forum/"
+>
+  <Fragment slot="head">
+    <style>
+      .forum-container { max-width: 960px; margin: 0 auto; padding: 7rem 2rem 4rem; }
+      .forum-header { margin-bottom: 2rem; }
+      .forum-header h1 { font-size: 2rem; font-weight: 800; color: var(--text); margin-bottom: 0.25rem; }
+      .forum-header p { color: var(--text-secondary); font-size: 0.95rem; }
+
+      /* Top bar: search + new post */
+      .forum-toolbar { display: flex; gap: 0.75rem; margin-bottom: 1.5rem; align-items: center; flex-wrap: wrap; }
+      .forum-search { flex: 1; min-width: 200px; padding: 0.65rem 1rem; border-radius: 10px; border: 1px solid var(--border); background: var(--bg-card); color: var(--text); font-size: 0.9rem; font-family: inherit; outline: none; transition: border-color 0.2s; }
+      .forum-search:focus { border-color: var(--blue); }
+      .btn-new-post { padding: 0.65rem 1.25rem; border-radius: 10px; border: none; background: var(--blue); color: #fff; font-size: 0.9rem; font-weight: 600; font-family: inherit; cursor: pointer; white-space: nowrap; transition: background 0.2s; display: flex; align-items: center; gap: 0.4rem; }
+      .btn-new-post:hover { background: var(--blue-hover, #1d4ed8); }
+      .btn-new-post svg { width: 18px; height: 18px; }
+
+      /* Categories */
+      .forum-categories { display: flex; gap: 0.5rem; margin-bottom: 1.5rem; flex-wrap: wrap; }
+      .cat-btn { padding: 0.4rem 0.85rem; border-radius: 50px; border: 1px solid var(--border); background: var(--bg-card); color: var(--text-secondary); font-size: 0.8rem; font-weight: 600; font-family: inherit; cursor: pointer; transition: all 0.2s; }
+      .cat-btn:hover, .cat-btn.active { border-color: var(--blue); color: var(--blue); background: rgba(74,144,217,0.08); }
+
+      /* Post list */
+      .forum-posts { display: flex; flex-direction: column; gap: 0; }
+      .forum-post { display: flex; gap: 1rem; padding: 1.25rem 0; border-bottom: 1px solid var(--border); text-decoration: none; color: inherit; transition: background 0.15s; }
+      .forum-post:first-child { border-top: 1px solid var(--border); }
+      .forum-post:hover { background: rgba(74,144,217,0.03); }
+
+      /* Vote column */
+      .post-votes { display: flex; flex-direction: column; align-items: center; gap: 0.15rem; min-width: 48px; padding-top: 0.15rem; }
+      .post-votes .vote-count { font-size: 1rem; font-weight: 700; color: var(--text); }
+      .post-votes .vote-label { font-size: 0.65rem; color: var(--text-muted); }
+
+      /* Post body */
+      .post-main { flex: 1; min-width: 0; }
+      .post-title { font-size: 1rem; font-weight: 600; color: var(--text); margin-bottom: 0.3rem; line-height: 1.4; }
+      .post-meta { display: flex; gap: 0.75rem; align-items: center; flex-wrap: wrap; font-size: 0.78rem; color: var(--text-muted); }
+      .post-tag { padding: 0.15rem 0.5rem; border-radius: 50px; background: rgba(74,144,217,0.08); color: var(--blue); font-size: 0.7rem; font-weight: 600; }
+      .post-tag.article { background: rgba(147,51,234,0.08); color: #9333EA; }
+      .post-replies { display: flex; align-items: center; gap: 0.25rem; }
+      .post-replies svg { width: 14px; height: 14px; }
+
+      /* Empty state */
+      .forum-empty { text-align: center; padding: 4rem 2rem; color: var(--text-secondary); }
+      .forum-empty svg { width: 64px; height: 64px; margin-bottom: 1rem; color: var(--text-muted); }
+      .forum-empty h3 { font-size: 1.2rem; font-weight: 700; color: var(--text); margin-bottom: 0.5rem; }
+
+      /* Loading */
+      .forum-loading { text-align: center; padding: 3rem; color: var(--text-muted); font-size: 0.9rem; }
+
+      /* New post modal */
+      .modal-overlay { position: fixed; inset: 0; background: rgba(0,0,0,0.6); z-index: 9999; display: none; align-items: center; justify-content: center; padding: 1rem; }
+      .modal-overlay.open { display: flex; }
+      .modal-box { background: var(--bg-card); border: 1px solid var(--border); border-radius: 16px; padding: 2rem; width: 100%; max-width: 600px; max-height: 90vh; overflow-y: auto; }
+      .modal-box h2 { font-size: 1.3rem; font-weight: 800; color: var(--text); margin-bottom: 1.5rem; }
+      .modal-field { margin-bottom: 1rem; }
+      .modal-field label { display: block; font-size: 0.85rem; font-weight: 600; color: var(--text); margin-bottom: 0.35rem; }
+      .modal-field input, .modal-field textarea, .modal-field select { width: 100%; padding: 0.65rem 0.85rem; border-radius: 10px; border: 1px solid var(--border); background: var(--bg); color: var(--text); font-size: 0.9rem; font-family: inherit; outline: none; transition: border-color 0.2s; box-sizing: border-box; }
+      .modal-field input:focus, .modal-field textarea:focus, .modal-field select:focus { border-color: var(--blue); }
+      .modal-field textarea { resize: vertical; min-height: 120px; }
+      .modal-actions { display: flex; gap: 0.75rem; justify-content: flex-end; margin-top: 1.5rem; }
+      .btn-cancel { padding: 0.6rem 1.25rem; border-radius: 10px; border: 1px solid var(--border); background: var(--bg); color: var(--text-secondary); font-size: 0.9rem; font-weight: 600; font-family: inherit; cursor: pointer; }
+      .btn-submit { padding: 0.6rem 1.25rem; border-radius: 10px; border: none; background: var(--blue); color: #fff; font-size: 0.9rem; font-weight: 600; font-family: inherit; cursor: pointer; transition: background 0.2s; }
+      .btn-submit:hover { background: var(--blue-hover, #1d4ed8); }
+      .btn-submit:disabled { opacity: 0.5; cursor: not-allowed; }
+      .modal-error { color: #ef4444; font-size: 0.85rem; margin-top: 0.5rem; }
+
+      /* Auth prompt */
+      .auth-prompt { text-align: center; padding: 2rem; }
+      .auth-prompt p { color: var(--text-secondary); font-size: 0.95rem; margin-bottom: 1rem; }
+      .btn-login-link { display: inline-block; padding: 0.65rem 1.5rem; border-radius: 10px; background: var(--blue); color: #fff; text-decoration: none; font-weight: 600; font-size: 0.9rem; }
+
+      /* Sort */
+      .forum-sort { display: flex; gap: 0.5rem; margin-bottom: 1rem; }
+      .sort-btn { padding: 0.3rem 0.7rem; border-radius: 8px; border: none; background: none; color: var(--text-muted); font-size: 0.8rem; font-weight: 600; font-family: inherit; cursor: pointer; transition: all 0.2s; }
+      .sort-btn:hover, .sort-btn.active { color: var(--text); background: var(--bg-card); }
+
+      @media (max-width: 768px) {
+        .forum-container { padding: 6rem 1rem 3rem; }
+        .forum-header h1 { font-size: 1.5rem; }
+        .forum-toolbar { flex-direction: column; }
+        .forum-search { width: 100%; }
+        .post-votes { min-width: 36px; }
+      }
+    </style>
+  </Fragment>
+
+  <div class="forum-container">
+    <div class="forum-header">
+      <h1>Forum communautaire</h1>
+      <p>Échangez avec la communauté AIVancePro — posez vos questions, partagez vos conseils.</p>
+    </div>
+
+    <div class="forum-toolbar">
+      <input type="text" class="forum-search" id="forumSearch" placeholder="Rechercher un sujet...">
+      <button class="btn-new-post" id="btnNewPost">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg>
+        Nouveau sujet
+      </button>
+    </div>
+
+    <div class="forum-categories" id="forumCategories">
+      <button class="cat-btn active" data-cat="all">Tous</button>
+      <button class="cat-btn" data-cat="general">Général</button>
+      <button class="cat-btn" data-cat="entrainement">Entraînement</button>
+      <button class="cat-btn" data-cat="nutrition">Nutrition</button>
+      <button class="cat-btn" data-cat="progression">Progression</button>
+      <button class="cat-btn" data-cat="article">Articles & Guides</button>
+    </div>
+
+    <div class="forum-sort" id="forumSort">
+      <button class="sort-btn active" data-sort="recent">Récents</button>
+      <button class="sort-btn" data-sort="popular">Populaires</button>
+      <button class="sort-btn" data-sort="unanswered">Sans réponse</button>
+    </div>
+
+    <div id="forumPosts" class="forum-posts">
+      <div class="forum-loading">Chargement des discussions...</div>
+    </div>
+  </div>
+
+  <!-- New post modal -->
+  <div class="modal-overlay" id="newPostModal">
+    <div class="modal-box">
+      <!-- Auth prompt (hidden when logged in) -->
+      <div id="modalAuthPrompt" class="auth-prompt" style="display:none">
+        <h2>Connectez-vous pour participer</h2>
+        <p>Créez un compte ou connectez-vous pour poster sur le forum.</p>
+        <a href="/login/?redirect=/forum/" class="btn-login-link">Se connecter</a>
+      </div>
+      <!-- Post form (hidden when not logged in) -->
+      <div id="modalPostForm" style="display:none">
+        <h2>Nouveau sujet</h2>
+        <div class="modal-field">
+          <label for="postTitle">Titre</label>
+          <input type="text" id="postTitle" placeholder="Votre question ou sujet..." maxlength="200">
+        </div>
+        <div class="modal-field">
+          <label for="postCategory">Catégorie</label>
+          <select id="postCategory">
+            <option value="general">Général</option>
+            <option value="entrainement">Entraînement</option>
+            <option value="nutrition">Nutrition</option>
+            <option value="progression">Progression</option>
+          </select>
+        </div>
+        <div class="modal-field">
+          <label for="postBody">Message</label>
+          <textarea id="postBody" placeholder="Décrivez votre question ou partagez vos conseils..."></textarea>
+        </div>
+        <p class="modal-error" id="postError" style="display:none"></p>
+        <div class="modal-actions">
+          <button class="btn-cancel" id="btnCancelPost">Annuler</button>
+          <button class="btn-submit" id="btnSubmitPost">Publier</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script is:inline src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2/dist/umd/supabase.min.js"></script>
+  <script is:inline>
+  (function() {
+    var SUPABASE_URL = 'https://vzmtvhcvyqzkmestdbko.supabase.co';
+    var SUPABASE_KEY = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InZ6bXR2aGN2eXF6a21lc3RkYmtvIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NzA4OTA0MTEsImV4cCI6MjA4NjQ2NjQxMX0.rvBz2uIsr3YtLIw84Kor3eVFpH4FiXVZgbufiJH3uio';
+    var sb = window.supabase.createClient(SUPABASE_URL, SUPABASE_KEY);
+
+    var currentUser = null;
+    var currentCat = 'all';
+    var currentSort = 'recent';
+    var searchTimeout = null;
+
+    var catLabels = {
+      general: 'Général',
+      entrainement: 'Entraînement',
+      nutrition: 'Nutrition',
+      progression: 'Progression',
+      article: 'Article'
+    };
+
+    // ── URL params (article link) ──
+    var urlParams = new URLSearchParams(window.location.search);
+    var articleSlug = urlParams.get('article');
+    var articleType = urlParams.get('type');
+
+    // ── Auth check ──
+    sb.auth.getSession().then(function(res) {
+      if (res.data.session) {
+        currentUser = res.data.session.user;
+      }
+      // Auto-open modal if coming from an article
+      if (articleSlug) {
+        document.getElementById('btnNewPost').click();
+        document.getElementById('postCategory').value = 'general';
+        var prefix = articleType === 'guide' ? '/guides/' : '/blog/';
+        document.getElementById('postTitle').setAttribute('placeholder', 'Votre question sur cet article...');
+      }
+    });
+
+    // ── Load posts ──
+    function loadPosts(search) {
+      var container = document.getElementById('forumPosts');
+      container.innerHTML = '<div class="forum-loading">Chargement...</div>';
+
+      var query = sb.from('forum_posts').select('*');
+
+      if (currentCat !== 'all') {
+        if (currentCat === 'article') {
+          query = query.not('article_slug', 'is', null);
+        } else {
+          query = query.eq('category', currentCat);
+        }
+      }
+
+      if (search) {
+        query = query.or('title.ilike.%' + search + '%,body.ilike.%' + search + '%');
+      }
+
+      if (currentSort === 'popular') {
+        query = query.order('upvotes', { ascending: false });
+      } else if (currentSort === 'unanswered') {
+        query = query.eq('reply_count', 0).order('created_at', { ascending: false });
+      } else {
+        query = query.order('created_at', { ascending: false });
+      }
+
+      query = query.limit(50);
+
+      query.then(function(res) {
+        if (res.error) {
+          container.innerHTML = '<div class="forum-empty"><h3>Erreur de chargement</h3><p>' + res.error.message + '</p></div>';
+          return;
+        }
+
+        var posts = res.data;
+        if (!posts || posts.length === 0) {
+          container.innerHTML = '<div class="forum-empty">' +
+            '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>' +
+            '<h3>Aucune discussion</h3>' +
+            '<p>Soyez le premier à lancer un sujet !</p></div>';
+          return;
+        }
+
+        container.innerHTML = '';
+        posts.forEach(function(post) {
+          var timeAgo = formatTimeAgo(post.created_at);
+          var catClass = post.article_slug ? 'article' : '';
+          var catText = post.article_slug ? 'Article' : (catLabels[post.category] || post.category);
+
+          var el = document.createElement('a');
+          el.href = '/forum/topic/?id=' + post.id;
+          el.className = 'forum-post';
+          el.innerHTML =
+            '<div class="post-votes">' +
+              '<span class="vote-count">' + (post.upvotes || 0) + '</span>' +
+              '<span class="vote-label">votes</span>' +
+            '</div>' +
+            '<div class="post-main">' +
+              '<div class="post-title">' + escapeHtml(post.title) + '</div>' +
+              '<div class="post-meta">' +
+                '<span class="post-tag ' + catClass + '">' + catText + '</span>' +
+                '<span>' + escapeHtml(post.author_name) + '</span>' +
+                '<span>' + timeAgo + '</span>' +
+                '<span class="post-replies">' +
+                  '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>' +
+                  (post.reply_count || 0) +
+                '</span>' +
+              '</div>' +
+            '</div>';
+          container.appendChild(el);
+        });
+      });
+    }
+
+    // ── Categories ──
+    document.getElementById('forumCategories').addEventListener('click', function(e) {
+      var btn = e.target.closest('.cat-btn');
+      if (!btn) return;
+      document.querySelectorAll('.cat-btn').forEach(function(b) { b.classList.remove('active'); });
+      btn.classList.add('active');
+      currentCat = btn.dataset.cat;
+      loadPosts(document.getElementById('forumSearch').value.trim());
+    });
+
+    // ── Sort ──
+    document.getElementById('forumSort').addEventListener('click', function(e) {
+      var btn = e.target.closest('.sort-btn');
+      if (!btn) return;
+      document.querySelectorAll('.sort-btn').forEach(function(b) { b.classList.remove('active'); });
+      btn.classList.add('active');
+      currentSort = btn.dataset.sort;
+      loadPosts(document.getElementById('forumSearch').value.trim());
+    });
+
+    // ── Search ──
+    document.getElementById('forumSearch').addEventListener('input', function() {
+      clearTimeout(searchTimeout);
+      var val = this.value.trim();
+      searchTimeout = setTimeout(function() { loadPosts(val); }, 350);
+    });
+
+    // ── New post modal ──
+    var modal = document.getElementById('newPostModal');
+
+    document.getElementById('btnNewPost').addEventListener('click', function() {
+      if (currentUser) {
+        document.getElementById('modalAuthPrompt').style.display = 'none';
+        document.getElementById('modalPostForm').style.display = '';
+      } else {
+        document.getElementById('modalAuthPrompt').style.display = '';
+        document.getElementById('modalPostForm').style.display = 'none';
+      }
+      modal.classList.add('open');
+    });
+
+    document.getElementById('btnCancelPost').addEventListener('click', function() {
+      modal.classList.remove('open');
+    });
+
+    modal.addEventListener('click', function(e) {
+      if (e.target === modal) modal.classList.remove('open');
+    });
+
+    // ── Submit post ──
+    document.getElementById('btnSubmitPost').addEventListener('click', async function() {
+      var title = document.getElementById('postTitle').value.trim();
+      var body = document.getElementById('postBody').value.trim();
+      var category = document.getElementById('postCategory').value;
+      var errEl = document.getElementById('postError');
+      var btn = this;
+
+      if (!title || title.length < 5) {
+        errEl.textContent = 'Le titre doit contenir au moins 5 caractères.';
+        errEl.style.display = '';
+        return;
+      }
+      if (!body || body.length < 10) {
+        errEl.textContent = 'Le message doit contenir au moins 10 caractères.';
+        errEl.style.display = '';
+        return;
+      }
+
+      errEl.style.display = 'none';
+      btn.disabled = true;
+      btn.textContent = 'Publication...';
+
+      var authorName = currentUser.user_metadata?.display_name || currentUser.user_metadata?.full_name || currentUser.email?.split('@')[0] || 'Utilisateur';
+
+      var postData = {
+        title: title,
+        body: body,
+        category: articleSlug ? 'general' : category,
+        author_id: currentUser.id,
+        author_name: authorName
+      };
+      if (articleSlug) {
+        postData.article_slug = articleSlug;
+        postData.article_type = articleType || 'blog';
+      }
+
+      var res = await sb.from('forum_posts').insert(postData).select().single();
+
+      btn.disabled = false;
+      btn.textContent = 'Publier';
+
+      if (res.error) {
+        errEl.textContent = 'Erreur : ' + res.error.message;
+        errEl.style.display = '';
+        return;
+      }
+
+      modal.classList.remove('open');
+      document.getElementById('postTitle').value = '';
+      document.getElementById('postBody').value = '';
+      window.location.href = '/forum/topic/?id=' + res.data.id;
+    });
+
+    // ── Helpers ──
+    function escapeHtml(str) {
+      var div = document.createElement('div');
+      div.textContent = str;
+      return div.innerHTML;
+    }
+
+    function formatTimeAgo(dateStr) {
+      var now = Date.now();
+      var d = new Date(dateStr).getTime();
+      var diff = Math.floor((now - d) / 1000);
+      if (diff < 60) return "à l'instant";
+      if (diff < 3600) return Math.floor(diff / 60) + ' min';
+      if (diff < 86400) return Math.floor(diff / 3600) + ' h';
+      if (diff < 2592000) return Math.floor(diff / 86400) + ' j';
+      return Math.floor(diff / 2592000) + ' mois';
+    }
+
+    // ── Init ──
+    loadPosts();
+  })();
+  </script>
+</BaseLayout>

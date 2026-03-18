@@ -13,6 +13,7 @@ export const t = {
       articles: 'Articles',
       blog: 'Blog',
       guides: 'Guides',
+      forum: 'Forum',
       exercises: "Biblioth\u00e8que d'exercices",
 
       changelog: 'Nouveautés',
@@ -86,6 +87,7 @@ export const t = {
       blog: '/blog/',
       guides: '/guides/',
       exercises: '/exercices/',
+      forum: '/forum/',
 
       login: '/login/',
       privacy: '/privacy/',
