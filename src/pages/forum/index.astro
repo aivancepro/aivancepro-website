@@ -47,6 +47,9 @@ import BaseLayout from '../../layouts/BaseLayout.astro';
       .post-tag.article { background: rgba(147,51,234,0.08); color: #9333EA; }
       .post-replies { display: flex; align-items: center; gap: 0.25rem; }
       .post-replies svg { width: 14px; height: 14px; }
+      .post-delete { background: none; border: none; cursor: pointer; color: var(--text-muted); padding: 0.15rem 0.3rem; border-radius: 6px; transition: all 0.2s; display: flex; align-items: center; margin-left: auto; }
+      .post-delete:hover { color: #ef4444; background: rgba(239,68,68,0.08); }
+      .post-delete svg { width: 14px; height: 14px; }
 
       /* Empty state */
       .forum-empty { text-align: center; padding: 4rem 2rem; color: var(--text-secondary); }
@@ -173,7 +176,9 @@ import BaseLayout from '../../layouts/BaseLayout.astro';
     var SUPABASE_KEY = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InZ6bXR2aGN2eXF6a21lc3RkYmtvIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NzA4OTA0MTEsImV4cCI6MjA4NjQ2NjQxMX0.rvBz2uIsr3YtLIw84Kor3eVFpH4FiXVZgbufiJH3uio';
     var sb = window.supabase.createClient(SUPABASE_URL, SUPABASE_KEY);
 
+    var ADMIN_EMAIL = 'aivancepro@gmail.com';
     var currentUser = null;
+    var isAdmin = false;
     var currentCat = 'all';
     var currentSort = 'recent';
     var searchTimeout = null;
@@ -195,6 +200,7 @@ import BaseLayout from '../../layouts/BaseLayout.astro';
     sb.auth.getSession().then(function(res) {
       if (res.data.session) {
         currentUser = res.data.session.user;
+        isAdmin = currentUser.email === ADMIN_EMAIL;
       }
       // Auto-open modal if coming from an article
       if (articleSlug) {
@@ -255,9 +261,11 @@ import BaseLayout from '../../layouts/BaseLayout.astro';
           var catClass = post.article_slug ? 'article' : '';
           var catText = post.article_slug ? 'Article' : (catLabels[post.category] || post.category);
 
-          var el = document.createElement('a');
-          el.href = '/forum/topic/?id=' + post.id;
+          var deleteHtml = isAdmin ? '<button class="post-delete" data-delete-post="' + post.id + '" title="Supprimer"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="3 6 5 6 21 6"/><path d="M19 6v14a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2V6m3 0V4a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2"/></svg></button>' : '';
+
+          var el = document.createElement('div');
           el.className = 'forum-post';
+          el.style.cursor = 'pointer';
           el.innerHTML =
             '<div class="post-votes">' +
               '<span class="vote-count">' + (post.upvotes || 0) + '</span>' +
@@ -273,8 +281,13 @@ import BaseLayout from '../../layouts/BaseLayout.astro';
                   '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>' +
                   (post.reply_count || 0) +
                 '</span>' +
+                deleteHtml +
               '</div>' +
             '</div>';
+          el.addEventListener('click', function(e) {
+            if (e.target.closest('[data-delete-post]')) return;
+            window.location.href = '/forum/topic/?id=' + post.id;
+          });
           container.appendChild(el);
         });
       });
@@ -400,6 +413,19 @@ import BaseLayout from '../../layouts/BaseLayout.astro';
       if (diff < 2592000) return Math.floor(diff / 86400) + ' j';
       return Math.floor(diff / 2592000) + ' mois';
     }
+
+    // ── Admin delete ──
+    document.addEventListener('click', async function(e) {
+      var delBtn = e.target.closest('[data-delete-post]');
+      if (!delBtn || !isAdmin) return;
+      e.preventDefault();
+      e.stopPropagation();
+      if (!confirm('Supprimer définitivement ce sujet et toutes ses réponses ?')) return;
+      var pid = delBtn.dataset.deletePost;
+      var res = await sb.from('forum_posts').delete().eq('id', pid);
+      if (res.error) { alert('Erreur : ' + res.error.message); return; }
+      loadPosts(document.getElementById('forumSearch').value.trim());
+    });
 
     // ── Init ──
     loadPosts();

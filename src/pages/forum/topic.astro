@@ -40,6 +40,7 @@ import BaseLayout from '../../layouts/BaseLayout.astro';
       /* Action buttons */
       .action-btn { background: none; border: none; cursor: pointer; color: var(--text-muted); font-size: 0.78rem; font-family: inherit; display: flex; align-items: center; gap: 0.25rem; transition: color 0.2s; padding: 0.2rem 0.4rem; border-radius: 6px; }
       .action-btn:hover { color: var(--text-secondary); background: var(--bg-elevated, rgba(0,0,0,0.05)); }
+      .action-btn.delete-btn:hover { color: #ef4444; background: rgba(239,68,68,0.08); }
       .action-btn svg { width: 14px; height: 14px; }
       .action-spacer { flex: 1; }
 
@@ -116,7 +117,9 @@ import BaseLayout from '../../layouts/BaseLayout.astro';
       return;
     }
 
+    var ADMIN_EMAIL = 'aivancepro@gmail.com';
     var currentUser = null;
+    var isAdmin = false;
     var userVotes = {};
 
     var catLabels = {
@@ -206,6 +209,26 @@ import BaseLayout from '../../layouts/BaseLayout.astro';
         'Signaler</button>';
     }
 
+    function deleteBtn(id, type) {
+      if (!isAdmin) return '';
+      return '<button class="action-btn delete-btn" data-delete-id="' + id + '" data-delete-type="' + type + '">' +
+        '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="3 6 5 6 21 6"/><path d="M19 6v14a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2V6m3 0V4a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2"/></svg>' +
+        'Supprimer</button>';
+    }
+
+    async function deleteItem(id, type) {
+      var table = type === 'post' ? 'forum_posts' : 'forum_replies';
+      var res = await sb.from(table).delete().eq('id', id);
+      if (res.error) { showToast('Erreur : ' + res.error.message); return; }
+      if (type === 'post') {
+        showToast('Sujet supprimé');
+        window.location.href = '/forum/';
+      } else {
+        showToast('Réponse supprimée');
+        loadTopic();
+      }
+    }
+
     async function loadTopic() {
       var container = document.getElementById('topicContent');
       var res = await sb.from('forum_posts').select('*').eq('id', postId).single();
@@ -232,7 +255,7 @@ import BaseLayout from '../../layouts/BaseLayout.astro';
           '<div class="topic-footer">' + voteHtml(post.id, 'post', post.upvotes) +
             '<span class="topic-author">par <strong>' + escapeHtml(post.author_name) + '</strong></span>' +
             '<span class="topic-time">' + formatDate(post.created_at) + '</span>' +
-            '<span class="action-spacer"></span>' + reportBtn(post.id, 'post') +
+            '<span class="action-spacer"></span>' + deleteBtn(post.id, 'post') + reportBtn(post.id, 'post') +
           '</div></div>';
 
       loadReplies();
@@ -254,7 +277,7 @@ import BaseLayout from '../../layouts/BaseLayout.astro';
             '<div class="reply-footer">' + voteHtml(r.id, 'reply', r.upvotes) +
               '<strong>' + escapeHtml(r.author_name) + '</strong>' +
               '<span>' + formatTimeAgo(r.created_at) + '</span>' +
-              '<span class="action-spacer"></span>' + reportBtn(r.id, 'reply') +
+              '<span class="action-spacer"></span>' + deleteBtn(r.id, 'reply') + reportBtn(r.id, 'reply') +
             '</div></div>';
         });
         html += '</div>';
@@ -307,6 +330,13 @@ import BaseLayout from '../../layouts/BaseLayout.astro';
         vote(voteBtn.dataset.voteId, voteBtn.dataset.voteType, parseInt(voteBtn.dataset.voteVal));
         return;
       }
+      var deleteBtnEl = e.target.closest('[data-delete-id]');
+      if (deleteBtnEl) {
+        if (confirm('Supprimer définitivement ce contenu ?')) {
+          deleteItem(deleteBtnEl.dataset.deleteId, deleteBtnEl.dataset.deleteType);
+        }
+        return;
+      }
       var reportBtnEl = e.target.closest('[data-report-id]');
       if (reportBtnEl) {
         if (confirm('Voulez-vous signaler ce contenu comme inapproprié ?')) {
@@ -318,6 +348,7 @@ import BaseLayout from '../../layouts/BaseLayout.astro';
     sb.auth.getSession().then(async function(res) {
       if (res.data.session) {
         currentUser = res.data.session.user;
+        isAdmin = currentUser.email === ADMIN_EMAIL;
         await loadUserVotes();
       }
       loadTopic();

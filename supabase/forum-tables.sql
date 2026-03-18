@@ -86,6 +86,15 @@ CREATE POLICY "Users can remove vote" ON forum_votes FOR DELETE USING (auth.uid(
 -- Reports: auth insert only (no read for normal users)
 CREATE POLICY "Users can report" ON forum_reports FOR INSERT WITH CHECK (auth.uid() = reporter_id);
 
+-- Admin: aivancepro@gmail.com can delete any post or reply
+CREATE POLICY "Admin can delete any post" ON forum_posts FOR DELETE
+  USING (auth.jwt() ->> 'email' = 'aivancepro@gmail.com');
+CREATE POLICY "Admin can delete any reply" ON forum_replies FOR DELETE
+  USING (auth.jwt() ->> 'email' = 'aivancepro@gmail.com');
+-- Admin can also read all reports
+CREATE POLICY "Admin can read reports" ON forum_reports FOR SELECT
+  USING (auth.jwt() ->> 'email' = 'aivancepro@gmail.com');
+
 -- ── Function to increment reply_count ────────────────────────
 CREATE OR REPLACE FUNCTION increment_reply_count()
 RETURNS TRIGGER AS $$
