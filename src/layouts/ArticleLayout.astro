@@ -287,8 +287,12 @@ const guidePrefixes = { fr: '/guides/', en: '/en/guides/', de: '/de/ratgeber/' }
     }
     // FAQ accordion
     var faqH2 = null;
+    var faqKeywords = ['faq', 'questions fréquentes', 'frequently asked questions', 'häufig gestellte fragen'];
     content && content.querySelectorAll('h2').forEach(function(h) {
-      if (h.textContent.trim().toUpperCase() === 'FAQ') faqH2 = h;
+      var txt = h.textContent.trim().toLowerCase();
+      for (var k = 0; k < faqKeywords.length; k++) {
+        if (txt === faqKeywords[k] || txt.indexOf(faqKeywords[k]) === 0) { faqH2 = h; break; }
+      }
     });
     if (faqH2) {
       var faqSection = document.createElement('div');
@@ -300,10 +304,10 @@ const guidePrefixes = { fr: '/guides/', en: '/en/guides/', de: '/de/ratgeber/' }
       faqListEl.className = 'faq-list';
       faqSection.appendChild(faqListEl);
 
-      // Collect FAQ items: find siblings after h2 until next h2 or end
+      // Collect FAQ items: find siblings after h2 until next h2, hr, or end
       var siblings = [];
       var next = faqH2.nextElementSibling;
-      while (next && next.tagName !== 'H2') {
+      while (next && next.tagName !== 'H2' && next.tagName !== 'HR') {
         siblings.push(next);
         next = next.nextElementSibling;
       }
