@@ -80,6 +80,28 @@ import BaseLayout from '../../layouts/BaseLayout.astro';
       .inline-reply-form textarea::placeholder { color: var(--text-muted); }
       .inline-reply-form .reply-form-actions { display: flex; justify-content: flex-end; gap: 0.5rem; margin-top: 0.6rem; }
 
+      /* Media toolbar icons */
+      .media-toolbar { display: flex; align-items: center; gap: 0.35rem; }
+      .media-btn { background: none; border: none; cursor: pointer; color: var(--text-muted); padding: 0.3rem; border-radius: 6px; display: flex; align-items: center; transition: all 0.15s; position: relative; }
+      .media-btn:hover { color: var(--text-secondary); background: rgba(74,144,217,0.06); }
+      .media-btn svg { width: 18px; height: 18px; }
+      .media-btn input[type="file"] { position: absolute; inset: 0; opacity: 0; cursor: pointer; }
+      /* Image preview */
+      .media-preview { margin-top: 0.5rem; position: relative; display: inline-block; }
+      .media-preview img { max-width: 100%; max-height: 200px; border-radius: 10px; border: 1px solid var(--border); }
+      .media-preview-remove { position: absolute; top: 4px; right: 4px; background: rgba(0,0,0,0.6); color: #fff; border: none; border-radius: 50%; width: 22px; height: 22px; font-size: 14px; line-height: 1; cursor: pointer; display: flex; align-items: center; justify-content: center; }
+      .media-uploading { font-size: 0.8rem; color: var(--text-muted); margin-top: 0.4rem; }
+      /* GIF picker */
+      .gif-picker { position: absolute; bottom: 100%; left: 0; margin-bottom: 0.5rem; width: 320px; max-height: 360px; background: var(--bg-card); border: 1px solid var(--border); border-radius: 12px; box-shadow: 0 8px 30px rgba(0,0,0,0.15); z-index: 100; overflow: hidden; display: none; }
+      .gif-picker.open { display: block; }
+      .gif-picker-search { width: 100%; padding: 0.6rem 0.85rem; border: none; border-bottom: 1px solid var(--border); background: none; color: var(--text); font-size: 0.85rem; font-family: inherit; outline: none; box-sizing: border-box; }
+      .gif-picker-search::placeholder { color: var(--text-muted); }
+      .gif-picker-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 4px; padding: 4px; max-height: 300px; overflow-y: auto; }
+      .gif-picker-grid img { width: 100%; border-radius: 6px; cursor: pointer; transition: opacity 0.15s; }
+      .gif-picker-grid img:hover { opacity: 0.8; }
+      .gif-picker-empty { text-align: center; padding: 2rem; color: var(--text-muted); font-size: 0.82rem; }
+      .gif-powered { text-align: center; padding: 0.3rem; font-size: 0.65rem; color: var(--text-muted); border-top: 1px solid var(--border); }
+
       .reply-auth { text-align: center; padding: 1.5rem; background: var(--bg-card); border: 1px solid var(--border); border-radius: 12px; margin-top: 2rem; }
       .reply-auth p { color: var(--text-secondary); font-size: 0.9rem; margin-bottom: 0.75rem; }
       .reply-auth a { display: inline-block; padding: 0.55rem 1.25rem; border-radius: 12px; background: var(--blue); color: #fff; text-decoration: none; font-weight: 600; font-size: 0.88rem; box-shadow: 0 4px 15px rgba(74, 144, 217, 0.3); transition: all 0.2s; }
@@ -141,9 +163,69 @@ import BaseLayout from '../../layouts/BaseLayout.astro';
     var svgReply = '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 17 4 12 9 7"/><path d="M20 18v-2a4 4 0 0 0-4-4H4"/></svg>';
     var svgTrash = '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="3 6 5 6 21 6"/><path d="M19 6v14a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2V6m3 0V4a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2"/></svg>';
     var svgFlag = '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 15s1-1 4-1 5 2 8 2 4-1 4-1V3s-1 1-4 1-5-2-8-2-4 1-4 1z"/><line x1="4" y1="22" x2="4" y2="15"/></svg>';
+    var svgImage = '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><polyline points="21 15 16 10 5 21"/></svg>';
+    var svgGif = '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="4" width="20" height="16" rx="2"/><text x="12" y="15" text-anchor="middle" font-size="8" font-weight="bold" fill="currentColor" stroke="none">GIF</text></svg>';
+
+    // Cloudinary upload
+    var CLOUD_NAME = 'dlimurcjx';
+    var UPLOAD_PRESET = 'AIVancePro';
+    var pendingImageUrl = null;
+
+    async function uploadImage(file) {
+      var fd = new FormData();
+      fd.append('file', file);
+      fd.append('upload_preset', UPLOAD_PRESET);
+      var res = await fetch('https://api.cloudinary.com/v1_1/' + CLOUD_NAME + '/image/upload', { method: 'POST', body: fd });
+      var data = await res.json();
+      return data.secure_url;
+    }
+
+    // Tenor GIF search
+    var TENOR_KEY = 'AIzaSyAj-jCHgJMYdYDTHGORQnGnh1V4UFj4gBk';
+    var gifTimeout = null;
+
+    async function searchGifs(query) {
+      var url = 'https://tenor.googleapis.com/v2/search?q=' + encodeURIComponent(query || 'fitness') + '&key=' + TENOR_KEY + '&limit=20&media_filter=tinygif,gif';
+      var res = await fetch(url);
+      var data = await res.json();
+      return data.results || [];
+    }
+
+    async function trendingGifs() {
+      var url = 'https://tenor.googleapis.com/v2/featured?key=' + TENOR_KEY + '&limit=20&media_filter=tinygif,gif';
+      var res = await fetch(url);
+      var data = await res.json();
+      return data.results || [];
+    }
+
+    // Media toolbar HTML
+    function mediaToolbarHtml(prefix) {
+      return '<div class="media-toolbar">' +
+        '<button class="media-btn" title="Ajouter une image" data-media-action="image-' + prefix + '">' + svgImage + '<input type="file" accept="image/*" data-media-file="' + prefix + '"></button>' +
+        '<button class="media-btn" title="Ajouter un GIF" data-media-action="gif-' + prefix + '" style="position:relative">' + svgGif + '</button>' +
+      '</div>';
+    }
+
+    function mediaPreviewHtml(url, prefix) {
+      if (!url) return '';
+      return '<div class="media-preview" id="mediaPreview-' + prefix + '"><img src="' + url + '"><button class="media-preview-remove" data-media-remove="' + prefix + '">&times;</button></div>';
+    }
 
     function escapeHtml(str) { var d = document.createElement('div'); d.textContent = str || ''; return d.innerHTML; }
-    function linkify(text) { return escapeHtml(text).replace(/(https?:\/\/[^\s]+)/g, '<a href="$1" target="_blank" rel="noopener">$1</a>'); }
+    function linkify(text) {
+      var html = escapeHtml(text);
+      // Render image URLs as images
+      html = html.replace(/(https?:\/\/[^\s]+\.(?:jpg|jpeg|png|gif|webp)(?:\?[^\s]*)?)/gi, '<img src="$1" style="max-width:100%;max-height:300px;border-radius:10px;margin:0.5rem 0;display:block">');
+      html = html.replace(/(https?:\/\/media\.tenor\.com\/[^\s]+)/gi, function(match) {
+        if (match.match(/\.(jpg|jpeg|png|gif|webp)/i)) return match; // Already handled
+        return '<img src="' + match + '" style="max-width:100%;max-height:300px;border-radius:10px;margin:0.5rem 0;display:block">';
+      });
+      html = html.replace(/(https?:\/\/[^\s<]+)/g, function(match) {
+        if (match.match(/<img/)) return match;
+        return '<a href="' + match + '" target="_blank" rel="noopener">' + match + '</a>';
+      });
+      return html;
+    }
     function formatTimeAgo(dateStr) {
       var diff = Math.floor((Date.now() - new Date(dateStr).getTime()) / 1000);
       if (diff < 60) return "à l'instant"; if (diff < 3600) return Math.floor(diff / 60) + ' min';
@@ -257,8 +339,9 @@ import BaseLayout from '../../layouts/BaseLayout.astro';
           html += '<div class="inline-reply-form" id="inlineReplyForm">' +
             '<div class="inline-reply-placeholder">Répondre à ' + escapeHtml(r.author_name) + '</div>' +
             '<textarea id="replyBody" placeholder="Votre réponse..."></textarea>' +
+            '<div id="mediaPreviewZone-inline"></div>' +
             '<p class="reply-error" id="replyError" style="display:none"></p>' +
-            '<div class="reply-form-actions"><button class="btn-cancel-reply" id="btnCancelInline">Annuler</button><button class="btn-reply" id="btnSubmitReply">Commenter</button></div>' +
+            '<div class="reply-form-actions">' + mediaToolbarHtml('inline') + '<span style="flex:1"></span><button class="btn-cancel-reply" id="btnCancelInline">Annuler</button><button class="btn-reply" id="btnSubmitReply">Commenter</button></div>' +
           '</div>';
         }
         html += '</div>';
@@ -292,7 +375,9 @@ import BaseLayout from '../../layouts/BaseLayout.astro';
         } else {
           var boxClass = formExpanded ? 'expanded' : 'compact';
           var toolbarHtml = formExpanded ?
+            '<div id="mediaPreviewZone-main"></div>' +
             '<div class="reply-box-toolbar">' +
+              '<div class="toolbar-left">' + mediaToolbarHtml('main') + '</div>' +
               '<div class="toolbar-right"><button class="btn-cancel-reply" id="btnCancelMain">Annuler</button><button class="btn-reply" id="btnSubmitReply">Commenter</button></div>' +
             '</div>' +
             '<p class="reply-error" id="replyError" style="display:none"></p>' : '';
@@ -321,15 +406,18 @@ import BaseLayout from '../../layouts/BaseLayout.astro';
       var body = document.getElementById('replyBody').value.trim();
       var errEl = document.getElementById('replyError');
       var btn = document.getElementById('btnSubmitReply');
+      // Append image URL to body if present
+      if (pendingImageUrl) body = (body ? body + '\n' : '') + pendingImageUrl;
       if (!body || body.length < 5) { errEl.textContent = 'La réponse doit contenir au moins 5 caractères.'; errEl.style.display = ''; return; }
       errEl.style.display = 'none'; btn.disabled = true; btn.textContent = 'Envoi...';
       var authorName = currentUser.user_metadata?.display_name || currentUser.user_metadata?.full_name || currentUser.email?.split('@')[0] || 'Utilisateur';
       var insertData = { post_id: postId, body: body, author_id: currentUser.id, author_name: authorName };
       if (replyingToId) insertData.parent_reply_id = replyingToId;
       var res = await sb.from('forum_replies').insert(insertData);
-      btn.disabled = false; btn.textContent = 'Répondre';
+      btn.disabled = false; btn.textContent = 'Commenter';
       if (res.error) { errEl.textContent = 'Erreur : ' + res.error.message; errEl.style.display = ''; return; }
       document.getElementById('replyBody').value = '';
+      pendingImageUrl = null;
       replyingToId = null; replyingToName = null;
       loadReplies(); loadTopic();
     }
@@ -343,6 +431,89 @@ import BaseLayout from '../../layouts/BaseLayout.astro';
     document.addEventListener('input', function(e) {
       if (e.target.tagName === 'TEXTAREA') autoResize(e.target);
     });
+
+    // Media: image upload handler
+    document.addEventListener('change', async function(e) {
+      var fileInput = e.target.closest('[data-media-file]');
+      if (!fileInput || !fileInput.files[0]) return;
+      var prefix = fileInput.dataset.mediaFile;
+      var zone = document.getElementById('mediaPreviewZone-' + prefix);
+      if (zone) zone.innerHTML = '<div class="media-uploading">Upload en cours...</div>';
+      try {
+        var url = await uploadImage(fileInput.files[0]);
+        pendingImageUrl = url;
+        if (zone) zone.innerHTML = mediaPreviewHtml(url, prefix);
+      } catch(err) {
+        if (zone) zone.innerHTML = '<div class="media-uploading" style="color:#ef4444">Erreur d\'upload</div>';
+      }
+      fileInput.value = '';
+    });
+
+    // Media: remove preview
+    document.addEventListener('click', function(e) {
+      var removeBtn = e.target.closest('[data-media-remove]');
+      if (removeBtn) {
+        pendingImageUrl = null;
+        var prefix = removeBtn.dataset.mediaRemove;
+        var zone = document.getElementById('mediaPreviewZone-' + prefix);
+        if (zone) zone.innerHTML = '';
+        return;
+      }
+
+      // GIF picker toggle
+      var gifBtn = e.target.closest('[data-media-action^="gif-"]');
+      if (gifBtn) {
+        var prefix = gifBtn.dataset.mediaAction.replace('gif-', '');
+        var existing = document.getElementById('gifPicker-' + prefix);
+        if (existing) { existing.remove(); return; }
+        var picker = document.createElement('div');
+        picker.className = 'gif-picker open';
+        picker.id = 'gifPicker-' + prefix;
+        picker.innerHTML = '<input class="gif-picker-search" placeholder="Rechercher un GIF..." data-gif-prefix="' + prefix + '">' +
+          '<div class="gif-picker-grid" id="gifGrid-' + prefix + '"><div class="gif-picker-empty">Chargement...</div></div>' +
+          '<div class="gif-powered">Powered by Tenor</div>';
+        gifBtn.style.position = 'relative';
+        gifBtn.appendChild(picker);
+        picker.querySelector('.gif-picker-search').focus();
+        // Load trending
+        trendingGifs().then(function(results) { renderGifs(results, prefix); });
+        // Search handler
+        picker.querySelector('.gif-picker-search').addEventListener('input', function() {
+          var q = this.value.trim();
+          clearTimeout(gifTimeout);
+          gifTimeout = setTimeout(function() {
+            (q ? searchGifs(q) : trendingGifs()).then(function(results) { renderGifs(results, prefix); });
+          }, 400);
+        });
+        picker.addEventListener('click', function(ev) { ev.stopPropagation(); });
+        e.stopPropagation();
+        return;
+      }
+
+      // Close GIF picker on outside click
+      document.querySelectorAll('.gif-picker.open').forEach(function(p) { p.remove(); });
+    });
+
+    function renderGifs(results, prefix) {
+      var grid = document.getElementById('gifGrid-' + prefix);
+      if (!grid) return;
+      if (!results.length) { grid.innerHTML = '<div class="gif-picker-empty">Aucun résultat</div>'; return; }
+      grid.innerHTML = '';
+      results.forEach(function(gif) {
+        var url = gif.media_formats?.tinygif?.url || gif.media_formats?.gif?.url;
+        if (!url) return;
+        var img = document.createElement('img');
+        img.src = url;
+        img.loading = 'lazy';
+        img.addEventListener('click', function() {
+          pendingImageUrl = gif.media_formats?.gif?.url || url;
+          var zone = document.getElementById('mediaPreviewZone-' + prefix);
+          if (zone) zone.innerHTML = mediaPreviewHtml(pendingImageUrl, prefix);
+          document.querySelectorAll('.gif-picker.open').forEach(function(p) { p.remove(); });
+        });
+        grid.appendChild(img);
+      });
+    }
 
     // Vote click handler — detect up vs down within the votes button
     document.addEventListener('click', function(e) {
