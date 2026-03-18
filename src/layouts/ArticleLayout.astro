@@ -65,7 +65,7 @@ const guidePrefixes = { fr: '/guides/', en: '/en/guides/', de: '/de/ratgeber/' }
       .reading-progress { position: fixed; top: 0; left: 0; height: 3px; background: var(--blue); z-index: 9999; width: 100%; transform-origin: left; transform: scaleX(0); will-change: transform; }
       .article-header { padding: 9rem 2rem 2rem; text-align: center; background: linear-gradient(180deg, var(--bg-card) 0%, var(--bg) 100%); border-bottom: 1px solid var(--border); }
       .tag { display: inline-block; padding: 0.25rem 0.75rem; background: rgba(74,144,217,0.1); border-radius: 50px; font-size: 0.75rem; color: var(--blue); font-weight: 600; margin-bottom: 1rem; }
-      .article-header h1 { font-size: 2.5rem; font-weight: 800; margin-bottom: 0.5rem; line-height: 1.2; color: var(--text); letter-spacing: -0.02em; }
+      .article-header h1 { font-size: 2.5rem; font-weight: 800; margin-bottom: 0.5rem; line-height: 1.2; color: var(--text); letter-spacing: -0.02em; text-wrap: balance; }
       .meta { color: var(--text-secondary); margin-bottom: 0; font-size: 0.9rem; }
       .breadcrumb { font-size: 0.85rem; color: var(--text-secondary); margin-bottom: 1rem; }
       .breadcrumb a { color: var(--text-secondary); text-decoration: none; }
@@ -73,8 +73,8 @@ const guidePrefixes = { fr: '/guides/', en: '/en/guides/', de: '/de/ratgeber/' }
       .article-hero-image { max-width: 750px; margin: 2rem auto 0; padding: 0 2rem; }
       .article-hero-image img { width: 100%; height: auto; border-radius: 12px; display: block; }
       .article-content { max-width: 750px; margin: 0 auto; padding: 3rem 2rem 4rem; }
-      .article-content h2 { font-size: 1.5rem; font-weight: 700; margin-top: 2.5rem; margin-bottom: 1rem; color: var(--text); }
-      .article-content h3 { font-size: 1.15rem; font-weight: 600; margin-top: 1.5rem; margin-bottom: 0.5rem; color: var(--text); }
+      .article-content h2 { font-size: 1.5rem; font-weight: 700; margin-top: 2.5rem; margin-bottom: 1rem; color: var(--text); text-wrap: balance; }
+      .article-content h3 { font-size: 1.15rem; font-weight: 600; margin-top: 1.5rem; margin-bottom: 0.5rem; color: var(--text); text-wrap: balance; }
       .article-content p { color: var(--text-secondary); font-size: 0.95rem; margin-bottom: 1.2rem; line-height: 1.8; text-align: justify; }
       .article-content ul, .article-content ol { padding-left: 1.5rem; margin-bottom: 1.2rem; }
       .article-content li { color: var(--text-secondary); font-size: 0.95rem; margin-bottom: 0.5rem; text-align: justify; }
