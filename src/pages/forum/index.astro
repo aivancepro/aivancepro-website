@@ -290,6 +290,16 @@ import BaseLayout from '../../layouts/BaseLayout.astro';
     });
 
     loadPosts();
+
+    // Realtime: auto-refresh when posts or replies change
+    sb.channel('forum-index')
+      .on('postgres_changes', { event: '*', schema: 'public', table: 'forum_posts' }, function() {
+        loadPosts(document.getElementById('forumSearch').value.trim());
+      })
+      .on('postgres_changes', { event: '*', schema: 'public', table: 'forum_replies' }, function() {
+        loadPosts(document.getElementById('forumSearch').value.trim());
+      })
+      .subscribe();
   })();
   </script>
 </BaseLayout>
