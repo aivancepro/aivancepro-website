@@ -180,22 +180,22 @@ import BaseLayout from '../../layouts/BaseLayout.astro';
       return data.secure_url;
     }
 
-    // Tenor GIF search
-    var TENOR_KEY = 'AIzaSyAj-jCHgJMYdYDTHGORQnGnh1V4UFj4gBk';
+    // GIPHY GIF search (free API)
+    var GIPHY_KEY = 'dc6zaTOxFJmzC';
     var gifTimeout = null;
 
     async function searchGifs(query) {
-      var url = 'https://tenor.googleapis.com/v2/search?q=' + encodeURIComponent(query || 'fitness') + '&key=' + TENOR_KEY + '&limit=20&media_filter=tinygif,gif';
+      var url = 'https://api.giphy.com/v1/gifs/search?api_key=' + GIPHY_KEY + '&q=' + encodeURIComponent(query) + '&limit=20&rating=g&lang=fr';
       var res = await fetch(url);
       var data = await res.json();
-      return data.results || [];
+      return (data.data || []).map(function(g) { return { preview: g.images.fixed_width_small.url, full: g.images.original.url }; });
     }
 
     async function trendingGifs() {
-      var url = 'https://tenor.googleapis.com/v2/featured?key=' + TENOR_KEY + '&limit=20&media_filter=tinygif,gif';
+      var url = 'https://api.giphy.com/v1/gifs/trending?api_key=' + GIPHY_KEY + '&limit=20&rating=g';
       var res = await fetch(url);
       var data = await res.json();
-      return data.results || [];
+      return (data.data || []).map(function(g) { return { preview: g.images.fixed_width_small.url, full: g.images.original.url }; });
     }
 
     // Media toolbar HTML
@@ -213,18 +213,23 @@ import BaseLayout from '../../layouts/BaseLayout.astro';
 
     function escapeHtml(str) { var d = document.createElement('div'); d.textContent = str || ''; return d.innerHTML; }
     function linkify(text) {
-      var html = escapeHtml(text);
-      // Render image URLs as images
-      html = html.replace(/(https?:\/\/[^\s]+\.(?:jpg|jpeg|png|gif|webp)(?:\?[^\s]*)?)/gi, '<img src="$1" style="max-width:100%;max-height:300px;border-radius:10px;margin:0.5rem 0;display:block">');
-      html = html.replace(/(https?:\/\/media\.tenor\.com\/[^\s]+)/gi, function(match) {
-        if (match.match(/\.(jpg|jpeg|png|gif|webp)/i)) return match; // Already handled
-        return '<img src="' + match + '" style="max-width:100%;max-height:300px;border-radius:10px;margin:0.5rem 0;display:block">';
-      });
-      html = html.replace(/(https?:\/\/[^\s<]+)/g, function(match) {
-        if (match.match(/<img/)) return match;
-        return '<a href="' + match + '" target="_blank" rel="noopener">' + match + '</a>';
-      });
-      return html;
+      var safe = escapeHtml(text);
+      // Split text by URLs, process each part once
+      var parts = safe.split(/(https?:\/\/[^\s]+)/g);
+      var result = '';
+      for (var i = 0; i < parts.length; i++) {
+        var p = parts[i];
+        if (/^https?:\/\//.test(p)) {
+          if (/\.(jpg|jpeg|png|gif|webp)(\?[^\s]*)?$/i.test(p) || /media\.tenor\.com\//.test(p) || /media\d*\.giphy\.com\//.test(p)) {
+            result += '<img src="' + p + '" style="max-width:100%;max-height:300px;border-radius:10px;margin:0.5rem 0;display:block">';
+          } else {
+            result += '<a href="' + p + '" target="_blank" rel="noopener">' + p + '</a>';
+          }
+        } else {
+          result += p;
+        }
+      }
+      return result;
     }
     function formatTimeAgo(dateStr) {
       var diff = Math.floor((Date.now() - new Date(dateStr).getTime()) / 1000);
@@ -471,7 +476,7 @@ import BaseLayout from '../../layouts/BaseLayout.astro';
         picker.id = 'gifPicker-' + prefix;
         picker.innerHTML = '<input class="gif-picker-search" placeholder="Rechercher un GIF..." data-gif-prefix="' + prefix + '">' +
           '<div class="gif-picker-grid" id="gifGrid-' + prefix + '"><div class="gif-picker-empty">Chargement...</div></div>' +
-          '<div class="gif-powered">Powered by Tenor</div>';
+          '<div class="gif-powered">Powered by GIPHY</div>';
         gifBtn.style.position = 'relative';
         gifBtn.appendChild(picker);
         picker.querySelector('.gif-picker-search').focus();
@@ -500,13 +505,11 @@ import BaseLayout from '../../layouts/BaseLayout.astro';
       if (!results.length) { grid.innerHTML = '<div class="gif-picker-empty">Aucun résultat</div>'; return; }
       grid.innerHTML = '';
       results.forEach(function(gif) {
-        var url = gif.media_formats?.tinygif?.url || gif.media_formats?.gif?.url;
-        if (!url) return;
         var img = document.createElement('img');
-        img.src = url;
+        img.src = gif.preview;
         img.loading = 'lazy';
         img.addEventListener('click', function() {
-          pendingImageUrl = gif.media_formats?.gif?.url || url;
+          pendingImageUrl = gif.full;
           var zone = document.getElementById('mediaPreviewZone-' + prefix);
           if (zone) zone.innerHTML = mediaPreviewHtml(pendingImageUrl, prefix);
           document.querySelectorAll('.gif-picker.open').forEach(function(p) { p.remove(); });

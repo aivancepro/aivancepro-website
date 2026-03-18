@@ -159,10 +159,10 @@ import BaseLayout from '../../layouts/BaseLayout.astro';
 
     var catLabels = { general: 'Général', entrainement: 'Entraînement', nutrition: 'Nutrition', progression: 'Progression', article: 'Article' };
 
-    // Cloudinary + Tenor
+    // Cloudinary + GIPHY
     var CLOUD_NAME = 'dlimurcjx';
     var UPLOAD_PRESET = 'AIVancePro';
-    var TENOR_KEY = 'AIzaSyAj-jCHgJMYdYDTHGORQnGnh1V4UFj4gBk';
+    var GIPHY_KEY = 'dc6zaTOxFJmzC';
     var postImageUrl = null;
 
     async function uploadImage(file) {
@@ -289,20 +289,21 @@ import BaseLayout from '../../layouts/BaseLayout.astro';
       var picker = document.createElement('div');
       picker.id = 'postGifPicker';
       picker.style.cssText = 'position:absolute;bottom:100%;left:0;margin-bottom:0.5rem;width:320px;max-height:360px;background:var(--bg-card);border:1px solid var(--border);border-radius:12px;box-shadow:0 8px 30px rgba(0,0,0,0.15);z-index:100;overflow:hidden';
-      picker.innerHTML = '<input style="width:100%;padding:0.6rem 0.85rem;border:none;border-bottom:1px solid var(--border);background:none;color:var(--text);font-size:0.85rem;font-family:inherit;outline:none;box-sizing:border-box" placeholder="Rechercher un GIF..." id="postGifSearch"><div id="postGifGrid" style="display:grid;grid-template-columns:1fr 1fr;gap:4px;padding:4px;max-height:300px;overflow-y:auto"><div style="text-align:center;padding:2rem;color:var(--text-muted);font-size:0.82rem;grid-column:span 2">Chargement...</div></div><div style="text-align:center;padding:0.3rem;font-size:0.65rem;color:var(--text-muted);border-top:1px solid var(--border)">Powered by Tenor</div>';
+      picker.innerHTML = '<input style="width:100%;padding:0.6rem 0.85rem;border:none;border-bottom:1px solid var(--border);background:none;color:var(--text);font-size:0.85rem;font-family:inherit;outline:none;box-sizing:border-box" placeholder="Rechercher un GIF..." id="postGifSearch"><div id="postGifGrid" style="display:grid;grid-template-columns:1fr 1fr;gap:4px;padding:4px;max-height:300px;overflow-y:auto"><div style="text-align:center;padding:2rem;color:var(--text-muted);font-size:0.82rem;grid-column:span 2">Chargement...</div></div><div style="text-align:center;padding:0.3rem;font-size:0.65rem;color:var(--text-muted);border-top:1px solid var(--border)">Powered by GIPHY</div>';
       this.style.position = 'relative';
       this.appendChild(picker);
       document.getElementById('postGifSearch').focus();
       // Load trending
-      var tRes = await fetch('https://tenor.googleapis.com/v2/featured?key=' + TENOR_KEY + '&limit=20&media_filter=tinygif,gif');
+      var tRes = await fetch('https://api.giphy.com/v1/gifs/trending?api_key=' + GIPHY_KEY + '&limit=20&rating=g');
       var tData = await tRes.json();
-      renderPostGifs(tData.results || []);
+      renderPostGifs((tData.data || []).map(function(g) { return { preview: g.images.fixed_width_small.url, full: g.images.original.url }; }));
       document.getElementById('postGifSearch').addEventListener('input', function() {
         var q = this.value.trim();
         clearTimeout(searchTimeout);
         searchTimeout = setTimeout(async function() {
-          var url = q ? 'https://tenor.googleapis.com/v2/search?q=' + encodeURIComponent(q) + '&key=' + TENOR_KEY + '&limit=20&media_filter=tinygif,gif' : 'https://tenor.googleapis.com/v2/featured?key=' + TENOR_KEY + '&limit=20&media_filter=tinygif,gif';
-          var r = await fetch(url); var d = await r.json(); renderPostGifs(d.results || []);
+          var url = q ? 'https://api.giphy.com/v1/gifs/search?api_key=' + GIPHY_KEY + '&q=' + encodeURIComponent(q) + '&limit=20&rating=g&lang=fr' : 'https://api.giphy.com/v1/gifs/trending?api_key=' + GIPHY_KEY + '&limit=20&rating=g';
+          var r = await fetch(url); var d = await r.json();
+          renderPostGifs((d.data || []).map(function(g) { return { preview: g.images.fixed_width_small.url, full: g.images.original.url }; }));
         }, 400);
       });
       picker.addEventListener('click', function(ev) { ev.stopPropagation(); });
@@ -313,13 +314,11 @@ import BaseLayout from '../../layouts/BaseLayout.astro';
       if (!results.length) { grid.innerHTML = '<div style="text-align:center;padding:2rem;color:var(--text-muted);font-size:0.82rem;grid-column:span 2">Aucun résultat</div>'; return; }
       grid.innerHTML = '';
       results.forEach(function(gif) {
-        var url = gif.media_formats?.tinygif?.url || gif.media_formats?.gif?.url;
-        if (!url) return;
         var img = document.createElement('img');
-        img.src = url; img.loading = 'lazy';
+        img.src = gif.preview; img.loading = 'lazy';
         img.style.cssText = 'width:100%;border-radius:6px;cursor:pointer';
         img.addEventListener('click', function() {
-          postImageUrl = gif.media_formats?.gif?.url || url;
+          postImageUrl = gif.full;
           var preview = document.getElementById('postMediaPreview');
           preview.innerHTML = '<div style="position:relative;display:inline-block;margin-top:0.5rem"><img src="' + postImageUrl + '" style="max-width:100%;max-height:200px;border-radius:10px;border:1px solid var(--border)"><button onclick="document.getElementById(\'postMediaPreview\').innerHTML=\'\';postImageUrl=null" style="position:absolute;top:4px;right:4px;background:rgba(0,0,0,0.6);color:#fff;border:none;border-radius:50%;width:22px;height:22px;font-size:14px;cursor:pointer;display:flex;align-items:center;justify-content:center">&times;</button></div>';
           var p = document.getElementById('postGifPicker'); if (p) p.remove();
