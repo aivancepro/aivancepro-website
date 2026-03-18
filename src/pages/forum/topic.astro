@@ -54,10 +54,10 @@ import BaseLayout from '../../layouts/BaseLayout.astro';
       .reply-form { margin-bottom: 1.75rem; }
       .reply-box { background: var(--bg-card); border: 1px solid var(--border); border-radius: 14px; padding: 0.75rem 1rem; transition: border-color 0.2s; }
       .reply-box:focus-within { border-color: var(--blue); }
-      .reply-box textarea { width: 100%; border: none; background: none; color: var(--text); font-size: 0.9rem; font-family: inherit; outline: none; resize: vertical; box-sizing: border-box; }
+      .reply-box textarea { width: 100%; border: none; background: none; color: var(--text); font-size: 0.9rem; font-family: inherit; outline: none; resize: none; overflow: hidden; box-sizing: border-box; }
       .reply-box textarea::placeholder { color: var(--text-muted); }
-      .reply-box.compact textarea { min-height: 1.4em; height: 1.4em; resize: none; cursor: pointer; }
-      .reply-box.expanded textarea { min-height: 80px; }
+      .reply-box.compact textarea { min-height: 1.4em; height: 1.4em; cursor: pointer; }
+      .reply-box.expanded textarea { min-height: 60px; }
       .reply-box-toolbar { display: flex; align-items: center; justify-content: space-between; margin-top: 0.6rem; }
       .reply-box-toolbar .toolbar-left { display: flex; align-items: center; gap: 0.5rem; }
       .reply-box-toolbar .toolbar-left button { background: none; border: none; cursor: pointer; color: var(--text-muted); padding: 0.25rem; border-radius: 6px; display: flex; align-items: center; transition: color 0.15s; }
@@ -72,11 +72,12 @@ import BaseLayout from '../../layouts/BaseLayout.astro';
       .btn-cancel-reply:hover { background: var(--bg); }
       .reply-error { color: #ef4444; font-size: 0.85rem; margin-top: 0.5rem; }
 
-      /* Inline reply form (under a comment) */
-      .inline-reply-form { margin-top: 0.5rem; border: 1px solid var(--border); border-radius: 12px; padding: 0.85rem; background: var(--bg-card); }
-      .inline-reply-form .inline-reply-placeholder { color: var(--blue); font-size: 0.85rem; font-weight: 500; margin-bottom: 0.5rem; }
-      .inline-reply-form textarea { width: 100%; padding: 0.6rem 0.85rem; border-radius: 8px; border: 1px solid var(--border); background: var(--bg); color: var(--text); font-size: 0.88rem; font-family: inherit; outline: none; resize: vertical; min-height: 70px; box-sizing: border-box; transition: border-color 0.2s; }
-      .inline-reply-form textarea:focus { border-color: var(--blue); }
+      /* Inline reply form (under a comment) — same style as main reply-box */
+      .inline-reply-form { margin-top: 0.5rem; border: 1px solid var(--border); border-radius: 14px; padding: 0.75rem 1rem; background: var(--bg-card); transition: border-color 0.2s; }
+      .inline-reply-form:focus-within { border-color: var(--blue); }
+      .inline-reply-form .inline-reply-placeholder { color: var(--blue); font-size: 0.82rem; font-weight: 500; margin-bottom: 0.4rem; }
+      .inline-reply-form textarea { width: 100%; border: none; background: none; color: var(--text); font-size: 0.9rem; font-family: inherit; outline: none; resize: none; overflow: hidden; min-height: 60px; box-sizing: border-box; }
+      .inline-reply-form textarea::placeholder { color: var(--text-muted); }
       .inline-reply-form .reply-form-actions { display: flex; justify-content: flex-end; gap: 0.5rem; margin-top: 0.6rem; }
 
       .reply-auth { text-align: center; padding: 1.5rem; background: var(--bg-card); border: 1px solid var(--border); border-radius: 12px; margin-top: 2rem; }
@@ -332,6 +333,16 @@ import BaseLayout from '../../layouts/BaseLayout.astro';
       replyingToId = null; replyingToName = null;
       loadReplies(); loadTopic();
     }
+
+    // Auto-resize textareas
+    function autoResize(ta) {
+      if (!ta) return;
+      ta.style.height = 'auto';
+      ta.style.height = ta.scrollHeight + 'px';
+    }
+    document.addEventListener('input', function(e) {
+      if (e.target.tagName === 'TEXTAREA') autoResize(e.target);
+    });
 
     // Vote click handler — detect up vs down within the votes button
     document.addEventListener('click', function(e) {

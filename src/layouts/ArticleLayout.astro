@@ -406,21 +406,55 @@ const guidePrefixes = { fr: '/guides/', en: '/en/guides/', de: '/de/ratgeber/' }
       else if (guideMatch) { slug = guideMatch[1]; articleType = 'guide'; }
 
       if (slug) {
+        var SB_URL = 'https://vzmtvhcvyqzkmestdbko.supabase.co';
+        var SB_KEY = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InZ6bXR2aGN2eXF6a21lc3RkYmtvIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NzA4OTA0MTEsImV4cCI6MjA4NjQ2NjQxMX0.rvBz2uIsr3YtLIw84Kor3eVFpH4FiXVZgbufiJH3uio';
+        var articleTitle = document.querySelector('.article-title')?.textContent || slug;
+
         // Check if a forum post already exists for this article
-        fetch('https://vzmtvhcvyqzkmestdbko.supabase.co/rest/v1/forum_posts?article_slug=eq.' + slug + '&limit=1', {
-          headers: {
-            'apikey': 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InZ6bXR2aGN2eXF6a21lc3RkYmtvIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NzA4OTA0MTEsImV4cCI6MjA4NjQ2NjQxMX0.rvBz2uIsr3YtLIw84Kor3eVFpH4FiXVZgbufiJH3uio',
-            'Content-Type': 'application/json'
-          }
+        fetch(SB_URL + '/rest/v1/forum_posts?article_slug=eq.' + slug + '&limit=1', {
+          headers: { 'apikey': SB_KEY, 'Content-Type': 'application/json' }
         }).then(function(r) { return r.json(); }).then(function(posts) {
           if (posts && posts.length > 0) {
             forumLink.href = '/forum/topic/?id=' + posts[0].id;
             var countText = posts[0].reply_count > 0 ? posts[0].reply_count + ' réponse' + (posts[0].reply_count > 1 ? 's' : '') : 'Soyez le premier à commenter';
             forumSection.querySelector('.article-forum-text span').textContent = countText;
+            forumSection.style.display = '';
           } else {
-            forumLink.href = '/forum/?article=' + slug + '&type=' + articleType;
+            // Auto-create forum topic for this article if user is logged in
+            var storageKey = 'sb-vzmtvhcvyqzkmestdbko-auth-token';
+            var raw = localStorage.getItem(storageKey);
+            var token = null;
+            try { var parsed = JSON.parse(raw); if (parsed && parsed.access_token) token = parsed.access_token; } catch(e) {}
+
+            if (token) {
+              // Decode JWT to get user info
+              var payload = JSON.parse(atob(token.split('.')[1]));
+              fetch(SB_URL + '/rest/v1/forum_posts', {
+                method: 'POST',
+                headers: { 'apikey': SB_KEY, 'Authorization': 'Bearer ' + token, 'Content-Type': 'application/json', 'Prefer': 'return=representation' },
+                body: JSON.stringify({
+                  title: articleTitle,
+                  body: 'Discussion autour de cet article. Partagez vos questions et avis !',
+                  category: 'article',
+                  article_slug: slug,
+                  article_type: articleType,
+                  author_id: payload.sub,
+                  author_name: 'AIVancePro'
+                })
+              }).then(function(r) { return r.json(); }).then(function(newPost) {
+                if (newPost && newPost[0] && newPost[0].id) {
+                  forumLink.href = '/forum/topic/?id=' + newPost[0].id;
+                  forumSection.querySelector('.article-forum-text span').textContent = 'Soyez le premier à commenter';
+                } else {
+                  forumLink.href = '/forum/?article=' + slug + '&type=' + articleType;
+                }
+                forumSection.style.display = '';
+              }).catch(function() { forumLink.href = '/forum/?article=' + slug + '&type=' + articleType; forumSection.style.display = ''; });
+            } else {
+              forumLink.href = '/forum/?article=' + slug + '&type=' + articleType;
+              forumSection.style.display = '';
+            }
           }
-          forumSection.style.display = '';
         }).catch(function() {
           forumLink.href = '/forum/';
           forumSection.style.display = '';
