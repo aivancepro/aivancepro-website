@@ -48,14 +48,19 @@ import BaseLayout from '../../layouts/BaseLayout.astro';
       .replies-header { font-size: 1rem; font-weight: 700; color: var(--text); margin-bottom: 1rem; }
       .replies-list { display: flex; flex-direction: column; gap: 0.75rem; }
       .reply-item { background: var(--bg-card); border: 1px solid var(--border); border-radius: 12px; padding: 1rem 1.25rem; }
+      .reply-mention { display: inline-block; color: var(--blue); font-weight: 600; font-size: 0.82rem; margin-bottom: 0.25rem; }
       .reply-body { color: var(--text-secondary); font-size: 0.92rem; line-height: 1.7; white-space: pre-wrap; word-break: break-word; margin-bottom: 0.6rem; }
       .reply-body a { color: var(--blue); }
       .reply-footer { display: flex; align-items: center; gap: 0.75rem; font-size: 0.78rem; color: var(--text-muted); flex-wrap: wrap; }
       .reply-footer strong { color: var(--text-secondary); font-weight: 600; }
+      .action-btn.reply-to-btn:hover { color: var(--blue); background: rgba(74,144,217,0.08); }
 
       /* Reply form */
       .reply-form { margin-top: 2rem; background: var(--bg-card); border: 1px solid var(--border); border-radius: 14px; padding: 1.25rem; }
       .reply-form h3 { font-size: 1rem; font-weight: 700; color: var(--text); margin-bottom: 0.75rem; }
+      .reply-form-mention { display: flex; align-items: center; gap: 0.4rem; font-size: 0.82rem; color: var(--blue); margin-bottom: 0.6rem; padding: 0.4rem 0.65rem; background: rgba(74,144,217,0.06); border-radius: 8px; width: fit-content; }
+      .reply-form-mention strong { font-weight: 600; }
+      .reply-form-cancel-mention { background: none; border: none; cursor: pointer; color: var(--text-muted); font-size: 1.1rem; line-height: 1; padding: 0 0.2rem; margin-left: 0.2rem; }
       .reply-form textarea { width: 100%; padding: 0.75rem 1rem; border-radius: 10px; border: 1px solid var(--border); background: var(--bg); color: var(--text); font-size: 0.9rem; font-family: inherit; outline: none; resize: vertical; min-height: 100px; box-sizing: border-box; transition: border-color 0.2s; }
       .reply-form textarea:focus { border-color: var(--blue); }
       .reply-form-actions { display: flex; justify-content: flex-end; margin-top: 0.75rem; }
@@ -121,6 +126,8 @@ import BaseLayout from '../../layouts/BaseLayout.astro';
     var currentUser = null;
     var isAdmin = false;
     var userVotes = {};
+    var replyingToId = null;
+    var replyingToName = null;
 
     var catLabels = {
       general: 'Général', entrainement: 'Entraînement',
@@ -216,6 +223,12 @@ import BaseLayout from '../../layouts/BaseLayout.astro';
         'Supprimer</button>';
     }
 
+    function replyToBtn(replyId, authorName) {
+      return '<button class="action-btn reply-to-btn" data-replyto-id="' + replyId + '" data-replyto-name="' + escapeHtml(authorName) + '">' +
+        '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 17 4 12 9 7"/><path d="M20 18v-2a4 4 0 0 0-4-4H4"/></svg>' +
+        'Répondre</button>';
+    }
+
     async function deleteItem(id, type) {
       var table = type === 'post' ? 'forum_posts' : 'forum_replies';
       var res = await sb.from(table).delete().eq('id', id);
@@ -269,14 +282,23 @@ import BaseLayout from '../../layouts/BaseLayout.astro';
         return;
       }
       var replies = res.data || [];
+      // Build a map of reply id -> author_name for mentions
+      var replyAuthors = {};
+      replies.forEach(function(r) { replyAuthors[r.id] = r.author_name; });
+
       var html = '<h3 class="replies-header">' + replies.length + ' réponse' + (replies.length !== 1 ? 's' : '') + '</h3>';
       if (replies.length > 0) {
         html += '<div class="replies-list">';
         replies.forEach(function(r) {
-          html += '<div class="reply-item"><div class="reply-body">' + linkify(r.body) + '</div>' +
+          var mentionHtml = '';
+          if (r.parent_reply_id && replyAuthors[r.parent_reply_id]) {
+            mentionHtml = '<span class="reply-mention">@' + escapeHtml(replyAuthors[r.parent_reply_id]) + '</span>';
+          }
+          html += '<div class="reply-item">' + mentionHtml + '<div class="reply-body">' + linkify(r.body) + '</div>' +
             '<div class="reply-footer">' + voteHtml(r.id, 'reply', r.upvotes) +
               '<strong>' + escapeHtml(r.author_name) + '</strong>' +
               '<span>' + formatTimeAgo(r.created_at) + '</span>' +
+              (currentUser ? replyToBtn(r.id, r.author_name) : '') +
               '<span class="action-spacer"></span>' + deleteBtn(r.id, 'reply') + reportBtn(r.id, 'reply') +
             '</div></div>';
         });
@@ -286,12 +308,21 @@ import BaseLayout from '../../layouts/BaseLayout.astro';
 
       var formSection = document.getElementById('replyFormSection');
       if (currentUser) {
+        var replyingLabel = replyingToName ? '<div class="reply-form-mention">En réponse à <strong>@' + escapeHtml(replyingToName) + '</strong> <button class="reply-form-cancel-mention" id="cancelMention">&times;</button></div>' : '';
         formSection.innerHTML =
-          '<div class="reply-form"><h3>Votre réponse</h3>' +
+          '<div class="reply-form"><h3>Votre réponse</h3>' + replyingLabel +
             '<textarea id="replyBody" placeholder="Partagez votre avis ou répondez à la question..."></textarea>' +
             '<p class="reply-error" id="replyError" style="display:none"></p>' +
             '<div class="reply-form-actions"><button class="btn-reply" id="btnSubmitReply">Répondre</button></div></div>';
         document.getElementById('btnSubmitReply').addEventListener('click', submitReply);
+        var cancelBtn = document.getElementById('cancelMention');
+        if (cancelBtn) {
+          cancelBtn.addEventListener('click', function() {
+            replyingToId = null;
+            replyingToName = null;
+            loadReplies();
+          });
+        }
       } else {
         formSection.innerHTML =
           '<div class="reply-auth"><p>Connectez-vous pour participer à la discussion.</p>' +
@@ -310,16 +341,20 @@ import BaseLayout from '../../layouts/BaseLayout.astro';
       errEl.style.display = 'none';
       btn.disabled = true; btn.textContent = 'Envoi...';
       var authorName = currentUser.user_metadata?.display_name || currentUser.user_metadata?.full_name || currentUser.email?.split('@')[0] || 'Utilisateur';
-      var res = await sb.from('forum_replies').insert({
+      var insertData = {
         post_id: postId, body: body,
         author_id: currentUser.id, author_name: authorName
-      });
+      };
+      if (replyingToId) insertData.parent_reply_id = replyingToId;
+      var res = await sb.from('forum_replies').insert(insertData);
       btn.disabled = false; btn.textContent = 'Répondre';
       if (res.error) {
         errEl.textContent = 'Erreur : ' + res.error.message;
         errEl.style.display = ''; return;
       }
       document.getElementById('replyBody').value = '';
+      replyingToId = null;
+      replyingToName = null;
       loadReplies();
       loadTopic();
     }
@@ -328,6 +363,17 @@ import BaseLayout from '../../layouts/BaseLayout.astro';
       var voteBtn = e.target.closest('[data-vote-id]');
       if (voteBtn) {
         vote(voteBtn.dataset.voteId, voteBtn.dataset.voteType, parseInt(voteBtn.dataset.voteVal));
+        return;
+      }
+      var replyToEl = e.target.closest('[data-replyto-id]');
+      if (replyToEl) {
+        replyingToId = replyToEl.dataset.replytoId;
+        replyingToName = replyToEl.dataset.replytoName;
+        loadReplies();
+        setTimeout(function() {
+          var ta = document.getElementById('replyBody');
+          if (ta) { ta.focus(); ta.scrollIntoView({ behavior: 'smooth', block: 'center' }); }
+        }, 100);
         return;
       }
       var deleteBtnEl = e.target.closest('[data-delete-id]');
