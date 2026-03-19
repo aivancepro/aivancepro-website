@@ -37,9 +37,9 @@ const currentLang = languages[lang];
                 <div class="dropdown-menu">
                     <a href={i.links.blog}>{i.nav.blog}</a>
                     <a href={i.links.guides}>{i.nav.guides}</a>
-                    {i.links.forum && <a href={i.links.forum}>{i.nav.forum}</a>}
                 </div>
             </li>
+            {i.links.forum && <li><a href={i.links.forum}>{i.nav.forum}</a></li>}
             <li class="dropdown">
                 <button class="dropdown-toggle">
                     {i.nav.help}
@@ -100,8 +100,8 @@ const currentLang = languages[lang];
     <div class="mobile-sub">
         <a href={i.links.blog}>{i.nav.blog}</a>
         <a href={i.links.guides}>{i.nav.guides}</a>
-        {i.links.forum && <a href={i.links.forum}>{i.nav.forum}</a>}
     </div>
+    {i.links.forum && <a href={i.links.forum}>{i.nav.forum}</a>}
     <span class="mobile-section-label">{i.nav.help}</span>
     <div class="mobile-sub">
         <a href={i.links.faq}>{i.nav.faq}</a>
