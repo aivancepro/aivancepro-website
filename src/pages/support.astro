@@ -236,9 +236,14 @@ import BaseLayout from '../layouts/BaseLayout.astro';
   </section>
 
   <script is:inline>
-  if (new URLSearchParams(window.location.search).get('sent') === 'true') {
+  // Show success message after Formsubmit redirect
+  if (new URLSearchParams(window.location.search).get('sent') === 'true' || sessionStorage.getItem('contact_sent')) {
     var s = document.getElementById('formSuccess');
     if (s) { s.style.display = ''; s.scrollIntoView({ behavior: 'smooth', block: 'center' }); }
+    sessionStorage.removeItem('contact_sent');
   }
+  // Set flag before form submit
+  var f = document.getElementById('contactForm');
+  if (f) f.addEventListener('submit', function() { sessionStorage.setItem('contact_sent', '1'); });
   </script>
 </BaseLayout>
