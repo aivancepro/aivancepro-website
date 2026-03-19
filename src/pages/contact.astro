@@ -348,13 +348,9 @@ import BaseLayout from '../layouts/BaseLayout.astro';
     btn.textContent = 'Envoi...';
 
     try {
-      var res = await fetch('https://vzmtvhcvyqzkmestdbko.supabase.co/rest/v1/contact_messages', {
+      var res = await fetch('https://vzmtvhcvyqzkmestdbko.supabase.co/functions/v1/contactNotify', {
         method: 'POST',
-        headers: {
-          'apikey': 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InZ6bXR2aGN2eXF6a21lc3RkYmtvIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NzA4OTA0MTEsImV4cCI6MjA4NjQ2NjQxMX0.rvBz2uIsr3YtLIw84Kor3eVFpH4FiXVZgbufiJH3uio',
-          'Content-Type': 'application/json',
-          'Prefer': 'return=minimal'
-        },
+        headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({ name: name, email: email, subject: subject, message: message })
       });
       if (!res.ok) throw new Error('Erreur serveur');
