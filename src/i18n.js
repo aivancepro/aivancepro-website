@@ -92,6 +92,7 @@ export const t = {
       login: '/login/',
       privacy: '/privacy/',
       terms: '/terms/',
+      contact: '/contact/',
       support: '/support/',
       about: '/about/',
       account: '/compte/',

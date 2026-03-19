@@ -48,6 +48,7 @@ const currentLang = languages[lang];
                 <div class="dropdown-menu">
                     <a href={i.links.faq}>{i.nav.faq}</a>
                     <a href={i.links.support}>{i.nav.support}</a>
+                    {i.links.contact && <a href={i.links.contact}>Contact</a>}
                     <a href={i.links.about}>{i.nav.about}</a>
                 </div>
             </li>
@@ -106,6 +107,7 @@ const currentLang = languages[lang];
     <div class="mobile-sub">
         <a href={i.links.faq}>{i.nav.faq}</a>
         <a href={i.links.support}>{i.nav.support}</a>
+        {i.links.contact && <a href={i.links.contact}>Contact</a>}
         <a href={i.links.about}>{i.nav.about}</a>
     </div>
     <a href={i.links.login} id="mobile-login-link" data-account-url={i.links.account}>{i.nav.login}</a>
