@@ -38,8 +38,10 @@ const descs: Record<string, string> = { fr: "Posez vos questions, partagez vos c
 
       /* Post cards — Reddit style */
       .forum-posts { display: flex; flex-direction: column; gap: 0.75rem; }
-      .forum-post { background: var(--bg-card); border: 1px solid var(--border); border-radius: 14px; padding: 1rem 1.25rem; cursor: pointer; transition: all 0.2s; }
+      .forum-post { background: var(--bg-card); border: 1px solid var(--border); border-radius: 14px; padding: 1rem 1.25rem; cursor: pointer; transition: all 0.2s; display: flex; gap: 1rem; align-items: flex-start; }
       .forum-post:hover { border-color: var(--blue); box-shadow: 0 2px 12px rgba(74,144,217,0.08); }
+      .post-thumb { width: 80px; height: 80px; border-radius: 10px; object-fit: cover; flex-shrink: 0; }
+      .post-content { flex: 1; min-width: 0; }
       .post-header { display: flex; align-items: center; gap: 0.5rem; margin-bottom: 0.5rem; font-size: 0.76rem; color: var(--text-muted); }
       .post-header .post-tag { padding: 0.12rem 0.5rem; border-radius: 50px; background: rgba(74,144,217,0.08); color: var(--blue); font-size: 0.68rem; font-weight: 600; }
       .post-header .post-tag.article { background: rgba(147,51,234,0.08); color: #9333EA; }
@@ -292,10 +294,16 @@ const descs: Record<string, string> = { fr: "Posez vos questions, partagez vos c
           var catText = post.article_slug ? 'Article' : (catLabels[post.category] || post.category);
           var deleteHtml = isAdmin ? '<button class="post-action delete-action" data-delete-post="' + post.id + '">' + svgTrash + '</button>' : '';
 
+          var thumbHtml = '';
+          if (post.article_slug) {
+            var imgFolder = post.article_type === 'guide' ? '/assets/guides/' : '/assets/blog/';
+            thumbHtml = '<img class="post-thumb" src="' + imgFolder + post.article_slug + '.webp" onerror="this.onerror=null;this.src=\'' + imgFolder + post.article_slug + '.png\';this.onerror=function(){this.style.display=\'none\'}" alt="">';
+          }
+
           var el = document.createElement('div');
           el.className = 'forum-post';
-          el.innerHTML =
-            '<div class="post-header">' +
+          el.innerHTML = thumbHtml +
+            '<div class="post-content"><div class="post-header">' +
               '<span class="post-tag ' + catClass + '">' + catText + '</span>' +
               '<span class="post-author">' + escapeHtml(post.author_name) + '</span>' +
               '<span>·</span><span>' + timeAgo + '</span>' +
@@ -307,7 +315,7 @@ const descs: Record<string, string> = { fr: "Posez vos questions, partagez vos c
               shareDropdownHtml(post.id, post.title) +
               '<button class="post-action translate-btn" data-translate-text="' + escapeHtml(post.title) + '" data-translate-target="title-' + post.id + '">' + svgTranslate + ' ' + t.translate + '</button>' +
               deleteHtml +
-            '</div>';
+            '</div></div>';
           el.addEventListener('click', function(e) {
             if (e.target.closest('[data-delete-post]') || e.target.closest('[data-share-toggle]') || e.target.closest('.share-dropdown') || e.target.closest('.translate-btn')) return;
             window.location.href = '/forum/topic/?id=' + post.id + (LANG !== 'fr' ? '&lang=' + LANG : '');
