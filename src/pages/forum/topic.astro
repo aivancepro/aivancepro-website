@@ -6,6 +6,8 @@ const SUPABASE_URL = 'https://vzmtvhcvyqzkmestdbko.supabase.co';
 const SUPABASE_KEY = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InZ6bXR2aGN2eXF6a21lc3RkYmtvIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NzA4OTA0MTEsImV4cCI6MjA4NjQ2NjQxMX0.rvBz2uIsr3YtLIw84Kor3eVFpH4FiXVZgbufiJH3uio';
 
 const postId = Astro.url.searchParams.get('id');
+const langParam = Astro.url.searchParams.get('lang');
+const lang = ['en', 'de'].includes(langParam) ? langParam : 'fr';
 let ogTitle = 'Discussion - Forum AIVancePro';
 let ogDescription = 'Discussion sur le forum communautaire AIVancePro.';
 let ogImage = 'https://aivancepro.fr/assets/og-image.png';
@@ -31,7 +33,7 @@ if (postId) {
 ---
 
 <BaseLayout
-  lang="fr"
+  lang={lang}
   title={ogTitle}
   description={ogDescription}
   ogImage={ogImage}
@@ -188,8 +190,21 @@ if (postId) {
     var SUPABASE_KEY = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InZ6bXR2aGN2eXF6a21lc3RkYmtvIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NzA4OTA0MTEsImV4cCI6MjA4NjQ2NjQxMX0.rvBz2uIsr3YtLIw84Kor3eVFpH4FiXVZgbufiJH3uio';
     var sb = window.supabase.createClient(SUPABASE_URL, SUPABASE_KEY);
 
+    var LANG = new URLSearchParams(window.location.search).get('lang') || 'fr';
+    var i18n = {
+      fr: { back: 'Retour au forum', loading: 'Chargement...', notFound: 'Discussion introuvable.', replies: 'réponse', reply: 'Répondre', share: 'Partager', participate: 'Participer à la conversation...', comment: 'Commenter', cancel: 'Annuler', sending: 'Envoi...', loginText: 'Connectez-vous pour participer à la discussion.', loginBtn: 'Se connecter', replyTo: 'Répondre à', replyPlaceholder: 'Votre réponse...', replyError: 'La réponse doit contenir au moins 5 caractères.', deleteConfirm: 'Supprimer définitivement ce contenu ?', reportConfirm: 'Signaler ce contenu comme inapproprié ?', reported: 'Contenu signalé — merci', alreadyReported: 'Vous avez déjà signalé ce contenu', voteLogin: 'Connectez-vous pour voter', reportLogin: 'Connectez-vous pour signaler', topicDeleted: 'Sujet supprimé', replyDeleted: 'Réponse supprimée', translate: 'Traduire', translated: 'Traduit', readArticle: "Lire l'article", linkCopied: 'Lien copié !' },
+      en: { back: 'Back to forum', loading: 'Loading...', notFound: 'Discussion not found.', replies: 'replies', reply: 'Reply', share: 'Share', participate: 'Join the conversation...', comment: 'Comment', cancel: 'Cancel', sending: 'Sending...', loginText: 'Sign in to join the discussion.', loginBtn: 'Sign in', replyTo: 'Reply to', replyPlaceholder: 'Your reply...', replyError: 'Reply must be at least 5 characters.', deleteConfirm: 'Permanently delete this content?', reportConfirm: 'Report this content as inappropriate?', reported: 'Content reported — thank you', alreadyReported: 'You have already reported this content', voteLogin: 'Sign in to vote', reportLogin: 'Sign in to report', topicDeleted: 'Topic deleted', replyDeleted: 'Reply deleted', translate: 'Translate', translated: 'Translated', readArticle: 'Read article', linkCopied: 'Link copied!' },
+      de: { back: 'Zurück zum Forum', loading: 'Laden...', notFound: 'Diskussion nicht gefunden.', replies: 'Antworten', reply: 'Antworten', share: 'Teilen', participate: 'An der Diskussion teilnehmen...', comment: 'Kommentieren', cancel: 'Abbrechen', sending: 'Senden...', loginText: 'Anmelden, um an der Diskussion teilzunehmen.', loginBtn: 'Anmelden', replyTo: 'Antwort an', replyPlaceholder: 'Ihre Antwort...', replyError: 'Antwort muss mindestens 5 Zeichen lang sein.', deleteConfirm: 'Diesen Inhalt endgültig löschen?', reportConfirm: 'Diesen Inhalt als unangemessen melden?', reported: 'Inhalt gemeldet — danke', alreadyReported: 'Sie haben diesen Inhalt bereits gemeldet', voteLogin: 'Anmelden zum Abstimmen', reportLogin: 'Anmelden zum Melden', topicDeleted: 'Thema gelöscht', replyDeleted: 'Antwort gelöscht', translate: 'Übersetzen', translated: 'Übersetzt', readArticle: 'Artikel lesen', linkCopied: 'Link kopiert!' }
+    };
+    var t = i18n[LANG] || i18n.fr;
+
+    var svgTranslate = '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="width:14px;height:14px"><path d="m5 8 6 6"/><path d="m4 14 6-6 2-3"/><path d="M2 5h12"/><path d="M7 2h1"/><path d="m22 22-5-10-5 10"/><path d="M14 18h6"/></svg>';
+
+    var backLink = document.querySelector('.topic-back');
+    if (backLink) { backLink.href = '/forum/' + (LANG !== 'fr' ? '?lang=' + LANG : ''); backLink.lastChild.textContent = ' ' + t.back; }
+
     var postId = new URLSearchParams(window.location.search).get('id');
-    if (!postId) { document.getElementById('topicContent').innerHTML = '<div class="topic-loading">Discussion introuvable.</div>'; return; }
+    if (!postId) { document.getElementById('topicContent').innerHTML = '<div class="topic-loading">' + t.notFound + '</div>'; return; }
 
     var ADMIN_EMAIL = 'aivancepro@gmail.com';
     var currentUser = null;
@@ -217,7 +232,7 @@ if (postId) {
       var fullUrl = encodeURIComponent(pageUrl);
       var encodedTitle = encodeURIComponent(title || '');
       return '<div class="share-dropdown-wrap">' +
-        '<button class="act" data-share-toggle>' + svgShare + ' Partager</button>' +
+        '<button class="act" data-share-toggle>' + svgShare + ' ' + t.share + '</button>' +
         '<div class="share-dropdown">' +
           '<a class="share-x" href="https://x.com/intent/tweet?text=' + encodedTitle + '&url=' + fullUrl + '" target="_blank" rel="noopener" title="X / Twitter">' + svgX + '</a>' +
           '<a class="share-fb" href="https://www.facebook.com/sharer/sharer.php?u=' + fullUrl + '" target="_blank" rel="noopener" title="Facebook">' + svgFB + '</a>' +
@@ -312,7 +327,7 @@ if (postId) {
     }
 
     async function vote(targetId, targetType, value) {
-      if (!currentUser) { showToast('Connectez-vous pour voter'); return; }
+      if (!currentUser) { showToast(t.voteLogin); return; }
       var key = targetType + ':' + targetId;
       var existing = userVotes[key];
       if (existing === value) {
@@ -327,11 +342,11 @@ if (postId) {
     }
 
     async function report(targetId, targetType) {
-      if (!currentUser) { showToast('Connectez-vous pour signaler'); return; }
+      if (!currentUser) { showToast(t.reportLogin); return; }
       var res = await sb.from('forum_reports').insert({ reporter_id: currentUser.id, target_id: targetId, target_type: targetType, reason: 'inappropriate' });
-      if (res.error && res.error.code === '23505') showToast('Vous avez déjà signalé ce contenu');
-      else if (res.error) showToast('Erreur lors du signalement');
-      else showToast('Contenu signalé — merci');
+      if (res.error && res.error.code === '23505') showToast(t.alreadyReported);
+      else if (res.error) showToast('Erreur');
+      else showToast(t.reported);
     }
 
     function actionBar(id, type, score, opts) {
@@ -340,7 +355,7 @@ if (postId) {
       var votedClass = votedUp ? ' voted-up' : (votedDown ? ' voted-down' : '');
       var html = '<div class="' + (opts.barClass || 'reply-actions') + '">' +
         '<button class="act votes' + votedClass + '" data-vote-id="' + id + '" data-vote-type="' + type + '">' + svgUp + '<span class="score">' + (score || 0) + '</span>' + svgDown + '</button>';
-      if (opts.showReply && currentUser) html += '<button class="act" data-replyto-id="' + id + '" data-replyto-name="' + escapeHtml(opts.authorName || '') + '">' + svgReply + ' Répondre</button>';
+      if (opts.showReply && currentUser) html += '<button class="act" data-replyto-id="' + id + '" data-replyto-name="' + escapeHtml(opts.authorName || '') + '">' + svgReply + ' ' + t.reply + '</button>';
       html += shareDropdownHtml(postId, opts.postTitle || '');
       if (isAdmin) html += '<button class="act delete-act" data-delete-id="' + id + '" data-delete-type="' + type + '">' + svgTrash + '</button>';
       html += '<button class="act" data-report-id="' + id + '" data-report-type="' + type + '">' + svgFlag + '</button>';
@@ -352,14 +367,14 @@ if (postId) {
       var table = type === 'post' ? 'forum_posts' : 'forum_replies';
       var res = await sb.from(table).delete().eq('id', id);
       if (res.error) { showToast('Erreur : ' + res.error.message); return; }
-      if (type === 'post') { showToast('Sujet supprimé'); window.location.href = '/forum/'; }
-      else { showToast('Réponse supprimée'); loadTopic(); }
+      if (type === 'post') { showToast(t.topicDeleted); window.location.href = '/forum/' + (LANG !== 'fr' ? '?lang=' + LANG : ''); }
+      else { showToast(t.replyDeleted); loadTopic(); }
     }
 
     async function loadTopic() {
       var container = document.getElementById('topicContent');
       var res = await sb.from('forum_posts').select('*').eq('id', postId).single();
-      if (res.error || !res.data) { container.innerHTML = '<div class="topic-loading">Discussion introuvable.</div>'; return; }
+      if (res.error || !res.data) { container.innerHTML = '<div class="topic-loading">' + t.notFound + '</div>'; return; }
       var post = res.data;
       currentPostTitle = post.title;
       document.title = post.title + ' - Forum AIVancePro';
@@ -370,7 +385,7 @@ if (postId) {
       if (post.article_slug && post.article_type) {
         var prefix = post.article_type === 'guide' ? '/guides/' : '/blog/';
         var imgFolder = post.article_type === 'guide' ? '/assets/guides/' : '/assets/blog/';
-        articleLink = '<a href="' + prefix + post.article_slug + '/" class="article-link"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>Lire l\'article</a>';
+        articleLink = '<a href="' + prefix + post.article_slug + '/" class="article-link"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>' + t.readArticle + '</a>';
         heroHtml = '<div class="topic-hero"><img src="' + imgFolder + post.article_slug + '.webp" onerror="this.onerror=null;this.src=\'' + imgFolder + post.article_slug + '.png\'" alt="' + escapeHtml(post.title) + '"></div>';
       }
       container.innerHTML =
@@ -378,7 +393,8 @@ if (postId) {
           '<div class="topic-post-header"><span class="topic-tag ' + catClass + '">' + catText + '</span>' +
             '<span class="tp-author">' + escapeHtml(post.author_name) + '</span><span>·</span><span>' + formatDate(post.created_at) + '</span></div>' +
           '<div class="topic-title">' + escapeHtml(post.title) + '</div>' +
-          '<div class="topic-body">' + linkify(post.body) + '</div>' +
+          '<div class="topic-body" id="body-post">' + linkify(post.body) + '</div>' +
+          '<button class="act translate-btn" data-translate-text="' + escapeHtml(post.body).substring(0, 1000) + '" data-translate-target="body-post" style="margin-top:0.5rem">' + svgTranslate + ' ' + t.translate + '</button>' +
           actionBar(post.id, 'post', post.upvotes, { barClass: 'action-bar', showReply: false, postTitle: post.title }) +
         '</div>';
       loadReplies();
@@ -406,16 +422,17 @@ if (postId) {
         var wrapClass = depth > 0 ? 'reply-nested' : '';
         var html = '<div class="' + wrapClass + '"><div class="reply-item">' +
           '<div class="reply-header"><span class="r-author">' + escapeHtml(r.author_name) + '</span><span>·</span><span>' + formatTimeAgo(r.created_at) + '</span></div>' +
-          '<div class="reply-body">' + linkify(r.body) + '</div>' +
+          '<div class="reply-body" id="body-reply-' + r.id + '">' + linkify(r.body) + '</div>' +
+          '<button class="act translate-btn" data-translate-text="' + escapeHtml(r.body).substring(0, 1000) + '" data-translate-target="body-reply-' + r.id + '" style="margin-top:0.25rem">' + svgTranslate + ' ' + t.translate + '</button>' +
           actionBar(r.id, 'reply', r.upvotes, { showReply: true, authorName: r.author_name, postTitle: currentPostTitle });
         // Inline reply form if this is the reply being replied to
         if (replyingToId === r.id && currentUser) {
           html += '<div class="inline-reply-form" id="inlineReplyForm">' +
-            '<div class="inline-reply-placeholder">Répondre à ' + escapeHtml(r.author_name) + '</div>' +
-            '<textarea id="replyBody" placeholder="Votre réponse..."></textarea>' +
+            '<div class="inline-reply-placeholder">' + t.replyTo + ' ' + escapeHtml(r.author_name) + '</div>' +
+            '<textarea id="replyBody" placeholder="' + t.replyPlaceholder + '"></textarea>' +
             '<div id="mediaPreviewZone-inline"></div>' +
             '<p class="reply-error" id="replyError" style="display:none"></p>' +
-            '<div class="reply-form-actions">' + mediaToolbarHtml('inline') + '<span style="flex:1"></span><button class="btn-cancel-reply" id="btnCancelInline">Annuler</button><button class="btn-reply" id="btnSubmitReply">Commenter</button></div>' +
+            '<div class="reply-form-actions">' + mediaToolbarHtml('inline') + '<span style="flex:1"></span><button class="btn-cancel-reply" id="btnCancelInline">' + t.cancel + '</button><button class="btn-reply" id="btnSubmitReply">' + t.comment + '</button></div>' +
           '</div>';
         }
         html += '</div>';
@@ -424,7 +441,7 @@ if (postId) {
         return html;
       }
 
-      var html = '<h3 class="replies-header">' + replies.length + ' réponse' + (replies.length !== 1 ? 's' : '') + '</h3>';
+      var html = '<h3 class="replies-header">' + replies.length + ' ' + t.replies + '</h3>';
       if (roots.length > 0) {
         html += '<div class="reply-thread">';
         roots.forEach(function(r) { html += renderReply(r, 0); });
@@ -452,12 +469,12 @@ if (postId) {
             '<div id="mediaPreviewZone-main"></div>' +
             '<div class="reply-box-toolbar">' +
               '<div class="toolbar-left">' + mediaToolbarHtml('main') + '</div>' +
-              '<div class="toolbar-right"><button class="btn-cancel-reply" id="btnCancelMain">Annuler</button><button class="btn-reply" id="btnSubmitReply">Commenter</button></div>' +
+              '<div class="toolbar-right"><button class="btn-cancel-reply" id="btnCancelMain">' + t.cancel + '</button><button class="btn-reply" id="btnSubmitReply">' + t.comment + '</button></div>' +
             '</div>' +
             '<p class="reply-error" id="replyError" style="display:none"></p>' : '';
           formSection.innerHTML =
             '<div class="reply-form"><div class="reply-box ' + boxClass + '" id="replyBox">' +
-              '<textarea id="replyBody" placeholder="Participer à la conversation..."' + (formExpanded ? '' : ' rows="1"') + '></textarea>' +
+              '<textarea id="replyBody" placeholder="' + t.participate + '"' + (formExpanded ? '' : ' rows="1"') + '></textarea>' +
               toolbarHtml +
             '</div></div>';
           if (!formExpanded) {
@@ -472,7 +489,7 @@ if (postId) {
           }
         }
       } else {
-        formSection.innerHTML = '<div class="reply-auth"><p>Connectez-vous pour participer à la discussion.</p><a href="/login/?redirect=/forum/topic/?id=' + postId + '">Se connecter</a></div>';
+        formSection.innerHTML = '<div class="reply-auth"><p>' + t.loginText + '</p><a href="/login/?redirect=/forum/topic/?id=' + postId + (LANG !== 'fr' ? '&lang=' + LANG : '') + '">' + t.loginBtn + '</a></div>';
       }
     }
 
@@ -482,13 +499,13 @@ if (postId) {
       var btn = document.getElementById('btnSubmitReply');
       // Append image URL to body if present
       if (pendingImageUrl) body = (body ? body + '\n' : '') + pendingImageUrl;
-      if (!body || body.length < 5) { errEl.textContent = 'La réponse doit contenir au moins 5 caractères.'; errEl.style.display = ''; return; }
-      errEl.style.display = 'none'; btn.disabled = true; btn.textContent = 'Envoi...';
+      if (!body || body.length < 5) { errEl.textContent = t.replyError; errEl.style.display = ''; return; }
+      errEl.style.display = 'none'; btn.disabled = true; btn.textContent = t.sending;
       var authorName = currentUser.user_metadata?.display_name || currentUser.user_metadata?.full_name || currentUser.email?.split('@')[0] || 'Utilisateur';
       var insertData = { post_id: postId, body: body, author_id: currentUser.id, author_name: authorName };
       if (replyingToId) insertData.parent_reply_id = replyingToId;
       var res = await sb.from('forum_replies').insert(insertData);
-      btn.disabled = false; btn.textContent = 'Commenter';
+      btn.disabled = false; btn.textContent = t.comment;
       if (res.error) { errEl.textContent = 'Erreur : ' + res.error.message; errEl.style.display = ''; return; }
       document.getElementById('replyBody').value = '';
       pendingImageUrl = null;
@@ -589,6 +606,24 @@ if (postId) {
 
     // Vote click handler — detect up vs down within the votes button
     document.addEventListener('click', function(e) {
+      var translateBtn = e.target.closest('.translate-btn');
+      if (translateBtn) {
+        var text = translateBtn.dataset.translateText;
+        var targetId = translateBtn.dataset.translateTarget;
+        var targetEl = document.getElementById(targetId);
+        if (!targetEl || translateBtn.dataset.done) return;
+        translateBtn.innerHTML = '...';
+        fetch('https://translate.googleapis.com/translate_a/single?client=gtx&sl=auto&tl=' + LANG + '&dt=t&q=' + encodeURIComponent(text))
+          .then(function(r) { return r.json(); })
+          .then(function(data) {
+            var translated = data[0].map(function(s) { return s[0]; }).join('');
+            targetEl.innerHTML = translated.replace(/\n/g, '<br>');
+            translateBtn.innerHTML = svgTranslate + ' ' + t.translated;
+            translateBtn.dataset.done = '1';
+          })
+          .catch(function() { translateBtn.innerHTML = svgTranslate + ' ' + t.translate; });
+        return;
+      }
       var votesBtn = e.target.closest('.act.votes');
       if (votesBtn) {
         var id = votesBtn.dataset.voteId;
@@ -621,7 +656,7 @@ if (postId) {
       if (copyBtn) {
         navigator.clipboard.writeText(copyBtn.dataset.copyUrl).then(function() {
           copyBtn.classList.add('copied');
-          showToast('Lien copié !');
+          showToast(t.linkCopied);
           setTimeout(function() { copyBtn.classList.remove('copied'); }, 2000);
         });
         return;
@@ -633,9 +668,9 @@ if (postId) {
         document.querySelectorAll('.share-dropdown.open').forEach(function(d) { d.classList.remove('open'); });
       }
       var deleteEl = e.target.closest('[data-delete-id]');
-      if (deleteEl) { if (confirm('Supprimer définitivement ce contenu ?')) deleteItem(deleteEl.dataset.deleteId, deleteEl.dataset.deleteType); return; }
+      if (deleteEl) { if (confirm(t.deleteConfirm)) deleteItem(deleteEl.dataset.deleteId, deleteEl.dataset.deleteType); return; }
       var reportEl = e.target.closest('[data-report-id]');
-      if (reportEl) { if (confirm('Signaler ce contenu comme inapproprié ?')) report(reportEl.dataset.reportId, reportEl.dataset.reportType); }
+      if (reportEl) { if (confirm(t.reportConfirm)) report(reportEl.dataset.reportId, reportEl.dataset.reportType); }
     });
 
     sb.auth.getSession().then(async function(res) {

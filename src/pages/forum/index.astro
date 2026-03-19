@@ -1,11 +1,17 @@
 ---
+export const prerender = false;
 import BaseLayout from '../../layouts/BaseLayout.astro';
+
+const langParam = Astro.url.searchParams.get('lang');
+const lang = ['en', 'de'].includes(langParam!) ? langParam! : 'fr';
+const titles: Record<string, string> = { fr: 'Forum communautaire - AIVancePro', en: 'Community Forum - AIVancePro', de: 'Community-Forum - AIVancePro' };
+const descs: Record<string, string> = { fr: "Posez vos questions, partagez vos conseils et échangez avec la communauté AIVancePro.", en: "Ask questions, share tips and connect with the AIVancePro community.", de: "Stellen Sie Fragen, teilen Sie Tipps und tauschen Sie sich mit der AIVancePro-Community aus." };
 ---
 
 <BaseLayout
-  lang="fr"
-  title="Forum communautaire - AIVancePro"
-  description="Posez vos questions, partagez vos conseils et échangez avec la communauté AIVancePro sur l'entraînement, la nutrition et la progression."
+  lang={lang}
+  title={titles[lang]}
+  description={descs[lang]}
   canonical="https://aivancepro.fr/forum/"
 >
   <Fragment slot="head">
@@ -48,6 +54,8 @@ import BaseLayout from '../../layouts/BaseLayout.astro';
       .post-action.votes:hover { background: rgba(74,144,217,0.1); }
       .post-action .score { font-weight: 700; color: var(--text); }
       .post-action.delete-action:hover { color: #ef4444; background: rgba(239,68,68,0.06); }
+      .post-action.translate-btn { font-size: 0.72rem; }
+      .post-action.translate-btn svg { width: 14px; height: 14px; }
 
       /* Share dropdown */
       .share-dropdown-wrap { position: relative; }
@@ -164,6 +172,38 @@ import BaseLayout from '../../layouts/BaseLayout.astro';
     var SUPABASE_KEY = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InZ6bXR2aGN2eXF6a21lc3RkYmtvIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NzA4OTA0MTEsImV4cCI6MjA4NjQ2NjQxMX0.rvBz2uIsr3YtLIw84Kor3eVFpH4FiXVZgbufiJH3uio';
     var sb = window.supabase.createClient(SUPABASE_URL, SUPABASE_KEY);
 
+    var LANG = new URLSearchParams(window.location.search).get('lang') || 'fr';
+    var i18n = {
+      fr: { title: 'Forum communautaire', subtitle: 'Échangez avec la communauté AIVancePro — posez vos questions, partagez vos conseils.', search: 'Rechercher un sujet...', newTopic: 'Nouveau sujet', all: 'Tous', recent: 'Récents', popular: 'Populaires', unanswered: 'Sans réponse', share: 'Partager', loading: 'Chargement...', empty: 'Aucune discussion pour le moment', emptyAction: 'Soyez le premier à lancer un sujet !', newTopicTitle: 'Nouveau sujet', titleLabel: 'Titre', titlePlaceholder: 'Votre question ou sujet...', categoryLabel: 'Catégorie', messageLabel: 'Message', messagePlaceholder: 'Décrivez votre question ou partagez vos conseils...', cancel: 'Annuler', publish: 'Publier', publishing: 'Publication...', loginTitle: 'Connectez-vous pour participer', loginText: 'Créez un compte ou connectez-vous pour poster sur le forum.', loginBtn: 'Se connecter', titleError: 'Le titre doit contenir au moins 5 caractères.', bodyError: 'Le message doit contenir au moins 10 caractères.', linkCopied: 'Lien copié !', translate: 'Traduire', translated: 'Traduit' },
+      en: { title: 'Community Forum', subtitle: 'Connect with the AIVancePro community — ask questions, share your tips.', search: 'Search topics...', newTopic: 'New topic', all: 'All', recent: 'Recent', popular: 'Popular', unanswered: 'Unanswered', share: 'Share', loading: 'Loading...', empty: 'No discussions yet', emptyAction: 'Be the first to start a topic!', newTopicTitle: 'New topic', titleLabel: 'Title', titlePlaceholder: 'Your question or topic...', categoryLabel: 'Category', messageLabel: 'Message', messagePlaceholder: 'Describe your question or share your tips...', cancel: 'Cancel', publish: 'Publish', publishing: 'Publishing...', loginTitle: 'Sign in to participate', loginText: 'Create an account or sign in to post on the forum.', loginBtn: 'Sign in', titleError: 'Title must be at least 5 characters.', bodyError: 'Message must be at least 10 characters.', linkCopied: 'Link copied!', translate: 'Translate', translated: 'Translated' },
+      de: { title: 'Community-Forum', subtitle: 'Tauschen Sie sich mit der AIVancePro-Community aus — stellen Sie Fragen, teilen Sie Tipps.', search: 'Thema suchen...', newTopic: 'Neues Thema', all: 'Alle', recent: 'Neueste', popular: 'Beliebt', unanswered: 'Unbeantwortet', share: 'Teilen', loading: 'Laden...', empty: 'Noch keine Diskussionen', emptyAction: 'Starten Sie das erste Thema!', newTopicTitle: 'Neues Thema', titleLabel: 'Titel', titlePlaceholder: 'Ihre Frage oder Ihr Thema...', categoryLabel: 'Kategorie', messageLabel: 'Nachricht', messagePlaceholder: 'Beschreiben Sie Ihre Frage oder teilen Sie Ihre Tipps...', cancel: 'Abbrechen', publish: 'Veröffentlichen', publishing: 'Veröffentlichen...', loginTitle: 'Anmelden zum Mitmachen', loginText: 'Erstellen Sie ein Konto oder melden Sie sich an.', loginBtn: 'Anmelden', titleError: 'Titel muss mindestens 5 Zeichen lang sein.', bodyError: 'Nachricht muss mindestens 10 Zeichen lang sein.', linkCopied: 'Link kopiert!', translate: 'Übersetzen', translated: 'Übersetzt' }
+    };
+    var t = i18n[LANG] || i18n.fr;
+
+    // Translate static UI
+    document.querySelector('.forum-header h1').textContent = t.title;
+    document.querySelector('.forum-header p').textContent = t.subtitle;
+    document.getElementById('forumSearch').placeholder = t.search;
+    document.querySelector('.btn-new-post').innerHTML = '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg>' + t.newTopic;
+    // Translate category buttons
+    document.querySelector('.cat-btn[data-cat="all"]').textContent = t.all;
+    // Translate sort buttons
+    document.querySelector('.sort-btn[data-sort="recent"]').textContent = t.recent;
+    document.querySelector('.sort-btn[data-sort="popular"]').textContent = t.popular;
+    document.querySelector('.sort-btn[data-sort="unanswered"]').textContent = t.unanswered;
+    // Translate modal
+    document.querySelector('#modalAuthPrompt h2').textContent = t.loginTitle;
+    document.querySelector('#modalAuthPrompt p').textContent = t.loginText;
+    document.querySelector('#modalAuthPrompt .btn-login-link').textContent = t.loginBtn;
+    document.querySelector('#modalPostForm h2').textContent = t.newTopicTitle;
+    document.querySelector('label[for="postTitle"]').textContent = t.titleLabel;
+    document.getElementById('postTitle').placeholder = t.titlePlaceholder;
+    document.querySelector('label[for="postCategory"]').textContent = t.categoryLabel;
+    document.querySelector('label[for="postBody"]').textContent = t.messageLabel;
+    document.getElementById('postBody').placeholder = t.messagePlaceholder;
+    document.getElementById('btnCancelPost').textContent = t.cancel;
+    document.getElementById('btnSubmitPost').textContent = t.publish;
+
     var ADMIN_EMAIL = 'aivancepro@gmail.com';
     var currentUser = null;
     var isAdmin = false;
@@ -197,13 +237,14 @@ import BaseLayout from '../../layouts/BaseLayout.astro';
     var svgFB = '<svg viewBox="0 0 24 24" fill="currentColor"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg>';
     var svgLinkedIn = '<svg viewBox="0 0 24 24" fill="currentColor"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 01-2.063-2.065 2.064 2.064 0 112.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>';
     var svgCopyLink = '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"/><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"/></svg>';
+    var svgTranslate = '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="width:14px;height:14px"><path d="m5 8 6 6"/><path d="m4 14 6-6 2-3"/><path d="M2 5h12"/><path d="M7 2h1"/><path d="m22 22-5-10-5 10"/><path d="M14 18h6"/></svg>';
 
     function shareDropdownHtml(postId, title) {
       var pageUrl = window.location.origin + '/forum/topic/?id=' + postId;
       var fullUrl = encodeURIComponent(pageUrl);
       var encodedTitle = encodeURIComponent(title);
       return '<div class="share-dropdown-wrap">' +
-        '<button class="post-action" data-share-toggle>' + svgShare + ' Partager</button>' +
+        '<button class="post-action" data-share-toggle>' + svgShare + ' ' + t.share + '</button>' +
         '<div class="share-dropdown">' +
           '<a class="share-x" href="https://x.com/intent/tweet?text=' + encodedTitle + '&url=' + fullUrl + '" target="_blank" rel="noopener" title="X / Twitter">' + svgX + '</a>' +
           '<a class="share-fb" href="https://www.facebook.com/sharer/sharer.php?u=' + fullUrl + '" target="_blank" rel="noopener" title="Facebook">' + svgFB + '</a>' +
@@ -227,7 +268,7 @@ import BaseLayout from '../../layouts/BaseLayout.astro';
 
     function loadPosts(search) {
       var container = document.getElementById('forumPosts');
-      container.innerHTML = '<div class="forum-loading">Chargement...</div>';
+      container.innerHTML = '<div class="forum-loading">' + t.loading + '</div>';
       var query = sb.from('forum_posts').select('*');
       if (currentCat !== 'all') {
         if (currentCat === 'article') query = query.not('article_slug', 'is', null);
@@ -242,7 +283,7 @@ import BaseLayout from '../../layouts/BaseLayout.astro';
       query.then(function(res) {
         if (res.error) { container.innerHTML = '<div class="forum-empty"><h3>Erreur</h3><p>' + res.error.message + '</p></div>'; return; }
         var posts = res.data;
-        if (!posts || posts.length === 0) { container.innerHTML = '<div class="forum-empty"><h3>Aucune discussion pour le moment</h3><p>Soyez le premier à lancer un sujet !</p></div>'; return; }
+        if (!posts || posts.length === 0) { container.innerHTML = '<div class="forum-empty"><h3>' + t.empty + '</h3><p>' + t.emptyAction + '</p></div>'; return; }
 
         container.innerHTML = '';
         posts.forEach(function(post) {
@@ -259,16 +300,17 @@ import BaseLayout from '../../layouts/BaseLayout.astro';
               '<span class="post-author">' + escapeHtml(post.author_name) + '</span>' +
               '<span>·</span><span>' + timeAgo + '</span>' +
             '</div>' +
-            '<div class="post-title">' + escapeHtml(post.title) + '</div>' +
+            '<div class="post-title" id="title-' + post.id + '">' + escapeHtml(post.title) + '</div>' +
             '<div class="post-actions">' +
               '<span class="post-action votes">' + svgUp + '<span class="score">' + (post.upvotes || 0) + '</span>' + svgDown + '</span>' +
               '<span class="post-action">' + svgComment + ' ' + (post.reply_count || 0) + '</span>' +
               shareDropdownHtml(post.id, post.title) +
+              '<button class="post-action translate-btn" data-translate-text="' + escapeHtml(post.title) + '" data-translate-target="title-' + post.id + '">' + svgTranslate + ' ' + t.translate + '</button>' +
               deleteHtml +
             '</div>';
           el.addEventListener('click', function(e) {
-            if (e.target.closest('[data-delete-post]') || e.target.closest('[data-share-toggle]') || e.target.closest('.share-dropdown')) return;
-            window.location.href = '/forum/topic/?id=' + post.id;
+            if (e.target.closest('[data-delete-post]') || e.target.closest('[data-share-toggle]') || e.target.closest('.share-dropdown') || e.target.closest('.translate-btn')) return;
+            window.location.href = '/forum/topic/?id=' + post.id + (LANG !== 'fr' ? '&lang=' + LANG : '');
           });
           container.appendChild(el);
         });
@@ -366,18 +408,18 @@ import BaseLayout from '../../layouts/BaseLayout.astro';
       if (postImageUrl) body = (body ? body + '\n' : '') + postImageUrl;
       var category = document.getElementById('postCategory').value;
       var errEl = document.getElementById('postError'); var btn = this;
-      if (!title || title.length < 5) { errEl.textContent = 'Le titre doit contenir au moins 5 caractères.'; errEl.style.display = ''; return; }
-      if (!body || body.length < 10) { errEl.textContent = 'Le message doit contenir au moins 10 caractères.'; errEl.style.display = ''; return; }
-      errEl.style.display = 'none'; btn.disabled = true; btn.textContent = 'Publication...';
+      if (!title || title.length < 5) { errEl.textContent = t.titleError; errEl.style.display = ''; return; }
+      if (!body || body.length < 10) { errEl.textContent = t.bodyError; errEl.style.display = ''; return; }
+      errEl.style.display = 'none'; btn.disabled = true; btn.textContent = t.publishing;
       var authorName = currentUser.user_metadata?.display_name || currentUser.user_metadata?.full_name || currentUser.email?.split('@')[0] || 'Utilisateur';
       var postData = { title: title, body: body, category: articleSlug ? 'general' : category, author_id: currentUser.id, author_name: authorName };
       if (articleSlug) { postData.article_slug = articleSlug; postData.article_type = articleType || 'blog'; }
       var res = await sb.from('forum_posts').insert(postData).select().single();
-      btn.disabled = false; btn.textContent = 'Publier';
+      btn.disabled = false; btn.textContent = t.publish;
       if (res.error) { errEl.textContent = 'Erreur : ' + res.error.message; errEl.style.display = ''; return; }
       modal.classList.remove('open'); document.getElementById('postTitle').value = ''; document.getElementById('postBody').value = '';
       document.getElementById('postMediaPreview').innerHTML = ''; postImageUrl = null;
-      window.location.href = '/forum/topic/?id=' + res.data.id;
+      window.location.href = '/forum/topic/?id=' + res.data.id + (LANG !== 'fr' ? '&lang=' + LANG : '');
     });
 
     function escapeHtml(str) { var d = document.createElement('div'); d.textContent = str; return d.innerHTML; }
@@ -390,6 +432,26 @@ import BaseLayout from '../../layouts/BaseLayout.astro';
 
     // Share dropdown + Copy + Admin delete
     document.addEventListener('click', async function(e) {
+      // Translate button
+      var translateBtn = e.target.closest('.translate-btn');
+      if (translateBtn) {
+        e.stopPropagation();
+        var text = translateBtn.dataset.translateText;
+        var targetId = translateBtn.dataset.translateTarget;
+        var targetEl = document.getElementById(targetId);
+        if (!targetEl || translateBtn.dataset.done) return;
+        translateBtn.innerHTML = '...';
+        fetch('https://translate.googleapis.com/translate_a/single?client=gtx&sl=auto&tl=' + LANG + '&dt=t&q=' + encodeURIComponent(text))
+          .then(function(r) { return r.json(); })
+          .then(function(data) {
+            var translated = data[0].map(function(s) { return s[0]; }).join('');
+            targetEl.textContent = translated;
+            translateBtn.innerHTML = svgTranslate + ' ' + t.translated;
+            translateBtn.dataset.done = '1';
+          })
+          .catch(function() { translateBtn.innerHTML = svgTranslate + ' ' + t.translate; });
+        return;
+      }
       // Toggle share dropdown
       var toggleBtn = e.target.closest('[data-share-toggle]');
       if (toggleBtn) {

@@ -182,7 +182,7 @@ export const t = {
       blog: '/en/blog/',
       guides: '/en/guides/',
       exercises: '/en/exercises/',
-      forum: '/forum/',
+      forum: '/forum/?lang=en',
 
       login: '/en/login/',
       privacy: '/en/privacy/',
@@ -276,7 +276,7 @@ export const t = {
       blog: '/de/blog/',
       guides: '/de/ratgeber/',
       exercises: '/de/uebungen/',
-      forum: '/forum/',
+      forum: '/forum/?lang=de',
 
       login: '/de/login/',
       privacy: '/de/datenschutz/',
