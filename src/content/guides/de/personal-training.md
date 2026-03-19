@@ -36,7 +36,7 @@ Persönliches Coaching entwickelt sich weiter. Künstliche Intelligenz bietet he
 
 | Kriterium | Traditioneller Coach | KI-Coach (AIVancePro) |
 |---|---|---|
-| **Monatliche Kosten** | 200–800 €/Monat (1 bis 3 Einheiten/Woche) | 4,99 €/Monat unbegrenzt |
+| **Monatliche Kosten** | 200–800 €/Monat (1 bis 3 Einheiten/Woche) | 6,99 €/Monat |
 | **Verfügbarkeit** | Feste Zeiten, Terminbuchung nötig | 24/7, sofortige Antwort |
 | **Personalisierung** | Gut (begrenzt durch menschliches Gedächtnis) | Ausgezeichnet (datengesteuert, vollständige Verlaufsanalyse) |
 | **Fortschrittsverfolgung** | Manuell (Tabelle, Notizbuch) | Automatisch + Diagramme + Trends |
@@ -99,7 +99,7 @@ Coaching ist eine Investition. Hier eine detaillierte Analyse der Kosten und des
 | **Coach im Studio** | 2x/Woche | 400–600 € | 4.800–7.200 € | Betreute Einheiten, Programm, Tracking |
 | **Coach im Studio** | 3x/Woche | 600–900 € | 7.200–10.800 € | Vollständige Betreuung |
 | **Online-Coach** | Programm + Tracking | 80–200 € | 960–2.400 € | Individuelles Programm, wöchentliche Check-ins |
-| **KI-Coach (AIVancePro)** | Unbegrenzt | 4,99 € | 59,88 € | Unbegrenzte Programme, Auto-Tracking, Coach-Chat 24/7 |
+| **KI-Coach (AIVancePro)** | Unbegrenzt | 6,99 € | 83,88 € | Unbegrenzte Programme, Auto-Tracking, Coach-Chat 24/7 |
 | **Hybrid-Coaching** | 1x/Monat Coach + KI | 70–150 € | 840–1.800 € | Monatliche Bilanz + tägliche KI |
 
 ### Analyse des Return on Investment
@@ -119,7 +119,7 @@ Bei einem Coach für 70 €/Einheit (2x/Woche) geben Sie **560 €/Monat** aus. 
 - Die Programmgestaltung
 - Wöchentliche Anpassungen
 
-Mit AIVancePro für 4,99 €/Monat haben Sie Zugang zu:
+Mit AIVancePro für 6,99 €/Monat haben Sie Zugang zu:
 - Unbegrenzt vielen KI-generierten Programmen
 - Automatischem Tracking jeder Trainingseinheit
 - Einem KI-Coach, der rund um die Uhr für Ihre Fragen verfügbar ist

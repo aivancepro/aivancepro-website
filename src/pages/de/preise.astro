@@ -4,15 +4,15 @@ import BaseLayout from '../../layouts/BaseLayout.astro';
 
 <BaseLayout
   lang="de"
-  title="Preise - AIVancePro | Kostenlos, Pro und Elite Pläne"
-  description="Entdecken Sie die AIVancePro Preise. Kostenloser Plan, Pro für 4,99€/Monat und Elite für 7,99€/Monat. Vergleichen Sie die Funktionen und wählen Sie Ihren Plan."
+  title="Preise - AIVancePro | Kostenlos und Pro Pläne"
+  description="Entdecken Sie die AIVancePro Preise. Kostenloser Plan, Pro für 6,99€/Monat. Vergleichen Sie die Funktionen und wählen Sie Ihren Plan."
   canonical="https://aivancepro.fr/de/preise/"
   alternates={{ fr: 'https://aivancepro.fr/pricing/', en: 'https://aivancepro.fr/en/pricing/', de: 'https://aivancepro.fr/de/preise/' }}
   jsonLd={{
     '@context': 'https://schema.org',
     '@type': 'FAQPage',
     mainEntity: [
-      { '@type': 'Question', name: 'Kann ich jederzeit den Plan wechseln?', acceptedAnswer: { '@type': 'Answer', text: 'Ja, Sie können jederzeit von Pro zu Elite wechseln oder herabstufen. Die Änderung wird sofort wirksam.' } },
+      { '@type': 'Question', name: 'Kann ich jederzeit den Plan wechseln?', acceptedAnswer: { '@type': 'Answer', text: 'Ja, Sie können jederzeit zum Pro-Plan wechseln oder zum kostenlosen Plan zurückkehren. Die Änderung wird sofort wirksam.' } },
       { '@type': 'Question', name: 'Gibt es eine Vertragsbindung?', acceptedAnswer: { '@type': 'Answer', text: 'Keine Vertragsbindung. Sie können Ihr Abonnement jederzeit über den App Store oder Google Play kündigen.' } },
       { '@type': 'Question', name: 'Ist der kostenlose Plan wirklich kostenlos?', acceptedAnswer: { '@type': 'Answer', text: 'Absolut. Der kostenlose Plan gibt Ihnen Zugang zum Trainings-Tracking, zu über 240 Übungen und zu Basis-Statistiken, ohne Zeitlimit und ohne Kreditkarte.' } },
       { '@type': 'Question', name: 'Wie funktioniert die Zahlung?', acceptedAnswer: { '@type': 'Answer', text: 'Die Zahlung wird direkt über den App Store (iOS) oder Google Play (Android) abgewickelt. Ihr Abonnement verlängert sich automatisch jeden Monat, sofern Sie es nicht kündigen.' } },
@@ -44,10 +44,10 @@ import BaseLayout from '../../layouts/BaseLayout.astro';
       }
       .pricing-section { padding: 3rem 2rem 5rem; }
       .pricing-grid {
-          max-width: 1100px;
+          max-width: 800px;
           margin: 0 auto;
           display: grid;
-          grid-template-columns: repeat(3, 1fr);
+          grid-template-columns: repeat(2, 1fr);
           gap: 2rem;
           align-items: start;
       }
@@ -145,7 +145,7 @@ import BaseLayout from '../../layouts/BaseLayout.astro';
     <!-- Hero -->
     <section class="pricing-hero">
         <h1>W&auml;hlen Sie Ihren <span class="gradient">Plan</span></h1>
-        <p>Starten Sie kostenlos, dann wechseln Sie zu Pro oder Elite, um das volle Potenzial Ihres Trainings freizuschalten.</p>
+        <p>Starten Sie kostenlos, dann wechseln Sie zu Pro, um das volle Potenzial Ihres Trainings freizuschalten.</p>
     </section>
 
     <!-- Pricing Cards -->
@@ -165,32 +165,18 @@ import BaseLayout from '../../layouts/BaseLayout.astro';
             </div>
             <div class="pricing-card featured">
                 <div class="plan-name">Pro</div>
-                <div class="price">4,99&euro; <span>/ Monat</span></div>
+                <div class="price">6,99&euro; <span>/ Monat</span></div>
                 <div class="price-desc">F&uuml;r ernsthaften Fortschritt</div>
                 <ul class="pricing-features">
                     <li><svg viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/></svg>Alles aus Free +</li>
-                    <li><svg viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/></svg>150 KI-Nachrichten / Monat</li>
-                    <li><svg viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/></svg>KI-Trainingsgenerierung</li>
-                    <li><svg viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/></svg>Trainingsplan (4 Wochen)</li>
-                    <li><svg viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/></svg>Gruppen &amp; Challenges erstellen</li>
-                    <li><svg viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/></svg>Erweiterte Analysen</li>
-                </ul>
-                <a href="/de/login/" class="btn-pricing primary">Pro abonnieren</a>
-            </div>
-            <div class="pricing-card">
-                <div class="plan-name">Elite</div>
-                <div class="price">7,99&euro; <span>/ Monat</span></div>
-                <div class="price-desc">Das komplette Erlebnis</div>
-                <ul class="pricing-features">
-                    <li><svg viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/></svg>Unbegrenzte KI-Nachrichten</li>
+                    <li><svg viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/></svg>250 KI-Nachrichten / Monat</li>
                     <li><svg viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/></svg>KI-Trainingsgenerierung</li>
                     <li><svg viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/></svg>Trainingspl&auml;ne (bis zu 12 Wochen)</li>
                     <li><svg viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/></svg>Gruppen &amp; Challenges erstellen</li>
                     <li><svg viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/></svg>Erweiterte Analysen</li>
-                    <li><svg viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/></svg>&Uuml;bertrainingsanalyse</li>
                     <li><svg viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/></svg>Priorit&auml;ts-Support</li>
                 </ul>
-                <a href="/de/login/" class="btn-pricing primary" style="background: var(--blue);">Elite abonnieren</a>
+                <a href="/de/login/" class="btn-pricing primary">Pro abonnieren</a>
             </div>
         </div>
     </section>
@@ -200,18 +186,18 @@ import BaseLayout from '../../layouts/BaseLayout.astro';
         <h2>Detaillierter Vergleich</h2>
         <div class="comparison-table-wrapper">
         <table class="comparison-table">
-            <thead><tr><th>Funktion</th><th>Kostenlos</th><th>Pro</th><th>Elite</th></tr></thead>
+            <thead><tr><th>Funktion</th><th>Kostenlos</th><th>Pro</th></tr></thead>
             <tbody>
-                <tr><td>Aufzeichnung der Trainingseinheiten</td><td class="check">&#10003;</td><td class="check">&#10003;</td><td class="check">&#10003;</td></tr>
-                <tr><td>Grundlegendes Fortschrittstracking</td><td class="check">&#10003;</td><td class="check">&#10003;</td><td class="check">&#10003;</td></tr>
-                <tr><td>Community-Zugang</td><td class="check">&#10003;</td><td class="check">&#10003;</td><td class="check">&#10003;</td></tr>
-                <tr><td>KI-Nachrichten</td><td>3 / Monat</td><td>150 / Monat</td><td>Unbegrenzt</td></tr>
-                <tr><td>KI-Trainingsgenerierung</td><td class="cross">&mdash;</td><td class="check">&#10003;</td><td class="check">&#10003;</td></tr>
-                <tr><td>Trainingsplan</td><td class="cross">&mdash;</td><td>4 Wochen</td><td>Bis zu 12 Wochen</td></tr>
-                <tr><td>Gruppen &amp; Challenges erstellen</td><td class="cross">&mdash;</td><td class="check">&#10003;</td><td class="check">&#10003;</td></tr>
-                <tr><td>Erweiterte Analysen</td><td class="cross">&mdash;</td><td class="check">&#10003;</td><td class="check">&#10003;</td></tr>
-                <tr><td>&Uuml;bertrainingsanalyse</td><td class="cross">&mdash;</td><td class="cross">&mdash;</td><td class="check">&#10003;</td></tr>
-                <tr><td>Priorit&auml;ts-Support</td><td class="cross">&mdash;</td><td class="cross">&mdash;</td><td class="check">&#10003;</td></tr>
+                <tr><td>Aufzeichnung der Trainingseinheiten</td><td class="check">&#10003;</td><td class="check">&#10003;</td></tr>
+                <tr><td>Grundlegendes Fortschrittstracking</td><td class="check">&#10003;</td><td class="check">&#10003;</td></tr>
+                <tr><td>Community-Zugang</td><td class="check">&#10003;</td><td class="check">&#10003;</td></tr>
+                <tr><td>KI-Nachrichten</td><td>3 / Monat</td><td>250 / Monat</td></tr>
+                <tr><td>KI-Trainingsgenerierung</td><td class="cross">&mdash;</td><td class="check">&#10003;</td></tr>
+                <tr><td>Trainingsplan</td><td class="cross">&mdash;</td><td>Bis zu 12 Wochen</td></tr>
+                <tr><td>Gruppen &amp; Challenges erstellen</td><td class="cross">&mdash;</td><td class="check">&#10003;</td></tr>
+                <tr><td>Erweiterte Analysen</td><td class="cross">&mdash;</td><td class="check">&#10003;</td></tr>
+                <tr><td>&Uuml;bertrainingsanalyse</td><td class="cross">&mdash;</td><td class="check">&#10003;</td></tr>
+                <tr><td>Priorit&auml;ts-Support</td><td class="cross">&mdash;</td><td class="check">&#10003;</td></tr>
             </tbody>
         </table>
         </div>
@@ -297,7 +283,7 @@ import BaseLayout from '../../layouts/BaseLayout.astro';
                     Kann ich jederzeit den Plan wechseln?
                     <svg viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M5.23 7.21a.75.75 0 011.06.02L10 11.168l3.71-3.938a.75.75 0 111.08 1.04l-4.25 4.5a.75.75 0 01-1.08 0l-4.25-4.5a.75.75 0 01.02-1.06z" clip-rule="evenodd"/></svg>
                 </button>
-                <div class="faq-answer"><div class="faq-answer-inner">Ja, Sie k&ouml;nnen jederzeit von Pro zu Elite wechseln oder herabstufen. Die &Auml;nderung wird sofort wirksam.</div></div>
+                <div class="faq-answer"><div class="faq-answer-inner">Ja, Sie k&ouml;nnen jederzeit zum Pro-Plan wechseln oder zum kostenlosen Plan zur&uuml;ckkehren. Die &Auml;nderung wird sofort wirksam.</div></div>
             </div>
             <div class="faq-item">
                 <button class="faq-question" onclick="this.parentElement.classList.toggle('open')">

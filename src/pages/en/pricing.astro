@@ -4,15 +4,15 @@ import BaseLayout from '../../layouts/BaseLayout.astro';
 
 <BaseLayout
   lang="en"
-  title="Pricing - AIVancePro | Free, Pro and Elite Plans"
-  description="Discover AIVancePro pricing. Free plan, Pro at 4.99&euro;/month and Elite at 7.99&euro;/month. Compare features and choose your plan."
+  title="Pricing - AIVancePro | Free and Pro Plans"
+  description="Discover AIVancePro pricing. Free plan, Pro at 6.99&euro;/month. Compare features and choose your plan."
   canonical="https://aivancepro.fr/en/pricing/"
   alternates={{ fr: 'https://aivancepro.fr/pricing/', en: 'https://aivancepro.fr/en/pricing/', de: 'https://aivancepro.fr/de/preise/' }}
   jsonLd={{
     '@context': 'https://schema.org',
     '@type': 'FAQPage',
     mainEntity: [
-      { '@type': 'Question', name: 'Can I change plans at any time?', acceptedAnswer: { '@type': 'Answer', text: 'Yes, you can upgrade from Pro to Elite or downgrade at any time. The change takes effect immediately.' } },
+      { '@type': 'Question', name: 'Can I change plans at any time?', acceptedAnswer: { '@type': 'Answer', text: 'Yes, you can upgrade to Pro or switch back to Free at any time. The change takes effect immediately.' } },
       { '@type': 'Question', name: 'Is there a commitment?', acceptedAnswer: { '@type': 'Answer', text: 'No commitment. You can cancel your subscription at any time from the App Store or Google Play.' } },
       { '@type': 'Question', name: 'Is the Free plan really free?', acceptedAnswer: { '@type': 'Answer', text: 'Absolutely. The Free plan gives you access to session tracking, 240+ exercises and basic statistics, with no time limit and no credit card required.' } },
       { '@type': 'Question', name: 'How does payment work?', acceptedAnswer: { '@type': 'Answer', text: 'Payment is handled directly by the App Store (iOS) or Google Play (Android). Your subscription renews automatically each month unless cancelled.' } },
@@ -44,10 +44,10 @@ import BaseLayout from '../../layouts/BaseLayout.astro';
       }
       .pricing-section { padding: 3rem 2rem 5rem; }
       .pricing-grid {
-          max-width: 1100px;
+          max-width: 800px;
           margin: 0 auto;
           display: grid;
-          grid-template-columns: repeat(3, 1fr);
+          grid-template-columns: repeat(2, 1fr);
           gap: 2rem;
           align-items: start;
       }
@@ -145,7 +145,7 @@ import BaseLayout from '../../layouts/BaseLayout.astro';
     <!-- Hero -->
     <section class="pricing-hero">
         <h1>Choose your <span class="gradient">plan</span></h1>
-        <p>Start for free, then upgrade to Pro or Elite to unlock the full potential of your training.</p>
+        <p>Start for free, then upgrade to Pro to unlock the full potential of your training.</p>
     </section>
 
     <!-- Pricing Cards -->
@@ -165,32 +165,18 @@ import BaseLayout from '../../layouts/BaseLayout.astro';
             </div>
             <div class="pricing-card featured">
                 <div class="plan-name">Pro</div>
-                <div class="price">4.99&euro; <span>/ month</span></div>
+                <div class="price">6.99&euro; <span>/ month</span></div>
                 <div class="price-desc">To progress seriously</div>
                 <ul class="pricing-features">
                     <li><svg viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/></svg>Everything in Free</li>
-                    <li><svg viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/></svg>150 AI messages / month</li>
-                    <li><svg viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/></svg>AI session generation</li>
-                    <li><svg viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/></svg>Training plan (4 weeks)</li>
-                    <li><svg viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/></svg>Create groups &amp; challenges</li>
-                    <li><svg viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/></svg>Advanced analytics</li>
-                </ul>
-                <a href="/en/login/" class="btn-pricing primary">Subscribe to Pro</a>
-            </div>
-            <div class="pricing-card">
-                <div class="plan-name">Elite</div>
-                <div class="price">7.99&euro; <span>/ month</span></div>
-                <div class="price-desc">The complete experience</div>
-                <ul class="pricing-features">
-                    <li><svg viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/></svg>Unlimited AI messages</li>
+                    <li><svg viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/></svg>250 AI messages / month</li>
                     <li><svg viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/></svg>AI session generation</li>
                     <li><svg viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/></svg>Training plans (up to 12 weeks)</li>
                     <li><svg viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/></svg>Create groups &amp; challenges</li>
                     <li><svg viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/></svg>Advanced analytics</li>
-                    <li><svg viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/></svg>Overtraining analysis</li>
                     <li><svg viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/></svg>Priority support</li>
                 </ul>
-                <a href="/en/login/" class="btn-pricing primary" style="background: var(--blue);">Subscribe to Elite</a>
+                <a href="/en/login/" class="btn-pricing primary">Subscribe to Pro</a>
             </div>
         </div>
     </section>
@@ -200,18 +186,18 @@ import BaseLayout from '../../layouts/BaseLayout.astro';
         <h2>Detailed Comparison</h2>
         <div class="comparison-table-wrapper">
         <table class="comparison-table">
-            <thead><tr><th>Feature</th><th>Free</th><th>Pro</th><th>Elite</th></tr></thead>
+            <thead><tr><th>Feature</th><th>Free</th><th>Pro</th></tr></thead>
             <tbody>
-                <tr><td>Session recording</td><td class="check">&#10003;</td><td class="check">&#10003;</td><td class="check">&#10003;</td></tr>
-                <tr><td>Basic progress tracking</td><td class="check">&#10003;</td><td class="check">&#10003;</td><td class="check">&#10003;</td></tr>
-                <tr><td>Community access</td><td class="check">&#10003;</td><td class="check">&#10003;</td><td class="check">&#10003;</td></tr>
-                <tr><td>AI messages</td><td>3 / month</td><td>150 / month</td><td>Unlimited</td></tr>
-                <tr><td>AI session generation</td><td class="cross">&mdash;</td><td class="check">&#10003;</td><td class="check">&#10003;</td></tr>
-                <tr><td>Training plan</td><td class="cross">&mdash;</td><td>4 weeks</td><td>Up to 12 weeks</td></tr>
-                <tr><td>Create groups &amp; challenges</td><td class="cross">&mdash;</td><td class="check">&#10003;</td><td class="check">&#10003;</td></tr>
-                <tr><td>Advanced analytics</td><td class="cross">&mdash;</td><td class="check">&#10003;</td><td class="check">&#10003;</td></tr>
-                <tr><td>Overtraining analysis</td><td class="cross">&mdash;</td><td class="cross">&mdash;</td><td class="check">&#10003;</td></tr>
-                <tr><td>Priority support</td><td class="cross">&mdash;</td><td class="cross">&mdash;</td><td class="check">&#10003;</td></tr>
+                <tr><td>Session recording</td><td class="check">&#10003;</td><td class="check">&#10003;</td></tr>
+                <tr><td>Basic progress tracking</td><td class="check">&#10003;</td><td class="check">&#10003;</td></tr>
+                <tr><td>Community access</td><td class="check">&#10003;</td><td class="check">&#10003;</td></tr>
+                <tr><td>AI messages</td><td>3 / month</td><td>250 / month</td></tr>
+                <tr><td>AI session generation</td><td class="cross">&mdash;</td><td class="check">&#10003;</td></tr>
+                <tr><td>Training plans</td><td class="cross">&mdash;</td><td>Up to 12 weeks</td></tr>
+                <tr><td>Create groups &amp; challenges</td><td class="cross">&mdash;</td><td class="check">&#10003;</td></tr>
+                <tr><td>Advanced analytics</td><td class="cross">&mdash;</td><td class="check">&#10003;</td></tr>
+                <tr><td>Overtraining analysis</td><td class="cross">&mdash;</td><td class="check">&#10003;</td></tr>
+                <tr><td>Priority support</td><td class="cross">&mdash;</td><td class="check">&#10003;</td></tr>
             </tbody>
         </table>
         </div>
@@ -297,7 +283,7 @@ import BaseLayout from '../../layouts/BaseLayout.astro';
                     Can I change plans at any time?
                     <svg viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M5.23 7.21a.75.75 0 011.06.02L10 11.168l3.71-3.938a.75.75 0 111.08 1.04l-4.25 4.5a.75.75 0 01-1.08 0l-4.25-4.5a.75.75 0 01.02-1.06z" clip-rule="evenodd"/></svg>
                 </button>
-                <div class="faq-answer"><div class="faq-answer-inner">Yes, you can upgrade from Pro to Elite or downgrade at any time. The change takes effect immediately.</div></div>
+                <div class="faq-answer"><div class="faq-answer-inner">Yes, you can upgrade to Pro or switch back to Free at any time. The change takes effect immediately.</div></div>
             </div>
             <div class="faq-item">
                 <button class="faq-question" onclick="this.parentElement.classList.toggle('open')">

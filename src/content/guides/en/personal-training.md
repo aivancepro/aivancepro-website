@@ -36,7 +36,7 @@ Personal coaching is evolving. Artificial intelligence now offers a credible and
 
 | Criterion | Traditional Coach | AI Coach (AIVancePro) |
 |---|---|---|
-| **Monthly cost** | $200-800/month (1-3 sessions/week) | $4.99/month unlimited |
+| **Monthly cost** | $200-800/month (1-3 sessions/week) | $6.99/month |
 | **Availability** | Fixed schedule, booking required | 24/7, instant response |
 | **Personalization** | Good (limited by human memory) | Excellent (data-driven, full history analysis) |
 | **Progress tracking** | Manual (spreadsheet, notebook) | Automatic + charts + trends |
@@ -99,7 +99,7 @@ Coaching is an investment. Here is a detailed analysis of costs and return on in
 | **In-person coach** | 2x/week | $400-600 | $4,800-7,200 | Supervised sessions, program, follow-up |
 | **In-person coach** | 3x/week | $600-900 | $7,200-10,800 | Full supervision |
 | **Online coach** | Program + follow-up | $80-200 | $960-2,400 | Custom program, weekly check-ins |
-| **AI coach (AIVancePro)** | Unlimited | $4.99 | $59.88 | Unlimited programs, auto tracking, 24/7 coach chat |
+| **AI coach (AIVancePro)** | Unlimited | $6.99 | $83.88 | Unlimited programs, auto tracking, 24/7 coach chat |
 | **Hybrid coaching** | 1x/month coach + AI | $70-150 | $840-1,800 | Monthly review + daily AI |
 
 ### Return on investment analysis
@@ -119,7 +119,7 @@ With a coach at $70/session (2x/week), you spend **$560/month**. That amount cov
 - Program design
 - Weekly adjustments
 
-With AIVancePro at $4.99/month, you get access to:
+With AIVancePro at $6.99/month, you get access to:
 - Unlimited AI-generated programs
 - Automatic tracking of every session
 - A 24/7 AI coach to answer all your questions

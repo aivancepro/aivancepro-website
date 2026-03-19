@@ -36,7 +36,7 @@ Le coaching personnel évolue. L'intelligence artificielle offre désormais une 
 
 | Critère | Coach traditionnel | Coach IA (AIVancePro) |
 |---|---|---|
-| **Coût mensuel** | 200-800 €/mois (1 à 3 séances/sem) | 4,99 €/mois illimité |
+| **Coût mensuel** | 200-800 €/mois (1 à 3 séances/sem) | 6,99 €/mois |
 | **Disponibilité** | Horaires fixes, planning à réserver | 24h/24, 7j/7, réponse instantanée |
 | **Personnalisation** | Bonne (limitée par la mémoire humaine) | Excellente (data-driven, analyse complète de l'historique) |
 | **Suivi de progression** | Manuel (tableur, carnet) | Automatique + graphiques + tendances |
@@ -99,7 +99,7 @@ Le coaching est un investissement. Voici une analyse détaillée des coûts et d
 | **Coach en salle** | 2x/semaine | 400-600 € | 4 800-7 200 € | Séances encadrées, programme, suivi |
 | **Coach en salle** | 3x/semaine | 600-900 € | 7 200-10 800 € | Encadrement complet |
 | **Coach en ligne** | Programme + suivi | 80-200 € | 960-2 400 € | Programme personnalisé, check-ins hebdo |
-| **Coach IA (AIVancePro)** | Illimité | 4,99 € | 59,88 € | Programmes illimités, suivi auto, chat coach 24/7 |
+| **Coach IA (AIVancePro)** | Illimité | 6,99 € | 83,88 € | Programmes illimités, suivi auto, chat coach 24/7 |
 | **Coaching hybride** | 1x/mois coach + IA | 70-150 € | 840-1 800 € | Bilan mensuel + IA quotidien |
 
 ### Analyse du retour sur investissement
@@ -119,7 +119,7 @@ Avec un coach à 70 €/séance (2x/semaine), vous dépensez **560 €/mois**. C
 - La conception du programme
 - Les ajustements hebdomadaires
 
-Avec AIVancePro à 4,99 €/mois, vous avez accès :
+Avec AIVancePro à 6,99 €/mois, vous avez accès :
 - À un nombre illimité de programmes générés par IA
 - À un suivi automatique de chaque séance
 - À un coach IA disponible 24h/24 pour répondre à vos questions
