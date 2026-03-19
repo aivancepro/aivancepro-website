@@ -247,15 +247,15 @@ import BaseLayout from '../layouts/BaseLayout.astro';
       <form id="contactForm">
         <div class="form-field">
           <label for="contactName">Nom</label>
-          <input type="text" id="contactName" placeholder="Votre nom" required>
+          <input type="text" id="contactName" name="name" placeholder="Votre nom" required>
         </div>
         <div class="form-field">
           <label for="contactEmail">Email</label>
-          <input type="email" id="contactEmail" placeholder="votre@email.com" required>
+          <input type="email" id="contactEmail" name="email" placeholder="votre@email.com" required>
         </div>
         <div class="form-field">
           <label for="contactSubject">Sujet</label>
-          <select id="contactSubject">
+          <select id="contactSubject" name="subject">
             <option value="question">Question générale</option>
             <option value="bug">Signaler un bug</option>
             <option value="suggestion">Suggestion</option>
@@ -265,7 +265,7 @@ import BaseLayout from '../layouts/BaseLayout.astro';
         </div>
         <div class="form-field">
           <label for="contactMessage">Message</label>
-          <textarea id="contactMessage" placeholder="Décrivez votre demande..." required></textarea>
+          <textarea id="contactMessage" name="message" placeholder="Décrivez votre demande..." required></textarea>
         </div>
         <button type="submit" class="btn-submit" id="btnSubmit">Envoyer</button>
         <div class="form-success" id="formSuccess">Message envoyé avec succès ! Nous vous répondrons sous 24h.</div>
@@ -333,29 +333,26 @@ import BaseLayout from '../layouts/BaseLayout.astro';
     successEl.style.display = 'none';
     errorEl.style.display = 'none';
 
-    var name = document.getElementById('contactName').value.trim();
-    var email = document.getElementById('contactEmail').value.trim();
-    var subject = document.getElementById('contactSubject').value;
-    var message = document.getElementById('contactMessage').value.trim();
-
-    if (!name || !email || !message) {
-      errorEl.textContent = 'Veuillez remplir tous les champs obligatoires.';
-      errorEl.style.display = '';
-      return;
-    }
+    var form = document.getElementById('contactForm');
+    var formData = new FormData(form);
 
     btn.disabled = true;
     btn.textContent = 'Envoi...';
 
     try {
-      var res = await fetch('https://vzmtvhcvyqzkmestdbko.supabase.co/functions/v1/contactNotify', {
+      var res = await fetch('https://formsubmit.co/ajax/aivancepro@gmail.com', {
         method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ name: name, email: email, subject: subject, message: message })
+        headers: { 'Content-Type': 'application/json', 'Accept': 'application/json' },
+        body: JSON.stringify({
+          name: formData.get('name'),
+          email: formData.get('email'),
+          subject: formData.get('subject'),
+          message: formData.get('message')
+        })
       });
       if (!res.ok) throw new Error('Erreur serveur');
       successEl.style.display = '';
-      document.getElementById('contactForm').reset();
+      form.reset();
     } catch(err) {
       errorEl.textContent = 'Erreur lors de l\'envoi. Essayez par email : aivancepro@gmail.com';
       errorEl.style.display = '';
