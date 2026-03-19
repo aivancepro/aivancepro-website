@@ -72,7 +72,7 @@ body > nav {
     position: fixed;
     top: 0;
     width: 100%;
-    padding: 0.875rem 2rem;
+    padding: 0.5rem 2rem;
     background: rgba(9, 9, 11, 0.88);
     backdrop-filter: blur(10px);
     -webkit-backdrop-filter: blur(10px);
@@ -95,18 +95,18 @@ body > nav {
 }
 
 .logo {
-    font-size: 1.4rem;
+    font-size: 1.2rem;
     font-weight: 800;
     color: var(--text);
     text-decoration: none;
     display: flex;
     align-items: center;
-    gap: 0.5rem;
+    gap: 0.45rem;
 }
 
 .logo img {
-    width: 34px;
-    height: 34px;
+    width: 28px;
+    height: 28px;
     border-radius: 8px;
 }
 
@@ -124,7 +124,7 @@ body > nav {
 .nav-center a {
     color: var(--text-secondary);
     text-decoration: none;
-    font-size: 0.9rem;
+    font-size: 0.84rem;
     font-weight: 500;
     transition: color 0.2s;
 }
