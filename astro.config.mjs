@@ -1,4 +1,5 @@
 import { defineConfig } from 'astro/config';
+import vercel from '@astrojs/vercel';
 import sitemap from '@astrojs/sitemap';
 import remarkToc from 'remark-toc';
 import rehypeSlug from 'rehype-slug';
@@ -7,6 +8,8 @@ import { rehypeSanitizeRawHtml } from './plugins/rehype-sanitize-html.mjs';
 
 export default defineConfig({
   site: 'https://aivancepro.fr',
+  output: 'static',
+  adapter: vercel(),
   build: {
     format: 'directory'
   },

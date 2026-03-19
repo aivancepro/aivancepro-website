@@ -1,0 +1,1003 @@
+import { b as createAstro, c as createComponent, r as renderComponent, a as renderTemplate, F as Fragment, m as maybeRenderHead } from '../../chunks/astro/server_B3WVSdIw.mjs';
+import 'piccolore';
+import { $ as $$BaseLayout } from '../../chunks/BaseLayout_Cejx7O3_.mjs';
+/* empty css                                    */
+export { renderers } from '../../renderers.mjs';
+
+var __freeze = Object.freeze;
+var __defProp = Object.defineProperty;
+var __template = (cooked, raw) => __freeze(__defProp(cooked, "raw", { value: __freeze(raw || cooked.slice()) }));
+var _a;
+const $$Astro = createAstro("https://aivancepro.fr");
+const prerender = false;
+const $$Topic = createComponent(async ($$result, $$props, $$slots) => {
+  const Astro2 = $$result.createAstro($$Astro, $$props, $$slots);
+  Astro2.self = $$Topic;
+  const SUPABASE_URL = "https://vzmtvhcvyqzkmestdbko.supabase.co";
+  const SUPABASE_KEY = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InZ6bXR2aGN2eXF6a21lc3RkYmtvIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NzA4OTA0MTEsImV4cCI6MjA4NjQ2NjQxMX0.rvBz2uIsr3YtLIw84Kor3eVFpH4FiXVZgbufiJH3uio";
+  const postId = Astro2.url.searchParams.get("id");
+  let ogTitle = "Discussion - Forum AIVancePro";
+  let ogDescription = "Discussion sur le forum communautaire AIVancePro.";
+  let ogImage = "https://aivancepro.fr/assets/og-image.png";
+  if (postId) {
+    try {
+      const res = await fetch(`${SUPABASE_URL}/rest/v1/forum_posts?id=eq.${postId}&select=title,body,article_slug,article_type`, {
+        headers: { "apikey": SUPABASE_KEY, "Authorization": `Bearer ${SUPABASE_KEY}` }
+      });
+      const posts = await res.json();
+      if (posts && posts.length > 0) {
+        const post = posts[0];
+        ogTitle = post.title + " - Forum AIVancePro";
+        const cleanBody = (post.body || "").replace(/https?:\/\/\S+/g, "").replace(/\n+/g, " ").trim();
+        ogDescription = cleanBody.length > 160 ? cleanBody.substring(0, 157) + "..." : cleanBody || ogDescription;
+        if (post.article_slug) {
+          const folder = post.article_type === "guide" ? "guides" : "blog";
+          ogImage = `https://aivancepro.fr/assets/${folder}/${post.article_slug}.webp`;
+        }
+      }
+    } catch (e) {
+    }
+  }
+  return renderTemplate`${renderComponent($$result, "BaseLayout", $$BaseLayout, { "lang": "fr", "title": ogTitle, "description": ogDescription, "ogImage": ogImage, "noindex": true }, { "default": async ($$result2) => renderTemplate(_a || (_a = __template(["  ", `<div class="topic-container"> <a href="/forum/" class="topic-back"> <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="15 18 9 12 15 6"></polyline></svg>
+Retour au forum
+</a> <div id="topicContent"><div class="topic-loading">Chargement...</div></div> <div id="replyFormSection"></div> <div id="repliesSection"></div> </div> <div class="toast" id="toast"></div> <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2/dist/umd/supabase.min.js"><\/script> <script>
+  (function() {
+    var SUPABASE_URL = 'https://vzmtvhcvyqzkmestdbko.supabase.co';
+    var SUPABASE_KEY = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InZ6bXR2aGN2eXF6a21lc3RkYmtvIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NzA4OTA0MTEsImV4cCI6MjA4NjQ2NjQxMX0.rvBz2uIsr3YtLIw84Kor3eVFpH4FiXVZgbufiJH3uio';
+    var sb = window.supabase.createClient(SUPABASE_URL, SUPABASE_KEY);
+
+    var postId = new URLSearchParams(window.location.search).get('id');
+    if (!postId) { document.getElementById('topicContent').innerHTML = '<div class="topic-loading">Discussion introuvable.</div>'; return; }
+
+    var ADMIN_EMAIL = 'aivancepro@gmail.com';
+    var currentUser = null;
+    var isAdmin = false;
+    var userVotes = {};
+    var replyingToId = null;
+    var replyingToName = null;
+    var currentPostTitle = '';
+    var formExpanded = false;
+
+    var catLabels = { general: 'G\xE9n\xE9ral', entrainement: 'Entra\xEEnement', nutrition: 'Nutrition', progression: 'Progression' };
+
+    // SVG icons
+    var svgUp = '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="18 15 12 9 6 15"/></svg>';
+    var svgDown = '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>';
+    var svgComment = '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>';
+    var svgShare = '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 12v8a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2v-8"/><polyline points="16 6 12 2 8 6"/><line x1="12" y1="2" x2="12" y2="15"/></svg>';
+    var svgX = '<svg viewBox="0 0 24 24" fill="currentColor"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>';
+    var svgFB = '<svg viewBox="0 0 24 24" fill="currentColor"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg>';
+    var svgLinkedIn = '<svg viewBox="0 0 24 24" fill="currentColor"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 01-2.063-2.065 2.064 2.064 0 112.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>';
+    var svgCopyLink = '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"/><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"/></svg>';
+
+    function shareDropdownHtml(forumPostId, title) {
+      var pageUrl = window.location.origin + '/forum/topic/?id=' + forumPostId;
+      var fullUrl = encodeURIComponent(pageUrl);
+      var encodedTitle = encodeURIComponent(title || '');
+      return '<div class="share-dropdown-wrap">' +
+        '<button class="act" data-share-toggle>' + svgShare + ' Partager</button>' +
+        '<div class="share-dropdown">' +
+          '<a class="share-x" href="https://x.com/intent/tweet?text=' + encodedTitle + '&url=' + fullUrl + '" target="_blank" rel="noopener" title="X / Twitter">' + svgX + '</a>' +
+          '<a class="share-fb" href="https://www.facebook.com/sharer/sharer.php?u=' + fullUrl + '" target="_blank" rel="noopener" title="Facebook">' + svgFB + '</a>' +
+          '<a class="share-li" href="https://www.linkedin.com/sharing/share-offsite/?url=' + fullUrl + '" target="_blank" rel="noopener" title="LinkedIn">' + svgLinkedIn + '</a>' +
+          '<button class="share-copy" data-copy-url="' + pageUrl + '" title="Copier le lien">' + svgCopyLink + '</button>' +
+        '</div></div>';
+    }
+    var svgReply = '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 17 4 12 9 7"/><path d="M20 18v-2a4 4 0 0 0-4-4H4"/></svg>';
+    var svgTrash = '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="3 6 5 6 21 6"/><path d="M19 6v14a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2V6m3 0V4a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2"/></svg>';
+    var svgFlag = '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 15s1-1 4-1 5 2 8 2 4-1 4-1V3s-1 1-4 1-5-2-8-2-4 1-4 1z"/><line x1="4" y1="22" x2="4" y2="15"/></svg>';
+    var svgImage = '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><polyline points="21 15 16 10 5 21"/></svg>';
+    var svgGif = '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="4" width="20" height="16" rx="2"/><text x="12" y="15" text-anchor="middle" font-size="8" font-weight="bold" fill="currentColor" stroke="none">GIF</text></svg>';
+
+    // Cloudinary upload
+    var CLOUD_NAME = 'dlimurcjx';
+    var UPLOAD_PRESET = 'AIVancePro';
+    var pendingImageUrl = null;
+
+    async function uploadImage(file) {
+      var fd = new FormData();
+      fd.append('file', file);
+      fd.append('upload_preset', UPLOAD_PRESET);
+      var res = await fetch('https://api.cloudinary.com/v1_1/' + CLOUD_NAME + '/image/upload', { method: 'POST', body: fd });
+      var data = await res.json();
+      return data.secure_url;
+    }
+
+    // GIPHY GIF search (free API)
+    var GIPHY_KEY = 'CKoqOpNBxMmJziQtiELv2mZgwE2BOWR7';
+    var gifTimeout = null;
+
+    async function searchGifs(query) {
+      var url = 'https://api.giphy.com/v1/gifs/search?api_key=' + GIPHY_KEY + '&q=' + encodeURIComponent(query) + '&limit=20&rating=g&lang=fr';
+      var res = await fetch(url);
+      var data = await res.json();
+      return (data.data || []).map(function(g) { return { preview: g.images.fixed_width_small.url, full: g.images.original.url }; });
+    }
+
+    async function trendingGifs() {
+      var url = 'https://api.giphy.com/v1/gifs/trending?api_key=' + GIPHY_KEY + '&limit=20&rating=g';
+      var res = await fetch(url);
+      var data = await res.json();
+      return (data.data || []).map(function(g) { return { preview: g.images.fixed_width_small.url, full: g.images.original.url }; });
+    }
+
+    // Media toolbar HTML
+    function mediaToolbarHtml(prefix) {
+      return '<div class="media-toolbar">' +
+        '<button class="media-btn" title="Ajouter une image" data-media-action="image-' + prefix + '">' + svgImage + '<input type="file" accept="image/*" data-media-file="' + prefix + '"></button>' +
+        '<button class="media-btn" title="Ajouter un GIF" data-media-action="gif-' + prefix + '" style="position:relative">' + svgGif + '</button>' +
+      '</div>';
+    }
+
+    function mediaPreviewHtml(url, prefix) {
+      if (!url) return '';
+      return '<div class="media-preview" id="mediaPreview-' + prefix + '"><img src="' + url + '"><button class="media-preview-remove" data-media-remove="' + prefix + '">&times;</button></div>';
+    }
+
+    function escapeHtml(str) { var d = document.createElement('div'); d.textContent = str || ''; return d.innerHTML; }
+    function linkify(text) {
+      var safe = escapeHtml(text);
+      // Split text by URLs, process each part once
+      var parts = safe.split(/(https?:\\/\\/[^\\s]+)/g);
+      var result = '';
+      for (var i = 0; i < parts.length; i++) {
+        var p = parts[i];
+        if (/^https?:\\/\\//.test(p)) {
+          if (/\\.(jpg|jpeg|png|gif|webp)(\\?[^\\s]*)?$/i.test(p) || /media\\.tenor\\.com\\//.test(p) || /media\\d*\\.giphy\\.com\\//.test(p)) {
+            result += '<img src="' + p + '" style="max-width:100%;max-height:300px;border-radius:10px;margin:0.5rem 0;display:block">';
+          } else {
+            result += '<a href="' + p + '" target="_blank" rel="noopener">' + p + '</a>';
+          }
+        } else {
+          result += p;
+        }
+      }
+      return result;
+    }
+    function formatTimeAgo(dateStr) {
+      var diff = Math.floor((Date.now() - new Date(dateStr).getTime()) / 1000);
+      if (diff < 60) return "\xE0 l'instant"; if (diff < 3600) return Math.floor(diff / 60) + ' min';
+      if (diff < 86400) return Math.floor(diff / 3600) + ' h'; if (diff < 2592000) return Math.floor(diff / 86400) + ' j';
+      return new Date(dateStr).toLocaleDateString('fr-FR');
+    }
+    function formatDate(dateStr) { return new Date(dateStr).toLocaleDateString('fr-FR', { day: 'numeric', month: 'long', year: 'numeric', hour: '2-digit', minute: '2-digit' }); }
+    function showToast(msg) { var t = document.getElementById('toast'); t.textContent = msg; t.classList.add('show'); setTimeout(function() { t.classList.remove('show'); }, 3000); }
+
+    async function loadUserVotes() {
+      if (!currentUser) return;
+      var res = await sb.from('forum_votes').select('*').eq('user_id', currentUser.id);
+      if (res.data) res.data.forEach(function(v) { userVotes[v.target_type + ':' + v.target_id] = v.value; });
+    }
+
+    async function vote(targetId, targetType, value) {
+      if (!currentUser) { showToast('Connectez-vous pour voter'); return; }
+      var key = targetType + ':' + targetId;
+      var existing = userVotes[key];
+      if (existing === value) {
+        await sb.from('forum_votes').delete().match({ user_id: currentUser.id, target_id: targetId, target_type: targetType });
+        delete userVotes[key];
+      } else {
+        if (existing) await sb.from('forum_votes').delete().match({ user_id: currentUser.id, target_id: targetId, target_type: targetType });
+        await sb.from('forum_votes').insert({ user_id: currentUser.id, target_id: targetId, target_type: targetType, value: value });
+        userVotes[key] = value;
+      }
+      loadTopic();
+    }
+
+    async function report(targetId, targetType) {
+      if (!currentUser) { showToast('Connectez-vous pour signaler'); return; }
+      var res = await sb.from('forum_reports').insert({ reporter_id: currentUser.id, target_id: targetId, target_type: targetType, reason: 'inappropriate' });
+      if (res.error && res.error.code === '23505') showToast('Vous avez d\xE9j\xE0 signal\xE9 ce contenu');
+      else if (res.error) showToast('Erreur lors du signalement');
+      else showToast('Contenu signal\xE9 \u2014 merci');
+    }
+
+    function actionBar(id, type, score, opts) {
+      var votedUp = userVotes[type + ':' + id] === 1;
+      var votedDown = userVotes[type + ':' + id] === -1;
+      var votedClass = votedUp ? ' voted-up' : (votedDown ? ' voted-down' : '');
+      var html = '<div class="' + (opts.barClass || 'reply-actions') + '">' +
+        '<button class="act votes' + votedClass + '" data-vote-id="' + id + '" data-vote-type="' + type + '">' + svgUp + '<span class="score">' + (score || 0) + '</span>' + svgDown + '</button>';
+      if (opts.showReply && currentUser) html += '<button class="act" data-replyto-id="' + id + '" data-replyto-name="' + escapeHtml(opts.authorName || '') + '">' + svgReply + ' R\xE9pondre</button>';
+      html += shareDropdownHtml(postId, opts.postTitle || '');
+      if (isAdmin) html += '<button class="act delete-act" data-delete-id="' + id + '" data-delete-type="' + type + '">' + svgTrash + '</button>';
+      html += '<button class="act" data-report-id="' + id + '" data-report-type="' + type + '">' + svgFlag + '</button>';
+      html += '</div>';
+      return html;
+    }
+
+    async function deleteItem(id, type) {
+      var table = type === 'post' ? 'forum_posts' : 'forum_replies';
+      var res = await sb.from(table).delete().eq('id', id);
+      if (res.error) { showToast('Erreur : ' + res.error.message); return; }
+      if (type === 'post') { showToast('Sujet supprim\xE9'); window.location.href = '/forum/'; }
+      else { showToast('R\xE9ponse supprim\xE9e'); loadTopic(); }
+    }
+
+    async function loadTopic() {
+      var container = document.getElementById('topicContent');
+      var res = await sb.from('forum_posts').select('*').eq('id', postId).single();
+      if (res.error || !res.data) { container.innerHTML = '<div class="topic-loading">Discussion introuvable.</div>'; return; }
+      var post = res.data;
+      currentPostTitle = post.title;
+      document.title = post.title + ' - Forum AIVancePro';
+      var catClass = post.article_slug ? 'article' : '';
+      var catText = post.article_slug ? 'Article' : (catLabels[post.category] || post.category);
+      var articleLink = '';
+      var heroHtml = '';
+      if (post.article_slug && post.article_type) {
+        var prefix = post.article_type === 'guide' ? '/guides/' : '/blog/';
+        var imgFolder = post.article_type === 'guide' ? '/assets/guides/' : '/assets/blog/';
+        articleLink = '<a href="' + prefix + post.article_slug + '/" class="article-link"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>Lire l\\'article</a>';
+        heroHtml = '<div class="topic-hero"><img src="' + imgFolder + post.article_slug + '.webp" onerror="this.onerror=null;this.src=\\'' + imgFolder + post.article_slug + '.png\\'" alt="' + escapeHtml(post.title) + '"></div>';
+      }
+      container.innerHTML =
+        '<div class="topic-post">' + heroHtml + articleLink +
+          '<div class="topic-post-header"><span class="topic-tag ' + catClass + '">' + catText + '</span>' +
+            '<span class="tp-author">' + escapeHtml(post.author_name) + '</span><span>\xB7</span><span>' + formatDate(post.created_at) + '</span></div>' +
+          '<div class="topic-title">' + escapeHtml(post.title) + '</div>' +
+          '<div class="topic-body">' + linkify(post.body) + '</div>' +
+          actionBar(post.id, 'post', post.upvotes, { barClass: 'action-bar', showReply: false, postTitle: post.title }) +
+        '</div>';
+      loadReplies();
+    }
+
+    async function loadReplies() {
+      var section = document.getElementById('repliesSection');
+      var res = await sb.from('forum_replies').select('*').eq('post_id', postId).order('created_at', { ascending: true });
+      if (res.error) { section.innerHTML = '<p style="color:var(--text-muted)">Erreur.</p>'; return; }
+      var replies = res.data || [];
+
+      // Build tree
+      var byId = {};
+      var roots = [];
+      replies.forEach(function(r) { byId[r.id] = r; r._children = []; });
+      replies.forEach(function(r) {
+        if (r.parent_reply_id && byId[r.parent_reply_id]) {
+          byId[r.parent_reply_id]._children.push(r);
+        } else {
+          roots.push(r);
+        }
+      });
+
+      function renderReply(r, depth) {
+        var wrapClass = depth > 0 ? 'reply-nested' : '';
+        var html = '<div class="' + wrapClass + '"><div class="reply-item">' +
+          '<div class="reply-header"><span class="r-author">' + escapeHtml(r.author_name) + '</span><span>\xB7</span><span>' + formatTimeAgo(r.created_at) + '</span></div>' +
+          '<div class="reply-body">' + linkify(r.body) + '</div>' +
+          actionBar(r.id, 'reply', r.upvotes, { showReply: true, authorName: r.author_name, postTitle: currentPostTitle });
+        // Inline reply form if this is the reply being replied to
+        if (replyingToId === r.id && currentUser) {
+          html += '<div class="inline-reply-form" id="inlineReplyForm">' +
+            '<div class="inline-reply-placeholder">R\xE9pondre \xE0 ' + escapeHtml(r.author_name) + '</div>' +
+            '<textarea id="replyBody" placeholder="Votre r\xE9ponse..."></textarea>' +
+            '<div id="mediaPreviewZone-inline"></div>' +
+            '<p class="reply-error" id="replyError" style="display:none"></p>' +
+            '<div class="reply-form-actions">' + mediaToolbarHtml('inline') + '<span style="flex:1"></span><button class="btn-cancel-reply" id="btnCancelInline">Annuler</button><button class="btn-reply" id="btnSubmitReply">Commenter</button></div>' +
+          '</div>';
+        }
+        html += '</div>';
+        r._children.forEach(function(child) { html += renderReply(child, depth + 1); });
+        html += '</div>';
+        return html;
+      }
+
+      var html = '<h3 class="replies-header">' + replies.length + ' r\xE9ponse' + (replies.length !== 1 ? 's' : '') + '</h3>';
+      if (roots.length > 0) {
+        html += '<div class="reply-thread">';
+        roots.forEach(function(r) { html += renderReply(r, 0); });
+        html += '</div>';
+      }
+      section.innerHTML = html;
+
+      // Reply form
+      var formSection = document.getElementById('replyFormSection');
+      if (currentUser) {
+        if (replyingToId) {
+          // Inline form is rendered inside the reply tree \u2014 hide top form
+          formSection.innerHTML = '';
+          setTimeout(function() {
+            var submitBtn = document.getElementById('btnSubmitReply');
+            if (submitBtn) submitBtn.addEventListener('click', submitReply);
+            var cancelBtn = document.getElementById('btnCancelInline');
+            if (cancelBtn) cancelBtn.addEventListener('click', function() { replyingToId = null; replyingToName = null; loadReplies(); });
+            var ta = document.getElementById('replyBody');
+            if (ta) { ta.focus(); ta.scrollIntoView({ behavior: 'smooth', block: 'center' }); }
+          }, 50);
+        } else {
+          var boxClass = formExpanded ? 'expanded' : 'compact';
+          var toolbarHtml = formExpanded ?
+            '<div id="mediaPreviewZone-main"></div>' +
+            '<div class="reply-box-toolbar">' +
+              '<div class="toolbar-left">' + mediaToolbarHtml('main') + '</div>' +
+              '<div class="toolbar-right"><button class="btn-cancel-reply" id="btnCancelMain">Annuler</button><button class="btn-reply" id="btnSubmitReply">Commenter</button></div>' +
+            '</div>' +
+            '<p class="reply-error" id="replyError" style="display:none"></p>' : '';
+          formSection.innerHTML =
+            '<div class="reply-form"><div class="reply-box ' + boxClass + '" id="replyBox">' +
+              '<textarea id="replyBody" placeholder="Participer \xE0 la conversation..."' + (formExpanded ? '' : ' rows="1"') + '></textarea>' +
+              toolbarHtml +
+            '</div></div>';
+          if (!formExpanded) {
+            document.getElementById('replyBody').addEventListener('focus', function() {
+              formExpanded = true;
+              loadReplies();
+            });
+          } else {
+            document.getElementById('btnSubmitReply').addEventListener('click', submitReply);
+            document.getElementById('btnCancelMain').addEventListener('click', function() { formExpanded = false; loadReplies(); });
+            setTimeout(function() { var ta = document.getElementById('replyBody'); if (ta) ta.focus(); }, 50);
+          }
+        }
+      } else {
+        formSection.innerHTML = '<div class="reply-auth"><p>Connectez-vous pour participer \xE0 la discussion.</p><a href="/login/?redirect=/forum/topic/?id=' + postId + '">Se connecter</a></div>';
+      }
+    }
+
+    async function submitReply() {
+      var body = document.getElementById('replyBody').value.trim();
+      var errEl = document.getElementById('replyError');
+      var btn = document.getElementById('btnSubmitReply');
+      // Append image URL to body if present
+      if (pendingImageUrl) body = (body ? body + '\\n' : '') + pendingImageUrl;
+      if (!body || body.length < 5) { errEl.textContent = 'La r\xE9ponse doit contenir au moins 5 caract\xE8res.'; errEl.style.display = ''; return; }
+      errEl.style.display = 'none'; btn.disabled = true; btn.textContent = 'Envoi...';
+      var authorName = currentUser.user_metadata?.display_name || currentUser.user_metadata?.full_name || currentUser.email?.split('@')[0] || 'Utilisateur';
+      var insertData = { post_id: postId, body: body, author_id: currentUser.id, author_name: authorName };
+      if (replyingToId) insertData.parent_reply_id = replyingToId;
+      var res = await sb.from('forum_replies').insert(insertData);
+      btn.disabled = false; btn.textContent = 'Commenter';
+      if (res.error) { errEl.textContent = 'Erreur : ' + res.error.message; errEl.style.display = ''; return; }
+      document.getElementById('replyBody').value = '';
+      pendingImageUrl = null;
+      replyingToId = null; replyingToName = null;
+      loadReplies(); loadTopic();
+    }
+
+    // Auto-resize textareas
+    function autoResize(ta) {
+      if (!ta) return;
+      ta.style.height = 'auto';
+      ta.style.height = ta.scrollHeight + 'px';
+    }
+    document.addEventListener('input', function(e) {
+      if (e.target.tagName === 'TEXTAREA') autoResize(e.target);
+    });
+
+    // Media: image upload handler
+    document.addEventListener('change', async function(e) {
+      var fileInput = e.target.closest('[data-media-file]');
+      if (!fileInput || !fileInput.files[0]) return;
+      var prefix = fileInput.dataset.mediaFile;
+      var zone = document.getElementById('mediaPreviewZone-' + prefix);
+      if (zone) zone.innerHTML = '<div class="media-uploading">Upload en cours...</div>';
+      try {
+        var url = await uploadImage(fileInput.files[0]);
+        pendingImageUrl = url;
+        if (zone) zone.innerHTML = mediaPreviewHtml(url, prefix);
+      } catch(err) {
+        if (zone) zone.innerHTML = '<div class="media-uploading" style="color:#ef4444">Erreur d\\'upload</div>';
+      }
+      fileInput.value = '';
+    });
+
+    // Media: remove preview
+    document.addEventListener('click', function(e) {
+      var removeBtn = e.target.closest('[data-media-remove]');
+      if (removeBtn) {
+        pendingImageUrl = null;
+        var prefix = removeBtn.dataset.mediaRemove;
+        var zone = document.getElementById('mediaPreviewZone-' + prefix);
+        if (zone) zone.innerHTML = '';
+        return;
+      }
+
+      // GIF picker toggle
+      var gifBtn = e.target.closest('[data-media-action^="gif-"]');
+      if (gifBtn) {
+        var prefix = gifBtn.dataset.mediaAction.replace('gif-', '');
+        var existing = document.getElementById('gifPicker-' + prefix);
+        if (existing) { existing.remove(); return; }
+        var picker = document.createElement('div');
+        picker.className = 'gif-picker open';
+        picker.id = 'gifPicker-' + prefix;
+        picker.innerHTML = '<input class="gif-picker-search" placeholder="Rechercher un GIF..." data-gif-prefix="' + prefix + '">' +
+          '<div class="gif-picker-grid" id="gifGrid-' + prefix + '"><div class="gif-picker-empty">Chargement...</div></div>' +
+          '<div class="gif-powered">Powered by GIPHY</div>';
+        gifBtn.style.position = 'relative';
+        gifBtn.appendChild(picker);
+        picker.querySelector('.gif-picker-search').focus();
+        // Load trending
+        trendingGifs().then(function(results) { renderGifs(results, prefix); });
+        // Search handler
+        picker.querySelector('.gif-picker-search').addEventListener('input', function() {
+          var q = this.value.trim();
+          clearTimeout(gifTimeout);
+          gifTimeout = setTimeout(function() {
+            (q ? searchGifs(q) : trendingGifs()).then(function(results) { renderGifs(results, prefix); });
+          }, 400);
+        });
+        picker.addEventListener('click', function(ev) { ev.stopPropagation(); });
+        e.stopPropagation();
+        return;
+      }
+
+      // Close GIF picker on outside click
+      document.querySelectorAll('.gif-picker.open').forEach(function(p) { p.remove(); });
+    });
+
+    function renderGifs(results, prefix) {
+      var grid = document.getElementById('gifGrid-' + prefix);
+      if (!grid) return;
+      if (!results.length) { grid.innerHTML = '<div class="gif-picker-empty">Aucun r\xE9sultat</div>'; return; }
+      grid.innerHTML = '';
+      results.forEach(function(gif) {
+        var img = document.createElement('img');
+        img.src = gif.preview;
+        img.loading = 'lazy';
+        img.addEventListener('click', function() {
+          pendingImageUrl = gif.full;
+          var zone = document.getElementById('mediaPreviewZone-' + prefix);
+          if (zone) zone.innerHTML = mediaPreviewHtml(pendingImageUrl, prefix);
+          document.querySelectorAll('.gif-picker.open').forEach(function(p) { p.remove(); });
+        });
+        grid.appendChild(img);
+      });
+    }
+
+    // Vote click handler \u2014 detect up vs down within the votes button
+    document.addEventListener('click', function(e) {
+      var votesBtn = e.target.closest('.act.votes');
+      if (votesBtn) {
+        var id = votesBtn.dataset.voteId;
+        var type = votesBtn.dataset.voteType;
+        // Determine if click was on up or down arrow
+        var svgs = votesBtn.querySelectorAll('svg');
+        var clickedSvg = e.target.closest('svg');
+        if (clickedSvg === svgs[0]) vote(id, type, 1);
+        else if (clickedSvg === svgs[1]) vote(id, type, -1);
+        return;
+      }
+      var replyToEl = e.target.closest('[data-replyto-id]');
+      if (replyToEl) {
+        replyingToId = replyToEl.dataset.replytoId;
+        replyingToName = replyToEl.dataset.replytoName;
+        loadReplies();
+        return;
+      }
+      // Share dropdown toggle
+      var toggleBtn = e.target.closest('[data-share-toggle]');
+      if (toggleBtn) {
+        var dropdown = toggleBtn.nextElementSibling;
+        var wasOpen = dropdown.classList.contains('open');
+        document.querySelectorAll('.share-dropdown.open').forEach(function(d) { d.classList.remove('open'); });
+        if (!wasOpen) dropdown.classList.add('open');
+        return;
+      }
+      // Copy link in share dropdown
+      var copyBtn = e.target.closest('[data-copy-url]');
+      if (copyBtn) {
+        navigator.clipboard.writeText(copyBtn.dataset.copyUrl).then(function() {
+          copyBtn.classList.add('copied');
+          showToast('Lien copi\xE9 !');
+          setTimeout(function() { copyBtn.classList.remove('copied'); }, 2000);
+        });
+        return;
+      }
+      // Let share dropdown links through
+      if (e.target.closest('.share-dropdown a')) return;
+      // Close share dropdowns on outside click
+      if (!e.target.closest('.share-dropdown') && !e.target.closest('[data-share-toggle]')) {
+        document.querySelectorAll('.share-dropdown.open').forEach(function(d) { d.classList.remove('open'); });
+      }
+      var deleteEl = e.target.closest('[data-delete-id]');
+      if (deleteEl) { if (confirm('Supprimer d\xE9finitivement ce contenu ?')) deleteItem(deleteEl.dataset.deleteId, deleteEl.dataset.deleteType); return; }
+      var reportEl = e.target.closest('[data-report-id]');
+      if (reportEl) { if (confirm('Signaler ce contenu comme inappropri\xE9 ?')) report(reportEl.dataset.reportId, reportEl.dataset.reportType); }
+    });
+
+    sb.auth.getSession().then(async function(res) {
+      if (res.data.session) { currentUser = res.data.session.user; isAdmin = currentUser.email === ADMIN_EMAIL; await loadUserVotes(); }
+      loadTopic();
+    });
+
+    // Realtime: auto-refresh replies and vote counts
+    sb.channel('forum-topic-' + postId)
+      .on('postgres_changes', { event: '*', schema: 'public', table: 'forum_replies', filter: 'post_id=eq.' + postId }, function() {
+        loadTopic();
+      })
+      .on('postgres_changes', { event: '*', schema: 'public', table: 'forum_posts', filter: 'id=eq.' + postId }, function() {
+        loadTopic();
+      })
+      .subscribe();
+  })();
+  <\/script> `], ["  ", `<div class="topic-container"> <a href="/forum/" class="topic-back"> <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="15 18 9 12 15 6"></polyline></svg>
+Retour au forum
+</a> <div id="topicContent"><div class="topic-loading">Chargement...</div></div> <div id="replyFormSection"></div> <div id="repliesSection"></div> </div> <div class="toast" id="toast"></div> <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2/dist/umd/supabase.min.js"><\/script> <script>
+  (function() {
+    var SUPABASE_URL = 'https://vzmtvhcvyqzkmestdbko.supabase.co';
+    var SUPABASE_KEY = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InZ6bXR2aGN2eXF6a21lc3RkYmtvIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NzA4OTA0MTEsImV4cCI6MjA4NjQ2NjQxMX0.rvBz2uIsr3YtLIw84Kor3eVFpH4FiXVZgbufiJH3uio';
+    var sb = window.supabase.createClient(SUPABASE_URL, SUPABASE_KEY);
+
+    var postId = new URLSearchParams(window.location.search).get('id');
+    if (!postId) { document.getElementById('topicContent').innerHTML = '<div class="topic-loading">Discussion introuvable.</div>'; return; }
+
+    var ADMIN_EMAIL = 'aivancepro@gmail.com';
+    var currentUser = null;
+    var isAdmin = false;
+    var userVotes = {};
+    var replyingToId = null;
+    var replyingToName = null;
+    var currentPostTitle = '';
+    var formExpanded = false;
+
+    var catLabels = { general: 'G\xE9n\xE9ral', entrainement: 'Entra\xEEnement', nutrition: 'Nutrition', progression: 'Progression' };
+
+    // SVG icons
+    var svgUp = '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="18 15 12 9 6 15"/></svg>';
+    var svgDown = '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>';
+    var svgComment = '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>';
+    var svgShare = '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 12v8a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2v-8"/><polyline points="16 6 12 2 8 6"/><line x1="12" y1="2" x2="12" y2="15"/></svg>';
+    var svgX = '<svg viewBox="0 0 24 24" fill="currentColor"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>';
+    var svgFB = '<svg viewBox="0 0 24 24" fill="currentColor"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg>';
+    var svgLinkedIn = '<svg viewBox="0 0 24 24" fill="currentColor"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 01-2.063-2.065 2.064 2.064 0 112.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>';
+    var svgCopyLink = '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"/><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"/></svg>';
+
+    function shareDropdownHtml(forumPostId, title) {
+      var pageUrl = window.location.origin + '/forum/topic/?id=' + forumPostId;
+      var fullUrl = encodeURIComponent(pageUrl);
+      var encodedTitle = encodeURIComponent(title || '');
+      return '<div class="share-dropdown-wrap">' +
+        '<button class="act" data-share-toggle>' + svgShare + ' Partager</button>' +
+        '<div class="share-dropdown">' +
+          '<a class="share-x" href="https://x.com/intent/tweet?text=' + encodedTitle + '&url=' + fullUrl + '" target="_blank" rel="noopener" title="X / Twitter">' + svgX + '</a>' +
+          '<a class="share-fb" href="https://www.facebook.com/sharer/sharer.php?u=' + fullUrl + '" target="_blank" rel="noopener" title="Facebook">' + svgFB + '</a>' +
+          '<a class="share-li" href="https://www.linkedin.com/sharing/share-offsite/?url=' + fullUrl + '" target="_blank" rel="noopener" title="LinkedIn">' + svgLinkedIn + '</a>' +
+          '<button class="share-copy" data-copy-url="' + pageUrl + '" title="Copier le lien">' + svgCopyLink + '</button>' +
+        '</div></div>';
+    }
+    var svgReply = '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 17 4 12 9 7"/><path d="M20 18v-2a4 4 0 0 0-4-4H4"/></svg>';
+    var svgTrash = '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="3 6 5 6 21 6"/><path d="M19 6v14a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2V6m3 0V4a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2"/></svg>';
+    var svgFlag = '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 15s1-1 4-1 5 2 8 2 4-1 4-1V3s-1 1-4 1-5-2-8-2-4 1-4 1z"/><line x1="4" y1="22" x2="4" y2="15"/></svg>';
+    var svgImage = '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><polyline points="21 15 16 10 5 21"/></svg>';
+    var svgGif = '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="4" width="20" height="16" rx="2"/><text x="12" y="15" text-anchor="middle" font-size="8" font-weight="bold" fill="currentColor" stroke="none">GIF</text></svg>';
+
+    // Cloudinary upload
+    var CLOUD_NAME = 'dlimurcjx';
+    var UPLOAD_PRESET = 'AIVancePro';
+    var pendingImageUrl = null;
+
+    async function uploadImage(file) {
+      var fd = new FormData();
+      fd.append('file', file);
+      fd.append('upload_preset', UPLOAD_PRESET);
+      var res = await fetch('https://api.cloudinary.com/v1_1/' + CLOUD_NAME + '/image/upload', { method: 'POST', body: fd });
+      var data = await res.json();
+      return data.secure_url;
+    }
+
+    // GIPHY GIF search (free API)
+    var GIPHY_KEY = 'CKoqOpNBxMmJziQtiELv2mZgwE2BOWR7';
+    var gifTimeout = null;
+
+    async function searchGifs(query) {
+      var url = 'https://api.giphy.com/v1/gifs/search?api_key=' + GIPHY_KEY + '&q=' + encodeURIComponent(query) + '&limit=20&rating=g&lang=fr';
+      var res = await fetch(url);
+      var data = await res.json();
+      return (data.data || []).map(function(g) { return { preview: g.images.fixed_width_small.url, full: g.images.original.url }; });
+    }
+
+    async function trendingGifs() {
+      var url = 'https://api.giphy.com/v1/gifs/trending?api_key=' + GIPHY_KEY + '&limit=20&rating=g';
+      var res = await fetch(url);
+      var data = await res.json();
+      return (data.data || []).map(function(g) { return { preview: g.images.fixed_width_small.url, full: g.images.original.url }; });
+    }
+
+    // Media toolbar HTML
+    function mediaToolbarHtml(prefix) {
+      return '<div class="media-toolbar">' +
+        '<button class="media-btn" title="Ajouter une image" data-media-action="image-' + prefix + '">' + svgImage + '<input type="file" accept="image/*" data-media-file="' + prefix + '"></button>' +
+        '<button class="media-btn" title="Ajouter un GIF" data-media-action="gif-' + prefix + '" style="position:relative">' + svgGif + '</button>' +
+      '</div>';
+    }
+
+    function mediaPreviewHtml(url, prefix) {
+      if (!url) return '';
+      return '<div class="media-preview" id="mediaPreview-' + prefix + '"><img src="' + url + '"><button class="media-preview-remove" data-media-remove="' + prefix + '">&times;</button></div>';
+    }
+
+    function escapeHtml(str) { var d = document.createElement('div'); d.textContent = str || ''; return d.innerHTML; }
+    function linkify(text) {
+      var safe = escapeHtml(text);
+      // Split text by URLs, process each part once
+      var parts = safe.split(/(https?:\\\\/\\\\/[^\\\\s]+)/g);
+      var result = '';
+      for (var i = 0; i < parts.length; i++) {
+        var p = parts[i];
+        if (/^https?:\\\\/\\\\//.test(p)) {
+          if (/\\\\.(jpg|jpeg|png|gif|webp)(\\\\?[^\\\\s]*)?$/i.test(p) || /media\\\\.tenor\\\\.com\\\\//.test(p) || /media\\\\d*\\\\.giphy\\\\.com\\\\//.test(p)) {
+            result += '<img src="' + p + '" style="max-width:100%;max-height:300px;border-radius:10px;margin:0.5rem 0;display:block">';
+          } else {
+            result += '<a href="' + p + '" target="_blank" rel="noopener">' + p + '</a>';
+          }
+        } else {
+          result += p;
+        }
+      }
+      return result;
+    }
+    function formatTimeAgo(dateStr) {
+      var diff = Math.floor((Date.now() - new Date(dateStr).getTime()) / 1000);
+      if (diff < 60) return "\xE0 l'instant"; if (diff < 3600) return Math.floor(diff / 60) + ' min';
+      if (diff < 86400) return Math.floor(diff / 3600) + ' h'; if (diff < 2592000) return Math.floor(diff / 86400) + ' j';
+      return new Date(dateStr).toLocaleDateString('fr-FR');
+    }
+    function formatDate(dateStr) { return new Date(dateStr).toLocaleDateString('fr-FR', { day: 'numeric', month: 'long', year: 'numeric', hour: '2-digit', minute: '2-digit' }); }
+    function showToast(msg) { var t = document.getElementById('toast'); t.textContent = msg; t.classList.add('show'); setTimeout(function() { t.classList.remove('show'); }, 3000); }
+
+    async function loadUserVotes() {
+      if (!currentUser) return;
+      var res = await sb.from('forum_votes').select('*').eq('user_id', currentUser.id);
+      if (res.data) res.data.forEach(function(v) { userVotes[v.target_type + ':' + v.target_id] = v.value; });
+    }
+
+    async function vote(targetId, targetType, value) {
+      if (!currentUser) { showToast('Connectez-vous pour voter'); return; }
+      var key = targetType + ':' + targetId;
+      var existing = userVotes[key];
+      if (existing === value) {
+        await sb.from('forum_votes').delete().match({ user_id: currentUser.id, target_id: targetId, target_type: targetType });
+        delete userVotes[key];
+      } else {
+        if (existing) await sb.from('forum_votes').delete().match({ user_id: currentUser.id, target_id: targetId, target_type: targetType });
+        await sb.from('forum_votes').insert({ user_id: currentUser.id, target_id: targetId, target_type: targetType, value: value });
+        userVotes[key] = value;
+      }
+      loadTopic();
+    }
+
+    async function report(targetId, targetType) {
+      if (!currentUser) { showToast('Connectez-vous pour signaler'); return; }
+      var res = await sb.from('forum_reports').insert({ reporter_id: currentUser.id, target_id: targetId, target_type: targetType, reason: 'inappropriate' });
+      if (res.error && res.error.code === '23505') showToast('Vous avez d\xE9j\xE0 signal\xE9 ce contenu');
+      else if (res.error) showToast('Erreur lors du signalement');
+      else showToast('Contenu signal\xE9 \u2014 merci');
+    }
+
+    function actionBar(id, type, score, opts) {
+      var votedUp = userVotes[type + ':' + id] === 1;
+      var votedDown = userVotes[type + ':' + id] === -1;
+      var votedClass = votedUp ? ' voted-up' : (votedDown ? ' voted-down' : '');
+      var html = '<div class="' + (opts.barClass || 'reply-actions') + '">' +
+        '<button class="act votes' + votedClass + '" data-vote-id="' + id + '" data-vote-type="' + type + '">' + svgUp + '<span class="score">' + (score || 0) + '</span>' + svgDown + '</button>';
+      if (opts.showReply && currentUser) html += '<button class="act" data-replyto-id="' + id + '" data-replyto-name="' + escapeHtml(opts.authorName || '') + '">' + svgReply + ' R\xE9pondre</button>';
+      html += shareDropdownHtml(postId, opts.postTitle || '');
+      if (isAdmin) html += '<button class="act delete-act" data-delete-id="' + id + '" data-delete-type="' + type + '">' + svgTrash + '</button>';
+      html += '<button class="act" data-report-id="' + id + '" data-report-type="' + type + '">' + svgFlag + '</button>';
+      html += '</div>';
+      return html;
+    }
+
+    async function deleteItem(id, type) {
+      var table = type === 'post' ? 'forum_posts' : 'forum_replies';
+      var res = await sb.from(table).delete().eq('id', id);
+      if (res.error) { showToast('Erreur : ' + res.error.message); return; }
+      if (type === 'post') { showToast('Sujet supprim\xE9'); window.location.href = '/forum/'; }
+      else { showToast('R\xE9ponse supprim\xE9e'); loadTopic(); }
+    }
+
+    async function loadTopic() {
+      var container = document.getElementById('topicContent');
+      var res = await sb.from('forum_posts').select('*').eq('id', postId).single();
+      if (res.error || !res.data) { container.innerHTML = '<div class="topic-loading">Discussion introuvable.</div>'; return; }
+      var post = res.data;
+      currentPostTitle = post.title;
+      document.title = post.title + ' - Forum AIVancePro';
+      var catClass = post.article_slug ? 'article' : '';
+      var catText = post.article_slug ? 'Article' : (catLabels[post.category] || post.category);
+      var articleLink = '';
+      var heroHtml = '';
+      if (post.article_slug && post.article_type) {
+        var prefix = post.article_type === 'guide' ? '/guides/' : '/blog/';
+        var imgFolder = post.article_type === 'guide' ? '/assets/guides/' : '/assets/blog/';
+        articleLink = '<a href="' + prefix + post.article_slug + '/" class="article-link"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>Lire l\\\\'article</a>';
+        heroHtml = '<div class="topic-hero"><img src="' + imgFolder + post.article_slug + '.webp" onerror="this.onerror=null;this.src=\\\\'' + imgFolder + post.article_slug + '.png\\\\'" alt="' + escapeHtml(post.title) + '"></div>';
+      }
+      container.innerHTML =
+        '<div class="topic-post">' + heroHtml + articleLink +
+          '<div class="topic-post-header"><span class="topic-tag ' + catClass + '">' + catText + '</span>' +
+            '<span class="tp-author">' + escapeHtml(post.author_name) + '</span><span>\xB7</span><span>' + formatDate(post.created_at) + '</span></div>' +
+          '<div class="topic-title">' + escapeHtml(post.title) + '</div>' +
+          '<div class="topic-body">' + linkify(post.body) + '</div>' +
+          actionBar(post.id, 'post', post.upvotes, { barClass: 'action-bar', showReply: false, postTitle: post.title }) +
+        '</div>';
+      loadReplies();
+    }
+
+    async function loadReplies() {
+      var section = document.getElementById('repliesSection');
+      var res = await sb.from('forum_replies').select('*').eq('post_id', postId).order('created_at', { ascending: true });
+      if (res.error) { section.innerHTML = '<p style="color:var(--text-muted)">Erreur.</p>'; return; }
+      var replies = res.data || [];
+
+      // Build tree
+      var byId = {};
+      var roots = [];
+      replies.forEach(function(r) { byId[r.id] = r; r._children = []; });
+      replies.forEach(function(r) {
+        if (r.parent_reply_id && byId[r.parent_reply_id]) {
+          byId[r.parent_reply_id]._children.push(r);
+        } else {
+          roots.push(r);
+        }
+      });
+
+      function renderReply(r, depth) {
+        var wrapClass = depth > 0 ? 'reply-nested' : '';
+        var html = '<div class="' + wrapClass + '"><div class="reply-item">' +
+          '<div class="reply-header"><span class="r-author">' + escapeHtml(r.author_name) + '</span><span>\xB7</span><span>' + formatTimeAgo(r.created_at) + '</span></div>' +
+          '<div class="reply-body">' + linkify(r.body) + '</div>' +
+          actionBar(r.id, 'reply', r.upvotes, { showReply: true, authorName: r.author_name, postTitle: currentPostTitle });
+        // Inline reply form if this is the reply being replied to
+        if (replyingToId === r.id && currentUser) {
+          html += '<div class="inline-reply-form" id="inlineReplyForm">' +
+            '<div class="inline-reply-placeholder">R\xE9pondre \xE0 ' + escapeHtml(r.author_name) + '</div>' +
+            '<textarea id="replyBody" placeholder="Votre r\xE9ponse..."></textarea>' +
+            '<div id="mediaPreviewZone-inline"></div>' +
+            '<p class="reply-error" id="replyError" style="display:none"></p>' +
+            '<div class="reply-form-actions">' + mediaToolbarHtml('inline') + '<span style="flex:1"></span><button class="btn-cancel-reply" id="btnCancelInline">Annuler</button><button class="btn-reply" id="btnSubmitReply">Commenter</button></div>' +
+          '</div>';
+        }
+        html += '</div>';
+        r._children.forEach(function(child) { html += renderReply(child, depth + 1); });
+        html += '</div>';
+        return html;
+      }
+
+      var html = '<h3 class="replies-header">' + replies.length + ' r\xE9ponse' + (replies.length !== 1 ? 's' : '') + '</h3>';
+      if (roots.length > 0) {
+        html += '<div class="reply-thread">';
+        roots.forEach(function(r) { html += renderReply(r, 0); });
+        html += '</div>';
+      }
+      section.innerHTML = html;
+
+      // Reply form
+      var formSection = document.getElementById('replyFormSection');
+      if (currentUser) {
+        if (replyingToId) {
+          // Inline form is rendered inside the reply tree \u2014 hide top form
+          formSection.innerHTML = '';
+          setTimeout(function() {
+            var submitBtn = document.getElementById('btnSubmitReply');
+            if (submitBtn) submitBtn.addEventListener('click', submitReply);
+            var cancelBtn = document.getElementById('btnCancelInline');
+            if (cancelBtn) cancelBtn.addEventListener('click', function() { replyingToId = null; replyingToName = null; loadReplies(); });
+            var ta = document.getElementById('replyBody');
+            if (ta) { ta.focus(); ta.scrollIntoView({ behavior: 'smooth', block: 'center' }); }
+          }, 50);
+        } else {
+          var boxClass = formExpanded ? 'expanded' : 'compact';
+          var toolbarHtml = formExpanded ?
+            '<div id="mediaPreviewZone-main"></div>' +
+            '<div class="reply-box-toolbar">' +
+              '<div class="toolbar-left">' + mediaToolbarHtml('main') + '</div>' +
+              '<div class="toolbar-right"><button class="btn-cancel-reply" id="btnCancelMain">Annuler</button><button class="btn-reply" id="btnSubmitReply">Commenter</button></div>' +
+            '</div>' +
+            '<p class="reply-error" id="replyError" style="display:none"></p>' : '';
+          formSection.innerHTML =
+            '<div class="reply-form"><div class="reply-box ' + boxClass + '" id="replyBox">' +
+              '<textarea id="replyBody" placeholder="Participer \xE0 la conversation..."' + (formExpanded ? '' : ' rows="1"') + '></textarea>' +
+              toolbarHtml +
+            '</div></div>';
+          if (!formExpanded) {
+            document.getElementById('replyBody').addEventListener('focus', function() {
+              formExpanded = true;
+              loadReplies();
+            });
+          } else {
+            document.getElementById('btnSubmitReply').addEventListener('click', submitReply);
+            document.getElementById('btnCancelMain').addEventListener('click', function() { formExpanded = false; loadReplies(); });
+            setTimeout(function() { var ta = document.getElementById('replyBody'); if (ta) ta.focus(); }, 50);
+          }
+        }
+      } else {
+        formSection.innerHTML = '<div class="reply-auth"><p>Connectez-vous pour participer \xE0 la discussion.</p><a href="/login/?redirect=/forum/topic/?id=' + postId + '">Se connecter</a></div>';
+      }
+    }
+
+    async function submitReply() {
+      var body = document.getElementById('replyBody').value.trim();
+      var errEl = document.getElementById('replyError');
+      var btn = document.getElementById('btnSubmitReply');
+      // Append image URL to body if present
+      if (pendingImageUrl) body = (body ? body + '\\\\n' : '') + pendingImageUrl;
+      if (!body || body.length < 5) { errEl.textContent = 'La r\xE9ponse doit contenir au moins 5 caract\xE8res.'; errEl.style.display = ''; return; }
+      errEl.style.display = 'none'; btn.disabled = true; btn.textContent = 'Envoi...';
+      var authorName = currentUser.user_metadata?.display_name || currentUser.user_metadata?.full_name || currentUser.email?.split('@')[0] || 'Utilisateur';
+      var insertData = { post_id: postId, body: body, author_id: currentUser.id, author_name: authorName };
+      if (replyingToId) insertData.parent_reply_id = replyingToId;
+      var res = await sb.from('forum_replies').insert(insertData);
+      btn.disabled = false; btn.textContent = 'Commenter';
+      if (res.error) { errEl.textContent = 'Erreur : ' + res.error.message; errEl.style.display = ''; return; }
+      document.getElementById('replyBody').value = '';
+      pendingImageUrl = null;
+      replyingToId = null; replyingToName = null;
+      loadReplies(); loadTopic();
+    }
+
+    // Auto-resize textareas
+    function autoResize(ta) {
+      if (!ta) return;
+      ta.style.height = 'auto';
+      ta.style.height = ta.scrollHeight + 'px';
+    }
+    document.addEventListener('input', function(e) {
+      if (e.target.tagName === 'TEXTAREA') autoResize(e.target);
+    });
+
+    // Media: image upload handler
+    document.addEventListener('change', async function(e) {
+      var fileInput = e.target.closest('[data-media-file]');
+      if (!fileInput || !fileInput.files[0]) return;
+      var prefix = fileInput.dataset.mediaFile;
+      var zone = document.getElementById('mediaPreviewZone-' + prefix);
+      if (zone) zone.innerHTML = '<div class="media-uploading">Upload en cours...</div>';
+      try {
+        var url = await uploadImage(fileInput.files[0]);
+        pendingImageUrl = url;
+        if (zone) zone.innerHTML = mediaPreviewHtml(url, prefix);
+      } catch(err) {
+        if (zone) zone.innerHTML = '<div class="media-uploading" style="color:#ef4444">Erreur d\\\\'upload</div>';
+      }
+      fileInput.value = '';
+    });
+
+    // Media: remove preview
+    document.addEventListener('click', function(e) {
+      var removeBtn = e.target.closest('[data-media-remove]');
+      if (removeBtn) {
+        pendingImageUrl = null;
+        var prefix = removeBtn.dataset.mediaRemove;
+        var zone = document.getElementById('mediaPreviewZone-' + prefix);
+        if (zone) zone.innerHTML = '';
+        return;
+      }
+
+      // GIF picker toggle
+      var gifBtn = e.target.closest('[data-media-action^="gif-"]');
+      if (gifBtn) {
+        var prefix = gifBtn.dataset.mediaAction.replace('gif-', '');
+        var existing = document.getElementById('gifPicker-' + prefix);
+        if (existing) { existing.remove(); return; }
+        var picker = document.createElement('div');
+        picker.className = 'gif-picker open';
+        picker.id = 'gifPicker-' + prefix;
+        picker.innerHTML = '<input class="gif-picker-search" placeholder="Rechercher un GIF..." data-gif-prefix="' + prefix + '">' +
+          '<div class="gif-picker-grid" id="gifGrid-' + prefix + '"><div class="gif-picker-empty">Chargement...</div></div>' +
+          '<div class="gif-powered">Powered by GIPHY</div>';
+        gifBtn.style.position = 'relative';
+        gifBtn.appendChild(picker);
+        picker.querySelector('.gif-picker-search').focus();
+        // Load trending
+        trendingGifs().then(function(results) { renderGifs(results, prefix); });
+        // Search handler
+        picker.querySelector('.gif-picker-search').addEventListener('input', function() {
+          var q = this.value.trim();
+          clearTimeout(gifTimeout);
+          gifTimeout = setTimeout(function() {
+            (q ? searchGifs(q) : trendingGifs()).then(function(results) { renderGifs(results, prefix); });
+          }, 400);
+        });
+        picker.addEventListener('click', function(ev) { ev.stopPropagation(); });
+        e.stopPropagation();
+        return;
+      }
+
+      // Close GIF picker on outside click
+      document.querySelectorAll('.gif-picker.open').forEach(function(p) { p.remove(); });
+    });
+
+    function renderGifs(results, prefix) {
+      var grid = document.getElementById('gifGrid-' + prefix);
+      if (!grid) return;
+      if (!results.length) { grid.innerHTML = '<div class="gif-picker-empty">Aucun r\xE9sultat</div>'; return; }
+      grid.innerHTML = '';
+      results.forEach(function(gif) {
+        var img = document.createElement('img');
+        img.src = gif.preview;
+        img.loading = 'lazy';
+        img.addEventListener('click', function() {
+          pendingImageUrl = gif.full;
+          var zone = document.getElementById('mediaPreviewZone-' + prefix);
+          if (zone) zone.innerHTML = mediaPreviewHtml(pendingImageUrl, prefix);
+          document.querySelectorAll('.gif-picker.open').forEach(function(p) { p.remove(); });
+        });
+        grid.appendChild(img);
+      });
+    }
+
+    // Vote click handler \u2014 detect up vs down within the votes button
+    document.addEventListener('click', function(e) {
+      var votesBtn = e.target.closest('.act.votes');
+      if (votesBtn) {
+        var id = votesBtn.dataset.voteId;
+        var type = votesBtn.dataset.voteType;
+        // Determine if click was on up or down arrow
+        var svgs = votesBtn.querySelectorAll('svg');
+        var clickedSvg = e.target.closest('svg');
+        if (clickedSvg === svgs[0]) vote(id, type, 1);
+        else if (clickedSvg === svgs[1]) vote(id, type, -1);
+        return;
+      }
+      var replyToEl = e.target.closest('[data-replyto-id]');
+      if (replyToEl) {
+        replyingToId = replyToEl.dataset.replytoId;
+        replyingToName = replyToEl.dataset.replytoName;
+        loadReplies();
+        return;
+      }
+      // Share dropdown toggle
+      var toggleBtn = e.target.closest('[data-share-toggle]');
+      if (toggleBtn) {
+        var dropdown = toggleBtn.nextElementSibling;
+        var wasOpen = dropdown.classList.contains('open');
+        document.querySelectorAll('.share-dropdown.open').forEach(function(d) { d.classList.remove('open'); });
+        if (!wasOpen) dropdown.classList.add('open');
+        return;
+      }
+      // Copy link in share dropdown
+      var copyBtn = e.target.closest('[data-copy-url]');
+      if (copyBtn) {
+        navigator.clipboard.writeText(copyBtn.dataset.copyUrl).then(function() {
+          copyBtn.classList.add('copied');
+          showToast('Lien copi\xE9 !');
+          setTimeout(function() { copyBtn.classList.remove('copied'); }, 2000);
+        });
+        return;
+      }
+      // Let share dropdown links through
+      if (e.target.closest('.share-dropdown a')) return;
+      // Close share dropdowns on outside click
+      if (!e.target.closest('.share-dropdown') && !e.target.closest('[data-share-toggle]')) {
+        document.querySelectorAll('.share-dropdown.open').forEach(function(d) { d.classList.remove('open'); });
+      }
+      var deleteEl = e.target.closest('[data-delete-id]');
+      if (deleteEl) { if (confirm('Supprimer d\xE9finitivement ce contenu ?')) deleteItem(deleteEl.dataset.deleteId, deleteEl.dataset.deleteType); return; }
+      var reportEl = e.target.closest('[data-report-id]');
+      if (reportEl) { if (confirm('Signaler ce contenu comme inappropri\xE9 ?')) report(reportEl.dataset.reportId, reportEl.dataset.reportType); }
+    });
+
+    sb.auth.getSession().then(async function(res) {
+      if (res.data.session) { currentUser = res.data.session.user; isAdmin = currentUser.email === ADMIN_EMAIL; await loadUserVotes(); }
+      loadTopic();
+    });
+
+    // Realtime: auto-refresh replies and vote counts
+    sb.channel('forum-topic-' + postId)
+      .on('postgres_changes', { event: '*', schema: 'public', table: 'forum_replies', filter: 'post_id=eq.' + postId }, function() {
+        loadTopic();
+      })
+      .on('postgres_changes', { event: '*', schema: 'public', table: 'forum_posts', filter: 'id=eq.' + postId }, function() {
+        loadTopic();
+      })
+      .subscribe();
+  })();
+  <\/script> `])), maybeRenderHead()), "head": async ($$result2) => renderTemplate`${renderComponent($$result2, "Fragment", Fragment, { "slot": "head" })}` })}`;
+}, "/Users/alexandre/Documents/aivancepro-website/src/pages/forum/topic.astro", void 0);
+
+const $$file = "/Users/alexandre/Documents/aivancepro-website/src/pages/forum/topic.astro";
+const $$url = "/forum/topic/";
+
+const _page = /*#__PURE__*/Object.freeze(/*#__PURE__*/Object.defineProperty({
+  __proto__: null,
+  default: $$Topic,
+  file: $$file,
+  prerender,
+  url: $$url
+}, Symbol.toStringTag, { value: 'Module' }));
+
+const page = () => _page;
+
+export { page };
