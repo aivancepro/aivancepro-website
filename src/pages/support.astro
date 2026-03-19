@@ -248,9 +248,9 @@ import BaseLayout from '../layouts/BaseLayout.astro';
     btn.textContent = 'Envoi...';
 
     try {
-      var res = await fetch('https://formsubmit.co/ajax/aivancepro@gmail.com', {
+      var res = await fetch('https://vzmtvhcvyqzkmestdbko.supabase.co/functions/v1/contactNotify', {
         method: 'POST',
-        headers: { 'Content-Type': 'application/json', 'Accept': 'application/json' },
+        headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({
           name: formData.get('name'),
           email: formData.get('email'),
