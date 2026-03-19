@@ -120,6 +120,18 @@ const jsonLd = [
       .back { display: inline-block; margin-top: 2rem; color: var(--gray-500); text-decoration: none; font-size: 0.9rem; }
       .back:hover { color: var(--gray-900); }
 
+      /* ── Timeline ── */
+      .timeline-section { margin-bottom: 2.5rem; }
+      .timeline-section h2 { font-size: 1.4rem; font-weight: 700; color: var(--gray-900); margin-bottom: 1.5rem; }
+      .timeline { position: relative; padding-left: 2rem; }
+      .timeline::before { content: ''; position: absolute; left: 7px; top: 6px; bottom: 6px; width: 2px; background: var(--gray-200); }
+      .timeline-item { position: relative; margin-bottom: 1.75rem; }
+      .timeline-item:last-child { margin-bottom: 0; }
+      .timeline-dot { position: absolute; left: -2rem; top: 4px; width: 16px; height: 16px; border-radius: 50%; background: var(--blue); border: 3px solid var(--bg); box-shadow: 0 0 0 2px var(--blue); flex-shrink: 0; }
+      .timeline-date { font-size: 0.75rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.06em; color: var(--blue); margin-bottom: 0.2rem; }
+      .timeline-title { font-size: 1rem; font-weight: 700; color: var(--gray-900); margin-bottom: 0.2rem; }
+      .timeline-desc { font-size: 0.9rem; color: var(--gray-500); line-height: 1.6; }
+
       @media (max-width: 768px) {
         .page-header { padding: 7rem 1.5rem 2rem; }
         .page-header h1 { font-size: 2rem; }
@@ -149,6 +161,37 @@ const jsonLd = [
           <a href="https://x.com/AIVancePro" target="_blank" rel="noopener" aria-label="X"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg></a>
           <a href="https://www.linkedin.com/company/aivancepro" target="_blank" rel="noopener" aria-label="LinkedIn"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 01-2.063-2.065 2.064 2.064 0 112.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg></a>
           <a href="https://www.youtube.com/channel/UC8MGuOS22H-jXfe8Haqw8LA" target="_blank" rel="noopener" aria-label="YouTube"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M23.498 6.186a3.016 3.016 0 00-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 00.502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 002.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 002.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/></svg></a>
+        </div>
+      </div>
+    </div>
+
+    <!-- Timeline -->
+    <div class="timeline-section">
+      <h2>Key milestones</h2>
+      <div class="timeline">
+        <div class="timeline-item">
+          <div class="timeline-dot"></div>
+          <div class="timeline-date">July 2025</div>
+          <div class="timeline-title">The idea</div>
+          <div class="timeline-desc">An AI-powered fitness coaching app, accessible to everyone.</div>
+        </div>
+        <div class="timeline-item">
+          <div class="timeline-dot"></div>
+          <div class="timeline-date">October 2025</div>
+          <div class="timeline-title">First prototype</div>
+          <div class="timeline-desc">Early testing with beta users.</div>
+        </div>
+        <div class="timeline-item">
+          <div class="timeline-dot"></div>
+          <div class="timeline-date">January 2026</div>
+          <div class="timeline-title">Official launch</div>
+          <div class="timeline-desc">AIVancePro available on iOS and Android.</div>
+        </div>
+        <div class="timeline-item">
+          <div class="timeline-dot"></div>
+          <div class="timeline-date">March 2026</div>
+          <div class="timeline-title">Community</div>
+          <div class="timeline-desc">Launch of the forum, social features, and 240+ exercises.</div>
         </div>
       </div>
     </div>
