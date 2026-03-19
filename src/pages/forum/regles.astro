@@ -1,0 +1,103 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+---
+
+<BaseLayout
+  lang="fr"
+  title="Règles du forum - AIVancePro"
+  description="Règles de la communauté AIVancePro. Pour un forum bienveillant et utile à tous."
+  canonical="https://aivancepro.fr/forum/regles/"
+>
+  <Fragment slot="head">
+    <style>
+      .rules-header { padding: 9rem 2rem 3rem; text-align: center; background: linear-gradient(180deg, var(--bg-card) 0%, var(--bg) 100%); border-bottom: 1px solid var(--border); }
+      .rules-header .section-label { display: inline-block; font-size: 0.8rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.08em; color: var(--blue); margin-bottom: 0.75rem; }
+      .rules-header h1 { font-size: 2.5rem; font-weight: 800; letter-spacing: -0.02em; margin-bottom: 0.75rem; }
+      .rules-header p { color: var(--text-secondary); font-size: 1.05rem; max-width: 550px; margin: 0 auto; }
+      .rules-content { max-width: 750px; margin: 0 auto; padding: 3rem 2rem 5rem; }
+      .rules-section { margin-bottom: 2.5rem; }
+      .rules-section h2 { font-size: 1.3rem; font-weight: 700; margin-bottom: 1.25rem; }
+      .rule-item { display: flex; gap: 0.75rem; margin-bottom: 1rem; align-items: flex-start; }
+      .rule-icon { width: 28px; height: 28px; border-radius: 8px; background: rgba(74,144,217,0.08); display: flex; align-items: center; justify-content: center; flex-shrink: 0; margin-top: 0.1rem; }
+      .rule-icon svg { width: 14px; height: 14px; color: var(--blue); }
+      .rule-text h3 { font-size: 0.95rem; font-weight: 600; margin-bottom: 0.15rem; }
+      .rule-text p { font-size: 0.88rem; color: var(--text-secondary); line-height: 1.6; }
+      .forbidden-list { list-style: none; padding: 0; }
+      .forbidden-list li { display: flex; align-items: center; gap: 0.5rem; padding: 0.5rem 0; font-size: 0.88rem; color: var(--text-secondary); border-bottom: 1px solid var(--border); }
+      .forbidden-list li:last-child { border-bottom: none; }
+      .forbidden-list li::before { content: ''; width: 6px; height: 6px; border-radius: 50%; background: #ef4444; flex-shrink: 0; }
+      .tips-list { list-style: none; padding: 0; }
+      .tips-list li { display: flex; align-items: center; gap: 0.5rem; padding: 0.5rem 0; font-size: 0.88rem; color: var(--text-secondary); }
+      .tips-list li::before { content: ''; width: 6px; height: 6px; border-radius: 50%; background: var(--blue); flex-shrink: 0; }
+      .back-link { display: inline-flex; align-items: center; gap: 0.35rem; color: var(--text-secondary); text-decoration: none; font-size: 0.85rem; margin-top: 2rem; transition: color 0.2s; }
+      .back-link:hover { color: var(--blue); }
+      @media (max-width: 768px) {
+        .rules-header { padding: 7rem 1.5rem 2rem; }
+        .rules-header h1 { font-size: 2rem; }
+      }
+    </style>
+  </Fragment>
+
+  <header class="rules-header">
+    <div class="section-label">Forum</div>
+    <h1>R&egrave;gles de la communaut&eacute;</h1>
+    <p>Pour que le forum reste un espace bienveillant et utile pour tous.</p>
+  </header>
+
+  <div class="rules-content">
+    <div class="rules-section">
+      <h2>R&egrave;gles principales</h2>
+      <div class="rule-item">
+        <div class="rule-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg></div>
+        <div class="rule-text"><h3>Soyez respectueux</h3><p>Pas d'insultes, de harc&egrave;lement ou de discrimination. Chacun est ici pour progresser.</p></div>
+      </div>
+      <div class="rule-item">
+        <div class="rule-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/></svg></div>
+        <div class="rule-text"><h3>Restez dans le sujet</h3><p>Le forum est d&eacute;di&eacute; au fitness, &agrave; la musculation et &agrave; la nutrition.</p></div>
+      </div>
+      <div class="rule-item">
+        <div class="rule-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 8A6 6 0 0 0 6 8c0 7-3 9-3 9h18s-3-2-3-9"/><path d="M13.73 21a2 2 0 0 1-3.46 0"/></svg></div>
+        <div class="rule-text"><h3>Pas de spam</h3><p>Pas de publicit&eacute;, de liens affili&eacute;s ou de contenu promotionnel.</p></div>
+      </div>
+      <div class="rule-item">
+        <div class="rule-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"/><path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"/></svg></div>
+        <div class="rule-text"><h3>Partagez vos sources</h3><p>Si vous citez des &eacute;tudes ou des chiffres, ajoutez un lien quand c'est possible.</p></div>
+      </div>
+      <div class="rule-item">
+        <div class="rule-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 12h-4l-3 9L9 3l-3 9H2"/></svg></div>
+        <div class="rule-text"><h3>Pas de conseils m&eacute;dicaux</h3><p>Ne remplacez pas un avis m&eacute;dical. En cas de blessure ou de douleur, consultez un professionnel.</p></div>
+      </div>
+    </div>
+
+    <div class="rules-section">
+      <h2>Contenu interdit</h2>
+      <ul class="forbidden-list">
+        <li>Contenu ill&eacute;gal ou dangereux</li>
+        <li>Promotion de substances interdites (st&eacute;ro&iuml;des, etc.)</li>
+        <li>Contenu sexuel ou violent</li>
+        <li>Donn&eacute;es personnelles d'autres personnes</li>
+        <li>Harc&egrave;lement ou menaces</li>
+      </ul>
+    </div>
+
+    <div class="rules-section">
+      <h2>Mod&eacute;ration</h2>
+      <p style="font-size:0.9rem;color:var(--text-secondary);line-height:1.7">Les mod&eacute;rateurs peuvent supprimer tout contenu contraire aux r&egrave;gles. En cas de non-respect r&eacute;p&eacute;t&eacute;, votre compte peut &ecirc;tre suspendu. Utilisez le bouton &laquo; Signaler &raquo; pour alerter les mod&eacute;rateurs.</p>
+    </div>
+
+    <div class="rules-section">
+      <h2>Conseils pour bien participer</h2>
+      <ul class="tips-list">
+        <li>Utilisez un titre clair pour vos sujets</li>
+        <li>D&eacute;crivez votre niveau et votre contexte quand vous posez une question</li>
+        <li>Remerciez les personnes qui vous aident (upvote)</li>
+        <li>Partagez vos r&eacute;sultats et votre progression</li>
+      </ul>
+    </div>
+
+    <a href="/forum/" class="back-link">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="width:16px;height:16px"><polyline points="15 18 9 12 15 6"/></svg>
+      Retour au forum
+    </a>
+  </div>
+</BaseLayout>

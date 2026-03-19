@@ -1,0 +1,240 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+
+const jsonLd = [
+  {
+    "@context": "https://schema.org",
+    "@type": "WebPage",
+    "name": "Transparence IA - AIVancePro",
+    "description": "Découvrez comment l'intelligence artificielle fonctionne dans AIVancePro, et ce que nous faisons pour protéger vos données.",
+    "url": "https://aivancepro.fr/transparence-ia/",
+    "publisher": {
+      "@type": "Organization",
+      "name": "AIVancePro",
+      "url": "https://aivancepro.fr"
+    }
+  },
+  {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      { "@type": "ListItem", "position": 1, "name": "Accueil", "item": "https://aivancepro.fr/" },
+      { "@type": "ListItem", "position": 2, "name": "Transparence IA", "item": "https://aivancepro.fr/transparence-ia/" }
+    ]
+  }
+];
+---
+
+<BaseLayout
+  lang="fr"
+  title="Transparence IA - AIVancePro"
+  description="Découvrez comment l'intelligence artificielle fonctionne dans AIVancePro, et ce que nous faisons pour protéger vos données."
+  canonical="https://aivancepro.fr/transparence-ia/"
+  jsonLd={jsonLd}
+>
+  <Fragment slot="head">
+    <style>
+      /* ── Header ── */
+      .page-header { padding: 9rem 2rem 3rem; text-align: center; background: linear-gradient(180deg, var(--bg-card), var(--bg)); }
+      .section-label { display: inline-block; font-size: 0.8rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.08em; color: var(--blue); margin-bottom: 0.75rem; }
+      .page-header h1 { font-size: 2.8rem; font-weight: 800; letter-spacing: -0.02em; margin-bottom: 1rem; color: var(--gray-900); }
+      .page-header p { color: var(--gray-500); font-size: 1.1rem; max-width: 640px; margin: 0 auto; line-height: 1.7; }
+
+      /* ── Layout ── */
+      .ia-content { max-width: 800px; margin: 0 auto; padding: 3rem 2rem 4rem; }
+
+      /* ── Sections ── */
+      .ia-section { margin-bottom: 2.5rem; }
+      .ia-section h2 { font-size: 1.4rem; font-weight: 700; color: var(--gray-900); margin-bottom: 1rem; display: flex; align-items: center; gap: 0.6rem; }
+      .ia-section h2 .icon { font-size: 1.3rem; }
+      .ia-section p { color: var(--gray-600); font-size: 0.95rem; line-height: 1.8; margin-bottom: 1rem; text-align: justify; }
+      .ia-section ul { padding-left: 1.5rem; margin-bottom: 1rem; }
+      .ia-section li { color: var(--gray-600); font-size: 0.95rem; line-height: 1.8; margin-bottom: 0.5rem; }
+      .ia-section strong { color: var(--gray-900); }
+
+      /* ── Info cards ── */
+      .info-cards { display: grid; grid-template-columns: repeat(2, 1fr); gap: 1rem; margin: 1.5rem 0; }
+      .info-card { background: var(--bg-card); border: 1px solid var(--gray-200); border-radius: 14px; padding: 1.5rem; }
+      .info-card .card-icon { font-size: 1.4rem; margin-bottom: 0.6rem; }
+      .info-card h3 { font-size: 0.95rem; font-weight: 700; color: var(--gray-900); margin-bottom: 0.4rem; }
+      .info-card p { font-size: 0.88rem; color: var(--gray-500); line-height: 1.6; margin: 0; text-align: left; }
+
+      /* ── Can / Cannot split ── */
+      .split-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; margin: 1.5rem 0; }
+      .split-card { border-radius: 14px; padding: 1.5rem; }
+      .split-card.can { background: #f0fdf4; border: 1px solid #bbf7d0; }
+      .split-card.cannot { background: #fef2f2; border: 1px solid #fecaca; }
+      .split-card h3 { font-size: 0.95rem; font-weight: 700; margin-bottom: 0.75rem; display: flex; align-items: center; gap: 0.4rem; }
+      .split-card.can h3 { color: #166534; }
+      .split-card.cannot h3 { color: #991b1b; }
+      .split-card ul { padding-left: 1.25rem; margin: 0; }
+      .split-card li { font-size: 0.88rem; line-height: 1.7; margin-bottom: 0.3rem; }
+      .split-card.can li { color: #15803d; }
+      .split-card.cannot li { color: #b91c1c; }
+
+      /* ── Data protection list ── */
+      .protection-list { list-style: none; padding: 0; margin: 1.5rem 0; }
+      .protection-list li { display: flex; align-items: flex-start; gap: 0.75rem; padding: 1rem 1.25rem; background: var(--bg-card); border: 1px solid var(--gray-200); border-radius: 12px; margin-bottom: 0.75rem; font-size: 0.92rem; color: var(--gray-600); line-height: 1.6; }
+      .protection-list .check { color: var(--blue); font-size: 1.1rem; flex-shrink: 0; margin-top: 0.1rem; }
+
+      /* ── Engagement grid ── */
+      .engagement-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 1rem; margin: 1.5rem 0; }
+      .engagement-item { background: var(--bg-card); border: 1px solid var(--gray-200); border-radius: 14px; padding: 1.5rem; text-align: center; }
+      .engagement-item .icon { font-size: 1.5rem; margin-bottom: 0.5rem; }
+      .engagement-item h3 { font-size: 0.95rem; font-weight: 700; color: var(--gray-900); margin-bottom: 0.3rem; }
+      .engagement-item p { font-size: 0.85rem; color: var(--gray-500); margin: 0; line-height: 1.6; }
+
+      /* ── Warning box ── */
+      .warning-box { background: #fffbeb; border: 1px solid #fde68a; border-radius: 12px; padding: 1.25rem 1.5rem; display: flex; align-items: flex-start; gap: 0.75rem; margin: 1.5rem 0; }
+      .warning-box .warn-icon { font-size: 1.2rem; flex-shrink: 0; margin-top: 0.1rem; }
+      .warning-box p { font-size: 0.9rem; color: #92400e; line-height: 1.6; margin: 0; }
+
+      /* ── CTA box ── */
+      .cta-box { background: var(--blue); border-radius: 20px; padding: 2.5rem; text-align: center; color: #fff; margin-top: 3rem; }
+      .cta-box h2 { font-size: 1.5rem; font-weight: 800; margin-bottom: 0.75rem; color: #fff; }
+      .cta-box p { opacity: 0.9; margin-bottom: 1.5rem; font-size: 0.95rem; }
+      .cta-box a { display: inline-block; background: #fff; color: var(--blue); font-weight: 700; font-size: 0.95rem; padding: 0.75rem 2rem; border-radius: 12px; text-decoration: none; transition: transform 0.2s, box-shadow 0.2s; }
+      .cta-box a:hover { transform: translateY(-2px); box-shadow: 0 4px 12px rgba(0,0,0,0.15); }
+
+      .back { display: inline-block; margin-top: 2rem; color: var(--gray-500); text-decoration: none; font-size: 0.9rem; }
+      .back:hover { color: var(--gray-900); }
+
+      /* ── Responsive ── */
+      @media (max-width: 768px) {
+        .page-header { padding: 7rem 1.5rem 2rem; }
+        .page-header h1 { font-size: 2rem; }
+        .info-cards, .split-grid, .engagement-grid { grid-template-columns: 1fr; }
+      }
+    </style>
+  </Fragment>
+
+  <header class="page-header">
+    <div class="section-label">Transparence IA</div>
+    <h1>Notre approche de l'IA</h1>
+    <p>Comment l'intelligence artificielle fonctionne dans AIVancePro, et ce que nous faisons pour prot&eacute;ger vos donn&eacute;es.</p>
+  </header>
+
+  <div class="ia-content">
+
+    <!-- Section 1: Comment fonctionne le coach IA -->
+    <div class="ia-section">
+      <h2><span class="icon">&#x1F9E0;</span> Comment fonctionne le coach IA</h2>
+      <div class="info-cards">
+        <div class="info-card">
+          <div class="card-icon">&#x1F4AC;</div>
+          <h3>Mod&egrave;les de langage avanc&eacute;s</h3>
+          <p>AIVancePro utilise des LLM (Large Language Models) pour g&eacute;n&eacute;rer des conseils d'entra&icirc;nement personnalis&eacute;s en temps r&eacute;el.</p>
+        </div>
+        <div class="info-card">
+          <div class="card-icon">&#x1F464;</div>
+          <h3>Analyse de votre profil</h3>
+          <p>Le coach analyse votre niveau, vos objectifs et votre &eacute;quipement pour adapter chaque recommandation &agrave; votre situation.</p>
+        </div>
+        <div class="info-card">
+          <div class="card-icon">&#x26A1;</div>
+          <h3>G&eacute;n&eacute;ration en temps r&eacute;el</h3>
+          <p>Chaque programme est g&eacute;n&eacute;r&eacute; dynamiquement &mdash; pas &agrave; partir de templates pr&eacute;-faits. Votre historique de s&eacute;ances influence directement les recommandations.</p>
+        </div>
+        <div class="info-card">
+          <div class="card-icon">&#x1F4DA;</div>
+          <h3>Fond&eacute; sur la science</h3>
+          <p>L'IA s'appuie sur la litt&eacute;rature scientifique en science du sport pour ses recommandations (hypertrophie, p&eacute;riodisation, volume).</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Section 2: Ce que l'IA peut et ne peut pas faire -->
+    <div class="ia-section">
+      <h2><span class="icon">&#x2696;&#xFE0F;</span> Ce que l'IA peut et ne peut pas faire</h2>
+      <div class="split-grid">
+        <div class="split-card can">
+          <h3>&#x2705; L'IA peut</h3>
+          <ul>
+            <li>G&eacute;n&eacute;rer des programmes personnalis&eacute;s</li>
+            <li>Analyser votre progression</li>
+            <li>R&eacute;pondre &agrave; vos questions fitness</li>
+            <li>Ajuster les charges et le volume</li>
+            <li>Proposer des alternatives d'exercices</li>
+          </ul>
+        </div>
+        <div class="split-card cannot">
+          <h3>&#x274C; L'IA ne peut pas</h3>
+          <ul>
+            <li>Remplacer un m&eacute;decin</li>
+            <li>Diagnostiquer une blessure</li>
+            <li>Prescrire un r&eacute;gime alimentaire m&eacute;dical</li>
+            <li>Se substituer &agrave; un kin&eacute;sith&eacute;rapeute</li>
+          </ul>
+        </div>
+      </div>
+      <div class="warning-box">
+        <span class="warn-icon">&#x26A0;&#xFE0F;</span>
+        <p><strong>Important :</strong> en cas de douleur ou de probl&egrave;me de sant&eacute;, consultez toujours un professionnel de sant&eacute;. L'IA est un outil d'aide, pas un substitut m&eacute;dical.</p>
+      </div>
+    </div>
+
+    <!-- Section 3: Protection de vos données -->
+    <div class="ia-section">
+      <h2><span class="icon">&#x1F512;</span> Protection de vos donn&eacute;es</h2>
+      <p>La s&eacute;curit&eacute; de vos donn&eacute;es est une priorit&eacute; absolue. Voici nos engagements concrets :</p>
+      <ul class="protection-list">
+        <li>
+          <span class="check">&#x2713;</span>
+          <span>Vos donn&eacute;es d'entra&icirc;nement sont stock&eacute;es de mani&egrave;re s&eacute;curis&eacute;e sur des <strong>serveurs europ&eacute;ens</strong> (Supabase, h&eacute;berg&eacute; en Europe).</span>
+        </li>
+        <li>
+          <span class="check">&#x2713;</span>
+          <span>Vos conversations avec le coach IA <strong>ne sont pas utilis&eacute;es</strong> pour entra&icirc;ner des mod&egrave;les tiers.</span>
+        </li>
+        <li>
+          <span class="check">&#x2713;</span>
+          <span>Vous pouvez <strong>supprimer votre compte</strong> et toutes vos donn&eacute;es &agrave; tout moment depuis les param&egrave;tres de l'application.</span>
+        </li>
+        <li>
+          <span class="check">&#x2713;</span>
+          <span>Nous ne vendons <strong>jamais</strong> vos donn&eacute;es &agrave; des tiers.</span>
+        </li>
+        <li>
+          <span class="check">&#x2713;</span>
+          <span><strong>Conformit&eacute; RGPD</strong> (R&egrave;glement G&eacute;n&eacute;ral sur la Protection des Donn&eacute;es) &mdash; vos droits d'acc&egrave;s, de rectification et de suppression sont respect&eacute;s.</span>
+        </li>
+      </ul>
+    </div>
+
+    <!-- Section 4: Notre engagement -->
+    <div class="ia-section">
+      <h2><span class="icon">&#x1F91D;</span> Notre engagement</h2>
+      <div class="engagement-grid">
+        <div class="engagement-item">
+          <div class="icon">&#x1F50D;</div>
+          <h3>Transparence</h3>
+          <p>Nous vous expliquons toujours comment l'IA prend ses d&eacute;cisions.</p>
+        </div>
+        <div class="engagement-item">
+          <div class="icon">&#x1F9EA;</div>
+          <h3>Science</h3>
+          <p>Chaque fonctionnalit&eacute; est bas&eacute;e sur des &eacute;tudes publi&eacute;es en science du sport.</p>
+        </div>
+        <div class="engagement-item">
+          <div class="icon">&#x1F3AF;</div>
+          <h3>Contr&ocirc;le</h3>
+          <p>Vous gardez toujours le contr&ocirc;le sur vos donn&eacute;es et vos entra&icirc;nements.</p>
+        </div>
+        <div class="engagement-item">
+          <div class="icon">&#x1F504;</div>
+          <h3>Am&eacute;lioration continue</h3>
+          <p>Nous mettons &agrave; jour r&eacute;guli&egrave;rement nos mod&egrave;les pour de meilleures recommandations.</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- CTA -->
+    <div class="cta-box">
+      <h2>Des questions sur notre IA ?</h2>
+      <p>Notre &eacute;quipe est disponible pour r&eacute;pondre &agrave; toutes vos questions sur le fonctionnement de l'IA et la protection de vos donn&eacute;es.</p>
+      <a href="/support/">Contactez-nous</a>
+    </div>
+
+    <a href="/" class="back">&larr; Retour &agrave; l'accueil</a>
+  </div>
+</BaseLayout>
