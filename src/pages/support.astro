@@ -68,8 +68,8 @@ import BaseLayout from '../layouts/BaseLayout.astro';
       .btn-submit { padding: 0.7rem 1.5rem; border-radius: 12px; border: none; background: var(--blue); color: #fff; font-size: 0.9rem; font-weight: 600; font-family: inherit; cursor: pointer; transition: all 0.2s; box-shadow: 0 4px 15px rgba(74, 144, 217, 0.3); }
       .btn-submit:hover { opacity: 0.92; transform: translateY(-2px); box-shadow: 0 6px 20px rgba(74, 144, 217, 0.4); }
       .btn-submit:disabled { opacity: 0.5; cursor: not-allowed; transform: none; }
-      .form-success { display: none; padding: 1rem 1.25rem; background: rgba(16,185,129,0.08); border: 1px solid rgba(16,185,129,0.2); border-radius: 10px; color: #10B981; font-size: 0.9rem; font-weight: 600; margin-top: 1rem; }
-      .form-error { display: none; padding: 1rem 1.25rem; background: rgba(239,68,68,0.08); border: 1px solid rgba(239,68,68,0.2); border-radius: 10px; color: #ef4444; font-size: 0.9rem; margin-top: 1rem; }
+      .form-success { padding: 1rem 1.25rem; background: rgba(16,185,129,0.08); border: 1px solid rgba(16,185,129,0.2); border-radius: 10px; color: #10B981; font-size: 0.9rem; font-weight: 600; margin-top: 1rem; }
+      .form-error { padding: 1rem 1.25rem; background: rgba(239,68,68,0.08); border: 1px solid rgba(239,68,68,0.2); border-radius: 10px; color: #ef4444; font-size: 0.9rem; margin-top: 1rem; }
 
       .info-card { background: var(--bg-card); border: 1px solid var(--border); border-radius: 14px; padding: 1.25rem; margin-bottom: 1rem; display: flex; align-items: flex-start; gap: 1rem; }
       .info-card .icon { width: 40px; height: 40px; border-radius: 10px; background: rgba(74,144,217,0.08); display: flex; align-items: center; justify-content: center; flex-shrink: 0; }
@@ -258,13 +258,13 @@ import BaseLayout from '../layouts/BaseLayout.astro';
     })
     .then(function(res) {
       if (!res.ok) throw new Error('err');
-      successEl.style.display = '';
+      successEl.style.display = 'block';
       successEl.scrollIntoView({ behavior: 'smooth', block: 'center' });
       document.getElementById('contactForm').reset();
     })
     .catch(function() {
       errorEl.textContent = 'Erreur. Essayez par email : aivancepro@gmail.com';
-      errorEl.style.display = '';
+      errorEl.style.display = 'block';
     })
     .finally(function() {
       btn.disabled = false;
