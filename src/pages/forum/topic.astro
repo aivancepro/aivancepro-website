@@ -392,9 +392,9 @@ if (postId) {
         '<div class="topic-post">' + heroHtml + articleLink +
           '<div class="topic-post-header"><span class="topic-tag ' + catClass + '">' + catText + '</span>' +
             '<span class="tp-author">' + escapeHtml(post.author_name) + '</span><span>·</span><span>' + formatDate(post.created_at) + '</span></div>' +
-          '<div class="topic-title">' + escapeHtml(post.title) + '</div>' +
+          '<div class="topic-title" id="title-post">' + escapeHtml(post.title) + '</div>' +
           '<div class="topic-body" id="body-post">' + linkify(post.body) + '</div>' +
-          '<button class="act translate-btn" data-translate-text="' + escapeHtml(post.body).substring(0, 1000) + '" data-translate-target="body-post" style="margin-top:0.5rem">' + svgTranslate + ' ' + t.translate + '</button>' +
+          '<button class="act translate-btn" data-translate-text="' + escapeHtml(post.title) + '" data-translate-target="title-post" data-translate-text2="' + escapeHtml(post.body).substring(0, 1000) + '" data-translate-target2="body-post" style="margin-top:0.5rem">' + svgTranslate + ' ' + t.translate + '</button>' +
           actionBar(post.id, 'post', post.upvotes, { barClass: 'action-bar', showReply: false, postTitle: post.title }) +
         '</div>';
       loadReplies();
@@ -608,20 +608,28 @@ if (postId) {
     document.addEventListener('click', function(e) {
       var translateBtn = e.target.closest('.translate-btn');
       if (translateBtn) {
-        var text = translateBtn.dataset.translateText;
-        var targetId = translateBtn.dataset.translateTarget;
-        var targetEl = document.getElementById(targetId);
-        if (!targetEl || translateBtn.dataset.done) return;
+        if (translateBtn.dataset.done) return;
         translateBtn.innerHTML = '...';
-        fetch('https://translate.googleapis.com/translate_a/single?client=gtx&sl=auto&tl=' + LANG + '&dt=t&q=' + encodeURIComponent(text))
-          .then(function(r) { return r.json(); })
-          .then(function(data) {
-            var translated = data[0].map(function(s) { return s[0]; }).join('');
-            targetEl.innerHTML = translated.replace(/\n/g, '<br>');
-            translateBtn.innerHTML = svgTranslate + ' ' + t.translated;
-            translateBtn.dataset.done = '1';
-          })
-          .catch(function() { translateBtn.innerHTML = svgTranslate + ' ' + t.translate; });
+        var jobs = [];
+        // Primary target
+        var text = translateBtn.dataset.translateText;
+        var targetEl = document.getElementById(translateBtn.dataset.translateTarget);
+        if (text && targetEl) jobs.push({ text: text, el: targetEl });
+        // Secondary target (for title + body combo)
+        var text2 = translateBtn.dataset.translateText2;
+        var targetEl2 = translateBtn.dataset.translateTarget2 ? document.getElementById(translateBtn.dataset.translateTarget2) : null;
+        if (text2 && targetEl2) jobs.push({ text: text2, el: targetEl2 });
+        Promise.all(jobs.map(function(job) {
+          return fetch('https://translate.googleapis.com/translate_a/single?client=gtx&sl=auto&tl=' + LANG + '&dt=t&q=' + encodeURIComponent(job.text))
+            .then(function(r) { return r.json(); })
+            .then(function(data) {
+              var translated = data[0].map(function(s) { return s[0]; }).join('');
+              job.el.innerHTML = translated.replace(/\n/g, '<br>');
+            });
+        })).then(function() {
+          translateBtn.innerHTML = svgTranslate + ' ' + t.translated;
+          translateBtn.dataset.done = '1';
+        }).catch(function() { translateBtn.innerHTML = svgTranslate + ' ' + t.translate; });
         return;
       }
       var votesBtn = e.target.closest('.act.votes');
