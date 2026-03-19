@@ -109,6 +109,7 @@ export const t = {
       blog: 'Blog',
       guides: 'Guides',
       exercises: 'Exercise Library',
+      forum: 'Forum',
 
       changelog: 'Changelog',
       more: 'More',
@@ -181,6 +182,7 @@ export const t = {
       blog: '/en/blog/',
       guides: '/en/guides/',
       exercises: '/en/exercises/',
+      forum: '/forum/',
 
       login: '/en/login/',
       privacy: '/en/privacy/',
@@ -201,6 +203,7 @@ export const t = {
       blog: 'Blog',
       guides: 'Ratgeber',
       exercises: '\u00dcbungsbibliothek',
+      forum: 'Forum',
 
       changelog: 'Neuigkeiten',
       more: 'Mehr',
@@ -273,6 +276,7 @@ export const t = {
       blog: '/de/blog/',
       guides: '/de/ratgeber/',
       exercises: '/de/uebungen/',
+      forum: '/forum/',
 
       login: '/de/login/',
       privacy: '/de/datenschutz/',
