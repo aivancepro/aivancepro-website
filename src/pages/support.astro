@@ -161,7 +161,12 @@ import BaseLayout from '../layouts/BaseLayout.astro';
     <h2>Nous contacter</h2>
     <div class="contact-grid">
       <div>
-        <form id="contactForm">
+        <div class="form-success" id="formSuccess" style="display:none">Message envoyé avec succès ! Nous vous répondrons sous 24h.</div>
+        <form action="https://formsubmit.co/aivancepro@gmail.com" method="POST" id="contactForm">
+          <input type="hidden" name="_next" value="https://aivancepro.fr/support/?sent=true#contact">
+          <input type="hidden" name="_captcha" value="false">
+          <input type="hidden" name="_subject" value="Nouveau message de contact AIVancePro">
+          <input type="hidden" name="_template" value="table">
           <div class="form-field">
             <label for="contactName">Nom</label>
             <input type="text" id="contactName" name="name" placeholder="Votre nom" required>
@@ -173,20 +178,18 @@ import BaseLayout from '../layouts/BaseLayout.astro';
           <div class="form-field">
             <label for="contactSubject">Sujet</label>
             <select id="contactSubject" name="subject">
-              <option value="question">Question générale</option>
-              <option value="bug">Signaler un bug</option>
-              <option value="suggestion">Suggestion</option>
-              <option value="partenariat">Partenariat</option>
-              <option value="autre">Autre</option>
+              <option value="Question générale">Question générale</option>
+              <option value="Signaler un bug">Signaler un bug</option>
+              <option value="Suggestion">Suggestion</option>
+              <option value="Partenariat">Partenariat</option>
+              <option value="Autre">Autre</option>
             </select>
           </div>
           <div class="form-field">
             <label for="contactMessage">Message</label>
             <textarea id="contactMessage" name="message" placeholder="Décrivez votre demande..." required></textarea>
           </div>
-          <button type="submit" class="btn-submit" id="btnSubmit">Envoyer</button>
-          <div class="form-success" id="formSuccess">Message envoyé avec succès ! Nous vous répondrons sous 24h.</div>
-          <div class="form-error" id="formError"></div>
+          <button type="submit" class="btn-submit">Envoyer</button>
         </form>
       </div>
 
@@ -233,40 +236,9 @@ import BaseLayout from '../layouts/BaseLayout.astro';
   </section>
 
   <script is:inline>
-  document.getElementById('contactForm').addEventListener('submit', async function(e) {
-    e.preventDefault();
-    var btn = document.getElementById('btnSubmit');
-    var successEl = document.getElementById('formSuccess');
-    var errorEl = document.getElementById('formError');
-    successEl.style.display = 'none';
-    errorEl.style.display = 'none';
-
-    var form = document.getElementById('contactForm');
-    var formData = new FormData(form);
-
-    btn.disabled = true;
-    btn.textContent = 'Envoi...';
-
-    try {
-      var res = await fetch('https://vzmtvhcvyqzkmestdbko.supabase.co/functions/v1/contactNotify', {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({
-          name: formData.get('name'),
-          email: formData.get('email'),
-          subject: formData.get('subject'),
-          message: formData.get('message')
-        })
-      });
-      if (!res.ok) throw new Error('Erreur serveur');
-      successEl.style.display = '';
-      form.reset();
-    } catch(err) {
-      errorEl.textContent = 'Erreur lors de l\'envoi. Essayez par email : aivancepro@gmail.com';
-      errorEl.style.display = '';
-    }
-    btn.disabled = false;
-    btn.textContent = 'Envoyer';
-  });
+  if (new URLSearchParams(window.location.search).get('sent') === 'true') {
+    var s = document.getElementById('formSuccess');
+    if (s) { s.style.display = ''; s.scrollIntoView({ behavior: 'smooth', block: 'center' }); }
+  }
   </script>
 </BaseLayout>
