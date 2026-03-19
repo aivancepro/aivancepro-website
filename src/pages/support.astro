@@ -251,10 +251,20 @@ import BaseLayout from '../layouts/BaseLayout.astro';
     btn.disabled = true;
     btn.textContent = 'Envoi...';
 
+    var payload = JSON.stringify({ name: name, email: email, subject: subject, message: message });
+
+    // Send email via Formsubmit
+    fetch('https://formsubmit.co/ajax/aivancepro@gmail.com', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json', 'Accept': 'application/json' },
+      body: payload
+    }).catch(function() {});
+
+    // Save + push notification via Edge Function
     fetch('https://vzmtvhcvyqzkmestdbko.supabase.co/functions/v1/contactNotify', {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify({ name: name, email: email, subject: subject, message: message })
+      body: payload
     })
     .then(function(res) {
       if (!res.ok) throw new Error('err');
