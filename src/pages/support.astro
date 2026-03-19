@@ -162,11 +162,8 @@ import BaseLayout from '../layouts/BaseLayout.astro';
     <div class="contact-grid">
       <div>
         <div class="form-success" id="formSuccess" style="display:none">Message envoyé avec succès ! Nous vous répondrons sous 24h.</div>
-        <form action="https://formsubmit.co/aivancepro@gmail.com" method="POST" id="contactForm">
-          <input type="hidden" name="_next" value="https://aivancepro.fr/support/?sent=true#contact">
-          <input type="hidden" name="_captcha" value="false">
-          <input type="hidden" name="_subject" value="Nouveau message de contact AIVancePro">
-          <input type="hidden" name="_template" value="table">
+        <div class="form-error" id="formError" style="display:none"></div>
+        <form id="contactForm">
           <div class="form-field">
             <label for="contactName">Nom</label>
             <input type="text" id="contactName" name="name" placeholder="Votre nom" required>
@@ -236,15 +233,43 @@ import BaseLayout from '../layouts/BaseLayout.astro';
   </section>
 
   <script is:inline>
-  // Show success message after Formsubmit redirect
-  var sent = new URLSearchParams(window.location.search).get('sent') === 'true' || document.cookie.indexOf('contact_sent=1') !== -1;
-  if (sent) {
-    var s = document.getElementById('formSuccess');
-    if (s) { s.style.display = ''; setTimeout(function() { s.scrollIntoView({ behavior: 'smooth', block: 'center' }); }, 100); }
-    document.cookie = 'contact_sent=; max-age=0; path=/';
-  }
-  // Set cookie before form submit
-  var f = document.getElementById('contactForm');
-  if (f) f.addEventListener('submit', function() { document.cookie = 'contact_sent=1; max-age=300; path=/'; });
+  document.getElementById('contactForm').addEventListener('submit', function(e) {
+    e.preventDefault();
+    var btn = this.querySelector('.btn-submit');
+    var successEl = document.getElementById('formSuccess');
+    var errorEl = document.getElementById('formError');
+    successEl.style.display = 'none';
+    errorEl.style.display = 'none';
+
+    var name = document.getElementById('contactName').value.trim();
+    var email = document.getElementById('contactEmail').value.trim();
+    var subject = document.getElementById('contactSubject').value;
+    var message = document.getElementById('contactMessage').value.trim();
+
+    if (!name || !email || !message) return;
+
+    btn.disabled = true;
+    btn.textContent = 'Envoi...';
+
+    fetch('https://vzmtvhcvyqzkmestdbko.supabase.co/functions/v1/contactNotify', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ name: name, email: email, subject: subject, message: message })
+    })
+    .then(function(res) {
+      if (!res.ok) throw new Error('err');
+      successEl.style.display = '';
+      successEl.scrollIntoView({ behavior: 'smooth', block: 'center' });
+      document.getElementById('contactForm').reset();
+    })
+    .catch(function() {
+      errorEl.textContent = 'Erreur. Essayez par email : aivancepro@gmail.com';
+      errorEl.style.display = '';
+    })
+    .finally(function() {
+      btn.disabled = false;
+      btn.textContent = 'Envoyer';
+    });
+  });
   </script>
 </BaseLayout>
