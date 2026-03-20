@@ -1,42 +1,109 @@
 ---
 import BaseLayout from '../../../layouts/BaseLayout.astro';
 import { exercises, toSlug } from '../../../data/exercises-de.js';
+import { frontParts, backParts } from '../../../data/musclePathsData.js';
 
+// ── Build-time SVG generation ──────────────────────────────
+const PRIMARY_COLOR        = '#4A90D9';
+const INACTIVE_DARK_MODE   = '#c8c8e0'; // light body → visible on dark cards
+const INACTIVE_LIGHT_MODE  = '#252535'; // dark body  → visible on light cards
+const STRUCT_DARK_MODE     = '#9090b0';
+const STRUCT_LIGHT_MODE    = '#1c1c28';
+const STROKE_DARK_MODE     = '#0d0d14';
+const STROKE_LIGHT_MODE    = '#0d0d14';
+const STRUCTURAL           = new Set(['head','hair','hands','feet','ankles','knees','neck','tibialis']);
+
+function buildGroupSvg(primarySlugs, view = 'front', theme = 'dark') {
+  const inactiveColor = theme === 'light' ? INACTIVE_LIGHT_MODE : INACTIVE_DARK_MODE;
+  const structColor   = theme === 'light' ? STRUCT_LIGHT_MODE   : STRUCT_DARK_MODE;
+  const strokeColor   = theme === 'light' ? STROKE_LIGHT_MODE   : STROKE_DARK_MODE;
+  const primary = new Set(primarySlugs);
+  const fill = (slug) => STRUCTURAL.has(slug) ? structColor : primary.has(slug) ? PRIMARY_COLOR : inactiveColor;
+  let body = '';
+  const render = (parts) => parts.forEach(p => {
+    const paths = [...(p.paths?.left||[]), ...(p.paths?.right||[]), ...(p.paths?.common||[])];
+    body += `<g fill="${fill(p.slug)}" stroke="${strokeColor}" stroke-width="0.5">`;
+    paths.forEach(d => { body += `<path d="${d}"/>`; });
+    body += '</g>';
+  });
+  if (view === 'front' || view === 'both') render(frontParts);
+  if (view === 'back'  || view === 'both') render(backParts);
+  const vb = view === 'back' ? '780 80 600 1260' : view === 'both' ? '40 80 1380 1280' : '80 80 600 1260';
+  return `data:image/svg+xml,${encodeURIComponent(`<svg xmlns="http://www.w3.org/2000/svg" viewBox="${vb}">${body}</svg>`)}`;
+}
+
+// ── Equipment photos (Pexels CDN) + local fallbacks for niche equipment ──
+const EQUIP_PHOTO_IDS: Record<string, number> = {
+  'Langhantel':              841130,
+  'Kurzhanteln':             4164763,
+  'Maschine':                3838937,
+  'Kabelzug':                1480520,
+  'Eigengewicht':            4162491,
+  'Multipresse':             3837757,
+  'Kettlebell':              2836961,
+  'SZ-Stange':               896058,
+  'Widerstandsband':         6339598,
+  'Landmine':                1552252,
+  'Medizinball':             4720521,
+};
+
+// Local photos for equipment without free stock photos
+const EQUIP_LOCAL_PHOTOS: Record<string, string> = {
+  'TRX':                   '/assets/equipment/trx.jpg',
+  'Gewichtet':             '/assets/equipment/leste.jpg',
+};
+
+function equipPhoto(id: string): string {
+  if (EQUIP_LOCAL_PHOTOS[id]) return EQUIP_LOCAL_PHOTOS[id];
+  const photoId = EQUIP_PHOTO_IDS[id];
+  if (photoId) {
+    return `https://images.pexels.com/photos/${photoId}/pexels-photo-${photoId}.jpeg?auto=compress&cs=tinysrgb&w=400&h=280&dpr=1`;
+  }
+  return '';
+}
+
+// ── Difficulty colors ──────────────────────────────────────
 const difficultyColors = {
-  "Anfänger": { bg: "rgba(16, 185, 129, 0.1)", color: "#10B981" },
-  "Fortgeschritten": { bg: "rgba(245, 158, 11, 0.1)", color: "#F59E0B" },
-  "Experte": { bg: "rgba(239, 68, 68, 0.1)", color: "#EF4444" },
+  "Anfänger":        { bg: "rgba(16, 185, 129, 0.1)",  color: "#10B981" },
+  "Fortgeschritten": { bg: "rgba(245, 158, 11, 0.1)",  color: "#F59E0B" },
+  "Experte":         { bg: "rgba(239, 68, 68, 0.1)",   color: "#EF4444" },
 };
 
 const totalCount = exercises.length;
 
+// ── Muscle groups with build-time SVG ─────────────────────
 const muscleGroups = [
-  { id: "pectoraux", label: "Brust", icon: "💪" },
-  { id: "dos", label: "Rücken", icon: "🔙" },
-  { id: "epaules", label: "Schultern", icon: "🏋️" },
-  { id: "biceps", label: "Bizeps", icon: "💪" },
-  { id: "triceps", label: "Trizeps", icon: "🦾" },
-  { id: "jambes", label: "Beine", icon: "🦵" },
-  { id: "fessiers", label: "Gesäß", icon: "🍑" },
-  { id: "abdos", label: "Bauch", icon: "🎯" },
-  { id: "avant-bras", label: "Unterarme", icon: "✊" },
-  { id: "fonctionnel", label: "Funktionell", icon: "⚡" },
-];
+  { id: "pectoraux",   label: "Brust",        slugs: ['chest'],                               view: 'front' },
+  { id: "dos",         label: "Rücken",       slugs: ['upper-back','trapezius','lower-back'], view: 'back'  },
+  { id: "epaules",     label: "Schultern",    slugs: ['deltoids'],                            view: 'front' },
+  { id: "biceps",      label: "Bizeps",       slugs: ['biceps'],                              view: 'front' },
+  { id: "triceps",     label: "Trizeps",      slugs: ['triceps'],                             view: 'back'  },
+  { id: "jambes",      label: "Beine",        slugs: ['quadriceps','calves'],                 view: 'front' },
+  { id: "fessiers",    label: "Gesäß",        slugs: ['gluteal'],                             view: 'back'  },
+  { id: "abdos",       label: "Bauch",        slugs: ['abs','obliques'],                      view: 'front' },
+  { id: "avant-bras",  label: "Unterarme",    slugs: ['forearm'],                             view: 'front' },
+  { id: "fonctionnel", label: "Funktionell",  slugs: ['chest','abs','deltoids','quadriceps'], view: 'front' },
+].map(m => ({
+  ...m,
+  svgDark:  buildGroupSvg(m.slugs, m.view, 'dark'),
+  svgLight: buildGroupSvg(m.slugs, m.view, 'light'),
+}));
 
+// ── Equipment list ─────────────────────────────────────────
 const equipmentList = [
-  { id: "Langhantel", label: "Langhantel", icon: "🏋️" },
-  { id: "Kurzhanteln", label: "Kurzhanteln", icon: "🏋️" },
-  { id: "Maschine", label: "Maschine", icon: "⚙️" },
-  { id: "Kabelzug", label: "Kabelzug", icon: "🔗" },
-  { id: "Eigengewicht", label: "Eigengewicht", icon: "🧍" },
-  { id: "Gewichtet", label: "Gewichtet", icon: "🎒" },
-  { id: "Multipresse", label: "Multipresse", icon: "🏗️" },
-  { id: "Kettlebell", label: "Kettlebell", icon: "🔔" },
-  { id: "SZ-Stange", label: "SZ-Stange", icon: "〰️" },
-  { id: "Widerstandsband", label: "Widerstandsband", icon: "🪢" },
-  { id: "TRX", label: "TRX", icon: "🪢" },
-  { id: "Landmine", label: "Landmine", icon: "💣" },
-  { id: "Medizinball", label: "Medizinball", icon: "⚽" },
+  { id: "Langhantel",       label: "Langhantel"       },
+  { id: "Kurzhanteln",      label: "Kurzhanteln"      },
+  { id: "Maschine",         label: "Maschine"         },
+  { id: "Kabelzug",         label: "Kabelzug"         },
+  { id: "Eigengewicht",     label: "Eigengewicht"     },
+  { id: "Gewichtet",        label: "Gewichtet"        },
+  { id: "Multipresse",      label: "Multipresse"      },
+  { id: "Kettlebell",       label: "Kettlebell"       },
+  { id: "SZ-Stange",        label: "SZ-Stange"        },
+  { id: "Widerstandsband",  label: "Widerstandsband"  },
+  { id: "TRX",              label: "TRX"              },
+  { id: "Landmine",         label: "Landmine"         },
+  { id: "Medizinball",      label: "Medizinball"      },
 ];
 
 const muscleGroupCounts = {};
@@ -59,63 +126,82 @@ equipmentList.forEach(eq => {
 >
   <Fragment slot="head">
     <style>
-        .page-header { padding: 9rem 2rem 2rem; text-align: center; background: linear-gradient(180deg, var(--bg-card), var(--bg)); }
+        .page-header { padding: 9rem 2rem 2rem; text-align: center; background: linear-gradient(180deg, var(--bg-card), var(--bg)); border-bottom: 1px solid var(--border); }
         .section-label { display: inline-block; font-size: 0.8rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.08em; color: var(--blue); margin-bottom: 0.75rem; }
         .page-header h1 { font-size: 2.8rem; font-weight: 800; letter-spacing: -0.02em; margin-bottom: 1rem; }
-        .page-header p { color: var(--gray-500); font-size: 1.1rem; max-width: 600px; margin: 0 auto; }
+        .page-header p { color: var(--text-secondary); font-size: 1.1rem; max-width: 600px; margin: 0 auto; }
 
         .browse-section { max-width: 1100px; margin: 0 auto; padding: 3rem 2rem 0; }
         .browse-section h2 { font-size: 1.5rem; font-weight: 800; margin-bottom: 1.25rem; }
-        .browse-grid { display: grid; grid-template-columns: repeat(5, 1fr); gap: 0.75rem; }
-        .browse-card { background: var(--bg-card); border: 1px solid var(--border); border-radius: 12px; padding: 1rem; text-align: center; cursor: pointer; transition: all 0.2s; text-decoration: none; color: inherit; display: flex; flex-direction: column; align-items: center; gap: 0.4rem; font-family: inherit; }
-        .browse-card:hover { border-color: var(--blue); transform: translateY(-2px); box-shadow: 0 4px 15px rgba(0,0,0,0.15); }
-        .browse-card.active { border-color: var(--blue); background: rgba(37,99,235,0.08); }
-        .browse-card .browse-icon { font-size: 1.5rem; line-height: 1; }
-        .browse-card .browse-label { font-size: 0.85rem; font-weight: 700; }
-        .browse-card .browse-count { font-size: 0.7rem; color: var(--gray-400); }
+
+        /* Muscle group cards — taller to show body SVG */
+        .muscle-grid { display: grid; grid-template-columns: repeat(5, 1fr); gap: 0.75rem; }
+        .muscle-card { background: var(--bg-card); border: 1px solid var(--border); border-radius: 14px; padding: 0.75rem 0.5rem; text-align: center; cursor: pointer; transition: border-color 0.2s, transform 0.2s, box-shadow 0.2s; text-decoration: none; color: inherit; display: flex; flex-direction: column; align-items: center; gap: 0.35rem; overflow: hidden; }
+        .muscle-card:hover { border-color: var(--blue); transform: translateY(-3px); box-shadow: 0 6px 20px rgba(74,144,217,0.12); }
+        .muscle-card.active { border-color: var(--blue); background: rgba(74,144,217,0.08); }
+        .muscle-card img { height: 80px; width: 80px; object-fit: contain; display: block; margin: 0 auto; }
+        /* Dark mode (default): show dark variant, hide light variant */
+        .muscle-card .muscle-svg-light { display: none; }
+        .muscle-card .muscle-svg-dark  { display: block; }
+        /* Light mode: reverse */
+        [data-theme="light"] .muscle-card .muscle-svg-dark  { display: none; }
+        [data-theme="light"] .muscle-card .muscle-svg-light { display: block; }
+        .muscle-card .browse-label { font-size: 0.82rem; font-weight: 700; }
+        .muscle-card .browse-count { font-size: 0.68rem; color: var(--text-muted); }
+
+        /* Equipment cards — photo style */
+        .equip-grid { display: grid; grid-template-columns: repeat(5, 1fr); gap: 0.75rem; }
+        .equip-card { background: var(--bg-card); border: 1px solid var(--border); border-radius: 14px; padding: 0; text-align: center; cursor: pointer; transition: border-color 0.2s, transform 0.2s, box-shadow 0.2s; text-decoration: none; color: inherit; display: flex; flex-direction: column; align-items: stretch; overflow: hidden; }
+        .equip-card:hover { border-color: var(--blue); transform: translateY(-3px); box-shadow: 0 6px 20px rgba(74,144,217,0.12); }
+        .equip-card.active { border-color: var(--blue); }
+        .equip-card img { width: 100%; height: 100px; object-fit: cover; display: block; flex-shrink: 0; }
+        .equip-card .equip-text { padding: 0.65rem 0.5rem 0.75rem; display: flex; flex-direction: column; gap: 0.15rem; }
+        .equip-card .browse-label { font-size: 0.82rem; font-weight: 700; }
+        .equip-card .browse-count { font-size: 0.68rem; color: var(--text-muted); }
 
         .filter-bar { max-width: 1100px; margin: 2.5rem auto 0; padding: 0 2rem; }
         .filter-row { display: flex; align-items: center; gap: 0.5rem; flex-wrap: wrap; margin-bottom: 0.75rem; }
-        .filter-label { font-size: 0.75rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.05em; color: var(--gray-400); min-width: fit-content; }
-        .filter-btn { padding: 0.4rem 0.9rem; border-radius: 50px; border: 1px solid var(--border); background: var(--bg-card); color: var(--gray-500); font-size: 0.8rem; font-weight: 600; font-family: inherit; cursor: pointer; transition: all 0.2s; }
+        .filter-label { font-size: 0.75rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.05em; color: var(--text-muted); min-width: fit-content; }
+        .filter-btn { padding: 0.4rem 0.9rem; border-radius: 50px; border: 1px solid var(--border); background: var(--bg-card); color: var(--text-secondary); font-size: 0.8rem; font-weight: 600; font-family: inherit; cursor: pointer; transition: all 0.2s; }
         .filter-btn:hover, .filter-btn.active { background: var(--blue); color: var(--white); border-color: var(--blue); }
-        .filter-btn-equip:hover, .filter-btn-equip.active { background: var(--blue); color: var(--white); border-color: var(--blue); }
 
         .search-bar { max-width: 500px; margin: 1.5rem auto 0; padding: 0 2rem; }
         .search-input { width: 100%; padding: 0.7rem 1.25rem; border-radius: 12px; border: 1px solid var(--border); background: var(--bg-card); color: var(--text); font-size: 0.9rem; font-family: inherit; outline: none; transition: border-color 0.2s; box-sizing: border-box; }
-        .search-input::placeholder { color: var(--gray-400); }
+        .search-input::placeholder { color: var(--text-muted); }
         .search-input:focus { border-color: var(--blue); }
 
         .exercises-grid { max-width: 1100px; margin: 0 auto; padding: 2rem 2rem 4rem; display: grid; grid-template-columns: repeat(3, 1fr); gap: 1rem; }
-
         .exercise-card { background: var(--bg-card); border: 1px solid var(--border); border-radius: 14px; padding: 1.25rem; transition: border-color 0.2s, transform 0.2s, box-shadow 0.2s; display: flex; flex-direction: column; gap: 0.5rem; text-decoration: none; color: inherit; }
-        .exercise-card:hover { border-color: rgba(37,99,235,0.25); transform: translateY(-3px); box-shadow: 0 6px 20px rgba(0,0,0,0.15); }
+        .exercise-card:hover { border-color: var(--blue); transform: translateY(-3px); box-shadow: 0 6px 20px rgba(74,144,217,0.1); }
         .exercise-card h3 { font-size: 0.95rem; font-weight: 700; line-height: 1.3; color: var(--text); }
-        .exercise-card .desc { color: var(--gray-500); font-size: 0.8rem; line-height: 1.5; }
+        .exercise-card .desc { color: var(--text-secondary); font-size: 0.8rem; line-height: 1.5; }
         .exercise-card .tags { display: flex; gap: 0.35rem; flex-wrap: wrap; margin-top: auto; }
         .exercise-card .tag { padding: 0.15rem 0.55rem; border-radius: 50px; font-size: 0.65rem; font-weight: 600; white-space: nowrap; }
-        .tag-muscle { background: rgba(37,99,235,0.1); color: var(--blue); }
-        .tag-equipment { background: rgba(74,144,217,0.1); color: var(--blue); }
+        .tag-muscle    { background: rgba(74,144,217,0.1); color: var(--blue); }
+        .tag-equipment { background: rgba(74,144,217,0.06); color: var(--blue); }
         .tag-difficulty { font-size: 0.6rem; font-weight: 700; }
 
-        .exercises-count { text-align: center; padding: 1rem 2rem 0; color: var(--gray-400); font-size: 0.85rem; }
+        .exercises-count { text-align: center; padding: 1rem 2rem 0; color: var(--text-muted); font-size: 0.85rem; }
+        .no-results { text-align: center; padding: 3rem 2rem; color: var(--text-muted); font-size: 1rem; display: none; }
 
-        .no-results { text-align: center; padding: 3rem 2rem; color: var(--gray-400); font-size: 1rem; display: none; }
+        .final-cta { padding: 5rem 2rem; text-align: center; background: var(--bg-card); border-top: 1px solid var(--border); }
+        .final-cta h2 { font-size: 2rem; font-weight: 800; margin-bottom: 1rem; color: var(--text); }
+        .final-cta p  { color: var(--text-secondary); font-size: 1rem; max-width: 500px; margin: 0 auto 2rem; }
 
         @media (max-width: 1024px) {
             .exercises-grid { grid-template-columns: repeat(2, 1fr); }
-            .browse-grid { grid-template-columns: repeat(4, 1fr); }
+            .muscle-grid, .equip-grid { grid-template-columns: repeat(4, 1fr); }
         }
         @media (max-width: 768px) {
             .page-header { padding: 7rem 1.5rem 2rem; }
             .page-header h1 { font-size: 2rem; }
             .exercises-grid { grid-template-columns: 1fr; }
-            .browse-grid { grid-template-columns: repeat(3, 1fr); }
+            .muscle-grid, .equip-grid { grid-template-columns: repeat(3, 1fr); }
             .browse-section { padding: 2rem 1.5rem 0; }
             .filter-bar { padding: 0 1.5rem; }
         }
         @media (max-width: 480px) {
-            .browse-grid { grid-template-columns: repeat(2, 1fr); }
+            .muscle-grid, .equip-grid { grid-template-columns: repeat(2, 1fr); }
         }
     </style>
   </Fragment>
@@ -128,10 +214,11 @@ equipmentList.forEach(eq => {
 
     <section class="browse-section">
         <h2>Nach Muskelgruppe durchsuchen</h2>
-        <div class="browse-grid">
+        <div class="muscle-grid">
             {muscleGroups.map(m => (
-                <button class="browse-card" data-browse="muscle" data-value={m.id}>
-                    <span class="browse-icon">{m.icon}</span>
+                <button class="muscle-card" data-browse="muscle" data-value={m.id}>
+                    <img src={m.svgDark}  class="muscle-svg-dark"  alt={m.label} loading="lazy" />
+                    <img src={m.svgLight} class="muscle-svg-light" alt={m.label} loading="lazy" />
                     <span class="browse-label">{m.label}</span>
                     <span class="browse-count">{muscleGroupCounts[m.id]} Übungen</span>
                 </button>
@@ -139,14 +226,16 @@ equipmentList.forEach(eq => {
         </div>
     </section>
 
-    <section class="browse-section">
+    <section class="browse-section" id="equipSection">
         <h2>Nach Gerät durchsuchen</h2>
-        <div class="browse-grid">
+        <div class="equip-grid">
             {equipmentList.map(eq => (
-                <button class="browse-card" data-browse="equipment" data-value={eq.id}>
-                    <span class="browse-icon">{eq.icon}</span>
-                    <span class="browse-label">{eq.label}</span>
-                    <span class="browse-count">{equipmentCounts[eq.id]} Übungen</span>
+                <button class="equip-card" data-browse="equipment" data-value={eq.id}>
+                    <img src={equipPhoto(eq.id)} alt={eq.label} loading="lazy" />
+                    <span class="equip-text">
+                        <span class="browse-label">{eq.label}</span>
+                        <span class="browse-count">{equipmentCounts[eq.id]} Übungen</span>
+                    </span>
                 </button>
             ))}
         </div>
@@ -162,9 +251,9 @@ equipmentList.forEach(eq => {
         </div>
         <div class="filter-row">
             <span class="filter-label">Gerät:</span>
-            <button class="filter-btn filter-btn-equip active" data-filter="equipment" data-value="all">Alle</button>
+            <button class="filter-btn active" data-filter="equipment" data-value="all">Alle</button>
             {equipmentList.map(eq => (
-                <button class="filter-btn filter-btn-equip" data-filter="equipment" data-value={eq.id}>{eq.label}</button>
+                <button class="filter-btn" data-filter="equipment" data-value={eq.id}>{eq.label}</button>
             ))}
         </div>
     </div>
@@ -174,7 +263,6 @@ equipmentList.forEach(eq => {
     </div>
 
     <div class="exercises-count"><span id="count">{totalCount}</span> Übungen angezeigt</div>
-
     <div class="no-results" id="no-results">Keine Übung gefunden.</div>
 
     <section class="exercises-grid" id="grid">
@@ -230,12 +318,8 @@ equipmentList.forEach(eq => {
                     var matchMuscle = currentMuscle === 'all' || card.dataset.muscle === currentMuscle;
                     var matchEquipment = currentEquipment === 'all' || card.dataset.equipment === currentEquipment;
                     var matchSearch = !searchQuery || normalize(card.dataset.name).indexOf(searchQuery) !== -1;
-                    if (matchMuscle && matchEquipment && matchSearch) {
-                        card.style.display = '';
-                        count++;
-                    } else {
-                        card.style.display = 'none';
-                    }
+                    if (matchMuscle && matchEquipment && matchSearch) { card.style.display = ''; count++; }
+                    else { card.style.display = 'none'; }
                 });
                 countEl.textContent = count;
                 noResults.style.display = count === 0 ? 'block' : 'none';
@@ -249,7 +333,8 @@ equipmentList.forEach(eq => {
                     currentMuscle = btn.dataset.value;
                     document.querySelectorAll('[data-browse="muscle"]').forEach(function(c) { c.classList.remove('active'); });
                     if (currentMuscle !== 'all') {
-                        document.querySelector('[data-browse="muscle"][data-value="' + currentMuscle + '"]')?.classList.add('active');
+                        var bc = document.querySelector('[data-browse="muscle"][data-value="' + currentMuscle + '"]');
+                        if (bc) bc.classList.add('active');
                     }
                     update();
                 });
@@ -262,7 +347,8 @@ equipmentList.forEach(eq => {
                     currentEquipment = btn.dataset.value;
                     document.querySelectorAll('[data-browse="equipment"]').forEach(function(c) { c.classList.remove('active'); });
                     if (currentEquipment !== 'all') {
-                        document.querySelector('[data-browse="equipment"][data-value="' + currentEquipment + '"]')?.classList.add('active');
+                        var bc = document.querySelector('[data-browse="equipment"][data-value="' + currentEquipment + '"]');
+                        if (bc) bc.classList.add('active');
                     }
                     update();
                 });
@@ -277,14 +363,17 @@ equipmentList.forEach(eq => {
                     if (isActive) {
                         currentMuscle = 'all';
                         document.querySelector('[data-filter="muscle"][data-value="all"]').classList.add('active');
+                        update();
+                        document.getElementById('filterBar').scrollIntoView({ behavior: 'smooth', block: 'start' });
                     } else {
                         currentMuscle = val;
                         card.classList.add('active');
-                        var filterBtn = document.querySelector('[data-filter="muscle"][data-value="' + val + '"]');
-                        if (filterBtn) filterBtn.classList.add('active');
+                        var fb = document.querySelector('[data-filter="muscle"][data-value="' + val + '"]');
+                        if (fb) fb.classList.add('active');
+                        update();
+                        // Guide user to pick equipment before seeing results
+                        document.getElementById('equipSection').scrollIntoView({ behavior: 'smooth', block: 'start' });
                     }
-                    update();
-                    document.getElementById('filterBar').scrollIntoView({ behavior: 'smooth', block: 'start' });
                 });
             });
 
@@ -300,8 +389,8 @@ equipmentList.forEach(eq => {
                     } else {
                         currentEquipment = val;
                         card.classList.add('active');
-                        var filterBtn = document.querySelector('[data-filter="equipment"][data-value="' + val + '"]');
-                        if (filterBtn) filterBtn.classList.add('active');
+                        var fb = document.querySelector('[data-filter="equipment"][data-value="' + val + '"]');
+                        if (fb) fb.classList.add('active');
                     }
                     update();
                     document.getElementById('filterBar').scrollIntoView({ behavior: 'smooth', block: 'start' });
