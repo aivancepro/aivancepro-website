@@ -26,6 +26,7 @@ const currentLang = languages[lang];
                     <a href={i.links.exercises}>{i.nav.exercises}</a>
                     <a href={i.links.reviews}>{i.nav.reviews}</a>
                     <a href={i.links.changelog}>{i.nav.changelog}</a>
+                    <a href={i.links.comparison}>{i.nav.comparison}</a>
                 </div>
             </li>
             <li><a href={i.links.pricing}>{i.nav.pricing}</a></li>
@@ -48,7 +49,8 @@ const currentLang = languages[lang];
                 <div class="dropdown-menu">
                     <a href={i.links.faq}>{i.nav.faq}</a>
                     <a href={i.links.support}>{i.nav.support}</a>
-
+                    <a href={i.links.gettingStarted}>{i.nav.gettingStarted}</a>
+                    <a href={i.links.aiTransparency}>{i.nav.aiTransparency}</a>
                     <a href={i.links.about}>{i.nav.about}</a>
                 </div>
             </li>
@@ -95,6 +97,7 @@ const currentLang = languages[lang];
         <a href={i.links.exercises}>{i.nav.exercises}</a>
         <a href={i.links.reviews}>{i.nav.reviews}</a>
         <a href={i.links.changelog}>{i.nav.changelog}</a>
+        <a href={i.links.comparison}>{i.nav.comparison}</a>
     </div>
     <a href={i.links.pricing}>{i.nav.pricing}</a>
     <span class="mobile-section-label">{i.nav.articles}</span>
@@ -108,6 +111,8 @@ const currentLang = languages[lang];
         <a href={i.links.faq}>{i.nav.faq}</a>
         <a href={i.links.support}>{i.nav.support}</a>
         {i.links.contact && <a href={i.links.contact}>Contact</a>}
+        <a href={i.links.gettingStarted}>{i.nav.gettingStarted}</a>
+        <a href={i.links.aiTransparency}>{i.nav.aiTransparency}</a>
         <a href={i.links.about}>{i.nav.about}</a>
     </div>
     <a href={i.links.login} id="mobile-login-link" data-account-url={i.links.account}>{i.nav.login}</a>

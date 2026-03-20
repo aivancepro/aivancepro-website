@@ -6,13 +6,13 @@ readTime: "6 min Lesezeit"
 tag: "Coaching"
 image: "/assets/guides/coaching-personnel.webp"
 lang: "de"
-slug: "personal-training"
-canonical: "https://aivancepro.fr/de/ratgeber/personal-training/"
+slug: "persoenliches-training"
+canonical: "https://aivancepro.fr/de/ratgeber/persoenliches-training/"
 keywords: "Personal Training, persönlicher Coach, KI-Coach, Fitness Coaching, Personaltrainer, KI Fitness Coaching"
 alternates:
   fr: "https://aivancepro.fr/guides/coaching-personnel/"
   en: "https://aivancepro.fr/en/guides/personal-training/"
-  de: "https://aivancepro.fr/de/ratgeber/personal-training/"
+  de: "https://aivancepro.fr/de/ratgeber/persoenliches-training/"
 ---
 
 Personal Training ist die individuelle Betreuung durch einen Fitnessexperten. Ein persönlicher Coach erstellt Programme, die auf Ihre Ziele zugeschnitten sind, korrigiert Ihre Technik und motiviert Sie bei jeder Einheit. Laut einer im *Journal of Sports Science & Medicine* (2023) veröffentlichten Studie machen Trainierende mit Coach-Begleitung durchschnittlich 44 % schnellere Fortschritte als Personen, die alleine trainieren.

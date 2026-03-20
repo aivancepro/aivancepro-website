@@ -12,7 +12,7 @@ keywords: "personal training, coaching personnel, coach IA, coach fitness, entra
 alternates:
   fr: "https://aivancepro.fr/guides/coaching-personnel/"
   en: "https://aivancepro.fr/en/guides/personal-training/"
-  de: "https://aivancepro.fr/de/ratgeber/personal-training/"
+  de: "https://aivancepro.fr/de/ratgeber/persoenliches-training/"
 ---
 
 Le personal training est un accompagnement individuel par un professionnel du fitness. Un coach personnel conçoit des programmes adaptés à vos objectifs, corrige votre technique et vous motive à chaque séance. Selon une étude publiée dans le *Journal of Sports Science & Medicine* (2023), les pratiquants accompagnés par un coach progressent en moyenne 44 % plus vite que ceux qui s'entraînent seuls.

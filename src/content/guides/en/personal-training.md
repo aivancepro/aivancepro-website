@@ -12,7 +12,7 @@ keywords: "personal training, personal coach, AI coach, fitness coaching, person
 alternates:
   fr: "https://aivancepro.fr/guides/coaching-personnel/"
   en: "https://aivancepro.fr/en/guides/personal-training/"
-  de: "https://aivancepro.fr/de/ratgeber/personal-training/"
+  de: "https://aivancepro.fr/de/ratgeber/persoenliches-training/"
 ---
 
 Personal training is one-on-one guidance from a fitness professional. A personal coach designs programs tailored to your goals, corrects your technique and motivates you during every session. According to a study published in the *Journal of Sports Science & Medicine* (2023), people who train with a coach progress on average 44% faster than those who train alone.
