@@ -8,6 +8,14 @@ import BaseLayout from '../layouts/BaseLayout.astro';
   description="Découvrez toutes les fonctionnalités d'AIVancePro : coach IA conversationnel, +240 exercices, suivi de progression, programmes personnalisés, communauté, templates, timer et plus."
   canonical="https://aivancepro.fr/fonctionnalites/"
   alternates={{ fr: 'https://aivancepro.fr/fonctionnalites/', en: 'https://aivancepro.fr/en/features/', de: 'https://aivancepro.fr/de/funktionen/' }}
+  jsonLd={{
+    '@context': 'https://schema.org',
+    '@type': 'BreadcrumbList',
+    itemListElement: [
+      { '@type': 'ListItem', position: 1, name: 'Accueil', item: 'https://aivancepro.fr/' },
+      { '@type': 'ListItem', position: 2, name: 'Fonctionnalités', item: 'https://aivancepro.fr/fonctionnalites/' },
+    ]
+  }}
 >
   <Fragment slot="head">
     <style>

@@ -8,6 +8,14 @@ import BaseLayout from '../../layouts/BaseLayout.astro';
   description="Discover the latest AIVancePro updates. New features, improvements and fixes for your AI fitness coach."
   canonical="https://aivancepro.fr/en/changelog/"
   alternates={{ fr: 'https://aivancepro.fr/nouveautes/', en: 'https://aivancepro.fr/en/changelog/', de: 'https://aivancepro.fr/de/neuigkeiten/' }}
+  jsonLd={{
+    '@context': 'https://schema.org',
+    '@type': 'BreadcrumbList',
+    itemListElement: [
+      { '@type': 'ListItem', position: 1, name: 'Home', item: 'https://aivancepro.fr/en/' },
+      { '@type': 'ListItem', position: 2, name: 'Changelog', item: 'https://aivancepro.fr/en/changelog/' },
+    ]
+  }}
 >
   <Fragment slot="head">
     <style>

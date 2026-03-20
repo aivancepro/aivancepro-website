@@ -29,6 +29,50 @@ const reviews = [
   description="D&eacute;couvrez les avis des utilisateurs d'AIVancePro. Des milliers de sportifs font confiance &agrave; notre coach IA pour leur entra&icirc;nement."
   canonical="https://aivancepro.fr/avis/"
   alternates={{ fr: 'https://aivancepro.fr/avis/', en: 'https://aivancepro.fr/en/reviews/', de: 'https://aivancepro.fr/de/bewertungen/' }}
+  jsonLd={[
+    {
+      "@context": "https://schema.org",
+      "@type": "MobileApplication",
+      "name": "AIVancePro",
+      "operatingSystem": "iOS, Android",
+      "applicationCategory": "HealthApplication",
+      "aggregateRating": {
+        "@type": "AggregateRating",
+        "ratingValue": "4.8",
+        "bestRating": "5",
+        "ratingCount": "150",
+        "reviewCount": "3"
+      },
+      "review": [
+        {
+          "@type": "Review",
+          "author": { "@type": "Person", "name": "Thomas L." },
+          "reviewRating": { "@type": "Rating", "ratingValue": "5" },
+          "reviewBody": "Le coach IA est incroyable, il comprend exactement ce dont j'ai besoin et g\u00e9n\u00e8re des s\u00e9ances parfaitement adapt\u00e9es. J'ai progress\u00e9 plus en 2 mois qu'en 1 an tout seul."
+        },
+        {
+          "@type": "Review",
+          "author": { "@type": "Person", "name": "Marie D." },
+          "reviewRating": { "@type": "Rating", "ratingValue": "5" },
+          "reviewBody": "L'app est super compl\u00e8te : exercices, templates, suivi de progression, communaut\u00e9... Tout y est. Et le timer de repos automatique, c'est un vrai plus en salle."
+        },
+        {
+          "@type": "Review",
+          "author": { "@type": "Person", "name": "Julien R." },
+          "reviewRating": { "@type": "Rating", "ratingValue": "5" },
+          "reviewBody": "J'utilise AIVancePro depuis 3 mois et les d\u00e9fis entre amis rendent l'entra\u00eenement tellement plus fun. Le syst\u00e8me de badges motive \u00e0 rester r\u00e9gulier. Top !"
+        }
+      ]
+    },
+    {
+      "@context": "https://schema.org",
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        { "@type": "ListItem", "position": 1, "name": "Accueil", "item": "https://aivancepro.fr/" },
+        { "@type": "ListItem", "position": 2, "name": "Avis", "item": "https://aivancepro.fr/avis/" }
+      ]
+    }
+  ]}
 >
   <Fragment slot="head">
     <style>

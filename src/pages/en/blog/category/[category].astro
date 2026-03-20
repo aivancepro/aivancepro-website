@@ -1,0 +1,201 @@
+---
+import BaseLayout from '../../../../layouts/BaseLayout.astro';
+import { getCollection } from 'astro:content';
+
+const categoryLabels: Record<string, string> = {
+  ia: 'Artificial Intelligence',
+  musculation: 'Strength Training',
+  nutrition: 'Nutrition',
+  conseils: 'Tips',
+  programmation: 'Programming',
+  recuperation: 'Recovery',
+  debutant: 'Beginner',
+  force: 'Strength',
+};
+
+export async function getStaticPaths() {
+  const allPosts = (await getCollection('blog', ({ data }) => data.lang === 'en'))
+    .sort((a, b) => new Date(b.data.date).getTime() - new Date(a.data.date).getTime());
+  const categories = [...new Set(allPosts.map(p => p.data.category).filter(Boolean))] as string[];
+  return categories.map(cat => ({
+    params: { category: cat },
+    props: { posts: allPosts.filter(p => p.data.category === cat) },
+  }));
+}
+
+const { category } = Astro.params;
+const { posts } = Astro.props;
+const label = categoryLabels[category!] || category;
+
+function formatDate(dateStr: string) {
+  return new Date(dateStr).toLocaleDateString('en-GB', { day: 'numeric', month: 'long', year: 'numeric' });
+}
+---
+
+<BaseLayout
+  lang="en"
+  title={`${label} - Blog AIVancePro`}
+  description={`Articles on ${label?.toLowerCase()}: tips, guides and advice to optimise your training.`}
+  canonical={`https://aivancepro.fr/en/blog/category/${category}/`}
+  jsonLd={[
+    {
+      "@context": "https://schema.org",
+      "@type": "CollectionPage",
+      "name": `${label} - Blog AIVancePro`,
+      "url": `https://aivancepro.fr/en/blog/category/${category}/`,
+      "description": `Articles on ${label?.toLowerCase()}`,
+      "numberOfItems": posts.length,
+    },
+    {
+      "@context": "https://schema.org",
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://aivancepro.fr/en/" },
+        { "@type": "ListItem", "position": 2, "name": "Blog", "item": "https://aivancepro.fr/en/blog/" },
+        { "@type": "ListItem", "position": 3, "name": label, "item": `https://aivancepro.fr/en/blog/category/${category}/` },
+      ],
+    },
+  ]}
+>
+  <Fragment slot="head">
+    <style>
+      .cat-header {
+        padding: 9rem 2rem 3rem;
+        text-align: center;
+        background: linear-gradient(180deg, var(--bg-card) 0%, var(--bg) 100%);
+        border-bottom: 1px solid var(--border);
+      }
+      .cat-header .breadcrumb {
+        font-size: 0.8rem;
+        color: var(--text-muted);
+        margin-bottom: 1rem;
+      }
+      .cat-header .breadcrumb a {
+        color: var(--text-secondary);
+        text-decoration: none;
+      }
+      .cat-header .breadcrumb a:hover { color: var(--blue); }
+      .cat-header h1 {
+        font-size: 2.5rem;
+        font-weight: 800;
+        letter-spacing: -0.02em;
+        margin-bottom: 0.75rem;
+      }
+      .cat-header p {
+        color: var(--text-secondary);
+        font-size: 1.05rem;
+        max-width: 550px;
+        margin: 0 auto;
+      }
+      .articles {
+        max-width: 900px;
+        margin: 0 auto;
+        padding: 3rem 2rem 6rem;
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 1.5rem;
+      }
+      .article-card {
+        background: var(--bg-card);
+        border: 1px solid var(--border);
+        border-radius: 16px;
+        overflow: hidden;
+        transition: border-color 0.2s, transform 0.2s, box-shadow 0.2s;
+        text-decoration: none;
+        color: var(--text);
+        display: flex;
+        flex-direction: column;
+      }
+      .article-card:hover {
+        border-color: var(--blue);
+        transform: translateY(-4px);
+        box-shadow: 0 8px 30px rgba(74, 144, 217, 0.1);
+      }
+      .article-card .card-image {
+        width: 100%;
+        height: 180px;
+        background: linear-gradient(135deg, var(--bg-elevated), var(--border));
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        color: var(--text-muted);
+        font-size: 0.8rem;
+        font-weight: 500;
+      }
+      .article-card .card-content {
+        padding: 1.5rem;
+        flex: 1;
+        display: flex;
+        flex-direction: column;
+      }
+      .article-card .tag {
+        display: inline-block;
+        padding: 0.2rem 0.6rem;
+        background: rgba(74, 144, 217, 0.1);
+        border-radius: 50px;
+        font-size: 0.7rem;
+        color: var(--blue);
+        font-weight: 600;
+        margin-bottom: 0.75rem;
+        width: fit-content;
+      }
+      .article-card h2 {
+        font-size: 1.1rem;
+        font-weight: 700;
+        margin-bottom: 0.5rem;
+        line-height: 1.35;
+      }
+      .article-card p {
+        color: var(--text-secondary);
+        font-size: 0.85rem;
+        line-height: 1.6;
+        flex: 1;
+      }
+      .article-card .meta {
+        margin-top: 1rem;
+        font-size: 0.75rem;
+        color: var(--text-muted);
+        font-weight: 500;
+      }
+      .empty {
+        text-align: center;
+        padding: 4rem 2rem;
+        color: var(--text-secondary);
+      }
+      @media (max-width: 768px) {
+        .cat-header h1 { font-size: 1.8rem; }
+        .cat-header { padding: 7rem 1.5rem 2rem; }
+        .articles { grid-template-columns: 1fr; }
+      }
+    </style>
+  </Fragment>
+
+  <header class="cat-header">
+    <div class="breadcrumb">
+      <a href="/en/">Home</a> / <a href="/en/blog/">Blog</a> / {label}
+    </div>
+    <h1>{label}</h1>
+    <p>All our articles on {label?.toLowerCase()} to help you reach your goals.</p>
+  </header>
+
+  <section class="articles">
+    {posts.length > 0 ? posts.map(post => (
+      <a href={`/en/blog/${post.data.slug}/`} class="article-card">
+        <div class="card-image" style={post.data.image && post.data.image !== '/og-image.png'
+          ? `background: linear-gradient(135deg, rgba(0,0,0,0.3), rgba(0,0,0,0.1)), url(${post.data.image}) center/cover no-repeat; color: #fff;`
+          : ''}>{post.data.tag}</div>
+        <div class="card-content">
+          <span class="tag">{post.data.tag}</span>
+          <h2>{post.data.title}</h2>
+          <p>{post.data.description}</p>
+          <div class="meta">{formatDate(post.data.date)} &middot; {post.data.readTime}</div>
+        </div>
+      </a>
+    )) : (
+      <div class="empty">
+        <p>No articles in this category yet.</p>
+        <a href="/en/blog/" style="color: var(--blue); text-decoration: none; font-weight: 600;">&larr; Back to blog</a>
+      </div>
+    )}
+  </section>
+</BaseLayout>

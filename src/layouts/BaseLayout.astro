@@ -81,8 +81,11 @@ const guidePosts = (await getCollection('guides', ({ data }) => data.lang === la
     </script>
 </head>
 <body>
+    <a href="#main-content" class="skip-link">Skip to content</a>
     <Nav lang={lang} />
+    <main id="main-content">
     <slot />
+    </main>
     {!noFooter && <Footer lang={lang} />}
     <!-- Search Modal -->
     <div class="search-overlay" id="searchOverlay">

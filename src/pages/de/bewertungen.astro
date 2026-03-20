@@ -29,6 +29,50 @@ const reviews = [
   description="Entdecken Sie, was AIVancePro-Nutzer denken. Tausende Sportler vertrauen unserem KI-Coach f&uuml;r ihr Training."
   canonical="https://aivancepro.fr/de/bewertungen/"
   alternates={{ fr: 'https://aivancepro.fr/avis/', en: 'https://aivancepro.fr/en/reviews/', de: 'https://aivancepro.fr/de/bewertungen/' }}
+  jsonLd={[
+    {
+      "@context": "https://schema.org",
+      "@type": "MobileApplication",
+      "name": "AIVancePro",
+      "operatingSystem": "iOS, Android",
+      "applicationCategory": "HealthApplication",
+      "aggregateRating": {
+        "@type": "AggregateRating",
+        "ratingValue": "4.8",
+        "bestRating": "5",
+        "ratingCount": "150",
+        "reviewCount": "3"
+      },
+      "review": [
+        {
+          "@type": "Review",
+          "author": { "@type": "Person", "name": "Thomas L." },
+          "reviewRating": { "@type": "Rating", "ratingValue": "5" },
+          "reviewBody": "Der KI-Coach ist unglaublich, er versteht genau, was ich brauche, und erstellt perfekt angepasste Trainingseinheiten. Ich habe in 2 Monaten mehr Fortschritte gemacht als in einem Jahr allein."
+        },
+        {
+          "@type": "Review",
+          "author": { "@type": "Person", "name": "Marie D." },
+          "reviewRating": { "@type": "Rating", "ratingValue": "5" },
+          "reviewBody": "Die App ist super komplett: \u00dcbungen, Vorlagen, Fortschrittsverfolgung, Community... Alles ist dabei. Und der automatische Pausentimer ist ein echtes Plus im Fitnessstudio."
+        },
+        {
+          "@type": "Review",
+          "author": { "@type": "Person", "name": "Julien R." },
+          "reviewRating": { "@type": "Rating", "ratingValue": "5" },
+          "reviewBody": "Ich nutze AIVancePro seit 3 Monaten und die Challenges mit Freunden machen das Training so viel spa\u00dfiger. Das Badge-System motiviert, regelm\u00e4\u00dfig zu bleiben. Top!"
+        }
+      ]
+    },
+    {
+      "@context": "https://schema.org",
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        { "@type": "ListItem", "position": 1, "name": "Startseite", "item": "https://aivancepro.fr/de/" },
+        { "@type": "ListItem", "position": 2, "name": "Bewertungen", "item": "https://aivancepro.fr/de/bewertungen/" }
+      ]
+    }
+  ]}
 >
   <Fragment slot="head">
     <style>

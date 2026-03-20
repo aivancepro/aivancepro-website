@@ -8,16 +8,26 @@ import BaseLayout from '../../layouts/BaseLayout.astro';
   description="Entdecken Sie die AIVancePro Preise. Kostenloser Plan, Pro für 6,99€/Monat. Vergleichen Sie die Funktionen und wählen Sie Ihren Plan."
   canonical="https://aivancepro.fr/de/preise/"
   alternates={{ fr: 'https://aivancepro.fr/pricing/', en: 'https://aivancepro.fr/en/pricing/', de: 'https://aivancepro.fr/de/preise/' }}
-  jsonLd={{
-    '@context': 'https://schema.org',
-    '@type': 'FAQPage',
-    mainEntity: [
-      { '@type': 'Question', name: 'Kann ich jederzeit den Plan wechseln?', acceptedAnswer: { '@type': 'Answer', text: 'Ja, Sie können jederzeit zum Pro-Plan wechseln oder zum kostenlosen Plan zurückkehren. Die Änderung wird sofort wirksam.' } },
-      { '@type': 'Question', name: 'Gibt es eine Vertragsbindung?', acceptedAnswer: { '@type': 'Answer', text: 'Keine Vertragsbindung. Sie können Ihr Abonnement jederzeit über den App Store oder Google Play kündigen.' } },
-      { '@type': 'Question', name: 'Ist der kostenlose Plan wirklich kostenlos?', acceptedAnswer: { '@type': 'Answer', text: 'Absolut. Der kostenlose Plan gibt Ihnen Zugang zum Trainings-Tracking, zu über 240 Übungen und zu Basis-Statistiken, ohne Zeitlimit und ohne Kreditkarte.' } },
-      { '@type': 'Question', name: 'Wie funktioniert die Zahlung?', acceptedAnswer: { '@type': 'Answer', text: 'Die Zahlung wird direkt über den App Store (iOS) oder Google Play (Android) abgewickelt. Ihr Abonnement verlängert sich automatisch jeden Monat, sofern Sie es nicht kündigen.' } },
-    ]
-  }}
+  jsonLd={[
+    {
+      '@context': 'https://schema.org',
+      '@type': 'FAQPage',
+      mainEntity: [
+        { '@type': 'Question', name: 'Kann ich jederzeit den Plan wechseln?', acceptedAnswer: { '@type': 'Answer', text: 'Ja, Sie können jederzeit zum Pro-Plan wechseln oder zum kostenlosen Plan zurückkehren. Die Änderung wird sofort wirksam.' } },
+        { '@type': 'Question', name: 'Gibt es eine Vertragsbindung?', acceptedAnswer: { '@type': 'Answer', text: 'Keine Vertragsbindung. Sie können Ihr Abonnement jederzeit über den App Store oder Google Play kündigen.' } },
+        { '@type': 'Question', name: 'Ist der kostenlose Plan wirklich kostenlos?', acceptedAnswer: { '@type': 'Answer', text: 'Absolut. Der kostenlose Plan gibt Ihnen Zugang zum Trainings-Tracking, zu über 240 Übungen und zu Basis-Statistiken, ohne Zeitlimit und ohne Kreditkarte.' } },
+        { '@type': 'Question', name: 'Wie funktioniert die Zahlung?', acceptedAnswer: { '@type': 'Answer', text: 'Die Zahlung wird direkt über den App Store (iOS) oder Google Play (Android) abgewickelt. Ihr Abonnement verlängert sich automatisch jeden Monat, sofern Sie es nicht kündigen.' } },
+      ]
+    },
+    {
+      '@context': 'https://schema.org',
+      '@type': 'BreadcrumbList',
+      itemListElement: [
+        { '@type': 'ListItem', position: 1, name: 'Startseite', item: 'https://aivancepro.fr/de/' },
+        { '@type': 'ListItem', position: 2, name: 'Preise', item: 'https://aivancepro.fr/de/preise/' },
+      ]
+    }
+  ]}
 >
   <Fragment slot="head">
     <style>

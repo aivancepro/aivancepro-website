@@ -123,6 +123,14 @@ equipmentList.forEach(eq => {
   description={`Découvrez notre bibliothèque de ${totalCount} exercices de musculation et fitness. Filtrez par groupe musculaire ou par équipement et trouvez l'exercice parfait.`}
   canonical="https://aivancepro.fr/exercices/"
   alternates={{ fr: 'https://aivancepro.fr/exercices/', en: 'https://aivancepro.fr/en/exercises/', de: 'https://aivancepro.fr/de/uebungen/' }}
+  jsonLd={{
+    '@context': 'https://schema.org',
+    '@type': 'BreadcrumbList',
+    itemListElement: [
+      { '@type': 'ListItem', position: 1, name: 'Accueil', item: 'https://aivancepro.fr/' },
+      { '@type': 'ListItem', position: 2, name: 'Exercices', item: 'https://aivancepro.fr/exercices/' },
+    ]
+  }}
 >
   <Fragment slot="head">
     <style>
