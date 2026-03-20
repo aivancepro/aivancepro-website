@@ -1,13 +1,13 @@
 ---
-import BaseLayout from '../layouts/BaseLayout.astro';
+import BaseLayout from '../../layouts/BaseLayout.astro';
 
 const jsonLd = [
   {
     "@context": "https://schema.org",
     "@type": "WebPage",
-    "name": "Transparence IA - AIVancePro",
-    "description": "Découvrez comment l'intelligence artificielle fonctionne dans AIVancePro, et ce que nous faisons pour protéger vos données.",
-    "url": "https://aivancepro.fr/transparence-ia/",
+    "name": "AI Transparency - AIVancePro",
+    "description": "Learn how artificial intelligence works in AIVancePro and what we do to protect your data.",
+    "url": "https://aivancepro.fr/en/ai-transparency/",
     "publisher": {
       "@type": "Organization",
       "name": "AIVancePro",
@@ -18,18 +18,18 @@ const jsonLd = [
     "@context": "https://schema.org",
     "@type": "BreadcrumbList",
     "itemListElement": [
-      { "@type": "ListItem", "position": 1, "name": "Accueil", "item": "https://aivancepro.fr/" },
-      { "@type": "ListItem", "position": 2, "name": "Transparence IA", "item": "https://aivancepro.fr/transparence-ia/" }
+      { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://aivancepro.fr/en/" },
+      { "@type": "ListItem", "position": 2, "name": "AI Transparency", "item": "https://aivancepro.fr/en/ai-transparency/" }
     ]
   }
 ];
 ---
 
 <BaseLayout
-  lang="fr"
-  title="Transparence IA - AIVancePro"
-  description="Découvrez comment l'intelligence artificielle fonctionne dans AIVancePro, et ce que nous faisons pour protéger vos données."
-  canonical="https://aivancepro.fr/transparence-ia/"
+  lang="en"
+  title="AI Transparency - AIVancePro"
+  description="Learn how artificial intelligence works in AIVancePro and what we do to protect your data."
+  canonical="https://aivancepro.fr/en/ai-transparency/"
   alternates={{ fr: 'https://aivancepro.fr/transparence-ia/', en: 'https://aivancepro.fr/en/ai-transparency/', de: 'https://aivancepro.fr/de/ki-transparenz/' }}
   jsonLd={jsonLd}
 >
@@ -110,132 +110,132 @@ const jsonLd = [
   </Fragment>
 
   <header class="page-header">
-    <div class="section-label">Transparence IA</div>
-    <h1>Notre approche de l'IA</h1>
-    <p>Comment l'intelligence artificielle fonctionne dans AIVancePro, et ce que nous faisons pour prot&eacute;ger vos donn&eacute;es.</p>
+    <div class="section-label">AI Transparency</div>
+    <h1>Our approach to AI</h1>
+    <p>How artificial intelligence works in AIVancePro, and what we do to protect your data.</p>
   </header>
 
   <div class="ia-content">
 
-    <!-- Section 1: Comment fonctionne le coach IA -->
+    <!-- Section 1: How the AI coach works -->
     <div class="ia-section">
-      <h2><span class="icon">&#x1F9E0;</span> Comment fonctionne le coach IA</h2>
+      <h2><span class="icon">&#x1F9E0;</span> How the AI coach works</h2>
       <div class="info-cards">
         <div class="info-card">
           <div class="card-icon">&#x1F4AC;</div>
-          <h3>Mod&egrave;les de langage avanc&eacute;s</h3>
-          <p>AIVancePro utilise des LLM (Large Language Models) pour g&eacute;n&eacute;rer des conseils d'entra&icirc;nement personnalis&eacute;s en temps r&eacute;el.</p>
+          <h3>Advanced language models</h3>
+          <p>AIVancePro uses LLMs (Large Language Models) to generate personalised training advice in real time.</p>
         </div>
         <div class="info-card">
           <div class="card-icon">&#x1F464;</div>
-          <h3>Analyse de votre profil</h3>
-          <p>Le coach analyse votre niveau, vos objectifs et votre &eacute;quipement pour adapter chaque recommandation &agrave; votre situation.</p>
+          <h3>Profile analysis</h3>
+          <p>The coach analyses your level, goals, and equipment to tailor every recommendation to your situation.</p>
         </div>
         <div class="info-card">
           <div class="card-icon">&#x26A1;</div>
-          <h3>G&eacute;n&eacute;ration en temps r&eacute;el</h3>
-          <p>Chaque programme est g&eacute;n&eacute;r&eacute; dynamiquement &mdash; pas &agrave; partir de templates pr&eacute;-faits. Votre historique de s&eacute;ances influence directement les recommandations.</p>
+          <h3>Real-time generation</h3>
+          <p>Every programme is generated dynamically &mdash; not from pre-made templates. Your training history directly influences the recommendations.</p>
         </div>
         <div class="info-card">
           <div class="card-icon">&#x1F4DA;</div>
-          <h3>Fond&eacute; sur la science</h3>
-          <p>L'IA s'appuie sur la litt&eacute;rature scientifique en science du sport pour ses recommandations (hypertrophie, p&eacute;riodisation, volume).</p>
+          <h3>Science-based</h3>
+          <p>The AI draws on published sports science literature for its recommendations (hypertrophy, periodisation, volume).</p>
         </div>
       </div>
     </div>
 
-    <!-- Section 2: Ce que l'IA peut et ne peut pas faire -->
+    <!-- Section 2: What the AI can and cannot do -->
     <div class="ia-section">
-      <h2><span class="icon">&#x2696;&#xFE0F;</span> Ce que l'IA peut et ne peut pas faire</h2>
+      <h2><span class="icon">&#x2696;&#xFE0F;</span> What the AI can and cannot do</h2>
       <div class="split-grid">
         <div class="split-card can">
-          <h3>&#x2705; L'IA peut</h3>
+          <h3>&#x2705; The AI can</h3>
           <ul>
-            <li>G&eacute;n&eacute;rer des programmes personnalis&eacute;s</li>
-            <li>Analyser votre progression</li>
-            <li>R&eacute;pondre &agrave; vos questions fitness</li>
-            <li>Ajuster les charges et le volume</li>
-            <li>Proposer des alternatives d'exercices</li>
+            <li>Generate personalised programmes</li>
+            <li>Analyse your progress</li>
+            <li>Answer your fitness questions</li>
+            <li>Adjust loads and volume</li>
+            <li>Suggest exercise alternatives</li>
           </ul>
         </div>
         <div class="split-card cannot">
-          <h3>&#x274C; L'IA ne peut pas</h3>
+          <h3>&#x274C; The AI cannot</h3>
           <ul>
-            <li>Remplacer un m&eacute;decin</li>
-            <li>Diagnostiquer une blessure</li>
-            <li>Prescrire un r&eacute;gime alimentaire m&eacute;dical</li>
-            <li>Se substituer &agrave; un kin&eacute;sith&eacute;rapeute</li>
+            <li>Replace a doctor</li>
+            <li>Diagnose an injury</li>
+            <li>Prescribe a medical diet</li>
+            <li>Substitute for a physiotherapist</li>
           </ul>
         </div>
       </div>
       <div class="warning-box">
         <span class="warn-icon">&#x26A0;&#xFE0F;</span>
-        <p><strong>Important :</strong> en cas de douleur ou de probl&egrave;me de sant&eacute;, consultez toujours un professionnel de sant&eacute;. L'IA est un outil d'aide, pas un substitut m&eacute;dical.</p>
+        <p><strong>Important:</strong> if you experience pain or a health issue, always consult a healthcare professional. AI is a support tool, not a medical substitute.</p>
       </div>
     </div>
 
-    <!-- Section 3: Protection de vos données -->
+    <!-- Section 3: Protecting your data -->
     <div class="ia-section">
-      <h2><span class="icon">&#x1F512;</span> Protection de vos donn&eacute;es</h2>
-      <p>La s&eacute;curit&eacute; de vos donn&eacute;es est une priorit&eacute; absolue. Voici nos engagements concrets :</p>
+      <h2><span class="icon">&#x1F512;</span> Protecting your data</h2>
+      <p>The security of your data is an absolute priority. Here are our concrete commitments:</p>
       <ul class="protection-list">
         <li>
           <span class="check">&#x2713;</span>
-          <span>Vos donn&eacute;es d'entra&icirc;nement sont stock&eacute;es de mani&egrave;re s&eacute;curis&eacute;e sur des <strong>serveurs europ&eacute;ens</strong> (Supabase, h&eacute;berg&eacute; en Europe).</span>
+          <span>Your training data is securely stored on <strong>European servers</strong> (Supabase, hosted in Europe).</span>
         </li>
         <li>
           <span class="check">&#x2713;</span>
-          <span>Vos conversations avec le coach IA <strong>ne sont pas utilis&eacute;es</strong> pour entra&icirc;ner des mod&egrave;les tiers.</span>
+          <span>Your conversations with the AI coach <strong>are not used</strong> to train third-party models.</span>
         </li>
         <li>
           <span class="check">&#x2713;</span>
-          <span>Vous pouvez <strong>supprimer votre compte</strong> et toutes vos donn&eacute;es &agrave; tout moment depuis les param&egrave;tres de l'application.</span>
+          <span>You can <strong>delete your account</strong> and all your data at any time from the app settings.</span>
         </li>
         <li>
           <span class="check">&#x2713;</span>
-          <span>Nous ne vendons <strong>jamais</strong> vos donn&eacute;es &agrave; des tiers.</span>
+          <span>We <strong>never</strong> sell your data to third parties.</span>
         </li>
         <li>
           <span class="check">&#x2713;</span>
-          <span><strong>Conformit&eacute; RGPD</strong> (R&egrave;glement G&eacute;n&eacute;ral sur la Protection des Donn&eacute;es) &mdash; vos droits d'acc&egrave;s, de rectification et de suppression sont respect&eacute;s.</span>
+          <span><strong>GDPR compliant</strong> (General Data Protection Regulation) &mdash; your rights of access, rectification, and deletion are fully respected.</span>
         </li>
       </ul>
     </div>
 
-    <!-- Section 4: Notre engagement -->
+    <!-- Section 4: Our commitment -->
     <div class="ia-section">
-      <h2><span class="icon">&#x1F91D;</span> Notre engagement</h2>
+      <h2><span class="icon">&#x1F91D;</span> Our commitment</h2>
       <div class="engagement-grid">
         <div class="engagement-item">
           <div class="icon">&#x1F50D;</div>
-          <h3>Transparence</h3>
-          <p>Nous vous expliquons toujours comment l'IA prend ses d&eacute;cisions.</p>
+          <h3>Transparency</h3>
+          <p>We always explain how the AI makes its decisions.</p>
         </div>
         <div class="engagement-item">
           <div class="icon">&#x1F9EA;</div>
           <h3>Science</h3>
-          <p>Chaque fonctionnalit&eacute; est bas&eacute;e sur des &eacute;tudes publi&eacute;es en science du sport.</p>
+          <p>Every feature is based on published sports science research.</p>
         </div>
         <div class="engagement-item">
           <div class="icon">&#x1F3AF;</div>
-          <h3>Contr&ocirc;le</h3>
-          <p>Vous gardez toujours le contr&ocirc;le sur vos donn&eacute;es et vos entra&icirc;nements.</p>
+          <h3>Control</h3>
+          <p>You always stay in control of your data and your workouts.</p>
         </div>
         <div class="engagement-item">
           <div class="icon">&#x1F504;</div>
-          <h3>Am&eacute;lioration continue</h3>
-          <p>Nous mettons &agrave; jour r&eacute;guli&egrave;rement nos mod&egrave;les pour de meilleures recommandations.</p>
+          <h3>Continuous improvement</h3>
+          <p>We regularly update our models to provide better recommendations.</p>
         </div>
       </div>
     </div>
 
     <!-- CTA -->
     <div class="cta-box">
-      <h2>Des questions sur notre IA ?</h2>
-      <p>Notre &eacute;quipe est disponible pour r&eacute;pondre &agrave; toutes vos questions sur le fonctionnement de l'IA et la protection de vos donn&eacute;es.</p>
-      <a href="/support/">Contactez-nous</a>
+      <h2>Questions about our AI?</h2>
+      <p>Our team is available to answer all your questions about how the AI works and how your data is protected.</p>
+      <a href="/en/support/">Contact us</a>
     </div>
 
-    <a href="/" class="back">&larr; Retour &agrave; l'accueil</a>
+    <a href="/en/" class="back">&larr; Back to home</a>
   </div>
 </BaseLayout>

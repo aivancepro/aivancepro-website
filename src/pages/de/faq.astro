@@ -19,7 +19,7 @@ const faqItems = [
   { q: "Gibt es einen integrierten Pausentimer?", a: "Ja, ein schwebender Timer ist integriert mit automatischen Pausenzeiten, die an jede Übung angepasst sind. Er bleibt während Ihrer gesamten Trainingseinheit sichtbar." },
   { q: "Kann ich Trainingsvorlagen speichern?", a: "Ja, speichern Sie jede Trainingseinheit als Vorlage, um sie schnell wiederzuverwenden. Ideal für Ihre regelmäßigen Routinen." },
   { q: "Hilft der KI-Coach bei der Technikkorrektur?", a: "Ja, fragen Sie ihn nach Ratschlägen zur Übungsausführung und er erklärt Ihnen die richtige Technik, häufige Fehler und Varianten, die zu Ihrem Niveau passen." },
-  { q: "Wie funktioniert die Community?", a: "Mit dem Elite-Plan können Sie Gruppen erstellen oder beitreten, Challenges mit Freunden starten, Bestenlisten einsehen und über den integrierten Messenger chatten. Eine großartige Möglichkeit, motiviert zu bleiben." },
+  { q: "Wie funktioniert die Community?", a: "Mit dem Pro-Plan können Sie Gruppen erstellen oder beitreten, Challenges mit Freunden starten, Bestenlisten einsehen und über den integrierten Messenger chatten. Eine großartige Möglichkeit, motiviert zu bleiben." },
   { q: "Bietet die App Übungsvideos?", a: "Ja, jede Übung verfügt über Demonstrationsvideos und detaillierte Anleitungen für eine korrekte und sichere Ausführung." },
   { q: "Kann ich eine KI-generierte Einheit ändern?", a: "Natürlich. Sie können Übungen hinzufügen, entfernen oder ersetzen und Sätze, Wiederholungen und Gewichte jederzeit während oder vor dem Training anpassen." },
   { q: "Was ist Krafttraining und wie unterscheidet es sich von Cardio?", a: "Krafttraining zielt darauf ab, die Muskeln durch Widerstand (Gewichte, Bänder, Körpergewicht) zu stärken. Cardio zielt auf die Herz-Kreislauf-Ausdauer ab. Beide ergänzen sich und AIVancePro hilft Ihnen, beides nach Ihren Zielen zu kombinieren." },
@@ -49,8 +49,7 @@ const faqItems = [
   { q: "Wie viele Kalorien verbrennt eine Krafttrainingseinheit?", a: "Eine 45- bis 60-minütige Krafttrainingseinheit verbrennt durchschnittlich 200 bis 400 Kalorien, je nach Intensität. Der 'Nachbrenneffekt' bedeutet, dass Sie noch Stunden nach dem Training weiter Kalorien verbrennen." },
   { q: "Brauche ich ein Kaloriendefizit zum Abnehmen?", a: "Ja, ein Kaloriendefizit ist notwendig zum Abnehmen. Krafttraining hilft, die Muskelmasse während des Gewichtsverlusts zu erhalten und den 'Skinny Fat'-Effekt zu vermeiden." },
   { q: "Krafttraining oder Cardio: Was ist besser zum Abnehmen?", a: "Beides ergänzt sich. Krafttraining erhält die Muskeln und steigert den Stoffwechsel, Cardio verbrennt zusätzliche Kalorien. AIVancePro kann beides in Ihren Programmen kombinieren." },
-  { q: "Was kostet AIVancePro?", a: "AIVancePro ist mit Grundfunktionen kostenlos. Der Pro-Plan für 4,99€/Monat schaltet unbegrenztes KI-Coaching und erweiterte Analysen frei. Der Elite-Plan für 7,99€/Monat fügt Community-Funktionen, Challenges und Messaging hinzu." },
-  { q: "Was ist der Unterschied zwischen Pro und Elite?", a: "Der Pro-Plan umfasst unbegrenztes KI-Coaching, erweiterte Analysen, Periodisierung und Vorlagen. Der Elite-Plan fügt Community-Funktionen hinzu: Gruppen, Challenges, Messaging, Bestenlisten und Abzeichen." },
+  { q: "Was kostet AIVancePro?", a: "AIVancePro ist mit Grundfunktionen kostenlos. Der Pro-Plan für 6,99€/Monat schaltet 250 KI-Nachrichten, Trainingspläne bis zu 12 Wochen, erweiterte Analysen und Prioritäts-Support frei." },
   { q: "Kann ich mein Abonnement jederzeit kündigen?", a: "Ja, kündigen Sie jederzeit über die App-Einstellungen oder Ihr App Store/Google Play-Konto. Keine Vertragsbindung, keine versteckten Gebühren." },
   { q: "Wie wechsle ich den Plan?", a: "Sie können den Plan direkt in den App-Einstellungen wechseln. Die Änderung wird sofort wirksam." },
   { q: "Sind meine Daten sicher?", a: "Ihre Daten werden sicher gehostet und verschlüsselt. Wir verkaufen niemals Ihre Daten." },
@@ -340,7 +339,7 @@ const jsonLd = {
                         Wie funktioniert die Community?
                         <span class="faq-icon"></span>
                     </button>
-                    <div class="faq-answer"><div class="faq-answer-inner">Mit dem Elite-Plan k&ouml;nnen Sie Gruppen erstellen oder beitreten, Challenges mit Freunden starten, Bestenlisten einsehen und &uuml;ber den integrierten Messenger chatten. Eine gro&szlig;artige M&ouml;glichkeit, motiviert zu bleiben.</div></div>
+                    <div class="faq-answer"><div class="faq-answer-inner">Mit dem Pro-Plan k&ouml;nnen Sie Gruppen erstellen oder beitreten, Challenges mit Freunden starten, Bestenlisten einsehen und &uuml;ber den integrierten Messenger chatten. Eine gro&szlig;artige M&ouml;glichkeit, motiviert zu bleiben.</div></div>
                 </div>
                 <div class="faq-item">
                     <button class="faq-question" onclick="this.parentElement.classList.toggle('open')">
@@ -585,14 +584,7 @@ const jsonLd = {
                         Was kostet AIVancePro?
                         <span class="faq-icon"></span>
                     </button>
-                    <div class="faq-answer"><div class="faq-answer-inner">AIVancePro ist mit Grundfunktionen kostenlos. Der Pro-Plan f&uuml;r 4,99&euro;/Monat schaltet unbegrenztes KI-Coaching und erweiterte Analysen frei. Der Elite-Plan f&uuml;r 7,99&euro;/Monat f&uuml;gt Community-Funktionen, Challenges und Messaging hinzu. <a href="/de/preise/">Vollst&auml;ndigen Vergleich ansehen</a>.</div></div>
-                </div>
-                <div class="faq-item">
-                    <button class="faq-question" onclick="this.parentElement.classList.toggle('open')">
-                        Was ist der Unterschied zwischen Pro und Elite?
-                        <span class="faq-icon"></span>
-                    </button>
-                    <div class="faq-answer"><div class="faq-answer-inner">Der Pro-Plan umfasst unbegrenztes KI-Coaching, erweiterte Analysen, Periodisierung und Vorlagen. Der Elite-Plan f&uuml;gt Community-Funktionen hinzu: Gruppen, Challenges, Messaging, Bestenlisten und Abzeichen.</div></div>
+                    <div class="faq-answer"><div class="faq-answer-inner">AIVancePro ist mit Grundfunktionen kostenlos. Der Pro-Plan f&uuml;r 6,99&euro;/Monat schaltet 250 KI-Nachrichten, Trainingspl&auml;ne bis zu 12 Wochen, erweiterte Analysen und Priorit&auml;ts-Support frei. <a href="/de/preise/">Vollst&auml;ndigen Vergleich ansehen</a>.</div></div>
                 </div>
                 <div class="faq-item">
                     <button class="faq-question" onclick="this.parentElement.classList.toggle('open')">

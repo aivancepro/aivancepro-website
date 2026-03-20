@@ -1,11 +1,19 @@
 ---
 interface Props {
   category: string;
+  lang?: 'fr' | 'en' | 'de';
 }
 
 import { frontParts, backParts } from '../data/muscle-paths.js';
 
-const { category } = Astro.props;
+const { category, lang = 'fr' } = Astro.props;
+
+const labels = {
+  fr: { front: 'Face', back: 'Dos', primary: 'Principal', secondary: 'Secondaire' },
+  en: { front: 'Front', back: 'Back', primary: 'Primary', secondary: 'Secondary' },
+  de: { front: 'Vorderseite', back: 'Rückseite', primary: 'Primär', secondary: 'Sekundär' },
+};
+const l = labels[lang] || labels.fr;
 
 // Structural slugs (never highlighted, always gray)
 const structural = new Set(['head', 'hair', 'hands', 'feet', 'ankles', 'knees', 'neck', 'tibialis']);
@@ -84,7 +92,7 @@ function backCls(slug: string) {
           </g>
         ))}
       </svg>
-      <span class="mm-label">Face</span>
+      <span class="mm-label">{l.front}</span>
     </div>
 
     <!-- BACK VIEW -->
@@ -98,14 +106,14 @@ function backCls(slug: string) {
           </g>
         ))}
       </svg>
-      <span class="mm-label">Dos</span>
+      <span class="mm-label">{l.back}</span>
     </div>
   </div>
 
   <!-- Legend -->
   <div class="mm-legend">
-    <span class="mm-legend-item"><span class="mm-dot mm-dot-p"></span> Principal</span>
-    <span class="mm-legend-item"><span class="mm-dot mm-dot-s"></span> Secondaire</span>
+    <span class="mm-legend-item"><span class="mm-dot mm-dot-p"></span> {l.primary}</span>
+    <span class="mm-legend-item"><span class="mm-dot mm-dot-s"></span> {l.secondary}</span>
   </div>
 </div>
 

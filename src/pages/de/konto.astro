@@ -131,15 +131,9 @@ import BaseLayout from '../../layouts/BaseLayout.astro';
         <div class="upgrade-plans" id="upgrade-plans">
           <div class="plan-option" id="plan-pro">
             <div class="plan-name">Pro</div>
-            <div class="plan-price blue">4,99&euro;</div>
+            <div class="plan-price blue">6,99&euro;</div>
             <div class="plan-period">/ Monat</div>
-            <div class="plan-feat">150 KI-Nachrichten / Monat<br>Trainingsgenerierung<br>4-Wochen-Plan</div>
-          </div>
-          <div class="plan-option" id="plan-elite">
-            <div class="plan-name">Elite</div>
-            <div class="plan-price purple">7,99&euro;</div>
-            <div class="plan-period">/ Monat</div>
-            <div class="plan-feat">Unbegrenzte KI<br>Pl&auml;ne bis 12 Wochen<br>&Uuml;bertrainingsanalyse</div>
+            <div class="plan-feat">250 KI-Nachrichten / Monat<br>Trainingsgenerierung<br>Pl&auml;ne bis 12 Wochen<br>Erweiterte Analysen</div>
           </div>
         </div>
         <p class="app-cta">Abonnieren Sie direkt &uuml;ber die <a href="https://apps.apple.com/de/app/aivancepro/id6756116760" target="_blank" rel="noopener">mobile App</a></p>
@@ -175,8 +169,8 @@ import BaseLayout from '../../layouts/BaseLayout.astro';
 
       // Set subscription info
       document.getElementById('sub-email').textContent = email;
-      var planNames = { free: 'Kostenlos', pro: 'Pro', elite: 'Elite', trial: 'Kostenlose Testphase' };
-      var planBadges = { free: 'Kostenlos', pro: 'Pro', elite: 'Elite', trial: 'Test' };
+      var planNames = { free: 'Kostenlos', pro: 'Pro', trial: 'Kostenlose Testphase' };
+      var planBadges = { free: 'Kostenlos', pro: 'Pro', trial: 'Test' };
       document.getElementById('sub-plan-name').textContent = planNames[plan] || 'Kostenlos';
 
       var badge = document.getElementById('sub-badge');
@@ -207,16 +201,12 @@ import BaseLayout from '../../layouts/BaseLayout.astro';
       // Icons
       document.getElementById('icon-zap').style.display = plan === 'free' ? 'block' : 'none';
       document.getElementById('icon-sparkles').style.display = (plan === 'pro' || plan === 'trial') ? 'block' : 'none';
-      document.getElementById('icon-crown').style.display = plan === 'elite' ? 'block' : 'none';
+      document.getElementById('icon-crown').style.display = 'none';
 
       // Upgrade card
       var upgradeCard = document.getElementById('upgrade-card');
-      if (plan === 'elite') {
-        upgradeCard.innerHTML = '<h3>Sie sind Elite!</h3><p>Sie haben Zugang zu allen AIVancePro-Funktionen.</p>';
-      } else if (plan === 'pro') {
-        document.getElementById('plan-pro').classList.add('current');
-        document.getElementById('upgrade-title').textContent = 'Upgrade auf Elite';
-        document.getElementById('upgrade-desc').textContent = 'Schalten Sie unbegrenzte KI und \u00dcbertrainingsanalyse frei.';
+      if (plan === 'pro') {
+        upgradeCard.innerHTML = '<h3>Sie sind Pro!</h3><p>Sie haben Zugang zu allen AIVancePro-Funktionen.</p>';
       } else if (plan === 'trial') {
         document.getElementById('upgrade-title').textContent = 'Nach der Testphase weitermachen';
         document.getElementById('upgrade-desc').textContent = 'W\u00e4hlen Sie Ihr Abo, um Ihre Vorteile nach der Testphase zu behalten.';

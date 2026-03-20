@@ -131,15 +131,9 @@ import BaseLayout from '../layouts/BaseLayout.astro';
         <div class="upgrade-plans" id="upgrade-plans">
           <div class="plan-option" id="plan-pro">
             <div class="plan-name">Pro</div>
-            <div class="plan-price blue">4,99&euro;</div>
+            <div class="plan-price blue">6,99&euro;</div>
             <div class="plan-period">/ mois</div>
-            <div class="plan-feat">150 messages IA / mois<br>G&eacute;n&eacute;ration de s&eacute;ances<br>Plan 4 semaines</div>
-          </div>
-          <div class="plan-option" id="plan-elite">
-            <div class="plan-name">Elite</div>
-            <div class="plan-price purple">7,99&euro;</div>
-            <div class="plan-period">/ mois</div>
-            <div class="plan-feat">IA illimit&eacute;e<br>Plans jusqu'&agrave; 12 semaines<br>Analyse surentra&icirc;nement</div>
+            <div class="plan-feat">250 messages IA / mois<br>G&eacute;n&eacute;ration de s&eacute;ances<br>Plans jusqu'&agrave; 12 semaines<br>Analyses avanc&eacute;es</div>
           </div>
         </div>
         <p class="app-cta">Abonnez-vous directement depuis <a href="https://apps.apple.com/fr/app/aivancepro/id6756116760" target="_blank" rel="noopener">l'application mobile</a></p>
@@ -175,8 +169,8 @@ import BaseLayout from '../layouts/BaseLayout.astro';
 
       // Set subscription info
       document.getElementById('sub-email').textContent = email;
-      var planNames = { free: 'Gratuit', pro: 'Pro', elite: 'Elite', trial: 'Essai gratuit' };
-      var planBadges = { free: 'Gratuit', pro: 'Pro', elite: 'Elite', trial: 'Essai' };
+      var planNames = { free: 'Gratuit', pro: 'Pro', trial: 'Essai gratuit' };
+      var planBadges = { free: 'Gratuit', pro: 'Pro', trial: 'Essai' };
       document.getElementById('sub-plan-name').textContent = planNames[plan] || 'Gratuit';
 
       var badge = document.getElementById('sub-badge');
@@ -207,16 +201,12 @@ import BaseLayout from '../layouts/BaseLayout.astro';
       // Icons
       document.getElementById('icon-zap').style.display = plan === 'free' ? 'block' : 'none';
       document.getElementById('icon-sparkles').style.display = (plan === 'pro' || plan === 'trial') ? 'block' : 'none';
-      document.getElementById('icon-crown').style.display = plan === 'elite' ? 'block' : 'none';
+      document.getElementById('icon-crown').style.display = 'none';
 
       // Upgrade card
       var upgradeCard = document.getElementById('upgrade-card');
-      if (plan === 'elite') {
-        upgradeCard.innerHTML = '<h3>Vous &ecirc;tes Elite !</h3><p>Vous b&eacute;n&eacute;ficiez de toutes les fonctionnalit&eacute;s AIVancePro.</p>';
-      } else if (plan === 'pro') {
-        document.getElementById('plan-pro').classList.add('current');
-        document.getElementById('upgrade-title').textContent = 'Passez à Elite';
-        document.getElementById('upgrade-desc').textContent = 'Débloquez l\'IA illimitée et l\'analyse de surentraînement.';
+      if (plan === 'pro') {
+        upgradeCard.innerHTML = '<h3>Vous &ecirc;tes Pro !</h3><p>Vous b&eacute;n&eacute;ficiez de toutes les fonctionnalit&eacute;s AIVancePro.</p>';
       } else if (plan === 'trial') {
         document.getElementById('upgrade-title').textContent = 'Continuez après l\'essai';
         document.getElementById('upgrade-desc').textContent = 'Choisissez votre abonnement pour ne pas perdre vos avantages à la fin de l\'essai.';
