@@ -18,8 +18,6 @@ alternates:
   de: "https://aivancepro.fr/de/blog/wie-viel-protein-pro-tag-muskelaufbau/"
 ---
 
-## Contents
-
 If you've ever wondered **how much protein per day to build muscle**, the short answer backed by the latest research is roughly **1.6 to 2.2 grams per kilogram of body weight** (0.73–1.0 g per pound). For a 180 lb / 82 kg lifter, that works out to about 131–180 g of protein daily. A landmark 2024 meta-analysis published in *Sports Medicine* confirmed that intakes above 1.6 g/kg significantly boost lean mass gains when paired with resistance training, while going beyond 2.2 g/kg offers diminishing returns for most natural trainees. But blanket numbers only tell part of the story. Your ideal daily protein intake depends on training age, caloric status, body composition goals, and even meal timing. In this 2026 guide, we'll break down the science, give you practical per-meal targets, compare protein sources, and show you how to dial in your **muscle building nutrition** without overthinking it. Let's get into it.
 
 ## What Does the Science Say About Protein for Muscle Growth?
