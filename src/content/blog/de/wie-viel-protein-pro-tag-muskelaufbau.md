@@ -18,8 +18,6 @@ alternates:
   de: "https://aivancepro.fr/de/blog/wie-viel-protein-pro-tag-muskelaufbau/"
 ---
 
-## Inhalt
-
 **Wie viel Protein pro Tag für Muskelaufbau** – diese Frage beschäftigt Anfänger und Fortgeschrittene gleichermaßen. Die kurze Antwort: Für optimalen Muskelaufbau empfiehlt die aktuelle Forschung (2024–2026) eine tägliche Proteinzufuhr von **1,6 bis 2,2 Gramm pro Kilogramm Körpergewicht**. Bei einer 80 kg schweren Person entspricht das 128 bis 176 Gramm Eiweiß am Tag. Doch Pauschalwerte allein reichen nicht – Trainingserfahrung, Kalorienbilanz, Proteinqualität und Timing spielen ebenfalls eine entscheidende Rolle. In diesem umfassenden Guide erfährst du, wie du deinen **täglichen Eiweißbedarf** präzise berechnest, welche Proteinquellen besonders effektiv sind und welche verbreiteten Mythen du getrost vergessen kannst. Denn wer seine **Proteinzufuhr beim Krafttraining** richtig steuert, holt deutlich mehr aus jeder Trainingseinheit heraus – egal ob im Home-Gym oder im Fitnessstudio.
 
 ## Was bedeutet Proteinbedarf und warum ist er für Muskelaufbau so wichtig?
