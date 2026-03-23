@@ -41,15 +41,15 @@ Le grand pectoral se divise en trois faisceaux principaux : **claviculaire** (ha
 
 Le classement suivant s'appuie sur les données EMG combinées de 4 études publiées entre 2024 et 2026, totalisant plus de **320 sujets entraînés** avec au moins 2 ans de pratique. Le développé couché à la barre reste en tête pour l'activation globale du grand pectoral, mais les écartés aux câbles en position d'étirement et le développé incliné aux haltères le talonnent grâce à leur supériorité sur le faisceau claviculaire et leur potentiel d'étirement sous charge. Ce classement n'est pas une hiérarchie absolue : le meilleur exercice pectoraux pour toi est celui que tu peux exécuter avec une technique irréprochable et une progression constante. Un mouvement « optimal » en EMG devient médiocre si tu le fais mal ou s'il te cause des douleurs d'épaule.
 
-| # | Exercice | EMG sternal | EMG claviculaire | Étirement | Surcharge |
-|---|----------|-------------|------------------|-----------|-----------|
+| Rang | Exercice | Activation EMG sternal | Activation EMG claviculaire | Étirement sous charge | Surcharge progressive |
+|------|----------|----------------------|---------------------------|----------------------|----------------------|
 | 1 | Développé couché barre | ★★★★★ | ★★★☆☆ | ★★★☆☆ | ★★★★★ |
-| 2 | DC incliné haltères (30°) | ★★★★☆ | ★★★★★ | ★★★★☆ | ★★★★☆ |
+| 2 | Développé incliné haltères (30°) | ★★★★☆ | ★★★★★ | ★★★★☆ | ★★★★☆ |
 | 3 | Écartés câbles (incliné) | ★★★☆☆ | ★★★★★ | ★★★★★ | ★★★☆☆ |
 | 4 | Dips lestés (buste penché) | ★★★★★ | ★★☆☆☆ | ★★★★☆ | ★★★★★ |
-| 5 | DC couché haltères | ★★★★★ | ★★★☆☆ | ★★★★★ | ★★★★☆ |
-| 6 | Pompes (lestées/anneaux) | ★★★★☆ | ★★★☆☆ | ★★★★☆ | ★★★☆☆ |
-| 7 | Machine convergente | ★★★★☆ | ★★★☆☆ | ★★★☆☆ | ★★★★☆ |
+| 5 | Développé couché haltères | ★★★★★ | ★★★☆☆ | ★★★★★ | ★★★★☆ |
+| 6 | Pompes pectoraux (lestées/anneaux) | ★★★★☆ | ★★★☆☆ | ★★★★☆ | ★★★☆☆ |
+| 7 | Machine convergente (type Hammer) | ★★★★☆ | ★★★☆☆ | ★★★☆☆ | ★★★★☆ |
 
 Note : les étoiles sont des moyennes arrondies issues des données EMG normalisées (%MVIC). L'étirement sous charge est estimé d'après l'amplitude de mouvement en position basse.
 
