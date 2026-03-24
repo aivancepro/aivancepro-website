@@ -1,0 +1,10 @@
+[
+  {
+    "relation": ["delegate_permission/common.handle_all_urls"],
+    "target": {
+      "namespace": "android_app",
+      "package_name": "com.aivancepro.app",
+      "sha256_cert_fingerprints": ["0F:17:B7:29:EE:C8:08:91:5C:31:92:CA:55:B3:A9:B7:73:1F:E3:92:BD:5C:8D:20:6E:FC:84:19:EA:3C:81:6A"]
+    }
+  }
+]
