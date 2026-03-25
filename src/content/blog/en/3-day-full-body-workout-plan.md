@@ -18,7 +18,6 @@ alternates:
   de: "https://aivancepro.fr/de/blog/3-tage-ganzkoerpertraining-plan/"
 ---
 
-## Contents
 
 A **3 day full body workout** is one of the most time-efficient, science-backed approaches to building muscle and strength—whether you're a beginner stepping into the gym for the first time or an intermediate lifter looking to simplify your weekly workout schedule. According to a 2024 meta-analysis published in *Sports Medicine*, training each muscle group at least twice per week produces roughly **3.1 % greater hypertrophy gains** compared to once-a-week splits, and a well-designed full body training plan hits that frequency effortlessly in just three sessions. In this guide, you'll get a complete, ready-to-follow muscle building plan for 2026, including exercise selection, set-and-rep schemes, progressive overload strategies, and recovery tips. No fluff, no filler—just the practical blueprint you need to make real progress on a 3 day split without living at the gym.
 

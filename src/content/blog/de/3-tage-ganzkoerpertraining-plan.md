@@ -18,7 +18,6 @@ alternates:
   de: "https://aivancepro.fr/de/blog/3-tage-ganzkoerpertraining-plan/"
 ---
 
-## Inhalt
 
 Ein **3 Tage Ganzkörpertraining** gilt 2026 als einer der effizientesten Einstiege in den Muskelaufbau – und das belegen aktuelle Daten: Eine Meta-Analyse der Sportwissenschaft Hamburg (2025) zeigt, dass Anfänger mit drei Ganzkörper-Einheiten pro Woche in zwölf Wochen durchschnittlich **8–12 % mehr Maximalkraft** aufbauen als mit klassischen Split-Programmen. Das liegt daran, dass jede Muskelgruppe dreimal wöchentlich stimuliert wird, was die Proteinsynthese optimal am Laufen hält. In diesem Artikel bekommst du einen kompletten **Ganzkörper Trainingsplan**, der speziell für Einsteiger konzipiert ist – inklusive konkreter Übungen, Satz- und Wiederholungsschemata und Tipps zur Progression. Egal ob du in einem Studio wie McFIT, FitX oder im Home-Gym trainierst: Dieser Plan bringt dich vom ersten Tag an auf Kurs. Lies weiter und erfahre, wie du **Krafttraining** mit nur drei Tagen pro Woche maximal effektiv gestaltest.
 

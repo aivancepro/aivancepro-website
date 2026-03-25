@@ -18,7 +18,6 @@ alternates:
   de: "https://aivancepro.fr/de/blog/3-tage-ganzkoerpertraining-plan/"
 ---
 
-## Sommaire
 
 Tu cherches un **programme full body 3 jours** efficace pour débuter la musculation sans te perdre dans des splits complexes ? Tu es au bon endroit. En 2025, une méta-analyse publiée dans *Sports Medicine* (Schoenfeld et al., 2024) a confirmé que les entraînements full body réalisés 3 fois par semaine produisent des gains de force et d'hypertrophie comparables — voire supérieurs — aux splits classiques chez les débutants, avec un volume hebdomadaire égal. Concrètement, les sujets entraînés en full body ont gagné en moyenne **3,1 % de masse maigre** sur 8 semaines contre 2,4 % pour le groupe en split. Ce guide te propose un plan semaine par semaine, des exercices concrets, des conseils de progression et tout ce qu'il faut pour poser des bases solides. Que tu t'entraînes en salle ou en [home gym](/guides/home-gym/), ce programme s'adapte à ton niveau et à ton matériel.
 
