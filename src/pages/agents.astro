@@ -39,53 +39,55 @@
       font-size: 1rem;
       width: 300px;
       outline: none;
+      transition: border-color 0.2s;
     }
     #gate input:focus { border-color: #4A90D9; }
     #gate .error { color: #ef4444; font-size: 0.875rem; display: none; }
 
     /* ─── Dashboard ─────────────────────────── */
-    #dashboard { display: none; padding: 24px; max-width: 1200px; margin: 0 auto; }
+    #dashboard { display: none; padding: 24px 20px; max-width: 1200px; margin: 0 auto; }
 
     .header {
       display: flex;
       align-items: center;
       justify-content: space-between;
-      margin-bottom: 24px;
+      margin-bottom: 28px;
       padding-bottom: 16px;
       border-bottom: 1px solid #27272a;
     }
-    .header h1 { font-size: 1.5rem; font-weight: 700; }
+    .header h1 { font-size: 1.5rem; font-weight: 700; display: flex; align-items: center; gap: 8px; }
     .header .status-dot {
       width: 8px; height: 8px;
       background: #22c55e;
       border-radius: 50%;
       display: inline-block;
-      margin-right: 8px;
       animation: pulse 2s infinite;
     }
     @keyframes pulse {
       0%, 100% { opacity: 1; }
       50% { opacity: 0.4; }
     }
-    .header small { color: #71717a; }
+    .header small { color: #71717a; font-size: 0.8rem; }
 
     /* ─── Escalades ─────────────────────────── */
     #escalades {
-      background: #1c1917;
+      background: linear-gradient(135deg, #1c1917, #1a1510);
       border: 1px solid #78350f;
       border-radius: 12px;
-      padding: 16px;
+      padding: 16px 20px;
       margin-bottom: 24px;
       display: none;
     }
-    #escalades h2 { color: #fbbf24; font-size: 1rem; margin-bottom: 12px; }
+    #escalades h2 { color: #fbbf24; font-size: 1rem; margin-bottom: 12px; display: flex; align-items: center; gap: 8px; }
     .escalade-item {
-      background: #27272a;
+      background: rgba(39,39,42,0.6);
       border-radius: 8px;
-      padding: 12px;
+      padding: 12px 14px;
       margin-bottom: 8px;
       font-size: 0.875rem;
+      border-left: 3px solid #f59e0b;
     }
+    .escalade-item:last-child { margin-bottom: 0; }
     .escalade-item .agent { color: #fbbf24; font-weight: 600; }
     .escalade-item .reason { color: #d4d4d8; margin-top: 4px; }
     .escalade-item .date { color: #71717a; font-size: 0.75rem; margin-top: 4px; }
@@ -93,9 +95,9 @@
     /* ─── KPIs Banner ───────────────────────── */
     .kpis {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+      grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
       gap: 12px;
-      margin-bottom: 24px;
+      margin-bottom: 28px;
     }
     .kpi-card {
       background: #18181b;
@@ -103,9 +105,11 @@
       border-radius: 12px;
       padding: 16px;
       text-align: center;
+      transition: border-color 0.2s;
     }
+    .kpi-card:hover { border-color: #3f3f46; }
     .kpi-card .value { font-size: 1.5rem; font-weight: 700; color: #4A90D9; }
-    .kpi-card .label { font-size: 0.75rem; color: #71717a; margin-top: 4px; }
+    .kpi-card .label { font-size: 0.75rem; color: #71717a; margin-top: 4px; text-transform: uppercase; letter-spacing: 0.5px; }
     .kpi-card .trend { font-size: 0.75rem; margin-top: 4px; }
     .trend-up { color: #22c55e; }
     .trend-down { color: #ef4444; }
@@ -133,25 +137,38 @@
 
     .agent-card {
       background: #27272a;
-      border-radius: 8px;
-      padding: 14px;
+      border-radius: 10px;
+      padding: 14px 14px 14px 18px;
       margin-bottom: 10px;
       cursor: pointer;
-      transition: border-color 0.2s;
+      transition: border-color 0.2s, background 0.2s;
       border: 1px solid transparent;
+      border-left: 3px solid #3f3f46;
     }
-    .agent-card:hover { border-color: #3f3f46; }
+    .agent-card:last-child { margin-bottom: 0; }
+    .agent-card:hover { border-color: #3f3f46; background: #2a2a2e; }
+    .agent-card.card-idle { border-left-color: #52525b; }
+    .agent-card.card-running { border-left-color: #3b82f6; }
+    .agent-card.card-error { border-left-color: #ef4444; }
+
     .agent-card .agent-header {
       display: flex;
       align-items: center;
       justify-content: space-between;
     }
-    .agent-card .agent-name { font-weight: 600; font-size: 0.95rem; }
+    .agent-card .agent-name {
+      font-weight: 600;
+      font-size: 0.95rem;
+      display: flex;
+      align-items: center;
+      gap: 6px;
+    }
     .agent-card .agent-status {
       font-size: 0.7rem;
-      padding: 2px 8px;
+      padding: 2px 10px;
       border-radius: 999px;
       font-weight: 500;
+      text-transform: capitalize;
     }
     .status-idle { background: #1c1c1e; color: #71717a; }
     .status-running { background: #172554; color: #60a5fa; animation: pulse 1.5s infinite; }
@@ -159,32 +176,56 @@
 
     .agent-card .agent-meta {
       display: flex;
-      gap: 16px;
+      flex-wrap: wrap;
+      gap: 12px;
       margin-top: 8px;
       font-size: 0.75rem;
-      color: #71717a;
+      color: #a1a1aa;
     }
-    .agent-card .agent-last-output {
+    .agent-card .agent-meta span { display: flex; align-items: center; gap: 4px; }
+
+    .agent-skills {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 4px;
       margin-top: 8px;
+    }
+    .skill-tag {
+      font-size: 0.65rem;
+      padding: 2px 7px;
+      border-radius: 4px;
+      background: #1e1e22;
+      color: #71717a;
+      border: 1px solid #333;
+      font-family: 'SF Mono', 'Fira Code', monospace;
+    }
+
+    .agent-card .agent-last-output {
+      margin-top: 10px;
       font-size: 0.8rem;
       color: #a1a1aa;
       max-height: 60px;
       overflow: hidden;
-      line-height: 1.4;
+      line-height: 1.5;
+      padding: 8px 10px;
+      background: #1e1e22;
+      border-radius: 6px;
+      border-left: 2px solid #3f3f46;
     }
 
     .btn {
       background: #4A90D9;
       color: white;
       border: none;
-      padding: 6px 14px;
-      border-radius: 6px;
+      padding: 8px 16px;
+      border-radius: 8px;
       font-size: 0.8rem;
       cursor: pointer;
       font-weight: 500;
-      transition: background 0.2s;
+      transition: background 0.2s, transform 0.1s;
     }
     .btn:hover { background: #3b7bc8; }
+    .btn:active { transform: scale(0.97); }
     .btn:disabled { opacity: 0.5; cursor: not-allowed; }
     .btn-sm { padding: 4px 10px; font-size: 0.7rem; }
 
@@ -193,7 +234,8 @@
       display: none;
       position: fixed;
       inset: 0;
-      background: rgba(0,0,0,0.7);
+      background: rgba(0,0,0,0.75);
+      backdrop-filter: blur(4px);
       z-index: 100;
       align-items: center;
       justify-content: center;
@@ -202,13 +244,16 @@
       background: #18181b;
       border: 1px solid #27272a;
       border-radius: 16px;
-      padding: 24px;
+      padding: 28px;
       width: 90%;
       max-width: 700px;
       max-height: 85vh;
       overflow-y: auto;
     }
-    #modal h2 { font-size: 1.2rem; margin-bottom: 16px; }
+    #modal::-webkit-scrollbar { width: 6px; }
+    #modal::-webkit-scrollbar-track { background: transparent; }
+    #modal::-webkit-scrollbar-thumb { background: #3f3f46; border-radius: 3px; }
+    #modal h2 { font-size: 1.25rem; margin-bottom: 16px; display: flex; align-items: center; gap: 8px; }
     #modal .close {
       float: right;
       background: none;
@@ -216,22 +261,55 @@
       color: #71717a;
       font-size: 1.5rem;
       cursor: pointer;
+      transition: color 0.2s;
+      line-height: 1;
     }
     #modal .close:hover { color: #fafafa; }
+
+    .modal-info {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 16px;
+      align-items: center;
+      margin-bottom: 16px;
+      padding-bottom: 16px;
+      border-bottom: 1px solid #27272a;
+    }
+    .modal-info-item {
+      font-size: 0.82rem;
+      color: #a1a1aa;
+    }
+    .modal-info-item strong { color: #d4d4d8; }
 
     .run-history {
       margin-top: 16px;
     }
+    .run-history h3 {
+      font-size: 0.9rem;
+      color: #a1a1aa;
+      margin-bottom: 12px;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+      font-weight: 500;
+    }
     .run-item {
-      background: #27272a;
+      background: #222225;
       border-radius: 8px;
-      padding: 12px;
+      padding: 12px 14px;
       margin-bottom: 8px;
       font-size: 0.85rem;
+      border-left: 3px solid #3f3f46;
+      transition: background 0.15s;
     }
+    .run-item:hover { background: #28282c; }
+    .run-item.run-completed { border-left-color: #22c55e; }
+    .run-item.run-failed { border-left-color: #ef4444; }
+    .run-item.run-running { border-left-color: #3b82f6; }
+    .run-item.run-pending { border-left-color: #71717a; }
     .run-item .run-header {
       display: flex;
       justify-content: space-between;
+      align-items: center;
       margin-bottom: 6px;
     }
     .run-item .run-trigger { color: #71717a; font-size: 0.75rem; }
@@ -242,10 +320,15 @@
       max-height: 100px;
       overflow: hidden;
       white-space: pre-wrap;
-      line-height: 1.4;
+      line-height: 1.5;
+      margin-top: 6px;
+      padding: 8px;
+      background: #1a1a1e;
+      border-radius: 6px;
     }
 
     .loading { color: #71717a; text-align: center; padding: 40px; }
+    .empty-state { color: #52525b; font-size: 0.85rem; text-align: center; padding: 20px; }
   </style>
 </head>
 <body>
@@ -303,6 +386,62 @@
     const SUPABASE_URL = 'https://vzmtvhcvyqzkmestdbko.supabase.co';
     const SUPABASE_ANON_KEY = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InZ6bXR2aGN2eXF6a21lc3RkYmtvIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NzA4OTA0MTEsImV4cCI6MjA4NjQ2NjQxMX0.rvBz2uIsr3YtLIw84Kor3eVFpH4FiXVZgbufiJH3uio';
     const PASSWORD_HASH = '4aa67387592c6d09909e79cc50d9fecbec5087bf4f39b59f1c90804b3fa9155c';
+
+    // ─── Helpers ─────────────────────────────
+    const AGENT_ICONS = {
+      'agent-dev': '\u{1F6E0}',       // 🛠
+      'agent-debug': '\u{1F41B}',     // 🐛
+      'agent-seo-geo': '\u{1F50D}',   // 🔍
+      'agent-marketing': '\u{1F4E3}', // 📣
+      'agent-contenu': '\u{270D}',    // ✍
+      'agent-analyse': '\u{1F4CA}',   // 📊
+    };
+
+    const STATUS_LABELS = {
+      idle: 'Inactif',
+      running: 'En cours',
+      error: 'Erreur',
+    };
+
+    const STATUS_LABELS_RUN = {
+      pending: 'En attente',
+      running: 'En cours',
+      completed: 'Terminé',
+      failed: 'Échoué',
+    };
+
+    const TRIGGER_LABELS = {
+      manual: 'Manuel',
+      cron: 'Automatique',
+      webhook: 'Webhook',
+      task: 'Inter-agent',
+    };
+
+    const DAYS_FR = ['Dimanche', 'Lundi', 'Mardi', 'Mercredi', 'Jeudi', 'Vendredi', 'Samedi'];
+
+    function cronToHuman(cron) {
+      if (!cron) return 'Sur demande';
+      const parts = cron.split(' ');
+      if (parts.length < 5) return cron;
+      const [min, hour, , , dow] = parts;
+
+      // Every N hours: "0 */6 * * *"
+      if (hour.startsWith('*/')) {
+        return `Toutes les ${hour.slice(2)}h`;
+      }
+
+      // Specific days: "0 9 * * 1,4"
+      if (dow !== '*') {
+        const days = dow.split(',').map(d => DAYS_FR[parseInt(d)] || d);
+        const h = parseInt(hour);
+        if (days.length === 1) {
+          return `${days[0]} ${h}h${min !== '0' ? min.padStart(2, '0') : ''}`;
+        }
+        return `${days.join(' & ')} ${h}h${min !== '0' ? min.padStart(2, '0') : ''}`;
+      }
+
+      return cron;
+    }
 
     let sb;
     let agents = [];
@@ -448,7 +587,7 @@
     function renderAgents(containerId, poleName, allAgents, runsByAgent, lastRunByAgent) {
       const container = document.getElementById(`agents-${containerId}`);
       const pole = poles.find(p => p.name === poleName);
-      if (!pole) { container.innerHTML = '<p class="loading">Pôle non trouvé</p>'; return; }
+      if (!pole) { container.innerHTML = '<p class="empty-state">Pôle non trouvé</p>'; return; }
 
       const poleAgents = allAgents.filter(a => a.pole_id === pole.id);
 
@@ -456,27 +595,32 @@
         const lastRun = lastRunByAgent[agent.id];
         const runCount = runsByAgent[agent.id] || 0;
         const lastDate = lastRun ? new Date(lastRun.started_at).toLocaleString('fr-FR', { day: '2-digit', month: '2-digit', hour: '2-digit', minute: '2-digit' }) : 'Jamais';
+        const icon = AGENT_ICONS[agent.slug] || '\u{1F916}';
+        const statusLabel = STATUS_LABELS[agent.status] || agent.status;
+        const scheduleLabel = cronToHuman(agent.schedule);
+        const skills = agent.skills || [];
 
         let highlights = '';
         if (lastRun?.output?.highlights) {
           const h = lastRun.output.highlights;
-          highlights = (Array.isArray(h) ? h.slice(0, 2).join(' • ') : String(h)).slice(0, 120);
+          highlights = (Array.isArray(h) ? h.slice(0, 2).join(' \u{2022} ') : String(h)).slice(0, 120);
         } else if (lastRun?.output?.raw_output) {
           highlights = lastRun.output.raw_output.slice(0, 120);
         }
 
         return `
-          <div class="agent-card" onclick="openAgent('${agent.id}')">
+          <div class="agent-card card-${agent.status}" onclick="openAgent('${agent.id}')">
             <div class="agent-header">
-              <span class="agent-name">${agent.name}</span>
-              <span class="agent-status status-${agent.status}">${agent.status}</span>
+              <span class="agent-name">${icon} ${agent.name}</span>
+              <span class="agent-status status-${agent.status}">${statusLabel}</span>
             </div>
             <div class="agent-meta">
-              <span>⏰ ${agent.schedule || 'Manuel'}</span>
-              <span>📊 ${runCount} runs</span>
-              <span>🕐 ${lastDate}</span>
+              <span>\u{1F552} ${scheduleLabel}</span>
+              <span>\u{1F504} ${runCount} run${runCount > 1 ? 's' : ''}</span>
+              <span>\u{1F4C5} ${lastDate}</span>
             </div>
-            ${highlights ? `<div class="agent-last-output">${highlights}...</div>` : ''}
+            ${skills.length ? `<div class="agent-skills">${skills.map(s => `<span class="skill-tag">${s}</span>`).join('')}</div>` : ''}
+            ${highlights ? `<div class="agent-last-output">${highlights}</div>` : ''}
           </div>
         `;
       }).join('');
@@ -487,10 +631,10 @@
       const agent = agents.find(a => a.id === agentId);
       if (!agent) return;
 
-      document.getElementById('modal-title').textContent = agent.name;
+      const icon = AGENT_ICONS[agent.slug] || '\u{1F916}';
+      document.getElementById('modal-title').innerHTML = `${icon} ${agent.name}`;
       document.getElementById('modal-overlay').style.display = 'flex';
 
-      // Charger les 10 derniers runs
       const { data: runs } = await sb
         .from('agent_runs')
         .select('*')
@@ -498,43 +642,50 @@
         .order('started_at', { ascending: false })
         .limit(10);
 
+      const skills = agent.skills || [];
+      const statusLabel = STATUS_LABELS[agent.status] || agent.status;
+      const scheduleLabel = cronToHuman(agent.schedule);
+      const totalRuns = runs ? runs.length : 0;
+
       let html = `
-        <div style="margin-bottom: 16px;">
-          <div style="color: #71717a; font-size: 0.85rem; margin-bottom: 8px;">
-            <strong>Schedule:</strong> ${agent.schedule || 'Manuel'} &nbsp;|&nbsp;
-            <strong>Status:</strong> <span class="agent-status status-${agent.status}">${agent.status}</span>
-          </div>
-          <button class="btn" onclick="triggerAgent('${agent.slug}', this)">▶ Lancer maintenant</button>
+        <div class="modal-info">
+          <div class="modal-info-item"><strong>Planning :</strong> ${scheduleLabel}</div>
+          <div class="modal-info-item"><strong>Status :</strong> <span class="agent-status status-${agent.status}">${statusLabel}</span></div>
+          <div class="modal-info-item"><strong>Runs :</strong> ${totalRuns}</div>
         </div>
+        ${skills.length ? `<div class="agent-skills" style="margin-bottom: 16px;">${skills.map(s => `<span class="skill-tag">${s}</span>`).join('')}</div>` : ''}
+        <button class="btn" onclick="triggerAgent('${agent.slug}', this)" style="margin-bottom: 20px;">\u{25B6}\u{FE0F} Lancer maintenant</button>
         <div class="run-history">
-          <h3 style="font-size: 0.95rem; color: #a1a1aa; margin-bottom: 12px;">Derniers runs</h3>
+          <h3>Historique des runs</h3>
       `;
 
       if (!runs || runs.length === 0) {
-        html += '<p style="color: #71717a; font-size: 0.85rem;">Aucun run</p>';
+        html += '<p class="empty-state">Aucun run pour le moment</p>';
       } else {
         html += runs.map(r => {
           const date = new Date(r.started_at).toLocaleString('fr-FR');
-          const duration = r.duration_ms ? `${(r.duration_ms / 1000).toFixed(0)}s` : '—';
+          const duration = r.duration_ms ? `${(r.duration_ms / 1000).toFixed(0)}s` : '\u{2014}';
+          const statusLabel = STATUS_LABELS_RUN[r.status] || r.status;
           const statusColor = r.status === 'completed' ? '#22c55e' : r.status === 'failed' ? '#ef4444' : r.status === 'running' ? '#60a5fa' : '#71717a';
+          const triggerLabel = TRIGGER_LABELS[r.trigger_type] || r.trigger_type;
 
           let outputPreview = '';
           if (r.output?.highlights) {
             const h = r.output.highlights;
-            outputPreview = Array.isArray(h) ? h.map(x => '• ' + x).join('\n') : String(h);
+            outputPreview = Array.isArray(h) ? h.map(x => '\u{2022} ' + x).join('\n') : String(h);
           } else if (r.output?.raw_output) {
             outputPreview = r.output.raw_output.slice(0, 300);
           } else if (r.output) {
-            outputPreview = JSON.stringify(r.output).slice(0, 300);
+            outputPreview = JSON.stringify(r.output, null, 2).slice(0, 300);
           }
 
           return `
-            <div class="run-item">
+            <div class="run-item run-${r.status}">
               <div class="run-header">
-                <span style="color: ${statusColor}; font-weight: 600;">${r.status}${r.escalated ? ' 🚨' : ''}</span>
+                <span style="color: ${statusColor}; font-weight: 600;">${statusLabel}${r.escalated ? ' \u{1F6A8}' : ''}</span>
                 <span class="run-duration">${duration}</span>
               </div>
-              <div class="run-trigger">${date} — ${r.trigger_type}</div>
+              <div class="run-trigger">${date} \u{2014} ${triggerLabel}</div>
               ${outputPreview ? `<div class="run-output">${outputPreview}</div>` : ''}
             </div>
           `;
