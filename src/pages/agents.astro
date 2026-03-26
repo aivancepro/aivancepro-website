@@ -330,6 +330,70 @@
     .loading { color: #71717a; text-align: center; padding: 40px; }
     .empty-state { color: #52525b; font-size: 0.85rem; text-align: center; padding: 20px; }
 
+    /* ─── Health Bar (Point 12) ────────────── */
+    .health-bar {
+      display: flex;
+      gap: 10px;
+      margin-bottom: 24px;
+      padding: 14px 18px;
+      background: #18181b;
+      border: 1px solid #27272a;
+      border-radius: 12px;
+      flex-wrap: wrap;
+      align-items: center;
+    }
+    .health-bar-title {
+      font-size: 0.78rem;
+      color: #71717a;
+      font-weight: 500;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+      margin-right: 6px;
+    }
+    .health-dot {
+      display: flex;
+      align-items: center;
+      gap: 5px;
+      font-size: 0.78rem;
+      color: #a1a1aa;
+      cursor: default;
+    }
+    .health-dot .dot {
+      width: 8px; height: 8px;
+      border-radius: 50%;
+    }
+    .dot-healthy { background: #22c55e; }
+    .dot-warning { background: #f59e0b; animation: pulse 1.5s infinite; }
+    .dot-critical { background: #ef4444; animation: pulse 1s infinite; }
+    .dot-unknown { background: #52525b; }
+
+    /* ─── Prompt Versions (Point 14) ───────── */
+    .version-list { margin-top: 12px; }
+    .version-item {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 8px 12px;
+      background: #222225;
+      border-radius: 6px;
+      margin-bottom: 6px;
+      font-size: 0.78rem;
+    }
+    .version-item.active { border-left: 3px solid #22c55e; }
+    .version-meta { color: #71717a; }
+    .version-summary { color: #a1a1aa; margin-left: 12px; flex: 1; }
+    .btn-xs {
+      padding: 3px 8px;
+      font-size: 0.68rem;
+      background: #27272a;
+      color: #a1a1aa;
+      border: 1px solid #3f3f46;
+      border-radius: 4px;
+      cursor: pointer;
+      transition: background 0.15s;
+    }
+    .btn-xs:hover { background: #3f3f46; color: #fafafa; }
+
     /* ─── Modal Tabs ───────────────────────── */
     .modal-tabs {
       display: flex;
@@ -407,6 +471,11 @@
         <small>Dashboard interne — <span id="last-refresh"></span></small>
       </div>
       <button class="btn" id="refresh-btn" onclick="loadData()">Rafraîchir</button>
+    </div>
+
+    <!-- Health Bar -->
+    <div class="health-bar" id="health-bar">
+      <span class="health-bar-title">Santé système</span>
     </div>
 
     <!-- Escalades -->
@@ -579,12 +648,37 @@
         .gte('started_at', weekAgo)
         .order('started_at', { ascending: false });
 
+      renderHealthBar(agents);
       renderEscalades(escalades || []);
       renderKPIs(lastRunByAgent);
       renderAgents('tech', 'Tech', agents, runsByAgent, lastRunByAgent);
       renderAgents('marketing', 'Marketing', agents, runsByAgent, lastRunByAgent);
 
       document.getElementById('refresh-btn').disabled = false;
+    }
+
+    // ─── Render Health Bar (Point 12) ───────────
+    function renderHealthBar(allAgents) {
+      const container = document.getElementById('health-bar');
+      const dots = allAgents.map(a => {
+        const icon = AGENT_ICONS[a.slug] || '\u{1F916}';
+        const h = a.health_status || 'unknown';
+        const lastRun = a.last_successful_run_at
+          ? timeAgo(new Date(a.last_successful_run_at))
+          : 'jamais';
+        return `<span class="health-dot" title="${a.name} — dernier run: ${lastRun}">
+          <span class="dot dot-${h}"></span>${icon}
+        </span>`;
+      }).join('');
+      container.innerHTML = `<span class="health-bar-title">Sant\u{00E9} syst\u{00E8}me</span>${dots}`;
+    }
+
+    function timeAgo(date) {
+      const mins = Math.floor((Date.now() - date.getTime()) / 60000);
+      if (mins < 60) return mins + 'min';
+      const hours = Math.floor(mins / 60);
+      if (hours < 24) return hours + 'h';
+      return Math.floor(hours / 24) + 'j';
     }
 
     // ─── Render Escalades ──────────────────────
@@ -722,6 +816,7 @@
         <div class="modal-tabs">
           <button class="modal-tab active" onclick="switchTab('runs', this)">Runs</button>
           <button class="modal-tab" onclick="switchTab('prompt', this)">Prompt syst\u{00E8}me</button>
+          <button class="modal-tab" onclick="switchTab('versions', this)">Versions</button>
         </div>
 
         <div id="tab-runs">
@@ -754,7 +849,7 @@
                 <span style="color: ${statusColor}; font-weight: 600;">${rStatusLabel}${r.escalated ? ' \u{1F6A8}' : ''}</span>
                 <span class="run-duration">${duration}</span>
               </div>
-              <div class="run-trigger">${date} \u{2014} ${triggerLabel}</div>
+              <div class="run-trigger">${date} \u{2014} ${triggerLabel}${r.retry_count > 1 ? ' \u{2022} ' + r.retry_count + ' tentatives' : ''}${r.error_message ? ' \u{2022} ' + r.error_message : ''}</div>
               ${outputPreview ? `<div class="run-output">${outputPreview}</div>` : ''}
             </div>
           `;
@@ -770,8 +865,12 @@
           <div class="prompt-actions">
             <button class="btn" onclick="savePrompt('${agent.id}', this)">Sauvegarder</button>
             <span class="prompt-status" id="prompt-status"></span>
-            <span class="prompt-char-count" id="prompt-char-count">${(agent.system_prompt || '').length} caractères</span>
+            <span class="prompt-char-count" id="prompt-char-count">${(agent.system_prompt || '').length} caract\u{00E8}res</span>
           </div>
+        </div>
+
+        <div id="tab-versions" class="prompt-editor">
+          <div class="version-list" id="version-list"><p class="empty-state">Chargement...</p></div>
         </div>
       `;
 
@@ -781,14 +880,16 @@
     function switchTab(tab, btn) {
       document.querySelectorAll('.modal-tab').forEach(t => t.classList.remove('active'));
       btn.classList.add('active');
-      document.getElementById('tab-runs').style.display = tab === 'runs' ? 'block' : 'none';
-      const promptEl = document.getElementById('tab-prompt');
-      if (tab === 'prompt') {
-        promptEl.style.display = 'block';
-        promptEl.classList.add('visible');
-      } else {
-        promptEl.style.display = 'none';
-        promptEl.classList.remove('visible');
+      ['runs', 'prompt', 'versions'].forEach(t => {
+        const el = document.getElementById('tab-' + t);
+        if (el) {
+          el.style.display = t === tab ? 'block' : 'none';
+          if (t === tab) el.classList.add('visible');
+          else el.classList.remove('visible');
+        }
+      });
+      if (tab === 'versions' && currentModalAgentId) {
+        loadVersions(currentModalAgentId);
       }
     }
 
@@ -816,9 +917,16 @@
         status.textContent = 'Erreur : ' + error.message;
         status.classList.add('error');
       } else {
-        status.textContent = 'Sauvegardé';
+        // Auto-version (Point 14)
+        await sb.from('prompt_versions').update({ is_active: false }).eq('agent_id', agentId).eq('is_active', true);
+        const { data: lastV } = await sb.from('prompt_versions').select('version_number').eq('agent_id', agentId).order('version_number', { ascending: false }).limit(1);
+        const newNum = (lastV?.[0]?.version_number || 0) + 1;
+        await sb.from('prompt_versions').insert({
+          agent_id: agentId, version_number: newNum, system_prompt: newPrompt,
+          changed_by: 'tech', change_summary: 'Modification via dashboard', is_active: true
+        });
+        status.textContent = 'Sauvegard\u{00E9} (v' + newNum + ')';
         status.classList.add('saved');
-        // Update local cache
         const agent = agents.find(a => a.id === agentId);
         if (agent) agent.system_prompt = newPrompt;
       }
@@ -831,6 +939,79 @@
     function closeModal(event) {
       if (event && event.target !== document.getElementById('modal-overlay')) return;
       document.getElementById('modal-overlay').style.display = 'none';
+    }
+
+    // ─── Prompt Versions (Point 14) ─────────────
+    async function loadVersions(agentId) {
+      const container = document.getElementById('version-list');
+      const { data: versions } = await sb
+        .from('prompt_versions')
+        .select('*')
+        .eq('agent_id', agentId)
+        .order('version_number', { ascending: false })
+        .limit(20);
+
+      if (!versions || versions.length === 0) {
+        container.innerHTML = '<p class="empty-state">Aucune version</p>';
+        return;
+      }
+
+      container.innerHTML = versions.map(v => {
+        const date = new Date(v.created_at).toLocaleString('fr-FR', { day: '2-digit', month: '2-digit', year: '2-digit', hour: '2-digit', minute: '2-digit' });
+        return `
+          <div class="version-item ${v.is_active ? 'active' : ''}">
+            <span class="version-meta">v${v.version_number} \u{2014} ${date} \u{2014} ${v.changed_by}</span>
+            <span class="version-summary">${v.change_summary || ''}</span>
+            ${v.is_active ? '<span style="color:#22c55e;font-size:0.72rem;">active</span>' :
+              `<button class="btn-xs" onclick="restoreVersion('${agentId}', '${v.id}', ${v.version_number})">Restaurer</button>`}
+          </div>
+        `;
+      }).join('');
+    }
+
+    async function restoreVersion(agentId, versionId, versionNumber) {
+      if (!confirm('Restaurer la version v' + versionNumber + ' ?')) return;
+
+      const { data: version } = await sb
+        .from('prompt_versions')
+        .select('system_prompt')
+        .eq('id', versionId)
+        .single();
+
+      if (!version) return;
+
+      // Update agent prompt
+      await sb.from('agents').update({ system_prompt: version.system_prompt }).eq('id', agentId);
+
+      // Deactivate all versions for this agent
+      await sb.from('prompt_versions').update({ is_active: false }).eq('agent_id', agentId);
+
+      // Create new version as restore
+      const { data: lastV } = await sb
+        .from('prompt_versions')
+        .select('version_number')
+        .eq('agent_id', agentId)
+        .order('version_number', { ascending: false })
+        .limit(1);
+
+      const newNum = (lastV?.[0]?.version_number || 0) + 1;
+      await sb.from('prompt_versions').insert({
+        agent_id: agentId,
+        version_number: newNum,
+        system_prompt: version.system_prompt,
+        changed_by: 'tech',
+        change_summary: 'Restauration de v' + versionNumber,
+        is_active: true,
+      });
+
+      // Update local cache
+      const agent = agents.find(a => a.id === agentId);
+      if (agent) agent.system_prompt = version.system_prompt;
+
+      // Refresh
+      loadVersions(agentId);
+      const ta = document.getElementById('prompt-textarea');
+      if (ta) ta.value = version.system_prompt;
     }
 
     // ─── Trigger Manual Run ────────────────────
