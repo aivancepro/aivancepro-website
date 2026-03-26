@@ -1002,14 +1002,37 @@
 
     <!-- Content view -->
     <div id="view-content" class="global-view">
-      <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:20px;">
-        <h2 style="font-size:1.1rem;color:#60a5fa;">Contenu en attente de review</h2>
+      <!-- Sub-tabs -->
+      <div style="display:flex;gap:0;margin-bottom:20px;border-bottom:1px solid #27272a;">
+        <button style="padding:8px 20px;font-size:0.82rem;font-weight:600;color:#fafafa;background:none;border:none;border-bottom:2px solid #60a5fa;cursor:pointer;" onclick="switchContentTab('blog', this)" id="ctab-blog">Blog</button>
+        <button style="padding:8px 20px;font-size:0.82rem;font-weight:500;color:#52525b;background:none;border:none;border-bottom:2px solid transparent;cursor:pointer;" onclick="switchContentTab('guides', this)" id="ctab-guides">Guides</button>
+        <button style="padding:8px 20px;font-size:0.82rem;font-weight:500;color:#52525b;background:none;border:none;border-bottom:2px solid transparent;cursor:pointer;" onclick="switchContentTab('social', this)" id="ctab-social">R&eacute;seaux</button>
       </div>
-      <div id="content-list"><p class="empty-state">Chargement...</p></div>
 
-      <div style="margin-top:32px;padding-top:24px;border-top:1px solid #27272a;">
-        <h2 style="font-size:1.1rem;color:#22c55e;margin-bottom:16px;">Articles publiés</h2>
-        <div id="published-list"><p class="empty-state">Chargement...</p></div>
+      <!-- Blog section -->
+      <div id="content-tab-blog">
+        <h3 style="font-size:0.95rem;color:#60a5fa;margin-bottom:14px;">En attente de review</h3>
+        <div id="blog-pending"><p style="color:#52525b;font-size:0.85rem;">Chargement...</p></div>
+        <div style="margin-top:28px;padding-top:20px;border-top:1px solid #27272a;">
+          <h3 style="font-size:0.95rem;color:#22c55e;margin-bottom:14px;">Blog publi&eacute;s</h3>
+          <div id="blog-published"><p style="color:#52525b;font-size:0.85rem;">Chargement...</p></div>
+        </div>
+      </div>
+
+      <!-- Guides section -->
+      <div id="content-tab-guides" style="display:none;">
+        <h3 style="font-size:0.95rem;color:#a78bfa;margin-bottom:14px;">En attente de review</h3>
+        <div id="guides-pending"><p style="color:#52525b;font-size:0.85rem;">Chargement...</p></div>
+        <div style="margin-top:28px;padding-top:20px;border-top:1px solid #27272a;">
+          <h3 style="font-size:0.95rem;color:#22c55e;margin-bottom:14px;">Guides publi&eacute;s</h3>
+          <div id="guides-published"><p style="color:#52525b;font-size:0.85rem;">Chargement...</p></div>
+        </div>
+      </div>
+
+      <!-- Social section -->
+      <div id="content-tab-social" style="display:none;">
+        <h3 style="font-size:0.95rem;color:#f59e0b;margin-bottom:14px;">Posts en attente</h3>
+        <div id="social-pending"><p style="color:#52525b;font-size:0.85rem;">Chargement...</p></div>
       </div>
     </div>
   </div>
@@ -2079,97 +2102,155 @@
     }
 
     // ─── Content View ───────────────────────────
+    function switchContentTab(tab, btn) {
+      ['blog', 'guides', 'social'].forEach(function(t) {
+        var el = document.getElementById('content-tab-' + t);
+        var tabBtn = document.getElementById('ctab-' + t);
+        if (el) el.style.display = t === tab ? 'block' : 'none';
+        if (tabBtn) {
+          tabBtn.style.color = t === tab ? '#fafafa' : '#52525b';
+          tabBtn.style.fontWeight = t === tab ? '600' : '500';
+          tabBtn.style.borderBottomColor = t === tab ? (t === 'blog' ? '#60a5fa' : t === 'guides' ? '#a78bfa' : '#f59e0b') : 'transparent';
+        }
+      });
+    }
+
     async function loadContentView() {
-      loadPublishedContent();
-      const container = document.getElementById('content-list');
-      container.innerHTML = '<p class="empty-state">Chargement...</p>';
+      var ctnAgent = agents.find(function(a) { return a.slug === 'agent-contenu'; });
+      if (!ctnAgent) return;
 
-      const ctnAgent = agents.find(a => a.slug === 'agent-contenu');
-      if (!ctnAgent) { container.innerHTML = '<p class="empty-state">Agent Contenu non trouv\u{00E9}</p>'; return; }
-
-      const { data: runs } = await sb.from('agent_runs').select('output,started_at')
+      var runs = await sb.from('agent_runs').select('output,started_at')
         .eq('agent_id', ctnAgent.id).eq('status', 'completed')
         .order('started_at', { ascending: false }).limit(5);
 
-      // Get published slugs to filter them out
-      const { data: publishedData } = await sb.from('published_content').select('slug').eq('source', 'agent-contenu');
-      const publishedSlugs = new Set((publishedData || []).map(p => p.slug));
+      var publishedResp = await sb.from('published_content').select('slug,source').eq('source', 'agent-contenu');
+      var publishedSlugs = new Set((publishedResp.data || []).map(function(p) { return p.slug; }));
 
-      const allContent = [];
-      (runs || []).forEach(r => {
-        const out = r.output?.output || r.output || {};
-        (out.articles || []).forEach(a => { if (!publishedSlugs.has(a.slug)) allContent.push({ ...a, type: 'article', date: r.started_at }); });
-        (out.video_scripts || []).forEach(v => allContent.push({ ...v, type: 'video_script', date: r.started_at }));
-        (out.emails || []).forEach(e => allContent.push({ ...e, type: 'email', date: r.started_at }));
+      var blogPending = [], guidePending = [], socialPending = [];
+      var allItems = [];
+
+      ((runs.data || [])).forEach(function(r) {
+        var out = r.output?.output || r.output || {};
+        (out.articles || []).forEach(function(a) {
+          if (!publishedSlugs.has(a.slug)) {
+            var item = Object.assign({}, a, { type: 'article', date: r.started_at });
+            allItems.push(item);
+            blogPending.push(item);
+          }
+        });
+        (out.guides || []).forEach(function(g) {
+          if (!publishedSlugs.has(g.slug)) {
+            var item = Object.assign({}, g, { type: 'guide', date: r.started_at });
+            allItems.push(item);
+            guidePending.push(item);
+          }
+        });
+        (out.video_scripts || []).forEach(function(v) {
+          allItems.push(Object.assign({}, v, { type: 'video_script', date: r.started_at }));
+          socialPending.push(Object.assign({}, v, { type: 'video_script', date: r.started_at }));
+        });
+        (out.captions || []).forEach(function(c) {
+          allItems.push(Object.assign({}, c, { type: 'caption', date: r.started_at }));
+          socialPending.push(Object.assign({}, c, { type: 'caption', date: r.started_at }));
+        });
       });
 
-      if (allContent.length === 0) {
-        container.innerHTML = '<p class="empty-state">Aucun contenu produit pour le moment</p>';
+      window._contentItems = allItems;
+
+      var badge = document.getElementById('content-count');
+      var total = blogPending.length + guidePending.length + socialPending.length;
+      if (total > 0) { badge.textContent = total; badge.style.display = 'inline'; }
+
+      // Render each section
+      renderContentCards('blog-pending', blogPending, '#60a5fa', 'article');
+      renderContentCards('guides-pending', guidePending, '#a78bfa', 'guide');
+      renderSocialCards('social-pending', socialPending);
+      loadPublishedByType('blog-published', 'article');
+      loadPublishedByType('guides-published', 'guide');
+    }
+
+    function renderContentCards(containerId, items, color, taskType) {
+      var container = document.getElementById(containerId);
+      if (items.length === 0) {
+        container.innerHTML = '<p style="color:#52525b;font-size:0.82rem;">Aucun contenu en attente</p>';
         return;
       }
 
-      const badge = document.getElementById('content-count');
-      badge.textContent = allContent.length;
-      badge.style.display = 'inline';
+      container.innerHTML = items.map(function(c) {
+        var globalIdx = window._contentItems.indexOf(c);
+        var preview = c.content ? c.content.slice(0, 200) : c.body ? c.body.slice(0, 200) : '';
+        var safeTitle = (c.title || '').replace(/"/g, '&quot;');
+        var safeDesc = (c.meta_description || '').replace(/"/g, '&quot;');
+        var encodedContent = encodeURIComponent(c.content || '');
 
-      const typeLabels = { article: 'Article', video_script: 'Script vid\u{00E9}o', email: 'Email', caption: 'Caption' };
-
-      var typeColors = { article: '#60a5fa', video_script: '#ec4899', email: '#f59e0b', caption: '#a78bfa' };
-      var typeIcons = { article: '\u{1F4DD}', video_script: '\u{1F3AC}', email: '\u{1F4E7}', caption: '\u{1F4F1}' };
-
-      // Store content globally for preview
-      window._contentItems = allContent;
-
-      container.innerHTML = allContent.map(function(c, idx) {
-        var preview = c.content ? c.content.slice(0, 250) : c.body ? c.body.slice(0, 250) : '';
-        var col = typeColors[c.type] || '#a78bfa';
-        var ico = typeIcons[c.type] || '\u{1F4C4}';
-        var pubBtn = '';
-        if (c.type === 'article' || c.type === 'guide') {
-          pubBtn = '<button style="padding:6px 14px;font-size:0.75rem;background:#166534;color:#86efac;border:1px solid #22c55e;border-radius:8px;cursor:pointer;font-weight:600;" onclick="event.stopPropagation();publishArticle(this)" data-title="' + (c.title || '').replace(/"/g, '&quot;') + '" data-slug="' + (c.slug || '') + '" data-content="' + encodeURIComponent(c.content || '') + '" data-keyword="' + (c.target_keyword || '') + '" data-description="' + (c.meta_description || '').replace(/"/g, '&quot;') + '" data-category="' + (c.category || 'musculation') + '" data-type="' + (c.type || 'article') + '">\u{1F680} Publier sur le site</button>';
-        }
-        return '<div style="background:linear-gradient(145deg,#1e1e22,#18181b);border:1px solid #27272a;border-left:3px solid ' + col + ';border-radius:12px;padding:20px;margin-bottom:14px;cursor:pointer;" onclick="previewContent(' + idx + ')">'
-          + '<div style="display:flex;justify-content:space-between;align-items:flex-start;margin-bottom:10px;">'
-          + '<div style="font-weight:600;font-size:0.95rem;color:#fafafa;">' + ico + ' ' + (c.title || 'Sans titre') + '</div>'
-          + '<span style="font-size:0.62rem;padding:3px 10px;border-radius:6px;background:' + col + '20;color:' + col + ';font-weight:600;white-space:nowrap;border:1px solid ' + col + '40;">' + (typeLabels[c.type] || c.type) + '</span>'
+        return '<div style="background:linear-gradient(145deg,#1e1e22,#18181b);border:1px solid #27272a;border-left:3px solid ' + color + ';border-radius:12px;padding:18px;margin-bottom:12px;cursor:pointer;" onclick="previewContent(' + globalIdx + ')">'
+          + '<div style="display:flex;justify-content:space-between;align-items:flex-start;margin-bottom:8px;">'
+          + '<div style="font-weight:600;font-size:0.92rem;color:#fafafa;">' + (c.title || 'Sans titre') + '</div>'
+          + (c.lang ? '<span style="font-size:0.6rem;padding:2px 8px;border-radius:4px;background:#27272a;color:#a1a1aa;">' + c.lang.toUpperCase() + '</span>' : '')
           + '</div>'
-          + (c.target_keyword || c.word_count ? '<div style="display:flex;gap:12px;margin-bottom:10px;font-size:0.78rem;color:#71717a;">'
+          + (c.target_keyword || c.word_count ? '<div style="display:flex;gap:10px;margin-bottom:8px;font-size:0.75rem;color:#71717a;">'
             + (c.target_keyword ? '<span>\u{1F3AF} ' + c.target_keyword + '</span>' : '')
             + (c.word_count ? '<span>' + c.word_count + ' mots</span>' : '')
             + '</div>' : '')
-          + (preview ? '<div style="font-size:0.8rem;color:#a1a1aa;line-height:1.6;max-height:80px;overflow:hidden;padding:12px;background:#111115;border-radius:8px;margin-bottom:10px;">' + preview + '...</div>' : '')
-          + (c.review_notes ? '<div style="padding:10px 12px;background:#1c1917;border:1px solid #78350f;border-radius:8px;font-size:0.75rem;color:#fbbf24;line-height:1.5;margin-bottom:10px;">\u{26A0}\u{FE0F} <strong>Review :</strong> ' + c.review_notes + '</div>' : '')
-          + (c.needs_medical_review ? '<div style="padding:8px 12px;background:#450a0a;border:1px solid #ef4444;border-radius:8px;font-size:0.75rem;color:#fca5a5;margin-bottom:10px;">\u{1F3E5} Review m\u{00E9}dicale requise</div>' : '')
+          + (preview ? '<div style="font-size:0.78rem;color:#a1a1aa;line-height:1.5;max-height:60px;overflow:hidden;padding:10px;background:#111115;border-radius:8px;margin-bottom:8px;">' + preview + '...</div>' : '')
+          + (c.review_notes ? '<div style="padding:8px 10px;background:#1c1917;border:1px solid #78350f;border-radius:6px;font-size:0.72rem;color:#fbbf24;line-height:1.4;margin-bottom:8px;">\u{26A0}\u{FE0F} ' + c.review_notes + '</div>' : '')
           + '<div style="display:flex;gap:8px;margin-top:4px;">'
-          + pubBtn
-          + '<button style="padding:6px 12px;font-size:0.72rem;background:#450a0a;color:#fca5a5;border:1px solid #ef4444;border-radius:8px;cursor:pointer;" onclick="event.stopPropagation();">\u{1F5D1} Supprimer</button>'
+          + '<button style="padding:6px 14px;font-size:0.72rem;background:#166534;color:#86efac;border:1px solid #22c55e;border-radius:8px;cursor:pointer;font-weight:600;" onclick="event.stopPropagation();publishArticle(this)" data-title="' + safeTitle + '" data-slug="' + (c.slug || '') + '" data-content="' + encodedContent + '" data-keyword="' + (c.target_keyword || '') + '" data-description="' + safeDesc + '" data-category="' + (c.category || 'musculation') + '" data-type="' + taskType + '">\u{1F680} Publier</button>'
+          + '<button style="padding:6px 10px;font-size:0.7rem;background:#450a0a;color:#fca5a5;border:1px solid #ef4444;border-radius:8px;cursor:pointer;" onclick="event.stopPropagation();">Supprimer</button>'
+          + '</div></div>';
+      }).join('');
+    }
+
+    function renderSocialCards(containerId, items) {
+      var container = document.getElementById(containerId);
+      if (items.length === 0) {
+        container.innerHTML = '<p style="color:#52525b;font-size:0.82rem;">Aucun post en attente</p>';
+        return;
+      }
+
+      var platformColors = { tiktok: '#ff0050', instagram: '#e1306c', youtube: '#ff0000', x: '#1da1f2' };
+
+      container.innerHTML = items.map(function(c) {
+        var globalIdx = window._contentItems.indexOf(c);
+        var isVideo = c.type === 'video_script';
+        var platform = c.platform || c.target_platform || '';
+        var pColor = platformColors[platform.toLowerCase()] || '#f59e0b';
+        var body = c.script || c.body || c.caption || c.content || '';
+        var preview = body.slice(0, 200);
+
+        return '<div style="background:linear-gradient(145deg,#1e1e22,#18181b);border:1px solid #27272a;border-left:3px solid ' + pColor + ';border-radius:12px;padding:18px;margin-bottom:12px;cursor:pointer;" onclick="previewContent(' + globalIdx + ')">'
+          + '<div style="display:flex;justify-content:space-between;align-items:flex-start;margin-bottom:8px;">'
+          + '<div style="font-weight:600;font-size:0.92rem;color:#fafafa;">' + (isVideo ? '\u{1F3AC}' : '\u{1F4F1}') + ' ' + (c.title || 'Sans titre') + '</div>'
+          + '<span style="font-size:0.6rem;padding:2px 8px;border-radius:4px;background:' + pColor + '20;color:' + pColor + ';font-weight:600;border:1px solid ' + pColor + '40;">' + (isVideo ? 'Script' : 'Post') + (platform ? ' ' + platform : '') + '</span>'
           + '</div>'
+          + (c.duration ? '<div style="font-size:0.72rem;color:#71717a;margin-bottom:6px;">\u{23F1} ' + c.duration + '</div>' : '')
+          + (c.hook ? '<div style="font-size:0.8rem;color:#fbbf24;font-weight:500;margin-bottom:8px;">Hook: ' + c.hook + '</div>' : '')
+          + (preview ? '<div style="font-size:0.78rem;color:#a1a1aa;line-height:1.5;max-height:80px;overflow:hidden;padding:10px;background:#111115;border-radius:8px;margin-bottom:8px;">' + preview + '...</div>' : '')
+          + (c.cta ? '<div style="font-size:0.72rem;color:#60a5fa;margin-bottom:4px;">CTA: ' + c.cta + '</div>' : '')
           + '</div>';
       }).join('');
     }
 
-    // ─── Published Content List ────────────────
-    async function loadPublishedContent() {
-      var container = document.getElementById('published-list');
-      var resp = await sb.from('published_content')
-        .select('*')
+    async function loadPublishedByType(containerId, contentType) {
+      var container = document.getElementById(containerId);
+      var resp = await sb.from('published_content').select('*')
+        .eq('content_type', contentType)
         .eq('source', 'agent-contenu')
-        .order('published_at', { ascending: false })
-        .limit(20);
+        .order('published_at', { ascending: false }).limit(20);
 
       var items = resp.data || [];
       if (items.length === 0) {
-        container.innerHTML = '<p style="color:#52525b;font-size:0.85rem;padding:12px;">Aucun article publi\u{00E9} par les agents pour le moment</p>';
+        container.innerHTML = '<p style="color:#52525b;font-size:0.82rem;">Aucun contenu publi\u{00E9}</p>';
         return;
       }
 
       container.innerHTML = items.map(function(p) {
-        return '<div style="display:flex;align-items:center;gap:14px;padding:12px 16px;background:linear-gradient(145deg,#1e1e22,#18181b);border:1px solid #27272a;border-left:3px solid #22c55e;border-radius:10px;margin-bottom:8px;">'
+        return '<div style="display:flex;align-items:center;gap:12px;padding:10px 14px;background:#18181b;border:1px solid #27272a;border-left:3px solid #22c55e;border-radius:8px;margin-bottom:6px;">'
           + '<div style="flex:1;">'
-          + '<div style="font-weight:600;font-size:0.88rem;color:#fafafa;">\u{1F4DD} ' + p.title + '</div>'
-          + '<div style="font-size:0.72rem;color:#71717a;margin-top:4px;">' + (p.slug || '') + ' \u{2022} ' + (p.lang || 'fr').toUpperCase() + ' \u{2022} ' + (p.category || '') + '</div>'
+          + '<div style="font-weight:500;font-size:0.82rem;color:#d4d4d8;">' + p.title + '</div>'
+          + '<div style="font-size:0.68rem;color:#52525b;margin-top:2px;">' + (p.slug || '') + ' \u{2022} ' + (p.lang || 'fr').toUpperCase() + '</div>'
           + '</div>'
-          + (p.url ? '<a href="' + p.url + '" target="_blank" style="font-size:0.72rem;color:#4A90D9;text-decoration:none;">Voir \u{2192}</a>' : '')
+          + (p.url ? '<a href="' + p.url + '" target="_blank" style="font-size:0.7rem;color:#4A90D9;text-decoration:none;">Voir \u{2192}</a>' : '')
           + '</div>';
       }).join('');
     }
