@@ -329,6 +329,65 @@
 
     .loading { color: #71717a; text-align: center; padding: 40px; }
     .empty-state { color: #52525b; font-size: 0.85rem; text-align: center; padding: 20px; }
+
+    /* ─── Modal Tabs ───────────────────────── */
+    .modal-tabs {
+      display: flex;
+      gap: 0;
+      margin-bottom: 20px;
+      border-bottom: 1px solid #27272a;
+    }
+    .modal-tab {
+      padding: 8px 18px;
+      font-size: 0.82rem;
+      font-weight: 500;
+      color: #71717a;
+      background: none;
+      border: none;
+      border-bottom: 2px solid transparent;
+      cursor: pointer;
+      transition: color 0.15s, border-color 0.15s;
+    }
+    .modal-tab:hover { color: #a1a1aa; }
+    .modal-tab.active { color: #fafafa; border-bottom-color: #4A90D9; }
+
+    /* ─── Prompt Editor ────────────────────── */
+    .prompt-editor { display: none; }
+    .prompt-editor.visible { display: block; }
+    .prompt-textarea {
+      width: 100%;
+      min-height: 350px;
+      background: #111113;
+      border: 1px solid #27272a;
+      border-radius: 8px;
+      color: #d4d4d8;
+      font-family: 'SF Mono', 'Fira Code', 'Consolas', monospace;
+      font-size: 0.78rem;
+      line-height: 1.6;
+      padding: 14px;
+      resize: vertical;
+      outline: none;
+      transition: border-color 0.2s;
+    }
+    .prompt-textarea:focus { border-color: #4A90D9; }
+    .prompt-actions {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      margin-top: 12px;
+    }
+    .prompt-status {
+      font-size: 0.78rem;
+      color: #71717a;
+      transition: color 0.2s;
+    }
+    .prompt-status.saved { color: #22c55e; }
+    .prompt-status.error { color: #ef4444; }
+    .prompt-char-count {
+      font-size: 0.72rem;
+      color: #52525b;
+      margin-left: auto;
+    }
   </style>
 </head>
 <body>
@@ -627,10 +686,13 @@
     }
 
     // ─── Agent Modal ───────────────────────────
+    let currentModalAgentId = null;
+
     async function openAgent(agentId) {
       const agent = agents.find(a => a.id === agentId);
       if (!agent) return;
 
+      currentModalAgentId = agentId;
       const icon = AGENT_ICONS[agent.slug] || '\u{1F916}';
       document.getElementById('modal-title').innerHTML = `${icon} ${agent.name}`;
       document.getElementById('modal-overlay').style.display = 'flex';
@@ -646,6 +708,7 @@
       const statusLabel = STATUS_LABELS[agent.status] || agent.status;
       const scheduleLabel = cronToHuman(agent.schedule);
       const totalRuns = runs ? runs.length : 0;
+      const promptText = (agent.system_prompt || '').replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;');
 
       let html = `
         <div class="modal-info">
@@ -654,9 +717,15 @@
           <div class="modal-info-item"><strong>Runs :</strong> ${totalRuns}</div>
         </div>
         ${skills.length ? `<div class="agent-skills" style="margin-bottom: 16px;">${skills.map(s => `<span class="skill-tag">${s}</span>`).join('')}</div>` : ''}
-        <button class="btn" onclick="triggerAgent('${agent.slug}', this)" style="margin-bottom: 20px;">\u{25B6}\u{FE0F} Lancer maintenant</button>
-        <div class="run-history">
-          <h3>Historique des runs</h3>
+        <button class="btn" onclick="triggerAgent('${agent.slug}', this)" style="margin-bottom: 16px;">\u{25B6}\u{FE0F} Lancer maintenant</button>
+
+        <div class="modal-tabs">
+          <button class="modal-tab active" onclick="switchTab('runs', this)">Runs</button>
+          <button class="modal-tab" onclick="switchTab('prompt', this)">Prompt syst\u{00E8}me</button>
+        </div>
+
+        <div id="tab-runs">
+          <div class="run-history">
       `;
 
       if (!runs || runs.length === 0) {
@@ -665,7 +734,7 @@
         html += runs.map(r => {
           const date = new Date(r.started_at).toLocaleString('fr-FR');
           const duration = r.duration_ms ? `${(r.duration_ms / 1000).toFixed(0)}s` : '\u{2014}';
-          const statusLabel = STATUS_LABELS_RUN[r.status] || r.status;
+          const rStatusLabel = STATUS_LABELS_RUN[r.status] || r.status;
           const statusColor = r.status === 'completed' ? '#22c55e' : r.status === 'failed' ? '#ef4444' : r.status === 'running' ? '#60a5fa' : '#71717a';
           const triggerLabel = TRIGGER_LABELS[r.trigger_type] || r.trigger_type;
 
@@ -682,7 +751,7 @@
           return `
             <div class="run-item run-${r.status}">
               <div class="run-header">
-                <span style="color: ${statusColor}; font-weight: 600;">${statusLabel}${r.escalated ? ' \u{1F6A8}' : ''}</span>
+                <span style="color: ${statusColor}; font-weight: 600;">${rStatusLabel}${r.escalated ? ' \u{1F6A8}' : ''}</span>
                 <span class="run-duration">${duration}</span>
               </div>
               <div class="run-trigger">${date} \u{2014} ${triggerLabel}</div>
@@ -692,8 +761,71 @@
         }).join('');
       }
 
-      html += '</div>';
+      html += `
+          </div>
+        </div>
+
+        <div id="tab-prompt" class="prompt-editor">
+          <textarea class="prompt-textarea" id="prompt-textarea" oninput="updateCharCount()">${promptText}</textarea>
+          <div class="prompt-actions">
+            <button class="btn" onclick="savePrompt('${agent.id}', this)">Sauvegarder</button>
+            <span class="prompt-status" id="prompt-status"></span>
+            <span class="prompt-char-count" id="prompt-char-count">${(agent.system_prompt || '').length} caractères</span>
+          </div>
+        </div>
+      `;
+
       document.getElementById('modal-content').innerHTML = html;
+    }
+
+    function switchTab(tab, btn) {
+      document.querySelectorAll('.modal-tab').forEach(t => t.classList.remove('active'));
+      btn.classList.add('active');
+      document.getElementById('tab-runs').style.display = tab === 'runs' ? 'block' : 'none';
+      const promptEl = document.getElementById('tab-prompt');
+      if (tab === 'prompt') {
+        promptEl.style.display = 'block';
+        promptEl.classList.add('visible');
+      } else {
+        promptEl.style.display = 'none';
+        promptEl.classList.remove('visible');
+      }
+    }
+
+    function updateCharCount() {
+      const ta = document.getElementById('prompt-textarea');
+      document.getElementById('prompt-char-count').textContent = `${ta.value.length} caractères`;
+    }
+
+    async function savePrompt(agentId, btn) {
+      const ta = document.getElementById('prompt-textarea');
+      const status = document.getElementById('prompt-status');
+      const newPrompt = ta.value;
+
+      btn.disabled = true;
+      btn.textContent = 'Sauvegarde...';
+      status.textContent = '';
+      status.className = 'prompt-status';
+
+      const { error } = await sb
+        .from('agents')
+        .update({ system_prompt: newPrompt })
+        .eq('id', agentId);
+
+      if (error) {
+        status.textContent = 'Erreur : ' + error.message;
+        status.classList.add('error');
+      } else {
+        status.textContent = 'Sauvegardé';
+        status.classList.add('saved');
+        // Update local cache
+        const agent = agents.find(a => a.id === agentId);
+        if (agent) agent.system_prompt = newPrompt;
+      }
+
+      btn.disabled = false;
+      btn.textContent = 'Sauvegarder';
+      setTimeout(() => { status.textContent = ''; status.className = 'prompt-status'; }, 3000);
     }
 
     function closeModal(event) {
