@@ -1108,10 +1108,10 @@
 
       container.style.display = 'block';
       list.innerHTML = escalades.map(e => `
-        <div class="escalade-item">
-          <span class="agent">${e.agents?.name || 'Agent inconnu'}</span>
-          <div class="reason">${e.escalation_reason || 'Pas de raison'}</div>
-          <div class="date">${new Date(e.started_at).toLocaleString('fr-FR')}</div>
+        <div style="background:rgba(39,39,42,0.4);border-radius:10px;padding:14px 16px;margin-bottom:10px;border-left:3px solid #f59e0b;">
+          <div style="color:#fbbf24;font-weight:600;font-size:0.9rem;">${e.agents?.name || 'Agent inconnu'}</div>
+          <div style="color:#d4d4d8;margin-top:6px;font-size:0.82rem;line-height:1.5;">${e.escalation_reason || 'Pas de raison'}</div>
+          <div style="color:#71717a;font-size:0.7rem;margin-top:6px;">${new Date(e.started_at).toLocaleString('fr-FR')}</div>
         </div>
       `).join('');
     }
@@ -1140,13 +1140,14 @@
     }
 
     function renderKPIMetrics(container, m) {
+      const clean = v => (v === 'unknown' || v === null || v === undefined || String(v).includes('unknown') || String(v).includes('indisponible')) ? '\u{2014}' : v;
       const kpis = [
-        { value: m.unique_users_7d ?? '—', label: 'Users 7j' },
-        { value: m.total_events ?? '—', label: 'Events 7j' },
-        { value: m.dau?.current ?? '—', label: 'DAU', trend: m.dau?.trend },
-        { value: m.errors?.total ?? 0, label: 'Erreurs' },
-        { value: m.new_users_7d ?? '—', label: 'Nouveaux 7j' },
-        { value: m.total_users ?? '—', label: 'Total users' },
+        { value: clean(m.unique_users_7d), label: 'Users 7j' },
+        { value: clean(m.total_events), label: 'Events 7j' },
+        { value: clean(m.dau?.current), label: 'DAU', trend: m.dau?.trend },
+        { value: clean(m.errors?.total ?? 0), label: 'Erreurs' },
+        { value: clean(m.new_users_7d), label: 'Nouveaux 7j' },
+        { value: clean(m.total_users), label: 'Total users' },
       ];
 
       container.innerHTML = kpis.map(k => `
@@ -1194,7 +1195,7 @@
               <span>\u{1F504} ${runCount} run${runCount > 1 ? 's' : ''}</span>
               <span>\u{1F4C5} ${lastDate}</span>
             </div>
-            ${skills.length ? `<div class="agent-skills">${skills.map(s => `<span class="skill-tag">${s}</span>`).join('')}</div>` : ''}
+            ${skills.length ? `<div style="display:flex;flex-wrap:wrap;gap:6px;margin-top:8px;">${skills.map(s => `<span style="font-size:0.65rem;padding:3px 8px;border-radius:6px;background:#1a1a2e;color:#8b8ba7;border:1px solid #2a2a3e;font-family:monospace;white-space:nowrap;">${s}</span>`).join('')}</div>` : ''}
             ${highlights ? `<div class="agent-last-output">${highlights}</div>` : ''}
           </div>
         `;
@@ -1569,9 +1570,9 @@
 
       // Draw data sources
       sources.forEach(src => {
-        svg += `<g class="archi-source">
-          <rect x="${src.x}" y="${src.y}" width="80" height="24"/>
-          <text x="${src.x + 40}" y="${src.y + 15}" text-anchor="middle">${src.label}</text>
+        svg += `<g>
+          <rect x="${src.x}" y="${src.y}" width="80" height="24" rx="8" ry="8" fill="#27272a" stroke="#52525b" stroke-width="1"/>
+          <text x="${src.x + 40}" y="${src.y + 15}" text-anchor="middle" font-family="Inter, sans-serif" font-size="9" fill="#d4d4d8" font-weight="500">${src.label}</text>
         </g>`;
       });
 
