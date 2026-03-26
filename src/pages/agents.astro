@@ -1,0 +1,591 @@
+---
+// Dashboard privé — Agents IA AIVancePro
+// Pas de BaseLayout (page standalone, pas de nav/footer)
+---
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="robots" content="noindex, nofollow" />
+  <title>AIVancePro Agents</title>
+  <link rel="icon" type="image/png" href="/favicon.png" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body {
+      font-family: 'Inter', system-ui, sans-serif;
+      background: #09090b;
+      color: #fafafa;
+      min-height: 100vh;
+    }
+
+    /* ─── Password Gate ─────────────────────── */
+    #gate {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 100vh;
+      flex-direction: column;
+      gap: 16px;
+    }
+    #gate h1 { font-size: 1.5rem; font-weight: 600; color: #a1a1aa; }
+    #gate input {
+      background: #18181b;
+      border: 1px solid #27272a;
+      color: #fafafa;
+      padding: 12px 20px;
+      border-radius: 8px;
+      font-size: 1rem;
+      width: 300px;
+      outline: none;
+    }
+    #gate input:focus { border-color: #4A90D9; }
+    #gate .error { color: #ef4444; font-size: 0.875rem; display: none; }
+
+    /* ─── Dashboard ─────────────────────────── */
+    #dashboard { display: none; padding: 24px; max-width: 1200px; margin: 0 auto; }
+
+    .header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      margin-bottom: 24px;
+      padding-bottom: 16px;
+      border-bottom: 1px solid #27272a;
+    }
+    .header h1 { font-size: 1.5rem; font-weight: 700; }
+    .header .status-dot {
+      width: 8px; height: 8px;
+      background: #22c55e;
+      border-radius: 50%;
+      display: inline-block;
+      margin-right: 8px;
+      animation: pulse 2s infinite;
+    }
+    @keyframes pulse {
+      0%, 100% { opacity: 1; }
+      50% { opacity: 0.4; }
+    }
+    .header small { color: #71717a; }
+
+    /* ─── Escalades ─────────────────────────── */
+    #escalades {
+      background: #1c1917;
+      border: 1px solid #78350f;
+      border-radius: 12px;
+      padding: 16px;
+      margin-bottom: 24px;
+      display: none;
+    }
+    #escalades h2 { color: #fbbf24; font-size: 1rem; margin-bottom: 12px; }
+    .escalade-item {
+      background: #27272a;
+      border-radius: 8px;
+      padding: 12px;
+      margin-bottom: 8px;
+      font-size: 0.875rem;
+    }
+    .escalade-item .agent { color: #fbbf24; font-weight: 600; }
+    .escalade-item .reason { color: #d4d4d8; margin-top: 4px; }
+    .escalade-item .date { color: #71717a; font-size: 0.75rem; margin-top: 4px; }
+
+    /* ─── KPIs Banner ───────────────────────── */
+    .kpis {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+      gap: 12px;
+      margin-bottom: 24px;
+    }
+    .kpi-card {
+      background: #18181b;
+      border: 1px solid #27272a;
+      border-radius: 12px;
+      padding: 16px;
+      text-align: center;
+    }
+    .kpi-card .value { font-size: 1.5rem; font-weight: 700; color: #4A90D9; }
+    .kpi-card .label { font-size: 0.75rem; color: #71717a; margin-top: 4px; }
+    .kpi-card .trend { font-size: 0.75rem; margin-top: 4px; }
+    .trend-up { color: #22c55e; }
+    .trend-down { color: #ef4444; }
+
+    /* ─── Poles & Agents ────────────────────── */
+    .poles { display: grid; grid-template-columns: 1fr 1fr; gap: 24px; }
+    @media (max-width: 768px) { .poles { grid-template-columns: 1fr; } }
+
+    .pole {
+      background: #18181b;
+      border: 1px solid #27272a;
+      border-radius: 12px;
+      padding: 20px;
+    }
+    .pole h2 {
+      font-size: 1.1rem;
+      font-weight: 600;
+      margin-bottom: 16px;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+    .pole-tech h2 { color: #60a5fa; }
+    .pole-marketing h2 { color: #a78bfa; }
+
+    .agent-card {
+      background: #27272a;
+      border-radius: 8px;
+      padding: 14px;
+      margin-bottom: 10px;
+      cursor: pointer;
+      transition: border-color 0.2s;
+      border: 1px solid transparent;
+    }
+    .agent-card:hover { border-color: #3f3f46; }
+    .agent-card .agent-header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+    .agent-card .agent-name { font-weight: 600; font-size: 0.95rem; }
+    .agent-card .agent-status {
+      font-size: 0.7rem;
+      padding: 2px 8px;
+      border-radius: 999px;
+      font-weight: 500;
+    }
+    .status-idle { background: #1c1c1e; color: #71717a; }
+    .status-running { background: #172554; color: #60a5fa; animation: pulse 1.5s infinite; }
+    .status-error { background: #450a0a; color: #f87171; }
+
+    .agent-card .agent-meta {
+      display: flex;
+      gap: 16px;
+      margin-top: 8px;
+      font-size: 0.75rem;
+      color: #71717a;
+    }
+    .agent-card .agent-last-output {
+      margin-top: 8px;
+      font-size: 0.8rem;
+      color: #a1a1aa;
+      max-height: 60px;
+      overflow: hidden;
+      line-height: 1.4;
+    }
+
+    .btn {
+      background: #4A90D9;
+      color: white;
+      border: none;
+      padding: 6px 14px;
+      border-radius: 6px;
+      font-size: 0.8rem;
+      cursor: pointer;
+      font-weight: 500;
+      transition: background 0.2s;
+    }
+    .btn:hover { background: #3b7bc8; }
+    .btn:disabled { opacity: 0.5; cursor: not-allowed; }
+    .btn-sm { padding: 4px 10px; font-size: 0.7rem; }
+
+    /* ─── Agent Modal ───────────────────────── */
+    #modal-overlay {
+      display: none;
+      position: fixed;
+      inset: 0;
+      background: rgba(0,0,0,0.7);
+      z-index: 100;
+      align-items: center;
+      justify-content: center;
+    }
+    #modal {
+      background: #18181b;
+      border: 1px solid #27272a;
+      border-radius: 16px;
+      padding: 24px;
+      width: 90%;
+      max-width: 700px;
+      max-height: 85vh;
+      overflow-y: auto;
+    }
+    #modal h2 { font-size: 1.2rem; margin-bottom: 16px; }
+    #modal .close {
+      float: right;
+      background: none;
+      border: none;
+      color: #71717a;
+      font-size: 1.5rem;
+      cursor: pointer;
+    }
+    #modal .close:hover { color: #fafafa; }
+
+    .run-history {
+      margin-top: 16px;
+    }
+    .run-item {
+      background: #27272a;
+      border-radius: 8px;
+      padding: 12px;
+      margin-bottom: 8px;
+      font-size: 0.85rem;
+    }
+    .run-item .run-header {
+      display: flex;
+      justify-content: space-between;
+      margin-bottom: 6px;
+    }
+    .run-item .run-trigger { color: #71717a; font-size: 0.75rem; }
+    .run-item .run-duration { color: #71717a; font-size: 0.75rem; }
+    .run-item .run-output {
+      color: #a1a1aa;
+      font-size: 0.8rem;
+      max-height: 100px;
+      overflow: hidden;
+      white-space: pre-wrap;
+      line-height: 1.4;
+    }
+
+    .loading { color: #71717a; text-align: center; padding: 40px; }
+  </style>
+</head>
+<body>
+
+  <!-- Password Gate -->
+  <div id="gate">
+    <h1>🔒 AIVancePro Agents</h1>
+    <input type="password" id="password" placeholder="Mot de passe" autocomplete="off" />
+    <p class="error" id="gate-error">Mot de passe incorrect</p>
+  </div>
+
+  <!-- Dashboard -->
+  <div id="dashboard">
+    <div class="header">
+      <div>
+        <h1><span class="status-dot"></span>AIVancePro Agents</h1>
+        <small>Dashboard interne — <span id="last-refresh"></span></small>
+      </div>
+      <button class="btn" id="refresh-btn" onclick="loadData()">Rafraîchir</button>
+    </div>
+
+    <!-- Escalades -->
+    <div id="escalades">
+      <h2>⚠️ Escalades en cours</h2>
+      <div id="escalades-list"></div>
+    </div>
+
+    <!-- KPIs -->
+    <div class="kpis" id="kpis"></div>
+
+    <!-- Pôles & Agents -->
+    <div class="poles">
+      <div class="pole pole-tech">
+        <h2>🛠️ Pôle Tech</h2>
+        <div id="agents-tech"></div>
+      </div>
+      <div class="pole pole-marketing">
+        <h2>📢 Pôle Marketing</h2>
+        <div id="agents-marketing"></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Agent Detail Modal -->
+  <div id="modal-overlay" onclick="closeModal(event)">
+    <div id="modal">
+      <button class="close" onclick="closeModal()">&times;</button>
+      <h2 id="modal-title"></h2>
+      <div id="modal-content"></div>
+    </div>
+  </div>
+
+  <script is:inline src="https://unpkg.com/@supabase/supabase-js@2/dist/umd/supabase.min.js"></script>
+  <script is:inline>
+    const SUPABASE_URL = 'https://vzmtvhcvyqzkmestdbko.supabase.co';
+    const SUPABASE_ANON_KEY = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InZ6bXR2aGN2eXF6a21lc3RkYmtvIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NzA4OTA0MTEsImV4cCI6MjA4NjQ2NjQxMX0.rvBz2uIsr3YtLIw84Kor3eVFpH4FiXVZgbufiJH3uio';
+    const PASSWORD_HASH = '4aa67387592c6d09909e79cc50d9fecbec5087bf4f39b59f1c90804b3fa9155c';
+
+    let sb;
+    let agents = [];
+    let poles = [];
+
+    // ─── Password Gate ─────────────────────────
+    const gate = document.getElementById('gate');
+    const dashboard = document.getElementById('dashboard');
+    const pwInput = document.getElementById('password');
+    const gateError = document.getElementById('gate-error');
+
+    // Check si déjà authentifié
+    if (sessionStorage.getItem('agents_auth') === 'ok') {
+      showDashboard();
+    }
+
+    pwInput.addEventListener('keydown', async (e) => {
+      if (e.key !== 'Enter') return;
+      const val = pwInput.value;
+      const hash = Array.from(
+        new Uint8Array(await crypto.subtle.digest('SHA-256', new TextEncoder().encode(val)))
+      ).map(b => b.toString(16).padStart(2, '0')).join('');
+
+      if (hash === PASSWORD_HASH) {
+        sessionStorage.setItem('agents_auth', 'ok');
+        showDashboard();
+      } else {
+        gateError.style.display = 'block';
+        pwInput.value = '';
+      }
+    });
+
+    function showDashboard() {
+      gate.style.display = 'none';
+      dashboard.style.display = 'block';
+      sb = supabase.createClient(SUPABASE_URL, SUPABASE_ANON_KEY);
+      loadData();
+      setupRealtime();
+    }
+
+    // ─── Load Data ─────────────────────────────
+    async function loadData() {
+      document.getElementById('refresh-btn').disabled = true;
+      document.getElementById('last-refresh').textContent = new Date().toLocaleTimeString('fr-FR');
+
+      // Charger pôles + agents
+      const { data: polesData } = await sb.from('poles').select('*');
+      poles = polesData || [];
+
+      const { data: agentsData } = await sb.from('agents').select('*, poles(name)');
+      agents = agentsData || [];
+
+      // Charger le dernier run de chaque agent
+      const agentIds = agents.map(a => a.id);
+      const { data: lastRuns } = await sb
+        .from('agent_runs')
+        .select('*')
+        .in('agent_id', agentIds)
+        .order('started_at', { ascending: false });
+
+      // Compter les runs par agent
+      const runsByAgent = {};
+      const lastRunByAgent = {};
+      (lastRuns || []).forEach(r => {
+        if (!runsByAgent[r.agent_id]) runsByAgent[r.agent_id] = 0;
+        runsByAgent[r.agent_id]++;
+        if (!lastRunByAgent[r.agent_id]) lastRunByAgent[r.agent_id] = r;
+      });
+
+      // Escalades récentes (7 derniers jours)
+      const weekAgo = new Date(Date.now() - 7 * 86400000).toISOString();
+      const { data: escalades } = await sb
+        .from('agent_runs')
+        .select('*, agents(name)')
+        .eq('escalated', true)
+        .gte('started_at', weekAgo)
+        .order('started_at', { ascending: false });
+
+      renderEscalades(escalades || []);
+      renderKPIs(lastRunByAgent);
+      renderAgents('tech', 'Tech', agents, runsByAgent, lastRunByAgent);
+      renderAgents('marketing', 'Marketing', agents, runsByAgent, lastRunByAgent);
+
+      document.getElementById('refresh-btn').disabled = false;
+    }
+
+    // ─── Render Escalades ──────────────────────
+    function renderEscalades(escalades) {
+      const container = document.getElementById('escalades');
+      const list = document.getElementById('escalades-list');
+
+      if (escalades.length === 0) {
+        container.style.display = 'none';
+        return;
+      }
+
+      container.style.display = 'block';
+      list.innerHTML = escalades.map(e => `
+        <div class="escalade-item">
+          <span class="agent">${e.agents?.name || 'Agent inconnu'}</span>
+          <div class="reason">${e.escalation_reason || 'Pas de raison'}</div>
+          <div class="date">${new Date(e.started_at).toLocaleString('fr-FR')}</div>
+        </div>
+      `).join('');
+    }
+
+    // ─── Render KPIs ───────────────────────────
+    function renderKPIs(lastRunByAgent) {
+      const container = document.getElementById('kpis');
+      // Trouver le dernier run de l'Agent Analyse
+      const analyseAgent = agents.find(a => a.slug === 'agent-analyse');
+      if (!analyseAgent || !lastRunByAgent[analyseAgent.id]) {
+        container.innerHTML = '<div class="kpi-card"><div class="value">—</div><div class="label">Pas encore de données</div></div>';
+        return;
+      }
+
+      const output = lastRunByAgent[analyseAgent.id].output;
+      if (!output || !output.metrics) {
+        container.innerHTML = '<div class="kpi-card"><div class="value">—</div><div class="label">Données indisponibles</div></div>';
+        return;
+      }
+
+      const m = output.metrics;
+      const kpis = [
+        { value: m.unique_users_7d ?? '—', label: 'Users 7j' },
+        { value: m.total_events ?? '—', label: 'Events 7j' },
+        { value: m.dau?.current ?? '—', label: 'DAU', trend: m.dau?.trend },
+        { value: m.errors?.total ?? 0, label: 'Erreurs' },
+        { value: m.new_users_7d ?? '—', label: 'Nouveaux 7j' },
+        { value: m.total_users ?? '—', label: 'Total users' },
+      ];
+
+      container.innerHTML = kpis.map(k => `
+        <div class="kpi-card">
+          <div class="value">${k.value}</div>
+          <div class="label">${k.label}</div>
+          ${k.trend ? `<div class="trend ${k.trend === 'up' ? 'trend-up' : k.trend === 'down' ? 'trend-down' : ''}">${k.trend === 'up' ? '↑' : k.trend === 'down' ? '↓' : '→'} ${k.trend}</div>` : ''}
+        </div>
+      `).join('');
+    }
+
+    // ─── Render Agents ─────────────────────────
+    function renderAgents(containerId, poleName, allAgents, runsByAgent, lastRunByAgent) {
+      const container = document.getElementById(`agents-${containerId}`);
+      const pole = poles.find(p => p.name === poleName);
+      if (!pole) { container.innerHTML = '<p class="loading">Pôle non trouvé</p>'; return; }
+
+      const poleAgents = allAgents.filter(a => a.pole_id === pole.id);
+
+      container.innerHTML = poleAgents.map(agent => {
+        const lastRun = lastRunByAgent[agent.id];
+        const runCount = runsByAgent[agent.id] || 0;
+        const lastDate = lastRun ? new Date(lastRun.started_at).toLocaleString('fr-FR', { day: '2-digit', month: '2-digit', hour: '2-digit', minute: '2-digit' }) : 'Jamais';
+
+        let highlights = '';
+        if (lastRun?.output?.highlights) {
+          const h = lastRun.output.highlights;
+          highlights = (Array.isArray(h) ? h.slice(0, 2).join(' • ') : String(h)).slice(0, 120);
+        } else if (lastRun?.output?.raw_output) {
+          highlights = lastRun.output.raw_output.slice(0, 120);
+        }
+
+        return `
+          <div class="agent-card" onclick="openAgent('${agent.id}')">
+            <div class="agent-header">
+              <span class="agent-name">${agent.name}</span>
+              <span class="agent-status status-${agent.status}">${agent.status}</span>
+            </div>
+            <div class="agent-meta">
+              <span>⏰ ${agent.schedule || 'Manuel'}</span>
+              <span>📊 ${runCount} runs</span>
+              <span>🕐 ${lastDate}</span>
+            </div>
+            ${highlights ? `<div class="agent-last-output">${highlights}...</div>` : ''}
+          </div>
+        `;
+      }).join('');
+    }
+
+    // ─── Agent Modal ───────────────────────────
+    async function openAgent(agentId) {
+      const agent = agents.find(a => a.id === agentId);
+      if (!agent) return;
+
+      document.getElementById('modal-title').textContent = agent.name;
+      document.getElementById('modal-overlay').style.display = 'flex';
+
+      // Charger les 10 derniers runs
+      const { data: runs } = await sb
+        .from('agent_runs')
+        .select('*')
+        .eq('agent_id', agentId)
+        .order('started_at', { ascending: false })
+        .limit(10);
+
+      let html = `
+        <div style="margin-bottom: 16px;">
+          <div style="color: #71717a; font-size: 0.85rem; margin-bottom: 8px;">
+            <strong>Schedule:</strong> ${agent.schedule || 'Manuel'} &nbsp;|&nbsp;
+            <strong>Status:</strong> <span class="agent-status status-${agent.status}">${agent.status}</span>
+          </div>
+          <button class="btn" onclick="triggerAgent('${agent.slug}', this)">▶ Lancer maintenant</button>
+        </div>
+        <div class="run-history">
+          <h3 style="font-size: 0.95rem; color: #a1a1aa; margin-bottom: 12px;">Derniers runs</h3>
+      `;
+
+      if (!runs || runs.length === 0) {
+        html += '<p style="color: #71717a; font-size: 0.85rem;">Aucun run</p>';
+      } else {
+        html += runs.map(r => {
+          const date = new Date(r.started_at).toLocaleString('fr-FR');
+          const duration = r.duration_ms ? `${(r.duration_ms / 1000).toFixed(0)}s` : '—';
+          const statusColor = r.status === 'completed' ? '#22c55e' : r.status === 'failed' ? '#ef4444' : r.status === 'running' ? '#60a5fa' : '#71717a';
+
+          let outputPreview = '';
+          if (r.output?.highlights) {
+            const h = r.output.highlights;
+            outputPreview = Array.isArray(h) ? h.map(x => '• ' + x).join('\n') : String(h);
+          } else if (r.output?.raw_output) {
+            outputPreview = r.output.raw_output.slice(0, 300);
+          } else if (r.output) {
+            outputPreview = JSON.stringify(r.output).slice(0, 300);
+          }
+
+          return `
+            <div class="run-item">
+              <div class="run-header">
+                <span style="color: ${statusColor}; font-weight: 600;">${r.status}${r.escalated ? ' 🚨' : ''}</span>
+                <span class="run-duration">${duration}</span>
+              </div>
+              <div class="run-trigger">${date} — ${r.trigger_type}</div>
+              ${outputPreview ? `<div class="run-output">${outputPreview}</div>` : ''}
+            </div>
+          `;
+        }).join('');
+      }
+
+      html += '</div>';
+      document.getElementById('modal-content').innerHTML = html;
+    }
+
+    function closeModal(event) {
+      if (event && event.target !== document.getElementById('modal-overlay')) return;
+      document.getElementById('modal-overlay').style.display = 'none';
+    }
+
+    // ─── Trigger Manual Run ────────────────────
+    async function triggerAgent(slug, btn) {
+      btn.disabled = true;
+      btn.textContent = '⏳ Lancement...';
+
+      try {
+        const res = await fetch(`${SUPABASE_URL}/functions/v1/run-agent`, {
+          method: 'POST',
+          headers: {
+            'Content-Type': 'application/json',
+            'x-agent-key': 'aivancepro-agents-2026-secret-key',
+          },
+          body: JSON.stringify({ slug, trigger_type: 'manual' }),
+        });
+
+        if (!res.ok) throw new Error('Erreur ' + res.status);
+        const data = await res.json();
+        btn.textContent = '✅ Run créé — en attente du poller';
+        setTimeout(() => { btn.disabled = false; btn.textContent = '▶ Lancer maintenant'; }, 5000);
+      } catch (e) {
+        btn.textContent = '❌ Erreur';
+        setTimeout(() => { btn.disabled = false; btn.textContent = '▶ Lancer maintenant'; }, 3000);
+      }
+    }
+
+    // ─── Realtime ──────────────────────────────
+    function setupRealtime() {
+      sb.channel('agent-updates')
+        .on('postgres_changes', { event: '*', schema: 'public', table: 'agent_runs' }, () => {
+          loadData();
+        })
+        .on('postgres_changes', { event: '*', schema: 'public', table: 'agents' }, () => {
+          loadData();
+        })
+        .subscribe();
+    }
+  </script>
+</body>
+</html>
