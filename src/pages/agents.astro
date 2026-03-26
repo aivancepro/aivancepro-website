@@ -1031,8 +1031,46 @@
 
       <!-- Social section -->
       <div id="content-tab-social" style="display:none;">
-        <h3 style="font-size:0.95rem;color:#f59e0b;margin-bottom:14px;">Posts en attente</h3>
-        <div id="social-pending"><p style="color:#52525b;font-size:0.85rem;">Chargement...</p></div>
+        <!-- Instagram -->
+        <div style="margin-bottom:28px;">
+          <div style="display:flex;align-items:center;gap:8px;margin-bottom:12px;">
+            <span style="font-size:1.2rem;">&#x1F4F7;</span>
+            <h3 style="font-size:0.95rem;color:#e1306c;">Instagram</h3>
+          </div>
+          <div id="social-instagram"><p style="color:#52525b;font-size:0.82rem;">Aucun post</p></div>
+        </div>
+        <!-- X / Twitter -->
+        <div style="margin-bottom:28px;">
+          <div style="display:flex;align-items:center;gap:8px;margin-bottom:12px;">
+            <span style="font-size:1.2rem;">&#x1D54F;</span>
+            <h3 style="font-size:0.95rem;color:#1da1f2;">X (Twitter)</h3>
+          </div>
+          <div id="social-x"><p style="color:#52525b;font-size:0.82rem;">Aucun post</p></div>
+        </div>
+        <!-- TikTok -->
+        <div style="margin-bottom:28px;">
+          <div style="display:flex;align-items:center;gap:8px;margin-bottom:12px;">
+            <span style="font-size:1.2rem;">&#x1F3B5;</span>
+            <h3 style="font-size:0.95rem;color:#ff0050;">TikTok</h3>
+          </div>
+          <div id="social-tiktok"><p style="color:#52525b;font-size:0.82rem;">Aucun post</p></div>
+        </div>
+        <!-- YouTube -->
+        <div style="margin-bottom:28px;">
+          <div style="display:flex;align-items:center;gap:8px;margin-bottom:12px;">
+            <span style="font-size:1.2rem;">&#x25B6;</span>
+            <h3 style="font-size:0.95rem;color:#ff0000;">YouTube</h3>
+          </div>
+          <div id="social-youtube"><p style="color:#52525b;font-size:0.82rem;">Aucun post</p></div>
+        </div>
+        <!-- Reddit -->
+        <div style="margin-bottom:28px;">
+          <div style="display:flex;align-items:center;gap:8px;margin-bottom:12px;">
+            <span style="font-size:1.2rem;">&#x1F4AC;</span>
+            <h3 style="font-size:0.95rem;color:#ff4500;">Reddit</h3>
+          </div>
+          <div id="social-reddit"><p style="color:#52525b;font-size:0.82rem;">Aucun post</p></div>
+        </div>
       </div>
     </div>
   </div>
@@ -2145,13 +2183,20 @@
             guidePending.push(item);
           }
         });
+        (out.social_posts || []).forEach(function(s) {
+          var item = Object.assign({}, s, { type: 'social_post', date: r.started_at });
+          allItems.push(item);
+          socialPending.push(item);
+        });
         (out.video_scripts || []).forEach(function(v) {
-          allItems.push(Object.assign({}, v, { type: 'video_script', date: r.started_at }));
-          socialPending.push(Object.assign({}, v, { type: 'video_script', date: r.started_at }));
+          var item = Object.assign({}, v, { type: 'video_script', platform: v.platform || 'tiktok', date: r.started_at });
+          allItems.push(item);
+          socialPending.push(item);
         });
         (out.captions || []).forEach(function(c) {
-          allItems.push(Object.assign({}, c, { type: 'caption', date: r.started_at }));
-          socialPending.push(Object.assign({}, c, { type: 'caption', date: r.started_at }));
+          var item = Object.assign({}, c, { type: 'caption', platform: c.platform || 'instagram', date: r.started_at });
+          allItems.push(item);
+          socialPending.push(item);
         });
       });
 
@@ -2164,7 +2209,7 @@
       // Render each section
       renderContentCards('blog-pending', blogPending, '#60a5fa', 'article');
       renderContentCards('guides-pending', guidePending, '#a78bfa', 'guide');
-      renderSocialCards('social-pending', socialPending);
+      renderSocialByPlatform(socialPending);
       loadPublishedByType('blog-published', 'article');
       loadPublishedByType('guides-published', 'guide');
     }
@@ -2201,34 +2246,95 @@
       }).join('');
     }
 
-    function renderSocialCards(containerId, items) {
-      var container = document.getElementById(containerId);
-      if (items.length === 0) {
-        container.innerHTML = '<p style="color:#52525b;font-size:0.82rem;">Aucun post en attente</p>';
-        return;
-      }
+    function renderSocialByPlatform(items) {
+      var platforms = {
+        instagram: { color: '#e1306c', items: [] },
+        x: { color: '#1da1f2', items: [] },
+        tiktok: { color: '#ff0050', items: [] },
+        youtube: { color: '#ff0000', items: [] },
+        reddit: { color: '#ff4500', items: [] }
+      };
 
-      var platformColors = { tiktok: '#ff0050', instagram: '#e1306c', youtube: '#ff0000', x: '#1da1f2' };
+      var postTypeLabels = {
+        conseil: 'Conseil', astuce: 'Astuce', motivation: 'Motivation',
+        mythe_vs_realite: 'Mythe vs R\u{00E9}alit\u{00E9}', carrousel: 'Carrousel',
+        before_after: 'Avant/Apr\u{00E8}s', tweet: 'Tweet', thread: 'Thread',
+        script_short: 'Short', script_long: 'Vid\u{00E9}o', reddit_post: 'Post'
+      };
 
-      container.innerHTML = items.map(function(c) {
-        var globalIdx = window._contentItems.indexOf(c);
-        var isVideo = c.type === 'video_script';
-        var platform = c.platform || c.target_platform || '';
-        var pColor = platformColors[platform.toLowerCase()] || '#f59e0b';
-        var body = c.script || c.body || c.caption || c.content || '';
-        var preview = body.slice(0, 200);
+      items.forEach(function(c) {
+        var p = (c.platform || 'instagram').toLowerCase();
+        if (platforms[p]) platforms[p].items.push(c);
+      });
 
-        return '<div style="background:linear-gradient(145deg,#1e1e22,#18181b);border:1px solid #27272a;border-left:3px solid ' + pColor + ';border-radius:12px;padding:18px;margin-bottom:12px;cursor:pointer;" onclick="previewContent(' + globalIdx + ')">'
-          + '<div style="display:flex;justify-content:space-between;align-items:flex-start;margin-bottom:8px;">'
-          + '<div style="font-weight:600;font-size:0.92rem;color:#fafafa;">' + (isVideo ? '\u{1F3AC}' : '\u{1F4F1}') + ' ' + (c.title || 'Sans titre') + '</div>'
-          + '<span style="font-size:0.6rem;padding:2px 8px;border-radius:4px;background:' + pColor + '20;color:' + pColor + ';font-weight:600;border:1px solid ' + pColor + '40;">' + (isVideo ? 'Script' : 'Post') + (platform ? ' ' + platform : '') + '</span>'
-          + '</div>'
-          + (c.duration ? '<div style="font-size:0.72rem;color:#71717a;margin-bottom:6px;">\u{23F1} ' + c.duration + '</div>' : '')
-          + (c.hook ? '<div style="font-size:0.8rem;color:#fbbf24;font-weight:500;margin-bottom:8px;">Hook: ' + c.hook + '</div>' : '')
-          + (preview ? '<div style="font-size:0.78rem;color:#a1a1aa;line-height:1.5;max-height:80px;overflow:hidden;padding:10px;background:#111115;border-radius:8px;margin-bottom:8px;">' + preview + '...</div>' : '')
-          + (c.cta ? '<div style="font-size:0.72rem;color:#60a5fa;margin-bottom:4px;">CTA: ' + c.cta + '</div>' : '')
-          + '</div>';
-      }).join('');
+      Object.keys(platforms).forEach(function(p) {
+        var container = document.getElementById('social-' + p);
+        if (!container) return;
+        var list = platforms[p].items;
+        var color = platforms[p].color;
+
+        if (list.length === 0) {
+          container.innerHTML = '<p style="color:#52525b;font-size:0.82rem;">Aucun post</p>';
+          return;
+        }
+
+        container.innerHTML = list.map(function(c) {
+          var globalIdx = window._contentItems.indexOf(c);
+          var body = c.caption || c.script || c.body || c.content || '';
+          var preview = body.slice(0, 200);
+          var postType = c.post_type || c.template || '';
+          var typeLabel = postTypeLabels[postType] || postType;
+
+          var card = '<div style="background:linear-gradient(145deg,#1e1e22,#18181b);border:1px solid #27272a;border-left:3px solid ' + color + ';border-radius:12px;padding:16px;margin-bottom:10px;cursor:pointer;" onclick="previewContent(' + globalIdx + ')">';
+
+          // Header
+          card += '<div style="display:flex;justify-content:space-between;align-items:flex-start;margin-bottom:8px;">';
+          card += '<div style="font-weight:600;font-size:0.88rem;color:#fafafa;">' + (c.title || 'Sans titre') + '</div>';
+          card += '<div style="display:flex;gap:4px;">';
+          if (typeLabel) card += '<span style="font-size:0.58rem;padding:2px 7px;border-radius:4px;background:' + color + '20;color:' + color + ';font-weight:600;border:1px solid ' + color + '40;">' + typeLabel + '</span>';
+          if (c.template && p === 'instagram') card += '<span style="font-size:0.58rem;padding:2px 7px;border-radius:4px;background:#27272a;color:#a1a1aa;">TPL: ' + c.template + '</span>';
+          card += '</div></div>';
+
+          // Hook
+          if (c.hook) card += '<div style="font-size:0.8rem;color:#fbbf24;font-weight:500;margin-bottom:6px;font-style:italic;">"' + c.hook + '"</div>';
+
+          // Duration
+          if (c.duration) card += '<div style="font-size:0.7rem;color:#71717a;margin-bottom:6px;">\u{23F1} ' + c.duration + '</div>';
+
+          // Slides (carrousel)
+          if (c.slides && c.slides.length > 0) {
+            card += '<div style="display:flex;gap:6px;margin-bottom:8px;overflow-x:auto;">';
+            c.slides.forEach(function(slide, i) {
+              card += '<div style="min-width:120px;padding:8px;background:#111115;border-radius:6px;border:1px solid #27272a;font-size:0.68rem;color:#a1a1aa;">' + (i+1) + '. ' + (typeof slide === 'string' ? slide.slice(0, 50) : '') + '</div>';
+            });
+            card += '</div>';
+          }
+
+          // Preview
+          if (preview) card += '<div style="font-size:0.78rem;color:#a1a1aa;line-height:1.5;max-height:60px;overflow:hidden;padding:8px 10px;background:#111115;border-radius:6px;margin-bottom:6px;">' + preview + '</div>';
+
+          // Hashtags
+          if (c.hashtags && c.hashtags.length > 0) {
+            card += '<div style="display:flex;flex-wrap:wrap;gap:4px;margin-bottom:6px;">';
+            c.hashtags.forEach(function(tag) {
+              card += '<span style="font-size:0.62rem;color:' + color + ';opacity:0.7;">#' + tag + '</span>';
+            });
+            card += '</div>';
+          }
+
+          // Subreddit
+          if (c.subreddit) card += '<div style="font-size:0.7rem;color:#ff4500;margin-bottom:4px;">' + c.subreddit + '</div>';
+
+          // CTA
+          if (c.cta) card += '<div style="font-size:0.7rem;color:#60a5fa;">CTA: ' + c.cta + '</div>';
+
+          // Image needed
+          if (c.needs_image) card += '<div style="font-size:0.65rem;color:#71717a;margin-top:4px;">\u{1F5BC} Image requise' + (c.image_description ? ' : ' + c.image_description : '') + '</div>';
+
+          card += '</div>';
+          return card;
+        }).join('');
+      });
     }
 
     async function loadPublishedByType(containerId, contentType) {
