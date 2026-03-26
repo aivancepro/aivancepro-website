@@ -732,6 +732,82 @@
       display: inline-block;
     }
 
+    /* ─── Decisions / Proposals ────────────── */
+    .decision-card {
+      background: linear-gradient(145deg, #1a1510 0%, #151210 100%);
+      border: 1px solid #78350f;
+      border-radius: 14px;
+      padding: 20px;
+      margin-bottom: 16px;
+    }
+    .decision-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      margin-bottom: 14px;
+    }
+    .decision-reason { color: #fbbf24; font-weight: 600; font-size: 0.95rem; }
+    .decision-status {
+      font-size: 0.68rem;
+      padding: 3px 10px;
+      border-radius: 999px;
+      font-weight: 600;
+    }
+    .ds-pending { background: #422006; color: #fbbf24; }
+    .ds-ready { background: #14532d; color: #86efac; }
+    .proposal-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 10px;
+      margin-bottom: 12px;
+    }
+    .proposal-card {
+      background: rgba(39,39,42,0.4);
+      border: 1px solid #3f3f46;
+      border-radius: 10px;
+      padding: 14px;
+      cursor: pointer;
+      transition: border-color 0.2s, transform 0.15s, background 0.2s;
+    }
+    .proposal-card:hover { border-color: #4A90D9; transform: translateY(-2px); background: rgba(39,39,42,0.6); }
+    .proposal-card.selected { border-color: #22c55e; background: rgba(34,197,94,0.08); }
+    .proposal-title { font-weight: 600; font-size: 0.88rem; margin-bottom: 6px; color: #fafafa; }
+    .proposal-desc { font-size: 0.78rem; color: #a1a1aa; line-height: 1.5; margin-bottom: 8px; }
+    .proposal-agents {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 4px;
+    }
+    .proposal-agent-tag {
+      font-size: 0.62rem;
+      padding: 2px 7px;
+      border-radius: 4px;
+      background: #172554;
+      color: #60a5fa;
+    }
+    .proposal-risk {
+      font-size: 0.62rem;
+      padding: 2px 6px;
+      border-radius: 4px;
+      float: right;
+    }
+    .risk-low { background: #14532d; color: #86efac; }
+    .risk-medium { background: #422006; color: #fde047; }
+    .risk-high { background: #450a0a; color: #fca5a5; }
+    .custom-input {
+      width: 100%;
+      background: #111115;
+      border: 1px solid #27272a;
+      color: #fafafa;
+      padding: 10px 14px;
+      border-radius: 8px;
+      font-size: 0.82rem;
+      outline: none;
+      margin-top: 8px;
+      transition: border-color 0.2s;
+    }
+    .custom-input:focus { border-color: #4A90D9; }
+
     /* ─── Usage Stats ──────────────────────── */
     .usage-bar {
       display: flex;
@@ -880,6 +956,9 @@
       <h2>⚠️ Escalades en cours</h2>
       <div id="escalades-list"></div>
     </div>
+
+    <!-- Pending Decisions -->
+    <div id="decisions"></div>
 
     <!-- KPIs -->
     <div class="kpis" id="kpis"></div>
@@ -1079,6 +1158,7 @@
       renderHealthBar(agents);
       renderUsageBar();
       renderEscalades(escalades || []);
+      loadDecisions();
       renderKPIs(lastRunByAgent);
       renderAgents('tech', 'Tech', agents, runsByAgent, lastRunByAgent);
       renderAgents('marketing', 'Marketing', agents, runsByAgent, lastRunByAgent);
@@ -1475,6 +1555,146 @@
         btn.textContent = '❌ Erreur';
         setTimeout(() => { btn.disabled = false; btn.textContent = '▶ Lancer maintenant'; }, 3000);
       }
+    }
+
+    // ─── Decisions / Escalation Proposals ───────────
+    async function loadDecisions() {
+      var container = document.getElementById('decisions');
+      var resp = await sb.from('escalation_responses')
+        .select('*')
+        .in('status', ['proposals_ready', 'pending_proposals'])
+        .order('created_at', { ascending: false })
+        .limit(5);
+
+      var items = resp.data || [];
+      if (items.length === 0) { container.innerHTML = ''; return; }
+
+      container.innerHTML = items.map(function(d) {
+        var proposals = d.proposals || [];
+        var isReady = d.status === 'proposals_ready';
+
+        var proposalsHtml = '';
+        if (isReady && proposals.length > 0) {
+          proposalsHtml = '<div class="proposal-grid">' + proposals.map(function(p) {
+            var agentTags = (p.agents_involved || []).map(function(a) {
+              return '<span class="proposal-agent-tag">' + (a.slug || '').replace('agent-', '') + '</span>';
+            }).join('');
+            var riskClass = 'risk-' + (p.risk_level || 'medium');
+            return '<div class="proposal-card" onclick="chooseProposal(\'' + d.id + '\', \'' + p.id + '\')">'
+              + '<span class="proposal-risk ' + riskClass + '">' + (p.risk_level || 'medium') + '</span>'
+              + '<div class="proposal-title">' + p.title + '</div>'
+              + '<div class="proposal-desc">' + p.description + '</div>'
+              + '<div class="proposal-agents">' + agentTags + '</div>'
+              + '</div>';
+          }).join('') + '</div>'
+          + '<div style="display:flex;gap:8px;align-items:center;">'
+          + '<input type="text" class="custom-input" id="custom-' + d.id + '" placeholder="Ou r\u{00E9}digez votre propre directive..." style="flex:1;"/>'
+          + '<button class="btn" onclick="submitCustomResponse(\'' + d.id + '\')">Envoyer</button>'
+          + '</div>';
+        } else {
+          proposalsHtml = '<p style="color:#71717a;font-size:0.82rem;padding:8px 0;">G\u{00E9}n\u{00E9}ration des propositions en cours...</p>';
+        }
+
+        return '<div class="decision-card">'
+          + '<div class="decision-header">'
+          + '<div class="decision-reason">\u{1F6A8} ' + d.escalation_reason + '</div>'
+          + '<span class="decision-status ' + (isReady ? 'ds-ready' : 'ds-pending') + '">' + (isReady ? 'En attente de d\u{00E9}cision' : 'Analyse en cours') + '</span>'
+          + '</div>'
+          + proposalsHtml
+          + '</div>';
+      }).join('');
+    }
+
+    async function chooseProposal(escalationId, proposalId) {
+      // Get the escalation data
+      var resp = await sb.from('escalation_responses').select('*').eq('id', escalationId).single();
+      var esc = resp.data;
+      if (!esc) return;
+
+      var chosen = (esc.proposals || []).find(function(p) { return p.id === proposalId; });
+      if (!chosen) return;
+
+      // Mark card as selected
+      document.querySelectorAll('.proposal-card').forEach(function(c) { c.classList.remove('selected'); });
+      event.currentTarget.classList.add('selected');
+
+      // Update status
+      var now = new Date().toISOString();
+      await sb.from('escalation_responses').update({
+        chosen_proposal_id: proposalId,
+        responded_by: 'tech',
+        responded_at: now,
+        status: 'responded'
+      }).eq('id', escalationId);
+
+      // Create tasks for each agent involved
+      var tasksCreated = [];
+      for (var i = 0; i < (chosen.agents_involved || []).length; i++) {
+        var a = chosen.agents_involved[i];
+        var targetAgent = agents.find(function(ag) { return ag.slug === a.slug; });
+        if (!targetAgent) continue;
+
+        var taskResp = await sb.from('agent_tasks').insert({
+          assigned_to_agent: targetAgent.id,
+          task_type: a.task_type || 'escalation_action',
+          payload: { description: a.description, escalation_id: escalationId, proposal: chosen.title },
+          status: 'pending'
+        }).select().single();
+
+        if (taskResp.data) {
+          tasksCreated.push({ task_id: taskResp.data.id, agent_slug: a.slug, task_type: a.task_type });
+        }
+
+        // Trigger the agent
+        fetch(SUPABASE_URL + '/functions/v1/run-agent', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json', 'x-agent-key': 'aivancepro-agents-2026-secret-key' },
+          body: JSON.stringify({ slug: a.slug, trigger_type: 'task', cascade_depth: 1 })
+        });
+      }
+
+      // Update with tasks created
+      await sb.from('escalation_responses').update({
+        tasks_created: tasksCreated,
+        status: 'executing'
+      }).eq('id', escalationId);
+
+      // Refresh
+      loadDecisions();
+    }
+
+    async function submitCustomResponse(escalationId) {
+      var input = document.getElementById('custom-' + escalationId);
+      var text = input.value.trim();
+      if (!text) return;
+
+      var now = new Date().toISOString();
+      await sb.from('escalation_responses').update({
+        chosen_proposal_id: 'custom',
+        custom_response: text,
+        responded_by: 'tech',
+        responded_at: now,
+        status: 'responded'
+      }).eq('id', escalationId);
+
+      // Create a single task for agent-dev with the custom directive
+      var devAgent = agents.find(function(a) { return a.slug === 'agent-dev'; });
+      if (devAgent) {
+        await sb.from('agent_tasks').insert({
+          assigned_to_agent: devAgent.id,
+          task_type: 'custom_directive',
+          payload: { directive: text, escalation_id: escalationId },
+          status: 'pending'
+        });
+
+        fetch(SUPABASE_URL + '/functions/v1/run-agent', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json', 'x-agent-key': 'aivancepro-agents-2026-secret-key' },
+          body: JSON.stringify({ slug: 'agent-dev', trigger_type: 'task', cascade_depth: 1 })
+        });
+      }
+
+      loadDecisions();
     }
 
     // ─── Architecture Flowchart ────────────────────
