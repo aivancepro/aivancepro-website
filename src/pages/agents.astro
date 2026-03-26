@@ -1317,10 +1317,44 @@
     }
 
     async function approveBug(bugId, btn) {
-      btn.textContent = 'Approuv\u{00E9} \u{2714}';
+      btn.textContent = '\u{23F3} Cr\u{00E9}ation t\u{00E2}che...';
       btn.disabled = true;
-      // TODO: déclencher Agent Dev en mode code avec le fix
-      // Pour l'instant, juste un marqueur visuel
+
+      // Find the bug details from the card's data
+      const card = btn.closest('.bug-card');
+      const file = card.querySelector('.bug-fix strong')?.textContent || '';
+      const diff = card.querySelector('.bug-fix')?.textContent?.replace(file, '').trim() || '';
+      const rootCause = card.querySelector('.bug-title')?.textContent || '';
+
+      // Get Agent Dev id
+      const devAgent = agents.find(a => a.slug === 'agent-dev');
+      const debugAgent = agents.find(a => a.slug === 'agent-debug');
+      if (!devAgent) { btn.textContent = '\u{274C} Agent Dev introuvable'; return; }
+
+      // Create approved task for Agent Dev
+      const { error } = await sb.from('agent_tasks').insert({
+        created_by_agent: debugAgent?.id || null,
+        assigned_to_agent: devAgent.id,
+        task_type: 'code_fix',
+        payload: {
+          bug_id: bugId,
+          root_cause: rootCause,
+          file: file,
+          diff: diff,
+          instructions: 'Appliquer le fix propos\u{00E9} par Agent Debug. Cr\u{00E9}er une branche, appliquer, build, commit, push.'
+        },
+        status: 'approved',
+        approved_at: new Date().toISOString(),
+        approved_by: 'tech'
+      });
+
+      if (error) {
+        btn.textContent = '\u{274C} Erreur';
+        console.error(error);
+      } else {
+        btn.textContent = '\u{2705} Approuv\u{00E9} \u{2014} en attente du poller';
+        btn.parentElement.querySelector('.btn-reject').style.display = 'none';
+      }
     }
 
     async function rejectBug(bugId, btn) {
