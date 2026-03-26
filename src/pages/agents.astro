@@ -86,23 +86,37 @@
       background: linear-gradient(135deg, #1c1917, #1a1510);
       border: 1px solid #78350f;
       border-radius: 12px;
-      padding: 16px 20px;
+      padding: 20px;
       margin-bottom: 24px;
       display: none;
     }
-    #escalades h2 { color: #fbbf24; font-size: 1rem; margin-bottom: 12px; display: flex; align-items: center; gap: 8px; }
+    #escalades h2 { color: #fbbf24; font-size: 0.95rem; margin-bottom: 14px; display: flex; align-items: center; gap: 8px; font-weight: 600; }
     .escalade-item {
-      background: rgba(39,39,42,0.6);
-      border-radius: 8px;
-      padding: 12px 14px;
-      margin-bottom: 8px;
-      font-size: 0.875rem;
+      background: rgba(39,39,42,0.4);
+      border-radius: 10px;
+      padding: 14px 16px;
+      margin-bottom: 10px;
+      font-size: 0.85rem;
       border-left: 3px solid #f59e0b;
+      transition: background 0.15s;
     }
+    .escalade-item:hover { background: rgba(39,39,42,0.7); }
     .escalade-item:last-child { margin-bottom: 0; }
-    .escalade-item .agent { color: #fbbf24; font-weight: 600; }
-    .escalade-item .reason { color: #d4d4d8; margin-top: 4px; }
-    .escalade-item .date { color: #71717a; font-size: 0.75rem; margin-top: 4px; }
+    .escalade-item .agent {
+      color: #fbbf24;
+      font-weight: 600;
+      font-size: 0.9rem;
+      display: flex;
+      align-items: center;
+      gap: 6px;
+    }
+    .escalade-item .reason {
+      color: #d4d4d8;
+      margin-top: 6px;
+      font-size: 0.82rem;
+      line-height: 1.5;
+    }
+    .escalade-item .date { color: #71717a; font-size: 0.7rem; margin-top: 6px; }
 
     /* ─── KPIs Banner ───────────────────────── */
     .kpis {
@@ -199,17 +213,18 @@
     .agent-skills {
       display: flex;
       flex-wrap: wrap;
-      gap: 4px;
+      gap: 6px;
       margin-top: 8px;
     }
     .skill-tag {
       font-size: 0.65rem;
-      padding: 2px 7px;
-      border-radius: 4px;
-      background: #1e1e22;
-      color: #71717a;
-      border: 1px solid #333;
+      padding: 3px 8px;
+      border-radius: 6px;
+      background: #1a1a2e;
+      color: #8b8ba7;
+      border: 1px solid #2a2a3e;
       font-family: 'SF Mono', 'Fira Code', monospace;
+      white-space: nowrap;
     }
 
     .agent-card .agent-last-output {
@@ -642,15 +657,15 @@
     .archi-source rect {
       rx: 8;
       ry: 8;
-      fill: #18181b;
-      stroke: #3f3f46;
+      fill: #27272a;
+      stroke: #52525b;
       stroke-width: 1;
-      stroke-dasharray: 4 2;
     }
     .archi-source text {
       font-family: 'Inter', sans-serif;
       font-size: 9px;
-      fill: #71717a;
+      fill: #d4d4d8;
+      font-weight: 500;
       pointer-events: none;
     }
     .archi-arrow {
@@ -677,14 +692,19 @@
     }
     .archi-legend {
       position: absolute;
-      bottom: 12px;
+      bottom: 14px;
       left: 16px;
+      right: 16px;
       display: flex;
-      gap: 16px;
-      font-size: 0.7rem;
-      color: #52525b;
+      gap: 18px;
+      font-size: 0.72rem;
+      color: #71717a;
+      background: rgba(9,9,11,0.8);
+      padding: 8px 14px;
+      border-radius: 8px;
+      backdrop-filter: blur(4px);
     }
-    .archi-legend span { display: flex; align-items: center; gap: 4px; }
+    .archi-legend span { display: flex; align-items: center; gap: 5px; }
     .legend-dot {
       width: 8px;
       height: 8px;
@@ -1060,11 +1080,12 @@
         const lastRun = a.last_successful_run_at
           ? timeAgo(new Date(a.last_successful_run_at))
           : 'jamais';
-        return `<span class="health-dot" title="${a.name} — dernier run: ${lastRun}">
-          <span class="dot dot-${h}"></span>${icon}
+        const shortName = a.name.replace('Agent ', '');
+        return `<span class="health-dot" title="${a.name} \u{2014} dernier run: ${lastRun}">
+          <span class="dot dot-${h}"></span>${icon} ${shortName} <span style="color:#52525b;font-size:0.65rem;">${lastRun}</span>
         </span>`;
       }).join('');
-      container.innerHTML = `<span class="health-bar-title">Sant\u{00E9} syst\u{00E8}me</span>${dots}`;
+      container.innerHTML = `<span class="health-bar-title">Sant\u{00E9}</span>${dots}`;
     }
 
     function timeAgo(date) {
@@ -1107,11 +1128,18 @@
 
       const output = lastRunByAgent[analyseAgent.id].output;
       if (!output || !output.metrics) {
-        container.innerHTML = '<div class="kpi-card"><div class="value">—</div><div class="label">Données indisponibles</div></div>';
+        // Try to get metrics from output.output (wrapper format)
+        const innerOutput = output?.output;
+        if (innerOutput?.metrics) {
+          return renderKPIMetrics(container, innerOutput.metrics);
+        }
+        container.innerHTML = '<p class="empty-state" style="padding:12px;">KPIs en attente du prochain run Agent Analyse</p>';
         return;
       }
+      renderKPIMetrics(container, output.metrics);
+    }
 
-      const m = output.metrics;
+    function renderKPIMetrics(container, m) {
       const kpis = [
         { value: m.unique_users_7d ?? '—', label: 'Users 7j' },
         { value: m.total_events ?? '—', label: 'Events 7j' },
