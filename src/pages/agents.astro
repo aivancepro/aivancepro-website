@@ -1551,84 +1551,81 @@
       });
 
       // Task flows (curved, colored, with arrows)
-      taskFlows.forEach(flow => {
-        const from = getNode(flow.from);
-        const to = getNode(flow.to);
+      taskFlows.forEach(function(flow) {
+        var from = getNode(flow.from);
+        var to = getNode(flow.to);
         if (!from || !to) return;
 
-        let path, lx, ly;
+        var path, lx, ly;
         if (from.pole === to.pole) {
-          const side = from.pole === 'tech' ? -1 : 1;
-          const fx = from.x + (side === -1 ? 0 : NW), fy = from.y + NH/2;
-          const tx = to.x + (side === -1 ? 0 : NW), ty = to.y + NH/2;
-          const cx = fx + side * 50;
-          path = \`M\${fx} \${fy} Q\${cx} \${(fy+ty)/2} \${tx} \${ty}\`;
+          var side = from.pole === 'tech' ? -1 : 1;
+          var fx = from.x + (side === -1 ? 0 : NW), fy = from.y + NH/2;
+          var tx = to.x + (side === -1 ? 0 : NW), ty = to.y + NH/2;
+          var cx = fx + side * 50;
+          path = 'M' + fx + ' ' + fy + ' Q' + cx + ' ' + ((fy+ty)/2) + ' ' + tx + ' ' + ty;
           lx = cx + side * 4; ly = (fy + ty) / 2;
         } else {
-          const fx = from.x + NW, fy = from.y + NH/2;
-          const tx = to.x, ty = to.y + NH/2;
-          const mx = W/2, my = (fy + ty) / 2;
-          path = \`M\${fx} \${fy} Q\${mx} \${my} \${tx} \${ty}\`;
-          lx = (fx + tx) / 2; ly = (fy + ty) / 2 - 10;
+          var fx2 = from.x + NW, fy2 = from.y + NH/2;
+          var tx2 = to.x, ty2 = to.y + NH/2;
+          var mx = W/2, my = (fy2 + ty2) / 2;
+          path = 'M' + fx2 + ' ' + fy2 + ' Q' + mx + ' ' + my + ' ' + tx2 + ' ' + ty2;
+          lx = (fx2 + tx2) / 2; ly = (fy2 + ty2) / 2 - 10;
         }
 
-        svg += \`<path d="\${path}" fill="none" stroke="\${flow.color}" stroke-width="1.5" stroke-dasharray="6 4" opacity="0.5" marker-end="url(#arrow)">
-          <animate attributeName="stroke-dashoffset" values="0;-20" dur="2s" repeatCount="indefinite"/>
-        </path>\`;
-        svg += \`<text x="\${lx}" y="\${ly}" text-anchor="middle" font-family="Inter" font-size="8" fill="\${flow.color}" font-weight="500" opacity="0.8">\${flow.label}</text>\`;
+        svg += '<path d="' + path + '" fill="none" stroke="' + flow.color + '" stroke-width="1.5" stroke-dasharray="6 4" opacity="0.5" marker-end="url(#arrow)"><animate attributeName="stroke-dashoffset" values="0;-20" dur="2s" repeatCount="indefinite"/></path>';
+        svg += '<text x="' + lx + '" y="' + ly + '" text-anchor="middle" font-family="Inter" font-size="8" fill="' + flow.color + '" font-weight="500" opacity="0.8">' + flow.label + '</text>';
       });
 
       // Data sources
-      sources.forEach(src => {
-        const w = src.label.length * 7 + 20;
-        svg += \`<rect x="\${src.x}" y="\${src.y}" width="\${w}" height="28" rx="14" fill="#1a1a2e" stroke="#3f3f5a" stroke-width="1"/>
-          <text x="\${src.x + w/2}" y="\${src.y + 17}" text-anchor="middle" font-family="Inter" font-size="9" fill="#a1a1ba" font-weight="500">\${src.label}</text>\`;
+      sources.forEach(function(src) {
+        var w = src.label.length * 7 + 20;
+        svg += '<rect x="' + src.x + '" y="' + src.y + '" width="' + w + '" height="28" rx="14" fill="#1a1a2e" stroke="#3f3f5a" stroke-width="1"/>';
+        svg += '<text x="' + (src.x + w/2) + '" y="' + (src.y + 17) + '" text-anchor="middle" font-family="Inter" font-size="9" fill="#a1a1ba" font-weight="500">' + src.label + '</text>';
       });
 
       // Agent nodes
-      nodes.forEach(n => {
-        const agent = agents.find(a => a.slug === n.slug);
-        const health = agent?.health_status || 'unknown';
-        const healthColor = { healthy: '#22c55e', warning: '#f59e0b', critical: '#ef4444', unknown: '#52525b' }[health];
-        const lastRun = agent?.last_successful_run_at ? timeAgo(new Date(agent.last_successful_run_at)) : 'jamais';
-        const agentId = agent?.id || '';
-        const schedule = cronToHuman(agent?.schedule);
+      nodes.forEach(function(n) {
+        var agent = agents.find(function(a) { return a.slug === n.slug; });
+        var health = agent?.health_status || 'unknown';
+        var healthColor = { healthy: '#22c55e', warning: '#f59e0b', critical: '#ef4444', unknown: '#52525b' }[health];
+        var lastRun = agent?.last_successful_run_at ? timeAgo(new Date(agent.last_successful_run_at)) : 'jamais';
+        var agentId = agent?.id || '';
+        var schedule = cronToHuman(agent?.schedule);
+        var animTag = health !== 'healthy' ? '<animate attributeName="opacity" values="1;0.3;1" dur="1.5s" repeatCount="indefinite"/>' : '';
 
-        svg += \`<g style="cursor:pointer;" onclick="openAgent('\${agentId}')" data-slug="\${n.slug}">
-          <rect x="\${n.x}" y="\${n.y}" width="\${NW}" height="\${NH}" rx="12" ry="12" fill="url(#grad-\${n.slug})" stroke="\${n.color}" stroke-width="1.5" filter="url(#glow-\${n.slug})"/>
-          <circle cx="\${n.x + NW - 14}" cy="\${n.y + 14}" r="5" fill="\${healthColor}" data-health-slug="\${n.slug}">
-            \${health === 'healthy' ? '' : '<animate attributeName="opacity" values="1;0.3;1" dur="1.5s" repeatCount="indefinite"/>'}
-          </circle>
-          <text x="\${n.x + 14}" y="\${n.y + 24}" font-family="Inter" font-size="13" fill="#fafafa" font-weight="600">\${n.icon} \${n.label}</text>
-          <text x="\${n.x + 14}" y="\${n.y + 42}" font-family="Inter" font-size="9" fill="#a1a1aa">\${schedule} \u{2022} \${lastRun}</text>
-        </g>\`;
+        svg += '<g style="cursor:pointer;" onclick="openAgent(\'' + agentId + '\')" data-slug="' + n.slug + '">'
+          + '<rect x="' + n.x + '" y="' + n.y + '" width="' + NW + '" height="' + NH + '" rx="12" ry="12" fill="url(#grad-' + n.slug + ')" stroke="' + n.color + '" stroke-width="1.5" filter="url(#glow-' + n.slug + ')"/>'
+          + '<circle cx="' + (n.x + NW - 14) + '" cy="' + (n.y + 14) + '" r="5" fill="' + healthColor + '" data-health-slug="' + n.slug + '">' + animTag + '</circle>'
+          + '<text x="' + (n.x + 14) + '" y="' + (n.y + 24) + '" font-family="Inter" font-size="13" fill="#fafafa" font-weight="600">' + n.icon + ' ' + n.label + '</text>'
+          + '<text x="' + (n.x + 14) + '" y="' + (n.y + 42) + '" font-family="Inter" font-size="9" fill="#a1a1aa">' + schedule + ' \u{2022} ' + lastRun + '</text>'
+          + '</g>';
       });
 
       // Human approval
-      svg += \`<rect x="\${W/2 - 50}" y="\${H - 55}" width="100" height="32" rx="16" fill="#1c1917" stroke="#fbbf24" stroke-width="1" filter="url(#glow-human)"/>
-        <text x="\${W/2}" y="\${H - 34}" text-anchor="middle" font-family="Inter" font-size="11" fill="#fbbf24" font-weight="600">\u{1F464} Humain</text>\`;
-      svg += \`<line x1="\${W/2}" y1="\${H/2 + 50}" x2="\${W/2}" y2="\${H - 55}" stroke="#fbbf24" stroke-width="1" stroke-dasharray="4 3" opacity="0.3"/>\`;
-      svg += \`<text x="\${W/2 + 6}" y="\${H/2 + 76}" font-family="Inter" font-size="8" fill="#fbbf24" opacity="0.5">approbation</text>\`;
+      svg += '<rect x="' + (W/2 - 50) + '" y="' + (H - 55) + '" width="100" height="32" rx="16" fill="#1c1917" stroke="#fbbf24" stroke-width="1" filter="url(#glow-human)"/>';
+      svg += '<text x="' + (W/2) + '" y="' + (H - 34) + '" text-anchor="middle" font-family="Inter" font-size="11" fill="#fbbf24" font-weight="600">\u{1F464} Humain</text>';
+      svg += '<line x1="' + (W/2) + '" y1="' + (H/2 + 50) + '" x2="' + (W/2) + '" y2="' + (H - 55) + '" stroke="#fbbf24" stroke-width="1" stroke-dasharray="4 3" opacity="0.3"/>';
+      svg += '<text x="' + (W/2 + 6) + '" y="' + (H/2 + 76) + '" font-family="Inter" font-size="8" fill="#fbbf24" opacity="0.5">approbation</text>';
 
       svg += '</svg>';
 
       // Legend
-      svg += \`<div style="position:absolute;bottom:14px;left:16px;right:16px;display:flex;gap:18px;font-size:0.72rem;color:#71717a;background:rgba(9,9,11,0.85);padding:8px 14px;border-radius:8px;backdrop-filter:blur(4px);">
-        <span style="display:flex;align-items:center;gap:5px;"><span style="width:8px;height:8px;border-radius:50%;background:#22c55e;display:inline-block;"></span> Healthy</span>
-        <span style="display:flex;align-items:center;gap:5px;"><span style="width:8px;height:8px;border-radius:50%;background:#f59e0b;display:inline-block;"></span> Warning</span>
-        <span style="display:flex;align-items:center;gap:5px;"><span style="width:8px;height:8px;border-radius:50%;background:#ef4444;display:inline-block;"></span> Critical</span>
-        <span style="display:flex;align-items:center;gap:5px;"><span style="width:20px;height:2px;background:#f59e0b;display:inline-block;border-top:1px dashed #f59e0b;"></span> Flux inter-agent</span>
-        <span style="display:flex;align-items:center;gap:5px;"><span style="width:20px;height:0;border-top:1px solid #3f3f5a;display:inline-block;"></span> Source de donn\u{00E9}es</span>
-      </div>\`;
+      svg += '<div style="position:absolute;bottom:14px;left:16px;right:16px;display:flex;gap:18px;font-size:0.72rem;color:#71717a;background:rgba(9,9,11,0.85);padding:8px 14px;border-radius:8px;backdrop-filter:blur(4px);">'
+        + '<span style="display:flex;align-items:center;gap:5px;"><span style="width:8px;height:8px;border-radius:50%;background:#22c55e;display:inline-block;"></span> Healthy</span>'
+        + '<span style="display:flex;align-items:center;gap:5px;"><span style="width:8px;height:8px;border-radius:50%;background:#f59e0b;display:inline-block;"></span> Warning</span>'
+        + '<span style="display:flex;align-items:center;gap:5px;"><span style="width:8px;height:8px;border-radius:50%;background:#ef4444;display:inline-block;"></span> Critical</span>'
+        + '<span style="display:flex;align-items:center;gap:5px;"><span style="width:20px;height:2px;background:#f59e0b;display:inline-block;"></span> Flux inter-agent</span>'
+        + '<span style="display:flex;align-items:center;gap:5px;"><span style="width:20px;height:0;border-top:1px solid #3f3f5a;display:inline-block;"></span> Source de donn\u{00E9}es</span>'
+        + '</div>';
 
       container.innerHTML = svg;
     }
 
     function updateArchiHealth() {
-      agents.forEach(a => {
-        const dot = document.querySelector(\`[data-health-slug="\${a.slug}"]\`);
+      agents.forEach(function(a) {
+        var dot = document.querySelector('[data-health-slug="' + a.slug + '"]');
         if (dot) {
-          const color = { healthy: '#22c55e', warning: '#f59e0b', critical: '#ef4444', unknown: '#52525b' }[a.health_status || 'unknown'];
+          var color = { healthy: '#22c55e', warning: '#f59e0b', critical: '#ef4444', unknown: '#52525b' }[a.health_status || 'unknown'];
           dot.setAttribute('fill', color);
         }
       });
