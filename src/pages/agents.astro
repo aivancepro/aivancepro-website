@@ -574,6 +574,48 @@
     .output-metric .val { font-size: 1.1rem; font-weight: 700; color: #4A90D9; }
     .output-metric .lbl { font-size: 0.7rem; color: #71717a; margin-top: 2px; }
 
+    /* ─── Usage Stats ──────────────────────── */
+    .usage-bar {
+      display: flex;
+      gap: 12px;
+      margin-bottom: 24px;
+      padding: 14px 18px;
+      background: #18181b;
+      border: 1px solid #27272a;
+      border-radius: 12px;
+      flex-wrap: wrap;
+      align-items: center;
+    }
+    .usage-stat {
+      text-align: center;
+      min-width: 80px;
+    }
+    .usage-stat .val { font-size: 1.1rem; font-weight: 700; color: #4A90D9; }
+    .usage-stat .lbl { font-size: 0.65rem; color: #71717a; margin-top: 2px; text-transform: uppercase; }
+    .usage-divider { width: 1px; height: 30px; background: #27272a; }
+
+    /* ─── Execution Result ─────────────────── */
+    .exec-result {
+      background: #111113;
+      border: 1px solid #27272a;
+      border-radius: 8px;
+      padding: 12px;
+      margin-top: 12px;
+    }
+    .exec-result .exec-status { font-weight: 600; margin-bottom: 6px; }
+    .exec-result .exec-branch { font-size: 0.78rem; color: #60a5fa; font-family: monospace; }
+    .exec-result .exec-log {
+      margin-top: 8px;
+      font-size: 0.72rem;
+      color: #71717a;
+      max-height: 100px;
+      overflow: auto;
+      white-space: pre-wrap;
+      background: #09090b;
+      padding: 8px;
+      border-radius: 4px;
+    }
+
     /* ─── Modal Tabs ───────────────────────── */
     .modal-tabs {
       display: flex;
@@ -658,6 +700,11 @@
       <span class="health-bar-title">Santé système</span>
     </div>
 
+    <!-- Usage Stats -->
+    <div class="usage-bar" id="usage-bar">
+      <span class="health-bar-title">Usage 24h</span>
+    </div>
+
     <!-- Global Views Nav -->
     <div class="views-nav">
       <button class="view-tab active" onclick="switchGlobalView('agents', this)">Agents</button>
@@ -695,13 +742,18 @@
 
     <!-- Bugs view -->
     <div id="view-bugs" class="global-view">
-      <h2 style="font-size:1.1rem;margin-bottom:16px;color:#f87171;">Bugs détectés par Agent Debug</h2>
+      <h2 style="font-size:1.1rem;margin-bottom:16px;color:#f87171;">Bugs d\u00e9tect\u00e9s par Agent Debug</h2>
       <div id="bugs-list"><p class="empty-state">Chargement...</p></div>
+      <h3 style="font-size:0.95rem;margin:24px 0 12px;color:#a1a1aa;">Ex\u00e9cutions de code approuv\u00e9es</h3>
+      <div id="exec-list"><p class="empty-state">Chargement...</p></div>
     </div>
 
     <!-- Contacts view -->
     <div id="view-contacts" class="global-view">
-      <h2 style="font-size:1.1rem;margin-bottom:16px;color:#a78bfa;">Contacts Outreach</h2>
+      <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:16px;">
+        <h2 style="font-size:1.1rem;color:#a78bfa;">Contacts Outreach</h2>
+        <button class="btn-xs" onclick="exportContactsCSV()">Exporter CSV</button>
+      </div>
       <div id="contacts-list"><p class="empty-state">Chargement...</p></div>
     </div>
 
@@ -861,6 +913,7 @@
         .order('started_at', { ascending: false });
 
       renderHealthBar(agents);
+      renderUsageBar();
       renderEscalades(escalades || []);
       renderKPIs(lastRunByAgent);
       renderAgents('tech', 'Tech', agents, runsByAgent, lastRunByAgent);
@@ -1251,6 +1304,46 @@
       }
     }
 
+    // ─── Usage Stats ────────────────────────────
+    async function renderUsageBar() {
+      const container = document.getElementById('usage-bar');
+      const now = new Date();
+      const yesterday = new Date(now - 86400000);
+
+      // Count runs in last 24h
+      const { data: recentRuns } = await sb.from('agent_runs')
+        .select('id,duration_ms,status,agent_id')
+        .gte('started_at', yesterday.toISOString());
+
+      const runs = recentRuns || [];
+      const completed = runs.filter(r => r.status === 'completed');
+      const failed = runs.filter(r => r.status === 'failed');
+      const avgDuration = completed.length > 0
+        ? Math.round(completed.reduce((s, r) => s + (r.duration_ms || 0), 0) / completed.length / 1000)
+        : 0;
+
+      // Runs per agent
+      const perAgent = {};
+      runs.forEach(r => {
+        const agent = agents.find(a => a.id === r.agent_id);
+        const name = agent ? agent.name.replace('Agent ', '') : '?';
+        perAgent[name] = (perAgent[name] || 0) + 1;
+      });
+      const topAgent = Object.entries(perAgent).sort((a, b) => b[1] - a[1])[0];
+
+      container.innerHTML = `
+        <span class="health-bar-title">Usage 24h</span>
+        <div class="usage-stat"><div class="val">${runs.length}</div><div class="lbl">Runs</div></div>
+        <div class="usage-divider"></div>
+        <div class="usage-stat"><div class="val">${completed.length}</div><div class="lbl">R\u{00E9}ussis</div></div>
+        <div class="usage-divider"></div>
+        <div class="usage-stat"><div class="val" style="color:${failed.length > 0 ? '#ef4444' : '#22c55e'}">${failed.length}</div><div class="lbl">\u{00C9}checs</div></div>
+        <div class="usage-divider"></div>
+        <div class="usage-stat"><div class="val">${avgDuration}s</div><div class="lbl">Dur\u{00E9}e moy</div></div>
+        ${topAgent ? `<div class="usage-divider"></div><div class="usage-stat"><div class="val">${topAgent[1]}</div><div class="lbl">${topAgent[0]}</div></div>` : ''}
+      `;
+    }
+
     // ─── Global Views ─────────────────────────
     function switchGlobalView(view, btn) {
       document.querySelectorAll('.view-tab').forEach(t => t.classList.remove('active'));
@@ -1259,7 +1352,7 @@
         const el = document.getElementById('view-' + v);
         if (el) { el.style.display = v === view ? 'block' : 'none'; el.classList.toggle('active', v === view); }
       });
-      if (view === 'bugs') loadBugsView();
+      if (view === 'bugs') { loadBugsView(); loadExecResults(); }
       if (view === 'contacts') loadContactsView();
       if (view === 'content') loadContentView();
     }
@@ -1462,6 +1555,69 @@
           </div>
         `;
       }).join('');
+    }
+
+    // ─── Exec Results (code_fix tasks) ────────
+    async function loadExecResults() {
+      const container = document.getElementById('exec-list');
+      if (!container) return;
+
+      const { data: tasks } = await sb.from('agent_tasks')
+        .select('*')
+        .eq('task_type', 'code_fix')
+        .in('status', ['approved', 'executing', 'executed', 'rejected'])
+        .order('approved_at', { ascending: false })
+        .limit(10);
+
+      if (!tasks || tasks.length === 0) {
+        container.innerHTML = '<p class="empty-state">Aucune ex\u{00E9}cution de code</p>';
+        return;
+      }
+
+      container.innerHTML = tasks.map(t => {
+        const bugId = t.payload?.bug_id || '?';
+        const statusColors = { approved: '#f59e0b', executing: '#60a5fa', executed: '#22c55e', rejected: '#ef4444' };
+        const statusLabels = { approved: 'En attente', executing: 'En cours', executed: 'Ex\u{00E9}cut\u{00E9}', rejected: 'Rejet\u{00E9}' };
+        const color = statusColors[t.status] || '#71717a';
+        const label = statusLabels[t.status] || t.status;
+
+        return `
+          <div class="exec-result">
+            <div class="exec-status" style="color:${color}">${label} \u{2014} ${bugId}</div>
+            ${t.git_branch ? `<div class="exec-branch">\u{1F33F} ${t.git_branch}</div>` : ''}
+            ${t.result_summary ? `<div style="font-size:0.8rem;color:#a1a1aa;margin-top:4px;">${t.result_summary}</div>` : ''}
+            ${t.git_commit ? `<div style="font-size:0.72rem;color:#71717a;margin-top:4px;">Commit: ${t.git_commit}</div>` : ''}
+          </div>
+        `;
+      }).join('');
+    }
+
+    // ─── Export CSV contacts ────────────────────
+    async function exportContactsCSV() {
+      const { data: contacts } = await sb.from('outreach_contacts')
+        .select('*').order('created_at', { ascending: false });
+
+      if (!contacts || contacts.length === 0) {
+        alert('Aucun contact \u{00E0} exporter');
+        return;
+      }
+
+      const headers = ['name', 'platform', 'handle', 'email', 'followers', 'niche', 'status', 'language', 'notes'];
+      const csv = [headers.join(',')];
+      contacts.forEach(c => {
+        csv.push(headers.map(h => {
+          const val = (c[h] || '').toString().replace(/"/g, '""');
+          return `"${val}"`;
+        }).join(','));
+      });
+
+      const blob = new Blob([csv.join('\n')], { type: 'text/csv' });
+      const url = URL.createObjectURL(blob);
+      const a = document.createElement('a');
+      a.href = url;
+      a.download = `contacts_outreach_${new Date().toISOString().split('T')[0]}.csv`;
+      a.click();
+      URL.revokeObjectURL(url);
     }
 
     // ─── Realtime ──────────────────────────────
