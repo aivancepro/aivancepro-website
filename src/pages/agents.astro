@@ -2114,13 +2114,69 @@
             ${preview ? `<div class="content-preview">${preview}...</div>` : ''}
             ${c.review_notes ? `<div class="review-notes">\u{26A0}\u{FE0F} ${c.review_notes}</div>` : ''}
             ${c.needs_medical_review ? '<div class="review-notes">\u{1F3E5} Review m\u{00E9}dicale requise</div>' : ''}
-            <div class="bug-actions" style="margin-top:10px;">
-              <button class="btn-xs btn-approve">Valider</button>
-              <button class="btn-xs btn-reject">Rejeter</button>
+            <div style="display:flex;gap:8px;margin-top:10px;">
+              ${c.type === 'article' ? '<button style="padding:4px 12px;font-size:0.72rem;background:linear-gradient(135deg,#166534,#14532d);color:#86efac;border:1px solid #22c55e;border-radius:6px;cursor:pointer;font-weight:600;" onclick="publishArticle(this)" data-title="' + (c.title || '').replace(/"/g, '&quot;') + '" data-slug="' + (c.slug || '') + '" data-content="' + encodeURIComponent(c.content || '') + '" data-keyword="' + (c.target_keyword || '') + '" data-description="' + (c.meta_description || '').replace(/"/g, '&quot;') + '" data-category="' + (c.category || 'musculation') + '">\u{1F680} Publier sur le site</button>' : ''}
+              <button style="padding:4px 10px;font-size:0.7rem;background:#27272a;color:#a1a1aa;border:1px solid #3f3f46;border-radius:4px;cursor:pointer;">Valider</button>
+              <button style="padding:4px 10px;font-size:0.7rem;background:#27272a;color:#a1a1aa;border:1px solid #3f3f46;border-radius:4px;cursor:pointer;">Rejeter</button>
             </div>
           </div>
         `;
       }).join('');
+    }
+
+    // ─── Publish Article ──────────────────────
+    async function publishArticle(btn) {
+      var title = btn.getAttribute('data-title');
+      var slug = btn.getAttribute('data-slug') || title.toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/-+$/,'');
+      var content = decodeURIComponent(btn.getAttribute('data-content') || '');
+      var keyword = btn.getAttribute('data-keyword') || '';
+      var description = btn.getAttribute('data-description') || '';
+      var category = btn.getAttribute('data-category') || 'musculation';
+
+      btn.textContent = '\u{23F3} Cr\u{00E9}ation t\u{00E2}che...';
+      btn.disabled = true;
+
+      var devAgent = agents.find(function(a) { return a.slug === 'agent-dev'; });
+      if (!devAgent) { btn.textContent = '\u{274C} Agent Dev introuvable'; return; }
+
+      var resp = await sb.from('agent_tasks').insert({
+        assigned_to_agent: devAgent.id,
+        task_type: 'publish_article',
+        payload: {
+          title: title,
+          slug: slug,
+          content: content.slice(0, 10000),
+          keyword: keyword,
+          description: description,
+          category: category,
+          lang: 'fr',
+          instructions: "Cr\u{00E9}er le fichier blog Markdown dans le repo aivancepro-website. Cr\u{00E9}er une branche, ajouter le fichier src/content/blog/fr/" + slug + ".md avec le frontmatter Astro complet (title, description, date, slug, lang, category, keywords, canonical, alternates), build, commit, push."
+        },
+        status: 'approved',
+        approved_at: new Date().toISOString(),
+        approved_by: 'tech'
+      });
+
+      if (resp.error) {
+        btn.textContent = '\u{274C} Erreur';
+      } else {
+        btn.textContent = '\u{2705} Publication en attente du poller';
+
+        // Also insert into published_content
+        await sb.from('published_content').insert({
+          content_type: 'article',
+          title: title,
+          slug: slug,
+          lang: 'fr',
+          category: category,
+          keywords: keyword,
+          target_keyword: keyword,
+          description: description,
+          file_path: 'src/content/blog/fr/' + slug + '.md',
+          url: 'https://aivancepro.fr/blog/' + slug + '/',
+          source: 'agent-contenu'
+        });
+      }
     }
 
     // ─── Exec Results (code_fix tasks) ────────
