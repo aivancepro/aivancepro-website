@@ -394,6 +394,186 @@
     }
     .btn-xs:hover { background: #3f3f46; color: #fafafa; }
 
+    /* ─── Global Views Nav ─────────────────── */
+    .views-nav {
+      display: flex;
+      gap: 0;
+      margin-bottom: 24px;
+      border-bottom: 1px solid #27272a;
+    }
+    .view-tab {
+      padding: 10px 20px;
+      font-size: 0.85rem;
+      font-weight: 500;
+      color: #71717a;
+      background: none;
+      border: none;
+      border-bottom: 2px solid transparent;
+      cursor: pointer;
+      transition: color 0.15s, border-color 0.15s;
+    }
+    .view-tab:hover { color: #a1a1aa; }
+    .view-tab.active { color: #fafafa; border-bottom-color: #4A90D9; }
+    .view-tab .badge {
+      font-size: 0.65rem;
+      padding: 1px 6px;
+      border-radius: 999px;
+      background: #ef4444;
+      color: white;
+      margin-left: 6px;
+      font-weight: 600;
+    }
+    .global-view { display: none; }
+    .global-view.active { display: block; }
+
+    /* ─── Bug Card ─────────────────────────── */
+    .bug-card {
+      background: #222225;
+      border-radius: 10px;
+      padding: 16px;
+      margin-bottom: 12px;
+      border-left: 3px solid #ef4444;
+    }
+    .bug-card.severity-high { border-left-color: #f97316; }
+    .bug-card.severity-medium { border-left-color: #eab308; }
+    .bug-card.severity-low { border-left-color: #6b7280; }
+    .bug-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 8px;
+    }
+    .bug-title { font-weight: 600; font-size: 0.9rem; }
+    .severity-badge {
+      font-size: 0.68rem;
+      padding: 2px 8px;
+      border-radius: 4px;
+      font-weight: 600;
+      text-transform: uppercase;
+    }
+    .severity-critical { background: #450a0a; color: #fca5a5; }
+    .severity-high { background: #431407; color: #fdba74; }
+    .severity-medium { background: #422006; color: #fde047; }
+    .severity-low { background: #1c1c1e; color: #9ca3af; }
+    .bug-meta { font-size: 0.78rem; color: #a1a1aa; margin-bottom: 8px; }
+    .bug-fix {
+      background: #1a1a1e;
+      border-radius: 6px;
+      padding: 10px;
+      font-family: 'SF Mono', monospace;
+      font-size: 0.75rem;
+      color: #a1a1aa;
+      white-space: pre-wrap;
+      max-height: 120px;
+      overflow: hidden;
+      margin-top: 8px;
+    }
+    .bug-actions {
+      display: flex;
+      gap: 8px;
+      margin-top: 10px;
+    }
+    .btn-approve { background: #166534; color: #86efac; }
+    .btn-approve:hover { background: #15803d; }
+    .btn-reject { background: #450a0a; color: #fca5a5; }
+    .btn-reject:hover { background: #7f1d1d; }
+
+    /* ─── Contact Card ─────────────────────── */
+    .contact-card {
+      background: #222225;
+      border-radius: 8px;
+      padding: 12px 14px;
+      margin-bottom: 8px;
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      font-size: 0.82rem;
+    }
+    .contact-avatar {
+      width: 36px; height: 36px;
+      border-radius: 50%;
+      background: #3f3f46;
+      display: flex; align-items: center; justify-content: center;
+      font-size: 1rem;
+      flex-shrink: 0;
+    }
+    .contact-info { flex: 1; }
+    .contact-name { font-weight: 600; color: #fafafa; }
+    .contact-handle { color: #71717a; font-size: 0.75rem; }
+    .contact-status-badge {
+      font-size: 0.65rem;
+      padding: 2px 8px;
+      border-radius: 4px;
+    }
+    .cs-identified { background: #1c1c1e; color: #71717a; }
+    .cs-contacted { background: #172554; color: #60a5fa; }
+    .cs-replied { background: #14532d; color: #86efac; }
+    .cs-accepted { background: #166534; color: #22c55e; }
+    .cs-declined { background: #450a0a; color: #f87171; }
+    .cs-ghosted { background: #1c1c1e; color: #52525b; }
+
+    /* ─── Content Card ─────────────────────── */
+    .content-card {
+      background: #222225;
+      border-radius: 10px;
+      padding: 16px;
+      margin-bottom: 12px;
+      border-left: 3px solid #a78bfa;
+    }
+    .content-card.type-article { border-left-color: #60a5fa; }
+    .content-card.type-email { border-left-color: #f59e0b; }
+    .content-card.type-video_script { border-left-color: #ec4899; }
+    .content-type-badge {
+      font-size: 0.65rem;
+      padding: 2px 8px;
+      border-radius: 4px;
+      background: #27272a;
+      color: #a1a1aa;
+      text-transform: uppercase;
+    }
+    .content-preview {
+      margin-top: 8px;
+      font-size: 0.8rem;
+      color: #a1a1aa;
+      max-height: 80px;
+      overflow: hidden;
+      line-height: 1.5;
+    }
+    .review-notes {
+      margin-top: 8px;
+      padding: 8px 10px;
+      background: #1c1917;
+      border: 1px solid #78350f;
+      border-radius: 6px;
+      font-size: 0.75rem;
+      color: #fbbf24;
+    }
+
+    /* ─── Output Viewer ────────────────────── */
+    .output-section {
+      margin-bottom: 16px;
+    }
+    .output-section h4 {
+      font-size: 0.82rem;
+      color: #a1a1aa;
+      margin-bottom: 8px;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+    }
+    .output-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 8px;
+    }
+    .output-metric {
+      background: #1a1a1e;
+      border-radius: 6px;
+      padding: 10px;
+      text-align: center;
+    }
+    .output-metric .val { font-size: 1.1rem; font-weight: 700; color: #4A90D9; }
+    .output-metric .lbl { font-size: 0.7rem; color: #71717a; margin-top: 2px; }
+
     /* ─── Modal Tabs ───────────────────────── */
     .modal-tabs {
       display: flex;
@@ -478,6 +658,17 @@
       <span class="health-bar-title">Santé système</span>
     </div>
 
+    <!-- Global Views Nav -->
+    <div class="views-nav">
+      <button class="view-tab active" onclick="switchGlobalView('agents', this)">Agents</button>
+      <button class="view-tab" onclick="switchGlobalView('bugs', this)">Bugs <span class="badge" id="bugs-count" style="display:none">0</span></button>
+      <button class="view-tab" onclick="switchGlobalView('contacts', this)">Contacts</button>
+      <button class="view-tab" onclick="switchGlobalView('content', this)">Contenu <span class="badge" id="content-count" style="display:none">0</span></button>
+    </div>
+
+    <!-- Main agents view -->
+    <div id="view-agents" class="global-view active">
+
     <!-- Escalades -->
     <div id="escalades">
       <h2>⚠️ Escalades en cours</h2>
@@ -497,6 +688,27 @@
         <h2>📢 Pôle Marketing</h2>
         <div id="agents-marketing"></div>
       </div>
+    </div>
+  </div>
+
+    </div><!-- /view-agents -->
+
+    <!-- Bugs view -->
+    <div id="view-bugs" class="global-view">
+      <h2 style="font-size:1.1rem;margin-bottom:16px;color:#f87171;">Bugs détectés par Agent Debug</h2>
+      <div id="bugs-list"><p class="empty-state">Chargement...</p></div>
+    </div>
+
+    <!-- Contacts view -->
+    <div id="view-contacts" class="global-view">
+      <h2 style="font-size:1.1rem;margin-bottom:16px;color:#a78bfa;">Contacts Outreach</h2>
+      <div id="contacts-list"><p class="empty-state">Chargement...</p></div>
+    </div>
+
+    <!-- Content view -->
+    <div id="view-content" class="global-view">
+      <h2 style="font-size:1.1rem;margin-bottom:16px;color:#60a5fa;">Contenu en attente de review</h2>
+      <div id="content-list"><p class="empty-state">Chargement...</p></div>
     </div>
   </div>
 
@@ -1037,6 +1249,185 @@
         btn.textContent = '❌ Erreur';
         setTimeout(() => { btn.disabled = false; btn.textContent = '▶ Lancer maintenant'; }, 3000);
       }
+    }
+
+    // ─── Global Views ─────────────────────────
+    function switchGlobalView(view, btn) {
+      document.querySelectorAll('.view-tab').forEach(t => t.classList.remove('active'));
+      btn.classList.add('active');
+      ['agents', 'bugs', 'contacts', 'content'].forEach(v => {
+        const el = document.getElementById('view-' + v);
+        if (el) { el.style.display = v === view ? 'block' : 'none'; el.classList.toggle('active', v === view); }
+      });
+      if (view === 'bugs') loadBugsView();
+      if (view === 'contacts') loadContactsView();
+      if (view === 'content') loadContentView();
+    }
+
+    // ─── Bugs View ──────────────────────────────
+    async function loadBugsView() {
+      const container = document.getElementById('bugs-list');
+      container.innerHTML = '<p class="empty-state">Chargement...</p>';
+
+      const debugAgent = agents.find(a => a.slug === 'agent-debug');
+      if (!debugAgent) { container.innerHTML = '<p class="empty-state">Agent Debug non trouv\u{00E9}</p>'; return; }
+
+      const { data: runs } = await sb.from('agent_runs').select('output,started_at')
+        .eq('agent_id', debugAgent.id).eq('status', 'completed')
+        .order('started_at', { ascending: false }).limit(5);
+
+      const allBugs = [];
+      (runs || []).forEach(r => {
+        const bugs = r.output?.output?.bugs_found || r.output?.bugs_found || [];
+        bugs.forEach(b => allBugs.push({ ...b, date: r.started_at }));
+      });
+
+      if (allBugs.length === 0) {
+        container.innerHTML = '<p class="empty-state">Aucun bug d\u{00E9}tect\u{00E9}</p>';
+        return;
+      }
+
+      const badge = document.getElementById('bugs-count');
+      badge.textContent = allBugs.length;
+      badge.style.display = 'inline';
+
+      container.innerHTML = allBugs.map(b => {
+        const sev = (b.severity || 'medium').toLowerCase();
+        const fix = b.fix_proposal;
+        return `
+          <div class="bug-card severity-${sev}">
+            <div class="bug-header">
+              <span class="bug-title">${b.bug_id || 'Bug'} \u{2014} ${b.root_cause || 'Cause inconnue'}</span>
+              <span class="severity-badge severity-${sev}">${sev}</span>
+            </div>
+            <div class="bug-meta">
+              ${b.affected_users ? 'Utilisateurs : ' + b.affected_users + ' \u{2022} ' : ''}
+              ${b.error_type || ''} ${b.error_message ? '\u{2014} ' + b.error_message : ''}
+            </div>
+            ${fix ? `
+              <div class="bug-fix"><strong>${fix.file || ''}</strong>\n${fix.diff || fix.test || 'Pas de diff'}</div>
+              <div class="bug-actions">
+                <button class="btn-xs btn-approve" onclick="approveBug('${b.bug_id}', this)">Approuver le fix</button>
+                <button class="btn-xs btn-reject" onclick="rejectBug('${b.bug_id}', this)">Rejeter</button>
+              </div>
+            ` : ''}
+          </div>
+        `;
+      }).join('');
+    }
+
+    async function approveBug(bugId, btn) {
+      btn.textContent = 'Approuv\u{00E9} \u{2714}';
+      btn.disabled = true;
+      // TODO: déclencher Agent Dev en mode code avec le fix
+      // Pour l'instant, juste un marqueur visuel
+    }
+
+    async function rejectBug(bugId, btn) {
+      btn.textContent = 'Rejet\u{00E9}';
+      btn.disabled = true;
+      btn.parentElement.querySelector('.btn-approve').disabled = true;
+    }
+
+    // ─── Contacts View ──────────────────────────
+    async function loadContactsView() {
+      const container = document.getElementById('contacts-list');
+      container.innerHTML = '<p class="empty-state">Chargement...</p>';
+
+      // Get from outreach_contacts table
+      const { data: dbContacts } = await sb.from('outreach_contacts')
+        .select('*').order('updated_at', { ascending: false }).limit(100);
+
+      // Also get from latest marketing run output
+      const mktAgent = agents.find(a => a.slug === 'agent-marketing');
+      let runContacts = [];
+      if (mktAgent) {
+        const { data: runs } = await sb.from('agent_runs').select('output')
+          .eq('agent_id', mktAgent.id).eq('status', 'completed')
+          .order('started_at', { ascending: false }).limit(3);
+        (runs || []).forEach(r => {
+          const c = r.output?.output?.contacts?.new || [];
+          runContacts = runContacts.concat(c);
+        });
+      }
+
+      const allContacts = (dbContacts || []).concat(
+        runContacts.map(c => ({ ...c, status: 'identified', source: 'agent' }))
+      );
+
+      if (allContacts.length === 0) {
+        container.innerHTML = '<p class="empty-state">Aucun contact pour le moment</p>';
+        return;
+      }
+
+      const platformIcons = { instagram: '\u{1F4F7}', tiktok: '\u{1F3B5}', youtube: '\u{1F3AC}', email: '\u{1F4E7}', twitter: '\u{1F426}', reddit: '\u{1F4AC}' };
+
+      container.innerHTML = allContacts.map(c => {
+        const icon = platformIcons[c.platform] || '\u{1F464}';
+        const status = c.status || 'identified';
+        return `
+          <div class="contact-card">
+            <div class="contact-avatar">${icon}</div>
+            <div class="contact-info">
+              <div class="contact-name">${c.name || 'Inconnu'}</div>
+              <div class="contact-handle">${c.handle || c.platform || ''} ${c.followers ? '\u{2022} ' + c.followers + ' followers' : ''}</div>
+            </div>
+            <span class="contact-status-badge cs-${status}">${status}</span>
+          </div>
+        `;
+      }).join('');
+    }
+
+    // ─── Content View ───────────────────────────
+    async function loadContentView() {
+      const container = document.getElementById('content-list');
+      container.innerHTML = '<p class="empty-state">Chargement...</p>';
+
+      const ctnAgent = agents.find(a => a.slug === 'agent-contenu');
+      if (!ctnAgent) { container.innerHTML = '<p class="empty-state">Agent Contenu non trouv\u{00E9}</p>'; return; }
+
+      const { data: runs } = await sb.from('agent_runs').select('output,started_at')
+        .eq('agent_id', ctnAgent.id).eq('status', 'completed')
+        .order('started_at', { ascending: false }).limit(5);
+
+      const allContent = [];
+      (runs || []).forEach(r => {
+        const out = r.output?.output || r.output || {};
+        (out.articles || []).forEach(a => allContent.push({ ...a, type: 'article', date: r.started_at }));
+        (out.video_scripts || []).forEach(v => allContent.push({ ...v, type: 'video_script', date: r.started_at }));
+        (out.emails || []).forEach(e => allContent.push({ ...e, type: 'email', date: r.started_at }));
+      });
+
+      if (allContent.length === 0) {
+        container.innerHTML = '<p class="empty-state">Aucun contenu produit pour le moment</p>';
+        return;
+      }
+
+      const badge = document.getElementById('content-count');
+      badge.textContent = allContent.length;
+      badge.style.display = 'inline';
+
+      const typeLabels = { article: 'Article', video_script: 'Script vid\u{00E9}o', email: 'Email', caption: 'Caption' };
+
+      container.innerHTML = allContent.map(c => {
+        const preview = c.content ? c.content.slice(0, 200) : c.body ? c.body.slice(0, 200) : '';
+        return `
+          <div class="content-card type-${c.type}">
+            <div class="bug-header">
+              <span class="bug-title">${c.title || 'Sans titre'}</span>
+              <span class="content-type-badge">${typeLabels[c.type] || c.type}</span>
+            </div>
+            ${c.target_keyword ? `<div class="bug-meta">Keyword : ${c.target_keyword} ${c.word_count ? '\u{2022} ' + c.word_count + ' mots' : ''}</div>` : ''}
+            ${preview ? `<div class="content-preview">${preview}...</div>` : ''}
+            ${c.review_notes ? `<div class="review-notes">\u{26A0}\u{FE0F} ${c.review_notes}</div>` : ''}
+            ${c.needs_medical_review ? '<div class="review-notes">\u{1F3E5} Review m\u{00E9}dicale requise</div>' : ''}
+            <div class="bug-actions" style="margin-top:10px;">
+              <button class="btn-xs btn-approve">Valider</button>
+              <button class="btn-xs btn-reject">Rejeter</button>
+            </div>
+          </div>
+        `;
+      }).join('');
     }
 
     // ─── Realtime ──────────────────────────────
