@@ -605,7 +605,7 @@
     .archi-container {
       position: relative;
       width: 100%;
-      min-height: 600px;
+      min-height: 650px;
       background: radial-gradient(circle at 50% 50%, #111115 0%, #09090b 100%);
       border: 1px solid #27272a;
       border-radius: 16px;
@@ -613,7 +613,7 @@
     }
     .archi-container svg {
       width: 100%;
-      height: 600px;
+      height: 650px;
     }
     .archi-node {
       cursor: pointer;
@@ -1468,160 +1468,165 @@
     function renderArchitecture() {
       archiRendered = true;
       const container = document.getElementById('archi-container');
+      const W = 960, H = 650;
+      const NW = 150, NH = 56;
 
-      const W = 960, H = 600;
-
-      // Agent positions
       const nodes = [
-        // Tech pole (left)
-        { slug: 'agent-debug', icon: '\u{1F41B}', label: 'Debug', x: 120, y: 160, color: '#ef4444', pole: 'tech' },
-        { slug: 'agent-dev', icon: '\u{1F6E0}', label: 'Dev', x: 120, y: 300, color: '#3b82f6', pole: 'tech' },
-        { slug: 'agent-seo-geo', icon: '\u{1F50D}', label: 'SEO/GEO', x: 120, y: 440, color: '#22c55e', pole: 'tech' },
-        // Marketing pole (right)
-        { slug: 'agent-analyse', icon: '\u{1F4CA}', label: 'Analyse', x: 660, y: 160, color: '#a78bfa', pole: 'marketing' },
-        { slug: 'agent-marketing', icon: '\u{1F4E3}', label: 'Marketing', x: 660, y: 300, color: '#f59e0b', pole: 'marketing' },
-        { slug: 'agent-contenu', icon: '\u{270D}', label: 'Contenu', x: 660, y: 440, color: '#ec4899', pole: 'marketing' },
+        { slug: 'agent-debug', icon: '\u{1F41B}', label: 'Debug', x: 80, y: 150, color: '#ef4444', glow: '#ef444440', pole: 'tech' },
+        { slug: 'agent-dev', icon: '\u{1F6E0}', label: 'Dev', x: 80, y: 290, color: '#3b82f6', glow: '#3b82f640', pole: 'tech' },
+        { slug: 'agent-seo-geo', icon: '\u{1F50D}', label: 'SEO/GEO', x: 80, y: 430, color: '#22c55e', glow: '#22c55e40', pole: 'tech' },
+        { slug: 'agent-analyse', icon: '\u{1F4CA}', label: 'Analyse', x: 730, y: 150, color: '#a78bfa', glow: '#a78bfa40', pole: 'marketing' },
+        { slug: 'agent-marketing', icon: '\u{1F4E3}', label: 'Marketing', x: 730, y: 290, color: '#f59e0b', glow: '#f59e0b40', pole: 'marketing' },
+        { slug: 'agent-contenu', icon: '\u{270D}', label: 'Contenu', x: 730, y: 430, color: '#ec4899', glow: '#ec489940', pole: 'marketing' },
       ];
 
-      // Data sources
       const sources = [
-        { label: 'PostHog', x: 380, y: 80, connects: ['agent-debug', 'agent-analyse'] },
-        { label: 'Supabase', x: 480, y: 80, connects: ['agent-debug', 'agent-dev', 'agent-analyse'] },
-        { label: 'Search Console', x: 380, y: 530, connects: ['agent-seo-geo'] },
-        { label: 'Notion', x: 480, y: 530, connects: ['agent-contenu'] },
-        { label: 'Loops', x: 580, y: 530, connects: ['agent-analyse', 'agent-contenu'] },
+        { label: '\u{1F4CA} PostHog', x: 360, y: 50 },
+        { label: '\u{1F5C4} Supabase', x: 510, y: 50 },
+        { label: '\u{1F50D} Search Console', x: 300, y: 590 },
+        { label: '\u{1F4DD} Notion', x: 490, y: 590 },
+        { label: '\u{1F4E7} Loops', x: 650, y: 590 },
       ];
 
-      // Inter-agent task flows (from real data)
       const taskFlows = [
-        { from: 'agent-analyse', to: 'agent-debug', label: 'bugs' },
-        { from: 'agent-analyse', to: 'agent-marketing', label: 'acquisition' },
-        { from: 'agent-debug', to: 'agent-dev', label: 'fix' },
-        { from: 'agent-marketing', to: 'agent-contenu', label: 'contenu' },
-        { from: 'agent-marketing', to: 'agent-seo-geo', label: 'audit' },
-        { from: 'agent-seo-geo', to: 'agent-contenu', label: 'keywords' },
-        { from: 'agent-seo-geo', to: 'agent-dev', label: 'code fix' },
+        { from: 'agent-analyse', to: 'agent-debug', label: 'bugs', color: '#ef4444' },
+        { from: 'agent-analyse', to: 'agent-marketing', label: 'acquisition', color: '#f59e0b' },
+        { from: 'agent-debug', to: 'agent-dev', label: 'fix', color: '#3b82f6' },
+        { from: 'agent-marketing', to: 'agent-contenu', label: 'contenu', color: '#ec4899' },
+        { from: 'agent-marketing', to: 'agent-seo-geo', label: 'audit', color: '#22c55e' },
+        { from: 'agent-seo-geo', to: 'agent-contenu', label: 'keywords', color: '#ec4899' },
+        { from: 'agent-seo-geo', to: 'agent-dev', label: 'code', color: '#3b82f6' },
       ];
 
       const getNode = slug => nodes.find(n => n.slug === slug);
-      const NW = 140, NH = 50; // Node dimensions
 
       let svg = `<svg viewBox="0 0 ${W} ${H}" xmlns="http://www.w3.org/2000/svg">
         <defs>
-          <marker id="arrowhead" markerWidth="8" markerHeight="6" refX="8" refY="3" orient="auto">
-            <polygon points="0 0, 8 3, 0 6" fill="#3f3f46"/>
-          </marker>
-          <marker id="arrowheadTask" markerWidth="8" markerHeight="6" refX="8" refY="3" orient="auto">
-            <polygon points="0 0, 8 3, 0 6" fill="#f59e0b"/>
+          ${nodes.map(n => `
+            <linearGradient id="grad-${n.slug}" x1="0" y1="0" x2="1" y2="1">
+              <stop offset="0%" stop-color="${n.color}" stop-opacity="0.15"/>
+              <stop offset="100%" stop-color="${n.color}" stop-opacity="0.05"/>
+            </linearGradient>
+            <filter id="glow-${n.slug}"><feDropShadow dx="0" dy="0" stdDeviation="6" flood-color="${n.color}" flood-opacity="0.4"/></filter>
+          `).join('')}
+          <filter id="glow-hub"><feDropShadow dx="0" dy="0" stdDeviation="8" flood-color="#4A90D9" flood-opacity="0.3"/></filter>
+          <filter id="glow-human"><feDropShadow dx="0" dy="0" stdDeviation="4" flood-color="#fbbf24" flood-opacity="0.3"/></filter>
+          <marker id="arrow" markerWidth="6" markerHeight="5" refX="6" refY="2.5" orient="auto">
+            <polygon points="0 0, 6 2.5, 0 5" fill="#f59e0b" opacity="0.8"/>
           </marker>
         </defs>
 
-        <!-- Pole backgrounds -->
-        <rect x="30" y="100" width="230" height="430" rx="16" fill="#0a0a12" stroke="#1e3a5f" stroke-width="1" opacity="0.5"/>
-        <text x="145" y="130" text-anchor="middle" class="archi-pole-label" fill="#3b82f6">P\u{00D4}LE TECH</text>
+        <!-- Grid background -->
+        <pattern id="grid" width="40" height="40" patternUnits="userSpaceOnUse">
+          <path d="M 40 0 L 0 0 0 40" fill="none" stroke="#ffffff" stroke-width="0.3" opacity="0.03"/>
+        </pattern>
+        <rect width="${W}" height="${H}" fill="url(#grid)"/>
 
-        <rect x="570" y="100" width="230" height="430" rx="16" fill="#0f0a15" stroke="#3b1f6e" stroke-width="1" opacity="0.5"/>
-        <text x="685" y="130" text-anchor="middle" class="archi-pole-label" fill="#a78bfa">P\u{00D4}LE MARKETING</text>
+        <!-- Pole backgrounds -->
+        <rect x="25" y="100" width="260" height="430" rx="20" fill="none" stroke="#3b82f6" stroke-width="1" opacity="0.2"/>
+        <rect x="25" y="100" width="260" height="430" rx="20" fill="#3b82f6" opacity="0.02"/>
+        <text x="155" y="128" text-anchor="middle" font-family="Inter" font-size="12" fill="#3b82f6" font-weight="700" letter-spacing="3" opacity="0.6">P\u{00D4}LE TECH</text>
+
+        <rect x="675" y="100" width="260" height="430" rx="20" fill="none" stroke="#a78bfa" stroke-width="1" opacity="0.2"/>
+        <rect x="675" y="100" width="260" height="430" rx="20" fill="#a78bfa" opacity="0.02"/>
+        <text x="805" y="128" text-anchor="middle" font-family="Inter" font-size="12" fill="#a78bfa" font-weight="700" letter-spacing="3" opacity="0.6">P\u{00D4}LE MARKETING</text>
 
         <!-- Central hub -->
-        <circle cx="${W/2}" cy="${H/2}" r="40" fill="#18181b" stroke="#27272a" stroke-width="1.5"/>
-        <text x="${W/2}" y="${H/2 - 8}" text-anchor="middle" font-family="Inter" font-size="10" fill="#71717a" font-weight="600">POLLER</text>
-        <text x="${W/2}" y="${H/2 + 8}" text-anchor="middle" font-family="Inter" font-size="8" fill="#52525b">claude -p</text>
-        <circle cx="${W/2}" cy="${H/2}" r="40" fill="none" stroke="#4A90D9" stroke-width="0.5" opacity="0.3">
-          <animate attributeName="r" values="40;50;40" dur="3s" repeatCount="indefinite"/>
-          <animate attributeName="opacity" values="0.3;0.1;0.3" dur="3s" repeatCount="indefinite"/>
+        <circle cx="${W/2}" cy="${H/2}" r="50" fill="#0d1117" stroke="#4A90D9" stroke-width="1.5" filter="url(#glow-hub)"/>
+        <circle cx="${W/2}" cy="${H/2}" r="50" fill="none" stroke="#4A90D9" stroke-width="0.5" opacity="0.2">
+          <animate attributeName="r" values="50;62;50" dur="3s" repeatCount="indefinite"/>
+          <animate attributeName="opacity" values="0.2;0.05;0.2" dur="3s" repeatCount="indefinite"/>
         </circle>
+        <text x="${W/2}" y="${H/2 - 10}" text-anchor="middle" font-family="Inter" font-size="11" fill="#4A90D9" font-weight="700">POLLER</text>
+        <text x="${W/2}" y="${H/2 + 6}" text-anchor="middle" font-family="Inter" font-size="9" fill="#71717a">claude -p</text>
+        <text x="${W/2}" y="${H/2 + 20}" text-anchor="middle" font-family="Inter" font-size="7" fill="#52525b">2 workers</text>
       `;
 
-      // Draw source → agent connections (subtle)
-      sources.forEach(src => {
-        src.connects.forEach(slug => {
-          const node = getNode(slug);
-          if (!node) return;
-          const sx = src.x + 40, sy = src.y + 12;
-          const nx = node.x + NW/2, ny = node.y + (src.y < 200 ? 0 : NH);
-          svg += `<line x1="${sx}" y1="${sy}" x2="${nx}" y2="${ny}" stroke="#27272a" stroke-width="0.8" stroke-dasharray="3 3" opacity="0.5"/>`;
-        });
+      // Hub → agent connections (subtle radial lines)
+      nodes.forEach(n => {
+        const nx = n.pole === 'tech' ? n.x + NW : n.x;
+        const ny = n.y + NH / 2;
+        const hx = n.pole === 'tech' ? W/2 - 50 : W/2 + 50;
+        svg += `<line x1="${nx}" y1="${ny}" x2="${hx}" y2="${H/2}" stroke="${n.color}" stroke-width="0.6" opacity="0.15"/>`;
       });
 
-      // Draw inter-agent task flows (curved)
+      // Task flows (curved, colored, with arrows)
       taskFlows.forEach(flow => {
         const from = getNode(flow.from);
         const to = getNode(flow.to);
         if (!from || !to) return;
 
-        const fx = from.x + NW, fy = from.y + NH/2;
-        const tx = to.x, ty = to.y + NH/2;
-
-        // If same pole, curve differently
+        let path, lx, ly;
         if (from.pole === to.pole) {
-          const cx = from.pole === 'tech' ? from.x - 30 : from.x + NW + 30;
-          svg += `<path d="M${from.x + (from.pole === 'tech' ? 0 : NW)} ${fy} Q${cx} ${(fy+ty)/2} ${to.x + (from.pole === 'tech' ? 0 : NW)} ${ty}" class="archi-arrow task-flow"/>`;
+          const side = from.pole === 'tech' ? -1 : 1;
+          const fx = from.x + (side === -1 ? 0 : NW), fy = from.y + NH/2;
+          const tx = to.x + (side === -1 ? 0 : NW), ty = to.y + NH/2;
+          const cx = fx + side * 50;
+          path = \`M\${fx} \${fy} Q\${cx} \${(fy+ty)/2} \${tx} \${ty}\`;
+          lx = cx + side * 4; ly = (fy + ty) / 2;
         } else {
-          // Cross-pole: curve through center
-          const midX = W/2, midY = (fy + ty) / 2;
-          svg += `<path d="M${fx} ${fy} Q${midX} ${midY} ${tx} ${ty}" class="archi-arrow task-flow"/>`;
+          const fx = from.x + NW, fy = from.y + NH/2;
+          const tx = to.x, ty = to.y + NH/2;
+          const mx = W/2, my = (fy + ty) / 2;
+          path = \`M\${fx} \${fy} Q\${mx} \${my} \${tx} \${ty}\`;
+          lx = (fx + tx) / 2; ly = (fy + ty) / 2 - 10;
         }
 
-        // Label on the flow
-        const lx = (fx + tx) / 2, ly = (fy + ty) / 2 - 8;
-        svg += `<text x="${lx}" y="${ly}" text-anchor="middle" font-family="Inter" font-size="7" fill="#f59e0b" opacity="0.7">${flow.label}</text>`;
+        svg += \`<path d="\${path}" fill="none" stroke="\${flow.color}" stroke-width="1.5" stroke-dasharray="6 4" opacity="0.5" marker-end="url(#arrow)">
+          <animate attributeName="stroke-dashoffset" values="0;-20" dur="2s" repeatCount="indefinite"/>
+        </path>\`;
+        svg += \`<text x="\${lx}" y="\${ly}" text-anchor="middle" font-family="Inter" font-size="8" fill="\${flow.color}" font-weight="500" opacity="0.8">\${flow.label}</text>\`;
       });
 
-      // Draw data sources
+      // Data sources
       sources.forEach(src => {
-        svg += `<g>
-          <rect x="${src.x}" y="${src.y}" width="80" height="24" rx="8" ry="8" fill="#27272a" stroke="#52525b" stroke-width="1"/>
-          <text x="${src.x + 40}" y="${src.y + 15}" text-anchor="middle" font-family="Inter, sans-serif" font-size="9" fill="#d4d4d8" font-weight="500">${src.label}</text>
-        </g>`;
+        const w = src.label.length * 7 + 20;
+        svg += \`<rect x="\${src.x}" y="\${src.y}" width="\${w}" height="28" rx="14" fill="#1a1a2e" stroke="#3f3f5a" stroke-width="1"/>
+          <text x="\${src.x + w/2}" y="\${src.y + 17}" text-anchor="middle" font-family="Inter" font-size="9" fill="#a1a1ba" font-weight="500">\${src.label}</text>\`;
       });
 
-      // Draw agent nodes
+      // Agent nodes
       nodes.forEach(n => {
         const agent = agents.find(a => a.slug === n.slug);
         const health = agent?.health_status || 'unknown';
         const healthColor = { healthy: '#22c55e', warning: '#f59e0b', critical: '#ef4444', unknown: '#52525b' }[health];
         const lastRun = agent?.last_successful_run_at ? timeAgo(new Date(agent.last_successful_run_at)) : 'jamais';
         const agentId = agent?.id || '';
+        const schedule = cronToHuman(agent?.schedule);
 
-        svg += `<g class="archi-node" onclick="openAgent('${agentId}')" data-slug="${n.slug}">
-          <rect x="${n.x}" y="${n.y}" width="${NW}" height="${NH}" fill="#18181b" stroke="${n.color}" stroke-opacity="0.6"/>
-          <circle cx="${n.x + NW - 12}" cy="${n.y + 12}" r="4" fill="${healthColor}" class="archi-health" data-health-slug="${n.slug}"/>
-          <text x="${n.x + 16}" y="${n.y + 22}" class="archi-label">${n.icon} ${n.label}</text>
-          <text x="${n.x + 16}" y="${n.y + 38}" class="archi-sublabel">${lastRun} \u{2022} ${agent?.status || 'idle'}</text>
-        </g>`;
-
-        // Line from node to center hub
-        const nx = n.pole === 'tech' ? n.x + NW : n.x;
-        const ny = n.y + NH/2;
-        svg += `<line x1="${nx}" y1="${ny}" x2="${W/2 - 40}" y2="${H/2}" stroke="#27272a" stroke-width="0.8" opacity="0.3" ${n.pole === 'marketing' ? 'x2="' + (W/2 + 40) + '"' : ''}/>`;
+        svg += \`<g style="cursor:pointer;" onclick="openAgent('\${agentId}')" data-slug="\${n.slug}">
+          <rect x="\${n.x}" y="\${n.y}" width="\${NW}" height="\${NH}" rx="12" ry="12" fill="url(#grad-\${n.slug})" stroke="\${n.color}" stroke-width="1.5" filter="url(#glow-\${n.slug})"/>
+          <circle cx="\${n.x + NW - 14}" cy="\${n.y + 14}" r="5" fill="\${healthColor}" data-health-slug="\${n.slug}">
+            \${health === 'healthy' ? '' : '<animate attributeName="opacity" values="1;0.3;1" dur="1.5s" repeatCount="indefinite"/>'}
+          </circle>
+          <text x="\${n.x + 14}" y="\${n.y + 24}" font-family="Inter" font-size="13" fill="#fafafa" font-weight="600">\${n.icon} \${n.label}</text>
+          <text x="\${n.x + 14}" y="\${n.y + 42}" font-family="Inter" font-size="9" fill="#a1a1aa">\${schedule} \u{2022} \${lastRun}</text>
+        </g>\`;
       });
 
-      // Human approval node
-      svg += `<g class="archi-source">
-        <rect x="${W/2 - 40}" y="${H - 70}" width="80" height="28" fill="#1c1917" stroke="#78350f" stroke-dasharray="0"/>
-        <text x="${W/2}" y="${H - 52}" text-anchor="middle" font-size="10" fill="#fbbf24">\u{1F464} Humain</text>
-      </g>`;
-      svg += `<line x1="${W/2}" y1="${H/2 + 40}" x2="${W/2}" y2="${H - 70}" stroke="#78350f" stroke-width="1" stroke-dasharray="4 2" opacity="0.5"/>`;
-      svg += `<text x="${W/2 + 4}" y="${H/2 + 70}" font-family="Inter" font-size="7" fill="#78350f" opacity="0.7">approbation</text>`;
+      // Human approval
+      svg += \`<rect x="\${W/2 - 50}" y="\${H - 55}" width="100" height="32" rx="16" fill="#1c1917" stroke="#fbbf24" stroke-width="1" filter="url(#glow-human)"/>
+        <text x="\${W/2}" y="\${H - 34}" text-anchor="middle" font-family="Inter" font-size="11" fill="#fbbf24" font-weight="600">\u{1F464} Humain</text>\`;
+      svg += \`<line x1="\${W/2}" y1="\${H/2 + 50}" x2="\${W/2}" y2="\${H - 55}" stroke="#fbbf24" stroke-width="1" stroke-dasharray="4 3" opacity="0.3"/>\`;
+      svg += \`<text x="\${W/2 + 6}" y="\${H/2 + 76}" font-family="Inter" font-size="8" fill="#fbbf24" opacity="0.5">approbation</text>\`;
 
       svg += '</svg>';
 
       // Legend
-      svg += `<div class="archi-legend">
-        <span><span class="legend-dot" style="background:#22c55e"></span> Healthy</span>
-        <span><span class="legend-dot" style="background:#f59e0b"></span> Warning</span>
-        <span><span class="legend-dot" style="background:#ef4444"></span> Critical</span>
-        <span><span class="legend-line" style="background:#f59e0b"></span> T\u{00E2}che inter-agent</span>
-        <span><span class="legend-line" style="background:#27272a;border-top:1px dashed #27272a"></span> Source de donn\u{00E9}es</span>
-      </div>`;
+      svg += \`<div style="position:absolute;bottom:14px;left:16px;right:16px;display:flex;gap:18px;font-size:0.72rem;color:#71717a;background:rgba(9,9,11,0.85);padding:8px 14px;border-radius:8px;backdrop-filter:blur(4px);">
+        <span style="display:flex;align-items:center;gap:5px;"><span style="width:8px;height:8px;border-radius:50%;background:#22c55e;display:inline-block;"></span> Healthy</span>
+        <span style="display:flex;align-items:center;gap:5px;"><span style="width:8px;height:8px;border-radius:50%;background:#f59e0b;display:inline-block;"></span> Warning</span>
+        <span style="display:flex;align-items:center;gap:5px;"><span style="width:8px;height:8px;border-radius:50%;background:#ef4444;display:inline-block;"></span> Critical</span>
+        <span style="display:flex;align-items:center;gap:5px;"><span style="width:20px;height:2px;background:#f59e0b;display:inline-block;border-top:1px dashed #f59e0b;"></span> Flux inter-agent</span>
+        <span style="display:flex;align-items:center;gap:5px;"><span style="width:20px;height:0;border-top:1px solid #3f3f5a;display:inline-block;"></span> Source de donn\u{00E9}es</span>
+      </div>\`;
 
       container.innerHTML = svg;
     }
 
     function updateArchiHealth() {
       agents.forEach(a => {
-        const dot = document.querySelector(`[data-health-slug="${a.slug}"]`);
+        const dot = document.querySelector(\`[data-health-slug="\${a.slug}"]\`);
         if (dot) {
           const color = { healthy: '#22c55e', warning: '#f59e0b', critical: '#ef4444', unknown: '#52525b' }[a.health_status || 'unknown'];
           dot.setAttribute('fill', color);
