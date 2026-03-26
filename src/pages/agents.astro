@@ -1002,8 +1002,15 @@
 
     <!-- Content view -->
     <div id="view-content" class="global-view">
-      <h2 style="font-size:1.1rem;margin-bottom:16px;color:#60a5fa;">Contenu en attente de review</h2>
+      <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:20px;">
+        <h2 style="font-size:1.1rem;color:#60a5fa;">Contenu en attente de review</h2>
+      </div>
       <div id="content-list"><p class="empty-state">Chargement...</p></div>
+
+      <div style="margin-top:32px;padding-top:24px;border-top:1px solid #27272a;">
+        <h2 style="font-size:1.1rem;color:#22c55e;margin-bottom:16px;">Articles publiés</h2>
+        <div id="published-list"><p class="empty-state">Chargement...</p></div>
+      </div>
     </div>
   </div>
 
@@ -2073,6 +2080,7 @@
 
     // ─── Content View ───────────────────────────
     async function loadContentView() {
+      loadPublishedContent();
       const container = document.getElementById('content-list');
       container.innerHTML = '<p class="empty-state">Chargement...</p>';
 
@@ -2083,10 +2091,14 @@
         .eq('agent_id', ctnAgent.id).eq('status', 'completed')
         .order('started_at', { ascending: false }).limit(5);
 
+      // Get published slugs to filter them out
+      const { data: publishedData } = await sb.from('published_content').select('slug').eq('source', 'agent-contenu');
+      const publishedSlugs = new Set((publishedData || []).map(p => p.slug));
+
       const allContent = [];
       (runs || []).forEach(r => {
         const out = r.output?.output || r.output || {};
-        (out.articles || []).forEach(a => allContent.push({ ...a, type: 'article', date: r.started_at }));
+        (out.articles || []).forEach(a => { if (!publishedSlugs.has(a.slug)) allContent.push({ ...a, type: 'article', date: r.started_at }); });
         (out.video_scripts || []).forEach(v => allContent.push({ ...v, type: 'video_script', date: r.started_at }));
         (out.emails || []).forEach(e => allContent.push({ ...e, type: 'email', date: r.started_at }));
       });
@@ -2132,6 +2144,32 @@
           + pubBtn
           + '<button style="padding:6px 12px;font-size:0.72rem;background:#450a0a;color:#fca5a5;border:1px solid #ef4444;border-radius:8px;cursor:pointer;" onclick="event.stopPropagation();">\u{1F5D1} Supprimer</button>'
           + '</div>'
+          + '</div>';
+      }).join('');
+    }
+
+    // ─── Published Content List ────────────────
+    async function loadPublishedContent() {
+      var container = document.getElementById('published-list');
+      var resp = await sb.from('published_content')
+        .select('*')
+        .eq('source', 'agent-contenu')
+        .order('published_at', { ascending: false })
+        .limit(20);
+
+      var items = resp.data || [];
+      if (items.length === 0) {
+        container.innerHTML = '<p style="color:#52525b;font-size:0.85rem;padding:12px;">Aucun article publi\u{00E9} par les agents pour le moment</p>';
+        return;
+      }
+
+      container.innerHTML = items.map(function(p) {
+        return '<div style="display:flex;align-items:center;gap:14px;padding:12px 16px;background:linear-gradient(145deg,#1e1e22,#18181b);border:1px solid #27272a;border-left:3px solid #22c55e;border-radius:10px;margin-bottom:8px;">'
+          + '<div style="flex:1;">'
+          + '<div style="font-weight:600;font-size:0.88rem;color:#fafafa;">\u{1F4DD} ' + p.title + '</div>'
+          + '<div style="font-size:0.72rem;color:#71717a;margin-top:4px;">' + (p.slug || '') + ' \u{2022} ' + (p.lang || 'fr').toUpperCase() + ' \u{2022} ' + (p.category || '') + '</div>'
+          + '</div>'
+          + (p.url ? '<a href="' + p.url + '" target="_blank" style="font-size:0.72rem;color:#4A90D9;text-decoration:none;">Voir \u{2192}</a>' : '')
           + '</div>';
       }).join('');
     }
