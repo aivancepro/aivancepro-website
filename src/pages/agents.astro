@@ -2366,9 +2366,26 @@
       var c = window._contentItems[idx];
       if (!c) return;
 
+      document.getElementById('modal-title').innerHTML = (c.title || 'Preview');
+      document.getElementById('modal-overlay').style.display = 'flex';
+
+      var platform = (c.platform || '').toLowerCase();
+      var isInsta = platform === 'instagram';
+      var isSocial = c.type === 'social_post' || c.type === 'video_script' || c.type === 'caption';
+
+      if (isInsta) {
+        document.getElementById('modal-content').innerHTML = renderInstaPreview(c);
+      } else if (isSocial) {
+        document.getElementById('modal-content').innerHTML = renderSocialPreview(c);
+      } else {
+        document.getElementById('modal-content').innerHTML = renderArticlePreview(c);
+      }
+    }
+
+    function renderArticlePreview(c) {
       var content = c.content || c.body || c.script || '';
-      // Simple markdown → HTML (headers, bold, lists)
       var html = content
+        .replace(/\|(.+)\|/g, function(m) { return '<div style="font-family:monospace;font-size:0.75rem;color:#a1a1aa;background:#111;padding:2px 6px;margin:2px 0;">' + m + '</div>'; })
         .replace(/^### (.*$)/gm, '<h3 style="font-size:1rem;font-weight:600;margin:16px 0 8px;color:#fafafa;">$1</h3>')
         .replace(/^## (.*$)/gm, '<h2 style="font-size:1.15rem;font-weight:700;margin:20px 0 10px;color:#fafafa;">$1</h2>')
         .replace(/^# (.*$)/gm, '<h1 style="font-size:1.3rem;font-weight:700;margin:20px 0 12px;color:#fafafa;">$1</h1>')
@@ -2378,18 +2395,150 @@
         .replace(/\n/g, '<br>');
       html = '<p style="margin-bottom:12px;line-height:1.7;">' + html + '</p>';
 
-      document.getElementById('modal-title').innerHTML = (c.title || 'Preview');
-      document.getElementById('modal-overlay').style.display = 'flex';
-      document.getElementById('modal-content').innerHTML =
-        '<div style="font-size:0.82rem;color:#a1a1aa;margin-bottom:16px;">'
+      return '<div style="font-size:0.82rem;color:#a1a1aa;margin-bottom:16px;">'
         + (c.target_keyword ? '\u{1F3AF} ' + c.target_keyword + ' \u{2022} ' : '')
         + (c.word_count ? c.word_count + ' mots \u{2022} ' : '')
         + (c.lang || 'fr').toUpperCase()
         + '</div>'
         + '<div style="font-size:0.85rem;color:#d4d4d8;max-height:60vh;overflow-y:auto;padding:16px;background:#111115;border-radius:10px;border:1px solid #27272a;">'
-        + html
-        + '</div>'
+        + html + '</div>'
         + (c.review_notes ? '<div style="padding:10px 12px;background:#1c1917;border:1px solid #78350f;border-radius:8px;font-size:0.75rem;color:#fbbf24;line-height:1.5;margin-top:12px;">\u{26A0}\u{FE0F} ' + c.review_notes + '</div>' : '');
+    }
+
+    function renderInstaPreview(c) {
+      var template = c.template || c.post_type || 'conseil';
+      var caption = c.caption || c.body || c.content || '';
+      var title = c.title || '';
+      var hashtags = (c.hashtags || []).map(function(t) { return '#' + t; }).join(' ');
+
+      // Template visual backgrounds
+      var templates = {
+        conseil: { bg: 'linear-gradient(145deg, #0f0f1a, #111128)', icon: '\u{1F4A1}', accent: '#fbbf24', label: 'CONSEIL' },
+        astuce: { bg: 'linear-gradient(135deg, #1e3a5f, #3b1f6e)', icon: '\u{2728}', accent: '#a78bfa', label: 'ASTUCE' },
+        motivation: { bg: 'linear-gradient(145deg, #1a0a0a, #0a1a0a)', icon: '\u{1F4AA}', accent: '#22c55e', label: 'MOTIVATION' },
+        mythe_vs_realite: { bg: 'linear-gradient(90deg, #450a0a 50%, #14532d 50%)', icon: '\u{2696}', accent: '#fafafa', label: 'MYTHE VS R\u{00C9}ALIT\u{00C9}' },
+        carrousel: { bg: 'linear-gradient(145deg, #172554, #1e1b4b)', icon: '\u{1F4DA}', accent: '#60a5fa', label: 'CARROUSEL' },
+        before_after: { bg: 'linear-gradient(90deg, #27272a 50%, #166534 50%)', icon: '\u{1F4C8}', accent: '#86efac', label: 'AVANT / APR\u{00C8}S' }
+      };
+
+      var tpl = templates[template] || templates.conseil;
+
+      // Post visual preview (1:1 aspect ratio like Instagram)
+      var post = '<div style="width:100%;max-width:400px;margin:0 auto;">';
+
+      // Instagram post frame
+      post += '<div style="background:' + tpl.bg + ';aspect-ratio:1/1;border-radius:12px;display:flex;flex-direction:column;align-items:center;justify-content:center;padding:32px;position:relative;overflow:hidden;border:1px solid #27272a;">';
+
+      // AIVancePro watermark
+      post += '<div style="position:absolute;top:12px;left:14px;font-size:0.65rem;color:rgba(255,255,255,0.3);font-weight:600;">AIVancePro</div>';
+
+      // Template label
+      post += '<div style="position:absolute;top:12px;right:14px;font-size:0.55rem;padding:3px 8px;border-radius:4px;background:rgba(255,255,255,0.1);color:' + tpl.accent + ';font-weight:600;letter-spacing:1px;">' + tpl.label + '</div>';
+
+      if (template === 'carrousel' && c.slides && c.slides.length > 0) {
+        // Carrousel: show slides with dots
+        post += '<div style="font-size:2rem;margin-bottom:16px;">' + tpl.icon + '</div>';
+        post += '<div style="font-size:1.1rem;font-weight:700;color:#fafafa;text-align:center;margin-bottom:12px;">' + title + '</div>';
+        post += '<div style="font-size:0.82rem;color:#d4d4d8;text-align:center;padding:12px;background:rgba(0,0,0,0.3);border-radius:8px;max-height:120px;overflow:hidden;">' + (typeof c.slides[0] === 'string' ? c.slides[0] : '') + '</div>';
+        post += '<div style="display:flex;gap:6px;margin-top:16px;">';
+        c.slides.forEach(function(s, i) {
+          post += '<div style="width:8px;height:8px;border-radius:50%;background:' + (i === 0 ? tpl.accent : 'rgba(255,255,255,0.2)') + ';"></div>';
+        });
+        post += '</div>';
+        post += '<div style="position:absolute;bottom:12px;right:14px;font-size:0.6rem;color:rgba(255,255,255,0.3);">1/' + c.slides.length + '</div>';
+
+      } else if (template === 'mythe_vs_realite') {
+        // Split screen
+        post += '<div style="display:flex;width:100%;flex:1;align-items:center;">';
+        post += '<div style="flex:1;text-align:center;padding:12px;"><div style="font-size:0.65rem;color:#ef4444;font-weight:700;margin-bottom:8px;letter-spacing:2px;">MYTHE</div><div style="font-size:0.85rem;color:#fca5a5;">' + title.split(' vs ')[0] || title + '</div></div>';
+        post += '<div style="width:1px;height:60%;background:rgba(255,255,255,0.15);"></div>';
+        post += '<div style="flex:1;text-align:center;padding:12px;"><div style="font-size:0.65rem;color:#22c55e;font-weight:700;margin-bottom:8px;letter-spacing:2px;">R\u{00C9}ALIT\u{00C9}</div><div style="font-size:0.85rem;color:#86efac;">' + (title.split(' vs ')[1] || '') + '</div></div>';
+        post += '</div>';
+
+      } else {
+        // Standard template (conseil, astuce, motivation, before_after)
+        post += '<div style="font-size:2.5rem;margin-bottom:16px;">' + tpl.icon + '</div>';
+        post += '<div style="font-size:1.2rem;font-weight:700;color:#fafafa;text-align:center;line-height:1.4;max-width:90%;">' + title + '</div>';
+        if (c.hook) post += '<div style="font-size:0.82rem;color:' + tpl.accent + ';text-align:center;margin-top:12px;font-style:italic;">' + c.hook + '</div>';
+      }
+
+      post += '</div>'; // close post frame
+
+      // Caption below
+      post += '<div style="padding:14px 4px;font-size:0.82rem;color:#d4d4d8;line-height:1.6;">';
+      post += '<span style="font-weight:600;color:#fafafa;">aivancepro</span> ';
+      post += caption.slice(0, 300);
+      if (caption.length > 300) post += '<span style="color:#71717a;">... plus</span>';
+      post += '</div>';
+
+      // Hashtags
+      if (hashtags) post += '<div style="font-size:0.75rem;color:#4A90D9;padding:0 4px 8px;">' + hashtags + '</div>';
+
+      // CTA
+      if (c.cta) post += '<div style="font-size:0.72rem;color:#71717a;padding:0 4px;">CTA: ' + c.cta + '</div>';
+
+      post += '</div>'; // close wrapper
+
+      return post;
+    }
+
+    function renderSocialPreview(c) {
+      var platform = (c.platform || '').toLowerCase();
+      var body = c.caption || c.script || c.body || c.content || '';
+      var platformColors = { x: '#1da1f2', tiktok: '#ff0050', youtube: '#ff0000', reddit: '#ff4500' };
+      var pColor = platformColors[platform] || '#f59e0b';
+
+      var html = '';
+
+      if (platform === 'x') {
+        // Twitter-style preview
+        var tweets = body.split(/\n\n|\n(?=\d+[\.\)\/])/).filter(function(t) { return t.trim(); });
+        html += '<div style="max-width:500px;margin:0 auto;">';
+        tweets.forEach(function(tweet, i) {
+          html += '<div style="padding:14px 16px;border:1px solid #27272a;border-radius:' + (i === 0 ? '12px 12px' : '0') + ' ' + (i === tweets.length - 1 ? '12px 12px' : '0 0') + ';background:#09090b;' + (i > 0 ? 'border-top:none;' : '') + '">';
+          html += '<div style="display:flex;gap:10px;">';
+          html += '<div style="width:36px;height:36px;border-radius:50%;background:linear-gradient(135deg,#4A90D9,#3b1f6e);flex-shrink:0;display:flex;align-items:center;justify-content:center;font-size:0.7rem;color:white;font-weight:700;">AP</div>';
+          html += '<div style="flex:1;">';
+          html += '<div style="font-size:0.78rem;margin-bottom:4px;"><span style="font-weight:600;color:#fafafa;">AIVancePro</span> <span style="color:#52525b;">@aivancepro</span></div>';
+          html += '<div style="font-size:0.88rem;color:#d4d4d8;line-height:1.5;">' + tweet.trim() + '</div>';
+          html += '</div></div></div>';
+        });
+        html += '</div>';
+
+      } else if (platform === 'tiktok' || platform === 'youtube') {
+        // Video script preview (vertical phone frame)
+        html += '<div style="max-width:300px;margin:0 auto;background:#000;border-radius:20px;padding:16px;aspect-ratio:9/16;display:flex;flex-direction:column;justify-content:space-between;border:2px solid #27272a;position:relative;overflow:hidden;">';
+        html += '<div style="position:absolute;inset:0;background:linear-gradient(180deg,rgba(0,0,0,0) 50%,rgba(0,0,0,0.8));"></div>';
+        html += '<div style="position:relative;z-index:1;">';
+        if (c.hook) html += '<div style="background:rgba(255,255,255,0.1);backdrop-filter:blur(4px);padding:10px 14px;border-radius:10px;font-size:0.9rem;color:#fafafa;font-weight:600;text-align:center;">' + c.hook + '</div>';
+        html += '</div>';
+        html += '<div style="position:relative;z-index:1;">';
+        html += '<div style="font-size:0.78rem;color:#fafafa;line-height:1.5;max-height:200px;overflow:auto;">' + body.replace(/\n/g, '<br>').slice(0, 500) + '</div>';
+        if (c.cta) html += '<div style="margin-top:8px;padding:8px 14px;background:' + pColor + ';border-radius:8px;text-align:center;font-size:0.78rem;font-weight:600;color:white;">' + c.cta + '</div>';
+        html += '<div style="font-size:0.7rem;color:#a1a1aa;margin-top:8px;">@aivancepro</div>';
+        html += '</div></div>';
+
+      } else if (platform === 'reddit') {
+        // Reddit post preview
+        html += '<div style="max-width:600px;margin:0 auto;background:#1a1a1b;border:1px solid #343536;border-radius:8px;padding:16px;">';
+        html += '<div style="display:flex;align-items:center;gap:8px;margin-bottom:10px;">';
+        html += '<div style="width:24px;height:24px;border-radius:50%;background:#ff4500;display:flex;align-items:center;justify-content:center;font-size:0.6rem;color:white;font-weight:700;">r/</div>';
+        html += '<span style="font-size:0.78rem;color:#d7dadc;font-weight:500;">' + (c.subreddit || 'r/fitness') + '</span>';
+        html += '<span style="font-size:0.68rem;color:#818384;">u/aivancepro</span>';
+        html += '</div>';
+        html += '<div style="font-size:1rem;font-weight:600;color:#d7dadc;margin-bottom:10px;">' + (c.title || '') + '</div>';
+        html += '<div style="font-size:0.85rem;color:#d7dadc;line-height:1.6;max-height:300px;overflow:auto;">' + body.replace(/\n/g, '<br>').slice(0, 800) + '</div>';
+        html += '<div style="display:flex;gap:16px;margin-top:12px;font-size:0.72rem;color:#818384;">';
+        html += '<span>\u{2B06} Vote</span><span>\u{1F4AC} Comments</span><span>\u{1F517} Share</span>';
+        html += '</div></div>';
+
+      } else {
+        html += '<div style="padding:16px;background:#111115;border-radius:10px;font-size:0.85rem;color:#d4d4d8;line-height:1.6;">' + body.replace(/\n/g, '<br>') + '</div>';
+      }
+
+      if (c.duration) html += '<div style="text-align:center;font-size:0.72rem;color:#71717a;margin-top:8px;">\u{23F1} ' + c.duration + '</div>';
+
+      return html;
     }
 
     // ─── Publish Article ──────────────────────
