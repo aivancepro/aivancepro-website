@@ -1573,32 +1573,34 @@
         var proposals = d.proposals || [];
         var isReady = d.status === 'proposals_ready';
 
+        var riskColors = { low: 'background:#14532d;color:#86efac;', medium: 'background:#422006;color:#fde047;', high: 'background:#450a0a;color:#fca5a5;' };
         var proposalsHtml = '';
         if (isReady && proposals.length > 0) {
-          proposalsHtml = '<div class="proposal-grid">' + proposals.map(function(p) {
+          proposalsHtml = '<div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:10px;margin-bottom:12px;">' + proposals.map(function(p) {
             var agentTags = (p.agents_involved || []).map(function(a) {
-              return '<span class="proposal-agent-tag">' + (a.slug || '').replace('agent-', '') + '</span>';
-            }).join('');
-            var riskClass = 'risk-' + (p.risk_level || 'medium');
-            return '<div class="proposal-card" onclick="chooseProposal(\'' + d.id + '\', \'' + p.id + '\')">'
-              + '<span class="proposal-risk ' + riskClass + '">' + (p.risk_level || 'medium') + '</span>'
-              + '<div class="proposal-title">' + p.title + '</div>'
-              + '<div class="proposal-desc">' + p.description + '</div>'
-              + '<div class="proposal-agents">' + agentTags + '</div>'
+              return '<span style="font-size:0.62rem;padding:2px 7px;border-radius:4px;background:#172554;color:#60a5fa;">' + (a.slug || '').replace('agent-', '') + '</span>';
+            }).join(' ');
+            var riskStyle = riskColors[p.risk_level] || riskColors.medium;
+            return '<div style="background:rgba(39,39,42,0.4);border:1px solid #3f3f46;border-radius:10px;padding:14px;cursor:pointer;transition:all 0.2s;" onmouseover="this.style.borderColor=\'#4A90D9\';this.style.transform=\'translateY(-2px)\'" onmouseout="this.style.borderColor=\'#3f3f46\';this.style.transform=\'none\'" onclick="chooseProposal(\'' + d.id + '\', \'' + p.id + '\')">'
+              + '<span style="font-size:0.62rem;padding:2px 6px;border-radius:4px;float:right;' + riskStyle + '">' + (p.risk_level || 'medium') + '</span>'
+              + '<div style="font-weight:600;font-size:0.88rem;margin-bottom:6px;color:#fafafa;">' + p.title + '</div>'
+              + '<div style="font-size:0.78rem;color:#a1a1aa;line-height:1.5;margin-bottom:8px;">' + p.description + '</div>'
+              + '<div style="display:flex;flex-wrap:wrap;gap:4px;">' + agentTags + '</div>'
               + '</div>';
           }).join('') + '</div>'
           + '<div style="display:flex;gap:8px;align-items:center;">'
-          + '<input type="text" class="custom-input" id="custom-' + d.id + '" placeholder="Ou r\u{00E9}digez votre propre directive..." style="flex:1;"/>'
+          + '<input type="text" id="custom-' + d.id + '" placeholder="Ou r\u{00E9}digez votre propre directive..." style="flex:1;background:#111115;border:1px solid #27272a;color:#fafafa;padding:10px 14px;border-radius:8px;font-size:0.82rem;outline:none;"/>'
           + '<button class="btn" onclick="submitCustomResponse(\'' + d.id + '\')">Envoyer</button>'
           + '</div>';
         } else {
           proposalsHtml = '<p style="color:#71717a;font-size:0.82rem;padding:8px 0;">G\u{00E9}n\u{00E9}ration des propositions en cours...</p>';
         }
 
-        return '<div class="decision-card">'
-          + '<div class="decision-header">'
-          + '<div class="decision-reason">\u{1F6A8} ' + d.escalation_reason + '</div>'
-          + '<span class="decision-status ' + (isReady ? 'ds-ready' : 'ds-pending') + '">' + (isReady ? 'En attente de d\u{00E9}cision' : 'Analyse en cours') + '</span>'
+        var statusStyle = isReady ? 'background:#14532d;color:#86efac;' : 'background:#422006;color:#fbbf24;';
+        return '<div style="background:linear-gradient(145deg,#1a1510,#151210);border:1px solid #78350f;border-radius:14px;padding:20px;margin-bottom:16px;">'
+          + '<div style="display:flex;justify-content:space-between;align-items:flex-start;margin-bottom:14px;">'
+          + '<div style="color:#fbbf24;font-weight:600;font-size:0.95rem;">\u{1F6A8} ' + d.escalation_reason + '</div>'
+          + '<span style="font-size:0.68rem;padding:3px 10px;border-radius:999px;font-weight:600;' + statusStyle + '">' + (isReady ? 'En attente de d\u{00E9}cision' : 'Analyse en cours') + '</span>'
           + '</div>'
           + proposalsHtml
           + '</div>';
