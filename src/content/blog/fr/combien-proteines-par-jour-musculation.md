@@ -1,6 +1,6 @@
 ---
 title: "Combien de protéines par jour en musculation ?"
-description: "Découvrez combien de protéines consommer par jour pour prendre du muscle. Apports idéaux selon votre poids et vos objectifs."
+description: "Découvre combien de protéines consommer par jour pour prendre du muscle. Apports idéaux selon ton poids et tes objectifs."
 date: "2026-03-18"
 dateModified: "2026-03-18"
 readTime: "15 min de lecture"
@@ -143,7 +143,7 @@ Atteindre le bon apport en protéines par jour en musculation demande de la rég
 
 Ton alimentation musculation mérite autant d'attention que ton programme d'entraînement. Si tu cherches à progresser sérieusement, télécharge [AIVancePro sur l'App Store](https://apps.apple.com/app/aivancepro) pour bénéficier d'un suivi nutritionnel et d'un coaching personnalisé par intelligence artificielle — le tout adapté en temps réel à ta progression.
 
-**Avertissement** : Cet article est à titre informatif. Consultez un professionnel de santé avant de modifier votre programme d'entraînement ou votre alimentation.
+**Avertissement** : Cet article est à titre informatif. Consulte un professionnel de santé avant de modifier ton programme d'entraînement ou ton alimentation.
 
 ## FAQ
 

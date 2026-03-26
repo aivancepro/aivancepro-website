@@ -1,6 +1,6 @@
 ---
 title: "Meilleur exercice pectoraux : le guide complet 2026"
-description: "Quel est le meilleur exercice pour les pectoraux ? Découvrez notre sélection des mouvements les plus efficaces pour développer votre poitrine."
+description: "Quel est le meilleur exercice pour les pectoraux ? Découvre notre sélection des mouvements les plus efficaces pour développer ta poitrine."
 date: "2026-03-23"
 dateModified: "2026-03-23"
 readTime: "14 min de lecture"
@@ -136,7 +136,7 @@ Si tu veux un programme pecs personnalisé qui s'adapte à ton niveau, ton maté
 
 Pour compléter ta lecture, découvre aussi [comment prendre du muscle rapidement](/blog/comment-prendre-du-muscle-rapidement/) avec des stratégies validées par la science.
 
-**Avertissement** : Cet article est à titre informatif. Consultez un professionnel de santé avant de modifier votre programme d'entraînement ou votre alimentation.
+**Avertissement** : Cet article est à titre informatif. Consulte un professionnel de santé avant de modifier ton programme d'entraînement ou ton alimentation.
 
 ## FAQ
 

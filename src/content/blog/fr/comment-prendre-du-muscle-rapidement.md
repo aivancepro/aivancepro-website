@@ -1,6 +1,6 @@
 ---
 title: "Comment prendre du muscle rapidement : guide complet 2026"
-description: "Découvrez comment prendre du muscle rapidement grâce à nos conseils d'entraînement, nutrition et récupération pour des résultats visibles en 8 semaines."
+description: "Découvre comment prendre du muscle rapidement grâce à nos conseils d'entraînement, nutrition et récupération pour des résultats visibles en 8 semaines."
 date: "2026-03-16"
 dateModified: "2026-03-16"
 readTime: "14 min de lecture"
@@ -144,7 +144,7 @@ Concrètement, voici comment un coach IA fitness optimise ta progression :
 
 Si tu veux tester cette approche, tu peux télécharger AIVancePro gratuitement sur l'[App Store](https://apps.apple.com/app/aivancepro) et commencer avec un programme adapté à ton niveau et tes objectifs. C'est une ressource complémentaire précieuse, que tu t'entraînes en salle ou dans ton [home gym](/guides/home-gym/).
 
-**Avertissement** : Cet article est à titre informatif. Consultez un professionnel de santé avant de modifier votre programme d'entraînement ou votre alimentation.
+**Avertissement** : Cet article est à titre informatif. Consulte un professionnel de santé avant de modifier ton programme d'entraînement ou ton alimentation.
 
 ## FAQ
 

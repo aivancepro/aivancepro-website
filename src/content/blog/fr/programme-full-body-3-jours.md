@@ -1,6 +1,6 @@
 ---
 title: "Programme Full Body 3 Jours : Plan Complet pour Débutants"
-description: "Découvrez un programme full body 3 jours par semaine efficace pour prendre du muscle. Exercices, sets et conseils inclus."
+description: "Découvre un programme full body 3 jours par semaine efficace pour prendre du muscle. Exercices, sets et conseils inclus."
 date: "2026-03-25"
 dateModified: "2026-03-25"
 readTime: "16 min de lecture"
@@ -17,7 +17,6 @@ alternates:
   en: "https://aivancepro.fr/en/blog/3-day-full-body-workout-plan/"
   de: "https://aivancepro.fr/de/blog/3-tage-ganzkoerpertraining-plan/"
 ---
-
 
 Tu cherches un **programme full body 3 jours** efficace pour débuter la musculation sans te perdre dans des splits complexes ? Tu es au bon endroit. En 2025, une méta-analyse publiée dans *Sports Medicine* (Schoenfeld et al., 2024) a confirmé que les entraînements full body réalisés 3 fois par semaine produisent des gains de force et d'hypertrophie comparables — voire supérieurs — aux splits classiques chez les débutants, avec un volume hebdomadaire égal. Concrètement, les sujets entraînés en full body ont gagné en moyenne **3,1 % de masse maigre** sur 8 semaines contre 2,4 % pour le groupe en split. Ce guide te propose un plan semaine par semaine, des exercices concrets, des conseils de progression et tout ce qu'il faut pour poser des bases solides. Que tu t'entraînes en salle ou en [home gym](/guides/home-gym/), ce programme s'adapte à ton niveau et à ton matériel.
 
@@ -189,7 +188,7 @@ Voici ton plan d'action concret pour démarrer cette semaine :
 
 Pour t'accompagner au quotidien, [AIVancePro](https://apps.apple.com/app/aivancepro) génère des programmes full body personnalisés, ajuste automatiquement tes charges selon ta progression et te rappelle tes objectifs nutritionnels — le tout guidé par l'intelligence artificielle. C'est comme avoir un coach dans ta poche, disponible 24h/24. Lance-toi, reste régulier, et les résultats suivront. Pour un guide complet sur les fondamentaux, consulte notre [guide du débutant en musculation](/guides/debutant-musculation/).
 
-**Avertissement** : Cet article est à titre informatif. Consultez un professionnel de santé avant de modifier votre programme d'entraînement ou votre alimentation.
+**Avertissement** : Cet article est à titre informatif. Consulte un professionnel de santé avant de modifier ton programme d'entraînement ou ton alimentation.
 
 ## FAQ
 
