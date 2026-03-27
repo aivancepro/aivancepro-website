@@ -491,12 +491,12 @@ const guidePrefixes = { fr: '/guides/', en: '/en/guides/', de: '/de/ratgeber/' }
           de: '💬 Was denkt ihr? Teilt eure Fragen, Erfahrungen oder Meinungen in den Kommentaren!'
         };
         var forumRead = { fr: 'Lire l\'article complet', en: 'Read the full article', de: 'Den ganzen Artikel lesen' };
-        var forumIntro = '**' + articleTitle + '**\n\n'
+        var forumIntro = articleTitle + '\n\n'
           + (articleDesc ? articleDesc + '\n\n' : '')
-          + (firstParagraphs ? '---\n\n' + firstParagraphs : '')
-          + '---\n\n'
+          + (firstParagraphs ? '\u2014\n\n' + firstParagraphs : '')
+          + '\u2014\n\n'
           + (forumCTA[pageLang] || forumCTA.fr) + '\n\n'
-          + '📖 [' + (forumRead[pageLang] || forumRead.fr) + '](' + window.location.href + ')';
+          + '\u{1F4D6} ' + (forumRead[pageLang] || forumRead.fr) + ' : ' + window.location.href;
 
         // Check if a forum post already exists for this article
         fetch(SB_URL + '/rest/v1/forum_posts?article_slug=eq.' + slug + '&limit=1', {
