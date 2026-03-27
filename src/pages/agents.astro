@@ -2091,36 +2091,45 @@
     }
 
     // ─── Contacts View ──────────────────────────
+    function copyToClipboard(text, btnEl) {
+      navigator.clipboard.writeText(text).then(function() {
+        var orig = btnEl.textContent;
+        btnEl.textContent = 'Copie !';
+        btnEl.style.color = '#22c55e';
+        setTimeout(function() { btnEl.textContent = orig; btnEl.style.color = ''; }, 1500);
+      });
+    }
+
+    function escHtml(s) { return (s || '').replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/"/g,'&quot;'); }
+
+    async function updateContactStatus(contactId, newStatus) {
+      var now = new Date().toISOString();
+      var update = { status: newStatus, updated_at: now };
+      if (newStatus === 'contacted' || newStatus === 'replied') {
+        update.last_contacted_at = now;
+        if (newStatus === 'contacted') update.first_contacted_at = now;
+      }
+      await sb.from('outreach_contacts').update(update).eq('id', contactId);
+      loadContactsView();
+    }
+
     async function loadContactsView() {
       var container = document.getElementById('contacts-list');
       container.innerHTML = '<p style="color:#52525b;font-size:0.85rem;">Chargement...</p>';
 
-      var dbResp = await sb.from('outreach_contacts').select('*').order('updated_at', { ascending: false }).limit(100);
-      var dbContacts = dbResp.data || [];
-
-      var mktAgent = agents.find(function(a) { return a.slug === 'agent-marketing'; });
-      var runContacts = [];
-      if (mktAgent) {
-        var runsResp = await sb.from('agent_runs').select('output')
-          .eq('agent_id', mktAgent.id).eq('status', 'completed')
-          .order('started_at', { ascending: false }).limit(3);
-        (runsResp.data || []).forEach(function(r) {
-          var c = (r.output && r.output.output && r.output.output.contacts && r.output.output.contacts.new) || [];
-          runContacts = runContacts.concat(c.map(function(x) { return Object.assign({}, x, { status: 'identified', source: 'agent' }); }));
-        });
-      }
-
-      var allContacts = dbContacts.concat(runContacts);
+      var dbResp = await sb.from('outreach_contacts').select('*').order('updated_at', { ascending: false }).limit(200);
+      var allContacts = dbResp.data || [];
 
       if (allContacts.length === 0) {
-        container.innerHTML = '<p style="color:#52525b;font-size:0.85rem;text-align:center;padding:20px;">Aucun contact pour le moment</p>';
+        container.innerHTML = '<p style="color:#52525b;font-size:0.85rem;text-align:center;padding:20px;">Aucun contact pour le moment. Lance l\'agent marketing pour en trouver.</p>';
         return;
       }
 
       var platformIcons = { instagram: '\u{1F4F7}', tiktok: '\u{1F3B5}', youtube: '\u{1F3AC}', email: '\u{1F4E7}', twitter: '\u{1F426}', x: '\u{1D54F}', reddit: '\u{1F4AC}' };
       var platformColors = { instagram: '#e1306c', tiktok: '#ff0050', youtube: '#ff0000', email: '#f59e0b', twitter: '#1da1f2', x: '#1da1f2', reddit: '#ff4500' };
-      var statusLabels = { identified: 'Identifie', contacted: 'Contacte', replied: 'Repondu', accepted: 'Accepte', declined: 'Refuse', ghosted: 'Sans reponse' };
+      var statusLabels = { identified: 'A contacter', contacted: 'Contacte', replied: 'Repondu', accepted: 'Accepte', declined: 'Refuse', ghosted: 'Sans reponse' };
       var statusColors = { identified: '#4A90D9', contacted: '#f59e0b', replied: '#a78bfa', accepted: '#22c55e', declined: '#ef4444', ghosted: '#52525b' };
+      var typeLabels = { influencer: 'Influenceur', coach: 'Coach', gym: 'Salle', media: 'Media', brand: 'Marque', other: 'Autre' };
 
       // Group by status
       var groups = { identified: [], contacted: [], replied: [], accepted: [], declined: [], ghosted: [] };
@@ -2134,7 +2143,6 @@
 
       // Stats bar
       var total = allContacts.length;
-      var contacted = groups.contacted.length + groups.replied.length + groups.accepted.length;
       html += '<div style="display:flex;gap:16px;margin-bottom:20px;padding:14px 18px;background:linear-gradient(145deg,#141418,#111115);border:1px solid #27272a;border-radius:12px;flex-wrap:wrap;">';
       html += '<div style="text-align:center;min-width:60px;"><div style="font-size:1.2rem;font-weight:700;color:#fafafa;">' + total + '</div><div style="font-size:0.62rem;color:#52525b;text-transform:uppercase;">Total</div></div>';
       html += '<div style="width:1px;height:30px;background:#27272a;align-self:center;"></div>';
@@ -2150,7 +2158,7 @@
         if (list.length === 0) return;
 
         var sColor = statusColors[status] || '#71717a';
-        html += '<div style="margin-bottom:24px;">';
+        html += '<div style="margin-bottom:28px;">';
         html += '<h3 style="font-size:0.88rem;color:' + sColor + ';margin-bottom:12px;display:flex;align-items:center;gap:8px;">';
         html += '<span style="width:8px;height:8px;border-radius:50%;background:' + sColor + ';display:inline-block;"></span>';
         html += (statusLabels[status] || status) + ' <span style="color:#52525b;font-weight:400;">(' + list.length + ')</span></h3>';
@@ -2159,28 +2167,96 @@
           var pIcon = platformIcons[(c.platform || '').toLowerCase()] || '\u{1F464}';
           var pColor = platformColors[(c.platform || '').toLowerCase()] || '#71717a';
           var followers = c.followers ? (c.followers >= 1000 ? Math.round(c.followers / 1000) + 'K' : c.followers) : '';
+          var cId = c.id || '';
+          var hasMessage = c.outreach_message || c.outreach_message_b;
 
-          html += '<div style="display:flex;align-items:center;gap:14px;padding:14px 16px;background:linear-gradient(145deg,#1e1e22,#18181b);border:1px solid #27272a;border-left:3px solid ' + pColor + ';border-radius:10px;margin-bottom:8px;">';
+          // Card container
+          html += '<div style="background:linear-gradient(145deg,#1e1e22,#18181b);border:1px solid #27272a;border-left:3px solid ' + pColor + ';border-radius:10px;margin-bottom:10px;overflow:hidden;">';
+
+          // Header row
+          html += '<div style="display:flex;align-items:center;gap:14px;padding:14px 16px;">';
 
           // Avatar
           html += '<div style="width:42px;height:42px;border-radius:50%;background:' + pColor + '20;border:1px solid ' + pColor + '40;display:flex;align-items:center;justify-content:center;font-size:1.2rem;flex-shrink:0;">' + pIcon + '</div>';
 
           // Info
           html += '<div style="flex:1;min-width:0;">';
-          html += '<div style="font-weight:600;font-size:0.88rem;color:#fafafa;">' + (c.name || 'Inconnu') + '</div>';
-          html += '<div style="font-size:0.72rem;color:#71717a;margin-top:2px;">';
-          if (c.handle) html += c.handle + ' ';
-          if (c.platform) html += '<span style="font-size:0.62rem;padding:1px 6px;border-radius:3px;background:' + pColor + '15;color:' + pColor + ';margin-left:4px;">' + c.platform + '</span> ';
-          if (followers) html += '<span style="margin-left:4px;">' + followers + ' followers</span>';
+          html += '<div style="display:flex;align-items:center;gap:8px;flex-wrap:wrap;">';
+          html += '<span style="font-weight:600;font-size:0.88rem;color:#fafafa;">' + escHtml(c.name || 'Inconnu') + '</span>';
+          if (c.contact_type && c.contact_type !== 'influencer') html += '<span style="font-size:0.58rem;padding:1px 5px;border-radius:3px;background:#a78bfa18;color:#a78bfa;border:1px solid #a78bfa30;">' + (typeLabels[c.contact_type] || c.contact_type) + '</span>';
           html += '</div>';
-          if (c.niche) html += '<div style="font-size:0.68rem;color:#52525b;margin-top:2px;">' + c.niche + '</div>';
-          if (c.reason) html += '<div style="font-size:0.68rem;color:#4A90D9;margin-top:2px;">' + c.reason + '</div>';
+          html += '<div style="font-size:0.72rem;color:#71717a;margin-top:2px;display:flex;align-items:center;gap:6px;flex-wrap:wrap;">';
+          if (c.handle) {
+            if (c.profile_url) html += '<a href="' + escHtml(c.profile_url) + '" target="_blank" style="color:#71717a;text-decoration:none;border-bottom:1px dotted #52525b;">' + escHtml(c.handle) + '</a>';
+            else html += escHtml(c.handle);
+          }
+          if (c.platform) html += '<span style="font-size:0.62rem;padding:1px 6px;border-radius:3px;background:' + pColor + '15;color:' + pColor + ';">' + c.platform + '</span>';
+          if (followers) html += '<span>' + followers + ' followers</span>';
+          if (c.language) html += '<span style="font-size:0.58rem;padding:1px 4px;border-radius:2px;background:#27272a;color:#71717a;">' + c.language.toUpperCase() + '</span>';
+          html += '</div>';
+          if (c.niche) html += '<div style="font-size:0.68rem;color:#52525b;margin-top:2px;">' + escHtml(c.niche) + '</div>';
           html += '</div>';
 
-          // Status badge
+          // Status badge + actions
+          html += '<div style="display:flex;flex-direction:column;align-items:flex-end;gap:6px;">';
           html += '<span style="font-size:0.62rem;padding:3px 10px;border-radius:999px;background:' + sColor + '18;color:' + sColor + ';font-weight:600;white-space:nowrap;border:1px solid ' + sColor + '30;">' + (statusLabels[status] || status) + '</span>';
-
+          // Quick status buttons
+          if (cId && status === 'identified') {
+            html += '<button onclick="updateContactStatus(\'' + cId + '\',\'contacted\')" style="font-size:0.6rem;padding:2px 8px;border-radius:4px;background:#f59e0b20;color:#f59e0b;border:1px solid #f59e0b30;cursor:pointer;">Marquer contacte</button>';
+          } else if (cId && status === 'contacted') {
+            html += '<div style="display:flex;gap:4px;">';
+            html += '<button onclick="updateContactStatus(\'' + cId + '\',\'replied\')" style="font-size:0.6rem;padding:2px 6px;border-radius:4px;background:#a78bfa20;color:#a78bfa;border:1px solid #a78bfa30;cursor:pointer;">Repondu</button>';
+            html += '<button onclick="updateContactStatus(\'' + cId + '\',\'ghosted\')" style="font-size:0.6rem;padding:2px 6px;border-radius:4px;background:#52525b20;color:#52525b;border:1px solid #52525b30;cursor:pointer;">Ghosted</button>';
+            html += '</div>';
+          } else if (cId && status === 'replied') {
+            html += '<div style="display:flex;gap:4px;">';
+            html += '<button onclick="updateContactStatus(\'' + cId + '\',\'accepted\')" style="font-size:0.6rem;padding:2px 6px;border-radius:4px;background:#22c55e20;color:#22c55e;border:1px solid #22c55e30;cursor:pointer;">Accepte</button>';
+            html += '<button onclick="updateContactStatus(\'' + cId + '\',\'declined\')" style="font-size:0.6rem;padding:2px 6px;border-radius:4px;background:#ef444420;color:#ef4444;border:1px solid #ef444430;cursor:pointer;">Refuse</button>';
+            html += '</div>';
+          }
           html += '</div>';
+
+          html += '</div>'; // end header row
+
+          // Profile analysis
+          if (c.profile_analysis) {
+            html += '<div style="padding:0 16px 8px;font-size:0.7rem;color:#71717a;line-height:1.5;">';
+            html += '<span style="color:#52525b;font-weight:600;">Analyse :</span> ' + escHtml(c.profile_analysis);
+            html += '</div>';
+          }
+
+          // Content hook
+          if (c.content_hook) {
+            html += '<div style="padding:0 16px 8px;font-size:0.7rem;color:#4A90D9;line-height:1.5;">';
+            html += '<span style="font-weight:600;">Hook :</span> ' + escHtml(c.content_hook);
+            html += '</div>';
+          }
+
+          // Messages
+          if (hasMessage) {
+            html += '<div style="border-top:1px solid #27272a;padding:12px 16px;">';
+            html += '<div style="font-size:0.68rem;color:#52525b;font-weight:600;margin-bottom:8px;">Messages pre-rediges</div>';
+
+            if (c.outreach_message) {
+              html += '<div style="position:relative;background:#111115;border:1px solid #27272a;border-radius:8px;padding:10px 12px;margin-bottom:8px;">';
+              html += '<div style="display:flex;justify-content:space-between;align-items:flex-start;gap:8px;">';
+              html += '<div style="font-size:0.72rem;color:#d4d4d8;line-height:1.6;white-space:pre-wrap;flex:1;">' + escHtml(c.outreach_message) + '</div>';
+              html += '<button onclick="copyToClipboard(' + JSON.stringify(c.outreach_message).replace(/'/g, "\\'") + ', this)" style="flex-shrink:0;font-size:0.6rem;padding:3px 8px;border-radius:4px;background:#4A90D920;color:#4A90D9;border:1px solid #4A90D930;cursor:pointer;white-space:nowrap;">Copier A</button>';
+              html += '</div></div>';
+            }
+
+            if (c.outreach_message_b) {
+              html += '<div style="position:relative;background:#111115;border:1px solid #27272a;border-radius:8px;padding:10px 12px;">';
+              html += '<div style="display:flex;justify-content:space-between;align-items:flex-start;gap:8px;">';
+              html += '<div style="font-size:0.72rem;color:#d4d4d8;line-height:1.6;white-space:pre-wrap;flex:1;">' + escHtml(c.outreach_message_b) + '</div>';
+              html += '<button onclick="copyToClipboard(' + JSON.stringify(c.outreach_message_b).replace(/'/g, "\\'") + ', this)" style="flex-shrink:0;font-size:0.6rem;padding:3px 8px;border-radius:4px;background:#a78bfa20;color:#a78bfa;border:1px solid #a78bfa30;cursor:pointer;white-space:nowrap;">Copier B</button>';
+              html += '</div></div>';
+            }
+
+            html += '</div>';
+          }
+
+          html += '</div>'; // end card
         });
 
         html += '</div>';
@@ -2691,7 +2767,7 @@
         return;
       }
 
-      const headers = ['name', 'platform', 'handle', 'email', 'followers', 'niche', 'status', 'language', 'notes'];
+      const headers = ['name', 'platform', 'handle', 'email', 'followers', 'niche', 'contact_type', 'status', 'language', 'profile_url', 'profile_analysis', 'content_hook', 'outreach_message', 'outreach_message_b', 'notes'];
       const csv = [headers.join(',')];
       contacts.forEach(c => {
         csv.push(headers.map(h => {
