@@ -1786,13 +1786,13 @@
       var CX = W / 2;
 
       // Row positions (Y)
-      var ROW_SOURCES = 30;
-      var ROW_COORD = 110;
-      var ROW_POLLER = 220;
-      var ROW_TIER2 = 340;   // Analyse + Debug
-      var ROW_TIER3 = 450;   // Marketing, SEO/GEO, Dev
-      var ROW_TIER4 = 560;   // Contenu
-      var ROW_HUMAN = 670;
+      var ROW_HUMAN = 28;
+      var ROW_COORD = 120;
+      var ROW_SOURCES = 215;
+      var ROW_POLLER = 290;
+      var ROW_TIER2 = 410;   // Analyse + Debug
+      var ROW_TIER3 = 510;   // Marketing, SEO/GEO, Dev
+      var ROW_TIER4 = 610;   // Contenu
       var ROW_OUTPUTS = 710;
 
       var nodes = [
@@ -1847,25 +1847,38 @@
       svg += '<pattern id="grid" width="40" height="40" patternUnits="userSpaceOnUse"><path d="M 40 0 L 0 0 0 40" fill="none" stroke="#ffffff" stroke-width="0.3" opacity="0.03"/></pattern>';
       svg += '<rect width="' + W + '" height="' + H + '" fill="url(#grid)"/>';
 
-      // Pyramid guide lines (subtle)
-      svg += '<path d="M' + CX + ' ' + (ROW_COORD + 50) + ' L' + (CX - 380) + ' ' + (ROW_TIER4 + 60) + '" fill="none" stroke="#27272a" stroke-width="0.5" opacity="0.3"/>';
-      svg += '<path d="M' + CX + ' ' + (ROW_COORD + 50) + ' L' + (CX + 380) + ' ' + (ROW_TIER4 + 60) + '" fill="none" stroke="#27272a" stroke-width="0.5" opacity="0.3"/>';
+      // ─── HUMAIN (top — decision maker) ───
+      var humanW = 200, humanH = 44;
+      svg += '<rect x="' + (CX - humanW/2) + '" y="' + ROW_HUMAN + '" width="' + humanW + '" height="' + humanH + '" rx="14" fill="#1c1917" stroke="#fbbf24" stroke-width="2" filter="url(#glow-human)"/>';
+      svg += '<rect x="' + (CX - humanW/2) + '" y="' + ROW_HUMAN + '" width="' + humanW + '" height="' + humanH + '" rx="14" fill="#fbbf24" opacity="0.06"/>';
+      svg += '<text x="' + CX + '" y="' + (ROW_HUMAN + 20) + '" text-anchor="middle" font-family="Inter" font-size="13" fill="#fbbf24" font-weight="700">\u{1F464} Humain</text>';
+      svg += '<text x="' + CX + '" y="' + (ROW_HUMAN + 35) + '" text-anchor="middle" font-family="Inter" font-size="8" fill="#a1a1aa">D\u{00E9}cisions + validation</text>';
 
-      // ─── DATA SOURCES (top row) ───
+      // Human → Coordinator line
+      svg += '<line x1="' + CX + '" y1="' + (ROW_HUMAN + humanH) + '" x2="' + CX + '" y2="' + ROW_COORD + '" stroke="#fbbf24" stroke-width="1.2" stroke-dasharray="4 3" opacity="0.4"/>';
+      // Arrow labels
+      svg += '<text x="' + (CX + 12) + '" y="' + ((ROW_HUMAN + humanH + ROW_COORD) / 2 - 6) + '" font-family="Inter" font-size="7" fill="#fbbf24" opacity="0.6">\u{2191} escalades</text>';
+      svg += '<text x="' + (CX - 12) + '" y="' + ((ROW_HUMAN + humanH + ROW_COORD) / 2 + 6) + '" text-anchor="end" font-family="Inter" font-size="7" fill="#22c55e" opacity="0.6">\u{2193} go / no-go</text>';
+
+      // ─── COORDINATEUR ───
+      var coordW = 180, coordH = 50;
+      svg += '<rect x="' + (CX - coordW/2) + '" y="' + ROW_COORD + '" width="' + coordW + '" height="' + coordH + '" rx="14" fill="#1c1917" stroke="#fbbf24" stroke-width="1.5" filter="url(#glow-coord)"/>';
+      svg += '<rect x="' + (CX - coordW/2) + '" y="' + ROW_COORD + '" width="' + coordW + '" height="' + coordH + '" rx="14" fill="#fbbf24" opacity="0.04"/>';
+      svg += '<text x="' + CX + '" y="' + (ROW_COORD + 22) + '" text-anchor="middle" font-family="Inter" font-size="12" fill="#fbbf24" font-weight="700">\u{1F451} Coordinateur</text>';
+      svg += '<text x="' + CX + '" y="' + (ROW_COORD + 38) + '" text-anchor="middle" font-family="Inter" font-size="8" fill="#a1a1aa">Escalades + orchestration</text>';
+
+      // Pyramid guide lines (subtle)
+      svg += '<path d="M' + CX + ' ' + (ROW_COORD + coordH) + ' L' + (CX - 380) + ' ' + (ROW_TIER4 + 60) + '" fill="none" stroke="#27272a" stroke-width="0.5" opacity="0.2"/>';
+      svg += '<path d="M' + CX + ' ' + (ROW_COORD + coordH) + ' L' + (CX + 380) + ' ' + (ROW_TIER4 + 60) + '" fill="none" stroke="#27272a" stroke-width="0.5" opacity="0.2"/>';
+
+      // ─── DATA SOURCES (between coordinator and poller) ───
       sources.forEach(function(src) {
         var w = src.label.length * 7 + 20;
         svg += '<rect x="' + src.x + '" y="' + ROW_SOURCES + '" width="' + w + '" height="26" rx="13" fill="#1a1a2e" stroke="#3f3f5a" stroke-width="1"/>';
         svg += '<text x="' + (src.x + w/2) + '" y="' + (ROW_SOURCES + 16) + '" text-anchor="middle" font-family="Inter" font-size="9" fill="#a1a1ba" font-weight="500">' + src.label + '</text>';
-        // Arrow down to coordinator
-        svg += '<line x1="' + (src.x + w/2) + '" y1="' + (ROW_SOURCES + 26) + '" x2="' + CX + '" y2="' + ROW_COORD + '" stroke="#3f3f5a" stroke-width="0.6" opacity="0.3"/>';
+        // Line to poller
+        svg += '<line x1="' + (src.x + w/2) + '" y1="' + (ROW_SOURCES + 26) + '" x2="' + CX + '" y2="' + (ROW_POLLER + 30 - 42) + '" stroke="#3f3f5a" stroke-width="0.5" opacity="0.2"/>';
       });
-
-      // ─── COORDINATEUR (pyramid top) ───
-      var coordW = 180, coordH = 50;
-      svg += '<rect x="' + (CX - coordW/2) + '" y="' + ROW_COORD + '" width="' + coordW + '" height="' + coordH + '" rx="14" fill="#1c1917" stroke="#fbbf24" stroke-width="2" filter="url(#glow-coord)"/>';
-      svg += '<rect x="' + (CX - coordW/2) + '" y="' + ROW_COORD + '" width="' + coordW + '" height="' + coordH + '" rx="14" fill="#fbbf24" opacity="0.05"/>';
-      svg += '<text x="' + CX + '" y="' + (ROW_COORD + 22) + '" text-anchor="middle" font-family="Inter" font-size="12" fill="#fbbf24" font-weight="700">\u{1F451} Coordinateur</text>';
-      svg += '<text x="' + CX + '" y="' + (ROW_COORD + 38) + '" text-anchor="middle" font-family="Inter" font-size="8" fill="#a1a1aa">Escalades + orchestration</text>';
 
       // ─── POLLER (below coordinator) ───
       svg += '<circle cx="' + CX + '" cy="' + (ROW_POLLER + 30) + '" r="42" fill="#0d1117" stroke="#4A90D9" stroke-width="1.5" filter="url(#glow-poller)"/>';
@@ -1937,14 +1950,7 @@
         svg += '</g>';
       });
 
-      // ─── HUMAN APPROVAL (bottom center) ───
-      svg += '<rect x="' + (CX - 60) + '" y="' + ROW_HUMAN + '" width="120" height="30" rx="15" fill="#1c1917" stroke="#fbbf24" stroke-width="1.5" filter="url(#glow-human)"/>';
-      svg += '<text x="' + CX + '" y="' + (ROW_HUMAN + 19) + '" text-anchor="middle" font-family="Inter" font-size="10" fill="#fbbf24" font-weight="600">\u{1F464} Approbation</text>';
-      // Coordinator → Human escalation line
-      svg += '<line x1="' + (CX + coordW/2) + '" y1="' + (ROW_COORD + coordH/2) + '" x2="' + (W - 40) + '" y2="' + (ROW_COORD + coordH/2) + '" stroke="#fbbf24" stroke-width="0.8" stroke-dasharray="3 3" opacity="0.25"/>';
-      svg += '<line x1="' + (W - 40) + '" y1="' + (ROW_COORD + coordH/2) + '" x2="' + (W - 40) + '" y2="' + (ROW_HUMAN + 15) + '" stroke="#fbbf24" stroke-width="0.8" stroke-dasharray="3 3" opacity="0.25"/>';
-      svg += '<line x1="' + (W - 40) + '" y1="' + (ROW_HUMAN + 15) + '" x2="' + (CX + 60) + '" y2="' + (ROW_HUMAN + 15) + '" stroke="#fbbf24" stroke-width="0.8" stroke-dasharray="3 3" opacity="0.25"/>';
-      svg += '<text x="' + (W - 35) + '" y="' + ((ROW_COORD + ROW_HUMAN) / 2 + 40) + '" font-family="Inter" font-size="7" fill="#fbbf24" opacity="0.5" transform="rotate(90,' + (W - 35) + ',' + ((ROW_COORD + ROW_HUMAN) / 2 + 40) + ')">escalade</text>';
+      // (Human rendered at top of pyramid)
 
       // ─── OUTPUTS (bottom row) ───
       outputs.forEach(function(out) {
