@@ -1010,6 +1010,14 @@
         <button style="padding:8px 20px;font-size:0.82rem;font-weight:500;color:#52525b;background:none;border:none;border-bottom:2px solid transparent;cursor:pointer;" onclick="switchContactLang('en', this)" id="contact-tab-en">&#x1F1EC;&#x1F1E7; English</button>
         <button style="padding:8px 20px;font-size:0.82rem;font-weight:500;color:#52525b;background:none;border:none;border-bottom:2px solid transparent;cursor:pointer;" onclick="switchContactLang('de', this)" id="contact-tab-de">&#x1F1E9;&#x1F1EA; Deutsch</button>
       </div>
+      <!-- Platform filter -->
+      <div style="display:flex;gap:6px;margin-bottom:14px;flex-wrap:wrap;" id="contact-filters">
+        <button onclick="filterContactPlatform('all', this)" class="contact-filter active" style="font-size:0.68rem;padding:4px 12px;border-radius:999px;background:#a78bfa20;color:#a78bfa;border:1px solid #a78bfa30;cursor:pointer;font-weight:600;">Tous</button>
+        <button onclick="filterContactPlatform('instagram', this)" class="contact-filter" style="font-size:0.68rem;padding:4px 12px;border-radius:999px;background:#27272a;color:#71717a;border:1px solid #27272a;cursor:pointer;">Instagram</button>
+        <button onclick="filterContactPlatform('tiktok', this)" class="contact-filter" style="font-size:0.68rem;padding:4px 12px;border-radius:999px;background:#27272a;color:#71717a;border:1px solid #27272a;cursor:pointer;">TikTok</button>
+        <button onclick="filterContactPlatform('youtube', this)" class="contact-filter" style="font-size:0.68rem;padding:4px 12px;border-radius:999px;background:#27272a;color:#71717a;border:1px solid #27272a;cursor:pointer;">YouTube</button>
+        <button onclick="filterContactPlatform('twitter', this)" class="contact-filter" style="font-size:0.68rem;padding:4px 12px;border-radius:999px;background:#27272a;color:#71717a;border:1px solid #27272a;cursor:pointer;">X</button>
+      </div>
       <div id="contacts-list"><p class="empty-state">Chargement...</p></div>
     </div>
 
@@ -1024,6 +1032,12 @@
 
       <!-- Blog section -->
       <div id="content-tab-blog">
+        <!-- Language sub-tabs for blog -->
+        <div style="display:flex;gap:0;margin-bottom:16px;border-bottom:1px solid #1a1a1e;">
+          <button style="padding:6px 16px;font-size:0.75rem;font-weight:600;color:#fafafa;background:none;border:none;border-bottom:2px solid #60a5fa;cursor:pointer;" onclick="switchBlogLang('fr', this)" id="blog-lang-fr">&#x1F1EB;&#x1F1F7; FR</button>
+          <button style="padding:6px 16px;font-size:0.75rem;font-weight:500;color:#52525b;background:none;border:none;border-bottom:2px solid transparent;cursor:pointer;" onclick="switchBlogLang('en', this)" id="blog-lang-en">&#x1F1EC;&#x1F1E7; EN</button>
+          <button style="padding:6px 16px;font-size:0.75rem;font-weight:500;color:#52525b;background:none;border:none;border-bottom:2px solid transparent;cursor:pointer;" onclick="switchBlogLang('de', this)" id="blog-lang-de">&#x1F1E9;&#x1F1EA; DE</button>
+        </div>
         <h3 style="font-size:0.95rem;color:#60a5fa;margin-bottom:14px;">En attente de review</h3>
         <div id="blog-pending"><p style="color:#52525b;font-size:0.85rem;">Chargement...</p></div>
         <div style="margin-top:28px;padding-top:20px;border-top:1px solid #27272a;">
@@ -1373,6 +1387,7 @@
             </div>
             ${skills.length ? `<div style="display:flex;flex-wrap:wrap;gap:6px;margin-top:8px;">${skills.map(s => `<span style="font-size:0.65rem;padding:3px 8px;border-radius:6px;background:#1a1a2e;color:#8b8ba7;border:1px solid #2a2a3e;font-family:monospace;white-space:nowrap;">${s}</span>`).join('')}</div>` : ''}
             ${highlights ? `<div class="agent-last-output">${highlights}</div>` : ''}
+            <button onclick="event.stopPropagation();triggerAgent('${agent.slug}', this)" style="margin-top:10px;padding:5px 14px;font-size:0.7rem;background:#4A90D920;color:#4A90D9;border:1px solid #4A90D930;border-radius:6px;cursor:pointer;font-weight:600;">\u{25B6} Lancer</button>
           </div>
         `;
       }).join('');
@@ -2201,6 +2216,101 @@
         html += '</div>';
       }
 
+      // ─── Week-over-week DAU trend (multi-report)
+      if (runs.length > 1) {
+        var weeklyData = [];
+        runs.forEach(function(r) {
+          var ro = r.output.output || r.output;
+          var m = ro.metrics || {};
+          var d = m.dau || {};
+          var date = r.started_at.split('T')[0];
+          weeklyData.push({ date: date, dau: d.current || 0, users: m.unique_users_7d || 0, events: m.total_events || 0 });
+        });
+        weeklyData.reverse(); // oldest first
+
+        if (weeklyData.length >= 2) {
+          var maxD = Math.max.apply(null, weeklyData.map(function(w) { return Math.max(w.dau, w.users); })) || 1;
+          var trendW = 600, trendH = 120;
+          var stepX = trendW / (weeklyData.length - 1 || 1);
+
+          html += '<div style="background:linear-gradient(145deg,#1e1e22,#18181b);border:1px solid #27272a;border-radius:12px;padding:16px;margin-bottom:20px;">';
+          html += '<div style="font-size:0.72rem;color:#4A90D9;font-weight:600;margin-bottom:10px;">\u{1F4C9} Tendance semaine par semaine</div>';
+          html += '<svg viewBox="0 0 ' + (trendW + 60) + ' ' + (trendH + 40) + '" style="width:100%;max-width:660px;">';
+
+          // Grid
+          for (var tg = 0; tg <= 3; tg++) {
+            var tgy = trendH - (tg / 3) * trendH + 10;
+            html += '<line x1="40" y1="' + tgy + '" x2="' + (trendW + 50) + '" y2="' + tgy + '" stroke="#27272a" stroke-width="0.5"/>';
+            html += '<text x="35" y="' + (tgy + 3) + '" text-anchor="end" font-family="Inter" font-size="7" fill="#52525b">' + Math.round(maxD * tg / 3) + '</text>';
+          }
+
+          // DAU line
+          var dauPath = '', usersPath = '';
+          weeklyData.forEach(function(w, i) {
+            var x = 45 + i * stepX;
+            var yD = trendH + 10 - (w.dau / maxD) * trendH;
+            var yU = trendH + 10 - (w.users / maxD) * trendH;
+            dauPath += (i === 0 ? 'M' : 'L') + x + ' ' + yD;
+            usersPath += (i === 0 ? 'M' : 'L') + x + ' ' + yU;
+            // Date labels
+            html += '<text x="' + x + '" y="' + (trendH + 28) + '" text-anchor="middle" font-family="Inter" font-size="7" fill="#52525b">' + w.date.slice(5) + '</text>';
+            // Dots
+            html += '<circle cx="' + x + '" cy="' + yD + '" r="3" fill="#4A90D9"/>';
+            html += '<circle cx="' + x + '" cy="' + yU + '" r="3" fill="#a78bfa"/>';
+            // Values
+            html += '<text x="' + x + '" y="' + (yD - 6) + '" text-anchor="middle" font-family="Inter" font-size="7" fill="#4A90D9">' + w.dau + '</text>';
+          });
+          html += '<path d="' + dauPath + '" fill="none" stroke="#4A90D9" stroke-width="2"/>';
+          html += '<path d="' + usersPath + '" fill="none" stroke="#a78bfa" stroke-width="1.5" stroke-dasharray="4 2"/>';
+
+          // Legend
+          html += '<circle cx="' + (trendW - 80) + '" cy="' + (trendH + 35) + '" r="3" fill="#4A90D9"/>';
+          html += '<text x="' + (trendW - 73) + '" y="' + (trendH + 38) + '" font-family="Inter" font-size="7" fill="#71717a">DAU</text>';
+          html += '<circle cx="' + (trendW - 30) + '" cy="' + (trendH + 35) + '" r="3" fill="#a78bfa"/>';
+          html += '<text x="' + (trendW - 23) + '" y="' + (trendH + 38) + '" font-family="Inter" font-size="7" fill="#71717a">Users 7j</text>';
+
+          html += '</svg></div>';
+        }
+      }
+
+      // ─── Agent Costs / Usage
+      var agentRunsResp = await sb.from('agent_runs').select('agent_id,duration_ms,status,started_at')
+        .gte('started_at', new Date(Date.now() - 30 * 86400000).toISOString());
+      var agentRuns = agentRunsResp.data || [];
+      if (agentRuns.length > 0) {
+        var agentStats = {};
+        agentRuns.forEach(function(r) {
+          var a = agents.find(function(ag) { return ag.id === r.agent_id; });
+          var name = a ? a.name.replace('Agent ', '') : '?';
+          if (!agentStats[name]) agentStats[name] = { runs: 0, completed: 0, failed: 0, totalMs: 0, color: '#71717a' };
+          agentStats[name].runs++;
+          if (r.status === 'completed') { agentStats[name].completed++; agentStats[name].totalMs += (r.duration_ms || 0); }
+          if (r.status === 'failed') agentStats[name].failed++;
+          if (a) {
+            var colorMap = { 'agent-debug': '#ef4444', 'agent-dev': '#3b82f6', 'agent-seo-geo': '#22c55e', 'agent-analyse': '#a78bfa', 'agent-marketing': '#f59e0b', 'agent-contenu': '#ec4899' };
+            agentStats[name].color = colorMap[a.slug] || '#71717a';
+          }
+        });
+
+        html += '<div style="background:linear-gradient(145deg,#1e1e22,#18181b);border:1px solid #27272a;border-radius:12px;padding:16px;margin-bottom:20px;">';
+        html += '<div style="font-size:0.72rem;color:#f59e0b;font-weight:600;margin-bottom:10px;">\u{1F4B0} Usage agents (30j)</div>';
+        html += '<div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:10px;">';
+        Object.keys(agentStats).forEach(function(name) {
+          var s = agentStats[name];
+          var avgSec = s.completed > 0 ? Math.round(s.totalMs / s.completed / 1000) : 0;
+          // Rough cost estimate: ~$0.01/sec for Claude (very approximate)
+          var estCost = (s.totalMs / 1000 * 0.003).toFixed(2);
+          html += '<div style="background:#111115;border:1px solid #27272a;border-top:3px solid ' + s.color + ';border-radius:8px;padding:12px;">';
+          html += '<div style="font-size:0.82rem;color:#fafafa;font-weight:600;margin-bottom:6px;">' + name + '</div>';
+          html += '<div style="display:grid;grid-template-columns:1fr 1fr;gap:4px;font-size:0.68rem;">';
+          html += '<span style="color:#71717a;">Runs</span><span style="color:#d4d4d8;text-align:right;">' + s.runs + ' (' + s.completed + '\u{2713} ' + s.failed + '\u{2717})</span>';
+          html += '<span style="color:#71717a;">Duree moy.</span><span style="color:#d4d4d8;text-align:right;">' + avgSec + 's</span>';
+          html += '<span style="color:#71717a;">Cout est.</span><span style="color:#d4d4d8;text-align:right;">~$' + estCost + '</span>';
+          html += '</div></div>';
+        });
+        html += '</div></div>';
+      }
+
       // ─── History (list previous reports)
       if (runs.length > 1) {
         html += '<div style="background:linear-gradient(145deg,#1e1e22,#18181b);border:1px solid #27272a;border-radius:12px;padding:16px;">';
@@ -2323,6 +2433,18 @@
 
     // ─── Contacts View ──────────────────────────
     var currentContactLang = 'fr';
+    var currentContactPlatform = 'all';
+
+    function filterContactPlatform(platform, btn) {
+      currentContactPlatform = platform;
+      document.querySelectorAll('.contact-filter').forEach(function(b) {
+        b.style.background = '#27272a'; b.style.color = '#71717a'; b.style.borderColor = '#27272a';
+        b.classList.remove('active');
+      });
+      btn.style.background = '#a78bfa20'; btn.style.color = '#a78bfa'; btn.style.borderColor = '#a78bfa30';
+      btn.classList.add('active');
+      loadContactsView();
+    }
 
     function switchContactLang(lang, btn) {
       currentContactLang = lang;
@@ -2383,7 +2505,9 @@
       var container = document.getElementById('contacts-list');
       container.innerHTML = '<p style="color:#52525b;font-size:0.85rem;">Chargement...</p>';
 
-      var dbResp = await sb.from('outreach_contacts').select('*').eq('language', currentContactLang).order('updated_at', { ascending: false }).limit(200);
+      var query = sb.from('outreach_contacts').select('*').eq('language', currentContactLang);
+      if (currentContactPlatform !== 'all') query = query.eq('platform', currentContactPlatform);
+      var dbResp = await query.order('updated_at', { ascending: false }).limit(200);
       var allContacts = dbResp.data || [];
 
       if (allContacts.length === 0) {
@@ -2566,6 +2690,28 @@
     }
 
     // ─── Content View ───────────────────────────
+    var currentBlogLang = 'fr';
+
+    function switchBlogLang(lang, btn) {
+      currentBlogLang = lang;
+      ['fr', 'en', 'de'].forEach(function(l) {
+        var tabBtn = document.getElementById('blog-lang-' + l);
+        if (tabBtn) {
+          tabBtn.style.color = l === lang ? '#fafafa' : '#52525b';
+          tabBtn.style.fontWeight = l === lang ? '600' : '500';
+          tabBtn.style.borderBottomColor = l === lang ? '#60a5fa' : 'transparent';
+        }
+      });
+      // Re-render blog with language filter
+      if (window._contentItems) {
+        var blogPending = window._contentItems.filter(function(c) {
+          return c.type === 'article' && (c.lang || 'fr') === currentBlogLang;
+        });
+        renderContentCards('blog-pending', blogPending, '#60a5fa', 'article');
+        loadPublishedByType('blog-published', 'article', currentBlogLang);
+      }
+    }
+
     function switchContentTab(tab, btn) {
       ['blog', 'guides', 'social'].forEach(function(t) {
         var el = document.getElementById('content-tab-' + t);
@@ -2633,10 +2779,12 @@
       if (total > 0) { badge.textContent = total; badge.style.display = 'inline'; }
 
       // Render each section
-      renderContentCards('blog-pending', blogPending, '#60a5fa', 'article');
+      // Filter blog by current language
+      var blogFiltered = blogPending.filter(function(c) { return (c.lang || 'fr') === currentBlogLang; });
+      renderContentCards('blog-pending', blogFiltered, '#60a5fa', 'article');
       renderContentCards('guides-pending', guidePending, '#a78bfa', 'guide');
       renderSocialByPlatform(socialPending);
-      loadPublishedByType('blog-published', 'article');
+      loadPublishedByType('blog-published', 'article', currentBlogLang);
       loadPublishedByType('guides-published', 'guide');
     }
 
@@ -2666,7 +2814,7 @@
           + (preview ? '<div style="font-size:0.78rem;color:#a1a1aa;line-height:1.5;max-height:60px;overflow:hidden;padding:10px;background:#111115;border-radius:8px;margin-bottom:8px;">' + preview + '...</div>' : '')
           + (c.review_notes ? '<div style="padding:8px 10px;background:#1c1917;border:1px solid #78350f;border-radius:6px;font-size:0.72rem;color:#fbbf24;line-height:1.4;margin-bottom:8px;">\u{26A0}\u{FE0F} ' + c.review_notes + '</div>' : '')
           + '<div style="display:flex;gap:8px;margin-top:4px;">'
-          + '<button style="padding:6px 14px;font-size:0.72rem;background:#166534;color:#86efac;border:1px solid #22c55e;border-radius:8px;cursor:pointer;font-weight:600;" onclick="event.stopPropagation();publishArticle(this)" data-title="' + safeTitle + '" data-slug="' + (c.slug || '') + '" data-content="' + encodedContent + '" data-keyword="' + (c.target_keyword || '') + '" data-description="' + safeDesc + '" data-category="' + (c.category || 'musculation') + '" data-type="' + taskType + '">\u{1F680} Publier</button>'
+          + '<button style="padding:6px 14px;font-size:0.72rem;background:#166534;color:#86efac;border:1px solid #22c55e;border-radius:8px;cursor:pointer;font-weight:600;" onclick="event.stopPropagation();publishArticle(this)" data-title="' + safeTitle + '" data-slug="' + (c.slug || '') + '" data-content="' + encodedContent + '" data-keyword="' + (c.target_keyword || '') + '" data-description="' + safeDesc + '" data-category="' + (c.category || 'musculation') + '" data-lang="' + (c.lang || 'fr') + '" data-type="' + taskType + '">\u{1F680} Publier</button>'
           + '<button style="padding:6px 10px;font-size:0.7rem;background:#450a0a;color:#fca5a5;border:1px solid #ef4444;border-radius:8px;cursor:pointer;" onclick="event.stopPropagation();">Supprimer</button>'
           + '</div></div>';
       }).join('');
@@ -2763,12 +2911,13 @@
       });
     }
 
-    async function loadPublishedByType(containerId, contentType) {
+    async function loadPublishedByType(containerId, contentType, lang) {
       var container = document.getElementById(containerId);
-      var resp = await sb.from('published_content').select('*')
+      var query = sb.from('published_content').select('*')
         .eq('content_type', contentType)
-        .eq('source', 'agent-contenu')
-        .order('published_at', { ascending: false }).limit(20);
+        .eq('source', 'agent-contenu');
+      if (lang) query = query.eq('lang', lang);
+      var resp = await query.order('published_at', { ascending: false }).limit(20);
 
       var items = resp.data || [];
       if (items.length === 0) {
@@ -2975,12 +3124,16 @@
       var keyword = btn.getAttribute('data-keyword') || '';
       var description = btn.getAttribute('data-description') || '';
       var category = btn.getAttribute('data-category') || 'musculation';
+      var lang = btn.getAttribute('data-lang') || currentBlogLang || 'fr';
 
       btn.textContent = '\u{23F3} Cr\u{00E9}ation t\u{00E2}che...';
       btn.disabled = true;
 
       var devAgent = agents.find(function(a) { return a.slug === 'agent-dev'; });
       if (!devAgent) { btn.textContent = '\u{274C} Agent Dev introuvable'; return; }
+
+      var langPath = { fr: 'fr', en: 'en', de: 'de' }[lang] || 'fr';
+      var langPrefix = { fr: '', en: '/en', de: '/de' }[lang] || '';
 
       var resp = await sb.from('agent_tasks').insert({
         assigned_to_agent: devAgent.id,
@@ -2992,8 +3145,8 @@
           keyword: keyword,
           description: description,
           category: category,
-          lang: 'fr',
-          instructions: "Cr\u{00E9}er le fichier blog Markdown dans le repo aivancepro-website. Cr\u{00E9}er une branche, ajouter le fichier src/content/blog/fr/" + slug + ".md avec le frontmatter Astro complet (title, description, date, slug, lang, category, keywords, canonical, alternates), build, commit, push."
+          lang: lang,
+          instructions: "Creer le fichier blog Markdown dans le repo aivancepro-website. Ajouter le fichier src/content/blog/" + langPath + "/" + slug + ".md avec le frontmatter Astro complet (title, description, date, slug, lang: '" + lang + "', category, keywords, canonical, alternates), build, commit, push."
         },
         status: 'approved',
         approved_at: new Date().toISOString(),
@@ -3004,19 +3157,19 @@
         btn.textContent = '\u{274C} Erreur';
       } else {
         btn.textContent = '\u{2705} Publication en attente du poller';
+        showNotification('\u{1F4DD} Article <strong>' + title + '</strong> (' + lang.toUpperCase() + ') en attente de publication', 'info');
 
-        // Also insert into published_content
         await sb.from('published_content').insert({
           content_type: 'article',
           title: title,
           slug: slug,
-          lang: 'fr',
+          lang: lang,
           category: category,
           keywords: keyword,
           target_keyword: keyword,
           description: description,
-          file_path: 'src/content/blog/fr/' + slug + '.md',
-          url: 'https://aivancepro.fr/blog/' + slug + '/',
+          file_path: 'src/content/blog/' + langPath + '/' + slug + '.md',
+          url: 'https://aivancepro.fr' + langPrefix + '/blog/' + slug + '/',
           source: 'agent-contenu'
         });
       }
@@ -3085,14 +3238,42 @@
       URL.revokeObjectURL(url);
     }
 
+    // ─── Notifications ─────────────────────────
+    function showNotification(msg, type) {
+      var colors = { error: '#ef4444', warning: '#f59e0b', success: '#22c55e', info: '#4A90D9' };
+      var color = colors[type] || colors.info;
+      var div = document.createElement('div');
+      div.style.cssText = 'position:fixed;top:16px;right:16px;z-index:9999;padding:12px 20px;background:#18181b;border:1px solid ' + color + '40;border-left:4px solid ' + color + ';border-radius:10px;color:#fafafa;font-size:0.78rem;max-width:400px;box-shadow:0 8px 24px rgba(0,0,0,0.4);animation:slideIn 0.3s ease;';
+      div.innerHTML = msg;
+      document.body.appendChild(div);
+      setTimeout(function() { div.style.opacity = '0'; div.style.transition = 'opacity 0.3s'; setTimeout(function() { div.remove(); }, 300); }, 6000);
+    }
+
     // ─── Realtime ──────────────────────────────
     function setupRealtime() {
       sb.channel('agent-updates')
-        .on('postgres_changes', { event: '*', schema: 'public', table: 'agent_runs' }, () => {
+        .on('postgres_changes', { event: '*', schema: 'public', table: 'agent_runs' }, function(payload) {
+          loadData();
+          var r = payload.new;
+          if (r && r.status === 'failed') {
+            var a = agents.find(function(ag) { return ag.id === r.agent_id; });
+            showNotification('\u{274C} <strong>' + (a ? a.name : 'Agent') + '</strong> a echoue' + (r.error_message ? ' : ' + r.error_message : ''), 'error');
+          }
+          if (r && r.escalated) {
+            var a2 = agents.find(function(ag) { return ag.id === r.agent_id; });
+            showNotification('\u{1F6A8} <strong>Escalade ' + (a2 ? a2.name : '') + '</strong> : ' + (r.escalation_reason || '').slice(0, 150), 'warning');
+          }
+          if (r && r.status === 'completed' && !r.escalated) {
+            var a3 = agents.find(function(ag) { return ag.id === r.agent_id; });
+            showNotification('\u{2705} <strong>' + (a3 ? a3.name : 'Agent') + '</strong> termine', 'success');
+          }
+        })
+        .on('postgres_changes', { event: '*', schema: 'public', table: 'agents' }, function() {
           loadData();
         })
-        .on('postgres_changes', { event: '*', schema: 'public', table: 'agents' }, () => {
-          loadData();
+        .on('postgres_changes', { event: '*', schema: 'public', table: 'outreach_contacts' }, function() {
+          // Refresh contacts if on that tab
+          if (document.getElementById('view-contacts') && document.getElementById('view-contacts').style.display !== 'none') loadContactsView();
         })
         .subscribe();
     }
