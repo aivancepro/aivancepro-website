@@ -2164,6 +2164,26 @@
 
     function escHtml(s) { return (s || '').replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/"/g,'&quot;'); }
 
+    async function markStepDone(contactId, step, btnEl) {
+      // Get current notes and append step tag
+      var resp = await sb.from('outreach_contacts').select('notes,status').eq('id', contactId).single();
+      var currentNotes = (resp.data && resp.data.notes) || '';
+      var newNotes = currentNotes ? currentNotes + ',' + step : step;
+      var update = { notes: newNotes, updated_at: new Date().toISOString() };
+      // Auto-advance status based on step
+      if (step === 'step1_done' && resp.data && resp.data.status === 'identified') {
+        update.status = 'contacted';
+        update.first_contacted_at = new Date().toISOString();
+        update.last_contacted_at = new Date().toISOString();
+      }
+      if (step === 'step2_done') {
+        update.status = 'accepted';
+        update.last_contacted_at = new Date().toISOString();
+      }
+      await sb.from('outreach_contacts').update(update).eq('id', contactId);
+      loadContactsView();
+    }
+
     async function updateContactStatus(contactId, newStatus) {
       var now = new Date().toISOString();
       var update = { status: newStatus, updated_at: now };
@@ -2300,31 +2320,53 @@
             html += '<div style="border-top:1px solid #27272a;padding:12px 16px;">';
             html += '<div style="font-size:0.68rem;color:#52525b;font-weight:600;margin-bottom:8px;">Funnel messages</div>';
 
+            var step1Done = (c.notes || '').includes('step1_done');
+            var step2Done = (c.notes || '').includes('step2_done');
+            var step3Done = (c.notes || '').includes('step3_done');
+
             if (c.outreach_message) {
-              html += '<div style="position:relative;background:#111115;border:1px solid #27272a;border-radius:8px;padding:10px 12px;margin-bottom:8px;">';
+              html += '<div style="position:relative;background:' + (step1Done ? '#22c55e08' : '#111115') + ';border:1px solid ' + (step1Done ? '#22c55e30' : '#27272a') + ';border-radius:8px;padding:10px 12px;margin-bottom:8px;">';
               html += '<div style="font-size:0.6rem;color:#4A90D9;font-weight:600;margin-bottom:4px;">1. Premier contact + demande screen story</div>';
               html += '<div style="display:flex;justify-content:space-between;align-items:flex-start;gap:8px;">';
-              html += '<div style="font-size:0.72rem;color:#d4d4d8;line-height:1.6;white-space:pre-wrap;flex:1;">' + escHtml(c.outreach_message) + '</div>';
-              html += '<button onclick="copyToClipboard(' + JSON.stringify(c.outreach_message).replace(/'/g, "\\'") + ', this)" style="flex-shrink:0;font-size:0.6rem;padding:3px 8px;border-radius:4px;background:#4A90D920;color:#4A90D9;border:1px solid #4A90D930;cursor:pointer;white-space:nowrap;">Copier</button>';
-              html += '</div></div>';
+              html += '<div style="font-size:0.72rem;color:' + (step1Done ? '#52525b' : '#d4d4d8') + ';line-height:1.6;white-space:pre-wrap;flex:1;">' + escHtml(c.outreach_message) + '</div>';
+              html += '<div style="display:flex;flex-direction:column;gap:4px;flex-shrink:0;">';
+              html += '<button onclick="copyToClipboard(' + JSON.stringify(c.outreach_message).replace(/'/g, "\\'") + ', this)" style="font-size:0.6rem;padding:3px 8px;border-radius:4px;background:#4A90D920;color:#4A90D9;border:1px solid #4A90D930;cursor:pointer;white-space:nowrap;">Copier</button>';
+              if (!step1Done) {
+                html += '<button onclick="markStepDone(\'' + cId + '\', \'step1_done\', this)" style="font-size:0.6rem;padding:3px 8px;border-radius:4px;background:#22c55e20;color:#22c55e;border:1px solid #22c55e30;cursor:pointer;white-space:nowrap;">Envoye \u{2713}</button>';
+              } else {
+                html += '<span style="font-size:0.58rem;padding:3px 8px;color:#22c55e;white-space:nowrap;">\u{2713} Fait</span>';
+              }
+              html += '</div></div></div>';
             }
 
             if (c.outreach_message_b) {
-              html += '<div style="position:relative;background:#111115;border:1px solid #27272a;border-radius:8px;padding:10px 12px;margin-bottom:8px;">';
-              html += '<div style="font-size:0.6rem;color:#22c55e;font-weight:600;margin-bottom:4px;">2. Validation story OK → lien + abonnement a vie</div>';
+              html += '<div style="position:relative;background:' + (step2Done ? '#22c55e08' : '#111115') + ';border:1px solid ' + (step2Done ? '#22c55e30' : '#27272a') + ';border-radius:8px;padding:10px 12px;margin-bottom:8px;">';
+              html += '<div style="font-size:0.6rem;color:#22c55e;font-weight:600;margin-bottom:4px;">2. Validation story OK \u{2192} lien + abonnement a vie</div>';
               html += '<div style="display:flex;justify-content:space-between;align-items:flex-start;gap:8px;">';
-              html += '<div style="font-size:0.72rem;color:#d4d4d8;line-height:1.6;white-space:pre-wrap;flex:1;">' + escHtml(c.outreach_message_b) + '</div>';
-              html += '<button onclick="copyToClipboard(' + JSON.stringify(c.outreach_message_b).replace(/'/g, "\\'") + ', this)" style="flex-shrink:0;font-size:0.6rem;padding:3px 8px;border-radius:4px;background:#22c55e20;color:#22c55e;border:1px solid #22c55e30;cursor:pointer;white-space:nowrap;">Copier</button>';
-              html += '</div></div>';
+              html += '<div style="font-size:0.72rem;color:' + (step2Done ? '#52525b' : '#d4d4d8') + ';line-height:1.6;white-space:pre-wrap;flex:1;">' + escHtml(c.outreach_message_b) + '</div>';
+              html += '<div style="display:flex;flex-direction:column;gap:4px;flex-shrink:0;">';
+              html += '<button onclick="copyToClipboard(' + JSON.stringify(c.outreach_message_b).replace(/'/g, "\\'") + ', this)" style="font-size:0.6rem;padding:3px 8px;border-radius:4px;background:#22c55e20;color:#22c55e;border:1px solid #22c55e30;cursor:pointer;white-space:nowrap;">Copier</button>';
+              if (!step2Done) {
+                html += '<button onclick="markStepDone(\'' + cId + '\', \'step2_done\', this)" style="font-size:0.6rem;padding:3px 8px;border-radius:4px;background:#22c55e20;color:#22c55e;border:1px solid #22c55e30;cursor:pointer;white-space:nowrap;">Envoye \u{2713}</button>';
+              } else {
+                html += '<span style="font-size:0.58rem;padding:3px 8px;color:#22c55e;white-space:nowrap;">\u{2713} Fait</span>';
+              }
+              html += '</div></div></div>';
             }
 
             if (c.follow_up_message) {
-              html += '<div style="position:relative;background:#111115;border:1px solid #27272a;border-radius:8px;padding:10px 12px;">';
+              html += '<div style="position:relative;background:' + (step3Done ? '#22c55e08' : '#111115') + ';border:1px solid ' + (step3Done ? '#22c55e30' : '#27272a') + ';border-radius:8px;padding:10px 12px;">';
               html += '<div style="font-size:0.6rem;color:#f59e0b;font-weight:600;margin-bottom:4px;">3. Relance (si pas de reponse apres 5j)</div>';
               html += '<div style="display:flex;justify-content:space-between;align-items:flex-start;gap:8px;">';
-              html += '<div style="font-size:0.72rem;color:#d4d4d8;line-height:1.6;white-space:pre-wrap;flex:1;">' + escHtml(c.follow_up_message) + '</div>';
-              html += '<button onclick="copyToClipboard(' + JSON.stringify(c.follow_up_message).replace(/'/g, "\\'") + ', this)" style="flex-shrink:0;font-size:0.6rem;padding:3px 8px;border-radius:4px;background:#f59e0b20;color:#f59e0b;border:1px solid #f59e0b30;cursor:pointer;white-space:nowrap;">Copier</button>';
-              html += '</div></div>';
+              html += '<div style="font-size:0.72rem;color:' + (step3Done ? '#52525b' : '#d4d4d8') + ';line-height:1.6;white-space:pre-wrap;flex:1;">' + escHtml(c.follow_up_message) + '</div>';
+              html += '<div style="display:flex;flex-direction:column;gap:4px;flex-shrink:0;">';
+              html += '<button onclick="copyToClipboard(' + JSON.stringify(c.follow_up_message).replace(/'/g, "\\'") + ', this)" style="font-size:0.6rem;padding:3px 8px;border-radius:4px;background:#f59e0b20;color:#f59e0b;border:1px solid #f59e0b30;cursor:pointer;white-space:nowrap;">Copier</button>';
+              if (!step3Done) {
+                html += '<button onclick="markStepDone(\'' + cId + '\', \'step3_done\', this)" style="font-size:0.6rem;padding:3px 8px;border-radius:4px;background:#22c55e20;color:#22c55e;border:1px solid #22c55e30;cursor:pointer;white-space:nowrap;">Envoye \u{2713}</button>';
+              } else {
+                html += '<span style="font-size:0.58rem;padding:3px 8px;color:#22c55e;white-space:nowrap;">\u{2713} Fait</span>';
+              }
+              html += '</div></div></div>';
             }
 
             html += '</div>';
