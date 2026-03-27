@@ -2092,50 +2092,101 @@
 
     // ─── Contacts View ──────────────────────────
     async function loadContactsView() {
-      const container = document.getElementById('contacts-list');
-      container.innerHTML = '<p class="empty-state">Chargement...</p>';
+      var container = document.getElementById('contacts-list');
+      container.innerHTML = '<p style="color:#52525b;font-size:0.85rem;">Chargement...</p>';
 
-      // Get from outreach_contacts table
-      const { data: dbContacts } = await sb.from('outreach_contacts')
-        .select('*').order('updated_at', { ascending: false }).limit(100);
+      var dbResp = await sb.from('outreach_contacts').select('*').order('updated_at', { ascending: false }).limit(100);
+      var dbContacts = dbResp.data || [];
 
-      // Also get from latest marketing run output
-      const mktAgent = agents.find(a => a.slug === 'agent-marketing');
-      let runContacts = [];
+      var mktAgent = agents.find(function(a) { return a.slug === 'agent-marketing'; });
+      var runContacts = [];
       if (mktAgent) {
-        const { data: runs } = await sb.from('agent_runs').select('output')
+        var runsResp = await sb.from('agent_runs').select('output')
           .eq('agent_id', mktAgent.id).eq('status', 'completed')
           .order('started_at', { ascending: false }).limit(3);
-        (runs || []).forEach(r => {
-          const c = r.output?.output?.contacts?.new || [];
-          runContacts = runContacts.concat(c);
+        (runsResp.data || []).forEach(function(r) {
+          var c = (r.output && r.output.output && r.output.output.contacts && r.output.output.contacts.new) || [];
+          runContacts = runContacts.concat(c.map(function(x) { return Object.assign({}, x, { status: 'identified', source: 'agent' }); }));
         });
       }
 
-      const allContacts = (dbContacts || []).concat(
-        runContacts.map(c => ({ ...c, status: 'identified', source: 'agent' }))
-      );
+      var allContacts = dbContacts.concat(runContacts);
 
       if (allContacts.length === 0) {
-        container.innerHTML = '<p class="empty-state">Aucun contact pour le moment</p>';
+        container.innerHTML = '<p style="color:#52525b;font-size:0.85rem;text-align:center;padding:20px;">Aucun contact pour le moment</p>';
         return;
       }
 
-      const platformIcons = { instagram: '\u{1F4F7}', tiktok: '\u{1F3B5}', youtube: '\u{1F3AC}', email: '\u{1F4E7}', twitter: '\u{1F426}', reddit: '\u{1F4AC}' };
+      var platformIcons = { instagram: '\u{1F4F7}', tiktok: '\u{1F3B5}', youtube: '\u{1F3AC}', email: '\u{1F4E7}', twitter: '\u{1F426}', x: '\u{1D54F}', reddit: '\u{1F4AC}' };
+      var platformColors = { instagram: '#e1306c', tiktok: '#ff0050', youtube: '#ff0000', email: '#f59e0b', twitter: '#1da1f2', x: '#1da1f2', reddit: '#ff4500' };
+      var statusLabels = { identified: 'Identifi\u{00E9}', contacted: 'Contact\u{00E9}', replied: 'R\u{00E9}pondu', accepted: 'Accept\u{00E9}', declined: 'Refus\u{00E9}', ghosted: 'Sans r\u{00E9}ponse' };
+      var statusColors = { identified: '#4A90D9', contacted: '#f59e0b', replied: '#a78bfa', accepted: '#22c55e', declined: '#ef4444', ghosted: '#52525b' };
 
-      container.innerHTML = allContacts.map(c => {
-        const icon = platformIcons[c.platform] || '\u{1F464}';
-        const status = c.status || 'identified';
-        return `
-          <div class="contact-card">
-            <div class="contact-avatar">${icon}</div>
-            <div class="contact-info">
-              <div class="contact-name">${c.name || 'Inconnu'}</div>
-              <div class="contact-handle">${c.handle || c.platform || ''} ${c.followers ? '\u{2022} ' + c.followers + ' followers' : ''}</div>
-            </div>
-            <span class="contact-status-badge cs-${status}">${status}</span>
-          </div>
-        `;
+      // Group by status
+      var groups = { identified: [], contacted: [], replied: [], accepted: [], declined: [], ghosted: [] };
+      allContacts.forEach(function(c) {
+        var s = c.status || 'identified';
+        if (groups[s]) groups[s].push(c);
+        else groups.identified.push(c);
+      });
+
+      var html = '';
+
+      // Stats bar
+      var total = allContacts.length;
+      var contacted = groups.contacted.length + groups.replied.length + groups.accepted.length;
+      html += '<div style="display:flex;gap:16px;margin-bottom:20px;padding:14px 18px;background:linear-gradient(145deg,#141418,#111115);border:1px solid #27272a;border-radius:12px;flex-wrap:wrap;">';
+      html += '<div style="text-align:center;min-width:60px;"><div style="font-size:1.2rem;font-weight:700;color:#fafafa;">' + total + '</div><div style="font-size:0.62rem;color:#52525b;text-transform:uppercase;">Total</div></div>';
+      html += '<div style="width:1px;height:30px;background:#27272a;align-self:center;"></div>';
+      Object.keys(groups).forEach(function(s) {
+        if (groups[s].length === 0) return;
+        html += '<div style="text-align:center;min-width:60px;"><div style="font-size:1.1rem;font-weight:700;color:' + statusColors[s] + ';">' + groups[s].length + '</div><div style="font-size:0.62rem;color:#52525b;text-transform:uppercase;">' + (statusLabels[s] || s) + '</div></div>';
+      });
+      html += '</div>';
+
+      // Render each group
+      Object.keys(groups).forEach(function(status) {
+        var list = groups[status];
+        if (list.length === 0) return;
+
+        var sColor = statusColors[status] || '#71717a';
+        html += '<div style="margin-bottom:24px;">';
+        html += '<h3 style="font-size:0.88rem;color:' + sColor + ';margin-bottom:12px;display:flex;align-items:center;gap:8px;">';
+        html += '<span style="width:8px;height:8px;border-radius:50%;background:' + sColor + ';display:inline-block;"></span>';
+        html += (statusLabels[status] || status) + ' <span style="color:#52525b;font-weight:400;">(' + list.length + ')</span></h3>';
+
+        list.forEach(function(c) {
+          var pIcon = platformIcons[(c.platform || '').toLowerCase()] || '\u{1F464}';
+          var pColor = platformColors[(c.platform || '').toLowerCase()] || '#71717a';
+          var followers = c.followers ? (c.followers >= 1000 ? Math.round(c.followers / 1000) + 'K' : c.followers) : '';
+
+          html += '<div style="display:flex;align-items:center;gap:14px;padding:14px 16px;background:linear-gradient(145deg,#1e1e22,#18181b);border:1px solid #27272a;border-left:3px solid ' + pColor + ';border-radius:10px;margin-bottom:8px;">';
+
+          // Avatar
+          html += '<div style="width:42px;height:42px;border-radius:50%;background:' + pColor + '20;border:1px solid ' + pColor + '40;display:flex;align-items:center;justify-content:center;font-size:1.2rem;flex-shrink:0;">' + pIcon + '</div>';
+
+          // Info
+          html += '<div style="flex:1;min-width:0;">';
+          html += '<div style="font-weight:600;font-size:0.88rem;color:#fafafa;">' + (c.name || 'Inconnu') + '</div>';
+          html += '<div style="font-size:0.72rem;color:#71717a;margin-top:2px;">';
+          if (c.handle) html += c.handle + ' ';
+          if (c.platform) html += '<span style="font-size:0.62rem;padding:1px 6px;border-radius:3px;background:' + pColor + '15;color:' + pColor + ';margin-left:4px;">' + c.platform + '</span> ';
+          if (followers) html += '<span style="margin-left:4px;">' + followers + ' followers</span>';
+          html += '</div>';
+          if (c.niche) html += '<div style="font-size:0.68rem;color:#52525b;margin-top:2px;">' + c.niche + '</div>';
+          if (c.reason) html += '<div style="font-size:0.68rem;color:#4A90D9;margin-top:2px;">' + c.reason + '</div>';
+          html += '</div>';
+
+          // Status badge
+          html += '<span style="font-size:0.62rem;padding:3px 10px;border-radius:999px;background:' + sColor + '18;color:' + sColor + ';font-weight:600;white-space:nowrap;border:1px solid ' + sColor + '30;">' + (statusLabels[status] || status) + '</span>';
+
+          html += '</div>';
+        });
+
+        html += '</div>';
+      });
+
+      container.innerHTML = html;
       }).join('');
     }
 
