@@ -997,6 +997,12 @@
         <h2 style="font-size:1.1rem;color:#a78bfa;">Contacts Outreach</h2>
         <button class="btn-xs" onclick="exportContactsCSV()">Exporter CSV</button>
       </div>
+      <!-- Language sub-tabs -->
+      <div style="display:flex;gap:0;margin-bottom:20px;border-bottom:1px solid #27272a;">
+        <button style="padding:8px 20px;font-size:0.82rem;font-weight:600;color:#fafafa;background:none;border:none;border-bottom:2px solid #a78bfa;cursor:pointer;" onclick="switchContactLang('fr', this)" id="contact-tab-fr">&#x1F1EB;&#x1F1F7; Fran&ccedil;ais</button>
+        <button style="padding:8px 20px;font-size:0.82rem;font-weight:500;color:#52525b;background:none;border:none;border-bottom:2px solid transparent;cursor:pointer;" onclick="switchContactLang('en', this)" id="contact-tab-en">&#x1F1EC;&#x1F1E7; English</button>
+        <button style="padding:8px 20px;font-size:0.82rem;font-weight:500;color:#52525b;background:none;border:none;border-bottom:2px solid transparent;cursor:pointer;" onclick="switchContactLang('de', this)" id="contact-tab-de">&#x1F1E9;&#x1F1EA; Deutsch</button>
+      </div>
       <div id="contacts-list"><p class="empty-state">Chargement...</p></div>
     </div>
 
@@ -2091,6 +2097,21 @@
     }
 
     // ─── Contacts View ──────────────────────────
+    var currentContactLang = 'fr';
+
+    function switchContactLang(lang, btn) {
+      currentContactLang = lang;
+      ['fr', 'en', 'de'].forEach(function(l) {
+        var tabBtn = document.getElementById('contact-tab-' + l);
+        if (tabBtn) {
+          tabBtn.style.color = l === lang ? '#fafafa' : '#52525b';
+          tabBtn.style.fontWeight = l === lang ? '600' : '500';
+          tabBtn.style.borderBottomColor = l === lang ? '#a78bfa' : 'transparent';
+        }
+      });
+      loadContactsView();
+    }
+
     function copyToClipboard(text, btnEl) {
       navigator.clipboard.writeText(text).then(function() {
         var orig = btnEl.textContent;
@@ -2117,11 +2138,12 @@
       var container = document.getElementById('contacts-list');
       container.innerHTML = '<p style="color:#52525b;font-size:0.85rem;">Chargement...</p>';
 
-      var dbResp = await sb.from('outreach_contacts').select('*').order('updated_at', { ascending: false }).limit(200);
+      var dbResp = await sb.from('outreach_contacts').select('*').eq('language', currentContactLang).order('updated_at', { ascending: false }).limit(200);
       var allContacts = dbResp.data || [];
 
       if (allContacts.length === 0) {
-        container.innerHTML = '<p style="color:#52525b;font-size:0.85rem;text-align:center;padding:20px;">Aucun contact pour le moment. Lance l\'agent marketing pour en trouver.</p>';
+        var langLabels = { fr: 'francophone', en: 'anglophone', de: 'germanophone' };
+        container.innerHTML = '<p style="color:#52525b;font-size:0.85rem;text-align:center;padding:20px;">Aucun contact ' + (langLabels[currentContactLang] || '') + ' pour le moment. Lance l\'agent marketing pour en trouver.</p>';
         return;
       }
 
