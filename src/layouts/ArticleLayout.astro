@@ -136,6 +136,17 @@ const guidePrefixes = { fr: '/guides/', en: '/en/guides/', de: '/de/ratgeber/' }
       .final-cta p { color: var(--text-secondary); font-size: 1.1rem; max-width: 500px; margin: 0 auto 2.5rem; }
       .back { display: inline-block; margin-top: 2rem; color: var(--text-secondary); text-decoration: none; font-size: 0.9rem; }
       .back:hover { color: var(--text); }
+      /* Share bar */
+      .share-bar { display: flex; justify-content: center; gap: 0.5rem; margin-top: 1.25rem; }
+      .share-btn { display: flex; align-items: center; justify-content: center; width: 40px; height: 40px; border-radius: 10px; border: 1px solid var(--border); background: var(--bg-card); color: var(--text-muted); cursor: pointer; transition: all 0.2s; text-decoration: none; }
+      .share-btn:hover { border-color: var(--blue); transform: translateY(-2px); }
+      .share-btn.share-x:hover { color: var(--text); }
+      .share-btn.share-fb:hover { color: #1877F2; }
+      .share-btn.share-li:hover { color: #0A66C2; }
+      .share-btn.share-copy:hover { color: var(--blue); }
+      .share-btn.share-copy.copied { color: #22c55e; border-color: #22c55e; }
+      .share-btn svg { width: 18px; height: 18px; }
+      @media (prefers-color-scheme: dark) { .share-btn.share-x:hover { color: #fff; } }
       .article-faq { margin-top: 2.5rem; }
       .article-faq h2 { font-size: 1.5rem; font-weight: 800; margin-bottom: 1rem; color: var(--text); text-transform: uppercase; letter-spacing: 0.02em; }
       .faq-list { display: flex; flex-direction: column; gap: 0; }
@@ -183,6 +194,20 @@ const guidePrefixes = { fr: '/guides/', en: '/en/guides/', de: '/de/ratgeber/' }
     {tag && <span class="tag">{tag}</span>}
     <h1>{title}</h1>
     {date && <p class="meta">{date}{readTime ? ` · ${readTime}` : ''}</p>}
+    <div class="share-bar" id="share-bar">
+      <a class="share-btn share-x" id="share-x" href="#" target="_blank" rel="noopener" title="X / Twitter">
+        <svg viewBox="0 0 24 24" fill="currentColor"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
+      </a>
+      <a class="share-btn share-fb" id="share-fb" href="#" target="_blank" rel="noopener" title="Facebook">
+        <svg viewBox="0 0 24 24" fill="currentColor"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg>
+      </a>
+      <a class="share-btn share-li" id="share-li" href="#" target="_blank" rel="noopener" title="LinkedIn">
+        <svg viewBox="0 0 24 24" fill="currentColor"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 01-2.063-2.065 2.064 2.064 0 112.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
+      </a>
+      <button class="share-btn share-copy" id="share-copy" title="Copier le lien">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"/><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"/></svg>
+      </button>
+    </div>
   </header>
 
   {image && image !== '/og-image.png' && (
@@ -288,6 +313,25 @@ const guidePrefixes = { fr: '/guides/', en: '/en/guides/', de: '/de/ratgeber/' }
         setTimeout(function() { cp.style.color = ''; cp.style.borderColor = ''; }, 2000);
       });
     }
+
+    // Share buttons
+    (function() {
+      var url = encodeURIComponent(window.location.href);
+      var title = encodeURIComponent(document.title);
+      var xBtn = document.getElementById('share-x');
+      var fbBtn = document.getElementById('share-fb');
+      var liBtn = document.getElementById('share-li');
+      var copyBtn = document.getElementById('share-copy');
+      if (xBtn) xBtn.href = 'https://x.com/intent/tweet?text=' + title + '&url=' + url;
+      if (fbBtn) fbBtn.href = 'https://www.facebook.com/sharer/sharer.php?u=' + url;
+      if (liBtn) liBtn.href = 'https://www.linkedin.com/sharing/share-offsite/?url=' + url;
+      if (copyBtn) copyBtn.addEventListener('click', function() {
+        navigator.clipboard.writeText(window.location.href).then(function() {
+          copyBtn.classList.add('copied');
+          setTimeout(function() { copyBtn.classList.remove('copied'); }, 2000);
+        });
+      });
+    })();
 
     // Reading progress bar (GPU-accelerated with scaleX)
     var bar = document.getElementById('readingProgress');
