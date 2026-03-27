@@ -942,6 +942,7 @@
     <!-- Global Views Nav -->
     <div class="views-nav">
       <button class="view-tab active" onclick="switchGlobalView('agents', this)">Agents</button>
+      <button class="view-tab" onclick="switchGlobalView('analyse', this)">Analyse</button>
       <button class="view-tab" onclick="switchGlobalView('archi', this)">Architecture</button>
       <button class="view-tab" onclick="switchGlobalView('bugs', this)">Bugs <span class="badge" id="bugs-count" style="display:none">0</span></button>
       <button class="view-tab" onclick="switchGlobalView('contacts', this)">Contacts</button>
@@ -977,6 +978,12 @@
   </div>
 
     </div><!-- /view-agents -->
+
+    <!-- Analyse view -->
+    <div id="view-analyse" class="global-view">
+      <h2 style="font-size:1.1rem;color:#a78bfa;margin-bottom:16px;">Analyse &amp; KPIs</h2>
+      <div id="analyse-content"><p class="empty-state">Chargement...</p></div>
+    </div>
 
     <!-- Architecture view -->
     <div id="view-archi" class="global-view">
@@ -2028,14 +2035,191 @@
     function switchGlobalView(view, btn) {
       document.querySelectorAll('.view-tab').forEach(t => t.classList.remove('active'));
       btn.classList.add('active');
-      ['agents', 'archi', 'bugs', 'contacts', 'content'].forEach(v => {
+      ['agents', 'analyse', 'archi', 'bugs', 'contacts', 'content'].forEach(v => {
         const el = document.getElementById('view-' + v);
         if (el) { el.style.display = v === view ? 'block' : 'none'; el.classList.toggle('active', v === view); }
       });
+      if (view === 'analyse') loadAnalyseView();
       if (view === 'archi') { if (!archiRendered) renderArchitecture(); updateArchiHealth(); }
       if (view === 'bugs') { loadBugsView(); loadExecResults(); }
       if (view === 'contacts') loadContactsView();
       if (view === 'content') loadContentView();
+    }
+
+    // ─── Analyse View ─────────────────────────────
+    async function loadAnalyseView() {
+      var container = document.getElementById('analyse-content');
+      container.innerHTML = '<p style="color:#52525b;font-size:0.85rem;">Chargement des rapports...</p>';
+
+      var analyseAgent = agents.find(function(a) { return a.slug === 'agent-analyse'; });
+      if (!analyseAgent) { container.innerHTML = '<p class="empty-state">Agent Analyse non trouve</p>'; return; }
+
+      var runsResp = await sb.from('agent_runs').select('output,started_at')
+        .eq('agent_id', analyseAgent.id).eq('status', 'completed')
+        .order('started_at', { ascending: false }).limit(10);
+      var runs = (runsResp.data || []).filter(function(r) { return r.output && (r.output.output || r.output.metrics); });
+
+      if (runs.length === 0) { container.innerHTML = '<p class="empty-state">Aucun rapport disponible. Lance l\'agent analyse.</p>'; return; }
+
+      var latest = runs[0].output.output || runs[0].output;
+      var metrics = latest.metrics || {};
+      var anomalies = latest.anomalies || [];
+      var recommendations = latest.recommendations || [];
+      var highlights = latest.highlights || [];
+      var reportDate = latest.report_date || runs[0].started_at.split('T')[0];
+
+      var html = '';
+
+      // ─── Report date
+      html += '<div style="font-size:0.72rem;color:#52525b;margin-bottom:16px;">Dernier rapport : ' + reportDate + ' \u{2022} ' + (latest.period || '7 derniers jours') + '</div>';
+
+      // ─── Highlights
+      if (highlights.length > 0) {
+        html += '<div style="background:linear-gradient(145deg,#1e1e22,#18181b);border:1px solid #27272a;border-radius:12px;padding:14px 18px;margin-bottom:20px;">';
+        html += '<div style="font-size:0.72rem;color:#a78bfa;font-weight:600;margin-bottom:8px;">\u{1F4CB} Points cles</div>';
+        highlights.forEach(function(h) {
+          html += '<div style="font-size:0.78rem;color:#d4d4d8;padding:4px 0;border-bottom:1px solid #1a1a1e;">\u{2022} ' + escHtml(h) + '</div>';
+        });
+        html += '</div>';
+      }
+
+      // ─── KPI Cards
+      var dau = metrics.dau || {};
+      var trendIcon = { up: '\u{2197}\u{FE0F}', down: '\u{2198}\u{FE0F}', stable: '\u{2796}', unstable: '\u{26A0}\u{FE0F}' };
+      var kpis = [
+        { label: 'DAU', value: dau.current || '-', trend: dau.trend, color: '#4A90D9' },
+        { label: 'Users 7j', value: metrics.unique_users_7d || '-', color: '#a78bfa' },
+        { label: 'Total users', value: metrics.total_users || '-', color: '#22c55e' },
+        { label: 'New users 7j', value: metrics.new_users_7d || '-', color: '#f59e0b' },
+        { label: 'Events 7j', value: metrics.total_events || '-', color: '#ec4899' },
+        { label: 'Erreurs', value: (metrics.errors || {}).total || '0', color: ((metrics.errors || {}).total || 0) > 0 ? '#ef4444' : '#22c55e' },
+      ];
+
+      html += '<div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(130px,1fr));gap:10px;margin-bottom:24px;">';
+      kpis.forEach(function(k) {
+        html += '<div style="background:linear-gradient(145deg,#1e1e22,#18181b);border:1px solid #27272a;border-top:3px solid ' + k.color + ';border-radius:10px;padding:14px 16px;text-align:center;">';
+        html += '<div style="font-size:1.4rem;font-weight:700;color:#fafafa;">' + k.value + '</div>';
+        html += '<div style="font-size:0.65rem;color:#52525b;text-transform:uppercase;margin-top:2px;">' + k.label + '</div>';
+        if (k.trend) html += '<div style="font-size:0.68rem;color:#71717a;margin-top:2px;">' + (trendIcon[k.trend] || '') + ' ' + k.trend + '</div>';
+        html += '</div>';
+      });
+      html += '</div>';
+
+      // ─── DAU Chart (SVG bar chart)
+      var dauValues = (dau.values_by_day || []);
+      if (dauValues.length > 0) {
+        var maxVal = Math.max.apply(null, dauValues.map(function(d) { return d.value || 0; }));
+        if (maxVal === 0) maxVal = 1;
+        var chartW = 700, chartH = 160, barW = Math.min(40, (chartW - 40) / dauValues.length - 6);
+        var startX = 40;
+
+        html += '<div style="background:linear-gradient(145deg,#1e1e22,#18181b);border:1px solid #27272a;border-radius:12px;padding:16px;margin-bottom:20px;">';
+        html += '<div style="font-size:0.72rem;color:#4A90D9;font-weight:600;margin-bottom:10px;">\u{1F4C8} DAU (utilisateurs actifs par jour)</div>';
+        html += '<svg viewBox="0 0 ' + chartW + ' ' + (chartH + 30) + '" style="width:100%;max-width:700px;">';
+        // Grid lines
+        for (var gi = 0; gi <= 4; gi++) {
+          var gy = chartH - (gi / 4) * chartH;
+          var gv = Math.round(maxVal * gi / 4);
+          html += '<line x1="35" y1="' + gy + '" x2="' + chartW + '" y2="' + gy + '" stroke="#27272a" stroke-width="0.5"/>';
+          html += '<text x="30" y="' + (gy + 3) + '" text-anchor="end" font-family="Inter" font-size="8" fill="#52525b">' + gv + '</text>';
+        }
+        dauValues.forEach(function(d, i) {
+          var bh = (d.value / maxVal) * chartH;
+          var bx = startX + i * ((chartW - startX) / dauValues.length) + 4;
+          var by = chartH - bh;
+          var dayLabel = (d.date || '').slice(5);
+          var barColor = d.value >= (dau.current || 0) ? '#4A90D9' : '#4A90D980';
+          html += '<rect x="' + bx + '" y="' + by + '" width="' + barW + '" height="' + bh + '" rx="3" fill="' + barColor + '"/>';
+          html += '<text x="' + (bx + barW/2) + '" y="' + (by - 4) + '" text-anchor="middle" font-family="Inter" font-size="8" fill="#a1a1aa" font-weight="600">' + d.value + '</text>';
+          html += '<text x="' + (bx + barW/2) + '" y="' + (chartH + 14) + '" text-anchor="middle" font-family="Inter" font-size="7" fill="#52525b">' + dayLabel + '</text>';
+        });
+        html += '</svg></div>';
+      }
+
+      // ─── Top Events (horizontal bar chart)
+      var topEvents = (metrics.top_events || []).slice(0, 10);
+      if (topEvents.length > 0) {
+        var maxEv = topEvents[0].count || 1;
+        html += '<div style="background:linear-gradient(145deg,#1e1e22,#18181b);border:1px solid #27272a;border-radius:12px;padding:16px;margin-bottom:20px;">';
+        html += '<div style="font-size:0.72rem;color:#ec4899;font-weight:600;margin-bottom:10px;">\u{1F525} Top Events (7j)</div>';
+        topEvents.forEach(function(ev) {
+          var pct = Math.round((ev.count / maxEv) * 100);
+          html += '<div style="display:flex;align-items:center;gap:10px;margin-bottom:6px;">';
+          html += '<div style="width:160px;font-size:0.7rem;color:#d4d4d8;text-align:right;flex-shrink:0;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;">' + escHtml(ev.event) + '</div>';
+          html += '<div style="flex:1;height:18px;background:#111115;border-radius:4px;overflow:hidden;">';
+          html += '<div style="height:100%;width:' + pct + '%;background:linear-gradient(90deg,#ec489940,#ec489980);border-radius:4px;"></div>';
+          html += '</div>';
+          html += '<div style="width:35px;font-size:0.68rem;color:#a1a1aa;font-weight:600;">' + ev.count + '</div>';
+          html += '</div>';
+        });
+        html += '</div>';
+      }
+
+      // ─── Engagement Ratios
+      var ratios = metrics.engagement_ratios || {};
+      if (Object.keys(ratios).length > 0) {
+        html += '<div style="background:linear-gradient(145deg,#1e1e22,#18181b);border:1px solid #27272a;border-radius:12px;padding:16px;margin-bottom:20px;">';
+        html += '<div style="font-size:0.72rem;color:#22c55e;font-weight:600;margin-bottom:10px;">\u{1F3AF} Engagement</div>';
+        Object.keys(ratios).forEach(function(key) {
+          var label = key.replace(/_/g, ' ').replace(/\b\w/g, function(l) { return l.toUpperCase(); });
+          html += '<div style="display:flex;justify-content:space-between;padding:6px 0;border-bottom:1px solid #1a1a1e;">';
+          html += '<span style="font-size:0.72rem;color:#a1a1aa;">' + label + '</span>';
+          html += '<span style="font-size:0.72rem;color:#d4d4d8;font-weight:600;">' + escHtml(String(ratios[key])) + '</span>';
+          html += '</div>';
+        });
+        html += '</div>';
+      }
+
+      // ─── Anomalies
+      if (anomalies.length > 0) {
+        html += '<div style="background:linear-gradient(145deg,#1e1e22,#18181b);border:1px solid #27272a;border-radius:12px;padding:16px;margin-bottom:20px;">';
+        html += '<div style="font-size:0.72rem;color:#ef4444;font-weight:600;margin-bottom:10px;">\u{26A0}\u{FE0F} Anomalies</div>';
+        anomalies.forEach(function(a) {
+          var sevColor = a.severity === '\u{1F534}' ? '#ef4444' : a.severity === '\u{1F7E1}' ? '#f59e0b' : '#22c55e';
+          html += '<div style="display:flex;align-items:flex-start;gap:10px;padding:8px 0;border-bottom:1px solid #1a1a1e;">';
+          html += '<span style="font-size:0.9rem;">' + (a.severity || '\u{1F7E1}') + '</span>';
+          html += '<div><div style="font-size:0.75rem;color:#fafafa;font-weight:600;">' + escHtml(a.metric) + '</div>';
+          html += '<div style="font-size:0.7rem;color:#a1a1aa;margin-top:2px;">' + escHtml(a.description) + '</div></div>';
+          html += '</div>';
+        });
+        html += '</div>';
+      }
+
+      // ─── Recommendations
+      if (recommendations.length > 0) {
+        var priColors = { high: '#ef4444', medium: '#f59e0b', low: '#22c55e' };
+        html += '<div style="background:linear-gradient(145deg,#1e1e22,#18181b);border:1px solid #27272a;border-radius:12px;padding:16px;margin-bottom:20px;">';
+        html += '<div style="font-size:0.72rem;color:#f59e0b;font-weight:600;margin-bottom:10px;">\u{1F4A1} Recommandations</div>';
+        recommendations.forEach(function(r) {
+          var pc = priColors[r.priority] || '#71717a';
+          html += '<div style="display:flex;align-items:flex-start;gap:10px;padding:8px 0;border-bottom:1px solid #1a1a1e;">';
+          html += '<span style="font-size:0.58rem;padding:2px 6px;border-radius:4px;background:' + pc + '20;color:' + pc + ';border:1px solid ' + pc + '30;font-weight:600;text-transform:uppercase;white-space:nowrap;">' + (r.priority || 'medium') + '</span>';
+          html += '<div><div style="font-size:0.72rem;color:#d4d4d8;">' + escHtml(r.action) + '</div>';
+          if (r.expected_impact) html += '<div style="font-size:0.65rem;color:#52525b;margin-top:2px;">Impact: ' + escHtml(r.expected_impact) + '</div>';
+          html += '</div></div>';
+        });
+        html += '</div>';
+      }
+
+      // ─── History (list previous reports)
+      if (runs.length > 1) {
+        html += '<div style="background:linear-gradient(145deg,#1e1e22,#18181b);border:1px solid #27272a;border-radius:12px;padding:16px;">';
+        html += '<div style="font-size:0.72rem;color:#52525b;font-weight:600;margin-bottom:10px;">\u{1F4C5} Historique des rapports</div>';
+        runs.forEach(function(r, i) {
+          var ro = r.output.output || r.output;
+          var date = r.started_at.split('T')[0];
+          var hl = (ro.highlights || [])[0] || 'Rapport disponible';
+          var isCurrent = i === 0;
+          html += '<div style="display:flex;align-items:center;gap:10px;padding:6px 0;border-bottom:1px solid #1a1a1e;opacity:' + (isCurrent ? '1' : '0.6') + ';">';
+          html += '<span style="font-size:0.68rem;color:#71717a;width:75px;flex-shrink:0;">' + date + '</span>';
+          html += '<span style="font-size:0.68rem;color:#a1a1aa;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;">' + escHtml(hl) + '</span>';
+          if (isCurrent) html += '<span style="font-size:0.55rem;padding:1px 6px;border-radius:3px;background:#4A90D920;color:#4A90D9;flex-shrink:0;">Actuel</span>';
+          html += '</div>';
+        });
+        html += '</div>';
+      }
+
+      container.innerHTML = html;
     }
 
     // ─── Bugs View ──────────────────────────────
