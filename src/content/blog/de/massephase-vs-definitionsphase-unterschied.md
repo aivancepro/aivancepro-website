@@ -1,5 +1,5 @@
 ---
-title: "Massephase vs. Definitionsphase: Den Unterschied verstehen für optimale Ergebnisse"
+title: "Massephase vs. Definitionsphase: Unterschied verstehen"
 description: "Erfahren Sie den Unterschied zwischen Massephase und Definitionsphase im Krafttraining. Ernährung, Training und Timing-Strategien für Ihre Körpertransformation."
 date: "2026-03-28"
 dateModified: "2026-03-28"

@@ -1,6 +1,6 @@
 ---
-title: "Prise de Masse ou Sèche : Comprendre la Différence pour Progresser"
-description: "Découvre la différence entre prise de masse et sèche en musculation. Objectifs, alimentation, entraînement : tout ce qu'il faut savoir pour choisir la bonne phase."
+title: "Prise de Masse ou Sèche : Comprendre la Différence"
+description: "Découvre la différence entre prise de masse et sèche en musculation. Objectifs, alimentation et entraînement pour choisir la bonne phase."
 date: "2026-03-28"
 dateModified: "2026-03-28"
 readTime: "9 min de lecture"
