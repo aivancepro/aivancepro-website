@@ -27,27 +27,49 @@ const jsonLd = {
   jsonLd={jsonLd}
 >
   <Fragment slot="head">
-    <link rel="preload" as="image" type="image/avif" imagesrcset="/assets/screenshots/fr/hero-phone-center-small.avif 250w, /assets/screenshots/fr/hero-phone-center.avif 500w" imagesizes="(max-width: 768px) 160px, 280px">
+    <link rel="preload" as="image" type="image/avif" imagesrcset="/assets/screenshots/en/hero-phone-center-small.avif 250w, /assets/screenshots/en/hero-phone-center.avif 500w" imagesizes="(max-width: 768px) 160px, 280px">
     <meta name="keywords" content="AI fitness coach, workout app, personalized training program, fitness progress tracking, virtual personal trainer, beginner weight training, fitness exercises, home gym, home workout, artificial intelligence sport">
     <style>
         /* ===== HERO ===== */
         .hero {
             padding: 10rem 2rem 6rem;
-            background: #08080e;
+            background: #050a14;
             position: relative;
             overflow: hidden;
         }
 
+        /* Animated gradient mesh */
         .hero::before {
             content: '';
             position: absolute;
             top: -50%;
-            left: -20%;
-            width: 140%;
-            height: 100%;
-            background: radial-gradient(ellipse at 30% 50%, rgba(74, 144, 217, 0.12) 0%, transparent 50%),
-                        radial-gradient(ellipse at 70% 50%, rgba(74, 144, 217, 0.10) 0%, transparent 50%);
+            left: -30%;
+            width: 160%;
+            height: 150%;
+            background:
+                radial-gradient(ellipse 600px 400px at 20% 50%, rgba(74, 144, 217, 0.18) 0%, transparent 70%),
+                radial-gradient(ellipse 500px 350px at 75% 30%, rgba(99, 102, 241, 0.12) 0%, transparent 70%),
+                radial-gradient(ellipse 400px 300px at 50% 80%, rgba(74, 144, 217, 0.08) 0%, transparent 70%),
+                radial-gradient(ellipse 300px 300px at 85% 70%, rgba(139, 92, 246, 0.06) 0%, transparent 70%);
             pointer-events: none;
+            animation: heroMesh 12s ease-in-out infinite alternate;
+        }
+
+        @keyframes heroMesh {
+            0% { transform: translate(0, 0) scale(1); }
+            33% { transform: translate(2%, -1%) scale(1.02); }
+            66% { transform: translate(-1%, 2%) scale(0.98); }
+            100% { transform: translate(1%, -2%) scale(1.01); }
+        }
+
+        .hero::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            height: 1px;
+            background: linear-gradient(90deg, transparent, rgba(74, 144, 217, 0.3), transparent);
         }
 
         .hero-content {
@@ -70,19 +92,19 @@ const jsonLd = {
             align-items: center;
             gap: 0.5rem;
             padding: 0.4rem 1rem;
-            background: linear-gradient(135deg, rgba(74, 144, 217, 0.2), rgba(74, 144, 217, 0.2));
-            border: 1px solid rgba(74, 144, 217, 0.3);
+            background: rgba(74, 144, 217, 0.08);
+            border: 1px solid rgba(74, 144, 217, 0.2);
             border-radius: 50px;
-            font-size: 0.8rem;
+            font-size: 0.78rem;
             font-weight: 600;
-            color: var(--blue);
+            color: var(--blue-light);
             margin-bottom: 1.5rem;
+            letter-spacing: 0.02em;
         }
 
         .hero h1 {
-            font-size: 3.5rem;
-            font-weight: 900;
-            font-style: normal;
+            font-size: 3.4rem;
+            font-weight: 700;
             line-height: 1.08;
             letter-spacing: -0.03em;
             color: var(--gray-900);
@@ -94,9 +116,8 @@ const jsonLd = {
         }
 
         .hero p {
-            font-size: 1.2rem;
+            font-size: 1.1rem;
             color: var(--gray-500);
-            max-width: 480px;
             margin: 0 0 2rem;
             line-height: 1.7;
         }
@@ -119,33 +140,35 @@ const jsonLd = {
             font-weight: 600;
             padding: 0.875rem 2rem;
             border-radius: 12px;
-            transition: opacity 0.2s, transform 0.2s;
-            box-shadow: 0 4px 15px rgba(74, 144, 217, 0.3);
+            transition: opacity 0.2s, transform 0.2s, box-shadow 0.3s;
+            box-shadow: 0 4px 20px rgba(74, 144, 217, 0.3);
         }
 
         .btn-primary:hover {
             opacity: 0.92;
             transform: translateY(-2px);
-            box-shadow: 0 8px 25px rgba(74, 144, 217, 0.35);
+            box-shadow: 0 8px 30px rgba(74, 144, 217, 0.45);
         }
 
         .btn-secondary {
             display: inline-flex;
             align-items: center;
             gap: 0.5rem;
-            background: var(--bg-card);
+            background: rgba(255, 255, 255, 0.04);
             color: var(--text);
             text-decoration: none;
             font-size: 1rem;
             font-weight: 600;
             padding: 0.875rem 2rem;
             border-radius: 12px;
-            border: 1px solid var(--border-light);
+            border: 1px solid rgba(255, 255, 255, 0.08);
             transition: all 0.2s;
+            backdrop-filter: blur(8px);
         }
 
         .btn-secondary:hover {
-            border-color: var(--gray-400);
+            border-color: rgba(255, 255, 255, 0.16);
+            background: rgba(255, 255, 255, 0.07);
             transform: translateY(-2px);
             box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
         }
@@ -157,14 +180,34 @@ const jsonLd = {
 
         .hero-phones {
             position: relative;
-            height: 520px;
+            height: 580px;
+        }
+
+        .hero-phones::before {
+            content: '';
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 500px;
+            height: 500px;
+            background: radial-gradient(circle, rgba(74, 144, 217, 0.2) 0%, rgba(99, 102, 241, 0.08) 40%, transparent 70%);
+            pointer-events: none;
+            z-index: 0;
+            animation: phoneGlow 6s ease-in-out infinite alternate;
+        }
+
+        @keyframes phoneGlow {
+            0% { opacity: 0.8; transform: translate(-50%, -50%) scale(1); }
+            100% { opacity: 1; transform: translate(-50%, -50%) scale(1.08); }
         }
 
         .hero-phones .phone {
             position: absolute;
-            width: 220px;
+            width: 260px;
             height: auto;
             transition: transform 0.4s ease;
+            filter: drop-shadow(0 20px 50px rgba(0, 0, 0, 0.5)) drop-shadow(0 0 30px rgba(74, 144, 217, 0.08));
         }
 
         .hero-phones .phone-center {
@@ -172,7 +215,7 @@ const jsonLd = {
             transform: translateX(-50%);
             top: 0;
             z-index: 3;
-            width: 240px;
+            width: 280px;
         }
 
         .hero-phones .phone-center:hover {
@@ -207,7 +250,7 @@ const jsonLd = {
         .social-proof {
             padding: 3rem 2rem;
             background: var(--bg-alt);
-
+            border-bottom: 1px solid rgba(255, 255, 255, 0.04);
         }
 
         .social-proof-inner {
@@ -243,8 +286,10 @@ const jsonLd = {
         /* ===== FEATURES ===== */
         .features {
             padding: 7rem 2rem;
-            background: var(--bg-card);
+            background: var(--bg-alt);
+            position: relative;
         }
+
 
         .section-inner {
             max-width: 1100px;
@@ -323,10 +368,10 @@ const jsonLd = {
 
         .feature-card {
             padding: 2rem 2.25rem;
-            border-radius: 20px;
-            border: 1px solid var(--border);
-            background: var(--bg-elevated);
-            transition: box-shadow 0.4s, transform 0.4s, border-color 0.4s;
+            border-radius: 16px;
+            border: 1px solid rgba(255, 255, 255, 0.06);
+            background: rgba(255, 255, 255, 0.02);
+            transition: border-color 0.4s, background 0.4s;
             position: relative;
             overflow: hidden;
         }
@@ -344,38 +389,38 @@ const jsonLd = {
         .feature-card::after {
             content: '';
             position: absolute;
-            top: 0; right: 0; bottom: 0; left: 0;
-            border-radius: 20px;
+            top: 0;
+            right: 0;
+            bottom: 0;
+            left: 0;
+            border-radius: 16px;
             opacity: 0;
             transition: opacity 0.4s;
             pointer-events: none;
         }
 
         .feature-card:hover {
-            transform: translateY(-5px);
-            border-color: var(--border-light);
+            border-color: rgba(255, 255, 255, 0.12);
+            background: rgba(255, 255, 255, 0.04);
         }
 
-        .feature-card:hover::after { opacity: 1; }
-
+        /* Card accent colors */
         .feature-card:nth-child(1)::before { background: linear-gradient(180deg, #4A90D9, #5BA0E9); }
         .feature-card:nth-child(2)::before { background: linear-gradient(180deg, #4A90D9, #5BA0E9); }
         .feature-card:nth-child(3)::before { background: linear-gradient(180deg, #10B981, #34D399); }
         .feature-card:nth-child(4)::before { background: linear-gradient(180deg, #F59E0B, #FBBF24); }
         .feature-card:nth-child(5)::before { background: linear-gradient(180deg, #EF4444, #F87171); }
-
+        /* Hover glow per card */
         .feature-card:nth-child(1) { box-shadow: inset 0 0 40px rgba(74, 144, 217, 0.04); }
         .feature-card:nth-child(2) { box-shadow: inset 0 0 40px rgba(74, 144, 217, 0.04); }
         .feature-card:nth-child(3) { box-shadow: inset 0 0 40px rgba(16, 185, 129, 0.04); }
         .feature-card:nth-child(4) { box-shadow: inset 0 0 40px rgba(245, 158, 11, 0.04); }
         .feature-card:nth-child(5) { box-shadow: inset 0 0 40px rgba(239, 68, 68, 0.04); }
-
         .feature-card:nth-child(1):hover { box-shadow: 0 12px 32px rgba(74, 144, 217, 0.15), inset 0 0 60px rgba(74, 144, 217, 0.06); }
         .feature-card:nth-child(2):hover { box-shadow: 0 12px 32px rgba(74, 144, 217, 0.15), inset 0 0 60px rgba(74, 144, 217, 0.06); }
         .feature-card:nth-child(3):hover { box-shadow: 0 12px 32px rgba(16, 185, 129, 0.15), inset 0 0 60px rgba(16, 185, 129, 0.06); }
         .feature-card:nth-child(4):hover { box-shadow: 0 12px 32px rgba(245, 158, 11, 0.15), inset 0 0 60px rgba(245, 158, 11, 0.06); }
         .feature-card:nth-child(5):hover { box-shadow: 0 12px 32px rgba(239, 68, 68, 0.15), inset 0 0 60px rgba(239, 68, 68, 0.06); }
-
         .feature-icon {
             margin-bottom: 1.25rem;
             line-height: 0;
@@ -388,7 +433,7 @@ const jsonLd = {
 
         .feature-card h3 {
             font-size: 1.15rem;
-            font-weight: 800;
+            font-weight: 700;
             color: var(--gray-900);
             margin-bottom: 0.5rem;
         }
@@ -402,6 +447,7 @@ const jsonLd = {
         /* ===== SHOWCASE SECTION (alternating) ===== */
         .showcase {
             padding: 6rem 2rem;
+            position: relative;
         }
 
         .showcase:nth-child(even) {
@@ -426,13 +472,12 @@ const jsonLd = {
         }
 
         .showcase-text h2 {
-            font-size: 2.6rem;
-            font-weight: 900;
-            font-style: normal;
-            letter-spacing: -0.02em;
+            font-size: 2.8rem;
+            font-weight: 700;
+            letter-spacing: -0.03em;
             color: var(--gray-900);
             margin-bottom: 1rem;
-            line-height: 1.15;
+            line-height: 1.1;
         }
 
         .showcase-text p {
@@ -440,7 +485,6 @@ const jsonLd = {
             color: var(--gray-500);
             line-height: 1.7;
             margin-bottom: 1.75rem;
-            max-width: 480px;
         }
 
         .showcase-list {
@@ -474,12 +518,33 @@ const jsonLd = {
         .showcase-image {
             display: flex;
             justify-content: center;
+            position: relative;
+        }
+
+        .showcase-image::before {
+            content: '';
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 400px;
+            height: 400px;
+            background: radial-gradient(circle, rgba(74, 144, 217, 0.18) 0%, rgba(99, 102, 241, 0.06) 40%, transparent 70%);
+            pointer-events: none;
+            animation: showcaseGlow 5s ease-in-out infinite alternate;
+        }
+
+        @keyframes showcaseGlow {
+            0% { opacity: 0.7; transform: translate(-50%, -50%) scale(1); }
+            100% { opacity: 1; transform: translate(-50%, -50%) scale(1.1); }
         }
 
         .showcase-image .phone-mockup {
-            width: 300px;
+            width: 340px;
             height: auto;
             transition: transform 0.4s ease;
+            filter: drop-shadow(0 20px 50px rgba(0, 0, 0, 0.45)) drop-shadow(0 0 40px rgba(74, 144, 217, 0.08));
+            position: relative;
         }
 
         .showcase-image .phone-mockup:hover {
@@ -487,7 +552,7 @@ const jsonLd = {
         }
 
         .showcase-image .img-placeholder {
-            width: 300px;
+            width: 340px;
             height: 600px;
             border-radius: 32px;
         }
@@ -495,34 +560,40 @@ const jsonLd = {
         /* ===== PRICING ===== */
         .pricing {
             padding: 7rem 2rem;
-            background: var(--bg-alt);
+            background: var(--bg);
+            position: relative;
         }
+
 
         .pricing-grid {
             max-width: 1100px;
             margin: 0 auto;
             display: grid;
-            grid-template-columns: repeat(3, 1fr);
+            grid-template-columns: repeat(2, 1fr);
             gap: 2rem;
         }
 
         .pricing-card {
-            background: var(--bg-card);
-            border: 1px solid var(--border);
+            background: rgba(255, 255, 255, 0.03);
+            border: 1px solid rgba(255, 255, 255, 0.06);
             border-radius: 20px;
             padding: 2.5rem;
             position: relative;
-            transition: transform 0.2s, box-shadow 0.2s;
+            transition: transform 0.3s, box-shadow 0.3s, border-color 0.3s;
+            display: flex;
+            flex-direction: column;
         }
 
         .pricing-card:hover {
             transform: translateY(-4px);
             box-shadow: 0 12px 40px rgba(0, 0, 0, 0.3);
+            border-color: rgba(255, 255, 255, 0.1);
         }
 
         .pricing-card.featured {
-            border-color: var(--blue);
+            border-color: rgba(74, 144, 217, 0.4);
             box-shadow: 0 8px 30px rgba(74, 144, 217, 0.1);
+            background: rgba(74, 144, 217, 0.04);
         }
 
         .pricing-card.featured::before {
@@ -605,13 +676,14 @@ const jsonLd = {
             font-size: 0.95rem;
             font-weight: 600;
             text-decoration: none;
+            margin-top: auto;
             transition: all 0.2s;
         }
 
         .btn-pricing.primary {
             background: var(--blue);
             color: var(--white);
-            box-shadow: 0 4px 15px rgba(74, 144, 217, 0.25);
+            box-shadow: 0 4px 20px rgba(74, 144, 217, 0.3);
         }
 
         .btn-pricing.primary:hover {
@@ -670,7 +742,7 @@ const jsonLd = {
         .faq-show-all button:hover {
             border-color: var(--blue);
             color: var(--blue);
-            box-shadow: 0 4px 12px rgba(74, 144, 217, 0.08);
+            box-shadow: 0 4px 12px rgba(74, 144, 217, 0.1);
         }
 
         .faq-show-all.hidden {
@@ -705,7 +777,7 @@ const jsonLd = {
         }
 
         .faq-item {
-
+            border-bottom: 1px solid var(--border);
         }
 
         .faq-question {
@@ -785,10 +857,23 @@ const jsonLd = {
             max-height: 500px;
         }
 
+        /* ===== FOOTER ===== */
+        footer {
+            background: var(--bg-card);
+            color: rgba(255, 255, 255, 0.5);
+            padding: 4rem 2rem 2rem;
+        }
+
+        .footer-inner {
+            max-width: 1100px;
+            margin: 0 auto;
+        }
+
         /* ===== HOW IT WORKS ===== */
         .how-it-works {
             padding: 6rem 2rem;
-            background: var(--bg-alt);
+            background: var(--bg);
+            position: relative;
         }
 
         .steps-grid {
@@ -820,8 +905,9 @@ const jsonLd = {
             width: 80px;
             height: 80px;
             border-radius: 50%;
-            background: var(--blue);
-            color: var(--white);
+            background: rgba(74, 144, 217, 0.12);
+            border: 1px solid rgba(74, 144, 217, 0.25);
+            color: var(--blue-light);
             font-size: 1.8rem;
             font-weight: 800;
             display: flex;
@@ -830,6 +916,7 @@ const jsonLd = {
             margin: 0 auto 1.25rem;
             position: relative;
             z-index: 1;
+            box-shadow: 0 0 30px rgba(74, 144, 217, 0.1);
         }
 
         .step-card h3 {
@@ -843,14 +930,14 @@ const jsonLd = {
             font-size: 0.9rem;
             color: var(--gray-500);
             line-height: 1.6;
-            max-width: 240px;
+            max-width: 280px;
             margin: 0 auto;
         }
 
         /* ===== TESTIMONIALS ===== */
         .testimonials {
             padding: 7rem 2rem;
-            background: var(--bg-card);
+            background: var(--bg-alt);
         }
 
         .testimonials-grid {
@@ -885,16 +972,19 @@ const jsonLd = {
         }
 
         .testimonial-card {
-            background: var(--bg-card);
-            border: 1px solid var(--border);
+            background: rgba(255, 255, 255, 0.03);
+            border: 1px solid rgba(255, 255, 255, 0.06);
             border-radius: 16px;
             padding: 2rem;
-            transition: transform 0.2s, box-shadow 0.2s;
+            transition: transform 0.3s, box-shadow 0.3s, border-color 0.3s;
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
         }
 
         .testimonial-card:hover {
             transform: translateY(-4px);
             box-shadow: 0 8px 30px rgba(0, 0, 0, 0.3);
+            border-color: rgba(255, 255, 255, 0.1);
         }
 
         .testimonial-stars {
@@ -960,14 +1050,14 @@ const jsonLd = {
             text-decoration: none;
             padding: 0.75rem 1.5rem;
             border-radius: 12px;
-            transition: transform 0.2s, box-shadow 0.2s, opacity 0.2s;
-            box-shadow: 0 4px 15px rgba(74, 144, 217, 0.3);
+            transition: transform 0.2s, box-shadow 0.3s, opacity 0.2s;
+            box-shadow: 0 4px 20px rgba(74, 144, 217, 0.3);
         }
 
         .store-badge-link:hover {
             transform: translateY(-2px);
             opacity: 0.92;
-            box-shadow: 0 8px 25px rgba(74, 144, 217, 0.35);
+            box-shadow: 0 8px 30px rgba(74, 144, 217, 0.45);
         }
 
         .store-badge-link svg {
@@ -1003,6 +1093,56 @@ const jsonLd = {
             letter-spacing: 1px;
         }
 
+        /* ===== MOBILE MENU ===== */
+        .mobile-menu {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: var(--bg);
+            z-index: 200;
+            padding: 5rem 2rem 2rem;
+            flex-direction: column;
+        }
+
+        .mobile-menu.open {
+            display: flex;
+        }
+
+        .mobile-menu-close {
+            position: absolute;
+            top: 1rem;
+            right: 1.5rem;
+            background: none;
+            border: none;
+            font-size: 1.5rem;
+            cursor: pointer;
+            color: var(--gray-700);
+            padding: 0.5rem;
+        }
+
+        .mobile-menu a {
+            display: block;
+            padding: 1rem 0;
+            font-size: 1.1rem;
+            font-weight: 600;
+            color: var(--gray-900);
+            text-decoration: none;
+            border-bottom: 1px solid var(--gray-100);
+        }
+
+        .mobile-menu .mobile-sub {
+            padding-left: 1.5rem;
+        }
+
+        .mobile-menu .mobile-sub a {
+            font-size: 1rem;
+            font-weight: 500;
+            color: var(--gray-500);
+        }
+
         /* ===== RESPONSIVE ===== */
         @media (max-width: 1024px) {
             .features-grid {
@@ -1016,34 +1156,16 @@ const jsonLd = {
         }
 
         @media (max-width: 768px) {
+            .nav-center, .nav-right .nav-login, .nav-right .nav-cta {
+                display: none;
+            }
+
+            .mobile-menu-btn {
+                display: block;
+            }
 
             .hero {
                 padding: 8rem 1.5rem 2rem;
-            }
-
-            .hero h1 {
-                font-size: 2.5rem;
-            }
-
-            .hero p {
-                font-size: 1.05rem;
-            }
-
-            .hero-phones {
-                height: 370px;
-            }
-
-            .hero-phones .phone {
-                width: 160px;
-            }
-
-            .hero-phones .phone-center {
-                width: 180px;
-            }
-
-            .hero-phones .phone-left,
-            .hero-phones .phone-right {
-                display: none;
             }
 
             .hero-content {
@@ -1065,6 +1187,31 @@ const jsonLd = {
 
             .store-rating {
                 text-align: center;
+            }
+
+            .hero h1 {
+                font-size: 3rem;
+            }
+
+            .hero p {
+                font-size: 1.05rem;
+            }
+
+            .hero-phones {
+                height: 370px;
+            }
+
+            .hero-phones .phone {
+                width: 160px;
+            }
+
+            .hero-phones .phone-center {
+                width: 180px;
+            }
+
+            .hero-phones .phone-left,
+            .hero-phones .phone-right {
+                display: none;
             }
 
             .section-title {
@@ -1105,15 +1252,91 @@ const jsonLd = {
         }
 
         @media (max-width: 480px) {
+            .hero {
+                padding: 7rem 1rem 3rem;
+            }
+
             .hero h1 {
-                font-size: 2rem;
+                font-size: 2.4rem;
             }
 
             .hero-buttons {
                 flex-direction: column;
                 align-items: center;
             }
+
+            .hero-buttons .btn-primary,
+            .hero-buttons .btn-secondary {
+                width: 100%;
+                justify-content: center;
+            }
+
+            .features-section,
+            .showcase-section,
+            .steps-section,
+            .testimonials-section,
+            .social-proof-section,
+            .final-cta-section {
+                padding-left: 1rem;
+                padding-right: 1rem;
+            }
+
+            .pricing-section {
+                padding-left: 1rem;
+                padding-right: 1rem;
+            }
+
+            .store-badges {
+                flex-direction: column;
+                align-items: stretch;
+            }
+
+            .store-badge-link {
+                justify-content: center;
+            }
         }
+
+        .proof-bar { padding: 3rem 2rem; background: var(--bg-alt); border-bottom: 1px solid rgba(255, 255, 255, 0.04); }
+        .proof-bar-inner { max-width: 900px; margin: 0 auto; display: flex; justify-content: center; align-items: center; gap: 3rem; }
+        .proof-bar-item { display: flex; align-items: center; gap: 0.75rem; }
+        .proof-bar-number { font-size: 1.8rem; font-weight: 800; color: var(--text); letter-spacing: -0.02em; white-space: nowrap; }
+        .proof-bar-label { display: flex; flex-direction: column; font-size: 0.78rem; color: var(--text-secondary); line-height: 1.3; font-weight: 500; white-space: nowrap; }
+        .proof-bar-stars { color: #FBBF24; font-size: 0.85rem; letter-spacing: 1px; }
+        .proof-bar-divider { width: 1px; height: 40px; background: var(--border); }
+        @media (max-width: 768px) {
+            .proof-bar-inner { flex-wrap: wrap; gap: 1.5rem; }
+            .proof-bar-divider { display: none; }
+            .proof-bar-item { flex: 1 1 40%; justify-content: center; }
+        }
+
+        /* ===== LIGHT MODE OVERRIDES ===== */
+        :global([data-theme="light"]) .hero { background: #ebeef5; }
+        :global([data-theme="light"]) .hero::after { background: linear-gradient(90deg, transparent, rgba(74, 144, 217, 0.15), transparent); }
+        :global([data-theme="light"]) .btn-secondary { background: var(--bg-card); border-color: var(--border); backdrop-filter: none; }
+        :global([data-theme="light"]) .btn-secondary:hover { border-color: var(--blue); color: var(--blue); background: var(--bg-card); box-shadow: 0 4px 12px rgba(0,0,0,0.08); }
+        :global([data-theme="light"]) .social-proof { border-bottom-color: var(--border); }
+        :global([data-theme="light"]) .feature-card { background: var(--bg-card); border-color: var(--border); box-shadow: 0 1px 3px rgba(0,0,0,0.04); }
+        :global([data-theme="light"]) .feature-card:hover { background: var(--bg-card); border-color: var(--border); }
+        :global([data-theme="light"]) .feature-card:nth-child(1), :global([data-theme="light"]) .feature-card:nth-child(2) { box-shadow: 0 1px 3px rgba(0,0,0,0.04); }
+        :global([data-theme="light"]) .feature-card:nth-child(3) { box-shadow: 0 1px 3px rgba(0,0,0,0.04); }
+        :global([data-theme="light"]) .feature-card:nth-child(4) { box-shadow: 0 1px 3px rgba(0,0,0,0.04); }
+        :global([data-theme="light"]) .feature-card:nth-child(5) { box-shadow: 0 1px 3px rgba(0,0,0,0.04); }
+        :global([data-theme="light"]) .feature-card:nth-child(1):hover, :global([data-theme="light"]) .feature-card:nth-child(2):hover { box-shadow: 0 8px 24px rgba(74,144,217,0.1); }
+        :global([data-theme="light"]) .feature-card:nth-child(3):hover { box-shadow: 0 8px 24px rgba(16,185,129,0.1); }
+        :global([data-theme="light"]) .feature-card:nth-child(4):hover { box-shadow: 0 8px 24px rgba(245,158,11,0.1); }
+        :global([data-theme="light"]) .feature-card:nth-child(5):hover { box-shadow: 0 8px 24px rgba(239,68,68,0.1); }
+        :global([data-theme="light"]) .pricing { background: var(--bg); }
+        :global([data-theme="light"]) .pricing-card { background: var(--bg-card); border-color: var(--border); }
+        :global([data-theme="light"]) .pricing-card:hover { border-color: var(--border); box-shadow: 0 12px 40px rgba(0,0,0,0.08); }
+        :global([data-theme="light"]) .pricing-card.featured { background: rgba(74,144,217,0.04); border-color: rgba(74,144,217,0.3); box-shadow: 0 4px 20px rgba(74,144,217,0.08); }
+        :global([data-theme="light"]) .btn-pricing.outline { background: var(--bg-alt); border-color: var(--border); }
+        :global([data-theme="light"]) .how-it-works { background: var(--bg); }
+        :global([data-theme="light"]) .step-number { background: rgba(74,144,217,0.1); border-color: rgba(74,144,217,0.3); color: var(--blue); box-shadow: 0 2px 8px rgba(74,144,217,0.08); }
+        :global([data-theme="light"]) .testimonial-card { background: var(--bg-card); border-color: var(--border); backdrop-filter: none; }
+        :global([data-theme="light"]) .testimonial-card:hover { border-color: var(--border); box-shadow: 0 8px 30px rgba(0,0,0,0.08); }
+        :global([data-theme="light"]) .showcase-image .phone-mockup { filter: drop-shadow(0 20px 50px rgba(0,0,0,0.15)) drop-shadow(0 0 30px rgba(74,144,217,0.06)); }
+        :global([data-theme="light"]) .proof-bar { background: var(--bg-card); border-bottom-color: var(--border); }
+        :global([data-theme="light"]) .faq-item { border-bottom-color: var(--border); }
     </style>
   </Fragment>
 
@@ -1143,31 +1366,34 @@ const jsonLd = {
             </div>
 
             <div class="hero-phones">
-                <picture><source srcset="/assets/screenshots/fr/hero-phone-left-small.avif 250w, /assets/screenshots/fr/hero-phone-left.avif 500w" sizes="(max-width: 768px) 160px, 280px" type="image/avif"><source srcset="/assets/screenshots/fr/hero-phone-left-small.webp 250w, /assets/screenshots/fr/hero-phone-left.webp 500w" sizes="(max-width: 768px) 160px, 280px" type="image/webp"><img src="/assets/screenshots/fr/hero-phone-left.png" alt="AI Coach AIVancePro" class="phone phone-left" width="280" height="582" decoding="async"></picture>
-                <picture><source srcset="/assets/screenshots/fr/hero-phone-center-small.avif 250w, /assets/screenshots/fr/hero-phone-center.avif 500w" sizes="(max-width: 768px) 160px, 280px" type="image/avif"><source srcset="/assets/screenshots/fr/hero-phone-center-small.webp 250w, /assets/screenshots/fr/hero-phone-center.webp 500w" sizes="(max-width: 768px) 160px, 280px" type="image/webp"><img src="/assets/screenshots/fr/hero-phone-center.png" alt="Dashboard AIVancePro" class="phone phone-center" width="280" height="582" decoding="async" fetchpriority="high"></picture>
-                <picture><source srcset="/assets/screenshots/fr/hero-phone-right-small.avif 250w, /assets/screenshots/fr/hero-phone-right.avif 500w" sizes="(max-width: 768px) 160px, 280px" type="image/avif"><source srcset="/assets/screenshots/fr/hero-phone-right-small.webp 250w, /assets/screenshots/fr/hero-phone-right.webp 500w" sizes="(max-width: 768px) 160px, 280px" type="image/webp"><img src="/assets/screenshots/fr/hero-phone-right.png" alt="Progress Tracking AIVancePro" class="phone phone-right" width="280" height="582" decoding="async"></picture>
+                <picture><source srcset="/assets/screenshots/en/hero-phone-left-small.avif 250w, /assets/screenshots/en/hero-phone-left.avif 500w" sizes="(max-width: 768px) 160px, 280px" type="image/avif"><source srcset="/assets/screenshots/en/hero-phone-left-small.webp 250w, /assets/screenshots/en/hero-phone-left.webp 500w" sizes="(max-width: 768px) 160px, 280px" type="image/webp"><img src="/assets/screenshots/en/hero-phone-left.png" alt="AI Coach AIVancePro" class="phone phone-left" width="280" height="582" decoding="async"></picture>
+                <picture><source srcset="/assets/screenshots/en/hero-phone-center-small.avif 250w, /assets/screenshots/en/hero-phone-center.avif 500w" sizes="(max-width: 768px) 160px, 280px" type="image/avif"><source srcset="/assets/screenshots/en/hero-phone-center-small.webp 250w, /assets/screenshots/en/hero-phone-center.webp 500w" sizes="(max-width: 768px) 160px, 280px" type="image/webp"><img src="/assets/screenshots/en/hero-phone-center.png" alt="Dashboard AIVancePro" class="phone phone-center" width="280" height="582" decoding="async" fetchpriority="high"></picture>
+                <picture><source srcset="/assets/screenshots/en/hero-phone-right-small.avif 250w, /assets/screenshots/en/hero-phone-right.avif 500w" sizes="(max-width: 768px) 160px, 280px" type="image/avif"><source srcset="/assets/screenshots/en/hero-phone-right-small.webp 250w, /assets/screenshots/en/hero-phone-right.webp 500w" sizes="(max-width: 768px) 160px, 280px" type="image/webp"><img src="/assets/screenshots/en/hero-phone-right.png" alt="Progress Tracking AIVancePro" class="phone phone-right" width="280" height="582" decoding="async"></picture>
             </div>
         </div>
     </section>
 
-    <!-- Social Proof -->
-    <section class="social-proof reveal">
-        <div class="social-proof-inner">
-            <div class="proof-item">
-                <div class="number"><span class="gradient">240+</span></div>
-                <div class="label">Exercises available</div>
+    <!-- Proof Bar -->
+    <section class="proof-bar reveal">
+        <div class="proof-bar-inner">
+            <div class="proof-bar-item">
+                <span class="proof-bar-number" data-count="4.8" data-decimals="1">0</span>
+                <div class="proof-bar-label"><span class="proof-bar-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</span><span>on the App Store</span></div>
             </div>
-            <div class="proof-item">
-                <div class="number"><span class="gradient">100%</span></div>
-                <div class="label">AI-personalized</div>
+            <div class="proof-bar-divider"></div>
+            <div class="proof-bar-item">
+                <span class="proof-bar-number" data-count="240" data-suffix="+">0</span>
+                <div class="proof-bar-label"><span>exercises</span><span>available</span></div>
             </div>
-            <div class="proof-item">
-                <div class="number"><span class="gradient">iOS</span></div>
-                <div class="label">& Android</div>
+            <div class="proof-bar-divider"></div>
+            <div class="proof-bar-item">
+                <span class="proof-bar-number" data-count="100" data-suffix="%">0</span>
+                <div class="proof-bar-label"><span>free</span><span>to start</span></div>
             </div>
-            <div class="proof-item">
-                <div class="number"><span class="gradient">24/7</span></div>
-                <div class="label">Coach available</div>
+            <div class="proof-bar-divider"></div>
+            <div class="proof-bar-item">
+                <span class="proof-bar-number" data-count="7" data-suffix="d">0</span>
+                <div class="proof-bar-label"><span>Pro trial</span><span>included</span></div>
             </div>
         </div>
     </section>
@@ -1212,7 +1438,7 @@ const jsonLd = {
             <div class="features-grid">
                 <div class="feature-card reveal reveal-delay-1">
                     <div class="feature-icon blue">
-                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#4A90D9" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#5BA0E9" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>
                     </div>
                     <h3>Conversational AI Coach</h3>
                     <p>Chat with your AI coach to generate workouts, get advice and adapt your programs in real time.</p>
@@ -1220,7 +1446,7 @@ const jsonLd = {
 
                 <div class="feature-card reveal reveal-delay-2">
                     <div class="feature-icon purple">
-                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#4A90D9" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z"/></svg>
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#5BA0E9" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z"/></svg>
                     </div>
                     <h3>240+ Exercises</h3>
                     <p>Complete exercise database with videos and detailed instructions for perfect execution.</p>
@@ -1277,7 +1503,7 @@ const jsonLd = {
                 </ul>
             </div>
             <div class="showcase-image reveal reveal-delay-2">
-                <picture><source srcset="/assets/screenshots/fr/showcase-coach-small.avif 250w, /assets/screenshots/fr/showcase-coach.avif 500w" sizes="(max-width: 768px) 200px, 280px" type="image/avif"><source srcset="/assets/screenshots/fr/showcase-coach-small.webp 250w, /assets/screenshots/fr/showcase-coach.webp 500w" sizes="(max-width: 768px) 200px, 280px" type="image/webp"><img src="/assets/screenshots/fr/showcase-coach.png" alt="AI Coach AIVancePro" class="phone-mockup" width="280" height="582" loading="lazy" decoding="async"></picture>
+                <picture><source srcset="/assets/screenshots/en/showcase-coach-small.avif 250w, /assets/screenshots/en/showcase-coach.avif 500w" sizes="(max-width: 768px) 200px, 280px" type="image/avif"><source srcset="/assets/screenshots/en/showcase-coach-small.webp 250w, /assets/screenshots/en/showcase-coach.webp 500w" sizes="(max-width: 768px) 200px, 280px" type="image/webp"><img src="/assets/screenshots/en/showcase-coach.png" alt="AI Coach AIVancePro" class="phone-mockup" width="280" height="582" loading="lazy" decoding="async"></picture>
             </div>
         </div>
     </section>
@@ -1305,7 +1531,7 @@ const jsonLd = {
                 </ul>
             </div>
             <div class="showcase-image reveal reveal-delay-2">
-                <picture><source srcset="/assets/screenshots/fr/showcase-progression-small.avif 250w, /assets/screenshots/fr/showcase-progression.avif 500w" sizes="(max-width: 768px) 200px, 280px" type="image/avif"><source srcset="/assets/screenshots/fr/showcase-progression-small.webp 250w, /assets/screenshots/fr/showcase-progression.webp 500w" sizes="(max-width: 768px) 200px, 280px" type="image/webp"><img src="/assets/screenshots/fr/showcase-progression.png" alt="Progress Tracking AIVancePro" class="phone-mockup" width="280" height="582" loading="lazy" decoding="async"></picture>
+                <picture><source srcset="/assets/screenshots/en/showcase-progression-small.avif 250w, /assets/screenshots/en/showcase-progression.avif 500w" sizes="(max-width: 768px) 200px, 280px" type="image/avif"><source srcset="/assets/screenshots/en/showcase-progression-small.webp 250w, /assets/screenshots/en/showcase-progression.webp 500w" sizes="(max-width: 768px) 200px, 280px" type="image/webp"><img src="/assets/screenshots/en/showcase-progression.png" alt="Progress Tracking AIVancePro" class="phone-mockup" width="280" height="582" loading="lazy" decoding="async"></picture>
             </div>
         </div>
     </section>
@@ -1333,7 +1559,7 @@ const jsonLd = {
                 </ul>
             </div>
             <div class="showcase-image reveal reveal-delay-2">
-                <picture><source srcset="/assets/screenshots/fr/showcase-community-small.avif 250w, /assets/screenshots/fr/showcase-community.avif 500w" sizes="(max-width: 768px) 200px, 280px" type="image/avif"><source srcset="/assets/screenshots/fr/showcase-community-small.webp 250w, /assets/screenshots/fr/showcase-community.webp 500w" sizes="(max-width: 768px) 200px, 280px" type="image/webp"><img src="/assets/screenshots/fr/showcase-community.png" alt="Community AIVancePro" class="phone-mockup" width="280" height="582" loading="lazy" decoding="async"></picture>
+                <picture><source srcset="/assets/screenshots/en/showcase-community-small.avif 250w, /assets/screenshots/en/showcase-community.avif 500w" sizes="(max-width: 768px) 200px, 280px" type="image/avif"><source srcset="/assets/screenshots/en/showcase-community-small.webp 250w, /assets/screenshots/en/showcase-community.webp 500w" sizes="(max-width: 768px) 200px, 280px" type="image/webp"><img src="/assets/screenshots/en/showcase-community.png" alt="Community AIVancePro" class="phone-mockup" width="280" height="582" loading="lazy" decoding="async"></picture>
             </div>
         </div>
     </section>

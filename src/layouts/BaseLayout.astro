@@ -41,8 +41,9 @@ const guidePosts = (await getCollection('guides', ({ data }) => data.lang === la
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="preload" href="/fonts/inter-latin-700-normal.woff2" as="font" type="font/woff2" crossorigin>
-    <link rel="preload" href="/fonts/inter-latin-400-normal.woff2" as="font" type="font/woff2" crossorigin>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Sora:wght@400;500;600;700;800&display=swap" rel="stylesheet">
     <link rel="icon" type="image/png" sizes="64x64" href="/assets/favicon-64.png">
     <link rel="icon" type="image/png" sizes="48x48" href="/assets/favicon-48.png">
     <link rel="apple-touch-icon" sizes="128x128" href="/assets/apple-touch-icon.png">
@@ -214,26 +215,24 @@ const guidePosts = (await getCollection('guides', ({ data }) => data.lang === la
       }
 
       // Animated counters
-      var numbers = document.querySelectorAll('.proof-item .number .gradient');
+      var numbers = document.querySelectorAll('.proof-bar-number[data-count]');
       if (numbers.length) {
         var counterObs = new IntersectionObserver(function(entries) {
           entries.forEach(function(e) {
             if (!e.isIntersecting) return;
             var el = e.target;
-            var text = el.textContent.trim();
-            var match = text.match(/^(\d+)/);
-            if (!match) return;
-            var target = parseInt(match[1]);
-            var suffix = text.replace(match[1], '');
+            var target = parseFloat(el.dataset.count);
+            var decimals = parseInt(el.dataset.decimals) || 0;
+            var suffix = el.dataset.suffix || '';
             var duration = 1500;
             var start = performance.now();
             function step(now) {
               var progress = Math.min((now - start) / duration, 1);
               var eased = 1 - Math.pow(1 - progress, 3);
-              el.textContent = Math.round(target * eased) + suffix;
+              var current = target * eased;
+              el.textContent = (decimals > 0 ? current.toFixed(decimals) : Math.round(current)) + suffix;
               if (progress < 1) requestAnimationFrame(step);
             }
-            el.textContent = '0' + suffix;
             requestAnimationFrame(step);
             counterObs.unobserve(el);
           });
