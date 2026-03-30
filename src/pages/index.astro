@@ -1310,9 +1310,9 @@ const jsonLd = {
         .proof-bar-stars { color: #FBBF24; font-size: 0.85rem; letter-spacing: 1px; }
         .proof-bar-divider { width: 1px; height: 40px; background: var(--border); }
         @media (max-width: 768px) {
-            .proof-bar-inner { flex-wrap: wrap; gap: 1.5rem; }
+            .proof-bar-inner { display: grid; grid-template-columns: 1fr 1fr; gap: 1.5rem; }
             .proof-bar-divider { display: none; }
-            .proof-bar-item { flex: 1 1 40%; justify-content: center; }
+            .proof-bar-item { justify-content: center; }
         }
 
         /* ===== LIGHT MODE OVERRIDES ===== */
