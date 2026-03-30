@@ -144,7 +144,7 @@ body > nav {
     top: 0;
     width: 100%;
     padding: calc(0.5rem + env(safe-area-inset-top, 0px)) 2rem 0.5rem;
-    background: rgba(5, 10, 20, 0.97);
+    background: #050a14;
     backdrop-filter: blur(20px) saturate(180%);
     -webkit-backdrop-filter: blur(20px) saturate(180%);
     z-index: 100;
@@ -1627,7 +1627,7 @@ body {
 }
 
 [data-theme="light"] nav {
-    background: rgba(255, 255, 255, 0.85);
+    background: #f5f7fb;
 }
 
 [data-theme="light"] .dropdown-menu {
