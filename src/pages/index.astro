@@ -1310,9 +1310,10 @@ const jsonLd = {
         .proof-bar-stars { color: #FBBF24; font-size: 0.85rem; letter-spacing: 1px; }
         .proof-bar-divider { width: 1px; height: 40px; background: var(--border); }
         @media (max-width: 768px) {
-            .proof-bar-inner { flex-direction: column; gap: 1.25rem; align-items: center; }
+            .proof-bar-inner { flex-wrap: wrap; gap: 1.5rem; }
             .proof-bar-divider { display: none; }
-            .proof-bar-item { width: 220px; justify-content: flex-start; }
+            .proof-bar-item { flex: 1 1 40%; justify-content: center; }
+            .proof-bar-number { min-width: 0; }
         }
 
         /* ===== LIGHT MODE OVERRIDES ===== */
