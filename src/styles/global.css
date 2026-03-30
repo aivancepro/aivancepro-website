@@ -1357,8 +1357,8 @@ body {
 }
 
 .exit-popup {
-    background: #0f1628;
-    border: 1px solid rgba(255, 255, 255, 0.1);
+    background: var(--bg-card);
+    border: 1px solid var(--border);
     border-radius: 20px;
     padding: 3rem 2.5rem;
     max-width: 420px;
@@ -1433,8 +1433,8 @@ body {
 }
 
 .nl-popup {
-    background: #0f1628;
-    border: 1px solid rgba(255, 255, 255, 0.1);
+    background: var(--bg-card);
+    border: 1px solid var(--border);
     border-radius: 20px;
     padding: 2.5rem 2rem;
     max-width: 440px;
