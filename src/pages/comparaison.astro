@@ -207,12 +207,13 @@ import BaseLayout from '../layouts/BaseLayout.astro';
           .comp-hero { padding: 7rem 1.25rem 3rem; }
           .comp-hero h1 { font-size: 2.2rem; }
           .comp-hero p { font-size: 1rem; }
-          .comp-table-section { padding: 2rem 0.75rem 4rem; }
-          .comp-table { font-size: 0.72rem; min-width: 0; }
-          .comp-table th, .comp-table td { padding: 0.6rem 0.35rem; }
-          .comp-table th { font-size: 0.65rem; letter-spacing: 0.02em; }
-          .comp-table td:first-child { font-size: 0.72rem; min-width: 100px; }
+          .comp-table-section { padding: 2rem 1rem 4rem; }
+          .comp-table { font-size: 0.85rem; min-width: 0; }
+          .comp-table th, .comp-table td { padding: 0.85rem 0.6rem; }
           .comp-table-wrapper { overflow-x: visible; }
+          /* Hide Strong, JEFIT, Hevy columns on mobile (keep Feature + AIVancePro + Fitbod) */
+          .comp-table th:nth-child(n+4),
+          .comp-table td:nth-child(n+4) { display: none; }
           .why-section { padding: 3rem 1.25rem; }
           .why-section h2 { font-size: 1.7rem; }
           .why-grid { grid-template-columns: repeat(2, 1fr); gap: 1rem; }
@@ -222,10 +223,9 @@ import BaseLayout from '../layouts/BaseLayout.astro';
       @media (max-width: 480px) {
           .comp-hero { padding: 6.5rem 1rem 2.5rem; }
           .comp-hero h1 { font-size: 1.8rem; }
-          .comp-table-section { padding: 1.5rem 0.5rem 3rem; }
-          .comp-table { font-size: 0.65rem; }
-          .comp-table th, .comp-table td { padding: 0.5rem 0.25rem; }
-          .comp-table th { font-size: 0.6rem; }
+          .comp-table-section { padding: 1.5rem 0.75rem 3rem; }
+          .comp-table { font-size: 0.8rem; }
+          .comp-table th, .comp-table td { padding: 0.75rem 0.5rem; }
           .why-section { padding: 2.5rem 1rem; }
           .why-grid { grid-template-columns: 1fr; }
           .comp-cta { padding: 2.5rem 1rem; }
