@@ -196,6 +196,12 @@ body > nav {
     font-weight: 500;
     transition: color 0.2s;
     white-space: nowrap;
+    line-height: 1;
+}
+
+.nav-center li {
+    display: flex;
+    align-items: center;
 }
 
 .nav-center a:hover {
@@ -220,6 +226,9 @@ body > nav {
     gap: 0.3rem;
     background: none;
     border: none;
+    padding: 0;
+    margin: 0;
+    line-height: 1;
     font-family: inherit;
 }
 
