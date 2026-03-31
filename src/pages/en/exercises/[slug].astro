@@ -2,7 +2,7 @@
 import BaseLayout from '../../../layouts/BaseLayout.astro';
 import MuscleMap from '../../../components/MuscleMap.astro';
 import { exercises, toSlug } from '../../../data/exercises-en.js';
-import { enExerciseImages } from '../../../data/exercise-images.js';
+import { enExerciseImages, getExerciseImageEN } from '../../../data/exercise-images.js';
 
 // --- Helper: difficulty colors ---
 const difficultyColors: Record<string, { bg: string; color: string }> = {
@@ -473,10 +473,13 @@ const catLabel = categoryLabels[exercise.category] || exercise.category;
       .muscles-card.primary li::before { background: var(--blue); }
       .muscles-card.secondary li::before { background: var(--blue); }
       .variations-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1rem; margin-bottom: 3rem; }
-      .variation-card { background: var(--bg-card); border: 1px solid var(--border); border-radius: 14px; padding: 1.25rem; text-decoration: none; color: inherit; transition: border-color 0.2s, transform 0.2s, box-shadow 0.2s; }
+      .variation-card { background: var(--bg-card); border: 1px solid var(--border); border-radius: 14px; overflow: hidden; text-decoration: none; color: inherit; transition: border-color 0.2s, transform 0.2s, box-shadow 0.2s; display: flex; flex-direction: column; }
       .variation-card:hover { border-color: rgba(74,144,217,0.3); transform: translateY(-3px); box-shadow: 0 6px 20px rgba(0,0,0,0.05); }
-      .variation-card h4 { font-size: 0.9rem; font-weight: 700; color: var(--gray-900); margin-bottom: 0.5rem; line-height: 1.3; }
-      .variation-card .tags { display: flex; gap: 0.35rem; flex-wrap: wrap; }
+      .variation-thumb { width: 100%; height: 140px; object-fit: cover; display: block; }
+      .variation-thumb-placeholder { width: 100%; height: 140px; display: flex; align-items: center; justify-content: center; background: var(--bg-elevated); }
+      .variation-thumb-placeholder svg { width: 40px; height: 40px; color: var(--text-muted); }
+      .variation-card h4 { font-size: 0.9rem; font-weight: 700; color: var(--gray-900); margin-bottom: 0.5rem; line-height: 1.3; padding: 1rem 1.25rem 0; }
+      .variation-card .tags { display: flex; gap: 0.35rem; flex-wrap: wrap; padding: 0 1.25rem 1rem; margin-top: auto; }
       .variation-card .tag { padding: 0.15rem 0.5rem; border-radius: 50px; font-size: 0.6rem; font-weight: 600; }
       .tag-muscle { background: rgba(74,144,217,0.1); color: var(--blue); }
       .tag-equipment { background: rgba(74,144,217,0.1); color: var(--blue); }
@@ -595,6 +598,13 @@ const catLabel = categoryLabels[exercise.category] || exercise.category;
         <div class="variations-grid">
           {variations.map(v => (
             <a href={`/en/exercises/${toSlug(v.name)}/`} class="variation-card">
+              {getExerciseImageEN(v.name) ? (
+                <img src={getExerciseImageEN(v.name)} alt="" class="variation-thumb" loading="lazy" decoding="async" />
+              ) : (
+                <div class="variation-thumb-placeholder">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="12" cy="12" r="10"/><path d="M8 14s1.5 2 4 2 4-2 4-2"/><line x1="9" y1="9" x2="9.01" y2="9"/><line x1="15" y1="9" x2="15.01" y2="9"/></svg>
+                </div>
+              )}
               <h4>{v.name}</h4>
               <div class="tags">
                 <span class="tag tag-muscle">{v.muscle}</span>

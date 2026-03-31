@@ -384,9 +384,21 @@ if (postId) {
       var heroHtml = '';
       if (post.article_slug && post.article_type) {
         var prefix = post.article_type === 'guide' ? '/guides/' : '/blog/';
+        var guideImgMap = {
+          'comprendre-rpe-intensite': 'comprendre-rpe-v2',
+          'creer-programme-entrainement': 'creer-programme-v2',
+          'debutant-musculation': 'debutant-musculation-v2',
+          'understanding-rpe-intensity': 'comprendre-rpe-v2',
+          'create-workout-plan': 'creer-programme-v2',
+          'beginner-weightlifting': 'debutant-musculation-v2',
+          'rpe-intensitaet-verstehen': 'comprendre-rpe-v2',
+          'trainingsplan-erstellen': 'creer-programme-v2',
+          'anfaenger-krafttraining': 'debutant-musculation-v2'
+        };
         var imgFolder = post.article_type === 'guide' ? '/assets/guides/' : '/assets/blog/';
+        var imgSlug = (post.article_type === 'guide' && guideImgMap[post.article_slug]) ? guideImgMap[post.article_slug] : post.article_slug;
         articleLink = '<a href="' + prefix + post.article_slug + '/" class="article-link"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>' + t.readArticle + '</a>';
-        heroHtml = '<div class="topic-hero"><img src="' + imgFolder + post.article_slug + '.webp" onerror="this.onerror=null;this.src=\'' + imgFolder + post.article_slug + '.png\'" alt="' + escapeHtml(post.title) + '"></div>';
+        heroHtml = '<div class="topic-hero"><img src="' + imgFolder + imgSlug + '.webp" onerror="this.onerror=null;this.src=\'' + imgFolder + imgSlug + '.png\';this.onerror=function(){this.style.display=\'none\'}" alt="' + escapeHtml(post.title) + '"></div>';
       }
       container.innerHTML =
         '<div class="topic-post">' + heroHtml + articleLink +

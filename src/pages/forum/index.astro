@@ -106,6 +106,14 @@ const descs: Record<string, string> = { fr: "Posez vos questions, partagez vos c
         .forum-header h1 { font-size: 1.5rem; }
         .forum-toolbar { flex-direction: column; }
         .forum-search { width: 100%; }
+        .forum-post { flex-direction: column; }
+        .post-thumb { width: 100%; height: 160px; min-height: auto; }
+        .post-content { padding: 0.85rem 1rem; }
+        .post-title { font-size: 0.95rem; }
+        .post-actions { flex-wrap: wrap; gap: 0.25rem; }
+        .post-action { padding: 0.25rem 0.5rem; font-size: 0.72rem; }
+        .forum-categories { gap: 0.35rem; }
+        .cat-btn { padding: 0.35rem 0.7rem; font-size: 0.75rem; }
       }
     </style>
   </Fragment>
@@ -296,8 +304,20 @@ const descs: Record<string, string> = { fr: "Posez vos questions, partagez vos c
 
           var thumbHtml = '';
           if (post.article_slug) {
+            var guideImgMap = {
+              'comprendre-rpe-intensite': 'comprendre-rpe-v2',
+              'creer-programme-entrainement': 'creer-programme-v2',
+              'debutant-musculation': 'debutant-musculation-v2',
+              'understanding-rpe-intensity': 'comprendre-rpe-v2',
+              'create-workout-plan': 'creer-programme-v2',
+              'beginner-weightlifting': 'debutant-musculation-v2',
+              'rpe-intensitaet-verstehen': 'comprendre-rpe-v2',
+              'trainingsplan-erstellen': 'creer-programme-v2',
+              'anfaenger-krafttraining': 'debutant-musculation-v2'
+            };
             var imgFolder = post.article_type === 'guide' ? '/assets/guides/' : '/assets/blog/';
-            thumbHtml = '<img class="post-thumb" src="' + imgFolder + post.article_slug + '.webp" onerror="this.onerror=null;this.src=\'' + imgFolder + post.article_slug + '.png\';this.onerror=function(){this.style.display=\'none\'}" alt="">';
+            var imgSlug = (post.article_type === 'guide' && guideImgMap[post.article_slug]) ? guideImgMap[post.article_slug] : post.article_slug;
+            thumbHtml = '<img class="post-thumb" src="' + imgFolder + imgSlug + '.webp" onerror="this.onerror=null;this.src=\'' + imgFolder + imgSlug + '.png\';this.onerror=function(){this.style.display=\'none\'}" alt="">';
           }
 
           var el = document.createElement('div');
