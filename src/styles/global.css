@@ -138,25 +138,13 @@ body::before {
 }
 
 
-/* ===== SAFE AREA COVER (Dynamic Island / notch) ===== */
-.safe-area-cover {
-    position: fixed;
-    top: 0;
-    left: 0;
-    right: 0;
-    height: env(safe-area-inset-top, 0px);
-    background: var(--bg);
-    z-index: 101;
-    pointer-events: none;
-}
-
 /* ===== NAVIGATION ===== */
 body > nav {
     position: fixed;
-    top: 0;
+    top: -62px;
     left: 0;
     right: 0;
-    padding: calc(0.5rem + env(safe-area-inset-top, 0px)) 2rem 0.5rem;
+    padding: calc(62px + 0.5rem) 2rem 0.5rem;
     background: var(--bg);
     z-index: 100;
     display: flex;
@@ -1018,8 +1006,8 @@ footer {
         display: block;
     }
 
-    nav {
-        padding: calc(0.875rem + env(safe-area-inset-top, 0px)) 1.25rem 0.875rem;
+    body > nav {
+        padding: calc(62px + 0.875rem) 1.25rem 0.875rem;
     }
 
     .section-title {
@@ -1048,8 +1036,8 @@ footer {
 }
 
 @media (max-width: 480px) {
-    nav {
-        padding: calc(0.75rem + env(safe-area-inset-top, 0px)) 1rem 0.75rem;
+    body > nav {
+        padding: calc(62px + 0.75rem) 1rem 0.75rem;
     }
 
     .section-title {
@@ -1192,14 +1180,6 @@ footer {
 .back-to-top svg {
     width: 20px;
     height: 20px;
-}
-
-/* ===== SAFE AREAS (notch, Dynamic Island) ===== */
-@supports (padding: env(safe-area-inset-top)) {
-    nav {
-        padding-left: max(env(safe-area-inset-left, 0px), 1.25rem);
-        padding-right: max(env(safe-area-inset-right, 0px), 1.25rem);
-    }
 }
 
 /* ===== TEXT OVERFLOW PROTECTION ===== */
