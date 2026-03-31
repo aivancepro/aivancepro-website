@@ -84,10 +84,12 @@ const guidePosts = (await getCollection('guides', ({ data }) => data.lang === la
 <body>
     <a href="#main-content" class="skip-link">Skip to content</a>
     <Nav lang={lang} />
+    <div class="scroll-content" id="scrollContainer">
     <main id="main-content">
     <slot />
     </main>
     {!noFooter && <Footer lang={lang} />}
+    </div>
     <!-- Search Modal -->
     <div class="search-overlay" id="searchOverlay">
         <div class="search-box">
@@ -243,19 +245,21 @@ const guidePosts = (await getCollection('guides', ({ data }) => data.lang === la
 
       // Back to top (throttled)
       var btn = document.getElementById('backToTop');
+      var scrollEl = document.getElementById('scrollContainer') || window;
       if (btn) {
         var btTicking = false;
-        window.addEventListener('scroll', function() {
+        scrollEl.addEventListener('scroll', function() {
           if (!btTicking) {
             requestAnimationFrame(function() {
-              btn.classList.toggle('visible', window.scrollY > 500);
+              var scrollPos = scrollEl === window ? window.scrollY : scrollEl.scrollTop;
+              btn.classList.toggle('visible', scrollPos > 500);
               btTicking = false;
             });
             btTicking = true;
           }
         }, { passive: true });
         btn.addEventListener('click', function() {
-          window.scrollTo({ top: 0, behavior: 'smooth' });
+          scrollEl.scrollTo({ top: 0, behavior: 'smooth' });
         });
       }
 

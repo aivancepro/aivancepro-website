@@ -337,11 +337,15 @@ const guidePrefixes = { fr: '/guides/', en: '/en/guides/', de: '/de/ratgeber/' }
     var bar = document.getElementById('readingProgress');
     if (bar) {
       var ticking = false;
-      window.addEventListener('scroll', function() {
+      var artScrollEl = document.getElementById('scrollContainer') || window;
+      artScrollEl.addEventListener('scroll', function() {
         if (!ticking) {
           requestAnimationFrame(function() {
-            var h = document.documentElement.scrollHeight - window.innerHeight;
-            var progress = h > 0 ? window.scrollY / h : 0;
+            var scrollH = artScrollEl === window ? document.documentElement.scrollHeight : artScrollEl.scrollHeight;
+            var scrollT = artScrollEl === window ? window.scrollY : artScrollEl.scrollTop;
+            var clientH = artScrollEl === window ? window.innerHeight : artScrollEl.clientHeight;
+            var h = scrollH - clientH;
+            var progress = h > 0 ? scrollT / h : 0;
             bar.style.transform = 'scaleX(' + Math.min(progress, 1) + ')';
             ticking = false;
           });

@@ -107,7 +107,8 @@
 }
 
 html {
-    overflow-x: clip;
+    overflow: hidden;
+    height: 100%;
 }
 
 body {
@@ -115,7 +116,11 @@ body {
     background-color: var(--bg);
     color: var(--text);
     line-height: 1.6;
-    overflow-x: clip;
+    height: 100vh;
+    height: 100dvh;
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
 }
@@ -139,12 +144,18 @@ body::before {
 
 
 /* ===== NAVIGATION ===== */
+/* ===== SCROLL CONTAINER ===== */
+.scroll-content {
+    flex: 1;
+    overflow-y: auto;
+    overflow-x: hidden;
+    -webkit-overflow-scrolling: touch;
+    overscroll-behavior-y: none;
+}
+
 body > nav {
-    position: sticky;
-    top: 0;
-    left: 0;
-    right: 0;
-    padding: calc(0.5rem + env(safe-area-inset-top, 0px)) 2rem 0.5rem;
+    flex-shrink: 0;
+    padding: 0.5rem 2rem;
     background: var(--bg);
     z-index: 100;
     display: flex;
@@ -1007,7 +1018,7 @@ footer {
     }
 
     body > nav {
-        padding: calc(0.875rem + env(safe-area-inset-top, 0px)) 1.25rem 0.875rem;
+        padding: 0.875rem 1.25rem;
     }
 
     .section-title {
@@ -1037,7 +1048,7 @@ footer {
 
 @media (max-width: 480px) {
     body > nav {
-        padding: calc(0.75rem + env(safe-area-inset-top, 0px)) 1rem 0.75rem;
+        padding: 0.75rem 1rem;
     }
 
     .section-title {
