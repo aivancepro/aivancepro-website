@@ -178,20 +178,26 @@ const currentLang = languages[lang];
   } catch(e) {}
 
   // Hide nav on scroll down, show on scroll up or at top
-  var navEl = document.querySelector('body > nav');
-  if (navEl) {
-    var lastScrollY = window.scrollY;
-    window.addEventListener('scroll', function() {
-      var y = window.scrollY;
+  function initNavScroll() {
+    var n = document.querySelector('nav');
+    if (!n) return;
+    var last = window.pageYOffset || 0;
+    document.addEventListener('scroll', function() {
+      var y = window.pageYOffset || 0;
       if (y <= 10) {
-        navEl.classList.remove('nav-hidden');
-      } else if (y > lastScrollY && y > 80) {
-        navEl.classList.add('nav-hidden');
-      } else if (y < lastScrollY) {
-        navEl.classList.remove('nav-hidden');
+        n.classList.remove('nav-hidden');
+      } else if (y > last && y > 80) {
+        n.classList.add('nav-hidden');
+      } else if (y < last) {
+        n.classList.remove('nav-hidden');
       }
-      lastScrollY = y;
+      last = y;
     }, { passive: true });
+  }
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', initNavScroll);
+  } else {
+    initNavScroll();
   }
 })();
 </script>
