@@ -325,7 +325,7 @@ const guidePosts = (await getCollection('guides', ({ data }) => data.lang === la
         var nlDismissed = localStorage.getItem('nl_popup_dismissed');
         var canShow = !nlDismissed || (Date.now() - parseInt(nlDismissed)) > 7 * 24 * 60 * 60 * 1000;
         if (canShow) {
-          var isReadingPage = document.querySelector('.article-content') || window.location.pathname.match(/\/(blog|guides|ratgeber|exercices|exercises|uebungen)\//);
+          var isReadingPage = document.querySelector('.article-content') || window.location.pathname.match(/\/(blog|guides|ratgeber)\//);
           if (isReadingPage) {
             setTimeout(function() {
               if (!localStorage.getItem('nl_popup_subscribed')) {
