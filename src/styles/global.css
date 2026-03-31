@@ -151,7 +151,6 @@ body > nav {
     justify-content: space-between;
     align-items: center;
     border-bottom: 1px solid var(--border);
-    transition: transform 0.3s ease;
 }
 
 body > nav.nav-hidden {
