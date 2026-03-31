@@ -401,5 +401,19 @@ const guidePosts = (await getCollection('guides', ({ data }) => data.lang === la
       });
     })();
     </script>
+    <script is:inline>
+    (function(){
+      var n=document.querySelector('nav');
+      if(!n)return;
+      var last=window.pageYOffset||0;
+      document.addEventListener('scroll',function(){
+        var y=window.pageYOffset||0;
+        if(y<=10){n.classList.remove('nav-hidden')}
+        else if(y>last&&y>80){n.classList.add('nav-hidden')}
+        else if(y<last){n.classList.remove('nav-hidden')}
+        last=y;
+      },{passive:true});
+    })();
+    </script>
 </body>
 </html>
