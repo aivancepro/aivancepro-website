@@ -87,11 +87,11 @@ const jsonLd = [
 
       .about-content { max-width: 800px; margin: 0 auto; padding: 3rem 2rem 4rem; }
 
-      .author-card { display: flex; gap: 2rem; align-items: flex-start; background: var(--gray-50); border: 1px solid var(--gray-200); border-radius: 20px; padding: 2.5rem; margin-bottom: 3rem; }
+      .author-card { display: flex; gap: 2rem; align-items: flex-start; background: var(--bg-card); border: 1px solid var(--border); border-radius: 20px; padding: 2.5rem; margin-bottom: 3rem; }
       .author-avatar { width: 120px; height: 120px; border-radius: 50%; background: var(--blue); display: flex; align-items: center; justify-content: center; flex-shrink: 0; color: #fff; font-size: 2.5rem; font-weight: 800; }
       .author-info h2 { font-size: 1.5rem; font-weight: 800; color: var(--gray-900); margin-bottom: 0.25rem; }
       .author-role { color: var(--blue); font-weight: 600; font-size: 0.95rem; margin-bottom: 0.75rem; }
-      .author-bio { color: var(--gray-600); font-size: 0.95rem; line-height: 1.7; text-align: justify; }
+      .author-bio { color: var(--gray-600); font-size: 0.95rem; line-height: 1.7; }
       .author-socials { display: flex; gap: 0.75rem; margin-top: 1rem; }
       .author-socials a { color: var(--gray-400); transition: color 0.2s; }
       .author-socials a:hover { color: var(--blue); }
@@ -99,19 +99,20 @@ const jsonLd = [
 
       .about-section { margin-bottom: 2.5rem; }
       .about-section h2 { font-size: 1.4rem; font-weight: 700; color: var(--gray-900); margin-bottom: 1rem; }
-      .about-section p { color: var(--gray-600); font-size: 0.95rem; line-height: 1.8; margin-bottom: 1rem; text-align: justify; }
+      .about-section p { color: var(--gray-600); font-size: 0.95rem; line-height: 1.8; margin-bottom: 1rem; }
       .about-section ul { padding-left: 1.5rem; margin-bottom: 1rem; }
       .about-section li { color: var(--gray-600); font-size: 0.95rem; line-height: 1.8; margin-bottom: 0.5rem; }
       .about-section a { color: var(--blue); text-decoration: underline; }
       .about-section strong { color: var(--gray-900); }
 
       .expertise-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 1rem; margin: 1.5rem 0; }
-      .expertise-item { background: var(--bg-card); border: 1px solid var(--gray-200); border-radius: 12px; padding: 1.25rem; text-align: center; }
-      .expertise-item .icon { font-size: 1.5rem; margin-bottom: 0.5rem; }
+      .expertise-item { background: var(--bg-card); border: 1px solid var(--border); border-radius: 14px; padding: 1.5rem; text-align: center; }
+      .expertise-item .e-icon { width: 44px; height: 44px; border-radius: 12px; display: flex; align-items: center; justify-content: center; margin: 0 auto 0.75rem; background: rgba(74,144,217,0.1); }
+      .expertise-item .e-icon svg { width: 22px; height: 22px; color: var(--blue); }
       .expertise-item h3 { font-size: 0.95rem; font-weight: 700; color: var(--gray-900); margin-bottom: 0.25rem; }
       .expertise-item p { font-size: 0.85rem; color: var(--gray-500); margin: 0; text-align: center; }
 
-      .cta-box { background: var(--blue); border-radius: 20px; padding: 2.5rem; text-align: center; color: #fff; margin-top: 3rem; }
+      .cta-box { background: linear-gradient(135deg, var(--blue), #7c3aed); border-radius: 20px; padding: 3rem 2rem; text-align: center; color: #fff; margin-top: 3rem; }
       .cta-box h2 { font-size: 1.5rem; font-weight: 800; margin-bottom: 0.75rem; color: #fff; }
       .cta-box p { opacity: 0.9; margin-bottom: 1.5rem; font-size: 0.95rem; }
       .cta-box p { margin-bottom: 0; }
@@ -125,7 +126,7 @@ const jsonLd = [
       .timeline-section { margin-bottom: 2.5rem; }
       .timeline-section h2 { font-size: 1.4rem; font-weight: 700; color: var(--gray-900); margin-bottom: 1.5rem; }
       .timeline { position: relative; padding-left: 2rem; }
-      .timeline::before { content: ''; position: absolute; left: 7px; top: 6px; bottom: 6px; width: 2px; background: var(--gray-200); }
+      .timeline::before { content: ''; position: absolute; left: 7px; top: 6px; bottom: 6px; width: 2px; background: var(--border); }
       .timeline-item { position: relative; margin-bottom: 1.75rem; }
       .timeline-item:last-child { margin-bottom: 0; }
       .timeline-dot { position: absolute; left: -2rem; top: 4px; width: 16px; height: 16px; border-radius: 50%; background: var(--blue); border: 3px solid var(--bg); box-shadow: 0 0 0 2px var(--blue); flex-shrink: 0; }
@@ -214,22 +215,22 @@ const jsonLd = [
       <h2>Fachgebiete</h2>
       <div class="expertise-grid">
         <div class="expertise-item">
-          <div class="icon">&#x1F4AA;</div>
+          <div class="e-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 20V6a2 2 0 0 0-2-2H8a2 2 0 0 0-2 2v14"/><path d="M2 20h20"/><path d="M14 12v.01"/></svg></div>
           <h3>Krafttraining</h3>
           <p>Hypertrophie, Kraft, Planung</p>
         </div>
         <div class="expertise-item">
-          <div class="icon">&#x1F916;</div>
+          <div class="e-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2a4 4 0 0 1 4 4v1a1 1 0 0 1-1 1H9a1 1 0 0 1-1-1V6a4 4 0 0 1 4-4z"/><path d="M9 8v1a3 3 0 0 0 6 0V8"/><path d="M4 13c0-1 .6-1.8 1.5-2H8"/><path d="M16 11h2.5c.9.2 1.5 1 1.5 2"/><path d="M4 13v4c0 2 1.5 4 4 5"/><path d="M20 13v4c0 2-1.5 4-4 5"/><path d="M12 22v-4"/></svg></div>
           <h3>K&uuml;nstliche Intelligenz</h3>
           <p>KI im Fitnessbereich</p>
         </div>
         <div class="expertise-item">
-          <div class="icon">&#x1F34E;</div>
+          <div class="e-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 8h1a4 4 0 0 1 0 8h-1"/><path d="M2 8h16v9a4 4 0 0 1-4 4H6a4 4 0 0 1-4-4V8z"/><line x1="6" y1="1" x2="6" y2="4"/><line x1="10" y1="1" x2="10" y2="4"/><line x1="14" y1="1" x2="14" y2="4"/></svg></div>
           <h3>Sportern&auml;hrung</h3>
           <p>Makros, Timing, Nahrungserg&auml;nzung</p>
         </div>
         <div class="expertise-item">
-          <div class="icon">&#x1F4CA;</div>
+          <div class="e-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 20V10"/><path d="M18 20V4"/><path d="M6 20v-4"/></svg></div>
           <h3>Fortschrittsverfolgung</h3>
           <p>RPE, Volumen, Periodisierung</p>
         </div>
