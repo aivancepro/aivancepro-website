@@ -1198,25 +1198,41 @@ const jsonLd = {
             }
 
             .hero-phones {
-                height: 340px;
+                height: auto;
+                display: flex;
+                overflow-x: auto;
+                scroll-snap-type: x mandatory;
+                -webkit-overflow-scrolling: touch;
+                gap: 1rem;
+                padding: 1rem 2rem 1.5rem;
+                scrollbar-width: none;
             }
 
+            .hero-phones::-webkit-scrollbar { display: none; }
+
+            .hero-phones::before { display: none; }
+
             .hero-phones .phone {
-                width: 130px;
+                position: static;
+                width: 240px;
+                flex-shrink: 0;
+                scroll-snap-align: center;
+                transform: none;
+                filter: drop-shadow(0 10px 30px rgba(0, 0, 0, 0.4));
             }
 
             .hero-phones .phone-center {
-                width: 150px;
+                width: 240px;
+                transform: none;
             }
 
-            .hero-phones .phone-left {
-                left: 5%;
-                top: 30px;
-            }
-
+            .hero-phones .phone-left,
             .hero-phones .phone-right {
-                right: 5%;
-                top: 30px;
+                transform: none;
+            }
+
+            .hero-phones .phone:hover {
+                transform: none;
             }
 
             .section-title {
