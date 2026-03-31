@@ -138,6 +138,18 @@ body::before {
 }
 
 
+/* ===== SAFE AREA COVER (Dynamic Island / notch) ===== */
+.safe-area-cover {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: env(safe-area-inset-top, 0px);
+    background: var(--bg);
+    z-index: 101;
+    pointer-events: none;
+}
+
 /* ===== NAVIGATION ===== */
 body > nav {
     position: fixed;
@@ -147,13 +159,10 @@ body > nav {
     padding: calc(0.5rem + env(safe-area-inset-top, 0px)) 2rem 0.5rem;
     background: var(--bg);
     z-index: 100;
-    will-change: transform;
-    transform: translateZ(0);
     display: flex;
     justify-content: space-between;
     align-items: center;
     border-bottom: 1px solid var(--border);
-    box-shadow: 0 -60px 0 0 var(--bg);
 }
 
 .nav-inner {
