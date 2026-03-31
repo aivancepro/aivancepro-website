@@ -107,8 +107,7 @@
 }
 
 html {
-    overflow: hidden;
-    height: 100%;
+    overflow-x: hidden;
 }
 
 body {
@@ -116,11 +115,7 @@ body {
     background-color: var(--bg);
     color: var(--text);
     line-height: 1.6;
-    height: 100vh;
-    height: 100dvh;
-    display: flex;
-    flex-direction: column;
-    overflow: hidden;
+    overflow-x: hidden;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
 }
@@ -144,24 +139,33 @@ body::before {
 
 
 /* ===== NAVIGATION ===== */
-/* ===== SCROLL CONTAINER ===== */
-.scroll-content {
-    flex: 1;
-    overflow-y: auto;
-    overflow-x: hidden;
-    -webkit-overflow-scrolling: touch;
-    overscroll-behavior-y: none;
-}
-
 body > nav {
-    flex-shrink: 0;
-    padding: 0.5rem 2rem;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    padding: calc(0.5rem + env(safe-area-inset-top, 0px)) 2rem 0.5rem;
     background: var(--bg);
     z-index: 100;
     display: flex;
     justify-content: space-between;
     align-items: center;
     border-bottom: 1px solid var(--border);
+    transition: transform 0.3s ease;
+}
+
+body > nav.nav-hidden {
+    transform: translateY(-100%);
+}
+
+body > nav::before {
+    content: '';
+    position: absolute;
+    top: calc(-1 * env(safe-area-inset-top, 50px));
+    left: 0;
+    right: 0;
+    height: env(safe-area-inset-top, 50px);
+    background: var(--bg);
 }
 
 .nav-inner {
@@ -1017,7 +1021,7 @@ footer {
         display: block;
     }
 
-    body > nav {
+    nav {
         padding: 0.875rem 1.25rem;
     }
 
@@ -1047,7 +1051,7 @@ footer {
 }
 
 @media (max-width: 480px) {
-    body > nav {
+    nav {
         padding: 0.75rem 1rem;
     }
 
@@ -1191,6 +1195,14 @@ footer {
 .back-to-top svg {
     width: 20px;
     height: 20px;
+}
+
+/* ===== SAFE AREAS (notch, Dynamic Island) ===== */
+@supports (padding: env(safe-area-inset-top)) {
+    nav {
+        padding-left: max(env(safe-area-inset-left, 0px), 1.25rem);
+        padding-right: max(env(safe-area-inset-right, 0px), 1.25rem);
+    }
 }
 
 /* ===== TEXT OVERFLOW PROTECTION ===== */
