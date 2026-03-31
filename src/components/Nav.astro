@@ -139,15 +139,21 @@ const currentLang = languages[lang];
   });
 
   // Theme toggle
+  var themeColors = { dark: '#050a14', light: '#f5f7fb' };
+  function setThemeColor(theme) {
+    var meta = document.querySelector('meta[name="theme-color"]:not([media])') || document.querySelector('meta[name="theme-color"]');
+    if (meta) meta.setAttribute('content', themeColors[theme] || themeColors.dark);
+  }
   var themeBtn = document.getElementById('themeToggle');
   if (themeBtn) {
     var saved = localStorage.getItem('theme');
-    if (saved) document.documentElement.setAttribute('data-theme', saved);
+    if (saved) { document.documentElement.setAttribute('data-theme', saved); setThemeColor(saved); }
     themeBtn.addEventListener('click', function() {
       var current = document.documentElement.getAttribute('data-theme');
       var next = current === 'light' ? 'dark' : 'light';
       document.documentElement.setAttribute('data-theme', next);
       localStorage.setItem('theme', next);
+      setThemeColor(next);
     });
   }
 
