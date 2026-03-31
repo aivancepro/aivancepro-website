@@ -401,16 +401,6 @@ const guidePosts = (await getCollection('guides', ({ data }) => data.lang === la
       });
     })();
     </script>
-    <script is:inline>
-    (function(){
-      var n=document.querySelector('nav');
-      if(!n)return;
-      document.addEventListener('scroll',function(){
-        var y=window.pageYOffset||0;
-        if(y<=10){n.classList.remove('nav-hidden')}
-        else{n.classList.add('nav-hidden')}
-      },{passive:true});
-    })();
-    </script>
+
 </body>
 </html>
