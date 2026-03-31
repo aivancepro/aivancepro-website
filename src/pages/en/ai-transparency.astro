@@ -35,64 +35,55 @@ const jsonLd = [
 >
   <Fragment slot="head">
     <style>
-      /* ── Header ── */
       .page-header { padding: 9rem 2rem 3rem; text-align: center; background: linear-gradient(180deg, var(--bg-card), var(--bg)); }
       .section-label { display: inline-block; font-size: 0.8rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.08em; color: var(--blue); margin-bottom: 0.75rem; }
       .page-header h1 { font-size: 2.8rem; font-weight: 800; letter-spacing: -0.02em; margin-bottom: 1rem; color: var(--gray-900); }
       .page-header p { color: var(--gray-500); font-size: 1.1rem; max-width: 640px; margin: 0 auto; line-height: 1.7; }
 
-      /* ── Layout ── */
       .ia-content { max-width: 800px; margin: 0 auto; padding: 3rem 2rem 4rem; }
 
-      /* ── Sections ── */
-      .ia-section { margin-bottom: 2.5rem; }
-      .ia-section h2 { font-size: 1.4rem; font-weight: 700; color: var(--gray-900); margin-bottom: 1rem; display: flex; align-items: center; gap: 0.6rem; }
-      .ia-section h2 .icon { font-size: 1.3rem; }
-      .ia-section p { color: var(--gray-600); font-size: 0.95rem; line-height: 1.8; margin-bottom: 1rem; text-align: justify; }
-      .ia-section ul { padding-left: 1.5rem; margin-bottom: 1rem; }
-      .ia-section li { color: var(--gray-600); font-size: 0.95rem; line-height: 1.8; margin-bottom: 0.5rem; }
+      .ia-section { margin-bottom: 3.5rem; }
+      .ia-section h2 { font-size: 1.5rem; font-weight: 800; color: var(--gray-900); margin-bottom: 1.25rem; display: flex; align-items: center; gap: 0.75rem; }
+      .ia-section h2 .s-icon { width: 28px; height: 28px; color: var(--blue); flex-shrink: 0; }
+      .ia-section p { color: var(--gray-600); font-size: 0.95rem; line-height: 1.8; margin-bottom: 1rem; }
       .ia-section strong { color: var(--gray-900); }
 
-      /* ── Info cards ── */
       .info-cards { display: grid; grid-template-columns: repeat(2, 1fr); gap: 1rem; margin: 1.5rem 0; }
-      .info-card { background: var(--bg-card); border: 1px solid var(--gray-200); border-radius: 14px; padding: 1.5rem; }
-      .info-card .card-icon { font-size: 1.4rem; margin-bottom: 0.6rem; }
+      .info-card { background: var(--bg-card); border: 1px solid var(--border); border-radius: 14px; padding: 1.5rem; }
+      .info-card .card-icon { width: 36px; height: 36px; border-radius: 10px; display: flex; align-items: center; justify-content: center; margin-bottom: 0.75rem; background: rgba(74,144,217,0.1); }
+      .info-card .card-icon svg { width: 20px; height: 20px; color: var(--blue); }
       .info-card h3 { font-size: 0.95rem; font-weight: 700; color: var(--gray-900); margin-bottom: 0.4rem; }
-      .info-card p { font-size: 0.88rem; color: var(--gray-500); line-height: 1.6; margin: 0; text-align: left; }
+      .info-card p { font-size: 0.88rem; color: var(--gray-500); line-height: 1.6; margin: 0; }
 
-      /* ── Can / Cannot split ── */
       .split-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; margin: 1.5rem 0; }
       .split-card { border-radius: 14px; padding: 1.5rem; }
-      .split-card.can { background: #f0fdf4; border: 1px solid #bbf7d0; }
-      .split-card.cannot { background: #fef2f2; border: 1px solid #fecaca; }
-      .split-card h3 { font-size: 0.95rem; font-weight: 700; margin-bottom: 0.75rem; display: flex; align-items: center; gap: 0.4rem; }
-      .split-card.can h3 { color: #166534; }
-      .split-card.cannot h3 { color: #991b1b; }
+      .split-card.can { background: rgba(16,185,129,0.06); border: 1px solid rgba(16,185,129,0.2); }
+      .split-card.cannot { background: rgba(239,68,68,0.06); border: 1px solid rgba(239,68,68,0.2); }
+      .split-card h3 { font-size: 0.95rem; font-weight: 700; margin-bottom: 0.75rem; display: flex; align-items: center; gap: 0.5rem; }
+      .split-card h3 svg { width: 20px; height: 20px; flex-shrink: 0; }
+      .split-card.can h3 { color: #10B981; }
+      .split-card.cannot h3 { color: #EF4444; }
       .split-card ul { padding-left: 1.25rem; margin: 0; }
-      .split-card li { font-size: 0.88rem; line-height: 1.7; margin-bottom: 0.3rem; }
-      .split-card.can li { color: #15803d; }
-      .split-card.cannot li { color: #b91c1c; }
+      .split-card li { font-size: 0.88rem; line-height: 1.7; margin-bottom: 0.3rem; color: var(--gray-600); }
 
-      /* ── Data protection list ── */
+      .warning-box { background: rgba(245,158,11,0.08); border: 1px solid rgba(245,158,11,0.25); border-radius: 12px; padding: 1.25rem 1.5rem; display: flex; align-items: flex-start; gap: 0.75rem; margin: 1.5rem 0; }
+      .warning-box svg { width: 22px; height: 22px; color: #F59E0B; flex-shrink: 0; margin-top: 0.1rem; }
+      .warning-box p { font-size: 0.9rem; color: var(--gray-600); line-height: 1.6; margin: 0; }
+      .warning-box strong { color: var(--gray-900); }
+
       .protection-list { list-style: none; padding: 0; margin: 1.5rem 0; }
-      .protection-list li { display: flex; align-items: flex-start; gap: 0.75rem; padding: 1rem 1.25rem; background: var(--bg-card); border: 1px solid var(--gray-200); border-radius: 12px; margin-bottom: 0.75rem; font-size: 0.92rem; color: var(--gray-600); line-height: 1.6; }
-      .protection-list .check { color: var(--blue); font-size: 1.1rem; flex-shrink: 0; margin-top: 0.1rem; }
+      .protection-list li { display: flex; align-items: flex-start; gap: 0.75rem; padding: 1rem 1.25rem; background: var(--bg-card); border: 1px solid var(--border); border-radius: 12px; margin-bottom: 0.75rem; font-size: 0.92rem; color: var(--gray-600); line-height: 1.6; }
+      .protection-list .check { flex-shrink: 0; margin-top: 0.15rem; }
+      .protection-list .check svg { width: 20px; height: 20px; color: var(--blue); }
 
-      /* ── Engagement grid ── */
       .engagement-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 1rem; margin: 1.5rem 0; }
-      .engagement-item { background: var(--bg-card); border: 1px solid var(--gray-200); border-radius: 14px; padding: 1.5rem; text-align: center; }
-      .engagement-item .icon { font-size: 1.5rem; margin-bottom: 0.5rem; }
-      .engagement-item h3 { font-size: 0.95rem; font-weight: 700; color: var(--gray-900); margin-bottom: 0.3rem; }
-      .engagement-item p { font-size: 0.85rem; color: var(--gray-500); margin: 0; line-height: 1.6; text-align: left; }
+      .engagement-item { background: var(--bg-card); border: 1px solid var(--border); border-radius: 14px; padding: 1.75rem 1.5rem; text-align: center; }
+      .engagement-item .e-icon { width: 44px; height: 44px; border-radius: 12px; display: flex; align-items: center; justify-content: center; margin: 0 auto 0.75rem; background: rgba(74,144,217,0.1); }
+      .engagement-item .e-icon svg { width: 22px; height: 22px; color: var(--blue); }
+      .engagement-item h3 { font-size: 0.95rem; font-weight: 700; color: var(--gray-900); margin-bottom: 0.4rem; }
+      .engagement-item p { font-size: 0.85rem; color: var(--gray-500); margin: 0; line-height: 1.6; }
 
-      /* ── Warning box ── */
-      .warning-box { background: #fffbeb; border: 1px solid #fde68a; border-radius: 12px; padding: 1.25rem 1.5rem; display: flex; align-items: flex-start; gap: 0.75rem; margin: 1.5rem 0; }
-      .warning-box .warn-icon { font-size: 1.2rem; flex-shrink: 0; margin-top: 0.1rem; }
-      .warning-box p { font-size: 0.9rem; color: #92400e; line-height: 1.6; margin: 0; text-align: left; }
-      .warning-box strong { color: #92400e; }
-
-      /* ── CTA box ── */
-      .cta-box { background: var(--blue); border-radius: 20px; padding: 2.5rem; text-align: center; color: #fff; margin-top: 3rem; }
+      .cta-box { background: linear-gradient(135deg, var(--blue), #7c3aed); border-radius: 20px; padding: 3rem 2rem; text-align: center; color: #fff; margin-top: 3rem; }
       .cta-box h2 { font-size: 1.5rem; font-weight: 800; margin-bottom: 0.75rem; color: #fff; }
       .cta-box p { opacity: 0.9; margin-bottom: 1.5rem; font-size: 0.95rem; }
       .cta-box a { display: inline-block; background: #fff; color: var(--blue); font-weight: 700; font-size: 0.95rem; padding: 0.75rem 2rem; border-radius: 12px; text-decoration: none; transition: transform 0.2s, box-shadow 0.2s; }
@@ -101,11 +92,12 @@ const jsonLd = [
       .back { display: inline-block; margin-top: 2rem; color: var(--gray-500); text-decoration: none; font-size: 0.9rem; }
       .back:hover { color: var(--gray-900); }
 
-      /* ── Responsive ── */
       @media (max-width: 768px) {
         .page-header { padding: 7rem 1.5rem 2rem; }
         .page-header h1 { font-size: 2rem; }
+        .ia-content { padding: 2rem 1.5rem 3rem; }
         .info-cards, .split-grid, .engagement-grid { grid-template-columns: 1fr; }
+        .cta-box { padding: 2rem 1.5rem; }
       }
     </style>
   </Fragment>
@@ -118,39 +110,46 @@ const jsonLd = [
 
   <div class="ia-content">
 
-    <!-- Section 1: How the AI coach works -->
     <div class="ia-section">
-      <h2><span class="icon">&#x1F9E0;</span> How the AI coach works</h2>
+      <h2>
+        <svg class="s-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2a4 4 0 0 1 4 4v1a1 1 0 0 1-1 1H9a1 1 0 0 1-1-1V6a4 4 0 0 1 4-4z"/><path d="M9 8v1a3 3 0 0 0 6 0V8"/><path d="M4 13c0-1 .6-1.8 1.5-2H8"/><path d="M16 11h2.5c.9.2 1.5 1 1.5 2"/><path d="M4 13v4c0 2 1.5 4 4 5"/><path d="M20 13v4c0 2-1.5 4-4 5"/><path d="M12 22v-4"/></svg>
+        How the AI coach works
+      </h2>
       <div class="info-cards">
         <div class="info-card">
-          <div class="card-icon">&#x1F4AC;</div>
+          <div class="card-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg></div>
           <h3>Advanced language models</h3>
           <p>AIVancePro uses LLMs (Large Language Models) to generate personalised training advice in real time.</p>
         </div>
         <div class="info-card">
-          <div class="card-icon">&#x1F464;</div>
+          <div class="card-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg></div>
           <h3>Profile analysis</h3>
           <p>The coach analyses your level, goals, and equipment to tailor every recommendation to your situation.</p>
         </div>
         <div class="info-card">
-          <div class="card-icon">&#x26A1;</div>
+          <div class="card-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/></svg></div>
           <h3>Real-time generation</h3>
           <p>Every programme is generated dynamically &mdash; not from pre-made templates. Your training history directly influences the recommendations.</p>
         </div>
         <div class="info-card">
-          <div class="card-icon">&#x1F4DA;</div>
+          <div class="card-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"/><path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"/></svg></div>
           <h3>Science-based</h3>
           <p>The AI draws on published sports science literature for its recommendations (hypertrophy, periodisation, volume).</p>
         </div>
       </div>
     </div>
 
-    <!-- Section 2: What the AI can and cannot do -->
     <div class="ia-section">
-      <h2><span class="icon">&#x2696;&#xFE0F;</span> What the AI can and cannot do</h2>
+      <h2>
+        <svg class="s-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3v18"/><path d="m8 8-4 4 4 4"/><path d="m16 16 4-4-4-4"/></svg>
+        What the AI can and cannot do
+      </h2>
       <div class="split-grid">
         <div class="split-card can">
-          <h3>&#x2705; The AI can</h3>
+          <h3>
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg>
+            The AI can
+          </h3>
           <ul>
             <li>Generate personalised programmes</li>
             <li>Analyse your progress</li>
@@ -160,7 +159,10 @@ const jsonLd = [
           </ul>
         </div>
         <div class="split-card cannot">
-          <h3>&#x274C; The AI cannot</h3>
+          <h3>
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
+            The AI cannot
+          </h3>
           <ul>
             <li>Replace a doctor</li>
             <li>Diagnose an injury</li>
@@ -170,67 +172,70 @@ const jsonLd = [
         </div>
       </div>
       <div class="warning-box">
-        <span class="warn-icon">&#x26A0;&#xFE0F;</span>
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m21.73 18-8-14a2 2 0 0 0-3.48 0l-8 14A2 2 0 0 0 4 21h16a2 2 0 0 0 1.73-3Z"/><line x1="12" y1="9" x2="12" y2="13"/><line x1="12" y1="17" x2="12.01" y2="17"/></svg>
         <p><strong>Important:</strong> if you experience pain or a health issue, always consult a healthcare professional. AI is a support tool, not a medical substitute.</p>
       </div>
     </div>
 
-    <!-- Section 3: Protecting your data -->
     <div class="ia-section">
-      <h2><span class="icon">&#x1F512;</span> Protecting your data</h2>
+      <h2>
+        <svg class="s-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="11" width="18" height="11" rx="2" ry="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg>
+        Protecting your data
+      </h2>
       <p>The security of your data is an absolute priority. Here are our concrete commitments:</p>
       <ul class="protection-list">
         <li>
-          <span class="check">&#x2713;</span>
+          <span class="check"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg></span>
           <span>Your training data is securely stored on <strong>European servers</strong> (Supabase, hosted in Europe).</span>
         </li>
         <li>
-          <span class="check">&#x2713;</span>
+          <span class="check"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg></span>
           <span>Your conversations with the AI coach <strong>are not used</strong> to train third-party models.</span>
         </li>
         <li>
-          <span class="check">&#x2713;</span>
+          <span class="check"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg></span>
           <span>You can <strong>delete your account</strong> and all your data at any time from the app settings.</span>
         </li>
         <li>
-          <span class="check">&#x2713;</span>
+          <span class="check"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg></span>
           <span>We <strong>never</strong> sell your data to third parties.</span>
         </li>
         <li>
-          <span class="check">&#x2713;</span>
+          <span class="check"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg></span>
           <span><strong>GDPR compliant</strong> (General Data Protection Regulation) &mdash; your rights of access, rectification, and deletion are fully respected.</span>
         </li>
       </ul>
     </div>
 
-    <!-- Section 4: Our commitment -->
     <div class="ia-section">
-      <h2><span class="icon">&#x1F91D;</span> Our commitment</h2>
+      <h2>
+        <svg class="s-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+        Our commitment
+      </h2>
       <div class="engagement-grid">
         <div class="engagement-item">
-          <div class="icon">&#x1F50D;</div>
+          <div class="e-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg></div>
           <h3>Transparency</h3>
           <p>We always explain how the AI makes its decisions.</p>
         </div>
         <div class="engagement-item">
-          <div class="icon">&#x1F9EA;</div>
+          <div class="e-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14.5 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V7.5L14.5 2z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/><polyline points="10 9 9 9 8 9"/></svg></div>
           <h3>Science</h3>
           <p>Every feature is based on published sports science research.</p>
         </div>
         <div class="engagement-item">
-          <div class="icon">&#x1F3AF;</div>
+          <div class="e-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22c5.523 0 10-4.477 10-10S17.523 2 12 2 2 6.477 2 12s4.477 10 10 10z"/><path d="m9 12 2 2 4-4"/></svg></div>
           <h3>Control</h3>
           <p>You always stay in control of your data and your workouts.</p>
         </div>
         <div class="engagement-item">
-          <div class="icon">&#x1F504;</div>
+          <div class="e-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="23 4 23 10 17 10"/><path d="M20.49 15a9 9 0 1 1-2.12-9.36L23 10"/></svg></div>
           <h3>Continuous improvement</h3>
           <p>We regularly update our models to provide better recommendations.</p>
         </div>
       </div>
     </div>
 
-    <!-- CTA -->
     <div class="cta-box">
       <h2>Questions about our AI?</h2>
       <p>Our team is available to answer all your questions about how the AI works and how your data is protected.</p>
