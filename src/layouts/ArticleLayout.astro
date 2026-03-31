@@ -212,19 +212,7 @@ const guidePrefixes = { fr: '/guides/', en: '/en/guides/', de: '/de/ratgeber/' }
 
   {image && image !== '/og-image.png' && (
     <div class="article-hero-image">
-      <picture>
-        <source
-          srcset={`${imageSmallAvif} 400w, ${imageAvif} 750w`}
-          sizes="(max-width: 768px) calc(100vw - 4rem), 750px"
-          type="image/avif"
-        />
-        <source
-          srcset={`${imageSmallWebp} 400w, ${imageWebp} 750w`}
-          sizes="(max-width: 768px) calc(100vw - 4rem), 750px"
-          type="image/webp"
-        />
-        <img src={image} alt={title} loading="eager" width="750" height="422" fetchpriority="high" decoding="async" />
-      </picture>
+      <img src={image} alt={title} loading="eager" width="750" height="422" fetchpriority="high" decoding="async" />
     </div>
   )}
 
