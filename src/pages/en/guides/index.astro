@@ -16,7 +16,7 @@ const guides = (await getCollection('guides', ({ data }) => data.lang === 'en'))
   <Fragment slot="head">
     <style>
       .page-header {
-        padding: 9rem 2rem 3rem;
+        padding: 6rem 2rem 2rem;
         text-align: center;
         background: linear-gradient(180deg, var(--bg-card), var(--bg));
       }
@@ -112,7 +112,7 @@ const guides = (await getCollection('guides', ({ data }) => data.lang === 'en'))
         font-weight: 500;
       }
       @media (max-width: 768px) {
-        .page-header { padding: 7rem 1.5rem 2rem; }
+        .page-header { padding: 4.5rem 1.5rem 1.5rem; }
         .page-header h1 { font-size: 2rem; }
         .guides-grid { grid-template-columns: 1fr; }
       }
