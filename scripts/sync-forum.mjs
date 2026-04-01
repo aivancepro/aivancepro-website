@@ -108,20 +108,6 @@ async function createTopic(title, body, slug, articleType) {
   return data?.[0]?.id;
 }
 
-// Create a reply on a topic (reply_count is auto-incremented by DB trigger)
-async function createReply(postId, body) {
-  await fetch(`${SUPABASE_URL}/rest/v1/forum_replies`, {
-    method: 'POST',
-    headers,
-    body: JSON.stringify({
-      post_id: postId,
-      body,
-      author_id: AIVANCEPRO_AUTHOR_ID,
-      author_name: 'AIVancePro',
-    }),
-  });
-}
-
 async function main() {
   const existing = await getExistingTopics();
   console.log(`Forum sync: ${existing.size} existing article topics.`);
@@ -154,22 +140,17 @@ async function main() {
       const desc = fm.description || '';
       const url = `https://aivancepro.fr${folder.prefix}${slug}/`;
 
-      // Topic body: short description + link + engagement question
+      // Topic body: description + summary + link + engagement question
+      const summary = extractSummary(content);
       const topicBody =
         `${desc}\n\n` +
-        `\u2014\n\n` +
+        (summary ? `---\n\n${summary}\n\n` : '') +
+        `---\n\n` +
         `\u{1F4AC} Qu'en pensez-vous ? Partagez vos questions, retours d'exp\u00e9rience ou avis dans les commentaires !\n\n` +
         `\u{1F4D6} Lire l'article complet : ${url}`;
 
-      // Reply body: summary from article content + engagement question
-      const summary = extractSummary(content);
-      const replyBody = summary
-        ? `${summary}\n\nVous avez des questions ou des retours d'exp\u00e9rience ? Partagez-les !`
-        : `D\u00e9couvrez cet article et partagez vos retours d'exp\u00e9rience !`;
-
       const postId = await createTopic(title, topicBody, slug, folder.type);
       if (postId) {
-        await createReply(postId, replyBody);
         console.log(`  Created: ${slug} (${folder.type})`);
         created++;
       } else {
