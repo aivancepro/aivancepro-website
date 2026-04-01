@@ -10,12 +10,12 @@ const i = t[lang];
         <div class="footer-grid">
             <div class="footer-brand">
                 <a href={i.links.home} class="logo">
-                    <img src="/assets/logo.png" alt="AIVancePro" width="34" height="34" decoding="async">
+                    <picture><source srcset="/assets/logo.webp" type="image/webp"><img src="/assets/logo.png" alt="AIVancePro" width="34" height="34" decoding="async"></picture>
                     <span class="logo-text">AIVancePro</span>
                 </a>
                 <p>{i.footer.tagline}</p>
                 <div class="newsletter-form">
-                    <h4>{i.newsletter.title}</h4>
+                    <p class="newsletter-title">{i.newsletter.title}</p>
                     <p class="newsletter-subtitle">{i.newsletter.subtitle}</p>
                     <form id="newsletterForm" data-lang={lang} data-success={i.newsletter.success} data-error={i.newsletter.error} data-duplicate={i.newsletter.duplicate}>
                         <div class="newsletter-input-wrap">

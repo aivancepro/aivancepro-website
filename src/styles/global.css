@@ -686,7 +686,7 @@ footer {
 .footer-brand p {
     font-size: 0.85rem;
     line-height: 1.6;
-    color: var(--text-muted);
+    color: var(--text-secondary);
     max-width: 280px;
 }
 
@@ -694,7 +694,7 @@ footer {
     margin-top: 1.25rem;
 }
 
-.newsletter-form h4 {
+.newsletter-title {
     color: var(--text);
     font-size: 0.85rem;
     font-weight: 700;
@@ -704,7 +704,7 @@ footer {
 }
 
 .newsletter-subtitle {
-    color: var(--text-secondary);
+    color: var(--gray-500);
     font-size: 0.78rem;
     margin-bottom: 0.75rem;
     line-height: 1.4;
@@ -742,7 +742,7 @@ footer {
 
 .newsletter-input-wrap button {
     padding: 0.6rem 1rem;
-    background: var(--blue);
+    background: #3171b8;
     color: white;
     border: none;
     font-size: 0.8rem;
@@ -1635,14 +1635,15 @@ body {
 }
 
 .testimonials-dot {
-    width: 8px;
-    height: 8px;
+    width: 12px;
+    height: 12px;
     border-radius: 50%;
     background: var(--border);
     border: none;
     cursor: pointer;
     transition: background 0.2s, transform 0.2s;
-    padding: 0;
+    padding: 10px;
+    background-clip: content-box;
 }
 
 .testimonials-dot.active {
