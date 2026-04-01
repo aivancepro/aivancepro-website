@@ -810,6 +810,7 @@ footer {
 
 .footer-bottom p {
     font-size: 0.8rem;
+    color: var(--text-secondary);
 }
 
 .footer-social {
@@ -1181,7 +1182,7 @@ footer {
 }
 
 .cookie-btn.accept {
-    background: var(--blue);
+    background: #3171b8;
     color: var(--white);
 }
 
