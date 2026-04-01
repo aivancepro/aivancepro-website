@@ -153,6 +153,14 @@ const currentLang = languages[lang];
 
   // Search modal JS is in BaseLayout.astro (runs after overlay is in DOM)
 
+  // Close mobile menu on link click (needed for anchor links like #features)
+  document.querySelectorAll('#mobileMenu a').forEach(function(a) {
+    a.addEventListener('click', function() {
+      document.getElementById('mobileMenu').classList.remove('open');
+      document.body.style.overflow = '';
+    });
+  });
+
   // Auth state check
   var storageKey = 'sb-vzmtvhcvyqzkmestdbko-auth-token';
   try {
