@@ -258,6 +258,25 @@ const guidePosts = (await getCollection('guides', ({ data }) => data.lang === la
         });
       }
 
+      // 3D tilt on showcase phone mockups (desktop + hover devices only)
+      if (window.matchMedia('(hover: hover) and (min-width: 769px)').matches && !window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+        document.querySelectorAll('.showcase-image').forEach(function(container) {
+          var img = container.querySelector('.phone-mockup');
+          if (!img) return;
+          container.addEventListener('mousemove', function(e) {
+            var rect = container.getBoundingClientRect();
+            var x = (e.clientX - rect.left) / rect.width;
+            var y = (e.clientY - rect.top) / rect.height;
+            var ry = (x - 0.5) * 14;
+            var rx = (0.5 - y) * 10;
+            img.style.transform = 'translateY(-8px) scale(1.03) rotateY(' + ry + 'deg) rotateX(' + rx + 'deg)';
+          });
+          container.addEventListener('mouseleave', function() {
+            img.style.transform = '';
+          });
+        });
+      }
+
       // Cookie banner
       var banner = document.getElementById('cookieBanner');
       if (banner && !localStorage.getItem('cookie_consent')) {
