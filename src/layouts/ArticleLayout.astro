@@ -467,66 +467,18 @@ const guidePrefixes = { fr: '/guides/', en: '/en/guides/', de: '/de/ratgeber/' }
       if (slug) {
         var SB_URL = 'https://vzmtvhcvyqzkmestdbko.supabase.co';
         var SB_KEY = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InZ6bXR2aGN2eXF6a21lc3RkYmtvIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NzA4OTA0MTEsImV4cCI6MjA4NjQ2NjQxMX0.rvBz2uIsr3YtLIw84Kor3eVFpH4FiXVZgbufiJH3uio';
-        var articleTitle = document.querySelector('.article-title')?.textContent || document.querySelector('.article-header h1')?.textContent || slug;
-
-        var articleDesc = document.querySelector('meta[name="description"]')?.content || '';
-        var pageLang = document.documentElement.lang || 'fr';
-        var forumCTA = {
-          fr: '\u{1F4AC} Qu\'en pensez-vous ? Partagez vos questions, retours d\'exp\u00e9rience ou avis dans les commentaires !',
-          en: '\u{1F4AC} What do you think? Share your questions, experiences or opinions in the comments!',
-          de: '\u{1F4AC} Was denkt ihr? Teilt eure Fragen, Erfahrungen oder Meinungen in den Kommentaren!'
-        };
-        var forumRead = { fr: 'Lire l\'article complet', en: 'Read the full article', de: 'Den ganzen Artikel lesen' };
-        var forumIntro = (articleDesc ? articleDesc + '\n\n' : '')
-          + '\u2014\n\n'
-          + (forumCTA[pageLang] || forumCTA.fr) + '\n\n'
-          + '\u{1F4D6} ' + (forumRead[pageLang] || forumRead.fr) + ' : ' + window.location.href;
-
-        // Check if a forum post already exists for this article
+        // Check if a forum post already exists for this article (created at build time)
         fetch(SB_URL + '/rest/v1/forum_posts?article_slug=eq.' + slug + '&limit=1', {
           headers: { 'apikey': SB_KEY, 'Content-Type': 'application/json' }
         }).then(function(r) { return r.json(); }).then(function(posts) {
           if (posts && posts.length > 0) {
             forumLink.href = '/forum/topic/?id=' + posts[0].id;
-            var countText = posts[0].reply_count > 0 ? posts[0].reply_count + ' réponse' + (posts[0].reply_count > 1 ? 's' : '') : 'Soyez le premier à commenter';
+            var countText = posts[0].reply_count > 0 ? posts[0].reply_count + ' r\u00e9ponse' + (posts[0].reply_count > 1 ? 's' : '') : 'Soyez le premier \u00e0 commenter';
             forumSection.querySelector('.article-forum-text span').textContent = countText;
-            forumSection.style.display = '';
           } else {
-            // Auto-create forum topic for this article if user is logged in
-            var storageKey = 'sb-vzmtvhcvyqzkmestdbko-auth-token';
-            var raw = localStorage.getItem(storageKey);
-            var token = null;
-            try { var parsed = JSON.parse(raw); if (parsed && parsed.access_token) token = parsed.access_token; } catch(e) {}
-
-            if (token) {
-              // Decode JWT to get user info
-              var payload = JSON.parse(atob(token.split('.')[1]));
-              fetch(SB_URL + '/rest/v1/forum_posts', {
-                method: 'POST',
-                headers: { 'apikey': SB_KEY, 'Authorization': 'Bearer ' + token, 'Content-Type': 'application/json', 'Prefer': 'return=representation' },
-                body: JSON.stringify({
-                  title: articleTitle,
-                  body: forumIntro,
-                  category: 'article',
-                  article_slug: slug,
-                  article_type: articleType,
-                  author_id: payload.sub,
-                  author_name: 'AIVancePro'
-                })
-              }).then(function(r) { return r.json(); }).then(function(newPost) {
-                if (newPost && newPost[0] && newPost[0].id) {
-                  forumLink.href = '/forum/topic/?id=' + newPost[0].id;
-                  forumSection.querySelector('.article-forum-text span').textContent = 'Soyez le premier à commenter';
-                } else {
-                  forumLink.href = '/forum/?article=' + slug + '&type=' + articleType;
-                }
-                forumSection.style.display = '';
-              }).catch(function() { forumLink.href = '/forum/?article=' + slug + '&type=' + articleType; forumSection.style.display = ''; });
-            } else {
-              forumLink.href = '/forum/?article=' + slug + '&type=' + articleType;
-              forumSection.style.display = '';
-            }
+            forumLink.href = '/forum/';
           }
+          forumSection.style.display = '';
         }).catch(function() {
           forumLink.href = '/forum/';
           forumSection.style.display = '';
