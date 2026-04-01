@@ -1447,123 +1447,221 @@ const jsonLd = {
         </div>
     </section>
 
-    <!-- Features -->
-    <section class="features" id="features">
-        <div class="section-inner">
-            <div class="section-header reveal">
-                <div class="section-label">Features</div>
-                <h2 class="section-title">Everything you need to progress</h2>
-                <p class="section-subtitle">A personal coach, a gym and a training log, all in your pocket.</p>
-            </div>
-
-            <div class="features-grid">
-                <div class="feature-card reveal reveal-delay-1">
-                    <div class="feature-icon blue">
-                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#5BA0E9" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>
-                    </div>
-                    <h3>Conversational AI Coach</h3>
-                    <p>Chat with your AI coach to generate workouts, get advice and adapt your programs in real time.</p>
-                </div>
-
-                <div class="feature-card reveal reveal-delay-2">
-                    <div class="feature-icon purple">
-                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#5BA0E9" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z"/></svg>
-                    </div>
-                    <h3>240+ Exercises</h3>
-                    <p>Complete exercise database with videos and detailed instructions for perfect execution.</p>
-                </div>
-
-                <div class="feature-card reveal reveal-delay-3">
-                    <div class="feature-icon green">
-                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#10B981" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/></svg>
-                    </div>
-                    <h3>Progress Tracking</h3>
-                    <p>Track your performance, personal records and training volume with detailed and clear charts.</p>
-                </div>
-
-                <div class="feature-card reveal reveal-delay-1">
-                    <div class="feature-icon orange">
-                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#F59E0B" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 20h9"/><path d="M16.5 3.5a2.12 2.12 0 0 1 3 3L7 19l-4 1 1-4L16.5 3.5z"/></svg>
-                    </div>
-                    <h3>Personalized Programs</h3>
-                    <p>AI adapts each session to your level, goals and available equipment.</p>
-                </div>
-
-                <div class="feature-card reveal reveal-delay-2">
-                    <div class="feature-icon red">
-                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#EF4444" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
-                    </div>
-                    <h3>Active Community</h3>
-                    <p>Join groups, share your performances and stay motivated with a community of athletes.</p>
-                </div>
-
-            </div>
-        </div>
-    </section>
-
-    <!-- Showcase 1: AI Coach -->
-    <section class="showcase">
+    <!-- 1. AI Coach -->
+    <section class="showcase" id="features">
         <div class="showcase-inner">
             <div class="showcase-text reveal">
                 <div class="section-label">AI Coach</div>
                 <h2>Your personal coach, available 24/7</h2>
-                <p>Ask it to generate a workout, explain an exercise or adapt your program. It knows your history and adapts to you.</p>
+                <p>Chat with your AI coach just like you would with a real coach. It generates sessions, analyzes your performance, answers your questions and adapts to your progress. It knows your complete history and personalizes every piece of advice.</p>
                 <ul class="showcase-list">
                     <li>
                         <svg viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/></svg>
-                        Natural language workout generation
+                        Natural conversation in your language
                     </li>
                     <li>
                         <svg viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/></svg>
-                        Analysis of your past performance
+                        Personalized session and plan generation
                     </li>
                     <li>
                         <svg viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/></svg>
-                        Real-time personalized advice
+                        Progress analysis and real-time advice
+                    </li>
+                    <li>
+                        <svg viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/></svg>
+                        Saved conversation history and favorites
                     </li>
                 </ul>
             </div>
             <div class="showcase-image reveal reveal-delay-2">
-                <picture><source srcset="/assets/screenshots/en/showcase-coach-small.avif 640w, /assets/screenshots/en/showcase-coach.avif 1419w" sizes="(max-width: 768px) 200px, 280px" type="image/avif"><source srcset="/assets/screenshots/en/showcase-coach-small.webp 640w, /assets/screenshots/en/showcase-coach.webp 1419w" sizes="(max-width: 768px) 200px, 280px" type="image/webp"><img src="/assets/screenshots/en/showcase-coach.png" alt="AI Coach AIVancePro" class="phone-mockup" width="280" height="582" loading="lazy" decoding="async"></picture>
+                <picture>
+                    <source srcset="/assets/screenshots/en/feat-coach-small.avif 300w, /assets/screenshots/en/feat-coach.avif 600w" sizes="300px" type="image/avif">
+                    <source srcset="/assets/screenshots/en/feat-coach-small.webp 300w, /assets/screenshots/en/feat-coach.webp 600w" sizes="300px" type="image/webp">
+                    <img src="/assets/screenshots/en/feat-coach.png" alt="AI Coach AIVancePro" class="phone-mockup" width="300" height="600" loading="lazy" decoding="async">
+                </picture>
             </div>
         </div>
     </section>
 
-    <!-- Showcase 2: Progression -->
+    <!-- 2. Personalized Programs -->
     <section class="showcase">
         <div class="showcase-inner reverse">
             <div class="showcase-text reveal">
-                <div class="section-label">Progression</div>
-                <h2>Visualize every progress</h2>
-                <p>Volume charts, personal records, muscle distribution, activity calendar... Everything is tracked automatically.</p>
+                <div class="section-label">Personalized Programs</div>
+                <h2>Programs tailored to you</h2>
+                <p>The AI generates sessions and training plans fully adapted to your level, goals and equipment. Create programs up to 12 weeks long with built-in periodization for optimal progression.</p>
                 <ul class="showcase-list">
                     <li>
                         <svg viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/></svg>
-                        Detailed progression charts
+                        Adapted to your level: beginner, intermediate or advanced
                     </li>
                     <li>
                         <svg viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/></svg>
-                        Automatic personal records
+                        Training plans up to 12 weeks
                     </li>
                     <li>
                         <svg viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/></svg>
-                        AI analysis of your evolution
+                        Automatic periodization for optimized progression
+                    </li>
+                    <li>
+                        <svg viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/></svg>
+                        Takes your available equipment into account
                     </li>
                 </ul>
             </div>
             <div class="showcase-image reveal reveal-delay-2">
-                <picture><source srcset="/assets/screenshots/en/showcase-progression-small.avif 640w, /assets/screenshots/en/showcase-progression.avif 1419w" sizes="(max-width: 768px) 200px, 280px" type="image/avif"><source srcset="/assets/screenshots/en/showcase-progression-small.webp 640w, /assets/screenshots/en/showcase-progression.webp 1419w" sizes="(max-width: 768px) 200px, 280px" type="image/webp"><img src="/assets/screenshots/en/showcase-progression.png" alt="Progress Tracking AIVancePro" class="phone-mockup" width="280" height="582" loading="lazy" decoding="async"></picture>
+                <picture>
+                    <source srcset="/assets/screenshots/en/feat-program-small.avif 300w, /assets/screenshots/en/feat-program.avif 600w" sizes="300px" type="image/avif">
+                    <source srcset="/assets/screenshots/en/feat-program-small.webp 300w, /assets/screenshots/en/feat-program.webp 600w" sizes="300px" type="image/webp">
+                    <img src="/assets/screenshots/en/feat-program.png" alt="Personalized Programs AIVancePro" class="phone-mockup" width="300" height="600" loading="lazy" decoding="async">
+                </picture>
             </div>
         </div>
     </section>
 
-    <!-- Showcase 3: Community -->
+    <!-- 3. 240+ Exercises -->
+    <section class="showcase">
+        <div class="showcase-inner">
+            <div class="showcase-text reveal">
+                <div class="section-label">240+ Exercises</div>
+                <h2>A complete exercise database</h2>
+                <p>Over 240 exercises with demonstration videos and detailed instructions. All muscle groups are covered, with a wide range of equipment: dumbbells, barbells, machines, cables, resistance bands and bodyweight.</p>
+                <ul class="showcase-list">
+                    <li>
+                        <svg viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/></svg>
+                        Videos and instructions for every exercise
+                    </li>
+                    <li>
+                        <svg viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/></svg>
+                        All muscle groups covered
+                    </li>
+                    <li>
+                        <svg viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/></svg>
+                        Dumbbells, barbells, machines, cables, bands, bodyweight
+                    </li>
+                    <li>
+                        <svg viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/></svg>
+                        Search and filter by muscle or equipment
+                    </li>
+                </ul>
+            </div>
+            <div class="showcase-image reveal reveal-delay-2">
+                <picture>
+                    <source srcset="/assets/screenshots/en/feat-exercises-small.avif 300w, /assets/screenshots/en/feat-exercises.avif 600w" sizes="300px" type="image/avif">
+                    <source srcset="/assets/screenshots/en/feat-exercises-small.webp 300w, /assets/screenshots/en/feat-exercises.webp 600w" sizes="300px" type="image/webp">
+                    <img src="/assets/screenshots/en/feat-exercises.png" alt="Exercise database AIVancePro" class="phone-mockup" width="300" height="600" loading="lazy" decoding="async">
+                </picture>
+            </div>
+        </div>
+    </section>
+
+    <!-- 4. Progress Tracking -->
+    <section class="showcase">
+        <div class="showcase-inner reverse">
+            <div class="showcase-text reveal">
+                <div class="section-label">Progress Tracking</div>
+                <h2>Visualize every progress</h2>
+                <p>Track your performance with volume charts, automatic personal records, muscle distribution and an activity calendar. The AI analyzes your evolution and detects signs of overtraining to protect you.</p>
+                <ul class="showcase-list">
+                    <li>
+                        <svg viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/></svg>
+                        Detailed volume and progression charts
+                    </li>
+                    <li>
+                        <svg viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/></svg>
+                        Automatically detected personal records
+                    </li>
+                    <li>
+                        <svg viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/></svg>
+                        Muscle distribution and activity calendar
+                    </li>
+                    <li>
+                        <svg viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/></svg>
+                        AI-powered overtraining detection
+                    </li>
+                </ul>
+            </div>
+            <div class="showcase-image reveal reveal-delay-2">
+                <picture>
+                    <source srcset="/assets/screenshots/en/feat-progression-small.avif 300w, /assets/screenshots/en/feat-progression.avif 600w" sizes="300px" type="image/avif">
+                    <source srcset="/assets/screenshots/en/feat-progression-small.webp 300w, /assets/screenshots/en/feat-progression.webp 600w" sizes="300px" type="image/webp">
+                    <img src="/assets/screenshots/en/feat-progression.png" alt="Progress Tracking AIVancePro" class="phone-mockup" width="300" height="600" loading="lazy" decoding="async">
+                </picture>
+            </div>
+        </div>
+    </section>
+
+    <!-- 5. Templates -->
+    <section class="showcase">
+        <div class="showcase-inner">
+            <div class="showcase-text reveal">
+                <div class="section-label">Templates</div>
+                <h2>Save and reuse your sessions</h2>
+                <p>Save any session as a template to reuse it with one click. No need to recreate your workouts every time. Share your templates with the community to inspire other athletes.</p>
+                <ul class="showcase-list">
+                    <li>
+                        <svg viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/></svg>
+                        One-click save from any session
+                    </li>
+                    <li>
+                        <svg viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/></svg>
+                        Quick launch your favorite workouts
+                    </li>
+                    <li>
+                        <svg viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/></svg>
+                        Share templates with the community
+                    </li>
+                </ul>
+            </div>
+            <div class="showcase-image reveal reveal-delay-2">
+                <picture>
+                    <source srcset="/assets/screenshots/en/feat-templates-small.avif 300w, /assets/screenshots/en/feat-templates.avif 600w" sizes="300px" type="image/avif">
+                    <source srcset="/assets/screenshots/en/feat-templates-small.webp 300w, /assets/screenshots/en/feat-templates.webp 600w" sizes="300px" type="image/webp">
+                    <img src="/assets/screenshots/en/feat-templates.png" alt="Workout templates AIVancePro" class="phone-mockup" width="300" height="600" loading="lazy" decoding="async">
+                </picture>
+            </div>
+        </div>
+    </section>
+
+    <!-- 6. Rest Timer -->
+    <section class="showcase">
+        <div class="showcase-inner reverse">
+            <div class="showcase-text reveal">
+                <div class="section-label">Rest Timer</div>
+                <h2>Optimized rest times</h2>
+                <p>The floating timer stays visible throughout your entire session. It triggers automatically with rest times adapted to each exercise. Focus on your training, the timer handles the timing for you.</p>
+                <ul class="showcase-list">
+                    <li>
+                        <svg viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/></svg>
+                        Always-visible floating timer
+                    </li>
+                    <li>
+                        <svg viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/></svg>
+                        Automatic rest times per exercise
+                    </li>
+                    <li>
+                        <svg viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/></svg>
+                        Sound notification when rest is over
+                    </li>
+                </ul>
+            </div>
+            <div class="showcase-image reveal reveal-delay-2">
+                <picture>
+                    <source srcset="/assets/screenshots/en/feat-session-small.avif 300w, /assets/screenshots/en/feat-session.avif 600w" sizes="300px" type="image/avif">
+                    <source srcset="/assets/screenshots/en/feat-session-small.webp 300w, /assets/screenshots/en/feat-session.webp 600w" sizes="300px" type="image/webp">
+                    <img src="/assets/screenshots/en/feat-session.png" alt="Rest Timer AIVancePro" class="phone-mockup" width="300" height="600" loading="lazy" decoding="async">
+                </picture>
+            </div>
+        </div>
+    </section>
+
+    <!-- 7. Community -->
     <section class="showcase">
         <div class="showcase-inner">
             <div class="showcase-text reveal">
                 <div class="section-label">Community</div>
                 <h2>Train together</h2>
-                <p>Create groups, challenge your friends, share your performances and motivate each other.</p>
+                <p>Create groups, challenge your friends, climb the leaderboards and share your performance. The built-in messaging lets you stay connected with your fitness community directly in the app.</p>
                 <ul class="showcase-list">
                     <li>
                         <svg viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/></svg>
@@ -1575,12 +1673,88 @@ const jsonLd = {
                     </li>
                     <li>
                         <svg viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/></svg>
-                        Built-in messaging
+                        Built-in real-time messaging
+                    </li>
+                    <li>
+                        <svg viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/></svg>
+                        Share performances and results
                     </li>
                 </ul>
             </div>
             <div class="showcase-image reveal reveal-delay-2">
-                <picture><source srcset="/assets/screenshots/en/showcase-community-small.avif 640w, /assets/screenshots/en/showcase-community.avif 1419w" sizes="(max-width: 768px) 200px, 280px" type="image/avif"><source srcset="/assets/screenshots/en/showcase-community-small.webp 640w, /assets/screenshots/en/showcase-community.webp 1419w" sizes="(max-width: 768px) 200px, 280px" type="image/webp"><img src="/assets/screenshots/en/showcase-community.png" alt="Community AIVancePro" class="phone-mockup" width="280" height="582" loading="lazy" decoding="async"></picture>
+                <picture>
+                    <source srcset="/assets/screenshots/en/feat-community-small.avif 300w, /assets/screenshots/en/feat-community.avif 600w" sizes="300px" type="image/avif">
+                    <source srcset="/assets/screenshots/en/feat-community-small.webp 300w, /assets/screenshots/en/feat-community.webp 600w" sizes="300px" type="image/webp">
+                    <img src="/assets/screenshots/en/feat-community.png" alt="Community AIVancePro" class="phone-mockup" width="300" height="600" loading="lazy" decoding="async">
+                </picture>
+            </div>
+        </div>
+    </section>
+
+    <!-- 8. Cardio -->
+    <section class="showcase">
+        <div class="showcase-inner reverse">
+            <div class="showcase-text reveal">
+                <div class="section-label">Cardio</div>
+                <h2>Dedicated cardio sessions</h2>
+                <p>Record your cardio sessions with dedicated tracking: running, cycling, rowing and more. Combine cardio and strength training in your programs for a complete and balanced workout.</p>
+                <ul class="showcase-list">
+                    <li>
+                        <svg viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/></svg>
+                        Running, cycling, rowing, elliptical and more
+                    </li>
+                    <li>
+                        <svg viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/></svg>
+                        Duration, distance and calorie tracking
+                    </li>
+                    <li>
+                        <svg viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/></svg>
+                        Mix cardio and strength in the same program
+                    </li>
+                </ul>
+            </div>
+            <div class="showcase-image reveal reveal-delay-2">
+                <picture>
+                    <source srcset="/assets/screenshots/en/feat-cardio-small.avif 300w, /assets/screenshots/en/feat-cardio.avif 600w" sizes="300px" type="image/avif">
+                    <source srcset="/assets/screenshots/en/feat-cardio-small.webp 300w, /assets/screenshots/en/feat-cardio.webp 600w" sizes="300px" type="image/webp">
+                    <img src="/assets/screenshots/en/feat-cardio.png" alt="Cardio sessions AIVancePro" class="phone-mockup" width="300" height="600" loading="lazy" decoding="async">
+                </picture>
+            </div>
+        </div>
+    </section>
+
+    <!-- 9. Points & Badges -->
+    <section class="showcase">
+        <div class="showcase-inner">
+            <div class="showcase-text reveal">
+                <div class="section-label">Points &amp; Badges</div>
+                <h2>Gamification to stay motivated</h2>
+                <p>Earn points with every session, level up and unlock badges by reaching your goals. The gamification system keeps you motivated long-term and makes every workout rewarding.</p>
+                <ul class="showcase-list">
+                    <li>
+                        <svg viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/></svg>
+                        Points and leveling system
+                    </li>
+                    <li>
+                        <svg viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/></svg>
+                        Badges and achievements to unlock
+                    </li>
+                    <li>
+                        <svg viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/></svg>
+                        Training streaks for consistency
+                    </li>
+                    <li>
+                        <svg viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/></svg>
+                        Long-term motivation
+                    </li>
+                </ul>
+            </div>
+            <div class="showcase-image reveal reveal-delay-2">
+                <picture>
+                    <source srcset="/assets/screenshots/en/feat-gamification-small.avif 300w, /assets/screenshots/en/feat-gamification.avif 600w" sizes="300px" type="image/avif">
+                    <source srcset="/assets/screenshots/en/feat-gamification-small.webp 300w, /assets/screenshots/en/feat-gamification.webp 600w" sizes="300px" type="image/webp">
+                    <img src="/assets/screenshots/en/feat-gamification.png" alt="Gamification AIVancePro" class="phone-mockup" width="300" height="600" loading="lazy" decoding="async">
+                </picture>
             </div>
         </div>
     </section>

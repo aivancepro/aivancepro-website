@@ -82,7 +82,7 @@ export const t = {
     },
     links: {
       home: '/',
-      features: '/fonctionnalites/',
+      features: '/#features',
       reviews: '/avis/',
       pricing: '/pricing/',
       faq: '/faq/',
@@ -184,7 +184,7 @@ export const t = {
     },
     links: {
       home: '/en/',
-      features: '/en/features/',
+      features: '/en/#features',
       reviews: '/en/reviews/',
       pricing: '/en/pricing/',
       faq: '/en/faq/',
@@ -286,7 +286,7 @@ export const t = {
     },
     links: {
       home: '/de/',
-      features: '/de/funktionen/',
+      features: '/de/#funktionen',
       reviews: '/de/bewertungen/',
       pricing: '/de/preise/',
       faq: '/de/faq/',
