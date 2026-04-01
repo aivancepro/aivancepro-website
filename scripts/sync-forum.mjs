@@ -34,20 +34,22 @@ function parseFrontmatter(content) {
   return fm;
 }
 
-// Extract first meaningful paragraphs from markdown body
-function extractSummary(content, maxParagraphs = 4) {
+// Extract a concise summary from markdown body (~800 chars max)
+function extractSummary(content) {
   const body = content.replace(/^---[\s\S]*?---\n*/, '');
   const lines = body.split('\n');
   const paragraphs = [];
   let current = '';
+  let totalLen = 0;
 
   for (const line of lines) {
     const trimmed = line.trim();
-    // Skip headings, images, links-only lines, empty
+    // Skip headings, images, empty lines
     if (trimmed.startsWith('#') || trimmed.startsWith('![') || trimmed === '') {
       if (current.length > 30) {
         paragraphs.push(current.trim());
-        if (paragraphs.length >= maxParagraphs) break;
+        totalLen += current.length;
+        if (totalLen > 700) break;
       }
       current = '';
       continue;
@@ -60,11 +62,21 @@ function extractSummary(content, maxParagraphs = 4) {
       .replace(/`(.+?)`/g, '$1');
     current += (current ? ' ' : '') + clean;
   }
-  if (current.length > 30 && paragraphs.length < maxParagraphs) {
+  if (current.length > 30 && totalLen < 700) {
     paragraphs.push(current.trim());
   }
 
-  return paragraphs.join('\n\n');
+  // Take first paragraph(s) up to ~1000 chars, always include at least the first one
+  let result = '';
+  for (const p of paragraphs) {
+    if (result && result.length + p.length > 1000) break;
+    result += (result ? '\n\n' : '') + p;
+  }
+  // Truncate if single paragraph is too long
+  if (result.length > 1000) {
+    result = result.slice(0, 997) + '...';
+  }
+  return result;
 }
 
 // Fetch existing article topics from Supabase
