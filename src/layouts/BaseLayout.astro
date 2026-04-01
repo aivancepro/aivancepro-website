@@ -258,28 +258,6 @@ const guidePosts = (await getCollection('guides', ({ data }) => data.lang === la
         });
       }
 
-      // 3D tilt on showcase phone mockups (desktop + hover devices only)
-      if (window.matchMedia('(hover: hover) and (min-width: 769px)').matches && !window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
-        document.querySelectorAll('.showcase-image').forEach(function(container) {
-          var img = container.querySelector('.phone-mockup');
-          if (!img) return;
-          container.addEventListener('mouseenter', function() {
-            img.style.transition = 'transform 0.08s ease-out';
-          });
-          container.addEventListener('mousemove', function(e) {
-            var rect = container.getBoundingClientRect();
-            var x = (e.clientX - rect.left) / rect.width;
-            var y = (e.clientY - rect.top) / rect.height;
-            var ry = (x - 0.5) * 16;
-            var rx = (0.5 - y) * 12;
-            img.style.transform = 'perspective(800px) translateY(-8px) scale(1.04) rotateY(' + ry + 'deg) rotateX(' + rx + 'deg)';
-          });
-          container.addEventListener('mouseleave', function() {
-            img.style.transition = 'transform 0.5s ease-out';
-            img.style.transform = '';
-          });
-        });
-      }
 
       // Cookie banner
       var banner = document.getElementById('cookieBanner');

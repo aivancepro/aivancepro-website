@@ -1002,9 +1002,6 @@ footer {
         transform: translateX(0);
     }
 
-    .showcase-image {
-        perspective: 800px;
-    }
 }
 
 /* ===== STAGGERED SHOWCASE LIST ITEMS ===== */
