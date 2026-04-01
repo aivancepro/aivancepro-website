@@ -771,7 +771,7 @@ footer {
     color: #ef4444;
 }
 
-.footer-col h4 {
+.footer-col-title {
     color: var(--text);
     font-size: 0.85rem;
     font-weight: 700;
@@ -788,7 +788,7 @@ footer {
 }
 
 .footer-col a {
-    color: var(--text-muted);
+    color: var(--text-secondary);
     text-decoration: none;
     font-size: 0.85rem;
     transition: color 0.2s;
