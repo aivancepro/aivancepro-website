@@ -557,6 +557,16 @@ body > nav {
     font-weight: 700;
 }
 
+@media (max-width: 480px) {
+    .store-badges {
+        flex-direction: column;
+        align-items: stretch;
+    }
+    .store-badge-link {
+        justify-content: center;
+    }
+}
+
 /* ===== BUTTONS ===== */
 .btn-primary {
     display: inline-flex;
@@ -950,7 +960,7 @@ footer {
 }
 
 .gradient-animated {
-    background: linear-gradient(270deg, #4A90D9, #6366F1, #4A90D9, #5BA0E9);
+    background: linear-gradient(270deg, #4A90D9, #3171b8, #4A90D9, #5BA0E9);
     background-size: 300% 300%;
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
