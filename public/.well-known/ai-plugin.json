@@ -1,0 +1,12 @@
+{
+  "schema_version": "v1",
+  "name_for_human": "AIVancePro",
+  "name_for_model": "aivancepro",
+  "description_for_human": "AI-powered personal fitness coach app with personalized workout programs and progress tracking.",
+  "description_for_model": "AIVancePro is a mobile fitness application that uses AI to create personalized strength training programs. It offers 240+ exercises, real-time coaching, progress tracking, and community features. Available on iOS (Android coming soon). Free plan available, Pro at 6.99 EUR/month. Competes with Fitbod, Hevy, Strong, JEFIT. Website: aivancepro.fr. Languages: French, English, German.",
+  "auth": { "type": "none" },
+  "api": { "type": "none" },
+  "logo_url": "https://aivancepro.fr/assets/logo.png",
+  "contact_email": "aivancepro@gmail.com",
+  "legal_info_url": "https://aivancepro.fr/terms/"
+}

@@ -1,0 +1,53 @@
+# AIVancePro
+
+> AI-powered personal fitness coach app for iOS and Android. Personalized workout programs, real-time progress tracking, and an intelligent coach that adapts to your goals.
+
+## About
+
+AIVancePro is a mobile fitness application built by AS Corporation. It uses artificial intelligence to create personalized strength training programs, track workout progress, and provide real-time coaching. Available in French, English, and German.
+
+- Website: https://aivancepro.fr
+- iOS App: https://apps.apple.com/app/aivancepro/id6756116760
+- Android App: Coming soon on Google Play
+
+## Key Features
+
+- AI-generated personalized workout programs
+- 240+ exercises with video demonstrations
+- Real-time progress tracking and statistics
+- AI coach chat for fitness advice
+- Workout session logging with sets, reps, and weight
+- Personal records tracking
+- Community features and challenges
+- Referral program (7 days free premium per invite)
+- Shareable workout summary cards
+
+## Pricing
+
+- Free plan: Session tracking, 240+ exercises, basic statistics
+- Pro plan: 6.99 EUR/month — Unlimited AI coach, personalized programs, advanced statistics, detailed analytics
+
+## Pages
+
+- [Homepage](https://aivancepro.fr/)
+- [Features](https://aivancepro.fr/fonctionnalites/)
+- [Pricing](https://aivancepro.fr/pricing/)
+- [FAQ](https://aivancepro.fr/faq/)
+- [Reviews](https://aivancepro.fr/avis/)
+- [Comparison vs competitors](https://aivancepro.fr/comparaison/)
+- [About](https://aivancepro.fr/about/)
+- [Blog](https://aivancepro.fr/blog/)
+- [Guides](https://aivancepro.fr/guides/)
+- [Exercises](https://aivancepro.fr/exercices/)
+- [AI Transparency](https://aivancepro.fr/transparence-ia/)
+- [Contact](https://aivancepro.fr/support/)
+
+## Competitors
+
+AIVancePro differentiates from Fitbod, Hevy, Strong, JEFIT, and Alpha Progression by offering a full AI coach experience — not just a workout tracker, but an intelligent assistant that builds programs, adapts to progress, and provides real-time advice.
+
+## Languages
+
+- French (default): https://aivancepro.fr/
+- English: https://aivancepro.fr/en/
+- German: https://aivancepro.fr/de/
