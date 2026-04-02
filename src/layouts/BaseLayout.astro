@@ -80,20 +80,27 @@ const guidePosts = (await getCollection('guides', ({ data }) => data.lang === la
     <script is:inline>
       (function(){var t=localStorage.getItem('theme');if(!t&&window.matchMedia&&window.matchMedia('(prefers-color-scheme: light)').matches)t='light';if(t)document.documentElement.setAttribute('data-theme',t);})();
     </script>
-    <!-- AI referral tracking — tags UTM for analytics -->
+    <!-- PostHog Analytics -->
     <script is:inline>
-      (function(){
-        var r=document.referrer||'';
-        var ai=['chat.openai.com','chatgpt.com','perplexity.ai','claude.ai','gemini.google.com','copilot.microsoft.com','you.com'];
-        for(var i=0;i<ai.length;i++){
-          if(r.indexOf(ai[i])!==-1){
-            var d={source:ai[i],page:location.pathname,ts:new Date().toISOString()};
-            try{var s=JSON.parse(localStorage.getItem('ai_referrals')||'[]');s.push(d);localStorage.setItem('ai_referrals',JSON.stringify(s.slice(-100)));}catch(e){}
-            document.documentElement.setAttribute('data-ai-ref',ai[i]);
-            break;
+      !function(t,e){var o,n,p,r;e.__SV||(window.posthog=e,e._i=[],e.init=function(i,s,a){function g(t,e){var o=e.split(".");2==o.length&&(t=t[o[0]],e=o[1]),t[e]=function(){t.push([e].concat(Array.prototype.slice.call(arguments,0)))}}(p=t.createElement("script")).type="text/javascript",p.crossOrigin="anonymous",p.async=!0,p.src=s.api_host.replace(".i.posthog.com","-assets.i.posthog.com")+"/static/array.js",(r=t.getElementsByTagName("script")[0]).parentNode.insertBefore(p,r);var u=e;for(void 0!==a?u=e[a]=[]:a="posthog",u.people=u.people||[],u.toString=function(t){var e="posthog";return"posthog"!==a&&(e+="."+a),t||(e+=" (stub)"),e},u.people.toString=function(){return u.toString(1)+".people (stub)"},o="init capture register register_once register_for_session unregister unregister_for_session getFeatureFlag getFeatureFlagPayload isFeatureEnabled reloadFeatureFlags updateEarlyAccessFeatureEnrollment getEarlyAccessFeatures on onFeatureFlags onSessionId getSurveys getActiveMatchingSurveys renderSurvey canRenderSurvey getNextSurveyStep identify setPersonProperties group resetGroups setPersonPropertiesForFlags resetPersonPropertiesForFlags setGroupPropertiesForFlags resetGroupPropertiesForFlags reset get_distinct_id getGroups get_session_id get_session_replay_url alias set_config startSessionRecording stopSessionRecording sessionRecordingStarted captureException loadToolbar get_property getSessionProperty createPersonProfile opt_in_capturing opt_out_capturing has_opted_in_capturing has_opted_out_capturing clear_opt_in_out_capturing debug".split(" "),n=0;n<o.length;n++)g(u,o[n]);e._i.push([i,s,a])},e.__SV=1)}(document,window.posthog||[]);
+      posthog.init('phc_Fg7IIhT2ed9uExMnv7zgT200nvVpBq3B1KEPZMdzbzS',{
+        api_host:'https://eu.i.posthog.com',
+        person_profiles:'identified_only',
+        capture_pageview:true,
+        capture_pageleave:true,
+        persistence:'localStorage+cookie',
+        loaded:function(ph){
+          var r=document.referrer||'';
+          var ai=['chat.openai.com','chatgpt.com','perplexity.ai','claude.ai','gemini.google.com','copilot.microsoft.com','you.com'];
+          for(var i=0;i<ai.length;i++){
+            if(r.indexOf(ai[i])!==-1){
+              ph.capture('ai_referral',{ai_source:ai[i],page:location.pathname,referrer:r});
+              ph.register({ai_source:ai[i]});
+              break;
+            }
           }
         }
-      })();
+      });
     </script>
 </head>
 <body>
