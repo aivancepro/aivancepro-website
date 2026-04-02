@@ -1800,20 +1800,21 @@ body {
 }
 
 .testimonials-dot {
-    width: 12px;
-    height: 12px;
+    width: 10px;
+    height: 10px;
     border-radius: 50%;
-    background: var(--border);
+    background: var(--text-muted);
+    opacity: 0.3;
     border: none;
     cursor: pointer;
-    transition: background 0.2s, transform 0.2s;
-    padding: 10px;
+    transition: background 0.2s, opacity 0.2s;
+    padding: 6px;
     background-clip: content-box;
 }
 
 .testimonials-dot.active {
     background: var(--blue);
-    transform: scale(1.25);
+    opacity: 1;
 }
 
 /* ===== LIGHT THEME OVERRIDES ===== */
