@@ -48,6 +48,32 @@ import BaseLayout from '../../layouts/BaseLayout.astro';
       .stat-value.blue { color: var(--blue); }
       .stat-label { font-size: 0.8rem; color: var(--gray-500); margin-top: 0.35rem; font-weight: 500; }
 
+      /* Recent sessions */
+      .recent-title { font-size: 1.1rem; font-weight: 700; color: var(--gray-900); margin-bottom: 1rem; }
+      .recent-list { display: flex; flex-direction: column; gap: 0.5rem; margin-bottom: 1.5rem; }
+      .recent-item { background: var(--bg-card); border: 1px solid var(--border); border-radius: 12px; padding: 1rem 1.25rem; display: flex; align-items: center; gap: 1rem; }
+      .recent-icon { width: 40px; height: 40px; border-radius: 10px; background: rgba(74,144,217,0.08); display: flex; align-items: center; justify-content: center; flex-shrink: 0; }
+      .recent-icon svg { width: 20px; height: 20px; color: var(--blue); }
+      .recent-info { flex: 1; }
+      .recent-name { font-size: 0.9rem; font-weight: 600; color: var(--gray-900); }
+      .recent-meta { font-size: 0.78rem; color: var(--gray-500); margin-top: 0.15rem; }
+      .recent-empty { text-align: center; padding: 2rem; color: var(--gray-400); font-size: 0.9rem; background: var(--bg-card); border: 1px solid var(--border); border-radius: 12px; margin-bottom: 1.5rem; }
+      .pr-title { font-size: 1.1rem; font-weight: 700; color: var(--gray-900); margin-bottom: 1rem; }
+      .pr-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 0.75rem; margin-bottom: 1.5rem; }
+      .pr-card { background: var(--bg-card); border: 1px solid var(--border); border-radius: 12px; padding: 1rem 1.25rem; }
+      .pr-exercise { font-size: 0.82rem; color: var(--gray-500); font-weight: 500; }
+      .pr-value { font-size: 1.3rem; font-weight: 800; color: var(--blue); margin-top: 0.25rem; }
+      .pr-empty { text-align: center; padding: 2rem; color: var(--gray-400); font-size: 0.9rem; background: var(--bg-card); border: 1px solid var(--border); border-radius: 12px; margin-bottom: 1.5rem; }
+      .profile-title { font-size: 1.1rem; font-weight: 700; color: var(--gray-900); margin-bottom: 1rem; }
+      .profile-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 0.75rem; margin-bottom: 1.5rem; }
+      .profile-item { background: var(--bg-card); border: 1px solid var(--border); border-radius: 12px; padding: 1rem 1.25rem; }
+      .profile-item-label { font-size: 0.75rem; color: var(--gray-500); text-transform: uppercase; letter-spacing: 0.03em; font-weight: 600; }
+      .profile-item-value { font-size: 0.95rem; font-weight: 600; color: var(--gray-900); margin-top: 0.25rem; }
+      @media (max-width: 640px) {
+        .pr-grid { grid-template-columns: 1fr; }
+        .profile-grid { grid-template-columns: 1fr; }
+      }
+
       /* Upgrade CTA */
       .upgrade-card { background: var(--bg-card); border: 1px solid var(--border); border-radius: 16px; padding: 2rem; text-align: center; }
       .upgrade-card h3 { font-size: 1.2rem; font-weight: 700; color: var(--gray-900); margin-bottom: 0.5rem; }
@@ -123,6 +149,18 @@ import BaseLayout from '../../layouts/BaseLayout.astro';
           <div class="stat-label">Total volume (kg)</div>
         </div>
       </div>
+
+      <!-- Recent sessions -->
+      <h3 class="recent-title">Recent sessions</h3>
+      <div id="recent-sessions"></div>
+
+      <!-- Personal records -->
+      <h3 class="pr-title">Personal records</h3>
+      <div id="personal-records"></div>
+
+      <!-- Profile summary -->
+      <h3 class="profile-title">My profile</h3>
+      <div id="profile-summary"></div>
 
       <!-- Upgrade -->
       <div class="upgrade-card" id="upgrade-card">
@@ -213,31 +251,78 @@ import BaseLayout from '../../layouts/BaseLayout.astro';
       }
 
       // Fetch stats
-      var sessionsRes = await sb.from('session').select('id', { count: 'exact', head: true }).eq('created_by', email);
-      var sessionCount = sessionsRes.count || 0;
-      document.getElementById('stat-sessions').textContent = sessionCount;
+      var sessionsRes = await sb.from('session').select('*').eq('created_by', email).order('created_at', { ascending: false });
+      var sessions = sessionsRes.data || [];
+      document.getElementById('stat-sessions').textContent = sessions.length;
 
-      var logsRes = await sb.from('exercise_log').select('id, sets', { count: 'exact' }).eq('created_by', email);
+      var logsRes = await sb.from('exercise_log').select('id, sets, exercise_name, created_at', { count: 'exact' }).eq('created_by', email);
       var logs = logsRes.data || [];
       document.getElementById('stat-exercises').textContent = logsRes.count || logs.length;
 
-      // Calculate total volume
       var totalVolume = 0;
       logs.forEach(function(log) {
         if (log.sets && Array.isArray(log.sets)) {
           log.sets.forEach(function(s) {
-            var w = parseFloat(s.weight) || 0;
-            var r = parseInt(s.reps) || 0;
-            totalVolume += w * r;
+            totalVolume += (parseFloat(s.weight) || 0) * (parseInt(s.reps) || 0);
           });
         }
       });
-      if (totalVolume >= 1000000) {
-        document.getElementById('stat-volume').textContent = (totalVolume / 1000000).toFixed(1) + 'M';
-      } else if (totalVolume >= 1000) {
-        document.getElementById('stat-volume').textContent = Math.round(totalVolume / 1000) + 'k';
+      if (totalVolume >= 1000000) document.getElementById('stat-volume').textContent = (totalVolume / 1000000).toFixed(1) + 'M';
+      else if (totalVolume >= 1000) document.getElementById('stat-volume').textContent = Math.round(totalVolume / 1000) + 'k';
+      else document.getElementById('stat-volume').textContent = Math.round(totalVolume);
+
+      // Recent sessions
+      var recentEl = document.getElementById('recent-sessions');
+      if (sessions.length === 0) {
+        recentEl.innerHTML = '<div class="recent-empty">No sessions yet. Start your first workout in the app!</div>';
       } else {
-        document.getElementById('stat-volume').textContent = Math.round(totalVolume);
+        var html = '<div class="recent-list">';
+        sessions.slice(0, 5).forEach(function(s) {
+          var d = new Date(s.created_at);
+          var dateStr = d.toLocaleDateString('en-GB', { day: 'numeric', month: 'short', year: 'numeric' });
+          var name = s.name || s.title || 'Workout';
+          var duration = s.duration_minutes ? s.duration_minutes + ' min' : '';
+          var muscles = s.target_muscles ? (Array.isArray(s.target_muscles) ? s.target_muscles.join(', ') : s.target_muscles) : '';
+          var meta = [dateStr, duration, muscles].filter(Boolean).join(' \u00b7 ');
+          html += '<div class="recent-item"><div class="recent-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6.5 6.5h11v11h-11z"/><path d="M6.5 6.5L2 2m4.5 15.5L2 22m15.5-4.5L22 22m-4.5-15.5L22 2"/></svg></div><div class="recent-info"><div class="recent-name">' + name + '</div><div class="recent-meta">' + meta + '</div></div></div>';
+        });
+        recentEl.innerHTML = html + '</div>';
+      }
+
+      // Personal records
+      var prEl = document.getElementById('personal-records');
+      var prs = profile.personal_records || {};
+      var prKeys = Object.keys(prs);
+      if (prKeys.length === 0) {
+        prEl.innerHTML = '<div class="pr-empty">No personal records yet. Keep training!</div>';
+      } else {
+        var prHtml = '<div class="pr-grid">';
+        prKeys.slice(0, 6).forEach(function(exName) {
+          var pr = prs[exName];
+          var val = typeof pr === 'object' && pr !== null ? (pr.weight ? pr.weight + ' kg' : pr.reps ? pr.reps + ' reps' : JSON.stringify(pr)) : pr + ' kg';
+          prHtml += '<div class="pr-card"><div class="pr-exercise">' + exName + '</div><div class="pr-value">' + val + '</div></div>';
+        });
+        prEl.innerHTML = prHtml + '</div>';
+      }
+
+      // Profile summary
+      var profEl = document.getElementById('profile-summary');
+      var goalLabels = { muscle_gain: 'Muscle gain', fat_loss: 'Fat loss', strength: 'Strength', endurance: 'Endurance', general_fitness: 'General fitness', recomposition: 'Recomposition' };
+      var levelLabels = { beginner: 'Beginner', intermediate: 'Intermediate', advanced: 'Advanced' };
+      var items = [];
+      if (profile.primary_goal) items.push({ label: 'Goal', value: goalLabels[profile.primary_goal] || profile.primary_goal });
+      if (profile.experience_level) items.push({ label: 'Level', value: levelLabels[profile.experience_level] || profile.experience_level });
+      if (profile.training_frequency) items.push({ label: 'Frequency', value: profile.training_frequency + 'x / week' });
+      if (profile.session_duration) items.push({ label: 'Session', value: profile.session_duration + ' min' });
+      if (profile.weight) items.push({ label: 'Weight', value: profile.weight + ' kg' });
+      if (profile.height) items.push({ label: 'Height', value: profile.height + ' cm' });
+      if (profile.available_equipment && profile.available_equipment.length > 0) items.push({ label: 'Equipment', value: profile.available_equipment.join(', ') });
+      if (items.length === 0) {
+        profEl.innerHTML = '<div class="pr-empty">Profile not set up. Complete your profile in the app.</div>';
+      } else {
+        var profHtml = '<div class="profile-grid">';
+        items.forEach(function(it) { profHtml += '<div class="profile-item"><div class="profile-item-label">' + it.label + '</div><div class="profile-item-value">' + it.value + '</div></div>'; });
+        profEl.innerHTML = profHtml + '</div>';
       }
 
       // Logout
