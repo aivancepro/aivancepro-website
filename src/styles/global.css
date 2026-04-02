@@ -565,12 +565,165 @@ body > nav {
     font-weight: 700;
 }
 
+.store-badge-coming {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.6rem;
+    background: var(--bg-elevated);
+    color: var(--text-muted);
+    border: 1px solid var(--border);
+    padding: 0.75rem 1.5rem;
+    border-radius: 12px;
+    cursor: pointer;
+    font-family: inherit;
+    transition: transform 0.2s, border-color 0.2s;
+    box-shadow: none;
+    position: relative;
+}
+.store-badge-coming:hover {
+    transform: translateY(-2px);
+    border-color: var(--text-muted);
+}
+.store-badge-coming svg {
+    width: 24px;
+    height: 24px;
+    flex-shrink: 0;
+    opacity: 0.4;
+}
+.store-badge-coming .store-badge-text {
+    display: flex;
+    flex-direction: column;
+    line-height: 1.2;
+}
+.store-badge-coming .store-badge-text .small {
+    font-size: 0.6rem;
+    font-weight: 400;
+    opacity: 0.6;
+}
+.store-badge-coming .store-badge-text .big {
+    font-size: 1rem;
+    font-weight: 700;
+}
+
+.gp-modal-overlay {
+    position: fixed;
+    inset: 0;
+    z-index: 10000;
+    background: rgba(0,0,0,0.5);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 1.5rem;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.25s, visibility 0.25s;
+}
+.gp-modal-overlay.open {
+    opacity: 1;
+    visibility: visible;
+}
+.gp-modal {
+    background: var(--bg-card);
+    border: 1px solid var(--border);
+    border-radius: 16px;
+    padding: 2rem;
+    max-width: 400px;
+    width: 100%;
+    text-align: center;
+    position: relative;
+}
+.gp-modal-close {
+    position: absolute;
+    top: 0.75rem;
+    right: 1rem;
+    background: none;
+    border: none;
+    font-size: 1.5rem;
+    cursor: pointer;
+    color: var(--text-secondary);
+    padding: 0.25rem;
+}
+.gp-modal-icon {
+    width: 48px;
+    height: 48px;
+    margin: 0 auto 1rem;
+    border-radius: 12px;
+    background: rgba(74,144,217,0.08);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.gp-modal-icon svg {
+    width: 24px;
+    height: 24px;
+    color: var(--blue);
+}
+.gp-modal h3 {
+    font-size: 1.15rem;
+    font-weight: 700;
+    color: var(--text);
+    margin-bottom: 0.5rem;
+}
+.gp-modal p {
+    font-size: 0.9rem;
+    color: var(--text-secondary);
+    margin-bottom: 1.25rem;
+    line-height: 1.5;
+}
+.gp-modal-form {
+    display: flex;
+    gap: 0.5rem;
+}
+.gp-modal-form input {
+    flex: 1;
+    padding: 0.7rem 1rem;
+    border: 1px solid var(--border);
+    border-radius: 10px;
+    font-size: 0.9rem;
+    background: var(--bg);
+    color: var(--text);
+    outline: none;
+}
+.gp-modal-form input:focus {
+    border-color: var(--blue);
+}
+.gp-modal-form button {
+    padding: 0.7rem 1.25rem;
+    background: var(--blue);
+    color: var(--white);
+    border: none;
+    border-radius: 10px;
+    font-size: 0.9rem;
+    font-weight: 600;
+    cursor: pointer;
+    white-space: nowrap;
+    transition: opacity 0.2s;
+}
+.gp-modal-form button:hover {
+    opacity: 0.9;
+}
+.gp-modal-msg {
+    font-size: 0.82rem;
+    margin-top: 0.75rem;
+    min-height: 1.2em;
+}
+.gp-modal-msg.success { color: #16a34a; }
+.gp-modal-msg.error { color: #dc2626; }
+@media (max-width: 480px) {
+    .gp-modal-form {
+        flex-direction: column;
+    }
+}
+
 @media (max-width: 480px) {
     .store-badges {
         flex-direction: column;
         align-items: stretch;
     }
     .store-badge-link {
+        justify-content: center;
+    }
+    .store-badge-coming {
         justify-content: center;
     }
 }

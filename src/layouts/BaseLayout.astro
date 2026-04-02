@@ -149,6 +149,23 @@ const guidePosts = (await getCollection('guides', ({ data }) => data.lang === la
         </div>
     </div>
 
+    <!-- Google Play Coming Soon Modal -->
+    <div class="gp-modal-overlay" id="gpModal" data-badge={i.playStore.badge}
+        <div class="gp-modal">
+            <button class="gp-modal-close" id="gpModalClose">&times;</button>
+            <div class="gp-modal-icon">
+                <svg viewBox="0 0 24 24" fill="currentColor"><path d="M3.18 23.67c-.38-.39-.58-.94-.58-1.6V1.93c0-.66.2-1.21.58-1.6l.08-.08L14.74 11.7v.22L3.26 23.38l-.08-.08z"/><path d="M18.56 15.58l-3.82-3.84v-.22l3.82-3.84.08.05 4.53 2.57c1.29.73 1.29 1.93 0 2.67l-4.53 2.57-.08.04z" opacity=".8"/><path d="M18.65 15.53L14.74 11.6 3.18 23.2c.43.45 1.13.51 1.93.06l13.54-7.73" opacity=".6"/><path d="M18.65 7.68L5.11.95c-.8-.45-1.5-.39-1.93.06L14.74 12.6l3.91-3.92z" opacity=".6"/></svg>
+            </div>
+            <h3>{i.playStore.title}</h3>
+            <p>{i.playStore.text}</p>
+            <form id="gpForm" class="gp-modal-form" data-lang={lang} data-success={i.playStore.success} data-error={i.playStore.error} data-duplicate={i.playStore.duplicate}>
+                <input type="email" placeholder={i.newsletter.placeholder} required>
+                <button type="submit">{i.playStore.button}</button>
+            </form>
+            <p class="gp-modal-msg" id="gpMsg"></p>
+        </div>
+    </div>
+
     <!-- Cookie Banner -->
     <div id="cookieBanner" class="cookie-banner">
         <div class="cookie-inner">
@@ -356,6 +373,75 @@ const guidePosts = (await getCollection('guides', ({ data }) => data.lang === la
           });
           observer.observe(nlPopupForm, { subtree: true, attributes: true, attributeFilter: ['class'] });
         }
+      }
+
+      // Google Play coming soon: convert links to greyed buttons
+      var gpModal = document.getElementById('gpModal');
+      var gpForm = document.getElementById('gpForm');
+      var gpMsg = document.getElementById('gpMsg');
+      var gpBadgeText = gpModal ? gpModal.dataset.badge : 'Coming soon on';
+
+      document.querySelectorAll('a[href*="play.google.com"]').forEach(function(link) {
+        var btn = document.createElement('button');
+        btn.type = 'button';
+        btn.className = 'store-badge-coming';
+        btn.innerHTML = link.querySelector('svg').outerHTML +
+          '<span class="store-badge-text"><span class="small">' + gpBadgeText + '</span><span class="big">Google Play</span></span>';
+        btn.addEventListener('click', function() {
+          if (gpModal) gpModal.classList.add('open');
+        });
+        link.replaceWith(btn);
+      });
+
+      if (gpModal) {
+        document.getElementById('gpModalClose').addEventListener('click', function() {
+          gpModal.classList.remove('open');
+        });
+        gpModal.addEventListener('click', function(e) {
+          if (e.target === gpModal) gpModal.classList.remove('open');
+        });
+      }
+
+      if (gpForm) {
+        gpForm.addEventListener('submit', function(e) {
+          e.preventDefault();
+          var emailInput = gpForm.querySelector('input[type="email"]');
+          var email = emailInput.value.trim();
+          var btn = gpForm.querySelector('button[type="submit"]');
+          var lang = gpForm.dataset.lang || 'fr';
+          if (!email) return;
+          btn.disabled = true;
+          gpMsg.textContent = '';
+          gpMsg.className = 'gp-modal-msg';
+
+          fetch('https://vzmtvhcvyqzkmestdbko.supabase.co/rest/v1/newsletter_subscribers', {
+            method: 'POST',
+            headers: {
+              'Content-Type': 'application/json',
+              'apikey': 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InZ6bXR2aGN2eXF6a21lc3RkYmtvIiwicm9sZSI6ImFub24iLCJpYXQiOjE3MzU5OTgyOTQsImV4cCI6MjA1MTU3NDI5NH0.kGFORJqHey9OKMfaKJ95qr6PxPmJdQIpN8BkS0j8MNQ',
+              'Authorization': 'Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InZ6bXR2aGN2eXF6a21lc3RkYmtvIiwicm9sZSI6ImFub24iLCJpYXQiOjE3MzU5OTgyOTQsImV4cCI6MjA1MTU3NDI5NH0.kGFORJqHey9OKMfaKJ95qr6PxPmJdQIpN8BkS0j8MNQ',
+              'Prefer': 'return=minimal'
+            },
+            body: JSON.stringify({ email: email, lang: lang })
+          }).then(function(res) {
+            if (res.ok) {
+              gpMsg.textContent = gpForm.dataset.success;
+              gpMsg.className = 'gp-modal-msg success';
+              emailInput.value = '';
+            } else if (res.status === 409) {
+              gpMsg.textContent = gpForm.dataset.duplicate;
+              gpMsg.className = 'gp-modal-msg error';
+            } else {
+              gpMsg.textContent = gpForm.dataset.error;
+              gpMsg.className = 'gp-modal-msg error';
+            }
+            btn.disabled = false;
+          }).catch(function() {
+            gpMsg.textContent = gpForm.dataset.error;
+            gpMsg.className = 'gp-modal-msg error';
+            btn.disabled = false;
+          });
+        });
       }
 
       // Newsletter forms (footer + article)

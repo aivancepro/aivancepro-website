@@ -52,6 +52,15 @@ export const t = {
       articleTitle: 'Cet article t\u2019a plu ?',
       articleText: 'Re\u00e7ois nos meilleurs conseils fitness chaque semaine, directement dans ta bo\u00eete mail.',
     },
+    playStore: {
+      badge: 'Bient\u00f4t sur',
+      title: 'Android arrive bient\u00f4t !',
+      text: 'Laisse ton email, on te pr\u00e9vient d\u00e8s que l\u2019app est dispo sur Google Play.',
+      button: 'Me rappeler',
+      success: 'Not\u00e9 ! On te pr\u00e9viendra.',
+      error: 'Une erreur est survenue. R\u00e9essayez.',
+      duplicate: 'Tu es d\u00e9j\u00e0 sur la liste !',
+    },
     cookie: {
       text: 'Ce site utilise des cookies pour améliorer votre expérience.',
       accept: 'Accepter',
@@ -154,6 +163,15 @@ export const t = {
       articleTitle: 'Enjoyed this article?',
       articleText: 'Get our best fitness tips every week, straight to your inbox.',
     },
+    playStore: {
+      badge: 'Coming soon on',
+      title: 'Android is coming soon!',
+      text: 'Leave your email and we\u2019ll notify you when the app is available on Google Play.',
+      button: 'Notify me',
+      success: 'Got it! We\u2019ll let you know.',
+      error: 'Something went wrong. Try again.',
+      duplicate: 'You\u2019re already on the list!',
+    },
     cookie: {
       text: 'This site uses cookies to improve your experience.',
       accept: 'Accept',
@@ -255,6 +273,15 @@ export const t = {
       duplicate: 'Sie sind bereits angemeldet.',
       articleTitle: 'Hat dir dieser Artikel gefallen?',
       articleText: 'Erhalte unsere besten Fitness-Tipps jede Woche direkt in dein Postfach.',
+    },
+    playStore: {
+      badge: 'Bald verf\u00fcgbar auf',
+      title: 'Android kommt bald!',
+      text: 'Hinterlasse deine E-Mail und wir benachrichtigen dich, sobald die App im Google Play Store verf\u00fcgbar ist.',
+      button: 'Erinnere mich',
+      success: 'Notiert! Wir melden uns.',
+      error: 'Ein Fehler ist aufgetreten. Versuchen Sie es erneut.',
+      duplicate: 'Du stehst bereits auf der Liste!',
     },
     cookie: {
       text: 'Diese Website verwendet Cookies, um Ihre Erfahrung zu verbessern.',
