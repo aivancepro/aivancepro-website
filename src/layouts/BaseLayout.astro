@@ -393,6 +393,24 @@ const guidePosts = (await getCollection('guides', ({ data }) => data.lang === la
         link.replaceWith(btn);
       });
 
+      // Grey out Google Play QR code on pricing pages
+      var qrPlay = document.getElementById('qrPlayStore');
+      if (qrPlay) {
+        var qrWrap = qrPlay.parentElement;
+        qrPlay.style.opacity = '0.25';
+        qrPlay.style.filter = 'grayscale(1)';
+        var qrLabel = qrWrap.querySelector('p');
+        if (qrLabel) qrLabel.style.color = 'var(--text-muted)';
+        var qrNotice = document.createElement('p');
+        qrNotice.style.cssText = 'font-size:0.75rem;color:var(--text-muted);margin-top:0.25rem;';
+        qrNotice.textContent = gpBadgeText + ' Google Play';
+        qrWrap.appendChild(qrNotice);
+        qrWrap.style.cursor = 'pointer';
+        qrWrap.addEventListener('click', function() {
+          if (gpModal) gpModal.classList.add('open');
+        });
+      }
+
       if (gpModal) {
         document.getElementById('gpModalClose').addEventListener('click', function() {
           gpModal.classList.remove('open');
