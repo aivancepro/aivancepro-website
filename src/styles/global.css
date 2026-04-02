@@ -1800,20 +1800,18 @@ body {
 }
 
 .testimonials-dot {
-    width: 10px;
-    height: 10px;
+    width: 12px;
+    height: 12px;
     border-radius: 50%;
-    background: var(--text-muted);
-    opacity: 0.3;
+    background: var(--blue);
+    opacity: 0.25;
     border: none;
     cursor: pointer;
-    transition: background 0.2s, opacity 0.2s;
-    padding: 6px;
-    background-clip: content-box;
+    transition: opacity 0.2s;
+    padding: 0;
 }
 
 .testimonials-dot.active {
-    background: var(--blue);
     opacity: 1;
 }
 
