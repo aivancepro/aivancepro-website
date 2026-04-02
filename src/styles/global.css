@@ -609,7 +609,9 @@ body > nav {
     position: fixed;
     inset: 0;
     z-index: 10000;
-    background: rgba(0,0,0,0.5);
+    background: rgba(0,0,0,0.6);
+    backdrop-filter: blur(4px);
+    -webkit-backdrop-filter: blur(4px);
     display: flex;
     align-items: center;
     justify-content: center;
@@ -623,7 +625,7 @@ body > nav {
     visibility: visible;
 }
 .gp-modal {
-    background: var(--bg-card);
+    background: var(--bg);
     border: 1px solid var(--border);
     border-radius: 16px;
     padding: 2rem;
@@ -631,6 +633,7 @@ body > nav {
     width: 100%;
     text-align: center;
     position: relative;
+    box-shadow: 0 20px 60px rgba(0,0,0,0.3);
 }
 .gp-modal-close {
     position: absolute;
@@ -680,7 +683,7 @@ body > nav {
     border: 1px solid var(--border);
     border-radius: 10px;
     font-size: 0.9rem;
-    background: var(--bg);
+    background: var(--bg-elevated);
     color: var(--text);
     outline: none;
 }
