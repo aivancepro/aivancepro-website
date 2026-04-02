@@ -19,7 +19,10 @@ export default defineConfig({
       filter(page) {
         // Exclure les pages noindex (login, compte) — ne pas les soumettre à Google
         const noindexPaths = ['/login/', '/compte/', '/account/', '/konto/'];
-        return !noindexPaths.some(p => page.includes(p));
+        // Exclure les pages legacy HTML statiques (non gérées par Astro)
+        const legacyPaths = ['/compound-vs-isolation/', '/workout-splits/', '/personal-training/'];
+        return !noindexPaths.some(p => page.includes(p))
+            && !legacyPaths.some(p => page.includes(p));
       },
       serialize(item) {
         if (item.url.includes('/blog/') || item.url.includes('/guides/') || item.url.includes('/ratgeber/')) {
