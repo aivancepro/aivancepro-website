@@ -8,14 +8,26 @@ import BaseLayout from '../../layouts/BaseLayout.astro';
   description="Compare AIVancePro with Fitbod, Strong, JEFIT and Hevy. Discover why AIVancePro is the best AI coach for strength training."
   canonical="https://aivancepro.fr/en/comparison/"
   alternates={{ fr: 'https://aivancepro.fr/comparaison/', en: 'https://aivancepro.fr/en/comparison/', de: 'https://aivancepro.fr/de/vergleich/' }}
-  jsonLd={{
-    '@context': 'https://schema.org',
-    '@type': 'BreadcrumbList',
-    itemListElement: [
-      { '@type': 'ListItem', position: 1, name: 'Home', item: 'https://aivancepro.fr/en/' },
-      { '@type': 'ListItem', position: 2, name: 'Comparison', item: 'https://aivancepro.fr/en/comparison/' }
-    ]
-  }}
+  jsonLd={[
+    {
+      '@context': 'https://schema.org',
+      '@type': 'SoftwareApplication',
+      'name': 'AIVancePro',
+      'applicationCategory': 'HealthApplication',
+      'operatingSystem': 'iOS, Android',
+      'description': 'AI strength training coach with personalized programs, progress tracking and 240+ exercises.',
+      'offers': { '@type': 'Offer', 'price': '0', 'priceCurrency': 'USD' },
+      'aggregateRating': { '@type': 'AggregateRating', 'ratingValue': '4.8', 'bestRating': '5', 'ratingCount': '150' }
+    },
+    {
+      '@context': 'https://schema.org',
+      '@type': 'BreadcrumbList',
+      itemListElement: [
+        { '@type': 'ListItem', position: 1, name: 'Home', item: 'https://aivancepro.fr/en/' },
+        { '@type': 'ListItem', position: 2, name: 'Comparison', item: 'https://aivancepro.fr/en/comparison/' }
+      ]
+    }
+  ]}
 >
   <Fragment slot="head">
     <style>

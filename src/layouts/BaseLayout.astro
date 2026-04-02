@@ -80,6 +80,21 @@ const guidePosts = (await getCollection('guides', ({ data }) => data.lang === la
     <script is:inline>
       (function(){var t=localStorage.getItem('theme');if(!t&&window.matchMedia&&window.matchMedia('(prefers-color-scheme: light)').matches)t='light';if(t)document.documentElement.setAttribute('data-theme',t);})();
     </script>
+    <!-- AI referral tracking — tags UTM for analytics -->
+    <script is:inline>
+      (function(){
+        var r=document.referrer||'';
+        var ai=['chat.openai.com','chatgpt.com','perplexity.ai','claude.ai','gemini.google.com','copilot.microsoft.com','you.com'];
+        for(var i=0;i<ai.length;i++){
+          if(r.indexOf(ai[i])!==-1){
+            var d={source:ai[i],page:location.pathname,ts:new Date().toISOString()};
+            try{var s=JSON.parse(localStorage.getItem('ai_referrals')||'[]');s.push(d);localStorage.setItem('ai_referrals',JSON.stringify(s.slice(-100)));}catch(e){}
+            document.documentElement.setAttribute('data-ai-ref',ai[i]);
+            break;
+          }
+        }
+      })();
+    </script>
 </head>
 <body>
     <a href="#main-content" class="skip-link">Skip to content</a>

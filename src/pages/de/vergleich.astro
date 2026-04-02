@@ -8,14 +8,26 @@ import BaseLayout from '../../layouts/BaseLayout.astro';
   description="Vergleichen Sie AIVancePro mit Fitbod, Strong, JEFIT und Hevy. Entdecken Sie, warum AIVancePro der beste KI-Coach f&uuml;r Krafttraining ist."
   canonical="https://aivancepro.fr/de/vergleich/"
   alternates={{ fr: 'https://aivancepro.fr/comparaison/', en: 'https://aivancepro.fr/en/comparison/', de: 'https://aivancepro.fr/de/vergleich/' }}
-  jsonLd={{
-    '@context': 'https://schema.org',
-    '@type': 'BreadcrumbList',
-    itemListElement: [
-      { '@type': 'ListItem', position: 1, name: 'Startseite', item: 'https://aivancepro.fr/de/' },
-      { '@type': 'ListItem', position: 2, name: 'Vergleich', item: 'https://aivancepro.fr/de/vergleich/' }
-    ]
-  }}
+  jsonLd={[
+    {
+      '@context': 'https://schema.org',
+      '@type': 'SoftwareApplication',
+      'name': 'AIVancePro',
+      'applicationCategory': 'HealthApplication',
+      'operatingSystem': 'iOS, Android',
+      'description': 'KI-Krafttraining-Coach mit personalisierten Programmen, Fortschrittsverfolgung und \u00fcber 240 \u00dcbungen.',
+      'offers': { '@type': 'Offer', 'price': '0', 'priceCurrency': 'EUR' },
+      'aggregateRating': { '@type': 'AggregateRating', 'ratingValue': '4.8', 'bestRating': '5', 'ratingCount': '150' }
+    },
+    {
+      '@context': 'https://schema.org',
+      '@type': 'BreadcrumbList',
+      itemListElement: [
+        { '@type': 'ListItem', position: 1, name: 'Startseite', item: 'https://aivancepro.fr/de/' },
+        { '@type': 'ListItem', position: 2, name: 'Vergleich', item: 'https://aivancepro.fr/de/vergleich/' }
+      ]
+    }
+  ]}
 >
   <Fragment slot="head">
     <style>

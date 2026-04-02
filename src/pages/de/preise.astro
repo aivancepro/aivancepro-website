@@ -11,6 +11,23 @@ import BaseLayout from '../../layouts/BaseLayout.astro';
   jsonLd={[
     {
       '@context': 'https://schema.org',
+      '@type': 'MobileApplication',
+      'name': 'AIVancePro Pro',
+      'operatingSystem': 'iOS, Android',
+      'applicationCategory': 'HealthApplication',
+      'offers': {
+        '@type': 'Offer',
+        'price': '6.99',
+        'priceCurrency': 'EUR',
+        'priceValidUntil': '2026-12-31',
+        'availability': 'https://schema.org/InStock',
+        'description': 'Unbegrenzter KI-Coach, personalisierte Programme, erweiterte Statistiken',
+        'url': 'https://aivancepro.fr/de/preise/'
+      },
+      'aggregateRating': { '@type': 'AggregateRating', 'ratingValue': '4.8', 'bestRating': '5', 'ratingCount': '150' }
+    },
+    {
+      '@context': 'https://schema.org',
       '@type': 'FAQPage',
       mainEntity: [
         { '@type': 'Question', name: 'Kann ich jederzeit den Plan wechseln?', acceptedAnswer: { '@type': 'Answer', text: 'Ja, Sie können jederzeit zum Pro-Plan wechseln oder zum kostenlosen Plan zurückkehren. Die Änderung wird sofort wirksam.' } },

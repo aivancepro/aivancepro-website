@@ -2,17 +2,29 @@
 import BaseLayout from '../layouts/BaseLayout.astro';
 
 const lang = 'fr';
-const jsonLd = {
-  "@context": "https://schema.org",
-  "@type": "MobileApplication",
-  "name": "AIVancePro",
-  "description": "Coach fitness personnel propuls\u00e9 par l'intelligence artificielle avec programmes personnalis\u00e9s et suivi de progression.",
-  "operatingSystem": "iOS",
-  "applicationCategory": "HealthApplication",
-  "offers": { "@type": "Offer", "price": "0", "priceCurrency": "EUR" },
-  "author": { "@type": "Organization", "name": "AS Corporation", "url": "https://aivancepro.fr" },
-  "installUrl": "https://apps.apple.com/fr/app/aivancepro/id6756116760"
-};
+const jsonLd = [
+  {
+    "@context": "https://schema.org",
+    "@type": "MobileApplication",
+    "name": "AIVancePro",
+    "description": "Coach fitness personnel propuls\u00e9 par l'intelligence artificielle avec programmes personnalis\u00e9s et suivi de progression.",
+    "operatingSystem": "iOS, Android",
+    "applicationCategory": "HealthApplication",
+    "offers": { "@type": "Offer", "price": "0", "priceCurrency": "EUR" },
+    "author": { "@type": "Organization", "name": "AS Corporation", "url": "https://aivancepro.fr" },
+    "installUrl": "https://apps.apple.com/fr/app/aivancepro/id6756116760",
+    "aggregateRating": { "@type": "AggregateRating", "ratingValue": "4.8", "bestRating": "5", "ratingCount": "150" }
+  },
+  {
+    "@context": "https://schema.org",
+    "@type": "WebSite",
+    "name": "AIVancePro",
+    "url": "https://aivancepro.fr/",
+    "description": "Coach fitness IA avec programmes personnalis\u00e9s",
+    "inLanguage": ["fr", "en", "de"],
+    "potentialAction": { "@type": "SearchAction", "target": "https://aivancepro.fr/blog/?q={search_term_string}", "query-input": "required name=search_term_string" }
+  }
+];
 ---
 
 <BaseLayout
