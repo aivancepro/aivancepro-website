@@ -6,19 +6,14 @@ const starSvg = '<svg viewBox="0 0 20 20" fill="currentColor"><path d="M9.049 2.
 
 const reviews = [
   {
-    text: "&laquo; Der KI-Coach ist unglaublich, er versteht genau, was ich brauche, und erstellt perfekt angepasste Trainingseinheiten. Ich habe in 2 Monaten mehr Fortschritte gemacht als in einem Jahr allein. &raquo;",
-    author: "Thomas L.",
+    text: "&laquo; Ich bin seit etwa 6 Monaten im Fitnessstudio und war an einem Punkt, wo ich nicht mehr wusste, was ich machen soll &mdash; immer das Gleiche. Ich war zu faul, mir ein Programm zu erstellen, und ein Coach ist zu teuer. Ich habe den KI-Coach zuf&auml;llig ausprobiert und ehrlich gesagt ist er erstaunlich. Du sagst ihm, welche Ausr&uuml;stung du hast und wie lange du trainieren willst, und er erstellt dir eine komplette Einheit. Am Anfang dachte ich, es w&auml;re generisch, aber nein, er passt sich wirklich an. Was mich &uuml;berzeugt hat, ist das Tracking &mdash; du siehst deine Statistiken sich entwickeln und das motiviert enorm. Ich habe in 2 Monaten mit der App mehr Fortschritte gemacht als in 4 Monaten allein. F&uuml;r den Preis ist es ein Schn&auml;ppchen. &raquo;",
+    author: "Theo Lpe",
     source: "App Store",
   },
   {
-    text: "&laquo; Die App ist super komplett: &Uuml;bungen, Vorlagen, Fortschrittsverfolgung, Community... Alles ist dabei. Und der automatische Pausentimer ist ein echtes Plus im Fitnessstudio. &raquo;",
-    author: "Marie D.",
+    text: "&laquo; Sehr gute App, mit Tracking und guten Ratschl&auml;gen. Ich empfehle sie. &raquo;",
+    author: "Nathou.S",
     source: "App Store",
-  },
-  {
-    text: "&laquo; Ich nutze AIVancePro seit 3 Monaten und die Challenges mit Freunden machen das Training so viel spa&szlig;iger. Das Badge-System motiviert, regelm&auml;&szlig;ig zu bleiben. Top! &raquo;",
-    author: "Julien R.",
-    source: "Google Play",
   },
 ];
 ---
@@ -38,29 +33,23 @@ const reviews = [
       "applicationCategory": "HealthApplication",
       "aggregateRating": {
         "@type": "AggregateRating",
-        "ratingValue": "4.8",
+        "ratingValue": "5",
         "bestRating": "5",
-        "ratingCount": "150",
-        "reviewCount": "3"
+        "ratingCount": "2",
+        "reviewCount": "2"
       },
       "review": [
         {
           "@type": "Review",
-          "author": { "@type": "Person", "name": "Thomas L." },
+          "author": { "@type": "Person", "name": "Theo Lpe" },
           "reviewRating": { "@type": "Rating", "ratingValue": "5" },
-          "reviewBody": "Der KI-Coach ist unglaublich, er versteht genau, was ich brauche, und erstellt perfekt angepasste Trainingseinheiten. Ich habe in 2 Monaten mehr Fortschritte gemacht als in einem Jahr allein."
+          "reviewBody": "Ich habe den KI-Coach zuf\u00e4llig ausprobiert und ehrlich gesagt ist er erstaunlich. Du sagst ihm, welche Ausr\u00fcstung du hast und wie lange du trainieren willst, und er erstellt dir eine komplette Einheit. Er passt sich wirklich an. Ich habe in 2 Monaten mit der App mehr Fortschritte gemacht als in 4 Monaten allein. F\u00fcr den Preis ist es ein Schn\u00e4ppchen."
         },
         {
           "@type": "Review",
-          "author": { "@type": "Person", "name": "Marie D." },
+          "author": { "@type": "Person", "name": "Nathou.S" },
           "reviewRating": { "@type": "Rating", "ratingValue": "5" },
-          "reviewBody": "Die App ist super komplett: \u00dcbungen, Vorlagen, Fortschrittsverfolgung, Community... Alles ist dabei. Und der automatische Pausentimer ist ein echtes Plus im Fitnessstudio."
-        },
-        {
-          "@type": "Review",
-          "author": { "@type": "Person", "name": "Julien R." },
-          "reviewRating": { "@type": "Rating", "ratingValue": "5" },
-          "reviewBody": "Ich nutze AIVancePro seit 3 Monaten und die Challenges mit Freunden machen das Training so viel spa\u00dfiger. Das Badge-System motiviert, regelm\u00e4\u00dfig zu bleiben. Top!"
+          "reviewBody": "Sehr gute App, mit Tracking und guten Ratschl\u00e4gen. Ich empfehle sie."
         }
       ]
     },
@@ -105,7 +94,7 @@ const reviews = [
       }
       .reviews-grid {
           display: grid;
-          grid-template-columns: repeat(3, 1fr);
+          grid-template-columns: repeat(2, 1fr);
           gap: 1.5rem;
           margin-bottom: 2.5rem;
       }

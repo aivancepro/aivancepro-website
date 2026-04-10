@@ -6,19 +6,14 @@ const starSvg = '<svg viewBox="0 0 20 20" fill="currentColor"><path d="M9.049 2.
 
 const reviews = [
   {
-    text: "&ldquo;The AI coach is incredible, it understands exactly what I need and generates perfectly tailored sessions. I&#8217;ve progressed more in 2 months than in a year on my own.&rdquo;",
-    author: "Thomas L.",
+    text: "&ldquo;I&rsquo;d been going to the gym for about 6 months and hit a point where I didn&rsquo;t know what to do anymore, just repeating the same stuff. I was too lazy to make my own program and a coach is too expensive. I tried the AI coach randomly and honestly it&rsquo;s amazing. You tell it what equipment you have and how long you want to train and it gives you a full session. At first I thought it would be generic but no, it really adapts. What made me go pro is the tracking &mdash; you see your stats evolve over sessions and it&rsquo;s super motivating. I progressed more in 2 months with the app than in 4 months on my own. Honestly for the price it&rsquo;s a steal.&rdquo;",
+    author: "Theo Lpe",
     source: "App Store",
   },
   {
-    text: "&ldquo;The app is super complete: exercises, templates, progress tracking, community... Everything is there. And the automatic rest timer is a real plus at the gym.&rdquo;",
-    author: "Marie D.",
+    text: "&ldquo;Very good app, with great tracking and solid advice. I recommend it.&rdquo;",
+    author: "Nathou.S",
     source: "App Store",
-  },
-  {
-    text: "&ldquo;I&#8217;ve been using AIVancePro for 3 months and the challenges with friends make training so much more fun. The badge system motivates you to stay consistent. Top!&rdquo;",
-    author: "Julien R.",
-    source: "Google Play",
   },
 ];
 ---
@@ -38,29 +33,23 @@ const reviews = [
       "applicationCategory": "HealthApplication",
       "aggregateRating": {
         "@type": "AggregateRating",
-        "ratingValue": "4.8",
+        "ratingValue": "5",
         "bestRating": "5",
-        "ratingCount": "150",
-        "reviewCount": "3"
+        "ratingCount": "2",
+        "reviewCount": "2"
       },
       "review": [
         {
           "@type": "Review",
-          "author": { "@type": "Person", "name": "Thomas L." },
+          "author": { "@type": "Person", "name": "Theo Lpe" },
           "reviewRating": { "@type": "Rating", "ratingValue": "5" },
-          "reviewBody": "The AI coach is incredible, it understands exactly what I need and generates perfectly tailored sessions. I've progressed more in 2 months than in a year on my own."
+          "reviewBody": "I tried the AI coach randomly and honestly it's amazing. You tell it what equipment you have and how long you want to train and it gives you a full session. It really adapts. I progressed more in 2 months with the app than in 4 months on my own. For the price it's a steal."
         },
         {
           "@type": "Review",
-          "author": { "@type": "Person", "name": "Marie D." },
+          "author": { "@type": "Person", "name": "Nathou.S" },
           "reviewRating": { "@type": "Rating", "ratingValue": "5" },
-          "reviewBody": "The app is super complete: exercises, templates, progress tracking, community... Everything is there. And the automatic rest timer is a real plus at the gym."
-        },
-        {
-          "@type": "Review",
-          "author": { "@type": "Person", "name": "Julien R." },
-          "reviewRating": { "@type": "Rating", "ratingValue": "5" },
-          "reviewBody": "I've been using AIVancePro for 3 months and the challenges with friends make training so much more fun. The badge system motivates you to stay consistent. Top!"
+          "reviewBody": "Very good app, with great tracking and solid advice. I recommend it."
         }
       ]
     },
@@ -105,7 +94,7 @@ const reviews = [
       }
       .reviews-grid {
           display: grid;
-          grid-template-columns: repeat(3, 1fr);
+          grid-template-columns: repeat(2, 1fr);
           gap: 1.5rem;
           margin-bottom: 2.5rem;
       }
