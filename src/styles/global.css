@@ -1292,7 +1292,7 @@ footer {
     left: 0;
     right: 0;
     z-index: 300;
-    background: var(--bg-card);
+    background: var(--bg);
     border-top: 1px solid var(--border);
     padding: 1.25rem 2rem;
     box-shadow: 0 -4px 20px rgba(0, 0, 0, 0.3);
