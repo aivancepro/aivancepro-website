@@ -97,6 +97,11 @@ const guidePrefixes = { fr: '/guides/', en: '/en/guides/', de: '/de/ratgeber/' }
       .article-content td { padding: 0.7rem 0.65rem; border-bottom: 1px solid var(--border); color: var(--text-secondary); font-size: 0.8rem; text-align: center; }
       .article-content td:first-child { text-align: left; font-weight: 500; color: var(--text); min-width: 100px; }
       .article-content tr:last-child td { border-bottom: none; }
+      .article-content td.check { color: var(--green, #22c55e); font-size: 1.2rem; font-weight: 700; }
+      .article-content td.cross { color: #ef4444; font-size: 1.1rem; font-weight: 700; }
+      .article-content td.neutral { color: var(--text-muted, #9ca3af); font-size: 0.85rem; }
+      .article-content td.featured { background: rgba(74, 144, 217, 0.06); }
+      .article-content th.featured { background: rgba(74, 144, 217, 0.15); color: var(--blue, #2563eb); }
       .article-content thead { position: sticky; top: 0; }
       .article-content h2 a, .article-content h3 a { color: inherit; text-decoration: none; }
       .article-content h2 a:hover, .article-content h3 a:hover { color: var(--blue); }

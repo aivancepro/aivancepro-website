@@ -61,19 +61,72 @@ Concrètement, voilà ce que ça change :
 
 ## Comparatif fonctionnalité par fonctionnalité
 
-| Fonctionnalité | Hevy | AIVancePro |
-|---|---|---|
-| Journal de séances | ✅ Oui | ✅ Complet |
-| Génération de programme IA | ✅ Hevy Trainer (Pro) | ✅ Natif |
-| Coach conversationnel | ❌ | ✅ |
-| Adaptation en temps réel | ❌ | ✅ |
-| Suivi de progression | ✅ Oui | ✅ Détaillé (graphiques, PRs, historique) |
-| Fonctions sociales | ✅ Oui | ✅ Communauté, groupes et défis |
-| Langues | EN principalement | FR / EN / DE natif |
-| iOS | ✅ | ✅ V3 publiée |
-| Android | ✅ | 🔄 En développement |
-| Prix Pro | ~9,99 $/mois | 6,99 €/mois (1er mois à 3,50€) |
-| Base utilisateurs | 12M | Lancement en cours |
+<table>
+  <thead>
+    <tr>
+      <th>Fonctionnalité</th>
+      <th>Hevy</th>
+      <th class="featured">AIVancePro</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>Journal de séances</td>
+      <td class="check">&#10003;</td>
+      <td class="check featured">&#10003; Complet</td>
+    </tr>
+    <tr>
+      <td>Génération de programme IA</td>
+      <td class="check">&#10003; Hevy Trainer (Pro)</td>
+      <td class="check featured">&#10003; Natif</td>
+    </tr>
+    <tr>
+      <td>Coach conversationnel</td>
+      <td class="cross">&#10007;</td>
+      <td class="check featured">&#10003;</td>
+    </tr>
+    <tr>
+      <td>Adaptation en temps réel</td>
+      <td class="cross">&#10007;</td>
+      <td class="check featured">&#10003;</td>
+    </tr>
+    <tr>
+      <td>Suivi de progression</td>
+      <td class="check">&#10003;</td>
+      <td class="check featured">&#10003; Détaillé (graphiques, PRs, historique)</td>
+    </tr>
+    <tr>
+      <td>Fonctions sociales</td>
+      <td class="check">&#10003;</td>
+      <td class="check featured">&#10003; Communauté, groupes et défis</td>
+    </tr>
+    <tr>
+      <td>Langues</td>
+      <td>EN principalement</td>
+      <td class="featured">FR / EN / DE natif</td>
+    </tr>
+    <tr>
+      <td>iOS</td>
+      <td class="check">&#10003;</td>
+      <td class="check featured">&#10003; V3 publiée</td>
+    </tr>
+    <tr>
+      <td>Android</td>
+      <td class="check">&#10003;</td>
+      <td class="neutral featured">En développement</td>
+    </tr>
+    <tr>
+      <td>Prix Pro</td>
+      <td>~9,99 $/mois</td>
+      <td class="featured"><strong>6,99 €/mois</strong> (1er mois à 3,50€)</td>
+    </tr>
+    <tr>
+      <td>Base utilisateurs</td>
+      <td>12M</td>
+      <td class="featured">Lancement en cours</td>
+    </tr>
+  </tbody>
+</table>
 
 ## Qui devrait choisir quelle app ?
 
