@@ -138,16 +138,21 @@ Wenn du nach der besten KI-Fitness-App 2026 für den deutschsprachigen Raum such
 ## Häufig gestellte Fragen
 
 **Gibt es AIVancePro wirklich auf Deutsch?**
+
 Ja — nativ. Der Coach kommuniziert auf Deutsch, das Interface ist auf Deutsch, und der Inhalt wurde für den deutschen Markt erstellt, nicht nur übersetzt.
 
 **Kann ich von Hevy oder Fitbod zu AIVancePro wechseln?**
+
 Du gibst deinen aktuellen Trainingsstand beim Onboarding ein. Der Coach passt sich sofort an dein Level und deine Geschichte an.
 
 **Ist AIVancePro für Anfänger geeignet?**
+
 Besonders gut. Der Coach erklärt, warum welche Übungen gewählt werden, zeigt Technik-Hinweise, und beantwortet Anfänger-Fragen ohne Arroganz.
 
 **Wann erscheint AIVancePro für Android?**
+
 Die iOS-Version V3 ist seit April 2026 im App Store. Android befindet sich in der Testphase und erscheint 2026.
 
 **Brauche ich alle drei Apps?**
+
 Nein. AIVancePro kombiniert Coaching, Programmplanung und Fortschrittstracking in einer App. Du brauchst kein separates Trainingsprotokoll.

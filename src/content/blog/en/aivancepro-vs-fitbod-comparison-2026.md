@@ -132,16 +132,21 @@ If you've been using Fitbod and feel like something's missing — the ability to
 ## FAQ
 
 **Can AIVancePro model muscle recovery like Fitbod?**
+
 AIVancePro tracks training history and factors recovery into coaching recommendations. It also incorporates self-reported fatigue through conversation — which provides context that pure data models can't access.
 
 **Is Fitbod better for high-frequency training?**
+
 Fitbod's muscle recovery model is specifically optimized for 4-6x/week training. AIVancePro handles high-frequency programs well too, but requires the user to actively communicate their state.
 
 **Does AIVancePro have enough exercises for advanced lifters?**
+
 Yes. The curated library covers all major movement patterns, and you can describe any exercise to the coach — it will incorporate it into your program with appropriate loading.
 
 **Is AIVancePro on Android?**
+
 V3 is live on iOS (App Store validated, April 2026). Android is in beta with 12 testers and launching soon.
 
 **Which app is better for beginners?**
+
 AIVancePro has a clear advantage for beginners. The coach explains programming principles, teaches technique cues, and answers the "why" behind each session. Fitbod's algorithm can feel opaque when you're still building foundational knowledge.
