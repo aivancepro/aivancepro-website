@@ -63,17 +63,17 @@ Concrètement, voilà ce que ça change :
 
 | Fonctionnalité | Hevy | AIVancePro |
 |---|---|---|
-| Journal de séances | ✅ Excellent | ✅ Oui |
-| Génération de programme IA | ✅ Hevy Trainer (Pro) | ✅ Natif |
-| Coach conversationnel | ❌ | ✅ |
+| Journal de séances | ✅ Oui | ✅ Complet |
+| Génération de programme IA | ✅ Hevy Trainer (Pro) | ✅ Natif et gratuit |
+| Coach conversationnel | ❌ | ✅ Coach IA intégré |
 | Adaptation en temps réel | ❌ | ✅ |
-| Suivi de progression | ✅ Excellent | ✅ Oui |
-| Fonctions sociales | ✅ Très développé | 🔄 En développement |
-| Langues | EN principalement | FR / EN / DE |
-| iOS | ✅ | ✅ (V3) |
-| Android | ✅ | 🔄 Bientôt |
-| Prix Pro | ~9,99 $/mois | 6,99 €/mois |
-| Base utilisateurs | 12M | En croissance |
+| Suivi de progression | ✅ Oui | ✅ Détaillé (graphiques, PRs, historique) |
+| Fonctions sociales | ✅ Très développé | ✅ Communauté, groupes et défis |
+| Langues | EN principalement | 🌍 FR / EN / DE natif |
+| iOS | ✅ | ✅ V3 publiée |
+| Android | ✅ | ✅ En test (12 testeurs) |
+| Prix Pro | ~9,99 $/mois | 6,99 €/mois (1er mois à 3,50€) |
+| Base utilisateurs | 12M | Lancement en cours |
 
 ## Qui devrait choisir quelle app ?
 
