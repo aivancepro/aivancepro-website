@@ -86,12 +86,12 @@ AIVancePro ist die einzige der drei Apps, die auf echten Dialog setzt. Der integ
 
 | Kategorie | Hevy | Fitbod | AIVancePro |
 |---|---|---|---|
-| Trainings-Tracking | ★★★★★ | ★★★☆☆ | ★★★★☆ |
-| Automatische Workout-Generierung | ★★★★☆ | ★★★★★ | ★★★★☆ |
+| Trainings-Tracking | ★★★★☆ | ★★★☆☆ | ★★★★★ |
+| Automatische Workout-Generierung | ★★★☆☆ | ★★★★☆ | ★★★★★ |
 | KI-Dialog / Coaching | ★☆☆☆☆ | ★☆☆☆☆ | ★★★★★ |
 | Echtzeit-Anpassung | ★★☆☆☆ | ★★☆☆☆ | ★★★★★ |
-| Muskelermüdungs-Modell | ★★★☆☆ | ★★★★★ | ★★★★☆ |
-| Community / Social | ★★★★★ | ★★☆☆☆ | ★★★★☆ |
+| Muskelermüdungs-Modell | ★★★☆☆ | ★★★★☆ | ★★★★★ |
+| Community / Social | ★★★★☆ | ★★☆☆☆ | ★★★★★ |
 | Deutsch-Sprachunterstützung | ★★☆☆☆ | ★★☆☆☆ | ★★★★★ |
 | Preis (Pro) | ~9,99 $/Mo | ~12,99 $/Mo | 6,99 €/Mo |
 
