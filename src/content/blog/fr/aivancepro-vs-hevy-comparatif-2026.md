@@ -63,14 +63,14 @@ Concrètement, voilà ce que ça change :
 
 | Fonctionnalité | Hevy | AIVancePro |
 |---|---|---|
-| Journal de séances | ✓ Oui | ✓ Complet |
+| Journal de séances | ✓ | ✓ Complet |
 | Génération de programme IA | ✓ Hevy Trainer (Pro) | ✓ Natif |
 | Coach conversationnel | ✗ | ✓ |
 | Adaptation en temps réel | ✗ | ✓ |
-| Suivi de progression | ✓ Oui | ✓ Détaillé (graphiques, PRs, historique) |
-| Fonctions sociales | ✓ Oui | ✓ Communauté, groupes et défis |
+| Suivi de progression | ✓ | ✓ Détaillé (graphiques, PRs, historique) |
+| Fonctions sociales | ✓ | ✓ Communauté, groupes et défis |
 | Langues | EN principalement | FR / EN / DE natif |
-| iOS | ✓ | ✓ V3 publiée |
+| iOS | ✓ | ✓ |
 | Android | ✓ | En développement |
 | Prix Pro | ~9,99 $/mois | 6,99 €/mois (1er mois à 3,50€) |
 | Base utilisateurs | 12M | Lancement en cours |
