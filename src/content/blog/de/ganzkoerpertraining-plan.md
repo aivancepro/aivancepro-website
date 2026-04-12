@@ -167,13 +167,17 @@ Für eine tiefere Auseinandersetzung lies unseren [Ratgeber zu Erholung und Verl
 ## FAQ — Ganzkörpertraining
 
 **Wie viele Tage pro Woche sollte ich Ganzkörpertraining machen?**
+
 2-3 Tage pro Woche ist optimal. Zwei Einheiten eignen sich für Einsteiger; drei Einheiten maximieren den wöchentlichen Trainingsreiz ohne die Regeneration zu kompromittieren.
 
 **Ist Ganzkörpertraining effektiv für Muskelaufbau?**
+
 Definitiv. Mehrere Meta-Analysen bestätigen, dass höhere Trainingsfrequenz pro Muskelgruppe zu überlegenem Muskelwachstum führt, besonders bei Naturalsportlern.
 
 **Wie lange sollte eine Ganzkörpereinheit dauern?**
+
 45-75 Minuten inklusive Aufwärmen. Über 90 Minuten deuten auf zu viel Volumen oder zu lange Pausen hin.
 
 **Können erfahrene Sportler von Ganzkörpertraining profitieren?**
+
 Ja — besonders in kraftorientierten Phasen oder Deload-Wochen. Viele Fortgeschrittene wechseln strategisch zwischen Ganzkörper- und Split-Ansätzen.

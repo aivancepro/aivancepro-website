@@ -126,13 +126,17 @@ AIVancePro génère automatiquement ton programme personnalisé en fonction de t
 ## FAQ
 
 **Combien de séances par semaine pour un débutant ?**
+
 3 séances par semaine est le rythme idéal pour débuter. C'est suffisant pour stimuler la croissance musculaire tout en laissant le temps à ton corps de récupérer entre les séances. Après 6 mois d'entraînement régulier, tu pourras envisager de passer à 4 jours.
 
 **Est-ce que je peux faire de la musculation sans matériel ?**
+
 Oui. Le poids de corps permet de progresser significativement au stade débutant. Pompes, tractions, dips et squats permettent de construire une base musculaire solide. Notre guide home gym détaille comment t'équiper progressivement sans exploser ton budget.
 
 **Comment savoir si mon programme fonctionne ?**
+
 Le marqueur numéro 1 : est-ce que tu soulèves plus lourd qu'il y a 4 semaines sur tes exercices principaux ? Si oui, tu progresses. Si tu stagnes depuis plus de 3 semaines, il est temps de revoir ta nutrition, ton sommeil ou la structure de ton programme.
 
 **Faut-il prendre des protéines en poudre pour débuter ?**
+
 Non. Les suppléments sont des compléments — pas des fondations. Optimise d'abord le sommeil, l'entraînement et l'alimentation. Si atteindre ton objectif protéique via l'alimentation seule s'avère difficile, la whey devient un outil pratique — pas une nécessité absolue.

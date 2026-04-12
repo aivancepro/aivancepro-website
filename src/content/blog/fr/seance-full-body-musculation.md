@@ -167,13 +167,17 @@ Consulte notre [guide sur la récupération et la prévention des blessures](/gu
 ## FAQ — Séance Full Body Musculation
 
 **Combien de séances full body par semaine pour progresser ?**
+
 2 à 3 séances par semaine est le sweet spot. 2 séances suffisent si tu démarres ; 3 séances maximisent le stimulus musculaire sans compromettre la récupération.
 
 **Le full body est-il efficace pour prendre de la masse ?**
+
 Oui, c'est même l'approche recommandée pour les débutants et intermédiaires. La méta-analyse de Schoenfeld et al. (2016) confirme qu'une fréquence élevée par groupe musculaire est supérieure pour l'hypertrophie chez les pratiquants naturels.
 
 **Combien de temps dure une bonne séance full body ?**
+
 Entre 50 et 75 minutes, échauffement compris. Au-delà de 90 minutes, tu accumules trop de volume ou tes temps de repos sont excessifs.
 
 **Puis-je faire du full body si je suis déjà avancé ?**
+
 Oui — beaucoup d'avancés l'utilisent en phase de force ou de déload, avant de revenir à un split plus spécialisé.

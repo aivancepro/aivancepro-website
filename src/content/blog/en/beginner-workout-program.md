@@ -130,13 +130,17 @@ AIVancePro builds your personalized workout program based on your experience lev
 ## FAQ
 
 **How many days per week should a beginner work out?**
+
 3 days per week is optimal for beginners. It delivers sufficient training stimulus for muscle growth while allowing full recovery between sessions. After 6 months of consistent training you can progressively increase frequency to 4 days if your schedule allows.
 
 **Can I build muscle without a gym membership?**
+
 Absolutely. Bodyweight training — push-ups, pull-ups, dips, bodyweight squats, lunges — builds significant muscle during the beginner phase. Check our home gym guide for budget equipment recommendations that will unlock your next level of training.
 
 **How do I know if my program is working?**
+
 Track your lifts. If you're moving more weight than 4 weeks ago on your main compound movements, you're progressing. If you've stalled for 3+ consecutive weeks, investigate your sleep quality, protein intake, and overall program structure before changing exercises.
 
 **Should I do cardio while trying to build muscle?**
+
 Light to moderate cardio (2-3x/week, 20-30 minutes) supports cardiovascular health and active recovery without meaningfully impacting muscle growth. High-intensity cardio every day is counterproductive when your primary goal is building muscle as a beginner.

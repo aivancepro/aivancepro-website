@@ -168,13 +168,17 @@ For a deeper dive, read our [guide on recovery and injury prevention](/en/guides
 ## FAQ — Full Body Workout Routine
 
 **How many days per week should I do full body training?**
+
 2-3 days per week is the sweet spot. Two sessions work well for beginners or those with demanding schedules; three sessions maximize the weekly training stimulus without compromising recovery.
 
 **Is full body training effective for building muscle?**
+
 Absolutely. Multiple meta-analyses confirm that higher training frequency per muscle group produces superior hypertrophy, particularly for natural lifters.
 
 **How long should a full body workout be?**
+
 45-75 minutes is ideal, including warm-up. Sessions longer than 90 minutes often indicate too much volume or unnecessarily long rest periods.
 
 **Can advanced lifters benefit from full body training?**
+
 Yes — particularly during strength-focused phases, deload weeks, or when transitioning between mesocycles. Many advanced athletes cycle between full body and split approaches strategically.

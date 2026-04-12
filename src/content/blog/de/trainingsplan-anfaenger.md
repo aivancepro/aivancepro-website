@@ -132,13 +132,17 @@ AIVancePro erstellt deinen personalisierten Trainingsplan basierend auf deinem E
 ## FAQ
 
 **Wie viele Trainingstage pro Woche sind für Anfänger optimal?**
+
 3 Trainingstage pro Woche sind für Anfänger ideal. Das liefert ausreichend Trainingsreiz für Muskelwachstum und ermöglicht gleichzeitig eine vollständige Regeneration zwischen den Einheiten. Nach 6 Monaten regelmäßigen Trainings kannst du die Frequenz schrittweise auf 4 Tage erhöhen.
 
 **Kann ich ohne Fitnessstudio-Mitgliedschaft Muskeln aufbauen?**
+
 Ja. Körpergewichtsübungen wie Liegestütze, Klimmzüge, Dips und Kniebeugen ermöglichen in der Anfängerphase erhebliche Muskelzuwächse. Unser [Home-Gym-Guide](/de/ratgeber/home-gym-ratgeber/) zeigt, wie du dich mit überschaubarem Budget schrittweise ausrüstest.
 
 **Woran erkenne ich, dass mein Trainingsplan funktioniert?**
+
 Tracke deine Gewichte. Wenn du heute auf den Grundübungen mehr bewegst als vor 4 Wochen, funktioniert dein Plan. Wenn du länger als 3 Wochen stagnierst, überprüfe zuerst Schlafqualität, Proteinzufuhr und Gesamtkalorien — bevor du das Programm wechselst.
 
 **Muss ich als Anfänger Nahrungsergänzungsmittel nehmen?**
+
 Nein. Supplements ergänzen eine solide Basis — sie ersetzen sie nicht. Wer Schlaf, Training und Ernährung optimiert hat, kann über Kreatin oder Proteinpulver nachdenken. Vorher sind sie keine Priorität und kein entscheidender Faktor.
