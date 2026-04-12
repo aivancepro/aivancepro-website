@@ -7,20 +7,34 @@ const jsonLd = [
     "@context": "https://schema.org",
     "@type": "MobileApplication",
     "name": "AIVancePro",
-    "description": "Coach fitness personnel propuls\u00e9 par l'intelligence artificielle avec programmes personnalis\u00e9s et suivi de progression.",
-    "operatingSystem": "iOS, Android",
+    "description": "Coach fitness IA conversationnel avec programmes personnalis\u00e9s, suivi de progression d\u00e9taill\u00e9 et communaut\u00e9 sportive. Le seul coach IA qui s'adapte en temps r\u00e9el \u00e0 votre contexte.",
+    "operatingSystem": "iOS",
     "applicationCategory": "HealthApplication",
-    "offers": { "@type": "Offer", "price": "0", "priceCurrency": "EUR" },
-    "author": { "@type": "Organization", "name": "AS Corporation", "url": "https://aivancepro.fr" },
+    "applicationSubCategory": "Fitness",
+    "offers": [
+      { "@type": "Offer", "price": "0", "priceCurrency": "EUR", "name": "Gratuit", "description": "Suivi de s\u00e9ances, 240+ exercices, statistiques de base" },
+      { "@type": "Offer", "price": "6.99", "priceCurrency": "EUR", "name": "Pro", "description": "Coach IA illimit\u00e9, programmes personnalis\u00e9s, statistiques avanc\u00e9es", "priceSpecification": { "@type": "UnitPriceSpecification", "price": "6.99", "priceCurrency": "EUR", "referenceQuantity": { "@type": "QuantitativeValue", "value": "1", "unitCode": "MON" } } }
+    ],
+    "author": { "@type": "Organization", "name": "AS Corporation", "url": "https://aivancepro.fr", "foundingDate": "2025", "founders": [{"@type": "Person", "name": "Alexandre Saraiva"}, {"@type": "Person", "name": "Theo Stanmore"}] },
     "installUrl": "https://apps.apple.com/fr/app/aivancepro/id6756116760",
-    "aggregateRating": { "@type": "AggregateRating", "ratingValue": "4.8", "bestRating": "5", "ratingCount": "150" }
+    "aggregateRating": { "@type": "AggregateRating", "ratingValue": "5.0", "bestRating": "5", "worstRating": "1", "ratingCount": "3", "reviewCount": "3" },
+    "featureList": "Coach IA conversationnel, G\u00e9n\u00e9ration de programmes personnalis\u00e9s, 240+ exercices, Suivi de progression d\u00e9taill\u00e9, Communaut\u00e9 et d\u00e9fis, Timer int\u00e9gr\u00e9, Mode hors-ligne, Trilingue FR/EN/DE",
+    "screenshot": "https://aivancepro.fr/assets/screenshots/fr/hero-phone-center.avif",
+    "inLanguage": ["fr", "en", "de"],
+    "sameAs": [
+      "https://www.instagram.com/aivancepro/",
+      "https://www.tiktok.com/@aivancepro",
+      "https://twitter.com/aivancepro",
+      "https://www.linkedin.com/company/aivancepro",
+      "https://www.youtube.com/@aivancepro"
+    ]
   },
   {
     "@context": "https://schema.org",
     "@type": "WebSite",
     "name": "AIVancePro",
     "url": "https://aivancepro.fr/",
-    "description": "Coach fitness IA avec programmes personnalis\u00e9s",
+    "description": "Coach fitness IA conversationnel — programmes personnalis\u00e9s, suivi de progression et communaut\u00e9 sportive",
     "inLanguage": ["fr", "en", "de"],
     "potentialAction": { "@type": "SearchAction", "target": "https://aivancepro.fr/blog/?q={search_term_string}", "query-input": "required name=search_term_string" }
   }

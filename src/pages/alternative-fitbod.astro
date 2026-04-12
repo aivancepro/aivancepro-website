@@ -1,0 +1,120 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+
+const lang = 'fr';
+const jsonLd = {
+  "@context": "https://schema.org",
+  "@type": "WebPage",
+  "name": "Alternative à Fitbod — AIVancePro, coach IA conversationnel",
+  "description": "AIVancePro est la meilleure alternative à Fitbod : coach IA conversationnel, programmes personnalisés, suivi de progression détaillé. 6,99€/mois.",
+  "url": "https://aivancepro.fr/alternative-fitbod/",
+  "mainEntity": {
+    "@type": "MobileApplication",
+    "name": "AIVancePro",
+    "applicationCategory": "HealthApplication",
+    "operatingSystem": "iOS",
+    "aggregateRating": { "@type": "AggregateRating", "ratingValue": "5.0", "bestRating": "5", "ratingCount": "3" }
+  }
+};
+---
+
+<BaseLayout
+  lang={lang}
+  title="Alternative à Fitbod — AIVancePro, le coach IA qui vous parle"
+  description="Vous cherchez une alternative à Fitbod ? AIVancePro offre un coach IA conversationnel, des programmes personnalisés et un suivi détaillé. Essai gratuit."
+  canonical="https://aivancepro.fr/alternative-fitbod/"
+  alternates={{ fr: 'https://aivancepro.fr/alternative-fitbod/', en: 'https://aivancepro.fr/en/fitbod-alternative/', de: 'https://aivancepro.fr/de/fitbod-alternative/' }}
+  jsonLd={[jsonLd]}
+>
+  <Fragment slot="head">
+    <meta name="keywords" content="alternative fitbod, fitbod alternative, remplacer fitbod, meilleure alternative fitbod, aivancepro vs fitbod, coach ia musculation">
+    <style>{`
+      .landing-hero { padding: 6rem 2rem 3rem; text-align: center; max-width: 820px; margin: 0 auto; }
+      .landing-hero h1 { font-size: 2.5rem; font-weight: 800; line-height: 1.2; color: var(--text); margin-bottom: 1rem; text-wrap: balance; }
+      .landing-hero h1 span { background: linear-gradient(135deg, #2563EB, #9333EA); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
+      .landing-hero p { font-size: 1.1rem; color: var(--text-secondary); max-width: 600px; margin: 0 auto 2rem; line-height: 1.7; }
+      .landing-cta { display: inline-flex; align-items: center; gap: 0.5rem; background: #2563EB; color: #fff; padding: 0.85rem 2rem; border-radius: 12px; font-weight: 600; text-decoration: none; font-size: 1rem; transition: background 0.2s; }
+      .landing-cta:hover { background: #1d4ed8; }
+      .landing-section { max-width: 820px; margin: 0 auto; padding: 3rem 2rem; }
+      .landing-section h2 { font-size: 1.5rem; font-weight: 700; color: var(--text); margin-bottom: 1rem; }
+      .landing-section p, .landing-section li { color: var(--text-secondary); font-size: 0.95rem; line-height: 1.8; }
+      .landing-section ul { padding-left: 1.5rem; }
+      .landing-section li { margin-bottom: 0.5rem; }
+      .vs-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 2rem; margin: 2rem 0; }
+      .vs-card { background: var(--bg-card); border: 1px solid var(--border); border-radius: 16px; padding: 2rem; }
+      .vs-card h3 { font-size: 1.15rem; font-weight: 700; margin-bottom: 1rem; color: var(--text); }
+      .vs-card.featured { border-color: #2563EB; background: rgba(37, 99, 235, 0.03); }
+      .vs-card ul { list-style: none; padding: 0; }
+      .vs-card li { padding: 0.4rem 0; font-size: 0.9rem; }
+      .vs-card li::before { content: '✓ '; color: #22c55e; font-weight: 700; }
+      .vs-card.other li::before { content: ''; }
+      @media (max-width: 768px) { .landing-hero h1 { font-size: 1.8rem; } .vs-grid { grid-template-columns: 1fr; } }
+    `}</style>
+  </Fragment>
+
+  <div class="landing-hero">
+    <h1>La meilleure <span>alternative à Fitbod</span> en 2026</h1>
+    <p>Fitbod génère des programmes, AIVancePro fait pareil — et en plus, il vous coach. Un vrai coach IA conversationnel qui comprend votre contexte, répond à vos questions et adapte votre programme en temps réel.</p>
+    <a href="https://apps.apple.com/fr/app/aivancepro/id6756116760" class="landing-cta" target="_blank" rel="noopener">Essayer gratuitement</a>
+  </div>
+
+  <section class="landing-section">
+    <h2>Pourquoi chercher une alternative à Fitbod ?</h2>
+    <p>Fitbod est excellent pour la génération automatique de programmes. Mais beaucoup d'utilisateurs se retrouvent bloqués quand ils ont besoin de plus :</p>
+    <ul>
+      <li><strong>Pas de coach conversationnel</strong> — Fitbod génère, mais ne répond pas à vos questions</li>
+      <li><strong>Pas d'adaptation contextuelle</strong> — blessure, voyage, changement d'horaire ? Fitbod ne s'adapte pas à votre vie</li>
+      <li><strong>Prix élevé</strong> — ~12,99$/mois sans période d'essai avantageuse</li>
+      <li><strong>Anglais uniquement</strong> — pas de support natif en français ou allemand</li>
+    </ul>
+  </section>
+
+  <section class="landing-section">
+    <h2>AIVancePro vs Fitbod — Ce qui change</h2>
+    <div class="vs-grid">
+      <div class="vs-card other">
+        <h3>Fitbod</h3>
+        <ul>
+          <li>Génération de programmes IA</li>
+          <li>Modèle de fatigue musculaire</li>
+          <li>Apple Watch / Health sync</li>
+          <li>1400+ exercices</li>
+          <li>~12,99$/mois</li>
+        </ul>
+      </div>
+      <div class="vs-card featured">
+        <h3>AIVancePro</h3>
+        <ul>
+          <li>Coach IA conversationnel intégré</li>
+          <li>Génération de programmes personnalisés</li>
+          <li>Adaptation en temps réel à votre contexte</li>
+          <li>Communauté, groupes et défis</li>
+          <li>Suivi de progression détaillé (graphiques, PRs)</li>
+          <li>Trilingue natif (FR / EN / DE)</li>
+          <li>6,99€/mois (1er mois à 3,50€)</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <section class="landing-section">
+    <h2>Ce que les utilisateurs disent</h2>
+    <blockquote style="border-left: 3px solid #2563EB; padding-left: 1.5rem; margin: 1.5rem 0; font-style: italic; color: var(--text-secondary);">
+      "J'ai plus progressé en 2 mois qu'en 6 mois tout seul. Le coach IA comprend exactement où j'en suis et adapte mes séances."
+      <br><strong style="color: var(--text);">— Avis App Store, 5 ★</strong>
+    </blockquote>
+    <p style="text-align: center; margin-top: 2rem;">
+      <a href="https://apps.apple.com/fr/app/aivancepro/id6756116760" class="landing-cta" target="_blank" rel="noopener">Essayer AIVancePro gratuitement</a>
+    </p>
+  </section>
+
+  <section class="landing-section">
+    <h2>Questions fréquentes</h2>
+    <p><strong>Est-ce que je peux importer mes données Fitbod ?</strong></p>
+    <p>Pas encore nativement. Mais lors de l'onboarding, vous renseignez votre niveau et votre historique — le coach s'adapte immédiatement.</p>
+    <p><strong>AIVancePro est-il gratuit ?</strong></p>
+    <p>Oui, le plan gratuit inclut le suivi de séances, 240+ exercices et les statistiques de base. Le plan Pro (coach IA illimité) est à 6,99€/mois, avec le premier mois à 3,50€.</p>
+    <p><strong>AIVancePro est-il disponible sur Android ?</strong></p>
+    <p>Disponible sur iOS. Android est en développement.</p>
+  </section>
+</BaseLayout>
