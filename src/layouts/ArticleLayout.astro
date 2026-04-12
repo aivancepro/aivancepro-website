@@ -357,15 +357,17 @@ const guidePrefixes = { fr: '/guides/', en: '/en/guides/', de: '/de/ratgeber/' }
     });
 
     // Colorize ✓ (green) and ✗ (red) symbols in table cells — only the symbol, not the text
-    document.querySelectorAll('.article-content td').forEach(function(td) {
-      var text = td.textContent.trim();
-      if (text.startsWith('✓')) {
-        var rest = text.substring(1).trim();
-        td.innerHTML = '<span class="sym-check">✓</span>' + (rest ? ' ' + rest : '');
-      } else if (text.startsWith('✗')) {
-        td.innerHTML = '<span class="sym-cross">✗</span>';
-      }
-    });
+    try {
+      document.querySelectorAll('.article-content td').forEach(function(td) {
+        var text = td.textContent.trim();
+        if (text.charAt(0) === '\u2713') {
+          var rest = text.substring(1).trim();
+          td.innerHTML = '<span class="sym-check">\u2713</span>' + (rest ? ' ' + rest : '');
+        } else if (text.charAt(0) === '\u2717') {
+          td.innerHTML = '<span class="sym-cross">\u2717</span>';
+        }
+      });
+    } catch(e) { console.error('table colorize error', e); }
 
     // Client-side ToC (fallback for articles without remark-toc)
     var content = document.getElementById('articleContent');
