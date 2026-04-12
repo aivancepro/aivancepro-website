@@ -246,12 +246,15 @@ L'objectif est de développer la force, la puissance et la résistance à la fat
 ## FAQ — Périodisation
 
 **Faut-il périodiser quand on est débutant ?**
+
 Pas de manière complexe. Un [débutant](/guides/debutant-musculation/) progresse rapidement avec une simple surcharge progressive linéaire (ajouter du poids ou des reps chaque semaine). La périodisation formelle devient réellement utile après 12-18 mois de pratique régulière, quand les progrès ralentissent et que la gestion de la fatigue devient un enjeu.
 
 **Peut-on combiner plusieurs modèles de périodisation ?**
+
 Oui, et c'est même courant chez les pratiquants avancés. Par exemple, vous pouvez utiliser une périodisation par blocs au niveau du macrocycle (bloc hypertrophie, bloc force, bloc peaking) tout en appliquant une ondulation quotidienne (DUP) au sein de chaque bloc pour varier les stimuli d'une séance à l'autre. La clé est de garder un objectif principal clair pour chaque bloc.
 
 **Comment ajuster la périodisation si je manque une semaine d'entraînement (vacances, maladie) ?**
+
 Si l'arrêt dure moins d'une semaine, reprenez simplement là où vous en étiez en réduisant légèrement les charges (~5 %). Si l'arrêt dure 2 semaines ou plus, ajoutez une semaine de réintroduction à volume et intensité réduits (RPE 6-7) avant de reprendre le programme normal. Ne tentez pas de « rattraper » les séances manquées en compressant le programme : cela ne ferait qu'accumuler de la fatigue inutile.
 
 **Envie de mettre ces principes en pratique sans vous perdre dans la planification ?** [AIVancePro](https://apps.apple.com/fr/app/aivancepro/id6756116760) applique une périodisation intelligente qui s'adapte à votre progression réelle, gère automatiquement vos phases d'accumulation et de deload, et ajuste votre programme en temps réel. Téléchargez l'application gratuitement et commencez dès aujourd'hui.

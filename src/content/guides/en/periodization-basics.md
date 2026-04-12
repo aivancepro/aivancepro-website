@@ -246,14 +246,17 @@ The goal is to develop strength, power and fatigue resistance while accounting f
 ## FAQ -- Periodization
 
 **Do beginners need to periodize?**
+
 Not in a complex way. A [beginner](/en/guides/beginner-strength-training/) progresses rapidly with simple linear progressive overload (adding weight or reps each week). Formal periodization becomes truly useful after 12-18 months of regular training, when progress slows and fatigue management becomes a real concern.
 
 **Can you combine multiple periodization models?**
+
 Yes, and it is actually common among advanced lifters. For example, you can use block periodization at the macrocycle level (hypertrophy block, strength block, peaking block) while applying daily undulation (DUP) within each block to vary stimuli from session to session. The key is to keep a clear primary objective for each block.
 
 **Want to put these principles into practice without getting lost in the planning?** [AIVancePro](https://apps.apple.com/app/aivancepro/id6756116760) automatically applies intelligent periodization that adapts to your actual progression, manages your accumulation and deload phases, and adjusts your program in real time. Download the app for free and get started today.
 
 **How do you adjust periodization if you miss a week of training (vacation, illness)?**
+
 If the break lasts less than a week, simply pick up where you left off with a slight load reduction (~5%). If the break lasts 2 weeks or more, add a reintroduction week at reduced volume and intensity (RPE 6-7) before resuming your normal program. Do not try to "make up" missed sessions by compressing the program -- that would only accumulate unnecessary fatigue.
 
 ---

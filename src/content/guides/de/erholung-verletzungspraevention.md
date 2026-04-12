@@ -226,10 +226,13 @@ Lieber zu früh konsultieren als zu spät. Eine leichte Verletzung, die schnell 
 ## FAQ — Erholung und Prävention
 
 **Beschleunigen Eisbäder (Kryotherapie) die Erholung?**
+
 Eisbäder (10-15 Minuten bei 10-15 °C) können die Schmerz- und Ermüdungswahrnehmung nach der Belastung reduzieren. Neuere Studien zeigen jedoch, dass Kryotherapie nach dem Training die Hypertrophie-Anpassungen abschwächen kann, indem sie die für den Muskelaufbau notwendige Entzündungsreaktion reduziert. In der Praxis: Nutzen Sie Eisbäder zur Erholung zwischen eng aufeinanderfolgenden Wettkämpfen oder Spielen, vermeiden Sie sie aber systematisch nach Ihren Hypertrophie-Einheiten.
 
 **Wie viele Ruhetage braucht man zwischen zwei Einheiten derselben Muskelgruppe?**
+
 In der Regel reichen 48 bis 72 Stunden für eine Muskelgruppe, aber das hängt vom Volumen und der Intensität der Einheit ab. Ein Muskel, der mit 4-6 Sätzen bei RPE 7-8 trainiert wurde, erholt sich in 48 Stunden. Derselbe Muskel, trainiert mit 10-12 Sätzen bei RPE 9, kann 72-96 Stunden benötigen. Deshalb sind Programme mit einer Frequenz von 2x/Woche pro Muskel (Oberkörper/Unterkörper- oder PPL-Split) beliebt: Sie ermöglichen ein hohes Gesamtvolumen (10-22+ Sätze/Muskel/Woche), verteilt auf mehrere Einheiten. Um dies effektiv zu strukturieren, lesen Sie unseren Ratgeber zum [Erstellen Ihres Trainingsplans](/de/ratgeber/trainingsplan-erstellen/).
 
 **Schadet Cardio der muskulären Erholung?**
+
 Nicht unbedingt. Moderates Cardio (30-45 Min. Gehen, Radfahren oder Schwimmen bei niedriger Intensität) fördert die Erholung, indem es den Blutfluss erhöht, ohne signifikanten muskulären Stress zu erzeugen. Intensives Cardio hingegen (HIIT, hochintensives Laufen) beansprucht dieselben Erholungsressourcen wie das Krafttraining und kann die Zuwächse beeinträchtigen, wenn das Gesamtvolumen zu hoch ist. Platzieren Sie intensives Cardio an Tagen getrennt von Ihren Beineinheiten und begrenzen Sie es auf 2-3 Einheiten pro Woche, wenn Ihr Hauptziel Hypertrophie oder Kraft ist.

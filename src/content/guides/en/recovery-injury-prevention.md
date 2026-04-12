@@ -226,10 +226,13 @@ It is better to consult too early than too late. A minor injury treated promptly
 ## FAQ -- Recovery and prevention
 
 **Do ice baths (cryotherapy) speed up recovery?**
+
 Ice baths (10-15 minutes at 10-15 degrees Celsius) can reduce the perception of pain and fatigue after exercise. However, recent studies show that post-training cryotherapy can blunt hypertrophy adaptations by reducing the inflammatory response needed for muscle rebuilding. In practice: use ice baths for recovery between closely spaced competitions or matches, but avoid them routinely after hypertrophy sessions.
 
 **How many rest days are needed between sessions for the same muscle group?**
+
 Generally, 48 to 72 hours is sufficient for a muscle group, but it depends on the volume and intensity of the session. A muscle trained with 4-6 sets at RPE 7-8 recovers in 48 hours. The same muscle trained with 10-12 sets at RPE 9 may need 72-96 hours. This is why programs with a 2x/week frequency per muscle (such as Upper/Lower or PPL splits) are popular: they allow high total volume (10-22+ sets/muscle/week) spread across multiple sessions. To structure this effectively, see our guide to [creating your training program](/en/guides/create-training-program/).
 
 **Does cardio hurt muscle recovery?**
+
 Not necessarily. Moderate cardio (30-45 min of walking, cycling or swimming at low intensity) promotes recovery by increasing blood flow without creating significant muscular stress. However, intense cardio (HIIT, high-intensity running) uses the same recovery resources as strength training and can compromise gains if total volume is too high. Place intense cardio on days separate from your leg sessions and limit it to 2-3 sessions per week if your primary goal is hypertrophy or strength.

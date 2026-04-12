@@ -246,10 +246,13 @@ A home gym does not have to completely replace the commercial gym. Many lifters 
 ## FAQ -- Home gym
 
 **Is a home gym sufficient to progress as much as in a commercial gym?**
+
 Yes, for strength and hypertrophy, a well-equipped home gym (rack, barbell, bench, dumbbells) covers 90% of your needs. [Compound exercises](/en/guides/compound-vs-isolation/) (squat, [bench](/en/guides/improve-bench-press/), deadlift, row, OHP) are the pillars of any effective program and require only basic equipment. Guided machines in a gym offer additional comfort for isolation but are not essential for progress. The key is to apply [progressive overload](/en/guides/understanding-rpe/) and adapted [periodization](/en/guides/periodization-basics/).
 
 **How to stay motivated when training alone at home?**
+
 The lack of gym atmosphere is the main barrier for many. A few strategies: (1) set a fixed schedule and treat it as a non-negotiable appointment, (2) prepare a dedicated playlist, (3) use [AIVancePro](https://apps.apple.com/app/aivancepro/id6756116760) to track your progress, visualize your progression and stay motivated through gamification, (4) film your heavy sets to review and measure your technical progress, (5) join an online community of home gym lifters to share your performances. The advantage of a home gym is that the barrier to entry is nearly zero: no commute, no excuses.
 
 **Can my garage/apartment floor handle the weight of a home gym?**
+
 A typical home gym (rack + bar + 200 kg of plates + bench + user) weighs about 350-450 kg total, spread over 6-10 m2. Concrete garage floors easily support this load. In apartments, building codes generally require 200-250 kg/m2 of live load capacity, which is sufficient if the weight is well distributed (lifting platform, mats). The only real risk is dropping a loaded bar from height, which creates a significant point impact. Bumper plates and a good platform eliminate this risk. If in doubt about an older wooden floor, consult a professional.

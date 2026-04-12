@@ -276,10 +276,13 @@ Le développé couché est l'un des exercices les plus stressants pour l'articul
 ## FAQ — Développé couché
 
 **Quelle est la meilleure fréquence pour progresser au bench press ?**
+
 Pour la plupart des pratiquants intermédiaires, 2 à 3 fois par semaine est optimal. L'important est de varier les stimuli : une séance lourde (3-6 reps), une séance de volume/variante (8-12 reps) et éventuellement une séance technique (tempo ou pause). Si vous ne pouvez faire que 2 séances, combinez force et technique le jour 1 et volume le jour 2. Au-delà de 3 séances bench par semaine, la [gestion de la fatigue](/guides/periodisation/) devient critique.
 
 **Faut-il toucher le torse à chaque répétition ?**
+
 Oui, sauf si vous travaillez volontairement une variante à amplitude réduite (board press, floor press, spoto press). Toucher le torse avec contrôle (sans rebond) garantit une amplitude complète, un développement musculaire complet et une technique transférable en compétition. Le rebond est à proscrire : il masque une faiblesse au bas du mouvement et augmente le risque de blessure aux côtes et au sternum.
 
 **Comment adapter le bench press si j'ai mal à l'épaule ?**
+
 D'abord, faites la distinction entre douleur et simple inconfort. Si la douleur est vive, localisée dans l'articulation et présente à chaque répétition, arrêtez le mouvement et consultez un professionnel. Si c'est un inconfort léger, essayez : (1) vérifier votre rétraction scapulaire, (2) réduire la largeur de prise d'un doigt de chaque côté, (3) utiliser un arc dorsal plus prononcé, (4) remplacer temporairement par du floor press ou du bench haltères (plus grande liberté de rotation). Consultez notre guide sur la [récupération et la prévention des blessures](/guides/recuperation-prevention-blessures/) pour un protocole complet.

@@ -246,14 +246,17 @@ Das Ziel ist die Entwicklung von Kraft, Power und Ermüdungsresistenz unter Ber�
 ## FAQ — Periodisierung
 
 **Muss man als Anfänger periodisieren?**
+
 Nicht in komplexer Form. Ein [Anfänger](/de/ratgeber/anfaenger-krafttraining/) macht schnelle Fortschritte mit einer einfachen linearen progressiven Überlastung (jede Woche Gewicht oder Wiederholungen hinzufügen). Formale Periodisierung wird erst nach 12-18 Monaten regelmäßigen Trainings wirklich nützlich, wenn die Fortschritte langsamer werden und das Ermüdungsmanagement zur Herausforderung wird.
 
 **Kann man mehrere Periodisierungsmodelle kombinieren?**
+
 Ja, und das ist bei erfahrenen Trainierenden sogar üblich. Sie können beispielsweise eine Block-Periodisierung auf Makrozyklus-Ebene verwenden (Hypertrophie-Block, Kraft-Block, Peaking-Block) und gleichzeitig innerhalb jedes Blocks eine tägliche Undulation (DUP) anwenden, um die Reize von Einheit zu Einheit zu variieren. Der Schlüssel ist, ein klares Hauptziel für jeden Block beizubehalten.
 
 **Möchten Sie diese Prinzipien in die Praxis umsetzen, ohne sich in der Planung zu verlieren?** [AIVancePro](https://apps.apple.com/de/app/aivancepro/id6756116760) wendet eine intelligente Periodisierung an, die sich an Ihren tatsächlichen Fortschritt anpasst, Ihre Akkumulations- und Deload-Phasen automatisch verwaltet und Ihr Programm in Echtzeit justiert. Laden Sie die App kostenlos herunter und starten Sie noch heute.
 
 **Wie passt man die Periodisierung an, wenn eine Trainingswoche ausfällt (Urlaub, Krankheit)?**
+
 Wenn die Pause weniger als eine Woche dauert, setzen Sie einfach dort fort, wo Sie aufgehört haben, mit leicht reduzierten Gewichten (~5 %). Dauert die Pause 2 Wochen oder länger, fügen Sie eine Wiedereinführungswoche mit reduziertem Volumen und reduzierter Intensität (RPE 6-7) ein, bevor Sie das normale Programm wieder aufnehmen. Versuchen Sie nicht, verpasste Einheiten nachzuholen, indem Sie das Programm komprimieren: Das würde nur unnötige Ermüdung ansammeln.
 
 ---

@@ -226,10 +226,13 @@ Mieux vaut consulter trop tôt que trop tard. Une blessure légère traitée rap
 ## FAQ — Récupération et prévention
 
 **Est-ce que les bains de glace (cryothérapie) accélèrent la récupération ?**
+
 Les bains de glace (10-15 minutes à 10-15 °C) peuvent réduire la perception de douleur et de fatigue après l'effort. Cependant, des études récentes montrent que la cryothérapie post-entraînement peut atténuer les adaptations à l'hypertrophie en réduisant la réponse inflammatoire nécessaire à la reconstruction musculaire. En pratique : utilisez les bains de glace pour la récupération entre des compétitions ou des matchs rapprochés, mais évitez-les systématiquement après vos séances d'hypertrophie.
 
 **Combien de jours de repos faut-il entre deux séances du même groupe musculaire ?**
+
 En général, 48 à 72 heures suffisent pour un groupe musculaire, mais cela dépend du volume et de l'intensité de la séance. Un muscle entraîné avec 4-6 séries à RPE 7-8 récupère en 48 heures. Le même muscle entraîné avec 10-12 séries à RPE 9 peut nécessiter 72-96 heures. C'est pourquoi les programmes avec une fréquence de 2x/semaine par muscle (type Upper/Lower ou PPL) sont populaires : ils permettent un volume total élevé (10-22+ séries/muscle/semaine) réparti sur plusieurs séances. Pour structurer cela efficacement, consultez notre guide pour [créer votre programme d'entraînement](/guides/creer-programme-entrainement/).
 
 **Le cardio nuit-il à la récupération musculaire ?**
+
 Pas nécessairement. Un cardio modéré (30-45 min de marche, vélo ou natation à intensité faible) favorise la récupération en augmentant le flux sanguin sans créer de stress musculaire significatif. En revanche, un cardio intense (HIIT, course à haute intensité) mobilise les mêmes ressources de récupération que la musculation et peut compromettre les gains si le volume total est trop élevé. Placez le cardio intense les jours séparés de vos séances jambes et limitez-le à 2-3 sessions par semaine si votre objectif principal est l'hypertrophie ou la force.

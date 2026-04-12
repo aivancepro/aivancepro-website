@@ -276,10 +276,13 @@ Das Bankdrücken ist eine der belastendsten Übungen für das Schultergelenk. In
 ## FAQ — Bankdrücken
 
 **Was ist die beste Häufigkeit, um beim Bankdrücken Fortschritte zu machen?**
+
 Für die meisten fortgeschrittenen Trainierenden sind 2 bis 3 Mal pro Woche optimal. Wichtig ist, die Reize zu variieren: eine schwere Einheit (3-6 Wdh.), eine Volumen-/Varianten-Einheit (8-12 Wdh.) und eventuell eine Technik-Einheit (Tempo oder Pause). Wenn Sie nur 2 Einheiten schaffen, kombinieren Sie Kraft und Technik an Tag 1 und Volumen an Tag 2. Bei mehr als 3 Bankdrück-Einheiten pro Woche wird das [Ermüdungsmanagement](/de/ratgeber/periodisierung-grundlagen/) kritisch.
 
 **Muss die Stange bei jeder Wiederholung die Brust berühren?**
+
 Ja, außer Sie trainieren bewusst eine Variante mit reduziertem Bewegungsumfang (Board Press, Floor Press, Spoto Press). Die kontrollierte Berührung der Brust (ohne Abpraller) gewährleistet vollen Bewegungsumfang, vollständige Muskelentwicklung und eine wettkampftaugliche Technik. Der Abpraller ist zu vermeiden: Er verdeckt eine Schwäche im unteren Bewegungsbereich und erhöht das Verletzungsrisiko an Rippen und Brustbein.
 
 **Wie passt man das Bankdrücken bei Schulterschmerzen an?**
+
 Zunächst unterscheiden Sie zwischen Schmerz und bloßem Unbehagen. Wenn der Schmerz scharf ist, im Gelenk lokalisiert und bei jeder Wiederholung präsent, stoppen Sie die Übung und konsultieren Sie einen Fachmann. Bei leichtem Unbehagen versuchen Sie: (1) Ihre Schulterblatt-Retraktion zu überprüfen, (2) die Griffbreite um einen Finger auf jeder Seite zu reduzieren, (3) einen ausgeprägteren Rückenbogen zu verwenden, (4) vorübergehend auf Floor Press oder Kurzhantel-Bankdrücken umzusteigen (größere Rotationsfreiheit). Lesen Sie unseren Ratgeber zur [Erholung und Verletzungsprävention](/de/ratgeber/erholung-verletzungspraevention/) für ein vollständiges Protokoll.

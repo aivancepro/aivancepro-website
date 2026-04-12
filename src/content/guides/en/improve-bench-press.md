@@ -276,10 +276,13 @@ The bench press is one of the most stressful exercises for the shoulder joint. I
 ## FAQ -- Bench press
 
 **What is the best frequency for improving bench press?**
+
 For most intermediate lifters, 2 to 3 times per week is optimal. The key is to vary the stimuli: one heavy session (3-6 reps), one volume/variation session (8-12 reps) and optionally one technique session (tempo or pause). If you can only do 2 sessions, combine strength and technique on day 1 and volume on day 2. Beyond 3 bench sessions per week, [fatigue management](/en/guides/periodization-basics/) becomes critical.
 
 **Should you touch the chest on every rep?**
+
 Yes, unless you are deliberately working a reduced range of motion variation (board press, floor press, spoto press). Touching the chest with control (no bounce) ensures full range of motion, complete muscle development and technique transferable to competition. Bouncing must be avoided: it masks a weakness at the bottom of the movement and increases the risk of rib and sternum injury.
 
 **How to adapt the bench press if you have shoulder pain?**
+
 First, distinguish between pain and mere discomfort. If the pain is sharp, localized in the joint and present on every rep, stop the movement and see a professional. If it is mild discomfort, try: (1) checking your scapular retraction, (2) narrowing your grip by one finger width on each side, (3) using a more pronounced back arch, (4) temporarily replacing with floor press or dumbbell bench (greater rotational freedom). See our guide on [recovery and injury prevention](/en/guides/recovery-injury-prevention/) for a complete protocol.

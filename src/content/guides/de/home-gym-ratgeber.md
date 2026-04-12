@@ -246,10 +246,13 @@ Das Home Gym muss das Fitnessstudio nicht vollständig ersetzen. Viele Trainiere
 ## FAQ — Home Gym
 
 **Reicht ein Home Gym aus, um genauso gut Fortschritte zu machen wie im Studio?**
+
 Ja, für Kraft und Hypertrophie deckt ein gut ausgestattetes Home Gym (Rack, Langhantel, Bank, Kurzhanteln) 90 % der Bedürfnisse ab. [Verbundübungen](/de/ratgeber/grunduebungen-vs-isolation/) (Kniebeuge, [Bankdrücken](/de/ratgeber/bankdruecken-verbessern/), Kreuzheben, Rudern, Schulterdrücken) sind die Grundpfeiler jedes effektiven Programms und erfordern nur Grundausstattung. Die geführten Maschinen im Studio bieten zusätzlichen Komfort für die Isolation, sind aber zum Fortschritt nicht unerlässlich. Der Schlüssel ist die Anwendung [progressiver Überlastung](/de/ratgeber/rpe-intensitaet-verstehen/) und einer angepassten [Periodisierung](/de/ratgeber/periodisierung-grundlagen/).
 
 **Wie motiviert man sich, wenn man allein zu Hause trainiert?**
+
 Das Fehlen der Studio-Atmosphäre ist für viele die größte Hürde. Einige Strategien: (1) Legen Sie einen festen Zeitplan fest und behandeln Sie ihn als nicht verhandelbaren Termin, (2) bereiten Sie eine eigene Playlist vor, (3) nutzen Sie [AIVancePro](https://apps.apple.com/de/app/aivancepro/id6756116760), um Ihre Fortschritte zu verfolgen, Ihre Progression zu visualisieren und die Motivation durch Gamification aufrechtzuerhalten, (4) filmen Sie Ihre schweren Sätze, um sie zu analysieren und Ihre technischen Fortschritte zu messen, (5) treten Sie einer Online-Community von Home-Gym-Trainierenden bei, um Ihre Leistungen zu teilen. Der Vorteil des Home Gyms ist, dass die Einstiegshürde quasi null ist: kein Anfahrtsweg, keine Ausreden.
 
 **Hält der Boden meiner Garage/Wohnung das Gewicht eines Home Gyms aus?**
+
 Ein typisches Home Gym (Rack + Stange + 200 kg Scheiben + Bank + Nutzer) wiegt insgesamt etwa 350-450 kg, verteilt auf 6-10 m². Garagenbetonböden tragen diese Last problemlos. In Wohnungen schreiben die Baunormen in der Regel 200-250 kg/m² Nutzlast vor, was bei guter Gewichtsverteilung (Hebeplattform, Matten) ausreicht. Das einzige reale Risiko besteht darin, eine beladene Stange aus der Höhe fallen zu lassen, was einen starken punktuellen Aufprall erzeugt. Bumper Plates und eine gute Plattform beseitigen dieses Risiko. Bei Zweifeln an einem alten Holzboden konsultieren Sie einen Fachmann.
