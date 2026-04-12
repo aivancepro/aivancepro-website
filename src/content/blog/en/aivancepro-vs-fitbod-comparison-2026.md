@@ -70,17 +70,17 @@ Practically, this means:
 
 | Feature | Fitbod | AIVancePro |
 |---|---|---|
-| Smart workout generation | ✅ Yes | ✅ Built-in and free |
-| Muscle recovery modeling | ✅ Core feature | ✅ Considered in coaching |
-| Conversational AI coach | ❌ | ✅ Integrated AI coach |
-| Real-time program adaptation | ❌ | ✅ |
-| Technique guidance | ❌ | ✅ |
-| Community & challenges | ❌ | ✅ Groups, challenges, friends |
-| Apple Watch / Health sync | ✅ | 🔄 Planned |
+| Smart workout generation | ✓ Yes | ✓ Built-in |
+| Muscle recovery modeling | ✓ Core feature | ✓ Considered in coaching |
+| Conversational AI coach | ✗ | ✓ |
+| Real-time program adaptation | ✗ | ✓ |
+| Technique guidance | ✗ | ✓ |
+| Community & challenges | ✗ | ✓ Groups, challenges, friends |
+| Apple Watch / Health sync | ✓ | Planned |
 | Exercise library | 1,400+ | 240+ curated |
-| Languages | EN primarily | 🌍 FR / EN / DE native |
-| iOS | ✅ | ✅ V3 published |
-| Android | ✅ | ✅ In testing |
+| Languages | EN primarily | FR / EN / DE native |
+| iOS | ✓ | ✓ |
+| Android | ✓ | In development |
 | Monthly price (Pro) | ~$12.99/mo | €6.99/mo (1st month €3.50) |
 
 ## The Real-World Consistency Problem
