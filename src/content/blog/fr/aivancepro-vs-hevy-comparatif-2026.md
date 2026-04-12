@@ -122,16 +122,21 @@ Si tu te demandes souvent si tu t'entraînes correctement, si tu pourrais progre
 ## FAQ
 
 **Est-ce qu'AIVancePro peut importer mes données Hevy ?**
+
 Pas encore nativement. Tu peux renseigner ton historique et ton niveau actuel lors de l'onboarding — le coach s'adapte à partir de là.
 
 **Hevy Trainer remplace-t-il un vrai coach ?**
+
 Pour la génération de programme, Hevy Trainer est solide. Mais sans feedback continu ni adaptation contextuelle, il ne remplace pas l'interaction avec un coach.
 
 **AIVancePro fonctionne-t-il pour tous les niveaux ?**
+
 Oui — du débutant complet au pratiquant avancé. Le coach ajuste sa communication et ses recommandations selon ton niveau déclaré et ton historique.
 
 **Est-ce que les deux apps peuvent coexister ?**
+
 Techniquement oui, mais en pratique AIVancePro inclut le tracking, la programmation et le coaching dans une seule app — tu n'as pas besoin des deux.
 
 **AIVancePro est-il disponible sur Android ?**
+
 La V3 iOS est validée App Store (avril 2026). Android est en test avec 12 bêta-testeurs et arrive prochainement.
