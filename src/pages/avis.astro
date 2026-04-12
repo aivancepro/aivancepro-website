@@ -15,6 +15,11 @@ const reviews = [
     author: "Nathou.S",
     source: "App Store",
   },
+  {
+    text: "&laquo; Apr&egrave;s avoir encha&icirc;n&eacute; des s&eacute;ries &agrave; l&rsquo;aveugle sans r&eacute;sultat concret, cette appli a ajout&eacute; une motivation +++. &Ccedil;a m&rsquo;a relanc&eacute;. &raquo;",
+    author: "JAMS 02",
+    source: "App Store",
+  },
 ];
 ---
 
@@ -35,8 +40,8 @@ const reviews = [
         "@type": "AggregateRating",
         "ratingValue": "5",
         "bestRating": "5",
-        "ratingCount": "2",
-        "reviewCount": "2"
+        "ratingCount": "3",
+        "reviewCount": "3"
       },
       "review": [
         {
@@ -50,6 +55,12 @@ const reviews = [
           "author": { "@type": "Person", "name": "Nathou.S" },
           "reviewRating": { "@type": "Rating", "ratingValue": "5" },
           "reviewBody": "Tr\u00e8s bonne application, avec un suivi et de bons conseils, je recommande."
+        },
+        {
+          "@type": "Review",
+          "author": { "@type": "Person", "name": "JAMS 02" },
+          "reviewRating": { "@type": "Rating", "ratingValue": "5" },
+          "reviewBody": "Apr\u00e8s avoir encha\u00een\u00e9 des s\u00e9ries \u00e0 l'aveugle sans r\u00e9sultat concret, cette appli a ajout\u00e9 une motivation +++. \u00c7a m'a relanc\u00e9."
         }
       ]
     },
