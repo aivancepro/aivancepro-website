@@ -2,6 +2,7 @@
 import BaseLayout from '../../../layouts/BaseLayout.astro';
 import MuscleMap from '../../../components/MuscleMap.astro';
 import { exercises, toSlug } from '../../../data/exercises-en.js';
+import { exercises as exercisesDe } from '../../../data/exercises-de.js';
 import { enExerciseImages, getExerciseImageEN } from '../../../data/exercise-images.js';
 
 // --- Helper: difficulty colors ---
@@ -422,6 +423,7 @@ const variations = exercises
 const canonical = `https://aivancepro.fr/en/exercises/${slug}/`;
 const hasImages = !!enExerciseImages[slug];
 const catLabel = categoryLabels[exercise.category] || exercise.category;
+const deExercise = exercisesDe.find(x => x.frSlug === exercise.frSlug);
 ---
 
 <BaseLayout
@@ -429,7 +431,7 @@ const catLabel = categoryLabels[exercise.category] || exercise.category;
   title={`${exercise.name} - Complete Guide | AIVancePro`}
   description={`Discover how to perform ${exercise.name} correctly. Complete guide with technique, mistakes to avoid and muscles worked.`}
   canonical={canonical}
-  alternates={{ fr: `https://aivancepro.fr/exercices/${exercise.frSlug}/`, en: canonical, de: `https://aivancepro.fr/de/uebungen/${slug}/` }}
+  alternates={{ fr: `https://aivancepro.fr/exercices/${exercise.frSlug}/`, en: canonical, de: deExercise ? `https://aivancepro.fr/de/uebungen/${toSlug(deExercise.name)}/` : undefined }}
 >
   <Fragment slot="head">
     <style>
