@@ -1,6 +1,8 @@
 {
   "redirects": [
     { "source": "/:path*.html", "destination": "/:path*/", "permanent": true },
+    { "source": "/PrivacyPolicy", "destination": "/privacy/", "permanent": true },
+    { "source": "/PrivacyPolicy/", "destination": "/privacy/", "permanent": true },
     { "source": "/workout-splits/", "destination": "/guides/programmes-entrainement/", "permanent": true },
     { "source": "/en/workout-splits/", "destination": "/en/guides/workout-splits/", "permanent": true },
     { "source": "/de/workout-splits/", "destination": "/de/ratgeber/trainingsplaene/", "permanent": true },
