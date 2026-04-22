@@ -13,8 +13,6 @@ keywords: "beste KI Fitness App 2026, hevy vs fitbod, ki fitness app vergleich, 
 image: "/assets/blog/aivancepro-vs-hevy-comparatif-2026.webp"
 author: "Theo Stanmore"
 alternates:
-  fr: "https://aivancepro.fr/blog/aivancepro-vs-hevy-comparatif-2026/"
-  en: "https://aivancepro.fr/en/blog/aivancepro-vs-fitbod-comparison-2026/"
   de: "https://aivancepro.fr/de/blog/beste-ki-fitness-apps-2026-vergleich/"
 ---
 

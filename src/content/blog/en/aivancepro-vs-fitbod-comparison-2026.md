@@ -13,9 +13,7 @@ keywords: "aivancepro vs fitbod, fitbod alternative, best ai workout app 2026, c
 image: "/assets/blog/aivancepro-vs-hevy-comparatif-2026.webp"
 author: "Theo Stanmore"
 alternates:
-  fr: "https://aivancepro.fr/blog/aivancepro-vs-hevy-comparatif-2026/"
   en: "https://aivancepro.fr/en/blog/aivancepro-vs-fitbod-comparison-2026/"
-  de: "https://aivancepro.fr/de/blog/beste-ki-fitness-apps-2026-vergleich/"
 ---
 
 # AIVancePro vs Fitbod: The AI Workout App Showdown of 2026
