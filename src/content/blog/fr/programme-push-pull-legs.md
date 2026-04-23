@@ -171,6 +171,14 @@ Un programme PPL sans surcharge progressive n'est qu'une routine. Note tes charg
 
 ---
 
+## Conclusion
+
+Le programme push pull legs est une structure d'entraînement fiable, flexible et prouvée. Que tu sois débutant ou intermédiaire, la clé est la constance et la progression des charges — pas la complexité du programme.
+
+Pour aller plus loin avec un plan PPL personnalisé qui s'adapte à tes performances réelles, **AIVancePro** propose un coach IA conversationnel intégré qui génère et ajuste ton programme automatiquement. Disponible sur iOS — premier mois à 3,50 €.
+
+*Disclaimer santé : cet article est fourni à titre informatif uniquement. Consulte un professionnel de santé ou un coach certifié avant de démarrer un nouveau programme d'entraînement, particulièrement en cas d'antécédents de blessures.*
+
 ## FAQ
 
 **Le programme Push Pull Legs convient-il aux débutants ?**
@@ -194,11 +202,3 @@ En version 6 jours, oui — utilise des variantes A/B pour diversifier les angle
 Si ta progression stagne depuis 4 à 6 semaines malgré une bonne alimentation et un sommeil suffisant, la fréquence d'entraînement est probablement le facteur limitant. Teste 2 semaines en 6 jours et évalue ta récupération.
 
 ---
-
-## Conclusion
-
-Le programme push pull legs est une structure d'entraînement fiable, flexible et prouvée. Que tu sois débutant ou intermédiaire, la clé est la constance et la progression des charges — pas la complexité du programme.
-
-Pour aller plus loin avec un plan PPL personnalisé qui s'adapte à tes performances réelles, **AIVancePro** propose un coach IA conversationnel intégré qui génère et ajuste ton programme automatiquement. Disponible sur iOS — premier mois à 3,50 €.
-
-*Disclaimer santé : cet article est fourni à titre informatif uniquement. Consulte un professionnel de santé ou un coach certifié avant de démarrer un nouveau programme d'entraînement, particulièrement en cas d'antécédents de blessures.*

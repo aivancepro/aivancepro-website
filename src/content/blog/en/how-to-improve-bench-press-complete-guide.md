@@ -153,6 +153,14 @@ Review your data every 4-6 weeks. Are your loads going up? Is your total volume 
 
 **AIVancePro** can streamline this tracking process. Its conversational AI coach monitors your bench press progress across sessions, flags plateaus before they become entrenched, and adjusts your programming based on your actual performance data. Available on iOS now, with Android in development.
 
+## Conclusion
+
+Improving your bench press comes down to method, not magic. Master your technique, program your training intelligently, work your accessory muscles, and give your body the recovery it needs.
+
+If you want a personalized program that evolves with your actual performance, **AIVancePro** provides an AI coach that generates custom programming, tracks your personal records, and answers your training questions anytime. First month at €3.50, no commitment required.
+
+*Health disclaimer: This guide is for informational purposes only and does not constitute medical advice. Consult a healthcare professional or physiotherapist before starting or modifying any exercise program, especially if you have pre-existing pain or injuries.*
+
 ## FAQ
 
 **How long does it take to improve bench press strength?**
@@ -178,11 +186,3 @@ No more than once every 8-12 weeks. Frequent 1RM testing fatigues the nervous sy
 **How do I avoid shoulder pain when bench pressing?**
 
 Always retract your shoulder blades before unracking. Do not let the bar descend too high on your chest. Include face pulls and rowing every week to maintain push/pull balance. Persistent pain warrants physiotherapy assessment.
-
-## Conclusion
-
-Improving your bench press comes down to method, not magic. Master your technique, program your training intelligently, work your accessory muscles, and give your body the recovery it needs.
-
-If you want a personalized program that evolves with your actual performance, **AIVancePro** provides an AI coach that generates custom programming, tracks your personal records, and answers your training questions anytime. First month at €3.50, no commitment required.
-
-*Health disclaimer: This guide is for informational purposes only and does not constitute medical advice. Consult a healthcare professional or physiotherapist before starting or modifying any exercise program, especially if you have pre-existing pain or injuries.*

@@ -131,6 +131,14 @@ The reasonable scientific takeaway: fasted training is neither a game-changer no
 
 One of the real challenges of fasted training is adapting your program to your actual energy and recovery signals week over week. AIVancePro's built-in AI coach can help you adjust your sessions based on your energy levels, eating window, and body composition goals — so you're not guessing whether a fasted squat day is the right call. Available on iOS, with a first Pro month at €3.50.
 
+## Conclusion
+
+Fasted workouts offer genuine benefits — enhanced fat mobilization, simplified morning logistics, natural synergy with intermittent fasting — alongside real limitations around performance and catabolism risk. The right approach is to tailor fasted training to your specific goals and session type, not apply it as a blanket rule.
+
+If you want to dial in a training program that accounts for your actual nutrition habits and energy patterns, an AI-powered coach that adapts to your context beats generic programming every time.
+
+*Always consult a healthcare professional or sports dietitian before making significant changes to your training or nutrition routine.*
+
 ## FAQ
 
 **Does fasted training actually burn more fat?**
@@ -152,11 +160,3 @@ Ideal duration is under 60 minutes to limit catabolism and hypoglycemia risk. Be
 **Is fasted training compatible with muscle building?**
 
 It can work for body recomposition (losing fat while maintaining muscle), but true muscle-building phases require a caloric surplus and maximized nutrient availability around training — both of which are harder to achieve in a fasted state.
-
-## Conclusion
-
-Fasted workouts offer genuine benefits — enhanced fat mobilization, simplified morning logistics, natural synergy with intermittent fasting — alongside real limitations around performance and catabolism risk. The right approach is to tailor fasted training to your specific goals and session type, not apply it as a blanket rule.
-
-If you want to dial in a training program that accounts for your actual nutrition habits and energy patterns, an AI-powered coach that adapts to your context beats generic programming every time.
-
-*Always consult a healthcare professional or sports dietitian before making significant changes to your training or nutrition routine.*

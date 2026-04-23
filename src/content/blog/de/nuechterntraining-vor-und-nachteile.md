@@ -131,6 +131,14 @@ Das vernünftige wissenschaftliche Fazit: Nüchterntraining ist weder ein Allhei
 
 Eine der praktischen Herausforderungen des Nüchterntrainings ist es, das Programm woche für woche an die eigenen Energiereserven und Erholungssignale anzupassen. AIVancePro bietet einen eingebauten KI-Coach, der dir hilft, deine Einheiten an dein Energieniveau, dein Fastenfenster und deine Körperzusammensetzungsziele anzupassen — verfügbar auf iOS, erster Pro-Monat für 3,50€.
 
+## Fazit
+
+Nüchterntraining bietet echte Vorteile — erhöhte Fettmobilisierung, vereinfachte Morgenlogistik, natürliche Synergie mit Intervallfasten — hat aber auch reale Grenzen bei der Leistung und beim Katabolismusrisiko. Der richtige Ansatz ist, es an dein Profil und deine Trainingsart anzupassen, nicht dogmatisch anzuwenden.
+
+Wer ein Trainingsprogramm sucht, das die eigenen Ernährungsgewohnheiten und Energiemuster berücksichtigt, profitiert von einem KI-gestützten Coach, der sich an den eigenen Kontext anpasst — statt generischer Pläne, die keinen individuellen Faktor berücksichtigen.
+
+*Konsultiere immer einen Arzt oder Sporternährungsberater, bevor du dein Training oder deine Ernährung grundlegend veränderst.*
+
 ## FAQ
 
 **Verbrennt Nüchterntraining wirklich mehr Fett?**
@@ -152,11 +160,3 @@ Ideale Dauer: unter 60 Minuten, um Katabolismus und Hypoglykämierisiko zu begre
 **Ist Nüchterntraining mit Muskelaufbau vereinbar?**
 
 Es kann für Body Recomposition funktionieren (Fettabbau bei gleichzeitigem Muskelerhalt), aber echte Muskelaufbauphasen erfordern einen Kalorienüberschuss und maximale Nährstoffverfügbarkeit rund ums Training — beides schwer mit dem Fastenzustand zu vereinbaren.
-
-## Fazit
-
-Nüchterntraining bietet echte Vorteile — erhöhte Fettmobilisierung, vereinfachte Morgenlogistik, natürliche Synergie mit Intervallfasten — hat aber auch reale Grenzen bei der Leistung und beim Katabolismusrisiko. Der richtige Ansatz ist, es an dein Profil und deine Trainingsart anzupassen, nicht dogmatisch anzuwenden.
-
-Wer ein Trainingsprogramm sucht, das die eigenen Ernährungsgewohnheiten und Energiemuster berücksichtigt, profitiert von einem KI-gestützten Coach, der sich an den eigenen Kontext anpasst — statt generischer Pläne, die keinen individuellen Faktor berücksichtigen.
-
-*Konsultiere immer einen Arzt oder Sporternährungsberater, bevor du dein Training oder deine Ernährung grundlegend veränderst.*

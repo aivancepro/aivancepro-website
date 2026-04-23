@@ -160,6 +160,14 @@ Analyse tes données toutes les 4-6 semaines. Es-tu en progression sur tes charg
 
 **AIVancePro** peut t'aider à centraliser ce suivi. Son coach IA conversationnel analyse tes performances au fil des séances, détecte les plateaux avant qu'ils ne s'installent, et ajuste ta programmation automatiquement. Tu accèdes à tes graphiques de progression, tes records personnels et l'historique complet de tes séances — depuis l'app disponible sur iOS (Android en développement).
 
+## Conclusion
+
+Progresser au développé couché n'est pas une question de talent — c'est une question de méthode. Maîtrise ta technique, structure ta programmation, travaille tes muscles auxiliaires et soigne ta récupération. Tiens un journal rigoureux de tes séances et revois régulièrement tes données.
+
+Si tu veux un programme qui évolue avec tes performances réelles, **AIVancePro** met à ta disposition un coach IA qui génère ta programmation personnalisée, suit tes records et répond à tes questions d'entraînement. Premier mois à 3,50€, sans engagement.
+
+*Disclaimer santé : Ce contenu est fourni à titre informatif uniquement et ne constitue pas un avis médical. Consulte un professionnel de santé ou un kinésithérapeute avant de commencer ou de modifier ton programme d'entraînement, en particulier si tu souffres de douleurs ou de blessures préexistantes.*
+
 ## FAQ
 
 **Combien de fois par semaine dois-je faire du développé couché pour progresser ?**
@@ -185,11 +193,3 @@ Pas plus d'une fois toutes les 8-12 semaines. Les tests fréquents épuisent le 
 **Comment éviter les douleurs à l'épaule au développé couché ?**
 
 Rétracte systématiquement tes omoplates avant de commencer. Évite de descendre la barre trop haut sur le torse. Intègre des face pulls et du rowing à ta routine pour équilibrer push et pull. Si la douleur persiste, consulte un kinésithérapeute.
-
-## Conclusion
-
-Progresser au développé couché n'est pas une question de talent — c'est une question de méthode. Maîtrise ta technique, structure ta programmation, travaille tes muscles auxiliaires et soigne ta récupération. Tiens un journal rigoureux de tes séances et revois régulièrement tes données.
-
-Si tu veux un programme qui évolue avec tes performances réelles, **AIVancePro** met à ta disposition un coach IA qui génère ta programmation personnalisée, suit tes records et répond à tes questions d'entraînement. Premier mois à 3,50€, sans engagement.
-
-*Disclaimer santé : Ce contenu est fourni à titre informatif uniquement et ne constitue pas un avis médical. Consulte un professionnel de santé ou un kinésithérapeute avant de commencer ou de modifier ton programme d'entraînement, en particulier si tu souffres de douleurs ou de blessures préexistantes.*

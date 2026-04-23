@@ -133,6 +133,14 @@ Si tu decides de t'entraîner à jeun, voici comment minimiser les inconvénient
 
 L'un des défis réels de la musculation à jeun, c'est d'ajuster son programme en fonction de ses ressentis et de ses résultats. Pas deux pratiquants ne réagiront exactement pareil à une même séance à jeun. AIVancePro propose un coach IA conversationnel qui peut t'aider à adapter tes séances selon ton niveau d'énergie, ta fenêtre alimentaire et ton objectif de composition corporelle — disponible sur iOS, premier mois Pro à 3,50€.
 
+## Conclusion
+
+La musculation à jeun a des avantages concrets — mobilisation des graisses, logistique simplifiée, cohérence avec le jeûne intermittent — mais aussi des limites réelles sur les performances et le risque de catabolisme. La clé est de l'adapter à ton profil et à la nature de ta séance, pas de l'appliquer dogmatiquement.
+
+Si tu cherches à optimiser ton programme en tenant compte de tes habitudes alimentaires, AIVancePro peut t'accompagner avec un coaching personnalisé basé sur tes données réelles.
+
+*Consulte un professionnel de santé ou un diététicien du sport avant de modifier significativement ton alimentation autour de l'entraînement.*
+
 ## FAQ
 
 **La musculation à jeun brûle-t-elle vraiment plus de graisses ?**
@@ -154,11 +162,3 @@ Idéalement moins de 60 minutes pour limiter le catabolisme et le risque d'hypog
 **Le jeûne intermittent et la musculation à jeun sont-ils compatibles avec la prise de masse ?**
 
 C'est possible mais difficile à optimiser. La prise de masse nécessite un surplus calorique et une disponibilité maximale des nutriments autour de l'entraînement — deux conditions qui entrent en tension avec le jeûne. Cette combinaison peut fonctionner pour du recompage corporel (perdre du gras tout en maintenant la masse), mais pas pour une prise de masse significative.
-
-## Conclusion
-
-La musculation à jeun a des avantages concrets — mobilisation des graisses, logistique simplifiée, cohérence avec le jeûne intermittent — mais aussi des limites réelles sur les performances et le risque de catabolisme. La clé est de l'adapter à ton profil et à la nature de ta séance, pas de l'appliquer dogmatiquement.
-
-Si tu cherches à optimiser ton programme en tenant compte de tes habitudes alimentaires, AIVancePro peut t'accompagner avec un coaching personnalisé basé sur tes données réelles.
-
-*Consulte un professionnel de santé ou un diététicien du sport avant de modifier significativement ton alimentation autour de l'entraînement.*

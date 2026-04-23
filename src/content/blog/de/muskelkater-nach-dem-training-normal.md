@@ -22,15 +22,6 @@ alternates:
 
 Du hast eine intensive Trainingseinheit hinter dir — und am nächsten Morgen schmerzen die Muskeln bei jedem Schritt. Muskelkater nach dem Training ist eine der häufigsten Erfahrungen im Sport, die Anfänger und erfahrene Athleten gleichermaßen kennen. Die gute Nachricht: In der großen Mehrheit der Fälle ist Muskelkater nach dem Training völlig normal. Er hat einen wissenschaftlichen Namen — DOMS (Delayed Onset Muscle Soreness) — und signalisiert eine gesunde physiologische Anpassung deines Körpers. In diesem Artikel erfährst du alles, was du wissen musst, um Muskelkater von einer echten Verletzung zu unterscheiden und schneller zu regenerieren.
 
-- [Was sind DOMS?](#doms)
-- [Warum tritt Muskelkater erst 24-48 Stunden später auf?](#zeitpunkt)
-- [Muskelkater vs. Verletzung: Den Unterschied erkennen](#unterschied)
-- [Was verstärkt den Muskelkater?](#faktoren)
-- [Die besten Erholungsstrategien](#erholung)
-- [Wann zum Arzt?](#arzt)
-- [Gezielt und smart trainieren](#smart)
-- [FAQ](#faq)
-
 ## Was sind DOMS?
 
 DOMS steht für Delayed Onset Muscle Soreness — auf Deutsch: verzögert auftretender Muskelkater. Er entsteht durch winzige Risse in den Muskelfasern, die vor allem bei **exzentrischen Kontraktionen** auftreten — also bei Bewegungen, bei denen sich der Muskel unter Belastung dehnt.
