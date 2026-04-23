@@ -24,8 +24,6 @@ Du willst dein **Bankdrücken verbessern**, aber die Hantelstange scheint seit W
 
 Dieser Ratgeber zeigt dir, wie du dein Bankdrücken mit wissenschaftlich fundierten Methoden auf ein neues Niveau bringst.
 
-## Inhaltsverzeichnis
-
 - Die richtige Technik beim Bankdrücken
 - Programmierung für kontinuierliche Fortschritte
 - Häufige Fehler, die deinen Fortschritt bremsen

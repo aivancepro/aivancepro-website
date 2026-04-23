@@ -24,8 +24,6 @@ Want to **improve your bench press** but feel like you've been stuck at the same
 
 This complete guide gives you the tools to break through your plateau and build a stronger, more consistent bench press.
 
-## Table of Contents
-
 - Perfecting Your Technique
 - Programming for Consistent Progress
 - Common Mistakes That Kill Your Gains

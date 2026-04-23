@@ -22,8 +22,6 @@ alternates:
 
 Tu as terminé ta séance, et le lendemain matin, impossible de descendre les escaliers sans grimacer. La **douleur musculaire après entraînement** est l'une des expériences les plus universelles chez les sportifs — débutants comme confirmés. Bonne nouvelle : la **douleur musculaire après entraînement normal** est, dans la grande majorité des cas, tout à fait saine. Elle porte un nom scientifique — les DOMS (Delayed Onset Muscle Soreness) — et correspond à une adaptation physiologique normale. Voici tout ce que tu dois savoir pour ne plus jamais confondre récupération normale et blessure.
 
-## Sommaire
-
 - [Qu'est-ce que les DOMS ?](#doms)
 - [Pourquoi la douleur apparaît-elle 24-48h après ?](#delai)
 - [Courbatures ou blessure : comment faire la différence ?](#distinction)

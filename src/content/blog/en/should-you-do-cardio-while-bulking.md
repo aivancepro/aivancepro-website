@@ -24,18 +24,6 @@ Should you do cardio while bulking? It's one of the most debated questions in st
 
 This guide breaks down what research actually shows, which types of cardio work best during a muscle-building phase, how to find the right frequency, and how to integrate it without compromising your hypertrophy goals.
 
-## Table of Contents
-
-1. The myth: cardio kills muscle
-2. What research actually shows
-3. Best types of cardio for bulking
-4. Optimal frequency and duration
-5. How to program cardio alongside lifting
-6. Mistakes to avoid
-7. FAQ
-
----
-
 ## 1. The Myth: Cardio Kills Muscle
 
 This belief comes from a real observation — elite endurance athletes have very little muscle mass. But this confuses cause and effect. Long-distance runners are lean because their sport demands it, not because cardio inherently destroys muscle tissue. The sport selects for leanness; cardio doesn't create it by default.

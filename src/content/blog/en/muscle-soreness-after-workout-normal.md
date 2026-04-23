@@ -22,8 +22,6 @@ alternates:
 
 You crushed your workout — and now, 24 hours later, you can barely walk down the stairs. Sound familiar? **Muscle soreness after working out** is one of the most universal experiences in fitness, shared by beginners and seasoned athletes alike. The good news: in the vast majority of cases, post-workout muscle soreness is completely normal. It has a scientific name — DOMS (Delayed Onset Muscle Soreness) — and it signals healthy physiological adaptation. Here's everything you need to know to tell the difference between productive soreness and an actual injury.
 
-## Table of Contents
-
 - [What Is DOMS?](#doms)
 - [Why Does It Peak 24-48 Hours Later?](#timing)
 - [Soreness vs Injury: How to Tell the Difference](#distinction)

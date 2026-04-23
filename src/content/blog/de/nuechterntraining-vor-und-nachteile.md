@@ -24,8 +24,6 @@ Nüchterntraining spaltet die Fitness-Community. Die einen schwören auf morgend
 
 *Hinweis: Dieser Artikel dient ausschließlich zur Information. Konsultiere einen Arzt oder Ernährungsberater, bevor du dein Training oder deine Ernährung grundlegend veränderst.*
 
-## Inhaltsverzeichnis
-
 - Was ist Nüchterntraining?
 - Die Vorteile des Nüchterntrainings
 - Die Nachteile, die du kennen musst

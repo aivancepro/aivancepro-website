@@ -24,8 +24,6 @@ Training on an empty stomach has its passionate advocates and equally vocal crit
 
 *Disclaimer: This article is for informational purposes only. Consult a healthcare professional before making significant changes to your exercise or nutrition habits.*
 
-## Table of Contents
-
 - What is a fasted workout?
 - The real benefits of training fasted
 - The drawbacks you can't ignore

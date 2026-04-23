@@ -22,19 +22,6 @@ alternates:
 
 Der **Push Pull Legs Trainingsplan** (PPL) ist eine der effektivsten Methoden, um Muskelaufbau und Krafttraining strukturiert und ergebnisorientiert zu gestalten. In diesem Guide erfährst du, wie das PPL-Prinzip funktioniert, wie du deine Trainingswoche aufbaust und welche Übungen in jede Einheit gehören — ob du 3 oder 6 Mal pro Woche trainierst.
 
-## Inhaltsverzeichnis
-
-1. Was ist ein Push Pull Legs Trainingsplan?
-2. Warum PPL anderen Splits überlegen ist
-3. So strukturierst du deine PPL-Trainingswoche
-4. Push-Einheit: Übungen und Reihenfolge
-5. Pull-Einheit: Übungen und Reihenfolge
-6. Legs-Einheit: Übungen und Reihenfolge
-7. PPL 3 Tage vs. 6 Tage: Was passt zu dir?
-8. Häufige Fehler und wie du sie vermeidest
-
----
-
 ## Was ist ein Push Pull Legs Trainingsplan?
 
 Beim Push Pull Legs Trainingsplan werden deine Trainingseinheiten nach Bewegungsmustern aufgeteilt:

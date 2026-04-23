@@ -22,19 +22,6 @@ alternates:
 
 Le **programme push pull legs** (PPL) est l'une des méthodes d'entraînement les plus efficaces pour gagner du muscle et de la force en salle. Si tu cherches à structurer intelligemment tes séances, à optimiser ta récupération et à suivre clairement ta progression, ce guide te donne tout ce qu'il faut — que tu t'entraînes 3 ou 6 jours par semaine.
 
-## Sommaire
-
-1. Qu'est-ce que le programme Push Pull Legs ?
-2. Les avantages du PPL face aux autres splits
-3. Comment structurer ta semaine PPL
-4. Séance Push : exercices et ordre
-5. Séance Pull : exercices et ordre
-6. Séance Legs : exercices et ordre
-7. PPL 3 jours vs 6 jours : lequel choisir ?
-8. Erreurs courantes à éviter
-
----
-
 ## Qu'est-ce que le programme Push Pull Legs ?
 
 Le Push Pull Legs divise l'entraînement en trois catégories basées sur le type de mouvement musculaire :

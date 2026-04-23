@@ -24,18 +24,6 @@ Cardio beim Masseaufbau — ein Thema, das im Fitnessstudio immer wieder für Di
 
 In diesem Artikel erfährst du, was die Forschung wirklich sagt, welche Cardio-Typen beim Masseaufbau sinnvoll sind, wie du die optimale Häufigkeit findest, und wie du alles in deinen Trainingsplan integrierst — ohne deine Hypertrophieziele zu gefährden.
 
-## Inhaltsverzeichnis
-
-1. Der Mythos: Cardio zerstört Muskeln
-2. Was die Wissenschaft tatsächlich zeigt
-3. Die besten Cardio-Typen beim Masseaufbau
-4. Optimale Häufigkeit und Dauer
-5. Integration in den Trainingsplan
-6. Häufige Fehler
-7. FAQ
-
----
-
 ## 1. Der Mythos: Cardio Zerstört Muskeln
 
 Dieser Glaube hat seinen Ursprung in einer echten Beobachtung: Ausdauersportler haben wenig Muskelmasse. Aber hier wird Ursache und Wirkung verwechselt. Marathonläufer sind leicht, weil ihr Sport es erfordert — nicht weil Cardio per se Muskelgewebe abbaut. Der Sport selektiert für Leichtigkeit; Cardio allein erzeugt das nicht.

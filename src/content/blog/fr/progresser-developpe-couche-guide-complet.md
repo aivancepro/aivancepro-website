@@ -22,8 +22,6 @@ alternates:
 
 Tu veux **progresser au développé couché** mais ta barre semble vissée depuis des semaines ? C'est l'un des problèmes les plus fréquents en musculation. Le développé couché est l'exercice roi de la salle, et pourtant progresser au développé couché sur le long terme demande bien plus qu'ajouter 2,5 kg à chaque séance. Dans ce guide complet, tu vas découvrir comment optimiser ta technique, structurer ta programmation, corriger les erreurs qui te bloquent et suivre ta progression de façon rigoureuse.
 
-## Sommaire
-
 - La technique qui change tout
 - Programmer intelligemment ta progression
 - Les erreurs qui tuent tes progrès

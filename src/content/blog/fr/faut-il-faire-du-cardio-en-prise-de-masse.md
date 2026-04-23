@@ -24,18 +24,6 @@ Si tu fais de la musculation pour prendre du muscle, tu t'es forcément posé la
 
 Dans ce guide, tu vas apprendre pourquoi le cardio ne tue pas forcément les gains, quel type adopter, à quelle fréquence, et comment l'intégrer intelligemment dans ta programmation de prise de masse.
 
-## Sommaire
-
-1. Pourquoi le cardio fait peur en prise de masse
-2. Ce que dit la science sur cardio et hypertrophie
-3. Quel type de cardio choisir ?
-4. Fréquence et durée optimales
-5. Comment intégrer le cardio sans freiner la muscu
-6. Les erreurs à éviter
-7. FAQ
-
----
-
 ## 1. Pourquoi le cardio fait peur en prise de masse
 
 Le mythe est bien ancré dans les salles de sport : "Le cardio brûle du muscle." Cette croyance vient d'une observation réelle — les athlètes d'endurance ont peu de masse musculaire — mais elle confond cause et effet. Un marathonien ne fait pas de cardio et perd du muscle : il s'entraîne spécifiquement pour être léger et efficace sur la durée. Le cardio n'est pas la cause de cette maigreur, c'est la sélection du sport qui l'explique.

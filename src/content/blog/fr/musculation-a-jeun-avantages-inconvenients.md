@@ -24,8 +24,6 @@ La musculation à jeun divise. Certains pratiquants jurent par les séances du m
 
 *Disclaimer : Cet article est à titre informatif uniquement. Consulte un professionnel de santé avant de modifier ta pratique sportive ou ton alimentation.*
 
-## Sommaire
-
 - Qu'est-ce que la musculation à jeun ?
 - Les avantages de s'entraîner à jeun
 - Les inconvénients à ne pas sous-estimer
