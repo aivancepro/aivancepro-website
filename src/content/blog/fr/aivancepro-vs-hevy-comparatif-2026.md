@@ -137,4 +137,4 @@ Techniquement oui, mais en pratique AIVancePro inclut le tracking, la programmat
 
 **AIVancePro est-il disponible sur Android ?**
 
-La V3 iOS est validée App Store (avril 2026). Android est en test avec 12 bêta-testeurs et arrive prochainement.
+La V3 iOS est validée App Store (avril 2026). La version Android est en développement, pas encore de date d'annonce — laisse ton email sur la page d'accueil pour être prévenu·e au lancement.

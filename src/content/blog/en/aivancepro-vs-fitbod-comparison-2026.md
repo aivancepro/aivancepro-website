@@ -143,7 +143,7 @@ Yes. The curated library covers all major movement patterns, and you can describ
 
 **Is AIVancePro on Android?**
 
-V3 is live on iOS (App Store validated, April 2026). Android is in beta with 12 testers and launching soon.
+V3 is live on iOS (App Store validated, April 2026). The Android version is in development — no launch date announced yet. Leave your email on the homepage to get notified at launch.
 
 **Which app is better for beginners?**
 

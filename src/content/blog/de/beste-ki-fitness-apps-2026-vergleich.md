@@ -149,7 +149,7 @@ Besonders gut. Der Coach erklärt, warum welche Übungen gewählt werden, zeigt 
 
 **Wann erscheint AIVancePro für Android?**
 
-Die iOS-Version V3 ist seit April 2026 im App Store. Android befindet sich in der Testphase und erscheint 2026.
+Die iOS-Version V3 ist seit April 2026 im App Store. Die Android-Version befindet sich in der Entwicklung — noch kein Veröffentlichungsdatum. Hinterlassen Sie Ihre E-Mail auf der Startseite, um beim Launch benachrichtigt zu werden.
 
 **Brauche ich alle drei Apps?**
 
