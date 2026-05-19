@@ -69,7 +69,7 @@ Concrètement, voilà ce que ça change :
 | Fonctions sociales | ✓ | ✓ Communauté, groupes et défis |
 | Langues | EN principalement | FR / EN / DE natif |
 | iOS | ✓ | ✓ |
-| Android | ✓ | En développement |
+| Android | ✓ | ✓ |
 | Prix Pro | ~9,99 $/mois | 6,99 €/mois (1er mois à 3,50€) |
 | Base utilisateurs | 12M | Lancement en cours |
 
@@ -137,4 +137,4 @@ Techniquement oui, mais en pratique AIVancePro inclut le tracking, la programmat
 
 **AIVancePro est-il disponible sur Android ?**
 
-La V3 iOS est validée App Store (avril 2026). La version Android est en développement, pas encore de date d'annonce — laisse ton email sur la page d'accueil pour être prévenu·e au lancement.
+La V3 iOS est validée App Store (avril 2026) et l'app est désormais aussi disponible sur Google Play (mai 2026). Téléchargement gratuit, premier mois Pro à 3,50€.

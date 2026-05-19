@@ -111,7 +111,7 @@ AIVancePro propose un premier mois à 3,50 € pour tester sans risque l'ensembl
 
 ## Conclusion
 
-L'intelligence artificielle fitness entraînement n'est plus un gadget : c'est la manière la plus efficace, en 2026, de progresser sans coach perso, sans programme rigide et sans bidouiller des templates Excel. Avec AIVancePro, tu as un coach IA conversationnel intégré qui adapte chaque séance à ta réalité, en français, anglais et allemand — premier mois à 3,50 €, ensuite 6,99 €/mois. Disponible sur iOS, Android en développement.
+L'intelligence artificielle fitness entraînement n'est plus un gadget : c'est la manière la plus efficace, en 2026, de progresser sans coach perso, sans programme rigide et sans bidouiller des templates Excel. Avec AIVancePro, tu as un coach IA conversationnel intégré qui adapte chaque séance à ta réalité, en français, anglais et allemand — premier mois à 3,50 €, ensuite 6,99 €/mois. Disponible sur iOS et Android (Google Play).
 
 *Avertissement santé : les conseils de cet article ne remplacent pas l'avis d'un médecin ou d'un kinésithérapeute. En cas de pathologie, blessure ou doute médical, consulte un professionnel avant de modifier ton entraînement.*
 

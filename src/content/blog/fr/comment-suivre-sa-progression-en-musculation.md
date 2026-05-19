@@ -87,7 +87,7 @@ Concrètement, l'app fait trois choses qu'un carnet ne peut pas faire :
 - **Suggère la prochaine charge** basée sur ton RPE et ton historique récent
 - **Trace tes courbes** pour chaque exercice et chaque groupe musculaire, sur 4, 12 et 52 semaines
 
-Disponible sur iOS (Android en développement), avec un premier mois à 3,50 €.
+Disponible sur iOS et Android (Google Play), avec un premier mois à 3,50 €.
 
 ## Erreurs courantes à éviter
 

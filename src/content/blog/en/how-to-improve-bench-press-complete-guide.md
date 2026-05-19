@@ -151,7 +151,7 @@ What gets measured gets improved. Log every session:
 
 Review your data every 4-6 weeks. Are your loads going up? Is your total volume increasing? If neither is moving, something needs to change in your program — whether that is intensity, volume, frequency, or exercise selection.
 
-**AIVancePro** can streamline this tracking process. Its conversational AI coach monitors your bench press progress across sessions, flags plateaus before they become entrenched, and adjusts your programming based on your actual performance data. Available on iOS now, with Android in development.
+**AIVancePro** can streamline this tracking process. Its conversational AI coach monitors your bench press progress across sessions, flags plateaus before they become entrenched, and adjusts your programming based on your actual performance data. Available on iOS and Android (App Store / Google Play).
 
 ## Conclusion
 

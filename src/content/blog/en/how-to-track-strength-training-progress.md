@@ -87,7 +87,7 @@ Concretely, the app does three things a paper log can't:
 - **Suggests your next load** based on your RPE and recent history
 - **Charts your trends** for every exercise and muscle group across 4, 12, and 52 weeks
 
-Available on iOS (Android in development), with a first month at $3.99.
+Available on iOS and Android (App Store / Google Play), with a first month at $3.99.
 
 ## Common Mistakes to Avoid
 

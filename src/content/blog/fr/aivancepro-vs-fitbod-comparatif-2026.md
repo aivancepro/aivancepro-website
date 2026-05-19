@@ -124,7 +124,7 @@ Oui. Il comprend ton contexte, ta progression et tes objectifs. Il ne répond pa
 
 **AIVancePro est-il disponible sur Android ?**
 
-AIVancePro est disponible sur iOS. La version Android est en développement.
+AIVancePro est disponible sur iOS et Android — App Store et Google Play.
 
 **Quelle app recommander pour débuter la musculation ?**
 

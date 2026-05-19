@@ -86,7 +86,7 @@ Here's what AIVancePro gives you concretely:
 - **Full tracking**: sets, RPE, rest, measurements, before/after photos
 - **Native community**: progress feed, weekly challenges, friend sharing to stay accountable
 
-Available now on iOS via the App Store. Android version in development. First month at $4 to test risk-free, then $7.99/month if you stick with it.
+Available now on iOS via the App Store and on Android via Google Play. First month at $4 to test risk-free, then $7.99/month if you stick with it.
 
 ## Tracking without an app — why it's a bad idea in 2026
 
@@ -111,7 +111,7 @@ A modern workout tracking app automates all of that. ROI is immediate: 5 minutes
 
 ## Conclusion
 
-A solid workout tracking app is the tool that separates lifters who progress year after year from those who plateau and quit. The 5 criteria that matter: fast logging, solid exercise library, smart adaptation, clear analytics, motivating community. In 2026, AIVancePro hits all of them with a unique conversational AI coach, starting at $4 for the first month then $7.99/month. Available now on iOS, Android in development.
+A solid workout tracking app is the tool that separates lifters who progress year after year from those who plateau and quit. The 5 criteria that matter: fast logging, solid exercise library, smart adaptation, clear analytics, motivating community. In 2026, AIVancePro hits all of them with a unique conversational AI coach, starting at $4 for the first month then $7.99/month. Available now on iOS and Android (App Store / Google Play).
 
 > Health disclaimer: the advice in this article is educational. Any return to physical activity after an injury or with an existing medical condition (cardiac, joint, metabolic) should be validated by a qualified health professional.
 

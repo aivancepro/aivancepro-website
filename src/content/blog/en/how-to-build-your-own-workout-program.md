@@ -91,7 +91,7 @@ You don't grow in the gym, you grow while you recover. Three levers matter:
 
 Building a program by hand takes time, knowledge, and constant adjustment based on results. That's exactly the role of an integrated conversational AI coach like the one in AIVancePro: you give your goal, level, available frequency, and equipment, and the app generates a calibrated program, then adjusts loads and volume session after session based on your performance.
 
-The algorithm factors in your RIR, weekly progression, and automatic deloads. You no longer have to wonder if you're doing too much or too little — the app reads the data and adapts. Available on iOS today (Android in development), with a first month at $3.99 to try risk-free.
+The algorithm factors in your RIR, weekly progression, and automatic deloads. You no longer have to wonder if you're doing too much or too little — the app reads the data and adapts. Available on iOS and Android (App Store / Google Play), with a first month at $3.99 to try risk-free.
 
 ## Conclusion
 

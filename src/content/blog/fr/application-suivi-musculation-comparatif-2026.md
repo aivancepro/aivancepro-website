@@ -86,7 +86,7 @@ Concrètement, ce que tu obtiens avec AIVancePro :
 - **Tracking complet** : séries, RPE, repos, mensurations, photos avant/après
 - **Communauté native** : fil de progression, défis hebdo, partage entre amis pour rester motivé
 
-Disponible sur iOS dès maintenant via l'App Store. Version Android en développement. Le premier mois est à 3,50€ pour tester sans risque, ensuite 6,99€/mois si tu accroches.
+Disponible sur iOS via l'App Store et sur Android via Google Play. Le premier mois est à 3,50€ pour tester sans risque, ensuite 6,99€/mois si tu accroches.
 
 ## Tracker sans app : pourquoi c'est une mauvaise idée en 2026
 
@@ -111,7 +111,7 @@ Une application suivi musculation moderne automatise tout ça. Le ROI est imméd
 
 ## Conclusion
 
-Une bonne application suivi musculation, c'est l'outil qui fait la différence entre stagner et progresser cycle après cycle. Les 5 critères qui comptent : saisie rapide, bibliothèque solide, adaptation intelligente, analyse claire, communauté motivante. En 2026, AIVancePro combine ces piliers avec un coach IA conversationnel unique sur le marché francophone, à 6,99€/mois (3,50€ le premier mois). Disponible sur iOS via l'App Store, version Android en développement.
+Une bonne application suivi musculation, c'est l'outil qui fait la différence entre stagner et progresser cycle après cycle. Les 5 critères qui comptent : saisie rapide, bibliothèque solide, adaptation intelligente, analyse claire, communauté motivante. En 2026, AIVancePro combine ces piliers avec un coach IA conversationnel unique sur le marché francophone, à 6,99€/mois (3,50€ le premier mois). Disponible sur iOS via l'App Store et sur Android via Google Play.
 
 > Disclaimer santé : les conseils de cet article sont à visée éducative. Toute reprise d'activité physique après une blessure ou avec une condition médicale (cardiaque, articulaire, métabolique) doit être validée par un professionnel de santé.
 

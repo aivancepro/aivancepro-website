@@ -121,7 +121,7 @@ AIVancePro triggers these deloads automatically when the AI detects plateau sign
 
 Calculating your optimal training volume means moving past "more is better" to "right is better." Measure your current volume, locate yourself against MEV/MAV/MRV per muscle, and grow that volume in small steps. That's the foundation of sustainable progress — no injury, no plateau.
 
-If you want this calculated for you every session — auto-adjusted to real fatigue and real performance — install **AIVancePro** (available on iOS; Android in development). First month **€3.50**, then €6.99/month. Your conversational AI coach calculates, adjusts, and explains. You just execute.
+If you want this calculated for you every session — auto-adjusted to real fatigue and real performance — install **AIVancePro** (available on iOS and Android — App Store / Google Play). First month **€3.50**, then €6.99/month. Your conversational AI coach calculates, adjusts, and explains. You just execute.
 
 > **Health disclaimer**: this article is informational. If you're returning to training after injury or have any joint or cardiovascular condition, consult a healthcare professional before increasing your training volume.
 

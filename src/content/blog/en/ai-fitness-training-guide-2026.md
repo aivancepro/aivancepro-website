@@ -111,7 +111,7 @@ AIVancePro offers a discounted first month to test the full AI feature set risk-
 
 ## Conclusion
 
-AI fitness training isn't a gimmick anymore — in 2026, it's the most efficient way to progress without a personal trainer, rigid templates, or Excel hacking. AIVancePro gives you a built-in conversational AI coach that adapts every session to your reality, in English, French, and German. First month at $3.99, then $7.99/month. Available on iOS, Android in development.
+AI fitness training isn't a gimmick anymore — in 2026, it's the most efficient way to progress without a personal trainer, rigid templates, or Excel hacking. AIVancePro gives you a built-in conversational AI coach that adapts every session to your reality, in English, French, and German. First month at $3.99, then $7.99/month. Available on iOS and Android (App Store / Google Play).
 
 *Health disclaimer: the advice in this article does not replace medical guidance. If you have an injury, condition, or doubt, consult a physician or physical therapist before changing your training.*
 

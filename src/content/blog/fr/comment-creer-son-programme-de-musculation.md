@@ -91,7 +91,7 @@ Le **deload** enfin — toutes les 6 à 8 semaines, baisse le volume de 30-50 % 
 
 Construire un programme à la main demande du temps, des connaissances et un ajustement constant en fonction de tes résultats. C'est exactement le rôle d'un coach IA conversationnel intégré comme celui d'AIVancePro : tu indiques ton objectif, ton niveau, ta fréquence disponible et ton matériel, et l'app génère un programme calibré, puis ajuste les charges et le volume séance après séance en fonction de tes performances.
 
-L'algorithme prend en compte tes RIR, ta progression hebdomadaire et tes deload automatiques. Tu n'as plus à te demander si tu fais trop ou pas assez — l'app voit la donnée et adapte. Disponible sur iOS dès aujourd'hui (Android en développement), avec un premier mois à 3,50€ pour tester sans risque.
+L'algorithme prend en compte tes RIR, ta progression hebdomadaire et tes deload automatiques. Tu n'as plus à te demander si tu fais trop ou pas assez — l'app voit la donnée et adapte. Disponible sur iOS et Android (App Store / Google Play), avec un premier mois à 3,50€ pour tester sans risque.
 
 ## Conclusion
 

@@ -121,7 +121,7 @@ AIVancePro déclenche automatiquement ces deloads quand l'IA détecte les signau
 
 Calculer son volume d'entraînement optimal, c'est sortir du "plus = mieux" pour passer au "juste = mieux". Mesure ton volume actuel, situe-toi par rapport au MEV/MAV/MRV de chaque muscle, et fais évoluer ce volume par paliers. C'est la base d'une progression durable, sans blessure et sans stagnation.
 
-Si tu veux que ce calcul soit fait pour toi à chaque séance — avec un ajustement automatique selon ta fatigue et tes performances réelles — installe **AIVancePro** (disponible sur iOS, Android en développement). Premier mois à **3,50 €**, ensuite 6,99 €/mois. Ton coach IA conversationnel calcule, ajuste, et explique. Tu n'as qu'à exécuter.
+Si tu veux que ce calcul soit fait pour toi à chaque séance — avec un ajustement automatique selon ta fatigue et tes performances réelles — installe **AIVancePro** (disponible sur iOS et Android — App Store / Google Play). Premier mois à **3,50 €**, ensuite 6,99 €/mois. Ton coach IA conversationnel calcule, ajuste, et explique. Tu n'as qu'à exécuter.
 
 > **Disclaimer santé** : cet article a une vocation informative. Si tu reprends le sport après une blessure ou si tu souffres d'une pathologie articulaire ou cardiovasculaire, consulte un professionnel de santé avant d'augmenter ton volume d'entraînement.
 

@@ -158,7 +158,7 @@ Ce qui ne se mesure pas ne s'améliore pas. Note à chaque séance :
 
 Analyse tes données toutes les 4-6 semaines. Es-tu en progression sur tes charges ? Sur ton volume total ? Si tu stagnes sur les deux, il faut changer quelque chose dans ta programmation.
 
-**AIVancePro** peut t'aider à centraliser ce suivi. Son coach IA conversationnel analyse tes performances au fil des séances, détecte les plateaux avant qu'ils ne s'installent, et ajuste ta programmation automatiquement. Tu accèdes à tes graphiques de progression, tes records personnels et l'historique complet de tes séances — depuis l'app disponible sur iOS (Android en développement).
+**AIVancePro** peut t'aider à centraliser ce suivi. Son coach IA conversationnel analyse tes performances au fil des séances, détecte les plateaux avant qu'ils ne s'installent, et ajuste ta programmation automatiquement. Tu accèdes à tes graphiques de progression, tes records personnels et l'historique complet de tes séances — depuis l'app disponible sur iOS et Android (App Store / Google Play).
 
 ## Conclusion
 
