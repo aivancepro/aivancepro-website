@@ -1,5 +1,5 @@
 ---
-title: "Comment muscler les jambes au poids du corps : programme sans matériel"
+title: "Comment muscler les jambes au poids du corps : sans matériel"
 description: "Programme jambes au poids du corps : 8 exercices, progressions, volume optimal. Construire des jambes solides sans salle ni haltères."
 date: "2026-05-19"
 dateModified: "2026-05-19"

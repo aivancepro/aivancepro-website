@@ -1,5 +1,5 @@
 ---
-title: "Comment muscler les abdos sans matériel : programme complet à la maison"
+title: "Comment muscler les abdos sans matériel : programme maison"
 description: "Programme abdos sans matériel : 8 exercices, progression, fréquence. Le guide pour avoir des abdos visibles sans salle, en complément d'une nutrition correcte."
 date: "2026-05-19"
 dateModified: "2026-05-19"

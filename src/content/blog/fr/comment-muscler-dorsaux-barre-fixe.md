@@ -1,5 +1,5 @@
 ---
-title: "Comment muscler les dorsaux à la barre fixe : tractions et progressions"
+title: "Muscler les dorsaux à la barre fixe : tractions et progressions"
 description: "Programme dorsaux barre fixe : tractions, progressions débutant, variantes. Construire un dos large et puissant avec une seule barre."
 date: "2026-05-19"
 dateModified: "2026-05-19"

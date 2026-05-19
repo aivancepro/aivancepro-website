@@ -1,5 +1,5 @@
 ---
-title: "Comment muscler son dos avec des élastiques : programme complet à la maison"
+title: "Comment muscler son dos avec élastiques : programme maison"
 description: "Programme dos élastiques : 7 exercices efficaces, progression, charge équivalente haltères. Muscler ton dos sans salle de sport."
 date: "2026-05-19"
 dateModified: "2026-05-19"

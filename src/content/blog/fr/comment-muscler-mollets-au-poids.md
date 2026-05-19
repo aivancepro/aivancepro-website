@@ -1,5 +1,5 @@
 ---
-title: "Comment muscler les mollets au poids du corps : programme et progression"
+title: "Comment muscler les mollets au poids du corps : progression"
 description: "Programme mollets au poids du corps : 5 exercices, fréquence, progression. Développer les mollets sans matériel quand génétique = défi."
 date: "2026-05-19"
 dateModified: "2026-05-19"

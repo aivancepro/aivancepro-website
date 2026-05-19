@@ -1,5 +1,5 @@
 ---
-title: "Comment muscler les bras avec des haltères : programme biceps + triceps complet"
+title: "Comment muscler les bras avec haltères : biceps + triceps"
 description: "Programme bras haltères : 8 exercices biceps + triceps, séries/reps, progression. Le guide pour des bras massifs et équilibrés."
 date: "2026-05-19"
 dateModified: "2026-05-19"

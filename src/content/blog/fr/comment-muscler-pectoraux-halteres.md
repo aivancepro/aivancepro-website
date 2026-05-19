@@ -1,5 +1,5 @@
 ---
-title: "Comment muscler les pectoraux avec des haltères : programme et erreurs à éviter"
+title: "Comment muscler les pectoraux avec haltères : erreurs à éviter"
 description: "Programme pectoraux haltères complet : 6 exercices clés, séries/reps, progression. Le guide concret pour développer ta poitrine en salle ou à la maison."
 date: "2026-05-19"
 dateModified: "2026-05-19"
