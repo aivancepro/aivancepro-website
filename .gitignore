@@ -5,3 +5,6 @@ dist/
 .mcp/
 .mcp.json
 .claude/
+
+# Symlink vers aivancepro-kb (vault partagé) — local only
+.kb
