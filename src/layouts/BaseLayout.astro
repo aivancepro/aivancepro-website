@@ -102,6 +102,153 @@ const guidePosts = (await getCollection('guides', ({ data }) => data.lang === la
         }
       });
     </script>
+    <!-- UTM Attribution capture (sticky 30j) -->
+    <script is:inline>
+      (function(){
+        try {
+          var STORAGE_KEY = 'aiv_attribution';
+          var TTL_MS = 30 * 24 * 60 * 60 * 1000; // 30 jours
+          var existing = null;
+          try { existing = JSON.parse(localStorage.getItem(STORAGE_KEY)||'null'); } catch(e) {}
+
+          var url = new URL(location.href);
+          var params = url.searchParams;
+          var src = params.get('utm_source');
+          var med = params.get('utm_medium');
+          var camp = params.get('utm_campaign');
+          var cont = params.get('utm_content');
+          var term = params.get('utm_term');
+          var gclid = params.get('gclid');
+          var fbclid = params.get('fbclid');
+
+          var nowTs = Date.now();
+          var existingFresh = existing && existing.captured_at && (nowTs - existing.captured_at) < TTL_MS;
+
+          // First-touch attribution : ne pas overwrite si déjà capturé < 30j ET on a pas de NEW utm sur ce landing.
+          // Si nouveau utm_source sur ce visit → toujours remplacer (last-touch beats stale first-touch).
+          var hasNewUtm = !!(src || gclid || fbclid);
+
+          if (!existingFresh || hasNewUtm) {
+            var record = {
+              utm_source: src || (existing && existing.utm_source) || null,
+              utm_medium: med || (existing && existing.utm_medium) || null,
+              utm_campaign: camp || (existing && existing.utm_campaign) || null,
+              utm_content: cont || (existing && existing.utm_content) || null,
+              utm_term: term || (existing && existing.utm_term) || null,
+              gclid: gclid || (existing && existing.gclid) || null,
+              fbclid: fbclid || (existing && existing.fbclid) || null,
+              landing_url: location.href,
+              landing_pathname: location.pathname,
+              referrer: document.referrer || null,
+              captured_at: nowTs,
+            };
+            localStorage.setItem(STORAGE_KEY, JSON.stringify(record));
+          }
+
+          // Helper global pour les CTA download.
+          window.aivGetAttribution = function() {
+            try { return JSON.parse(localStorage.getItem(STORAGE_KEY)||'null'); } catch(e) { return null; }
+          };
+        } catch(e) {
+          // Fail silent — attribution is opt-in nicety, never break the page.
+          if (window.console) console.warn('[aiv-attribution] capture skipped:', e && e.message);
+        }
+      })();
+
+      // Intercepteur global des CTA "Télécharger l'app" : avant redirect
+      // vers Play Store / App Store, POST registerInstallIntent pour
+      // persister UTM côté backend, puis injecter ?referrer=intent_id=<id>
+      // sur l'URL Play Store (App Store n'accepte pas de query forwarding).
+      (function(){
+        var EDGE = 'https://vzmtvhcvyqzkmestdbko.supabase.co/functions/v1/registerInstallIntent';
+        var ANON_KEY = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InZ6bXR2aGN2eXF6a21lc3RkYmtvIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NzA4OTA0MTEsImV4cCI6MjA4NjQ2NjQxMX0.rvBz2uIsr3YtLIw84Kor3eVFpH4FiXVZgbufiJH3uio';
+
+        function isPlayStore(href) {
+          return /play\.google\.com\/store\/apps\/details\?id=com\.aivancepro/.test(href);
+        }
+        function isAppStore(href) {
+          return /apps\.apple\.com\/.+\/id\d+/i.test(href);
+        }
+
+        document.addEventListener('click', function(ev) {
+          var t = ev.target;
+          while (t && t.tagName !== 'A') t = t.parentElement;
+          if (!t) return;
+          var href = t.getAttribute('href') || '';
+          var isPlay = isPlayStore(href);
+          var isApp = isAppStore(href);
+          if (!isPlay && !isApp) return;
+          // Bypass write-review links etc — only attribute install CTAs
+          if (/action=write-review/.test(href)) return;
+
+          ev.preventDefault();
+          var attribution = (window.aivGetAttribution && window.aivGetAttribution()) || {};
+          var payload = {
+            utm_source: attribution.utm_source || null,
+            utm_medium: attribution.utm_medium || null,
+            utm_campaign: attribution.utm_campaign || null,
+            utm_content: attribution.utm_content || null,
+            utm_term: attribution.utm_term || null,
+            gclid: attribution.gclid || null,
+            fbclid: attribution.fbclid || null,
+            landing_url: attribution.landing_url || null,
+            landing_pathname: attribution.landing_pathname || null,
+            referrer: attribution.referrer || document.referrer || null,
+            platform_hint: isPlay ? 'android' : 'ios',
+          };
+
+          // Race-aware redirect : fire POST avec keepalive (survit la
+          // navigation), redirect après ≤300ms (pour éviter UX freeze).
+          var redirected = false;
+          function go(intentId) {
+            if (redirected) return;
+            redirected = true;
+            var finalHref = href;
+            if (isPlay && intentId) {
+              // Play Install Referrer accepte referrer en query param
+              // (URL-encoded). Format : intent_id=<uuid>.
+              var sep = finalHref.indexOf('?') === -1 ? '?' : '&';
+              finalHref = finalHref + sep + 'referrer=' + encodeURIComponent('intent_id=' + intentId);
+            }
+            // window.open avec _blank si target=_blank, sinon location
+            if (t.target === '_blank') {
+              window.open(finalHref, '_blank', 'noopener');
+            } else {
+              window.location.href = finalHref;
+            }
+          }
+
+          // Timeout fallback : si edge fn lente, redirect sans intent_id
+          var timeoutId = setTimeout(function(){ go(null); }, 800);
+
+          try {
+            fetch(EDGE, {
+              method: 'POST',
+              headers: {
+                'Content-Type': 'application/json',
+                'apikey': ANON_KEY,
+                'Authorization': 'Bearer ' + ANON_KEY,
+              },
+              body: JSON.stringify(payload),
+              keepalive: true,
+              credentials: 'omit',
+            })
+              .then(function(r){ return r.json().catch(function(){return {};}); })
+              .then(function(data){
+                clearTimeout(timeoutId);
+                go(data && data.id ? data.id : null);
+              })
+              .catch(function(){
+                clearTimeout(timeoutId);
+                go(null);
+              });
+          } catch(e) {
+            clearTimeout(timeoutId);
+            go(null);
+          }
+        }, false);
+      })();
+    </script>
 </head>
 <body>
     <a href="#main-content" class="skip-link">Skip to content</a>
