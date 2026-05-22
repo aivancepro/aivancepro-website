@@ -218,8 +218,11 @@ const guidePosts = (await getCollection('guides', ({ data }) => data.lang === la
             }
           }
 
-          // Timeout fallback : si edge fn lente, redirect sans intent_id
-          var timeoutId = setTimeout(function(){ go(null); }, 800);
+          // Timeout fallback : si edge fn lente (cold start ~1-3s typique
+          // Supabase Edge), redirect sans intent_id. 2000ms = compromis
+          // UX acceptable vs taux d'attribution Android via Play Install
+          // Referrer (sans referrer param = pas d'attribution post-install).
+          var timeoutId = setTimeout(function(){ go(null); }, 2000);
 
           try {
             fetch(EDGE, {
