@@ -183,7 +183,7 @@ function formatDate(dateStr: string) {
       <a href={`/de/blog/${post.data.slug}/`} class="article-card">
         <div class="card-image" style={post.data.image && post.data.image !== '/og-image.png'
           ? `background: linear-gradient(135deg, rgba(0,0,0,0.3), rgba(0,0,0,0.1)), url(${post.data.image}) center/cover no-repeat; color: #fff;`
-          : ''}>{post.data.tag}</div>
+          : ''}>{(!post.data.image || post.data.image === '/og-image.png') ? post.data.tag : ''}</div>
         <div class="card-content">
           <span class="tag">{post.data.tag}</span>
           <h2>{post.data.title}</h2>
